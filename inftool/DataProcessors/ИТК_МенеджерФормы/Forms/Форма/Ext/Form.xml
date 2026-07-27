@@ -1,0 +1,1298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<CommandSet>
+		<ExcludedCommand>Help</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаИзменитьФорму" id="353">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="354"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаКоманднаяПанельФормы" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма (командная панель)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form (command panel)</v8:content>
+				</v8:item>
+			</Title>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКоманднаяПанельФормыРасширеннаяПодсказка" id="5"/>
+			<ChildItems>
+				<InputField name="ВыбраннаяФорма" id="1">
+					<DataPath>ВыбраннаяФорма</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<Width>70</Width>
+					<ChoiceButton>false</ChoiceButton>
+					<ListChoiceMode>true</ListChoiceMode>
+					<InputHint>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выберите форму</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Select form</v8:content>
+						</v8:item>
+					</InputHint>
+					<ContextMenu name="ВыбраннаяФормаКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="ВыбраннаяФормаРасширеннаяПодсказка" id="3"/>
+					<Events>
+						<Event name="OnChange">ВыбраннаяФормаПриИзменении</Event>
+						<Event name="StartChoice">ВыбраннаяФормаНачалоВыбора</Event>
+					</Events>
+				</InputField>
+				<CommandBar name="ГруппаКоманднаяПанельФормаЕще" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма (командная панель - еще)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Form (command panel - more)</v8:content>
+						</v8:item>
+					</Title>
+					<CommandSource>Form</CommandSource>
+					<ExtendedTooltip name="ГруппаКоманднаяПанельФормаЕщеРасширеннаяПодсказка" id="7"/>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+		<Pages name="Страницы" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="9"/>
+			<ChildItems>
+				<Page name="СтраницаЭлементы" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Элементы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Items</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>ЭлементыКоличество</TitleDataPath>
+					<ExtendedTooltip name="СтраницаЭлементыРасширеннаяПодсказка" id="11"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаЭлементыДеревоКоманднаяПанель" id="46">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Элементы (командная панель)</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Items (command panel)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаЭлементыДеревоКоманднаяПанельРасширеннаяПодсказка" id="47"/>
+							<ChildItems>
+								<CommandBar name="КоманднаяПанельЭлементыДерево" id="48">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Элементы (командная панель)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Items (command panel)</v8:content>
+										</v8:item>
+									</Title>
+									<CommandSource>Item.ЭлементыДерево</CommandSource>
+									<ExtendedTooltip name="КоманднаяПанельЭлементыДеревоРасширеннаяПодсказка" id="49"/>
+									<ChildItems>
+										<ButtonGroup name="ЭлементыДеревоГруппаПоиск" id="152">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поиск</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Find</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="ЭлементыДеревоГруппаПоискРасширеннаяПодсказка" id="153"/>
+											<ChildItems>
+												<Button name="ЭлементыДеревоПоискПоТекущемуЗначению" id="154">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.ЭлементыДерево.StandardCommand.FindByCurrentValue</CommandName>
+													<ExtendedTooltip name="ЭлементыДеревоПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="155"/>
+												</Button>
+												<Button name="ЭлементыДеревоНайти" id="156">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.ЭлементыДерево.StandardCommand.Find</CommandName>
+													<ExtendedTooltip name="ЭлементыДеревоНайтиРасширеннаяПодсказка" id="157"/>
+												</Button>
+												<Button name="ЭлементыДеревоОтменитьПоиск" id="158">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.ЭлементыДерево.StandardCommand.CancelSearch</CommandName>
+													<ExtendedTooltip name="ЭлементыДеревоОтменитьПоискРасширеннаяПодсказка" id="159"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="ПерейтиКТекущемуЭлементуФормы" id="136">
+											<Type>CommandBarButton</Type>
+											<Representation>PictureAndText</Representation>
+											<CommandName>Form.Command.ПерейтиКТекущемуЭлементуФормы</CommandName>
+											<ExtendedTooltip name="ПерейтиКТекущемуЭлементуФормыРасширеннаяПодсказка" id="137"/>
+										</Button>
+										<Button name="ЭлементыДеревоЭлементыОбновить" id="131">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ЭлементыОбновить</CommandName>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="ЭлементыДеревоЭлементыОбновитьРасширеннаяПодсказка" id="132"/>
+										</Button>
+										<Button name="ЭлементыДеревоВывестиСписок" id="129">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Item.ЭлементыДерево.StandardCommand.OutputList</CommandName>
+											<ExtendedTooltip name="ЭлементыДеревоВывестиСписокРасширеннаяПодсказка" id="130"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ЭлементыДерево" id="16">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<DataPath>ЭлементыДерево</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
+							</CommandSet>
+							<ContextMenu name="ЭлементыДеревоКонтекстноеМеню" id="17">
+								<ChildItems>
+									<ButtonGroup name="ЭлементыДеревоКонтекстноеМенюГруппа1" id="144">
+										<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюГруппа1РасширеннаяПодсказка" id="145"/>
+										<ChildItems>
+											<Button name="ЭлементыДеревоКонтекстноеМенюНайти" id="142">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ЭлементыДерево.StandardCommand.Find</CommandName>
+												<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюНайтиРасширеннаяПодсказка" id="143"/>
+											</Button>
+											<Button name="ЭлементыДеревоКонтекстноеМенюПоискПоТекущемуЗначению" id="138">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ЭлементыДерево.StandardCommand.FindByCurrentValue</CommandName>
+												<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="139"/>
+											</Button>
+											<Button name="ЭлементыДеревоКонтекстноеМенюОтменитьПоиск" id="140">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ЭлементыДерево.StandardCommand.CancelSearch</CommandName>
+												<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="141"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="ЭлементыДеревоКонтекстноеМенюПерейтиКТекущемуЭлементуФормы" id="146">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ПерейтиКТекущемуЭлементуФормы</CommandName>
+										<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюПерейтиКТекущемуЭлементуФормыРасширеннаяПодсказка" id="147"/>
+									</Button>
+									<Button name="ЭлементыДеревоКонтекстноеМенюЭлементыОбновить" id="148">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.ЭлементыОбновить</CommandName>
+										<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюЭлементыОбновитьРасширеннаяПодсказка" id="149"/>
+									</Button>
+									<Button name="ЭлементыДеревоКонтекстноеМенюВывестиСписок" id="150">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.ЭлементыДерево.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="ЭлементыДеревоКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="151"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="ЭлементыДеревоКоманднаяПанель" id="18"/>
+							<ExtendedTooltip name="ЭлементыДеревоРасширеннаяПодсказка" id="19"/>
+							<SearchStringAddition name="ЭлементыДеревоСтрокаПоиска" id="20">
+								<AdditionSource>
+									<Item>ЭлементыДерево</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭлементыДеревоСтрокаПоискаКонтекстноеМеню" id="21"/>
+								<ExtendedTooltip name="ЭлементыДеревоСтрокаПоискаРасширеннаяПодсказка" id="22"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЭлементыДеревоСостояниеПросмотра" id="23">
+								<AdditionSource>
+									<Item>ЭлементыДерево</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭлементыДеревоСостояниеПросмотраКонтекстноеМеню" id="24"/>
+								<ExtendedTooltip name="ЭлементыДеревоСостояниеПросмотраРасширеннаяПодсказка" id="25"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЭлементыДеревоУправлениеПоиском" id="26">
+								<AdditionSource>
+									<Item>ЭлементыДерево</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЭлементыДеревоУправлениеПоискомКонтекстноеМеню" id="27"/>
+								<ExtendedTooltip name="ЭлементыДеревоУправлениеПоискомРасширеннаяПодсказка" id="28"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ЭлементыДеревоПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<ColumnGroup name="ГруппаОсновная" id="44">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Основная</v8:content>
+										</v8:item>
+									</Title>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ГруппаОсновнаяРасширеннаяПодсказка" id="45"/>
+									<ChildItems>
+										<PictureField name="ЭлементыДеревоКартинка" id="32">
+											<DataPath>ЭлементыДерево.Картинка</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ShowInHeader>false</ShowInHeader>
+											<ContextMenu name="ЭлементыДеревоКартинкаКонтекстноеМеню" id="33"/>
+											<ExtendedTooltip name="ЭлементыДеревоКартинкаРасширеннаяПодсказка" id="34"/>
+										</PictureField>
+										<InputField name="ЭлементыДеревоИмя" id="29">
+											<DataPath>ЭлементыДерево.Имя</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЭлементыДеревоИмяКонтекстноеМеню" id="30"/>
+											<ExtendedTooltip name="ЭлементыДеревоИмяРасширеннаяПодсказка" id="31"/>
+										</InputField>
+										<InputField name="ЭлементыДеревоЗаголовок" id="133">
+											<DataPath>ЭлементыДерево.Заголовок</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЭлементыДеревоЗаголовокКонтекстноеМеню" id="134"/>
+											<ExtendedTooltip name="ЭлементыДеревоЗаголовокРасширеннаяПодсказка" id="135"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="ЭлементыДеревоПутьКДанным" id="193">
+									<DataPath>ЭлементыДерево.ПутьКДанным</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<TextEdit>false</TextEdit>
+									<ContextMenu name="ЭлементыДеревоПутьКДаннымКонтекстноеМеню" id="194"/>
+									<ExtendedTooltip name="ЭлементыДеревоПутьКДаннымРасширеннаяПодсказка" id="195"/>
+								</InputField>
+								<CheckBoxField name="ЭлементыДеревоВидимость" id="35">
+									<DataPath>ЭлементыДерево.Видимость</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭлементыДеревоВидимостьКонтекстноеМеню" id="36"/>
+									<ExtendedTooltip name="ЭлементыДеревоВидимостьРасширеннаяПодсказка" id="37"/>
+									<Events>
+										<Event name="OnChange">ЭлементыДеревоВидимостьПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ЭлементыДеревоТолькоПросмотр" id="38">
+									<DataPath>ЭлементыДерево.ТолькоПросмотр</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭлементыДеревоТолькоПросмотрКонтекстноеМеню" id="39"/>
+									<ExtendedTooltip name="ЭлементыДеревоТолькоПросмотрРасширеннаяПодсказка" id="40"/>
+									<Events>
+										<Event name="OnChange">ЭлементыДеревоТолькоПросмотрПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ЭлементыДеревоДоступность" id="41">
+									<DataPath>ЭлементыДерево.Доступность</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ЭлементыДеревоДоступностьКонтекстноеМеню" id="42"/>
+									<ExtendedTooltip name="ЭлементыДеревоДоступностьРасширеннаяПодсказка" id="43"/>
+									<Events>
+										<Event name="OnChange">ЭлементыДеревоДоступностьПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<ColumnGroup name="ЭлементыДеревоГруппаТипИВид" id="109">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Тип, вид</v8:content>
+										</v8:item>
+									</Title>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ЭлементыДеревоГруппаТипИВидРасширеннаяПодсказка" id="110"/>
+									<ChildItems>
+										<InputField name="ЭлементыДеревоТип" id="111">
+											<DataPath>ЭлементыДерево.Тип</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЭлементыДеревоТипКонтекстноеМеню" id="112"/>
+											<ExtendedTooltip name="ЭлементыДеревоТипРасширеннаяПодсказка" id="113"/>
+										</InputField>
+										<InputField name="ЭлементыДеревоВид" id="114">
+											<DataPath>ЭлементыДерево.Вид</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ЭлементыДеревоВидКонтекстноеМеню" id="115"/>
+											<ExtendedTooltip name="ЭлементыДеревоВидРасширеннаяПодсказка" id="116"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаРеквизиты" id="12">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Реквизиты</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Fields</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>РеквизитыКоличество</TitleDataPath>
+					<ExtendedTooltip name="СтраницаРеквизитыРасширеннаяПодсказка" id="13"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаРеквизитыКоманднаяПанель" id="69">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Реквизиты (командная панель)</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Fields (command panel)</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаРеквизитыКоманднаяПанельРасширеннаяПодсказка" id="70"/>
+							<ChildItems>
+								<CommandBar name="КоманднаяПанельРеквизиты" id="71">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Реквизиты (командная панель)</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Fields (command panel)</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalLocation>Right</HorizontalLocation>
+									<CommandSource>Item.Реквизиты</CommandSource>
+									<ExtendedTooltip name="КоманднаяПанельРеквизитыРасширеннаяПодсказка" id="72"/>
+									<ChildItems>
+										<ButtonGroup name="РеквизитыГруппаПоиск" id="182">
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Поиск</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Find</v8:content>
+												</v8:item>
+											</Title>
+											<ExtendedTooltip name="РеквизитыГруппаПоискРасширеннаяПодсказка" id="183"/>
+											<ChildItems>
+												<Button name="РеквизитыПоискПоТекущемуЗначению" id="184">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.Реквизиты.StandardCommand.FindByCurrentValue</CommandName>
+													<ExtendedTooltip name="РеквизитыПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="185"/>
+												</Button>
+												<Button name="РеквизитыНайти" id="186">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.Реквизиты.StandardCommand.Find</CommandName>
+													<ExtendedTooltip name="РеквизитыНайтиРасширеннаяПодсказка" id="187"/>
+												</Button>
+												<Button name="РеквизитыОтменитьПоиск" id="188">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Item.Реквизиты.StandardCommand.CancelSearch</CommandName>
+													<ExtendedTooltip name="РеквизитыОтменитьПоискРасширеннаяПодсказка" id="189"/>
+												</Button>
+											</ChildItems>
+										</ButtonGroup>
+										<Button name="РеквизитыРеквизитыОбновить" id="125">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.РеквизитыОбновить</CommandName>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="РеквизитыРеквизитыОбновитьРасширеннаяПодсказка" id="126"/>
+										</Button>
+										<Button name="РеквизитыВывестиСписок" id="127">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Item.Реквизиты.StandardCommand.OutputList</CommandName>
+											<ExtendedTooltip name="РеквизитыВывестиСписокРасширеннаяПодсказка" id="128"/>
+										</Button>
+									</ChildItems>
+								</CommandBar>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="Реквизиты" id="50">
+							<Representation>Tree</Representation>
+							<CommandBarLocation>None</CommandBarLocation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<DataPath>Реквизиты</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
+							</CommandSet>
+							<ContextMenu name="РеквизитыКонтекстноеМеню" id="51">
+								<ChildItems>
+									<ButtonGroup name="РеквизитыКонтекстноеМенюГруппаПоиск" id="174">
+										<ExtendedTooltip name="РеквизитыКонтекстноеМенюГруппаПоискРасширеннаяПодсказка" id="175"/>
+										<ChildItems>
+											<Button name="РеквизитыКонтекстноеМенюПоискПоТекущемуЗначению" id="176">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Реквизиты.StandardCommand.FindByCurrentValue</CommandName>
+												<ExtendedTooltip name="РеквизитыКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="177"/>
+											</Button>
+											<Button name="РеквизитыКонтекстноеМенюНайти" id="178">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Реквизиты.StandardCommand.Find</CommandName>
+												<ExtendedTooltip name="РеквизитыКонтекстноеМенюНайтиРасширеннаяПодсказка" id="179"/>
+											</Button>
+											<Button name="РеквизитыКонтекстноеМенюОтменитьПоиск" id="180">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.Реквизиты.StandardCommand.CancelSearch</CommandName>
+												<ExtendedTooltip name="РеквизитыКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="181"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="РеквизитыКонтекстноеМенюРеквизитыОбновить" id="162">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.РеквизитыОбновить</CommandName>
+										<ExtendedTooltip name="РеквизитыКонтекстноеМенюРеквизитыОбновитьРасширеннаяПодсказка" id="163"/>
+									</Button>
+									<Button name="РеквизитыКонтекстноеМенюВывестиСписок" id="160">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Реквизиты.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="РеквизитыКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="161"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="РеквизитыКоманднаяПанель" id="52"/>
+							<ExtendedTooltip name="РеквизитыРасширеннаяПодсказка" id="53"/>
+							<SearchStringAddition name="РеквизитыСтрокаПоиска" id="54">
+								<AdditionSource>
+									<Item>Реквизиты</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыСтрокаПоискаКонтекстноеМеню" id="55"/>
+								<ExtendedTooltip name="РеквизитыСтрокаПоискаРасширеннаяПодсказка" id="56"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="РеквизитыСостояниеПросмотра" id="57">
+								<AdditionSource>
+									<Item>Реквизиты</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыСостояниеПросмотраКонтекстноеМеню" id="58"/>
+								<ExtendedTooltip name="РеквизитыСостояниеПросмотраРасширеннаяПодсказка" id="59"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="РеквизитыУправлениеПоиском" id="60">
+								<AdditionSource>
+									<Item>Реквизиты</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="РеквизитыУправлениеПоискомКонтекстноеМеню" id="61"/>
+								<ExtendedTooltip name="РеквизитыУправлениеПоискомРасширеннаяПодсказка" id="62"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">РеквизитыВыбор</Event>
+								<Event name="BeforeExpand">РеквизитыПередРазворачиванием</Event>
+								<Event name="OnActivateCell">РеквизитыПриАктивизацииЯчейки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="РеквизитыИмя" id="63">
+									<DataPath>Реквизиты.Имя</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыИмяКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="РеквизитыИмяРасширеннаяПодсказка" id="65"/>
+								</InputField>
+								<ColumnGroup name="РеквизитыГруппаЗначение" id="117">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Значение</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Value</v8:content>
+										</v8:item>
+									</Title>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="РеквизитыГруппаЗначениеРасширеннаяПодсказка" id="118"/>
+									<ChildItems>
+										<PictureField name="РеквизитыКартинкаТипа" id="119">
+											<DataPath>Реквизиты.КартинкаТипа</DataPath>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыКартинкаТипаКонтекстноеМеню" id="120"/>
+											<ExtendedTooltip name="РеквизитыКартинкаТипаРасширеннаяПодсказка" id="121"/>
+										</PictureField>
+										<InputField name="РеквизитыЗначение" id="66">
+											<DataPath>Реквизиты.ПредставлениеЗначения</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="РеквизитыЗначениеКонтекстноеМеню" id="67"/>
+											<ExtendedTooltip name="РеквизитыЗначениеРасширеннаяПодсказка" id="68"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<InputField name="РеквизитыТипЗначения" id="122">
+									<DataPath>Реквизиты.ТипЗначения</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="РеквизитыТипЗначенияКонтекстноеМеню" id="123"/>
+									<ExtendedTooltip name="РеквизитыТипЗначенияРасширеннаяПодсказка" id="124"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаСвойства" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Свойства</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Properties</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СтраницаСвойстваРасширеннаяПодсказка" id="15"/>
+					<ChildItems>
+						<Table name="Свойства" id="73">
+							<Representation>Tree</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<SelectionMode>SingleRow</SelectionMode>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<DataPath>Свойства</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>CancelSearch</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>Find</ExcludedCommand>
+								<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+								<ExcludedCommand>HierarchicalList</ExcludedCommand>
+								<ExcludedCommand>List</ExcludedCommand>
+								<ExcludedCommand>MoveDown</ExcludedCommand>
+								<ExcludedCommand>MoveUp</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+								<ExcludedCommand>SearchHistory</ExcludedCommand>
+								<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+								<ExcludedCommand>SortListAsc</ExcludedCommand>
+								<ExcludedCommand>SortListDesc</ExcludedCommand>
+								<ExcludedCommand>Tree</ExcludedCommand>
+							</CommandSet>
+							<ContextMenu name="СвойстваКонтекстноеМеню" id="74">
+								<ChildItems>
+									<ButtonGroup name="СвойстваКонтекстноеМенюГруппаСортировка" id="164">
+										<ExtendedTooltip name="СвойстваКонтекстноеМенюГруппаСортировкаРасширеннаяПодсказка" id="165"/>
+										<ChildItems>
+											<Button name="СвойстваКонтекстноеМенюСвойстваСортироватьПоАлфавиту" id="166">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвойстваСортироватьПоАлфавиту</CommandName>
+												<ExtendedTooltip name="СвойстваКонтекстноеМенюСвойстваСортироватьПоАлфавитуРасширеннаяПодсказка" id="167"/>
+											</Button>
+											<Button name="СвойстваКонтекстноеМенюСвойстваСортироватьПоКатегориям" id="168">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвойстваСортироватьПоКатегориям</CommandName>
+												<ExtendedTooltip name="СвойстваКонтекстноеМенюСвойстваСортироватьПоКатегориямРасширеннаяПодсказка" id="169"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="СвойстваКонтекстноеМенюСвойстваОбновить" id="170">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СвойстваОбновить</CommandName>
+										<ExtendedTooltip name="СвойстваКонтекстноеМенюСвойстваОбновитьРасширеннаяПодсказка" id="171"/>
+									</Button>
+									<Button name="СвойстваКонтекстноеМенюВывестиСписок" id="172">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Свойства.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="СвойстваКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="173"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="СвойстваКоманднаяПанель" id="75">
+								<HorizontalAlign>Right</HorizontalAlign>
+								<ChildItems>
+									<ButtonGroup name="СвойстваГруппаСортировка" id="96">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Сортировка</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Sort</v8:content>
+											</v8:item>
+										</Title>
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="СвойстваГруппаСортировкаРасширеннаяПодсказка" id="97"/>
+										<ChildItems>
+											<Button name="СвойстваСвойстваСортироватьПоАлфавиту" id="98">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвойстваСортироватьПоАлфавиту</CommandName>
+												<ExtendedTooltip name="СвойстваСвойстваСортироватьПоАлфавитуРасширеннаяПодсказка" id="99"/>
+											</Button>
+											<Button name="СвойстваСвойстваСортироватьПоКатегориям" id="100">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвойстваСортироватьПоКатегориям</CommandName>
+												<ExtendedTooltip name="СвойстваСвойстваСортироватьПоКатегориямРасширеннаяПодсказка" id="101"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="СвойстваСвойстваОбновить" id="104">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Command.СвойстваОбновить</CommandName>
+										<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+										<ExtendedTooltip name="СвойстваСвойстваОбновитьРасширеннаяПодсказка" id="105"/>
+									</Button>
+									<Button name="СвойстваВывестиСписок" id="102">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.Свойства.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="СвойстваВывестиСписокРасширеннаяПодсказка" id="103"/>
+									</Button>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="СвойстваРасширеннаяПодсказка" id="76"/>
+							<SearchStringAddition name="СвойстваСтрокаПоиска" id="77">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваСтрокаПоискаКонтекстноеМеню" id="78"/>
+								<ExtendedTooltip name="СвойстваСтрокаПоискаРасширеннаяПодсказка" id="79"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="СвойстваСостояниеПросмотра" id="80">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваСостояниеПросмотраКонтекстноеМеню" id="81"/>
+								<ExtendedTooltip name="СвойстваСостояниеПросмотраРасширеннаяПодсказка" id="82"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="СвойстваУправлениеПоиском" id="83">
+								<AdditionSource>
+									<Item>Свойства</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="СвойстваУправлениеПоискомКонтекстноеМеню" id="84"/>
+								<ExtendedTooltip name="СвойстваУправлениеПоискомРасширеннаяПодсказка" id="85"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">СвойстваВыбор</Event>
+								<Event name="BeforeRowChange">СвойстваПередНачаломИзменения</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="СвойстваПредставление" id="86">
+									<DataPath>Свойства.Представление</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СвойстваПредставлениеКонтекстноеМеню" id="87"/>
+									<ExtendedTooltip name="СвойстваПредставлениеРасширеннаяПодсказка" id="88"/>
+								</InputField>
+								<InputField name="СвойстваЗначение" id="89">
+									<DataPath>Свойства.Значение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СвойстваЗначениеКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="СвойстваЗначениеРасширеннаяПодсказка" id="91"/>
+									<Events>
+										<Event name="OnChange">СвойстваЗначениеПриИзменении</Event>
+									</Events>
+								</InputField>
+								<LabelField name="СвойстваЗначениеГиперссылка" id="190">
+									<DataPath>Свойства.ЗначениеГиперссылка</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CellHyperlink>true</CellHyperlink>
+									<ContextMenu name="СвойстваЗначениеГиперссылкаКонтекстноеМеню" id="191"/>
+									<ExtendedTooltip name="СвойстваЗначениеГиперссылкаРасширеннаяПодсказка" id="192"/>
+								</LabelField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_МенеджерФормы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ВыбраннаяФорма" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Форма</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form</v8:content>
+				</v8:item>
+			</Title>
+			<Type/>
+		</Attribute>
+		<Attribute name="ЭлементыДерево" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Элементы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Items</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Картинка" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Image</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Видимость" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Видимость</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Visible</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТолькоПросмотр" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только просмотр</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Read only</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Доступность" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Доступность</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Enabled</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Вид" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>View</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Тип" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ДоступенТолькоПросмотр" id="8">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Заголовок" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Заголовок</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Title</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПутьКДанным" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Путь к данным</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Path to data</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Реквизиты" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Реквизиты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Имя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПредставлениеЗначения" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ТипЗначения" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип значения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type of value</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:TypeDescription</v8:Type>
+					</Type>
+				</Column>
+				<Column name="КартинкаТипа" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка типа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Значение" id="5">
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="Свойства" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свойства</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Представление" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Свойство</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Property</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Значение" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ТолькоПросмотр" id="3">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Имя" id="4">
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоГруппа" id="5">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗначениеГиперссылка" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СортироватьСвойстваПоАлфавиту" id="6">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>СортироватьСвойстваПоАлфавиту</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="УникальныйИдентификаторФормы" id="7">
+			<Type>
+				<v8:Type>v8:UUID</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="РеквизитыКоличество" id="8">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЭлементыКоличество" id="9">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Any</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="СвойстваСортироватьПоАлфавиту" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по алфавиту</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sort alphabetically</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_СвойстваПоАлфавиту</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СвойстваСортироватьПоАлфавиту</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СвойстваСортироватьПоКатегориям" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сортировать по категориям</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Sort by category</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_СвойстваПоКатегориям</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СвойстваСортироватьПоКатегориям</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="СвойстваОбновить" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СвойстваОбновить</Action>
+		</Command>
+		<Command name="РеквизитыОбновить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить реквизиты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update fields</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РеквизитыОбновить</Action>
+			<Representation>Picture</Representation>
+		</Command>
+		<Command name="ЭлементыОбновить" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить элементы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update items</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЭлементыОбновить</Action>
+		</Command>
+		<Command name="ПерейтиКТекущемуЭлементуФормы" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к текущему</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Go to current</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к текущему элементу формы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Go to current form element</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowInList</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ПерейтиКТекущемуЭлементуФормы</Action>
+		</Command>
+	</Commands>
+</Form>

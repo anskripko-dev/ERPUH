@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Конструктор строки сохранения данных из отладки</v8:content>
+		</v8:item>
+		<v8:item>
+			<v8:lang>en</v8:lang>
+			<v8:content>Designer lines store data from debug</v8:content>
+		</v8:item>
+	</Title>
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<ButtonGroup name="ФормаГруппаИзменитьФорму" id="34">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить форму</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Change form</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаИзменитьФормуРасширеннаяПодсказка" id="35"/>
+				<ChildItems>
+					<Button name="ФормаИзменитьФорму" id="36">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменить форму...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Change form...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="37"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+			<Button name="КопироватьИЗакрыть" id="4">
+				<Type>CommandBarButton</Type>
+				<Representation>PictureAndText</Representation>
+				<DefaultButton>true</DefaultButton>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.Command.КопироватьИЗакрыть</CommandName>
+				<ExtendedTooltip name="КопироватьИЗакрытьРасширеннаяПодсказка" id="5"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаРезультат" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Result</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРезультатРасширеннаяПодсказка" id="7"/>
+			<ChildItems>
+				<InputField name="Результат" id="1">
+					<DataPath>Результат</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<ToolTipRepresentation>Button</ToolTipRepresentation>
+					<Width>80</Width>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+					<ContextMenu name="РезультатКонтекстноеМеню" id="2"/>
+					<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="3"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПояснениеОтладки" id="57">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пояснение (отладки)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Explanation (debug)</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ExtendedTooltip name="ГруппаПояснениеОтладкиРасширеннаяПодсказка" id="58"/>
+			<ChildItems>
+				<PictureDecoration name="ПояснениеОтладкиКартинка" id="59">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.ИТК_Информация</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПояснениеОтладкиКартинкаКонтекстноеМеню" id="60"/>
+					<ExtendedTooltip name="ПояснениеОтладкиКартинкаРасширеннаяПодсказка" id="61"/>
+				</PictureDecoration>
+				<LabelDecoration name="ПояснениеОтладки" id="62">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="true">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Необходимо установить точку останова (F9) непосредственно &lt;b&gt;перед Выполнить...&lt;/&gt; когда все данные инциализированы
+и аналогично для других типов объектов. После остановки на точке останова вызвать функцию в окне «Вычислить выражение» (Shift + F9).
+При успешном выполнении результат функции «Сохранено успешно». &lt;link https://infostart.ru/1c/articles/1321263/&gt;Подробнее в статье отладка в Infostart Toolkit &lt;/&gt;</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>&lt;font @Malgun Gothic&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;It is necessary to set a breakpoint (F9) immediately &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;font @Malgun Gothic&gt;&lt;fontsize 8&gt;&lt;b&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;before Execute... &lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;font @Malgun Gothic&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;when all data is initialized&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font @Malgun Gothic&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;and similarly for other types of objects. After stopping at the breakpoint, call the function in the window "Evaluate expression" (Shift + F9).&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;
+&lt;font @Malgun Gothic&gt;&lt;fontsize 8&gt;&lt;bgcolor #ffffff&gt;&lt;color #333333&gt;If the execution is successful, the result of the function is "Saved successfully". For more information, see the article Debugging in the Infostart Toolkit&lt;/&gt;&lt;/&gt;&lt;/&gt;&lt;/&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПояснениеОтладкиКонтекстноеМеню" id="63"/>
+					<ExtendedTooltip name="ПояснениеОтладкиРасширеннаяПодсказка" id="64"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаПояснениеСохранитьВ_БСП_XML" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>The explanation included protection from threat of action</v8:content>
+				</v8:item>
+			</Title>
+			<HorizontalStretch>true</HorizontalStretch>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<BackColor>style:ToolTipBackColor</BackColor>
+			<ExtendedTooltip name="ГруппаПояснениеСохранитьВ_БСП_XMLРасширеннаяПодсказка" id="27"/>
+			<ChildItems>
+				<PictureDecoration name="ПояснениеСохранитьВ_БСП_XMLКартинка" id="28">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>CommonPicture.ИТК_ПредупреждениеВажное</xr:Ref>
+						<xr:LoadTransparent>false</xr:LoadTransparent>
+					</Picture>
+					<FileDragMode>AsFile</FileDragMode>
+					<ContextMenu name="ПояснениеСохранитьВ_БСП_XMLКартинкаКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="ПояснениеСохранитьВ_БСП_XMLКартинкаРасширеннаяПодсказка" id="30"/>
+				</PictureDecoration>
+				<LabelDecoration name="ПояснениеСохранитьВ_БСП_XML" id="31">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рекомендуется использовать другие варианты. Метод не поддерживает временные таблицы и некоторые типы параметров.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>It is recommended to use other options. The method does not support temporary tables and some types of parameters.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ПояснениеСохранитьВ_БСП_XMLКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ПояснениеСохранитьВ_БСП_XMLРасширеннаяПодсказка" id="33"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<RadioButtonField name="Тип" id="38">
+			<DataPath>Тип</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ContextMenu name="ТипКонтекстноеМеню" id="39"/>
+			<ExtendedTooltip name="ТипРасширеннаяПодсказка" id="40"/>
+			<Events>
+				<Event name="OnChange">ТипПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<RadioButtonField name="СохранятьВ" id="8">
+			<DataPath>СохранятьВ</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранение в файл позволяет сохранить данные отладки в транзакции, которая будет впоследствии отменена.</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Saving to a file allows you to save debug data in a transaction that will later be rolled back.</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ToolTipRepresentation>Button</ToolTipRepresentation>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ContextMenu name="СохранятьВКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="СохранятьВРасширеннаяПодсказка" id="10"/>
+			<Events>
+				<Event name="OnChange">СохранятьВПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
+		<UsualGroup name="ГруппаЗапрос" id="41">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запрос</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Query</v8:content>
+				</v8:item>
+			</Title>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаЗапросРасширеннаяПодсказка" id="42"/>
+			<ChildItems>
+				<InputField name="ИмяОбъектаЗапрос" id="17">
+					<DataPath>ИмяОбъектаЗапрос</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<Width>20</Width>
+					<HorizontalStretch>false</HorizontalStretch>
+					<DropListButton>true</DropListButton>
+					<ChoiceButton>false</ChoiceButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ИмяОбъектаЗапросКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ИмяОбъектаЗапросРасширеннаяПодсказка" id="19"/>
+					<Events>
+						<Event name="OnChange">ИмяОбъектаЗапросПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаСхемаКомпоновкиДанных" id="43">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Схема компоновки данных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data composition schema</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<United>false</United>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаСхемаКомпоновкиДанныхРасширеннаяПодсказка" id="44"/>
+			<ChildItems>
+				<InputField name="ИмяСхемы" id="45">
+					<DataPath>ИмяСхемы</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<DropListButton>true</DropListButton>
+					<AutoMarkIncomplete>true</AutoMarkIncomplete>
+					<ContextMenu name="ИмяСхемыКонтекстноеМеню" id="46"/>
+					<ExtendedTooltip name="ИмяСхемыРасширеннаяПодсказка" id="47"/>
+					<Events>
+						<Event name="OnChange">ИмяСхемыПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ИмяНастроек" id="48">
+					<DataPath>ИмяНастроек</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<DropListButton>true</DropListButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ИмяНастроекКонтекстноеМеню" id="49"/>
+					<ExtendedTooltip name="ИмяНастроекРасширеннаяПодсказка" id="50"/>
+					<Events>
+						<Event name="OnChange">ИмяНастроекПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ИмяВнешнихНаборовДанных" id="51">
+					<DataPath>ИмяВнешнихНаборовДанных</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<DropListButton>true</DropListButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ИмяВнешнихНаборовДанныхКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="ИмяВнешнихНаборовДанныхРасширеннаяПодсказка" id="53"/>
+					<Events>
+						<Event name="OnChange">ИмяВнешнихНаборовДанныхПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ИмяМенеджераВременныхТаблиц" id="54">
+					<DataPath>ИмяМенеджераВременныхТаблиц</DataPath>
+					<TitleLocation>Left</TitleLocation>
+					<DropListButton>true</DropListButton>
+					<ClearButton>true</ClearButton>
+					<ContextMenu name="ИмяМенеджераВременныхТаблицКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="ИмяМенеджераВременныхТаблицРасширеннаяПодсказка" id="56"/>
+					<Events>
+						<Event name="OnChange">ИмяМенеджераВременныхТаблицПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<InputField name="Путь" id="14">
+			<DataPath>Путь</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<ChoiceButton>true</ChoiceButton>
+			<ClearButton>true</ClearButton>
+			<AutoMarkIncomplete>true</AutoMarkIncomplete>
+			<ContextMenu name="ПутьКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ПутьРасширеннаяПодсказка" id="16"/>
+			<Events>
+				<Event name="OnChange">ПутьПриИзменении</Event>
+				<Event name="StartChoice">ПутьНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<InputField name="Имя" id="11">
+			<DataPath>Имя</DataPath>
+			<TitleLocation>Left</TitleLocation>
+			<ClearButton>true</ClearButton>
+			<ContextMenu name="ИмяКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="ИмяРасширеннаяПодсказка" id="13"/>
+			<Events>
+				<Event name="OnChange">ИмяПриИзменении</Event>
+			</Events>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_КонсольРазработчика</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="Результат" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Результат</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Result</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СохранятьВ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранять в</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save to</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>СохранятьВ</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Имя" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>50</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Имя</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Путь" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Путь</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Path</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Путь</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяОбъектаЗапрос" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Объект</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Object</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяОбъектаЗапрос</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="КодЯзыкаПрограммирования" id="7">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Тип" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тип</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Type</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>Тип</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяСхемы" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Схема</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Schema</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяСхемы</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяНастроек" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяНастроек</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяВнешнихНаборовДанных" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внешние наборы
+данных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>External data sets</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяВнешнихНаборовДанных</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяМенеджераВременныхТаблиц" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер временных таблиц</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Temporary table manager</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяМенеджераВременныхТаблиц</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КопироватьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать и закрыть</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy &amp;&amp; close</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать строку отладки и закрыть</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy the debug line and close</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_КопироватьВБуферОбмена</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>КопироватьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

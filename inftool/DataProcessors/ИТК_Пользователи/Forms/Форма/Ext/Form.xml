@@ -1,0 +1,2153 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаВидеоинструкция" id="431">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.Видеоинструкция</CommandName>
+				<ExtendedTooltip name="ФормаВидеоинструкцияРасширеннаяПодсказка" id="432"/>
+			</Button>
+			<Button name="ФормаИзменитьФорму" id="429">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="430"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Pages name="Страницы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Pages</v8:content>
+				</v8:item>
+			</Title>
+			<PagesRepresentation>TabsOnTop</PagesRepresentation>
+			<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="8"/>
+			<Events>
+				<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+			</Events>
+			<ChildItems>
+				<Page name="СтраницаПользователи" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Users</v8:content>
+						</v8:item>
+					</Title>
+					<TitleDataPath>КоличествоПользователей</TitleDataPath>
+					<ExtendedTooltip name="СтраницаПользователиРасширеннаяПодсказка" id="10"/>
+					<ChildItems>
+						<UsualGroup name="ГруппаПользователиИБ" id="224">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Пользователи ИБ</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>DB users</v8:content>
+								</v8:item>
+							</Title>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="ГруппаПользователиИБРасширеннаяПодсказка" id="225"/>
+							<ChildItems>
+								<SpreadSheetDocumentField name="ИдетПолучениеПользователейТабличныйДокумент" id="27">
+									<DataPath>ИдетПолучениеПользователейТабличныйДокумент</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ИдетПолучениеПользователейТабличныйДокументКонтекстноеМеню" id="28"/>
+									<ExtendedTooltip name="ИдетПолучениеПользователейТабличныйДокументРасширеннаяПодсказка" id="29"/>
+								</SpreadSheetDocumentField>
+								<Table name="ПользователиИБ" id="11">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Height>15</Height>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<FileDragMode>AsFile</FileDragMode>
+									<DataPath>ПользователиИБ</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ПользователиИБКонтекстноеМеню" id="12">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<Button name="ПользователиИБКонтекстноеМенюЗапуститьПодПользователем" id="62">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗапуститьПодПользователем</CommandName>
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюЗапуститьПодПользователемРасширеннаяПодсказка" id="63"/>
+											</Button>
+											<Button name="ПользователиИБКонтекстноеМенюЗапуститьПодПользователемСНастройками" id="303">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗапуститьПодПользователемСНастройками</CommandName>
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюЗапуститьПодПользователемСНастройкамиРасширеннаяПодсказка" id="304"/>
+											</Button>
+											<ButtonGroup name="ПользователиИБКонтекстноеМенюГруппа1" id="58">
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюГруппа1РасширеннаяПодсказка" id="59"/>
+												<ChildItems>
+													<Button name="ПользователиИБКонтекстноеМенюЖурналРегистрацииПоПользователю" id="46">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЖурналРегистрацииПоПользователю</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюЖурналРегистрацииПоПользователюРасширеннаяПодсказка" id="47"/>
+													</Button>
+													<Button name="ПользователиИБКонтекстноеМеню_ОткрытьПользователяБСП" id="273">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Пользователи_ОткрытьПользователяБСП</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМеню_ОткрытьПользователяБСПРасширеннаяПодсказка" id="274"/>
+													</Button>
+													<Button name="ПользователиИБКонтекстноеМеню_НастройкиПользователей" id="297">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.Пользователи_НастройкиПользователей</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМеню_НастройкиПользователейРасширеннаяПодсказка" id="298"/>
+													</Button>
+													<ButtonGroup name="ПользователиИБКонтекстноеМенюГруппаИзбранное" id="189">
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюГруппаИзбранноеРасширеннаяПодсказка" id="190"/>
+													</ButtonGroup>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ПользователиИБКонтекстноеМенюОбновить" id="305">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Обновить</CommandName>
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюОбновитьРасширеннаяПодсказка" id="306"/>
+											</Button>
+											<ButtonGroup name="ПользователиИБКонтекстноеМенюГруппа2" id="56">
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюГруппа2РасширеннаяПодсказка" id="57"/>
+												<ChildItems>
+													<Button name="ПользователиИБКонтекстноеМенюКопироватьВБуферОбмена" id="50">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.CopyToClipboard</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="51"/>
+													</Button>
+													<Button name="ПользователиИБКонтекстноеМенюВыделитьВсе" id="52">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.SelectAll</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюВыделитьВсеРасширеннаяПодсказка" id="53"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="ПользователиИБКонтекстноеМенюГруппа3" id="162">
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюГруппа3РасширеннаяПодсказка" id="163"/>
+												<ChildItems>
+													<Button name="ПользователиИБКонтекстноеМенюПоискПоТекущемуЗначению" id="307">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.FindByCurrentValue</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="308"/>
+													</Button>
+													<Button name="ПользователиИБКонтекстноеМенюНайти" id="309">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.Find</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюНайтиРасширеннаяПодсказка" id="310"/>
+													</Button>
+													<Button name="ПользователиИБКонтекстноеМенюОтменитьПоиск" id="311">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.CancelSearch</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="312"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="ПользователиИБКонтекстноеМенюГруппаОтбор" id="315">
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюГруппаОтборРасширеннаяПодсказка" id="316"/>
+												<ChildItems>
+													<Button name="ПользователиИБКонтекстноеМенюОтображатьОтключенных" id="317">
+														<Type>CommandBarButton</Type>
+														<Check>true</Check>
+														<CommandName>Form.Command.ОтображатьОтключенных</CommandName>
+														<ExtendedTooltip name="ПользователиИБКонтекстноеМенюОтображатьОтключенныхРасширеннаяПодсказка" id="318"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ПользователиИБКонтекстноеМенюВывестиСписок" id="313">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ПользователиИБ.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="ПользователиИБКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="314"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="ПользователиИБКоманднаяПанель" id="13">
+										<ChildItems>
+											<ButtonGroup name="ПользователиИБЗапускПодПользователем" id="267">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Запуск под пользователем</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Run as user</v8:content>
+													</v8:item>
+												</Title>
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="ПользователиИБЗапускПодПользователемРасширеннаяПодсказка" id="268"/>
+												<ChildItems>
+													<Button name="ПользователиИБЗапуститьПодПользователем" id="60">
+														<Type>CommandBarButton</Type>
+														<DefaultButton>true</DefaultButton>
+														<CommandName>Form.Command.ЗапуститьПодПользователем</CommandName>
+														<ExtendedTooltip name="ПользователиИБЗапуститьПодПользователемРасширеннаяПодсказка" id="61"/>
+													</Button>
+													<Button name="ПользователиИБЗапуститьПодПользователемСНастройками" id="259">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЗапуститьПодПользователемСНастройками</CommandName>
+														<ExtendedTooltip name="ПользователиИБЗапуститьПодПользователемСНастройкамиРасширеннаяПодсказка" id="260"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ПользователиИБЖурналРегистрацииПоПользователю" id="44">
+												<Type>CommandBarButton</Type>
+												<Representation>Picture</Representation>
+												<CommandName>Form.Command.ЖурналРегистрацииПоПользователю</CommandName>
+												<ExtendedTooltip name="ПользователиИБЖурналРегистрацииПоПользователюРасширеннаяПодсказка" id="45"/>
+											</Button>
+											<Button name="ПользователиИБПользователи_НастройкиПользователей" id="293">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Пользователи_НастройкиПользователей</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПользователиИБПользователи_НастройкиПользователейРасширеннаяПодсказка" id="294"/>
+											</Button>
+											<Button name="ПользователиИБПользователи_ОткрытьПользователяБСП" id="271">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Пользователи_ОткрытьПользователяБСП</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПользователиИБПользователи_ОткрытьПользователяБСПРасширеннаяПодсказка" id="272"/>
+											</Button>
+											<ButtonGroup name="ПользователиИБГруппаПоиск" id="42">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Поиск</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Find</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ПользователиИБГруппаПоискРасширеннаяПодсказка" id="43"/>
+												<ChildItems>
+													<Button name="ПользователиИБПоискПоТекущемуЗначению" id="301">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.FindByCurrentValue</CommandName>
+														<ExtendedTooltip name="ПользователиИБПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="302"/>
+													</Button>
+													<Button name="ПользователиИБНайти" id="36">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.Find</CommandName>
+														<ExtendedTooltip name="ПользователиИБНайтиРасширеннаяПодсказка" id="37"/>
+													</Button>
+													<Button name="ПользователиИБОтменитьПоиск" id="38">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Item.ПользователиИБ.StandardCommand.CancelSearch</CommandName>
+														<ExtendedTooltip name="ПользователиИБОтменитьПоискРасширеннаяПодсказка" id="39"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ПользователиИБОбновить" id="1">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Обновить</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ПользователиИБОбновитьРасширеннаяПодсказка" id="2"/>
+											</Button>
+											<ButtonGroup name="ПользователиИБГруппаОтбор" id="185">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отбор (пользователи)</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Selection (users)</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ПользователиИБГруппаОтборРасширеннаяПодсказка" id="186"/>
+												<ChildItems>
+													<Button name="ПользователиИБОтображатьОтключенных" id="40">
+														<Type>CommandBarButton</Type>
+														<Check>true</Check>
+														<CommandName>Form.Command.ОтображатьОтключенных</CommandName>
+														<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ПользователиИБОтображатьОтключенныхРасширеннаяПодсказка" id="41"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ПользователиИБВидеоинструкция" id="335">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.Видеоинструкция</CommandName>
+												<ExtendedTooltip name="ПользователиИБВидеоинструкцияРасширеннаяПодсказка" id="336"/>
+											</Button>
+											<Button name="ПользователиИБВывестиСписок" id="100">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ПользователиИБ.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="ПользователиИБВывестиСписокРасширеннаяПодсказка" id="101"/>
+											</Button>
+											<ButtonGroup name="ФормаГруппаИзменитьФорму1" id="3">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Изменить форму</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Change form</v8:content>
+													</v8:item>
+												</Title>
+												<ToolTip>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Форма группа изменить форму1</v8:content>
+													</v8:item>
+												</ToolTip>
+												<ExtendedTooltip name="ФормаГруппаИзменитьФорму1РасширеннаяПодсказка" id="4"/>
+												<ChildItems>
+													<Button name="ФормаИзменитьФорму1" id="5">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Изменить форму...</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Change form...</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ФормаИзменитьФорму1РасширеннаяПодсказка" id="6"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ПользователиИБРасширеннаяПодсказка" id="14"/>
+									<SearchStringAddition name="ПользователиИБСтрокаПоиска" id="15">
+										<AdditionSource>
+											<Item>ПользователиИБ</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПользователиИБСтрокаПоискаКонтекстноеМеню" id="16"/>
+										<ExtendedTooltip name="ПользователиИБСтрокаПоискаРасширеннаяПодсказка" id="17"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ПользователиИБСостояниеПросмотра" id="18">
+										<AdditionSource>
+											<Item>ПользователиИБ</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ПользователиИБСостояниеПросмотраКонтекстноеМеню" id="19"/>
+										<ExtendedTooltip name="ПользователиИБСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ПользователиИБУправлениеПоиском" id="21">
+										<AdditionSource>
+											<Item>ПользователиИБ</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ПользователиИБУправлениеПоискомКонтекстноеМеню" id="22"/>
+										<ExtendedTooltip name="ПользователиИБУправлениеПоискомРасширеннаяПодсказка" id="23"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ПользователиИБВыбор</Event>
+										<Event name="OnActivateRow">ПользователиИБПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ПользователиИБПользователь" id="30">
+											<DataPath>ПользователиИБ.Пользователь</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПользователиИБПользовательКонтекстноеМеню" id="31"/>
+											<ExtendedTooltip name="ПользователиИБПользовательРасширеннаяПодсказка" id="32"/>
+										</InputField>
+										<InputField name="ПользователиИБПолноеИмя" id="33">
+											<DataPath>ПользователиИБ.ПолноеИмя</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПользователиИБПолноеИмяКонтекстноеМеню" id="34"/>
+											<ExtendedTooltip name="ПользователиИБПолноеИмяРасширеннаяПодсказка" id="35"/>
+										</InputField>
+										<LabelField name="ПользователиИБУникальныйИдентификатор" id="130">
+											<DataPath>ПользователиИБ.УникальныйИдентификатор</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПользователиИБУникальныйИдентификаторКонтекстноеМеню" id="131"/>
+											<ExtendedTooltip name="ПользователиИБУникальныйИдентификаторРасширеннаяПодсказка" id="132"/>
+										</LabelField>
+										<CheckBoxField name="ПользователиИБПоказыватьВСпискеВыбора" id="141">
+											<DataPath>ПользователиИБ.ПоказыватьВСпискеВыбора</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБПоказыватьВСпискеВыбораКонтекстноеМеню" id="142"/>
+											<ExtendedTooltip name="ПользователиИБПоказыватьВСпискеВыбораРасширеннаяПодсказка" id="143"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБЗащитаОтОпасныхДействий" id="156">
+											<DataPath>ПользователиИБ.ЗащитаОтОпасныхДействий</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБЗащитаОтОпасныхДействийКонтекстноеМеню" id="157"/>
+											<ExtendedTooltip name="ПользователиИБЗащитаОтОпасныхДействийРасширеннаяПодсказка" id="158"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБЗапрещеноИзменятьПароль" id="153">
+											<DataPath>ПользователиИБ.ЗапрещеноИзменятьПароль</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБЗапрещеноИзменятьПарольКонтекстноеМеню" id="154"/>
+											<ExtendedTooltip name="ПользователиИБЗапрещеноИзменятьПарольРасширеннаяПодсказка" id="155"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБЗапрещеноВосстанавливатьПароль" id="171">
+											<DataPath>ПользователиИБ.ЗапрещеноВосстанавливатьПароль</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБЗапрещеноВосстанавливатьПарольКонтекстноеМеню" id="172"/>
+											<ExtendedTooltip name="ПользователиИБЗапрещеноВосстанавливатьПарольРасширеннаяПодсказка" id="173"/>
+										</CheckBoxField>
+										<InputField name="ПользователиИБРежимЗапуска" id="159">
+											<DataPath>ПользователиИБ.РежимЗапуска</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<ContextMenu name="ПользователиИБРежимЗапускаКонтекстноеМеню" id="160"/>
+											<ExtendedTooltip name="ПользователиИБРежимЗапускаРасширеннаяПодсказка" id="161"/>
+										</InputField>
+										<InputField name="ПользователиИБЯзык" id="150">
+											<DataPath>ПользователиИБ.Язык</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<ContextMenu name="ПользователиИБЯзыкКонтекстноеМеню" id="151"/>
+											<ExtendedTooltip name="ПользователиИБЯзыкРасширеннаяПодсказка" id="152"/>
+										</InputField>
+										<InputField name="ПользователиИБАдресЭлектроннойПочты" id="168">
+											<DataPath>ПользователиИБ.АдресЭлектроннойПочты</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ПользователиИБАдресЭлектроннойПочтыКонтекстноеМеню" id="169"/>
+											<ExtendedTooltip name="ПользователиИБАдресЭлектроннойПочтыРасширеннаяПодсказка" id="170"/>
+										</InputField>
+										<CheckBoxField name="ПользователиИБАутентификацияСтандартная" id="135">
+											<DataPath>ПользователиИБ.АутентификацияСтандартная</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБАутентификацияСтандартнаяКонтекстноеМеню" id="136"/>
+											<ExtendedTooltip name="ПользователиИБАутентификацияСтандартнаяРасширеннаяПодсказка" id="137"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБАутентификацияOpenID" id="138">
+											<DataPath>ПользователиИБ.АутентификацияOpenID</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБАутентификацияOpenIDКонтекстноеМеню" id="139"/>
+											<ExtendedTooltip name="ПользователиИБАутентификацияOpenIDРасширеннаяПодсказка" id="140"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБАутентификацияОС" id="144">
+											<DataPath>ПользователиИБ.АутентификацияОС</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБАутентификацияОСКонтекстноеМеню" id="145"/>
+											<ExtendedTooltip name="ПользователиИБАутентификацияОСРасширеннаяПодсказка" id="146"/>
+										</CheckBoxField>
+										<InputField name="ПользователиИБПользовательОС" id="147">
+											<DataPath>ПользователиИБ.ПользовательОС</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<ContextMenu name="ПользователиИБПользовательОСКонтекстноеМеню" id="148"/>
+											<ExtendedTooltip name="ПользователиИБПользовательОСРасширеннаяПодсказка" id="149"/>
+										</InputField>
+										<CheckBoxField name="ПользователиИБАутентификацияOpenIDConnect" id="174">
+											<DataPath>ПользователиИБ.АутентификацияOpenIDConnect</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБАутентификацияOpenIDConnectКонтекстноеМеню" id="175"/>
+											<ExtendedTooltip name="ПользователиИБАутентификацияOpenIDConnectРасширеннаяПодсказка" id="176"/>
+										</CheckBoxField>
+										<CheckBoxField name="ПользователиИБАутентификацияТокеномДоступа" id="177">
+											<DataPath>ПользователиИБ.АутентификацияТокеномДоступа</DataPath>
+											<UserVisible>
+												<xr:Common>false</xr:Common>
+											</UserVisible>
+											<EditMode>EnterOnInput</EditMode>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ПользователиИБАутентификацияТокеномДоступаКонтекстноеМеню" id="178"/>
+											<ExtendedTooltip name="ПользователиИБАутентификацияТокеномДоступаРасширеннаяПодсказка" id="179"/>
+										</CheckBoxField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="ГруппаВнешниеПользователи" id="191">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Внешние пользователи</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>External users</v8:content>
+								</v8:item>
+							</Title>
+							<Group>AlwaysHorizontal</Group>
+							<Behavior>Collapsible</Behavior>
+							<Collapsed>true</Collapsed>
+							<ControlRepresentation>Picture</ControlRepresentation>
+							<TitleDataPath>КоличествоВнешнихПользователей</TitleDataPath>
+							<ExtendedTooltip name="ГруппаВнешниеПользователиРасширеннаяПодсказка" id="192"/>
+							<ChildItems>
+								<SpreadSheetDocumentField name="ИдетПолучениеВнешнихПользователейТабличныйДокумент" id="226">
+									<DataPath>ИдетПолучениеВнешнихПользователейТабличныйДокумент</DataPath>
+									<Visible>false</Visible>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="ИдетПолучениеВнешнихПользователейТабличныйДокументКонтекстноеМеню" id="227"/>
+									<ExtendedTooltip name="ИдетПолучениеВнешнихПользователейТабличныйДокументРасширеннаяПодсказка" id="228"/>
+								</SpreadSheetDocumentField>
+								<Table name="ВнешниеПользователи" id="193">
+									<Representation>List</Representation>
+									<ReadOnly>true</ReadOnly>
+									<ChangeRowSet>false</ChangeRowSet>
+									<ChangeRowOrder>false</ChangeRowOrder>
+									<Height>5</Height>
+									<HorizontalLines>false</HorizontalLines>
+									<VerticalLines>false</VerticalLines>
+									<AutoInsertNewRow>true</AutoInsertNewRow>
+									<DataPath>ВнешниеПользователи</DataPath>
+									<CommandSet>
+										<ExcludedCommand>Add</ExcludedCommand>
+										<ExcludedCommand>CancelSearch</ExcludedCommand>
+										<ExcludedCommand>Change</ExcludedCommand>
+										<ExcludedCommand>Copy</ExcludedCommand>
+										<ExcludedCommand>CopyToClipboard</ExcludedCommand>
+										<ExcludedCommand>Delete</ExcludedCommand>
+										<ExcludedCommand>EndEdit</ExcludedCommand>
+										<ExcludedCommand>Find</ExcludedCommand>
+										<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+										<ExcludedCommand>MoveDown</ExcludedCommand>
+										<ExcludedCommand>MoveUp</ExcludedCommand>
+										<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+										<ExcludedCommand>SearchHistory</ExcludedCommand>
+										<ExcludedCommand>SelectAll</ExcludedCommand>
+										<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+										<ExcludedCommand>ShowRowRearrangement</ExcludedCommand>
+										<ExcludedCommand>SortListAsc</ExcludedCommand>
+										<ExcludedCommand>SortListDesc</ExcludedCommand>
+									</CommandSet>
+									<RowFilter xsi:nil="true"/>
+									<ContextMenu name="ВнешниеПользователиКонтекстноеМеню" id="194">
+										<Autofill>false</Autofill>
+										<ChildItems>
+											<ButtonGroup name="ВнешниеПользователиКонтекстноеМенюГруппаДействия" id="251">
+												<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюГруппаДействияРасширеннаяПодсказка" id="252"/>
+												<ChildItems>
+													<Button name="ВнешниеПользователиКонтекстноеМенюЗапуститьПодВнешнимПользователем" id="253">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЗапуститьПодВнешнимПользователем</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюЗапуститьПодВнешнимПользователемРасширеннаяПодсказка" id="254"/>
+													</Button>
+													<Button name="ВнешниеПользователиКонтекстноеМенюЖурналРегистрацииПоВнешнемуПользователю" id="255">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЖурналРегистрацииПоВнешнемуПользователю</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюЖурналРегистрацииПоВнешнемуПользователюРасширеннаяПодсказка" id="256"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<ButtonGroup name="ВнешниеПользователиКонтекстноеМенюГруппаОткрыть" id="239">
+												<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюГруппаОткрытьРасширеннаяПодсказка" id="240"/>
+												<ChildItems>
+													<Button name="ВнешниеПользователиКонтекстноеМенюОткрытьВнешнегоПользователя" id="241">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ОткрытьВнешнегоПользователя</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюОткрытьВнешнегоПользователяРасширеннаяПодсказка" id="242"/>
+													</Button>
+													<Button name="ВнешниеПользователиКонтекстноеМенюОткрытьОбъектАвторизацииВнешнегоПользователя" id="243">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ОткрытьОбъектАвторизацииВнешнегоПользователя</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюОткрытьОбъектАвторизацииВнешнегоПользователяРасширеннаяПодсказка" id="244"/>
+													</Button>
+													<Button name="ВнешниеПользователиКонтекстноеМенюОткрытьПользователиИБВнешнегоПользователя" id="245">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ОткрытьПользователиИБВнешнегоПользователя</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюОткрытьПользователиИБВнешнегоПользователяРасширеннаяПодсказка" id="246"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ВнешниеПользователиКонтекстноеМенюВывестиСписок" id="237">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ВнешниеПользователи.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="ВнешниеПользователиКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="238"/>
+											</Button>
+										</ChildItems>
+									</ContextMenu>
+									<AutoCommandBar name="ВнешниеПользователиКоманднаяПанель" id="195">
+										<ChildItems>
+											<Button name="ВнешниеПользователиОбновитьВнешнихПользователей" id="229">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьВнешнихПользователей</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="ВнешниеПользователиОбновитьВнешнихПользователейРасширеннаяПодсказка" id="230"/>
+											</Button>
+											<ButtonGroup name="ВнешниеПользователиГруппаОтбор" id="235">
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Отбор (внешние пользователи)</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Selection (external users)</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ВнешниеПользователиГруппаОтборРасширеннаяПодсказка" id="236"/>
+												<ChildItems>
+													<Button name="ВнешниеПользователиОтображатьНедействительныхВнешнихПользователей" id="233">
+														<Type>CommandBarButton</Type>
+														<Check>true</Check>
+														<CommandName>Form.Command.ОтображатьНедействительныхВнешнихПользователей</CommandName>
+														<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+														<ExtendedTooltip name="ВнешниеПользователиОтображатьНедействительныхВнешнихПользователейРасширеннаяПодсказка" id="234"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ВнешниеПользователиВывестиСписок" id="231">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.ВнешниеПользователи.StandardCommand.OutputList</CommandName>
+												<ExtendedTooltip name="ВнешниеПользователиВывестиСписокРасширеннаяПодсказка" id="232"/>
+											</Button>
+											<ButtonGroup name="ВнешниеПользователиГруппаКнопокЗапуск" id="269">
+												<Representation>Compact</Representation>
+												<ExtendedTooltip name="ВнешниеПользователиГруппаКнопокЗапускРасширеннаяПодсказка" id="270"/>
+												<ChildItems>
+													<Button name="ВнешниеПользователиЗапуститьПодВнешнимПользователем" id="247">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЗапуститьПодВнешнимПользователем</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиЗапуститьПодВнешнимПользователемРасширеннаяПодсказка" id="248"/>
+													</Button>
+													<Button name="ВнешниеПользователиЗапуститьПодВнешнимПользователемСНастройками" id="263">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ЗапуститьПодВнешнимПользователемСНастройками</CommandName>
+														<ExtendedTooltip name="ВнешниеПользователиЗапуститьПодВнешнимПользователемСНастройкамиРасширеннаяПодсказка" id="264"/>
+													</Button>
+												</ChildItems>
+											</ButtonGroup>
+											<Button name="ВнешниеПользователиЖурналРегистрацииПоВнешнемуПользователю" id="257">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЖурналРегистрацииПоВнешнемуПользователю</CommandName>
+												<ExtendedTooltip name="ВнешниеПользователиЖурналРегистрацииПоВнешнемуПользователюРасширеннаяПодсказка" id="258"/>
+											</Button>
+										</ChildItems>
+									</AutoCommandBar>
+									<ExtendedTooltip name="ВнешниеПользователиРасширеннаяПодсказка" id="196"/>
+									<SearchStringAddition name="ВнешниеПользователиСтрокаПоиска" id="197">
+										<AdditionSource>
+											<Item>ВнешниеПользователи</Item>
+											<Type>SearchStringRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВнешниеПользователиСтрокаПоискаКонтекстноеМеню" id="198"/>
+										<ExtendedTooltip name="ВнешниеПользователиСтрокаПоискаРасширеннаяПодсказка" id="199"/>
+									</SearchStringAddition>
+									<ViewStatusAddition name="ВнешниеПользователиСостояниеПросмотра" id="200">
+										<AdditionSource>
+											<Item>ВнешниеПользователи</Item>
+											<Type>ViewStatusRepresentation</Type>
+										</AdditionSource>
+										<ContextMenu name="ВнешниеПользователиСостояниеПросмотраКонтекстноеМеню" id="201"/>
+										<ExtendedTooltip name="ВнешниеПользователиСостояниеПросмотраРасширеннаяПодсказка" id="202"/>
+									</ViewStatusAddition>
+									<SearchControlAddition name="ВнешниеПользователиУправлениеПоиском" id="203">
+										<AdditionSource>
+											<Item>ВнешниеПользователи</Item>
+											<Type>SearchControl</Type>
+										</AdditionSource>
+										<ContextMenu name="ВнешниеПользователиУправлениеПоискомКонтекстноеМеню" id="204"/>
+										<ExtendedTooltip name="ВнешниеПользователиУправлениеПоискомРасширеннаяПодсказка" id="205"/>
+									</SearchControlAddition>
+									<Events>
+										<Event name="Selection">ВнешниеПользователиВыбор</Event>
+										<Event name="OnActivateRow">ВнешниеПользователиПриАктивизацииСтроки</Event>
+									</Events>
+									<ChildItems>
+										<InputField name="ВнешниеПользователиОбъектАвторизации" id="206">
+											<DataPath>ВнешниеПользователи.ОбъектАвторизации</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВнешниеПользователиОбъектАвторизацииКонтекстноеМеню" id="207"/>
+											<ExtendedTooltip name="ВнешниеПользователиОбъектАвторизацииРасширеннаяПодсказка" id="208"/>
+										</InputField>
+										<InputField name="ВнешниеПользователиТипОбъекта" id="209">
+											<DataPath>ВнешниеПользователи.ТипОбъекта</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВнешниеПользователиТипОбъектаКонтекстноеМеню" id="210"/>
+											<ExtendedTooltip name="ВнешниеПользователиТипОбъектаРасширеннаяПодсказка" id="211"/>
+										</InputField>
+										<InputField name="ВнешниеПользователиКомментарий" id="221">
+											<DataPath>ВнешниеПользователи.Комментарий</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ВнешниеПользователиКомментарийКонтекстноеМеню" id="222"/>
+											<ExtendedTooltip name="ВнешниеПользователиКомментарийРасширеннаяПодсказка" id="223"/>
+										</InputField>
+									</ChildItems>
+								</Table>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</Page>
+				<Page name="СтраницаАктивныеПользователи" id="64">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Активные пользователи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Active users</v8:content>
+						</v8:item>
+					</Title>
+					<Picture>
+						<xr:Ref>StdPicture.ActiveUsers</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</Picture>
+					<TitleDataPath>КоличествоАктивныхПользователей</TitleDataPath>
+					<ExtendedTooltip name="СтраницаАктивныеПользователиРасширеннаяПодсказка" id="65"/>
+					<ChildItems>
+						<SpreadSheetDocumentField name="ИдетПолучениеАктивныхПользователейТабличныйДокумент" id="66">
+							<DataPath>ИдетПолучениеАктивныхПользователейТабличныйДокумент</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ИдетПолучениеАктивныхПользователейТабличныйДокументКонтекстноеМеню" id="67"/>
+							<ExtendedTooltip name="ИдетПолучениеАктивныхПользователейТабличныйДокументРасширеннаяПодсказка" id="68"/>
+						</SpreadSheetDocumentField>
+						<Table name="АктивныеПользователи" id="69">
+							<Representation>List</Representation>
+							<ReadOnly>true</ReadOnly>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<HorizontalLines>false</HorizontalLines>
+							<VerticalLines>false</VerticalLines>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>АктивныеПользователи</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>EndEdit</ExcludedCommand>
+								<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+							</CommandSet>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="АктивныеПользователиКонтекстноеМеню" id="70">
+								<Autofill>false</Autofill>
+								<ChildItems>
+									<ButtonGroup name="АктивныеПользователиКонтекстноеМенюГруппаКомандСтрок" id="120">
+										<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюГруппаКомандСтрокРасширеннаяПодсказка" id="121"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиКонтекстноеМенюЖурналРегистрацииПоАктивномуПользователю" id="122">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЖурналРегистрацииПоАктивномуПользователю</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюЖурналРегистрацииПоАктивномуПользователюРасширеннаяПодсказка" id="123"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМенюЗавершитьСеансы" id="283">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗавершитьСеансы</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюЗавершитьСеансыРасширеннаяПодсказка" id="284"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМеню_ОткрытьПользователяБСП" id="277">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.АктивныеПользователи_ОткрытьПользователяБСП</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМеню_ОткрытьПользователяБСПРасширеннаяПодсказка" id="278"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМеню_НастройкиПользователей" id="299">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.АктивныеПользователи_НастройкиПользователей</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМеню_НастройкиПользователейРасширеннаяПодсказка" id="300"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="АктивныеПользователиКонтекстноеМенюГруппаПоиск" id="321">
+										<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюГруппаПоискРасширеннаяПодсказка" id="322"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиКонтекстноеМенюПоискПоТекущемуЗначению" id="323">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.FindByCurrentValue</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="324"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМенюНайти" id="325">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.Find</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюНайтиРасширеннаяПодсказка" id="326"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМенюОтменитьПоиск" id="327">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.CancelSearch</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="328"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="АктивныеПользователиКонтекстноеМенюГруппаКомандТаблицы" id="291">
+										<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюГруппаКомандТаблицыРасширеннаяПодсказка" id="292"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиКонтекстноеМенюОбновитьАктивныхПользователей" id="279">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьАктивныхПользователей</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюОбновитьАктивныхПользователейРасширеннаяПодсказка" id="280"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМенюБлокировкаРаботыПользователей" id="319">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.БлокировкаРаботыПользователей</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюБлокировкаРаботыПользователейРасширеннаяПодсказка" id="320"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="АктивныеПользователиКонтекстноеМенюГруппаОбщихКоманд" id="118">
+										<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюГруппаОбщихКомандРасширеннаяПодсказка" id="119"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиКонтекстноеМенюКопироватьВБуферОбмена" id="114">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.CopyToClipboard</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюКопироватьВБуферОбменаРасширеннаяПодсказка" id="115"/>
+											</Button>
+											<Button name="АктивныеПользователиКонтекстноеМенюВыделитьВсе" id="116">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.SelectAll</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюВыделитьВсеРасширеннаяПодсказка" id="117"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="АктивныеПользователиКонтекстноеМенюВывестиСписок" id="329">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.АктивныеПользователи.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="АктивныеПользователиКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="330"/>
+									</Button>
+								</ChildItems>
+							</ContextMenu>
+							<AutoCommandBar name="АктивныеПользователиКоманднаяПанель" id="71">
+								<ChildItems>
+									<ButtonGroup name="АктивныеПользователиГруппаКнопокКомандыСтрок" id="287">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Активные пользователи группа кнопок команды строк</v8:content>
+											</v8:item>
+										</Title>
+										<ToolTip>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Активные пользователи группа кнопок команды строк</v8:content>
+											</v8:item>
+										</ToolTip>
+										<ExtendedTooltip name="АктивныеПользователиГруппаКнопокКомандыСтрокРасширеннаяПодсказка" id="288"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиЗавершитьСеансы" id="289">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЗавершитьСеансы</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АктивныеПользователиЗавершитьСеансыРасширеннаяПодсказка" id="290"/>
+											</Button>
+											<Button name="АктивныеПользователиЖурналРегистрацииПоАктивномуПользователю" id="124">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ЖурналРегистрацииПоАктивномуПользователю</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиЖурналРегистрацииПоАктивномуПользователюРасширеннаяПодсказка" id="125"/>
+											</Button>
+											<Button name="АктивныеПользователи_ОткрытьПользователяБСП" id="275">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.АктивныеПользователи_ОткрытьПользователяБСП</CommandName>
+												<LocationInCommandBar>InCommandBarAndInAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АктивныеПользователи_ОткрытьПользователяБСПРасширеннаяПодсказка" id="276"/>
+											</Button>
+											<Button name="АктивныеПользователиАктивныеПользователи_НастройкиПользователей" id="295">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.АктивныеПользователи_НастройкиПользователей</CommandName>
+												<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+												<ExtendedTooltip name="АктивныеПользователиАктивныеПользователи_НастройкиПользователейРасширеннаяПодсказка" id="296"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="АктивныеПользователиГруппаПоиск" id="112">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Поиск</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Find</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="АктивныеПользователиГруппаПоискРасширеннаяПодсказка" id="113"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиПоискПоТекущемуЗначению" id="331">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.FindByCurrentValue</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="332"/>
+											</Button>
+											<Button name="АктивныеПользователиНайти" id="106">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.Find</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиНайтиРасширеннаяПодсказка" id="107"/>
+											</Button>
+											<Button name="АктивныеПользователиОтменитьПоиск" id="108">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Item.АктивныеПользователи.StandardCommand.CancelSearch</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиОтменитьПоискРасширеннаяПодсказка" id="109"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="АктивныеПользователиГруппаКнопокКомандыТаблицы" id="285">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Активные пользователи группа кнопок команды таблицы</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="АктивныеПользователиГруппаКнопокКомандыТаблицыРасширеннаяПодсказка" id="286"/>
+										<ChildItems>
+											<Button name="АктивныеПользователиОбновитьАктивныхПользователей" id="110">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОбновитьАктивныхПользователей</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиОбновитьАктивныхПользователейРасширеннаяПодсказка" id="111"/>
+											</Button>
+											<Button name="АктивныеПользователиБлокировкаРаботыПользователей" id="281">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.БлокировкаРаботыПользователей</CommandName>
+												<ExtendedTooltip name="АктивныеПользователиБлокировкаРаботыПользователейРасширеннаяПодсказка" id="282"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<Button name="АктивныеПользователиВывестиСписок" id="333">
+										<Type>CommandBarButton</Type>
+										<CommandName>Form.Item.АктивныеПользователи.StandardCommand.OutputList</CommandName>
+										<ExtendedTooltip name="АктивныеПользователиВывестиСписокРасширеннаяПодсказка" id="334"/>
+									</Button>
+									<ButtonGroup name="ФормаГруппаИзменитьФорму2" id="102">
+										<Title>
+											<v8:item>
+												<v8:lang>ru</v8:lang>
+												<v8:content>Изменить форму</v8:content>
+											</v8:item>
+											<v8:item>
+												<v8:lang>en</v8:lang>
+												<v8:content>Change form</v8:content>
+											</v8:item>
+										</Title>
+										<ExtendedTooltip name="ФормаГруппаИзменитьФорму2РасширеннаяПодсказка" id="103"/>
+										<ChildItems>
+											<Button name="ФормаИзменитьФорму2" id="104">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+												<Title>
+													<v8:item>
+														<v8:lang>ru</v8:lang>
+														<v8:content>Изменить форму...</v8:content>
+													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Change form...</v8:content>
+													</v8:item>
+												</Title>
+												<ExtendedTooltip name="ФормаИзменитьФорму2РасширеннаяПодсказка" id="105"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="АктивныеПользователиРасширеннаяПодсказка" id="72"/>
+							<SearchStringAddition name="АктивныеПользователиСтрокаПоиска" id="73">
+								<AdditionSource>
+									<Item>АктивныеПользователи</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивныеПользователиСтрокаПоискаКонтекстноеМеню" id="74"/>
+								<ExtendedTooltip name="АктивныеПользователиСтрокаПоискаРасширеннаяПодсказка" id="75"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="АктивныеПользователиСостояниеПросмотра" id="76">
+								<AdditionSource>
+									<Item>АктивныеПользователи</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивныеПользователиСостояниеПросмотраКонтекстноеМеню" id="77"/>
+								<ExtendedTooltip name="АктивныеПользователиСостояниеПросмотраРасширеннаяПодсказка" id="78"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="АктивныеПользователиУправлениеПоиском" id="79">
+								<AdditionSource>
+									<Item>АктивныеПользователи</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="АктивныеПользователиУправлениеПоискомКонтекстноеМеню" id="80"/>
+								<ExtendedTooltip name="АктивныеПользователиУправлениеПоискомРасширеннаяПодсказка" id="81"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">АктивныеПользователиВыбор</Event>
+								<Event name="OnActivateRow">АктивныеПользователиПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="АктивныеПользователиПользователь" id="82">
+									<DataPath>АктивныеПользователи.Пользователь</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиПользовательКонтекстноеМеню" id="83"/>
+									<ExtendedTooltip name="АктивныеПользователиПользовательРасширеннаяПодсказка" id="84"/>
+								</InputField>
+								<InputField name="АктивныеПользователиПриложение" id="85">
+									<DataPath>АктивныеПользователи.Приложение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиПриложениеКонтекстноеМеню" id="86"/>
+									<ExtendedTooltip name="АктивныеПользователиПриложениеРасширеннаяПодсказка" id="87"/>
+								</InputField>
+								<InputField name="АктивныеПользователиНачалоСеанса" id="88">
+									<DataPath>АктивныеПользователи.НачалоСеанса</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиНачалоСеансаКонтекстноеМеню" id="89"/>
+									<ExtendedTooltip name="АктивныеПользователиНачалоСеансаРасширеннаяПодсказка" id="90"/>
+								</InputField>
+								<InputField name="АктивныеПользователиКомпьютер" id="91">
+									<DataPath>АктивныеПользователи.Компьютер</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиКомпьютерКонтекстноеМеню" id="92"/>
+									<ExtendedTooltip name="АктивныеПользователиКомпьютерРасширеннаяПодсказка" id="93"/>
+								</InputField>
+								<InputField name="АктивныеПользователиНомерСеанса" id="94">
+									<DataPath>АктивныеПользователи.НомерСеанса</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиНомерСеансаКонтекстноеМеню" id="95"/>
+									<ExtendedTooltip name="АктивныеПользователиНомерСеансаРасширеннаяПодсказка" id="96"/>
+								</InputField>
+								<InputField name="АктивныеПользователиНомерСоединения" id="97">
+									<DataPath>АктивныеПользователи.НомерСоединения</DataPath>
+									<UserVisible>
+										<xr:Common>false</xr:Common>
+									</UserVisible>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="АктивныеПользователиНомерСоединенияКонтекстноеМеню" id="98"/>
+									<ExtendedTooltip name="АктивныеПользователиНомерСоединенияРасширеннаяПодсказка" id="99"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
+			</ChildItems>
+		</Pages>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_Пользователи</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="КоличествоПользователей" id="2">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПользователиИБ" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователи ИБ</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Users IB</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пользователь" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ПолноеИмя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>FullName</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Отключен" id="3">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="УникальныйИдентификатор" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уникальный идентификатор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АутентификацияСтандартная" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация стандартная</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Authentication standard</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АутентификацияOpenID" id="14">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация OpenID</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>OpenID authentication</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПоказыватьВСпискеВыбора" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Показывать в списке выбора</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Show in selection list</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АутентификацияОС" id="16">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация ОС</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>OS authentication</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ПользовательОС" id="17">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь ОС</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>OS user</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Язык" id="18">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Язык</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Language</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗапрещеноИзменятьПароль" id="19">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрещено изменять пароль</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>It is forbidden to change the password</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗащитаОтОпасныхДействий" id="20">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Защита от опасных действий</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Protection from hazardous activities</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="РежимЗапуска" id="21">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Режим запуска</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Start mode</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="АдресЭлектроннойПочты" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес электронной почты</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>E-mail address</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗапрещеноВосстанавливатьПароль" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Запрещено восстанавливать пароль</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Forbidden to recover password</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АутентификацияOpenIDConnect" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация OpenID Connect</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>OpenID connect authentication</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="АутентификацияТокеномДоступа" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Аутентификация токеном доступа</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Access token authentication</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ДлительнаяОперация" id="4">
+			<Type/>
+		</Attribute>
+		<Attribute name="ИдетПолучениеПользователейТабличныйДокумент" id="6">
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьОтключенных" id="7">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтображатьОтключенных</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДлительнаяОперацияАктивныеПользователи" id="8">
+			<Type/>
+		</Attribute>
+		<Attribute name="ИдетПолучениеАктивныхПользователейТабличныйДокумент" id="10">
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоАктивныхПользователей" id="11">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="АктивныеПользователи" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Активные пользователи</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Active users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пользователь" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Пользователь</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>User</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Приложение" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Приложение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Application</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>50</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НачалоСеанса" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Начало сеанса</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Session start</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="Компьютер" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Компьютер</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Computer</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерСеанса" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер сеанса</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Session number</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="НомерСоединения" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Номер соединения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Connection number</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>10</v8:Digits>
+							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+				<Column name="УникальныйИдентификатор" id="7">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Конфигуратор" id="8">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВидИнструмента" id="5">
+			<Type/>
+		</Attribute>
+		<Attribute name="ВнешниеПользователи" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Внешние пользователи</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>External users</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ОбъектАвторизации" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Object</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="ТипОбъекта" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="Ссылка" id="3">
+					<Type/>
+				</Column>
+				<Column name="Недействителен" id="4">
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИдентификаторПользователяИБ" id="5">
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Comment</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КоличествоВнешнихПользователей" id="13">
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДлительнаяОперацияВнешниеПользователи" id="14">
+			<Type/>
+		</Attribute>
+		<Attribute name="ИдетПолучениеВнешнихПользователейТабличныйДокумент" id="15">
+			<Type>
+				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуютсяВнешниеПользователи" id="16">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОтображатьНедействительныхВнешнихПользователей" id="17">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ОтображатьНедействительныхВнешнихПользователей</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Обновить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтображатьОтключенных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать отключенных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show disabled</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать отключенных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show disabled</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтображатьОтключенных</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЖурналРегистрацииПоПользователю" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Logbook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации по пользователю</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Log by user</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.EventLog</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЖурналРегистрацииПоПользователю</Action>
+			<AssociatedTableElementId xsi:type="xs:string">ПользователиИБ</AssociatedTableElementId>
+		</Command>
+		<Command name="ЗапуститьПодПользователем" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_Запуск1С</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьПодПользователем</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ПользователиИБ</AssociatedTableElementId>
+		</Command>
+		<Command name="ОбновитьАктивныхПользователей" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить активных пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh active users</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьАктивныхПользователей</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЖурналРегистрацииПоАктивномуПользователю" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Logbook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации по активному пользователю</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Log by active user</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.EventLog</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЖурналРегистрацииПоАктивномуПользователю</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОбновитьВнешнихПользователей" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ОбновитьВнешнихПользователей</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ОтображатьНедействительныхВнешнихПользователей" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать недействительных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show invalid</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтображатьНедействительныхВнешнихПользователей</Action>
+		</Command>
+		<Command name="ОткрытьВнешнегоПользователя" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьВнешнегоПользователя</Action>
+		</Command>
+		<Command name="ОткрытьОбъектАвторизацииВнешнегоПользователя" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть объект авторизации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open authorization object</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьОбъектАвторизацииВнешнегоПользователя</Action>
+		</Command>
+		<Command name="ОткрытьПользователиИБВнешнегоПользователя" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пользователя ИБ</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open DB user</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОткрытьПользователиИБВнешнегоПользователя</Action>
+		</Command>
+		<Command name="ЗапуститьПодВнешнимПользователем" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_Запуск1С</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьПодВнешнимПользователем</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ЖурналРегистрацииПоВнешнемуПользователю" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Logbook</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Журнал регистрации по пользователю</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Log by user</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.EventLog</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЖурналРегистрацииПоВнешнемуПользователю</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="ЗапуститьПодПользователемСНастройками" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем с настройками...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user with custom settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем с настройками...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user with custom settings...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_Запуск1CСНастройками</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьПодПользователемСНастройками</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ПользователиИБ</AssociatedTableElementId>
+		</Command>
+		<Command name="ЗапуститьПодВнешнимПользователемСНастройками" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем с настройками...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user with custom settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Запустить под пользователем с настройками...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run as user with custom settings...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_Запуск1CСНастройками</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗапуститьПодВнешнимПользователемСНастройками</Action>
+			<Representation>Picture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ВнешниеПользователи</AssociatedTableElementId>
+		</Command>
+		<Command name="Пользователи_ОткрытьПользователяБСП" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пользователя БСП...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open user SSL...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.ShowData</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Пользователи_ОткрытьПользователяБСП</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ПользователиИБ</AssociatedTableElementId>
+		</Command>
+		<Command name="АктивныеПользователи_ОткрытьПользователяБСП" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пользователя БСП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open user SSL</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть пользователя БСП</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open user SSL</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowData</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>АктивныеПользователи_ОткрытьПользователяБСП</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">АктивныеПользователи</AssociatedTableElementId>
+		</Command>
+		<Command name="БлокировкаРаботыПользователей" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Блокировка работы пользователей...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Blocking users from working...</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_БлокировакаИБ</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>БлокировкаРаботыПользователей</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">АктивныеПользователи</AssociatedTableElementId>
+		</Command>
+		<Command name="ЗавершитьСеансы" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить сеансы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>End sessions</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить выбранные сеансы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>End selected sessions</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Delete</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ЗавершитьСеансы</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">АктивныеПользователи</AssociatedTableElementId>
+		</Command>
+		<Command name="Пользователи_НастройкиПользователей" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки пользователей...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройки пользователей...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open user settings...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_ИнструментНастройкиПользователей</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Пользователи_НастройкиПользователей</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">ПользователиИБ</AssociatedTableElementId>
+		</Command>
+		<Command name="АктивныеПользователи_НастройкиПользователей" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки пользователей...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User settings...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть настройки пользователей...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Open user settings...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_ИнструментНастройкиПользователей</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>АктивныеПользователи_НастройкиПользователей</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">АктивныеПользователи</AssociatedTableElementId>
+		</Command>
+		<Command name="Видеоинструкция" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Видеоинструкция (новое)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Video instruction (new)</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Перейти к видеоинструкции по инструменту "Пользователи" (новое)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Go to video tutorial for the users tool (new)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_Видеоинструкция</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Видеоинструкция</Action>
+		</Command>
+	</Commands>
+</Form>

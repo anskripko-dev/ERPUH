@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<AutoTitle>false</AutoTitle>
+	<AutoURL>false</AutoURL>
+	<Group>Horizontal</Group>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаИзменитьФорму" id="120">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить форму...</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Change form...</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="121"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаНастройки" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings</v8:content>
+				</v8:item>
+			</Title>
+			<Width>25</Width>
+			<Group>Vertical</Group>
+			<Representation>NormalSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="2"/>
+			<ChildItems>
+				<CheckBoxField name="ДобавлятьКомментарии" id="18">
+					<DataPath>ДобавлятьКомментарии</DataPath>
+					<TitleLocation>Right</TitleLocation>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="ДобавлятьКомментарииКонтекстноеМеню" id="19"/>
+					<ExtendedTooltip name="ДобавлятьКомментарииРасширеннаяПодсказка" id="20"/>
+					<Events>
+						<Event name="OnChange">КомментарииПриИзменении</Event>
+					</Events>
+				</CheckBoxField>
+				<Pages name="Страницы" id="84">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страницы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Pages</v8:content>
+						</v8:item>
+					</Title>
+					<VerticalStretch>true</VerticalStretch>
+					<PagesRepresentation>TabsOnTop</PagesRepresentation>
+					<ExtendedTooltip name="СтраницыРасширеннаяПодсказка" id="85"/>
+					<Events>
+						<Event name="OnCurrentPageChange">СтраницыПриСменеСтраницы</Event>
+					</Events>
+					<ChildItems>
+						<Page name="ГруппаЗапрос" id="55">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Запрос</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Query</v8:content>
+								</v8:item>
+							</Title>
+							<Group>HorizontalIfPossible</Group>
+							<ExtendedTooltip name="ГруппаЗапросРасширеннаяПодсказка" id="56"/>
+							<ChildItems>
+								<CheckBoxField name="МенеджерВременныхТаблиц" id="21">
+									<DataPath>МенеджерВременныхТаблиц</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="МенеджерВременныхТаблицКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="МенеджерВременныхТаблицРасширеннаяПодсказка" id="23"/>
+									<Events>
+										<Event name="OnChange">МенеджерВременныхТаблицПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<RadioButtonField name="ВидРезультата" id="52">
+									<DataPath>ВидРезультата</DataPath>
+									<RadioButtonType>Tumbler</RadioButtonType>
+									<ContextMenu name="ВидРезультатаКонтекстноеМеню" id="53"/>
+									<ExtendedTooltip name="ВидРезультатаРасширеннаяПодсказка" id="54"/>
+									<Events>
+										<Event name="OnChange">ВидРезультатаПриИзменении</Event>
+									</Events>
+								</RadioButtonField>
+								<CheckBoxField name="ПараметрыЗапроса" id="79">
+									<DataPath>ПараметрыЗапроса</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПараметрыЗапросаКонтекстноеМеню" id="80"/>
+									<ExtendedTooltip name="ПараметрыЗапросаРасширеннаяПодсказка" id="81"/>
+									<Events>
+										<Event name="OnChange">ПараметрыЗапросаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПроверкаРезультата" id="15">
+									<DataPath>ПроверкаРезультата</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ПроверкаРезультатаКонтекстноеМеню" id="16"/>
+									<ExtendedTooltip name="ПроверкаРезультатаРасширеннаяПодсказка" id="17"/>
+									<Events>
+										<Event name="OnChange">ПроверкаРезультатаПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<UsualGroup name="ГруппаВыборка" id="71">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Выборка</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Selection</v8:content>
+										</v8:item>
+									</Title>
+									<Group>Vertical</Group>
+									<Representation>None</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:TableHeaderBackColor</BackColor>
+									<ExtendedTooltip name="ГруппаВыборкаРасширеннаяПодсказка" id="72"/>
+									<ChildItems>
+										<CheckBoxField name="Выборка" id="49">
+											<DataPath>Выборка</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВыборкаКонтекстноеМеню" id="50"/>
+											<ExtendedTooltip name="ВыборкаРасширеннаяПодсказка" id="51"/>
+											<Events>
+												<Event name="OnChange">ВыборкаПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<CheckBoxField name="ВыборкаПоГруппировкам" id="73">
+											<DataPath>ВыборкаПоГруппировкам</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВыборкаПоГруппировкамКонтекстноеМеню" id="74"/>
+											<ExtendedTooltip name="ВыборкаПоГруппировкамРасширеннаяПодсказка" id="75"/>
+											<Events>
+												<Event name="OnChange">ВыборкаПоГруппировкамПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="ГруппаВключитьВФункцию" id="29">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Включить в функцию</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>To include in the function</v8:content>
+										</v8:item>
+									</Title>
+									<Representation>NormalSeparation</Representation>
+									<ShowTitle>false</ShowTitle>
+									<BackColor>style:ToolTipBackColor</BackColor>
+									<ExtendedTooltip name="ГруппаВключитьВФункциюРасширеннаяПодсказка" id="30"/>
+									<ChildItems>
+										<CheckBoxField name="ВключитьВФункцию" id="31">
+											<DataPath>ВключитьВФункцию</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ВключитьВФункциюКонтекстноеМеню" id="32"/>
+											<ExtendedTooltip name="ВключитьВФункциюРасширеннаяПодсказка" id="33"/>
+											<Events>
+												<Event name="OnChange">ВключитьВФункциюПриИзменении</Event>
+											</Events>
+										</CheckBoxField>
+										<LabelField name="ИмяФункции" id="34">
+											<DataPath>ИмяФункции</DataPath>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Имя</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Name</v8:content>
+												</v8:item>
+											</Title>
+											<TitleLocation>Left</TitleLocation>
+											<Hiperlink>true</Hiperlink>
+											<ContextMenu name="ИмяФункцииКонтекстноеМеню" id="35"/>
+											<ExtendedTooltip name="ИмяФункцииРасширеннаяПодсказка" id="36"/>
+											<Events>
+												<Event name="Click">ИмяФункцииНажатие</Event>
+											</Events>
+										</LabelField>
+									</ChildItems>
+								</UsualGroup>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаСхемаКомпоновкиДанных" id="57">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Схема компоновки данных</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Data composition schema</v8:content>
+								</v8:item>
+							</Title>
+							<Group>HorizontalIfPossible</Group>
+							<ExtendedTooltip name="ГруппаСхемаКомпоновкиДанныхРасширеннаяПодсказка" id="58"/>
+							<ChildItems>
+								<CheckBoxField name="ИспользуетсяВОтчете" id="59">
+									<DataPath>ИспользуетсяВОтчете</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ИспользуетсяВОтчетеКонтекстноеМеню" id="60"/>
+									<ExtendedTooltip name="ИспользуетсяВОтчетеРасширеннаяПодсказка" id="61"/>
+									<Events>
+										<Event name="OnChange">ИспользуетсяВОтчетеПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<InputField name="ВыводРезультатаВ" id="62">
+									<DataPath>ВыводРезультатаВ</DataPath>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="ВыводРезультатаВКонтекстноеМеню" id="63"/>
+									<ExtendedTooltip name="ВыводРезультатаВРасширеннаяПодсказка" id="64"/>
+									<Events>
+										<Event name="OnChange">ВыводРезультатаВПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаСхемаЗапроса" id="82">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Схема запроса</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Query schema</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ГруппаСхемаЗапросаРасширеннаяПодсказка" id="83"/>
+							<ChildItems>
+								<CheckBoxField name="ДобавлятьЗначенияСвойствПоУмолчанию" id="89">
+									<DataPath>ДобавлятьЗначенияСвойствПоУмолчанию</DataPath>
+									<TitleLocation>Right</TitleLocation>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДобавлятьЗначенияСвойствПоУмолчаниюКонтекстноеМеню" id="90"/>
+									<ExtendedTooltip name="ДобавлятьЗначенияСвойствПоУмолчаниюРасширеннаяПодсказка" id="91"/>
+									<Events>
+										<Event name="OnChange">ДобавлятьЗначенияСвойствПоУмолчаниюПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</Page>
+					</ChildItems>
+				</Pages>
+				<InputField name="Язык" id="46">
+					<DataPath>Язык</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="ЯзыкКонтекстноеМеню" id="47"/>
+					<ExtendedTooltip name="ЯзыкРасширеннаяПодсказка" id="48"/>
+					<Events>
+						<Event name="OnChange">ЯзыкПриИзменении</Event>
+					</Events>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаКодНаВстроенномЯзыке" id="40">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Код на встроенном языке</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Code in the built-in language</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаКодНаВстроенномЯзыкеРасширеннаяПодсказка" id="41"/>
+			<ChildItems>
+				<HTMLDocumentField name="Код" id="76">
+					<DataPath>Код</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ContextMenu name="КодКонтекстноеМеню" id="77">
+						<Autofill>false</Autofill>
+					</ContextMenu>
+					<ExtendedTooltip name="КодРасширеннаяПодсказка" id="78"/>
+				</HTMLDocumentField>
+				<CommandBar name="КодНаВстроенномЯзыкеКоманднаяПанель" id="42">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Код на встроенном языке (командная панель)</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Code in the built-in language (command bar)</v8:content>
+						</v8:item>
+					</Title>
+					<HorizontalStretch>false</HorizontalStretch>
+					<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+					<ExtendedTooltip name="КодНаВстроенномЯзыкеКоманднаяПанельРасширеннаяПодсказка" id="43"/>
+					<ChildItems>
+						<Button name="Копировать" id="44">
+							<Type>CommandBarButton</Type>
+							<Representation>PictureAndText</Representation>
+							<DefaultButton>true</DefaultButton>
+							<CommandName>Form.Command.КопироватьИЗакрыть</CommandName>
+							<ExtendedTooltip name="КопироватьРасширеннаяПодсказка" id="45"/>
+						</Button>
+						<ButtonGroup name="ФормаГруппаИзменитьФорму" id="67">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Изменить форму</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Change form</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="ФормаГруппаИзменитьФормуРасширеннаяПодсказка" id="68"/>
+							<ChildItems>
+								<Button name="ФормаИзменитьФорму2" id="69">
+									<Type>CommandBarButton</Type>
+									<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Изменить форму...</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Change form...</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="ФормаИзменитьФорму2РасширеннаяПодсказка" id="70"/>
+								</Button>
+							</ChildItems>
+						</ButtonGroup>
+					</ChildItems>
+				</CommandBar>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_КонсольРазработчика</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="МенеджерВременныхТаблиц" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Менеджер временных таблиц</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Temporary table Manager</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПроверкаРезультата" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверка результата</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Checking the result</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ДобавлятьКомментарии" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавлять комментарии</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add comments</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ДобавлятьКомментарии</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВключитьВФункцию" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Включить в функцию</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To include in the function</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВключитьВФункцию</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ИмяФункции" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Имя функции</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Function name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ИмяФункции</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Язык" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Язык</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Language</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="Данные" id="15">
+			<Type/>
+		</Attribute>
+		<Attribute name="Выборка" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выборка</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Selection</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидРезультата" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид результата</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Result type</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуетсяВОтчете" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Используется в отчете</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Used in report</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ИспользуетсяВОтчете</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыводРезультатаВ" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вывод результата в</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Outputting the result to</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+			<Save>
+				<Field>ВыводРезультатаВ</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="Тип" id="20">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыборкаПоГруппировкам" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>По группировкам</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>By grouping</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИспользуютсяИтоги" id="22">
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Код" id="6">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПараметрыЗапроса" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Parameters</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ПараметрыЗапроса</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ДобавлятьЗначенияСвойствПоУмолчанию" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавлять значения свойств по умолчанию</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add default property values</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>ДобавлятьЗначенияСвойствПоУмолчанию</Field>
+			</Save>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="КопироватьИЗакрыть" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать и закрыть</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy and close</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Копировать в буфер обмена  закрыть окно</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy to clipboard close window</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>CommonPicture.ИТК_КопироватьВБуферОбмена</xr:Ref>
+				<xr:LoadTransparent>false</xr:LoadTransparent>
+			</Picture>
+			<Action>КопироватьИЗакрыть</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<CommandBarLocation>Bottom</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<HorizontalAlign>Right</HorizontalAlign>
+		<Autofill>false</Autofill>
+		<ChildItems>
+			<Button name="ФормаЗаписать" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<GroupHorizontalAlign>Right</GroupHorizontalAlign>
+				<CommandName>Form.Command.Записать</CommandName>
+				<ExtendedTooltip name="ФормаЗаписатьРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаЗакрыть" id="111">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.StandardCommand.Close</CommandName>
+				<ExtendedTooltip name="ФормаЗакрытьРасширеннаяПодсказка" id="112"/>
+			</Button>
+			<ButtonGroup name="ФормаГруппаИзменитьФорму" id="5">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить форму</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Change form</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаИзменитьФормуРасширеннаяПодсказка" id="6"/>
+				<ChildItems>
+					<Button name="ФормаИзменитьФорму" id="7">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменить форму...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Change form...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="8"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnSaveDataInSettingsAtServer">ПриСохраненииДанныхВНастройкахНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="BeforeClose">ПередЗакрытием</Event>
+		<Event name="OnLoadDataFromSettingsAtServer">ПриЗагрузкеДанныхИзНастроекНаСервере</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="ЗначенияПараметровСеанса" id="11">
+			<Representation>List</Representation>
+			<CommandBarLocation>Top</CommandBarLocation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<SelectionMode>SingleRow</SelectionMode>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<FileDragMode>AsFile</FileDragMode>
+			<DataPath>ЗначенияПараметровСеанса</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>EndEdit</ExcludedCommand>
+				<ExcludedCommand>SearchEverywhere</ExcludedCommand>
+			</CommandSet>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ЗначенияПараметровСеансаКонтекстноеМеню" id="12">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<ButtonGroup name="ЗначенияПараметровСеансаКонтекстноеМенюГруппаИзбранное" id="73">
+						<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюГруппаИзбранноеРасширеннаяПодсказка" id="74"/>
+					</ButtonGroup>
+					<ButtonGroup name="ЗначенияПараметровСеансаКонтекстноеМенюГруппаПоиска" id="82">
+						<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюГруппаПоискаРасширеннаяПодсказка" id="83"/>
+						<ChildItems>
+							<Button name="ЗначенияПараметровСеансаКонтекстноеМенюПоискПоТекущемуЗначению" id="84">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.FindByCurrentValue</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="85"/>
+							</Button>
+							<Button name="ЗначенияПараметровСеансаКонтекстноеМенюНайти" id="86">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.Find</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюНайтиРасширеннаяПодсказка" id="87"/>
+							</Button>
+							<Button name="ЗначенияПараметровСеансаКонтекстноеМенюОтменитьПоиск" id="88">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.CancelSearch</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюОтменитьПоискРасширеннаяПодсказка" id="89"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="ЗначенияПараметровСеансаКонтекстноеМенюОбновить" id="92">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Обновить</CommandName>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюОбновитьРасширеннаяПодсказка" id="93"/>
+					</Button>
+					<Button name="ЗначенияПараметровСеансаКонтекстноеМенюВывестиСписок" id="90">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.OutputList</CommandName>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="91"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="ЗначенияПараметровСеансаКоманднаяПанель" id="13">
+				<ChildItems>
+					<ButtonGroup name="ЗначенияПараметровСеансаГруппаПоиск" id="59">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Поиск</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Find</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаГруппаПоискРасширеннаяПодсказка" id="60"/>
+						<ChildItems>
+							<Button name="ЗначенияПараметровСеансаПоискПоТекущемуЗначению" id="78">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.FindByCurrentValue</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаПоискПоТекущемуЗначениюРасширеннаяПодсказка" id="79"/>
+							</Button>
+							<Button name="ЗначенияПараметровСеансаНайти" id="53">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.Find</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаНайтиРасширеннаяПодсказка" id="54"/>
+							</Button>
+							<Button name="ЗначенияПараметровСеансаОтменитьПоиск" id="55">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.CancelSearch</CommandName>
+								<ExtendedTooltip name="ЗначенияПараметровСеансаОтменитьПоискРасширеннаяПодсказка" id="56"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ЗначенияПараметровСеансаГруппаПрочиеФильтры" id="71">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Фильтры (прочие)</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Filters (other)</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаГруппаПрочиеФильтрыРасширеннаяПодсказка" id="72"/>
+					</ButtonGroup>
+					<Button name="ЗначенияПараметровСеансаОбновить" id="3">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Обновить</CommandName>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаОбновитьРасширеннаяПодсказка" id="4"/>
+					</Button>
+					<Button name="ЗначенияПараметровСеансаВывестиСписок" id="80">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.ЗначенияПараметровСеанса.StandardCommand.OutputList</CommandName>
+						<ExtendedTooltip name="ЗначенияПараметровСеансаВывестиСписокРасширеннаяПодсказка" id="81"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ЗначенияПараметровСеансаРасширеннаяПодсказка" id="14"/>
+			<SearchStringAddition name="ЗначенияПараметровСеансаСтрокаПоиска" id="15">
+				<AdditionSource>
+					<Item>ЗначенияПараметровСеанса</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗначенияПараметровСеансаСтрокаПоискаКонтекстноеМеню" id="16"/>
+				<ExtendedTooltip name="ЗначенияПараметровСеансаСтрокаПоискаРасширеннаяПодсказка" id="17"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ЗначенияПараметровСеансаСостояниеПросмотра" id="18">
+				<AdditionSource>
+					<Item>ЗначенияПараметровСеанса</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗначенияПараметровСеансаСостояниеПросмотраКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ЗначенияПараметровСеансаСостояниеПросмотраРасширеннаяПодсказка" id="20"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ЗначенияПараметровСеансаУправлениеПоиском" id="21">
+				<AdditionSource>
+					<Item>ЗначенияПараметровСеанса</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ЗначенияПараметровСеансаУправлениеПоискомКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ЗначенияПараметровСеансаУправлениеПоискомРасширеннаяПодсказка" id="23"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ЗначенияПараметровСеансаВыбор</Event>
+				<Event name="OnActivateRow">ЗначенияПараметровСеансаПриАктивизацииСтроки</Event>
+				<Event name="BeforeRowChange">ЗначенияПараметровСеансаПередНачаломИзменения</Event>
+				<Event name="c676f87f-6c33-4dba-aad8-0526726d1bcf">ЗначенияПараметровСеансаПриНаведении</Event>
+				<Event name="OnActivateCell">ЗначенияПараметровСеансаПриАктивизацииЯчейки</Event>
+				<Event name="OnChange">ЗначенияПараметровСеансаПриИзменении</Event>
+			</Events>
+			<ChildItems>
+				<CheckBoxField name="ЗначенияПараметровСеансаИзменять" id="24">
+					<DataPath>ЗначенияПараметровСеанса.Изменять</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменено</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Modified</v8:content>
+						</v8:item>
+					</ToolTip>
+					<EditMode>EnterOnInput</EditMode>
+					<HeaderPicture>
+						<xr:Ref>StdPicture.Change</xr:Ref>
+						<xr:LoadTransparent>true</xr:LoadTransparent>
+					</HeaderPicture>
+					<CheckBoxType>Auto</CheckBoxType>
+					<BorderColor>style:TableHeaderBackColor</BorderColor>
+					<ContextMenu name="ЗначенияПараметровСеансаИзменятьКонтекстноеМеню" id="25"/>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаИзменятьРасширеннаяПодсказка" id="26"/>
+				</CheckBoxField>
+				<InputField name="ЗначенияПараметровСеансаИмя" id="27">
+					<DataPath>ЗначенияПараметровСеанса.Имя</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗначенияПараметровСеансаИмяКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаИмяРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ЗначенияПараметровСеансаСиноним" id="30">
+					<DataPath>ЗначенияПараметровСеанса.Синоним</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗначенияПараметровСеансаСинонимКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаСинонимРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<ColumnGroup name="ЗначенияПараметровСеансаГруппаЗначение" id="66">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<ShowInHeader>true</ShowInHeader>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаГруппаЗначениеРасширеннаяПодсказка" id="67"/>
+					<ChildItems>
+						<PictureField name="ЗначенияПараметровСеансаЗначениеКартинка" id="68">
+							<DataPath>ЗначенияПараметровСеанса.ЗначениеКартинка</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Width>2</Width>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="ЗначенияПараметровСеансаЗначениеКартинкаКонтекстноеМеню" id="69"/>
+							<ExtendedTooltip name="ЗначенияПараметровСеансаЗначениеКартинкаРасширеннаяПодсказка" id="70"/>
+						</PictureField>
+						<InputField name="ЗначенияПараметровСеансаЗначение" id="39">
+							<DataPath>ЗначенияПараметровСеанса.Значение</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<ShowInHeader>false</ShowInHeader>
+							<Height>1</Height>
+							<MultiLine>true</MultiLine>
+							<ChoiceFoldersAndItems>FoldersAndItems</ChoiceFoldersAndItems>
+							<ContextMenu name="ЗначенияПараметровСеансаЗначениеКонтекстноеМеню" id="40"/>
+							<ExtendedTooltip name="ЗначенияПараметровСеансаЗначениеРасширеннаяПодсказка" id="41"/>
+							<Events>
+								<Event name="OnChange">ЗначенияПараметровСеансаЗначениеПриИзменении</Event>
+								<Event name="AutoComplete">ЗначенияПараметровСеансаЗначениеАвтоПодбор</Event>
+								<Event name="StartChoice">ЗначенияПараметровСеансаЗначениеНачалоВыбора</Event>
+								<Event name="Clearing">ЗначенияПараметровСеансаЗначениеОчистка</Event>
+								<Event name="ChoiceProcessing">ЗначенияПараметровСеансаЗначениеОбработкаВыбора</Event>
+							</Events>
+						</InputField>
+						<InputField name="ЗначенияПараметровСеансаЗначениеГиперссылка" id="75">
+							<DataPath>ЗначенияПараметровСеанса.ЗначениеГиперссылка</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<CellHyperlink>true</CellHyperlink>
+							<ShowInHeader>false</ShowInHeader>
+							<ContextMenu name="ЗначенияПараметровСеансаЗначениеГиперссылкаКонтекстноеМеню" id="76"/>
+							<ExtendedTooltip name="ЗначенияПараметровСеансаЗначениеГиперссылкаРасширеннаяПодсказка" id="77"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="ЗначенияПараметровСеансаГруппаТип" id="61">
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Group>InCell</Group>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаГруппаТипРасширеннаяПодсказка" id="62"/>
+					<ChildItems>
+						<PictureField name="ЗначенияПараметровСеансаКартинкаТип" id="45">
+							<DataPath>ЗначенияПараметровСеанса.КартинкаТип</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<TitleLocation>None</TitleLocation>
+							<EditMode>EnterOnInput</EditMode>
+							<FileDragMode>AsFile</FileDragMode>
+							<ContextMenu name="ЗначенияПараметровСеансаКартинкаТипКонтекстноеМеню" id="46"/>
+							<ExtendedTooltip name="ЗначенияПараметровСеансаКартинкаТипРасширеннаяПодсказка" id="47"/>
+						</PictureField>
+						<InputField name="ЗначенияПараметровСеансаТипПредставление" id="63">
+							<DataPath>ЗначенияПараметровСеанса.ТипПредставление</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ЗначенияПараметровСеансаТипПредставлениеКонтекстноеМеню" id="64"/>
+							<ExtendedTooltip name="ЗначенияПараметровСеансаТипПредставлениеРасширеннаяПодсказка" id="65"/>
+						</InputField>
+					</ChildItems>
+				</ColumnGroup>
+				<InputField name="ЗначенияПараметровСеансаКомментарий" id="33">
+					<DataPath>ЗначенияПараметровСеанса.Комментарий</DataPath>
+					<UserVisible>
+						<xr:Common>false</xr:Common>
+					</UserVisible>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ЗначенияПараметровСеансаКомментарийКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ЗначенияПараметровСеансаКомментарийРасширеннаяПодсказка" id="35"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_РедакторПараметровСеанса</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ЗначенияПараметровСеанса" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Параметры сеанса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Session parameters</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Изменять" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Изменять</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Change</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Имя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>80</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Синоним" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Синоним</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Synonym</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Комментарий" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Комментарий</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Comment</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Значение" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Type/>
+				</Column>
+				<Column name="КартинкаТип" id="9">
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Тип" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:TypeDescription</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ЗначениеКартинка" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Картинка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Picture</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8ui:Picture</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ТипПредставление" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Тип</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЗначениеГиперссылка" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВидИнструмента" id="4">
+			<Type/>
+		</Attribute>
+		<Attribute name="ИмяПоследнегоПараметраСеанса" id="5">
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ЗначенияПараметровСеансаПоследнееВыделение" id="6">
+			<Type/>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="Записать" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>&lt;Записать&gt;</v8:content>
+				</v8:item>
+			</Title>
+			<Action>Записать</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="Обновить" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Refresh</v8:content>
+				</v8:item>
+			</Title>
+			<Picture>
+				<xr:Ref>StdPicture.Refresh</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>Обновить</Action>
+			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+	</Commands>
+</Form>

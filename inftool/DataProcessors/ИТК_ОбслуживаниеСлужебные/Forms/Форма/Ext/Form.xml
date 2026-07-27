@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandSet>
+		<ExcludedCommand>Help</ExcludedCommand>
+	</CommandSet>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<ButtonGroup name="ФормаГруппаИзменитьФорму" id="3">
+				<Title>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Изменить форму</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Change form</v8:content>
+					</v8:item>
+				</Title>
+				<ExtendedTooltip name="ФормаГруппаИзменитьФормуРасширеннаяПодсказка" id="4"/>
+				<ChildItems>
+					<Button name="ФормаИзменитьФорму" id="5">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Изменить форму...</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Change form...</v8:content>
+							</v8:item>
+						</Title>
+						<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="6"/>
+					</Button>
+				</ChildItems>
+			</ButtonGroup>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОчиститьПовторноИспользуемыеЗначения" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить повторно используемые значения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear reused values</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОчиститьПовторноИспользуемыеЗначенияРасширеннаяПодсказка" id="11"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДействиеОчиститьПовторноИспользуемыеЗначения" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Действие очистить повторно используемые значения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Action clear reused values</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДействиеОчиститьПовторноИспользуемыеЗначенияРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<Button name="ОчиститьПовторноИспользуемыеЗначения" id="1">
+							<Type>UsualButton</Type>
+							<Width>35</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.ОчиститьПовторноИспользуемыеЗначения</CommandName>
+							<ExtendedTooltip name="ОчиститьПовторноИспользуемыеЗначенияРасширеннаяПодсказка" id="2"/>
+						</Button>
+						<LabelField name="ДатаПоследнейОчисткиПовторноИспользуемыхЗначений" id="7">
+							<DataPath>ДатаПоследнейОчисткиПовторноИспользуемыхЗначений</DataPath>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="ДатаПоследнейОчисткиПовторноИспользуемыхЗначенийКонтекстноеМеню" id="8"/>
+							<ExtendedTooltip name="ДатаПоследнейОчисткиПовторноИспользуемыхЗначенийРасширеннаяПодсказка" id="9"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ОчиститьПовторноИспользуемыеЗначенияПояснение" id="12">
+					<Width>80</Width>
+					<TextColor>web:Gray</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Очищаются все сохраненные значения функций с повторным использованием возвращаемых значений. После очистки функции с повторным использованием возвращаемых значений выполняется так же, как при первом вызове.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Clears all stored function values and reuses the return values. After clearing the function, reusing the return values performs the same as the first time it was called.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОчиститьПовторноИспользуемыеЗначенияПояснениеКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="ОчиститьПовторноИспользуемыеЗначенияПояснениеРасширеннаяПодсказка" id="14"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<UsualGroup name="ГруппаОбновитьНумерациюВсехОбъектов" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить нумерацию всех объектов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update numbering of all objects</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОбновитьНумерациюВсехОбъектовРасширеннаяПодсказка" id="18"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаДействиеОбновитьНумерациюВсехОбъектов" id="24">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Обновить нумерацию всех объектов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Update numbering of all objects</v8:content>
+						</v8:item>
+					</Title>
+					<Group>AlwaysHorizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаДействиеОбновитьНумерациюВсехОбъектовРасширеннаяПодсказка" id="25"/>
+					<ChildItems>
+						<Button name="ОбновитьНумерациюВсехОбъектов" id="19">
+							<Type>UsualButton</Type>
+							<Width>35</Width>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<CommandName>Form.Command.ОбновитьНумерациюВсехОбъектов</CommandName>
+							<ExtendedTooltip name="ОбновитьНумерациюВсехОбъектовРасширеннаяПодсказка" id="20"/>
+						</Button>
+						<LabelField name="ДатаПоследнегоОбновленияНумерацииВсехОбъектов" id="26">
+							<DataPath>ДатаПоследнегоОбновленияНумерацииВсехОбъектов</DataPath>
+							<Font ref="style:NormalTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+							<ContextMenu name="ДатаПоследнегоОбновленияНумерацииВсехОбъектовКонтекстноеМеню" id="27"/>
+							<ExtendedTooltip name="ДатаПоследнегоОбновленияНумерацииВсехОбъектовРасширеннаяПодсказка" id="28"/>
+						</LabelField>
+					</ChildItems>
+				</UsualGroup>
+				<LabelDecoration name="ОбновитьНумерациюВсехОбъектовПояснение" id="21">
+					<Width>80</Width>
+					<TextColor>web:Gray</TextColor>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выполняет обновление номеров в соответствии с номерами, записанными в базе данных. После вызова данного метода все выданные, но незаписанные номера, становятся невалидными т.к. не гарантируется их уникальность. Данный метод разрешено вызывать только администратору системы.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Updates numbers in accordance with the numbers recorded in the database. After calling this method, all issued but not recorded numbers become invalid because their uniqueness is not guaranteed. This method is only allowed to be called by the system administrator.</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОбновитьНумерациюВсехОбъектовПояснениеКонтекстноеМеню" id="22"/>
+					<ExtendedTooltip name="ОбновитьНумерациюВсехОбъектовПояснениеРасширеннаяПодсказка" id="23"/>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
+		<Button name="СистемнаяИнформация" id="29">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.СистемнаяИнформация</CommandName>
+			<ToolTipRepresentation>ShowBottom</ToolTipRepresentation>
+			<ExtendedTooltip name="СистемнаяИнформацияРасширеннаяПодсказка" id="30">
+				<Title formatted="false">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Отображает информацию о железе клиента и сервера</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Displays information about the client and server hardware</v8:content>
+					</v8:item>
+				</Title>
+			</ExtendedTooltip>
+		</Button>
+		<Button name="ВерсииПодсистемБСП" id="31">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.ВерсииПодсистемБСП</CommandName>
+			<ExtendedTooltip name="ВерсииПодсистемБСПРасширеннаяПодсказка" id="32"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_ОбслуживаниеСлужебные</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДатаПоследнейОчисткиПовторноИспользуемыхЗначений" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последней очистки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date of last cleaning</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ДатаПоследнегоОбновленияНумерацииВсехОбъектов" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата последнего обновления</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Date of last cleaning</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:dateTime</v8:Type>
+				<v8:DateQualifiers>
+					<v8:DateFractions>DateTime</v8:DateFractions>
+				</v8:DateQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОчиститьПовторноИспользуемыеЗначения" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить повторно используемые значения</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear reused values</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОчиститьПовторноИспользуемыеЗначения</Action>
+		</Command>
+		<Command name="ОбновитьНумерациюВсехОбъектов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обновить нумерацию всех объектов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update numbering of all objects</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОбновитьНумерациюВсехОбъектов</Action>
+		</Command>
+		<Command name="СистемнаяИнформация" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Системная информация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>System information</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Системная информация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>System information</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СистемнаяИнформация</Action>
+		</Command>
+		<Command name="ВерсииПодсистемБСП" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Версии подсистем (БСП)</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Subsystem versions (SSL)</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ВерсииПодсистемБСП</Action>
+		</Command>
+	</Commands>
+</Form>

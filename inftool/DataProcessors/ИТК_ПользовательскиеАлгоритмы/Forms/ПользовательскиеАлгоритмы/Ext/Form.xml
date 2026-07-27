@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<CommandBarLocation>None</CommandBarLocation>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<Table name="СписокАлгоритмов" id="1">
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>СписокАлгоритмов</DataPath>
+			<RowPictureDataPath>СписокАлгоритмов.DefaultPicture</RowPictureDataPath>
+			<CommandSet>
+				<ExcludedCommand>CancelSearch</ExcludedCommand>
+				<ExcludedCommand>DynamicListStandardSettings</ExcludedCommand>
+				<ExcludedCommand>Find</ExcludedCommand>
+				<ExcludedCommand>FindByCurrentValue</ExcludedCommand>
+				<ExcludedCommand>LoadDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>Refresh</ExcludedCommand>
+				<ExcludedCommand>SaveDynamicListSettings</ExcludedCommand>
+				<ExcludedCommand>SearchHistory</ExcludedCommand>
+				<ExcludedCommand>ShowMultipleSelection</ExcludedCommand>
+			</CommandSet>
+			<AutoRefresh>false</AutoRefresh>
+			<AutoRefreshPeriod>60</AutoRefreshPeriod>
+			<Period>
+				<v8:variant xsi:type="v8:StandardPeriodVariant">Custom</v8:variant>
+				<v8:startDate>0001-01-01T00:00:00</v8:startDate>
+				<v8:endDate>0001-01-01T00:00:00</v8:endDate>
+			</Period>
+			<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+			<RestoreCurrentRow>false</RestoreCurrentRow>
+			<TopLevelParent xsi:nil="true"/>
+			<ShowRoot>true</ShowRoot>
+			<AllowRootChoice>false</AllowRootChoice>
+			<UpdateOnDataChange>Auto</UpdateOnDataChange>
+			<AllowGettingCurrentRowURL>true</AllowGettingCurrentRowURL>
+			<ContextMenu name="СписокАлгоритмовКонтекстноеМеню" id="2">
+				<Autofill>false</Autofill>
+				<ChildItems>
+					<Button name="СписокАлгоритмовКонтекстноеМенюДобавитьАлгоритм" id="50">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ДобавитьАлгоритм</CommandName>
+						<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюДобавитьАлгоритмРасширеннаяПодсказка" id="51"/>
+					</Button>
+					<Button name="СписокАлгоритмовКонтекстноеМенюСкопироватьАлгоритм" id="52">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.СкопироватьАлгоритм</CommandName>
+						<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюСкопироватьАлгоритмРасширеннаяПодсказка" id="53"/>
+					</Button>
+					<ButtonGroup name="СписокАлгоритмовКонтекстноеМенюГруппа2" id="64">
+						<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюГруппа2РасширеннаяПодсказка" id="65"/>
+						<ChildItems>
+							<Button name="СписокАлгоритмовКонтекстноеМенюРедактироватьАлгоритм" id="56">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.РедактироватьАлгоритм</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюРедактироватьАлгоритмРасширеннаяПодсказка" id="57"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="СписокАлгоритмовКонтекстноеМенюГруппа1" id="58">
+						<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюГруппа1РасширеннаяПодсказка" id="59"/>
+						<ChildItems>
+							<Button name="СписокАлгоритмовКонтекстноеМенюУдалитьАлгоритмы" id="54">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УдалитьАлгоритмы</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюУдалитьАлгоритмыРасширеннаяПодсказка" id="55"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="СписокАлгоритмовКонтекстноеМенюВывестиСписок" id="66">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Item.СписокАлгоритмов.StandardCommand.OutputList</CommandName>
+						<ExtendedTooltip name="СписокАлгоритмовКонтекстноеМенюВывестиСписокРасширеннаяПодсказка" id="67"/>
+					</Button>
+				</ChildItems>
+			</ContextMenu>
+			<AutoCommandBar name="СписокАлгоритмовКоманднаяПанель" id="3">
+				<ChildItems>
+					<ButtonGroup name="СписокАлгоритмовГруппаДобавить" id="32">
+						<ExtendedTooltip name="СписокАлгоритмовГруппаДобавитьРасширеннаяПодсказка" id="33"/>
+						<ChildItems>
+							<Button name="СписокАлгоритмовДобавитьАлгоритм" id="26">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Command.ДобавитьАлгоритм</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовДобавитьАлгоритмРасширеннаяПодсказка" id="27"/>
+							</Button>
+							<Button name="СписокАлгоритмовСкопироватьАлгоритм" id="28">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СкопироватьАлгоритм</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовСкопироватьАлгоритмРасширеннаяПодсказка" id="29"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<Button name="СписокАлгоритмовРедактироватьАлгоритм" id="60">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.РедактироватьАлгоритм</CommandName>
+						<ExtendedTooltip name="СписокАлгоритмовРедактироватьАлгоритмРасширеннаяПодсказка" id="61"/>
+					</Button>
+					<ButtonGroup name="СписокАлгоритмовГруппаУдалить" id="62">
+						<ExtendedTooltip name="СписокАлгоритмовГруппаУдалитьРасширеннаяПодсказка" id="63"/>
+						<ChildItems>
+							<Button name="СписокАлгоритмовУдалитьАлгоритмы" id="30">
+								<Type>CommandBarButton</Type>
+								<Representation>PictureAndText</Representation>
+								<CommandName>Form.Command.УдалитьАлгоритмы</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовУдалитьАлгоритмыРасширеннаяПодсказка" id="31"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="СписокАлгоритмовГруппа1" id="38">
+						<ExtendedTooltip name="СписокАлгоритмовГруппа1РасширеннаяПодсказка" id="39"/>
+						<ChildItems>
+							<Button name="СписокАлгоритмовНастройкаСписка" id="34">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.СписокАлгоритмов.StandardCommand.ListSettings</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовНастройкаСпискаРасширеннаяПодсказка" id="35"/>
+							</Button>
+							<Button name="СписокАлгоритмовВывестиСписок" id="36">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Item.СписокАлгоритмов.StandardCommand.OutputList</CommandName>
+								<ExtendedTooltip name="СписокАлгоритмовВывестиСписокРасширеннаяПодсказка" id="37"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокАлгоритмовРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокАлгоритмовСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>СписокАлгоритмов</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокАлгоритмовСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокАлгоритмовСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СписокАлгоритмовСостояниеПросмотра" id="8">
+				<AdditionSource>
+					<Item>СписокАлгоритмов</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокАлгоритмовСостояниеПросмотраКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="СписокАлгоритмовСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СписокАлгоритмовУправлениеПоиском" id="11">
+				<AdditionSource>
+					<Item>СписокАлгоритмов</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокАлгоритмовУправлениеПоискомКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="СписокАлгоритмовУправлениеПоискомРасширеннаяПодсказка" id="13"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">СписокАлгоритмовВыбор</Event>
+				<Event name="147fd867-8f22-4463-939d-4b48c5860c89">СписокАлгоритмовПриИзмененииСоставаВыделенныхСтрок</Event>
+				<Event name="OnActivateRow">СписокАлгоритмовПриАктивизацииСтроки</Event>
+			</Events>
+			<ChildItems>
+				<ColumnGroup name="СписокАлгоритмовГруппаАлгоритм" id="88">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Алгоритм</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Algorithm</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СписокАлгоритмовГруппаАлгоритмРасширеннаяПодсказка" id="89"/>
+					<ChildItems>
+						<ColumnGroup name="СписокАлгоритмовГруппаПредставление" id="124">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Представление</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<ExtendedTooltip name="СписокАлгоритмовГруппаПредставлениеРасширеннаяПодсказка" id="125"/>
+							<ChildItems>
+								<LabelField name="СписокАлгоритмовПредставление" id="22">
+									<DataPath>СписокАлгоритмов.Представление</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Алгоритм</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Algorithm</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="СписокАлгоритмовПредставлениеКонтекстноеМеню" id="23"/>
+									<ExtendedTooltip name="СписокАлгоритмовПредставлениеРасширеннаяПодсказка" id="24"/>
+								</LabelField>
+								<CheckBoxField name="СписокАлгоритмовИспользуется" id="120">
+									<DataPath>СписокАлгоритмов.Используется</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Используется</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Use</v8:content>
+										</v8:item>
+									</Title>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="СписокАлгоритмовИспользуетсяКонтекстноеМеню" id="121"/>
+									<ExtendedTooltip name="СписокАлгоритмовИспользуетсяРасширеннаяПодсказка" id="122"/>
+								</CheckBoxField>
+							</ChildItems>
+						</ColumnGroup>
+						<LabelField name="СписокАлгоритмовКомментарий" id="92">
+							<DataPath>СписокАлгоритмов.Комментарий</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Комментарий</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Comment</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокАлгоритмовКомментарийКонтекстноеМеню" id="93"/>
+							<ExtendedTooltip name="СписокАлгоритмовКомментарийРасширеннаяПодсказка" id="94"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+				<ColumnGroup name="СписокАлгоритмовГруппаТипОбъектов" id="90">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Типы объектов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Object types</v8:content>
+						</v8:item>
+					</Title>
+					<ExtendedTooltip name="СписокАлгоритмовГруппаТипОбъектовРасширеннаяПодсказка" id="91"/>
+					<ChildItems>
+						<LabelField name="СписокАлгоритмовТипОбъектов" id="73">
+							<DataPath>СписокАлгоритмов.ТипОбъектов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип объектов</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Type of objects</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокАлгоритмовТипОбъектовКонтекстноеМеню" id="74"/>
+							<ExtendedTooltip name="СписокАлгоритмовТипОбъектовРасширеннаяПодсказка" id="75"/>
+						</LabelField>
+						<LabelField name="СписокАлгоритмовТипЗначенияОбъектов" id="77">
+							<DataPath>СписокАлгоритмов.ТипЗначенияОбъектов</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Тип значения объектов</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Value type of objects</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СписокАлгоритмовТипЗначенияОбъектовКонтекстноеМеню" id="78"/>
+							<ExtendedTooltip name="СписокАлгоритмовТипЗначенияОбъектовРасширеннаяПодсказка" id="79"/>
+						</LabelField>
+					</ChildItems>
+				</ColumnGroup>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ИТК_ПользовательскиеАлгоритмы</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="СписокАлгоритмов" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Список алгоритмов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>false</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ЛОЖЬ КАК Используется,
+	ВЫРАЗИТЬ("" КАК СТРОКА(36)) КАК Идентификатор,
+	ВЫРАЗИТЬ("" КАК СТРОКА(100)) КАК Представление,
+	ВЫРАЗИТЬ("" КАК СТРОКА(1000)) КАК Комментарий,
+	ВЫРАЗИТЬ("" КАК СТРОКА(100)) КАК ТипОбъектов,
+	ВЫРАЗИТЬ("" КАК СТРОКА(1000)) КАК ТипЗначенияОбъектов
+ГДЕ
+	ЛОЖЬ</QueryText>
+				<KeyField>Идентификатор</KeyField>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>dfcece9d-5077-440b-b6b3-45a5cb4538eb</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>88619765-ccb3-46c6-ac52-38e9c992ebd4</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:item>
+							<dcsset:selection>
+								<dcsset:item>
+									<dcsset:field>Комментарий</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:filter/>
+							<dcsset:appearance>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ЦветТекста</dcscor:parameter>
+									<dcscor:value xsi:type="v8ui:Color">style:NegativeTextColor</dcscor:value>
+								</dcscor:item>
+							</dcsset:appearance>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>b75fecce-942b-4aed-abc9-e6a02e460fb3</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>911b6018-f537-43e8-a417-da56b22f9aec</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ДобавитьАлгоритм" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Добавить алгоритм...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Add algorithm...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CreateListItem</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ДобавитьАлгоритм</Action>
+		</Command>
+		<Command name="СкопироватьАлгоритм" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скопировать алгоритм...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Copy algorithm...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.CloneObject</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>СкопироватьАлгоритм</Action>
+		</Command>
+		<Command name="УдалитьАлгоритмы" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Delete...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить алгоритм(ы)...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Delete algorithm(s)...</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.DeleteDirectly</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>УдалитьАлгоритмы</Action>
+			<CurrentRowUse>Use</CurrentRowUse>
+			<AssociatedTableElementId xsi:type="xs:string">СписокАлгоритмов</AssociatedTableElementId>
+		</Command>
+		<Command name="РедактироватьАлгоритм" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Edit...</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Редактировать алгоритм</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Edit the algorithm</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Change</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>РедактироватьАлгоритм</Action>
+		</Command>
+	</Commands>
+</Form>
