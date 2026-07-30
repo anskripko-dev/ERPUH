@@ -37,33 +37,20 @@ $prefix = U @(0x043D,0x043F,0x005F)
 function Add-AdoptedCatalogToStub([string]$CatalogName) {
 	$catSrc = Join-Path $extSrc ("Catalogs\$CatalogName.xml")
 	if (-not (Test-Path -LiteralPath $catSrc)) { return }
+	# Keep InternalInfo; strip extension-only props; uuid must be ExtendedConfigurationObject
 	[xml]$catXml = Get-Content -LiteralPath $catSrc -Encoding UTF8
 	$extUuid = $catXml.MetaDataObject.Catalog.Properties.ExtendedConfigurationObject
 	if ([string]::IsNullOrWhiteSpace($extUuid)) {
 		$extUuid = $catXml.MetaDataObject.Catalog.GetAttribute('uuid')
 	}
-	$body = @"
-<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Catalog uuid="$extUuid">
-		<Properties>
-			<Name>$CatalogName</Name>
-			<Synonym><v8:item><v8:lang>ru</v8:lang><v8:content>$CatalogName</v8:content></v8:item></Synonym>
-			<Comment/>
-		</Properties>
-		<ChildObjects/>
-	</Catalog>
-</MetaDataObject>
-"@
-	[System.IO.File]::WriteAllText((Join-Path $stub "Catalogs\$CatalogName.xml"), $body, $utf8)
+	$text = [System.IO.File]::ReadAllText($catSrc, $utf8)
+	$text = $text -replace '(<Catalog uuid=")[^"]+(")', "`$1$extUuid`$2"
+	$text = $text -replace '<ObjectBelonging>Adopted</ObjectBelonging>\s*', ''
+	$text = $text -replace '<ExtendedConfigurationObject>[^<]+</ExtendedConfigurationObject>\s*', ''
+	[System.IO.File]::WriteAllText((Join-Path $stub "Catalogs\$CatalogName.xml"), $text, $utf8)
 }
 
-# Catalog Организации — as before (full dump strip)
-$orgSrc = Join-Path $extSrc ("Catalogs\$orgName.xml")
-$orgText = [System.IO.File]::ReadAllText($orgSrc, $utf8)
-$orgText = $orgText -replace '<ObjectBelonging>Adopted</ObjectBelonging>\s*', ''
-$orgText = $orgText -replace '<ExtendedConfigurationObject>[^<]+</ExtendedConfigurationObject>\s*', ''
-[System.IO.File]::WriteAllText((Join-Path $stub "Catalogs\$orgName.xml"), $orgText, $utf8)
+Add-AdoptedCatalogToStub $orgName
 Add-AdoptedCatalogToStub $usersName
 Add-AdoptedCatalogToStub $groupsName
 
