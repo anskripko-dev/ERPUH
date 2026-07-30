@@ -35,6 +35,128 @@
 			<ContextMenu name="ДатаНачалаДействияКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="ДатаНачалаДействияРасширеннаяПодсказка" id="12"/>
 		</InputField>
+		<UsualGroup name="ГруппаОтборы" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Условия применимости</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ExtendedTooltip name="ГруппаОтборыРасширеннаяПодсказка" id="21"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОтбораПоРеквизитам" id="22">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Отбор по реквизитам</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ГруппаОтбораПоРеквизитамРасширеннаяПодсказка" id="23"/>
+					<ChildItems>
+						<Table name="ТаблицаОтбора" id="24">
+							<Representation>Tree</Representation>
+							<Autofill>true</Autofill>
+							<HeightInTableRows>6</HeightInTableRows>
+							<InitialTreeView>ExpandAllLevels</InitialTreeView>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>КомпоновщикОтбора.Settings.Filter</DataPath>
+							<TitleLocation>None</TitleLocation>
+							<ContextMenu name="ТаблицаОтбораКонтекстноеМеню" id="25"/>
+							<AutoCommandBar name="ТаблицаОтбораКоманднаяПанель" id="26"/>
+							<ExtendedTooltip name="ТаблицаОтбораРасширеннаяПодсказка" id="27"/>
+							<SearchStringAddition name="ТаблицаОтбораСтрокаПоиска" id="28">
+								<AdditionSource>
+									<Item>ТаблицаОтбора</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаОтбораСтрокаПоискаКонтекстноеМеню" id="29"/>
+								<ExtendedTooltip name="ТаблицаОтбораСтрокаПоискаРасширеннаяПодсказка" id="30"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаОтбораСостояниеПросмотра" id="31">
+								<AdditionSource>
+									<Item>ТаблицаОтбора</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаОтбораСостояниеПросмотраКонтекстноеМеню" id="32"/>
+								<ExtendedTooltip name="ТаблицаОтбораСостояниеПросмотраРасширеннаяПодсказка" id="33"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаОтбораУправлениеПоиском" id="34">
+								<AdditionSource>
+									<Item>ТаблицаОтбора</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаОтбораУправлениеПоискомКонтекстноеМеню" id="35"/>
+								<ExtendedTooltip name="ТаблицаОтбораУправлениеПоискомРасширеннаяПодсказка" id="36"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаУчастников" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Участники (пусто = все)</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Vertical</Group>
+					<ExtendedTooltip name="ГруппаУчастниковРасширеннаяПодсказка" id="41"/>
+					<ChildItems>
+						<Table name="Участники" id="42">
+							<Representation>List</Representation>
+							<HeightInTableRows>5</HeightInTableRows>
+							<EnableStartDrag>false</EnableStartDrag>
+							<DataPath>Участники</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="УчастникиКонтекстноеМеню" id="43"/>
+							<AutoCommandBar name="УчастникиКоманднаяПанель" id="44"/>
+							<ExtendedTooltip name="УчастникиРасширеннаяПодсказка" id="45"/>
+							<SearchStringAddition name="УчастникиСтрокаПоиска" id="46">
+								<AdditionSource>
+									<Item>Участники</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УчастникиСтрокаПоискаКонтекстноеМеню" id="47"/>
+								<ExtendedTooltip name="УчастникиСтрокаПоискаРасширеннаяПодсказка" id="48"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="УчастникиСостояниеПросмотра" id="49">
+								<AdditionSource>
+									<Item>Участники</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="УчастникиСостояниеПросмотраКонтекстноеМеню" id="50"/>
+								<ExtendedTooltip name="УчастникиСостояниеПросмотраРасширеннаяПодсказка" id="51"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="УчастникиУправлениеПоиском" id="52">
+								<AdditionSource>
+									<Item>Участники</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="УчастникиУправлениеПоискомКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="УчастникиУправлениеПоискомРасширеннаяПодсказка" id="54"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="УчастникиВидСтроки" id="55">
+									<DataPath>Участники.ВидСтроки</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="УчастникиВидСтрокиКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="УчастникиВидСтрокиРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="УчастникиУчастник" id="58">
+									<DataPath>Участники.Участник</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="УчастникиУчастникКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="УчастникиУчастникРасширеннаяПодсказка" id="60"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Запись" id="13">
