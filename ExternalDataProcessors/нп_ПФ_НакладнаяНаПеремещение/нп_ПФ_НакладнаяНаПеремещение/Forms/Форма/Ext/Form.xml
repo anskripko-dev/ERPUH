@@ -1,70 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<Title>
-		<v8:item>
-			<v8:lang>ru</v8:lang>
-			<v8:content>Отладка ПФ накладной на перемещение</v8:content>
-		</v8:item>
-	</Title>
-	<AutoTitle>true</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
-			<Button name="ФормаСформировать" id="10">
+			<Button name="ФормаСформировать" id="1">
 				<Type>CommandBarButton</Type>
-				<DefaultButton>true</DefaultButton>
 				<CommandName>Form.Command.Сформировать</CommandName>
-				<ExtendedTooltip name="ФормаСформироватьРасширеннаяПодсказка" id="11"/>
+				<ExtendedTooltip name="ФормаСформироватьРасширеннаяПодсказка" id="2"/>
 			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<ChildItems>
-		<UsualGroup name="ГруппаПараметры" id="1">
+		<UsualGroup name="ГруппаПараметры" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Параметры</v8:content>
+					<v8:content>Группа параметры</v8:content>
 				</v8:item>
 			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа параметры</v8:content>
+				</v8:item>
+			</ToolTip>
 			<Group>Vertical</Group>
-			<Behavior>Usual</Behavior>
-			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
-			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="2"/>
+			<ExtendedTooltip name="ГруппаПараметрыРасширеннаяПодсказка" id="4"/>
 			<ChildItems>
-				<InputField name="Документ" id="3">
+				<InputField name="Документ" id="5">
 					<DataPath>Документ</DataPath>
-					<AutoMaxWidth>false</AutoMaxWidth>
-					<ContextMenu name="ДокументКонтекстноеМеню" id="4"/>
-					<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="5"/>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДокументКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="7"/>
 				</InputField>
-				<LabelDecoration name="Подсказка" id="6">
+				<LabelDecoration name="Подсказка" id="8">
 					<AutoMaxWidth>false</AutoMaxWidth>
+					<TextColor>style:FieldSelectionBackColor</TextColor>
 					<Title formatted="false">
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Укажите документ «Перемещение товаров» и нажмите «Сформировать».</v8:content>
+							<v8:content> Укажите документ "Перемещение товаров" и нажмите "Сформировать"</v8:content>
 						</v8:item>
 					</Title>
-					<ContextMenu name="ПодсказкаКонтекстноеМеню" id="7"/>
-					<ExtendedTooltip name="ПодсказкаРасширеннаяПодсказка" id="8"/>
+					<ContextMenu name="ПодсказкаКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="ПодсказкаРасширеннаяПодсказка" id="10"/>
 				</LabelDecoration>
 			</ChildItems>
 		</UsualGroup>
-		<SpreadSheetDocumentField name="Результат" id="20">
+		<SpreadSheetDocumentField name="Результат" id="11">
 			<DataPath>Результат</DataPath>
-			<TitleLocation>None</TitleLocation>
-			<Width>100</Width>
-			<Height>20</Height>
-			<VerticalStretch>true</VerticalStretch>
-			<HorizontalStretch>true</HorizontalStretch>
-			<ContextMenu name="РезультатКонтекстноеМеню" id="21"/>
-			<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="22"/>
+			<ContextMenu name="РезультатКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="РезультатРасширеннаяПодсказка" id="13"/>
 		</SpreadSheetDocumentField>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:ExternalDataProcessorObject.тн_ПФ_НакладнаяНаПеремещение</v8:Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.нп_ПФ_НакладнаяНаПеремещение</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
@@ -79,7 +70,18 @@
 				<v8:Type>cfg:DocumentRef.ПеремещениеТоваров</v8:Type>
 			</Type>
 		</Attribute>
-		<Attribute name="Результат" id="3">
+		<Attribute name="ДополнительнаяОбработкаСсылка" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная обработка ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДополнительныеОтчетыИОбработки</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Результат" id="4">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -88,17 +90,6 @@
 			</Title>
 			<Type>
 				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="ДополнительнаяОбработкаСсылка" id="4">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Дополнительная обработка</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>cfg:CatalogRef.ДополнительныеОтчетыИОбработки</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
@@ -113,7 +104,7 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сформировать печатную форму накладной на перемещение</v8:content>
+					<v8:content>Сформировать</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Сформировать</Action>
