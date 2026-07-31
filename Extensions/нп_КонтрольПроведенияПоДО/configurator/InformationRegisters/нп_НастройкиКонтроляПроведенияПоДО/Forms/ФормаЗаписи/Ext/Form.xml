@@ -100,7 +100,7 @@
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Участники (пусто = все)</v8:content>
+							<v8:content>Пользователи (пусто = все; включая/исключая)</v8:content>
 						</v8:item>
 					</Title>
 					<Group>Vertical</Group>
@@ -139,12 +139,23 @@
 								<ContextMenu name="УчастникиУправлениеПоискомКонтекстноеМеню" id="53"/>
 								<ExtendedTooltip name="УчастникиУправлениеПоискомРасширеннаяПодсказка" id="54"/>
 							</SearchControlAddition>
+							<Events>
+								<Event name="OnStartEdit">УчастникиПриНачалеРедактирования</Event>
+							</Events>
 							<ChildItems>
-								<InputField name="УчастникиВидСтроки" id="55">
-									<DataPath>Участники.ВидСтроки</DataPath>
+								<InputField name="УчастникиВключаяИсключая" id="55">
+									<DataPath>Участники.ВключаяИсключая</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Включая/Исключая</v8:content>
+										</v8:item>
+									</Title>
 									<EditMode>EnterOnInput</EditMode>
-									<ContextMenu name="УчастникиВидСтрокиКонтекстноеМеню" id="56"/>
-									<ExtendedTooltip name="УчастникиВидСтрокиРасширеннаяПодсказка" id="57"/>
+									<Width>12</Width>
+									<HorizontalStretch>false</HorizontalStretch>
+									<ContextMenu name="УчастникиВключаяИсключаяКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="УчастникиВключаяИсключаяРасширеннаяПодсказка" id="57"/>
 								</InputField>
 								<InputField name="УчастникиУчастник" id="58">
 									<DataPath>Участники.Участник</DataPath>
@@ -183,11 +194,11 @@
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
 			<Columns>
-				<Column name="ВидСтроки" id="1">
+				<Column name="ВключаяИсключая" id="1">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Вид строки</v8:content>
+							<v8:content>Включая/Исключая</v8:content>
 						</v8:item>
 					</Title>
 					<Type>

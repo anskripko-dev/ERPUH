@@ -318,8 +318,12 @@
         <representation>List</representation>
         <heightInTableRows>5</heightInTableRows>
         <rowFilter xsi:type="core:UndefinedValue"/>
+        <handlers>
+          <event>OnStartEdit</event>
+          <name>УчастникиПриНачалеРедактирования</name>
+        </handlers>
         <columns>
-          <name>УчастникиВидСтроки</name>
+          <name>УчастникиВключаяИсключая</name>
           <id>55</id>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -327,18 +331,26 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Участники.ВидСтроки</segments>
+            <segments>Участники.ВключаяИсключая</segments>
           </dataPath>
+          <title>
+            <key>ru</key>
+            <value>Включая/Исключая</value>
+          </title>
           <extendedTooltip>
-            <name>УчастникиВидСтрокиРасширеннаяПодсказка</name>
+            <name>УчастникиВключаяИсключаяРасширеннаяПодсказка</name>
             <id>57</id>
             <type>Label</type>
           </extendedTooltip>
           <contextMenu>
-            <name>УчастникиВидСтрокиКонтекстноеМеню</name>
+            <name>УчастникиВключаяИсключаяКонтекстноеМеню</name>
             <id>56</id>
             <autoFill>true</autoFill>
           </contextMenu>
+          <type>InputField</type>
+          <editMode>EnterOnInput</editMode>
+          <width>12</width>
+          <horizontalStretch>false</horizontalStretch>
         </columns>
         <columns>
           <name>УчастникиУчастник</name>
@@ -370,7 +382,7 @@
       </userVisible>
       <title>
         <key>ru</key>
-        <value>Участники (пусто = все)</value>
+        <value>Пользователи (пусто = все; включая/исключая)</value>
       </title>
       <extendedTooltip>
         <name>ГруппаУчастниковРасширеннаяПодсказка</name>
@@ -469,10 +481,10 @@
       <common>true</common>
     </edit>
     <columns>
-      <name>ВидСтроки</name>
+      <name>ВключаяИсключая</name>
       <title>
         <key>ru</key>
-        <value>Вид строки</value>
+        <value>Включая/Исключая</value>
       </title>
       <id>1</id>
       <valueType>
