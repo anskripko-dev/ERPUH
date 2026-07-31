@@ -22,11 +22,10 @@ $ib = Join-Path $build 'ib'
 $log = Join-Path $build 'build.log'
 
 if (Test-Path $build) { Remove-Item $build -Recurse -Force }
-New-Item -ItemType Directory -Path $stub, (Join-Path $stub 'Languages'), (Join-Path $stub 'Catalogs'), (Join-Path $stub 'CommonModules'), (Join-Path $stub 'CommonPictures') | Out-Null
+New-Item -ItemType Directory -Path $stub, (Join-Path $stub 'Languages'), (Join-Path $stub 'Catalogs'), (Join-Path $stub 'CommonPictures') | Out-Null
 
 $langRu = U @(0x0420,0x0443,0x0441,0x0441,0x043A,0x0438,0x0439)
 $orgName = U @(0x041E,0x0440,0x0433,0x0430,0x043D,0x0438,0x0437,0x0430,0x0446,0x0438,0x0438)
-$modName = U @(0x041C,0x043E,0x0434,0x0438,0x0444,0x0438,0x043A,0x0430,0x0446,0x0438,0x044F,0x041A,0x043E,0x043D,0x0444,0x0438,0x0433,0x0443,0x0440,0x0430,0x0446,0x0438,0x0438,0x041F,0x0435,0x0440,0x0435,0x043E,0x043F,0x0440,0x0435,0x0434,0x0435,0x043B,0x044F,0x0435,0x043C,0x044B,0x0439)
 $usersName = U @(0x041F,0x043E,0x043B,0x044C,0x0437,0x043E,0x0432,0x0430,0x0442,0x0435,0x043B,0x0438) # Пользователи
 $groupsName = U @(0x0413,0x0440,0x0443,0x043F,0x043F,0x044B,0x041F,0x043E,0x043B,0x044C,0x0437,0x043E,0x0432,0x0430,0x0442,0x0435,0x043B,0x0435,0x0439) # ГруппыПользователей
 # КартинкаКонтрольЗаголовок16
@@ -88,32 +87,6 @@ $langBody = @"
 "@
 [System.IO.File]::WriteAllText((Join-Path $stub "Languages\$langRu.xml"), $langBody, $utf8)
 
-# Common module: use ExtendedConfigurationObject UUID as main module UUID
-$modSrc = Join-Path $extSrc ("CommonModules\$modName.xml")
-[xml]$modXml = Get-Content -LiteralPath $modSrc -Encoding UTF8
-$modExtUuid = $modXml.MetaDataObject.CommonModule.Properties.ExtendedConfigurationObject
-$modBody = @"
-<?xml version="1.0" encoding="UTF-8"?>
-<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
-	<CommonModule uuid="$modExtUuid">
-		<Properties>
-			<Name>$modName</Name>
-			<Synonym/>
-			<Comment/>
-			<Global>false</Global>
-			<ClientManagedApplication>false</ClientManagedApplication>
-			<Server>true</Server>
-			<ExternalConnection>true</ExternalConnection>
-			<ClientOrdinaryApplication>true</ClientOrdinaryApplication>
-			<ServerCall>false</ServerCall>
-			<Privileged>false</Privileged>
-			<ReturnValuesReuse>DontUse</ReturnValuesReuse>
-		</Properties>
-	</CommonModule>
-</MetaDataObject>
-"@
-[System.IO.File]::WriteAllText((Join-Path $stub "CommonModules\$modName.xml"), $modBody, $utf8)
-
 $cfgMain = @"
 <?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
@@ -142,7 +115,6 @@ $cfgMain = @"
 		<ChildObjects>
 			<Language>$langRu</Language>
 			<CommonPicture>$picName</CommonPicture>
-			<CommonModule>$modName</CommonModule>
 			<Catalog>$orgName</Catalog>
 			<Catalog>$usersName</Catalog>
 			<Catalog>$groupsName</Catalog>
