@@ -5,11 +5,11 @@
 ## ADDED Requirements
 
 ### Requirement: Shared Streamable HTTP endpoint
-Система SHALL предоставлять MCP по Streamable HTTP в локальной сети, чтобы несколько клиентов Cursor подключались к одному хосту. Транспорт stdio MUST NOT быть единственным способом командного доступа.
+Система SHALL предоставлять MCP по Streamable HTTP в локальной сети, чтобы несколько клиентов (Claude Desktop, ChatGPT/Copilot и совместимые) подключались к одному хосту. Транспорт stdio MUST NOT быть единственным способом командного доступа.
 
 #### Scenario: Second workstation uses the same host
-- **WHEN** два пользователя в LAN открывают проект `ERPUH` в Cursor и MCP указывает на сетевой URL шлюза
-- **THEN** оба получают рабочее MCP-подключение без запуска персональных серверов на `localhost`
+- **WHEN** два пользователя в LAN подключают предоплаченный Claude или GPT к сетевому URL шлюза
+- **THEN** оба получают рабочее MCP-подключение без запуска персональных серверов на `localhost` и без Cursor
 
 #### Scenario: Localhost-only config is not the team contract
 - **WHEN** в репозитории описан командный MCP
