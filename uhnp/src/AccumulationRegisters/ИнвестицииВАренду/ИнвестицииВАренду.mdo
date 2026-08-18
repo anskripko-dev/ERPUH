@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ef73f4ae-f771-4426-9880-793fc4f35ed7">
+  <producedTypes>
+    <selectionType typeId="ab08968c-930a-4ce4-a88c-b1a2ba0adabf" valueTypeId="600fc6ff-17ba-4126-834f-731076402311"/>
+    <listType typeId="ef04ebc3-53f5-4088-a4bd-bc0d879401ee" valueTypeId="ed100f4b-dd18-45a6-bcf6-b0b4721bdad4"/>
+    <managerType typeId="7f474dbd-8a93-43a5-b6d6-8547a10714e4" valueTypeId="c9b6a140-adbd-43da-a8dd-ad75cd1b181a"/>
+    <recordSetType typeId="81c5acd3-b32f-4c4e-8f4e-aaa1859c6687" valueTypeId="da558d0e-f50c-4674-9d7d-44f428ff8dda"/>
+    <recordKeyType typeId="0da81fdb-f7fa-4a06-bd0e-a4130df988de" valueTypeId="7bf240a9-c146-4b34-b970-748e46b90b75"/>
+    <recordType typeId="394ac67f-8ec8-4721-947d-5375d26b7d9d" valueTypeId="bec8e8ed-2943-4d44-86c9-4ffcfc622a13"/>
+  </producedTypes>
+  <name>ИнвестицииВАренду</name>
+  <synonym>
+    <key>ru</key>
+    <value>Инвестиции в аренду</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Rental investments</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="c07fe443-0e0a-42ac-95e8-03c0ea71221c">
+    <name>АрендныеПлатежи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Арендные платежи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental payments</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма арендных платежей в валюте договора</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Rental payment amount in contract currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="42e56944-cb8f-4a04-966c-7bd7fef171e8">
+    <name>АрендныеПлатежиРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Арендные платежи (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental payments (local)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма арендных платежей в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Rental payment amount in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="f9252d11-e04c-45a5-b3ed-da4c0ed57bed">
+    <name>АрендныеПлатежиУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Арендные платежи (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental payments (manag)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма арендных платежей в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Rental payment amount in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d1b52307-18ba-4a0d-a325-97a23b95bf35">
+    <name>НГЛСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>НГЛС (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Non-guaranteed residual value (local)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Негарантированная ликвидационная стоимость в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Non-guaranteed residual value in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0249e584-fc62-4c81-8f16-9ae4787780dc">
+    <name>НГЛСУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>НГЛС (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Non-guaranteed residual value (manag)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Негарантированная ликвидационная стоимость в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Non-guaranteed residual value in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="dd344e93-d398-4b5f-a891-368e2b777a14">
+    <name>ПроцентныйДисконт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процентный дисконт</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interest discount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма процентов в валюте договора</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Interest amount in contract currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="21239c07-4495-4758-966f-d5e04f8b2c48">
+    <name>ПроцентныйДисконтРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процентный дисконт (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interest discount (local)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма процентов в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Interest amount in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="97d86b0a-285e-4e9d-9b34-38f23827a401">
+    <name>ПроцентныйДисконтУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процентный дисконт (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interest discount (manag)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма процентов в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Interest amount in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="95fa2d31-c252-4151-ba39-970543505ff5">
+    <name>НастройкаХозяйственнойОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка хозяйственной операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business transactions setting</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиХозяйственныхОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dee564cf-fc13-45aa-a51f-06602cca4d5b">
+    <name>ИдентификаторФинЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор фин записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fin record ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7a0be0e5-456b-458a-a1a1-9f55b881ce1e">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="97daaca3-fd33-4af4-892e-0732f1967179">
+    <name>ИдентификаторСтроки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор строки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Уникальный идентификатор строки документа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Unique ID of the document line</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="04feeb20-bf1a-4e28-b5b8-327d8fd7dc24">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, по которой ведется учет</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company for which the records are kept</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f54a7e07-357d-4f57-a9c8-536efaa05d42">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор с арендатором</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Contract with lessee</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="806a7e1b-e41f-4c27-87ab-bc80986303b1">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта расчетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Payment currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="483eda3b-20ad-40ed-af26-84254fc7e442">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fixed asset</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыЭксплуатации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект основного средства</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Fixed asset</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b9ed2919-b14e-4066-a0c7-5764e92a230b">
+    <name>ГруппаФинансовогоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа финансового учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Financial accounting group</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыФинансовогоУчетаВнеоборотныхАктивов</types>
+    </type>
+    <editFormat>
+      <key>ru</key>
+      <value>БЛ='Основное средство'; БИ='Инвестиционное имущество'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>BF='Fixed asset'; BT='Investment property'</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Группа финансового учета внеоборотных активов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Fixed/Intangible assets accounting group</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0913cf9-2baf-43c0-a0db-4e0879df35b9">
+  <producedTypes>
+    <selectionType typeId="cf2460c6-b42c-41ee-a19a-1bea4f29b8ad" valueTypeId="a59e364a-feeb-44fa-8dfd-eff518dd3d6e"/>
+    <listType typeId="b7286434-2992-4409-8143-a1ca8e53ed71" valueTypeId="79195f8d-53fb-4a9d-9d70-352042b845be"/>
+    <managerType typeId="d853d1f3-fb47-4dd4-a4ae-7357b81ef596" valueTypeId="5a46ec2e-1037-4283-a185-d9f0a07644ec"/>
+    <recordSetType typeId="3aa566e0-df14-4ef7-8abc-59ddd71662ad" valueTypeId="753a5399-60fc-4ddc-8086-11f231f03e0f"/>
+    <recordKeyType typeId="c0c73c80-00ea-4444-ac41-0cde0e3eb54f" valueTypeId="13ac1ba3-9c79-43ec-89e1-44b504f97fc5"/>
+    <recordType typeId="638f4178-94c3-4f0d-88b4-0504f73dab3f" valueTypeId="d9191f33-9fa2-4f9a-8b35-2ac2eaf736c3"/>
+  </producedTypes>
+  <name>ЗаказыНаПроизводствоТрудозатраты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказы на производство трудозатраты</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Production orders labor costs</value>
+  </synonym>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="b2c436db-94df-4eab-b108-e38f46dafbd0">
+    <name>ПоЗаказу</name>
+    <synonym>
+      <key>ru</key>
+      <value>По заказу</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Against order</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="5e5201bf-61a4-4f8b-b8cc-1d411ccb4bca">
+    <name>ЗаказНаПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ на производство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production order</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ, в рамках которого отражаются обязательства по его выполнению.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Order containing liability for its execution</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a9fb3c58-c156-4882-9864-485730ba722f">
+    <name>КодСтрокиПродукция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (продукция)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (manufactured products)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Уникальный идентификатор строки заказа.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Unique ID of the order line.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="6b67fce9-37dd-4c99-91d6-7c075a5c4e2b">
+    <name>КодСтрокиЭтапыГрафик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (график выполнения этапов)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (stage execution schedule)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Связывает текущую строку со строкой из ТЧ &quot;Продукция&quot;.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Links the current row with a row from TS &quot;Products&quot;.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7b981dac-f54b-41c7-b5e5-f9a4b35ded7c">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d344131b-56a7-4f21-8524-b87cc94d7388">
+    <name>ВидРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид работ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity kind</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРаботСотрудников</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид работ, выполняемых на этапе производства.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind of activities at the production stage.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

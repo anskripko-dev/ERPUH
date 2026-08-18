@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0247f447-2d09-4791-8f30-194500f70545">
+  <name>ПроверитьРучныеКорректировкиПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить ручные корректировки перед записью</value>
+  </synonym>
+  <source>
+    <types>AccumulationRegisterRecordSet.РасчетыСКонтрагентамиГрафики</types>
+    <types>AccumulationRegisterRecordSet.РасчетыСКонтрагентамиФакт</types>
+    <types>AccumulationRegisterRecordSet.ОперацииБюджетов</types>
+    <types>AccountingRegisterRecordSet.МСФО</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.МСФОУХ.ПроверитьРучныеКорректировкиПередЗаписью</handler>
+</mdclass:EventSubscription>

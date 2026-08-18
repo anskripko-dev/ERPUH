@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5aa31015-1c81-4bc2-a842-c37541d2ea37">
+  <name>тн_ПровестиСвязанныеСчФПолученные</name>
+  <synonym>
+    <key>ru</key>
+    <value>Провести связанные СчФ полученные (тн)</value>
+  </synonym>
+  <comment>Выполнение задач №000043965</comment>
+  <source>
+    <types>DocumentObject.ВозвратТоваровОтКлиента</types>
+    <types>DocumentObject.ВозвратТоваровПоставщику</types>
+    <types>DocumentObject.КорректировкаПриобретения</types>
+    <types>DocumentObject.КорректировкаРеализации</types>
+    <types>DocumentObject.ОтчетПереработчика</types>
+    <types>DocumentObject.ПриобретениеТоваровУслуг</types>
+    <types>DocumentObject.ПриобретениеУслугПрочихАктивов</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.тн_Интеграция_УПП_Подписки.тн_ПровестиСвязанныеСчФПолученныеОбработкаПроведения</handler>
+</mdclass:EventSubscription>

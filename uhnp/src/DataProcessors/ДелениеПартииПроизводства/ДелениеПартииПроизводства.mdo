@@ -1,0 +1,2030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b470ffb1-6b48-4848-b36a-3f6c09727422">
+  <producedTypes>
+    <objectType typeId="e524cc91-3ce1-4979-a04a-fbc77d91a4e2" valueTypeId="75880404-d1dc-4c16-90a2-4c41299828e5"/>
+    <managerType typeId="35462580-0536-496f-a54c-596032290e92" valueTypeId="5cd4a089-71fe-4ef4-b205-b360b70b8303"/>
+  </producedTypes>
+  <name>ДелениеПартииПроизводства</name>
+  <synonym>
+    <key>ru</key>
+    <value>Деление партии производства</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Production lot division</value>
+  </synonym>
+  <defaultForm>DataProcessor.ДелениеПартииПроизводства.Form.РабочееМесто</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="ce947bc9-61b4-476d-ba1b-c4bcb962d80f">
+    <name>Действие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Action</value>
+    </synonym>
+    <comment>0 - сократить, 1 - отменить, 2 - разделить, 3 - продолжить</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6f12ef21-f285-4f7a-aec5-4e12adf9ac81">
+    <name>ДинамическаяСтруктура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Динамическая структура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dynamic structure</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4c560b58-b159-4d56-975e-49263c749dae">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор с давальцем, в рамках которого оформляется заказ, при хоз. операции производство из давальческого сырья</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Subcontracting agreement</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="bab8c284-2106-4fe2-a480-b47542941012">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="92d656eb-54dd-4cff-8b0e-18a3e16fd772">
+    <name>КоличествоУпаковок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество упаковок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="60083e25-1645-42c5-b6af-92baffa653c9">
+    <name>НазначениеПродукция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение (продукция)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment (manufactured products)</value>
+    </synonym>
+    <comment>Служебный реквизит, используется при группировке по продукции и назначению</comment>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Назначение продукции</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Product assignment</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0c6c2a56-7b6d-4d76-8f35-3f53167844be">
+    <name>НаправлениеДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line of business</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Статус</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.СтатусыНаправленияДеятельности.EnumValue.Используется</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.УчетЗатрат</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="66759760-59a5-4797-8fc2-f4cc950a5e73">
+    <name>НачалоПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3254862c-e712-4350-bd50-ab49f7abb64d">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Items</value>
+    </synonym>
+    <comment>Для совместимости со структурой данных ДанныеПартииПроизводства</comment>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f7241445-b63b-40bd-8614-e70ed271e658">
+    <name>Операция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТехнологическиеОперации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3a3018cc-af41-47f1-98ab-ba65362e8129">
+    <name>ИдентификаторОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation ID</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>25</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2d08ae1c-08cc-49f8-9c70-ca5e1a87a3fb">
+    <name>ЭтоПерваяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это первая операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is the first operation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="15e4958a-6984-4b57-a6b9-5d5af6c0268d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация предприятия, от имени которой оформлен заказ на производство</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Enterprise company on whose behalf production order is created</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="b79cb33d-fcd7-4395-b0d1-8674850653c8">
+    <name>ОсновноеИзделиеНоменклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное изделие номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main item product</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8d45e86c-6a99-4bf7-9165-98ea28cd7c3c">
+    <name>ОсновноеИзделиеХарактеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное изделие характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main product variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="07e259f8-4593-4534-9d26-73a5d4b24a3f">
+    <name>ПартияПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production lot</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПартииПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="c1e05181-e272-4eab-b9fb-831d5982154c">
+    <name>Партнер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Давалец</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Material provider</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Партнеры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Давалец, при хоз. операции производство из давальческого сырья</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Customer</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="9da23508-7f18-45f7-907d-30b49382261b">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="775c653e-346d-4a28-8cd9-1d3835d174bb">
+    <name>ПодразделениеДиспетчер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение диспетчер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dispatching unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1e3cc325-fe6c-4341-a895-a77c566f3755">
+    <name>Распоряжение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распоряжение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство2_2</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="b5cf4105-ffe2-4502-871e-fa36d7dbbb6b">
+    <name>СоздатьЭтап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Create stage</value>
+    </synonym>
+    <comment>Создать &quot;технический&quot; этап для оформления выпуска по рассчитываемой стоимости</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="08b0a42d-8391-4c22-aa1d-d2a97be7d42c">
+    <name>Спецификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Спецификация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Bill of materials</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РесурсныеСпецификации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4fa7fc8b-5def-4700-afeb-7bd0529ea47a">
+    <name>СпособРаспределенияЗатратНаВыходныеИзделия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ распределения затрат на выходные изделия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Method of allocating finished product costs</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыРаспределенияЗатратНаВыходныеИзделия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Способ распределения затрат на партии</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Method of allocating costs to lots</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="caee92ae-1470-425c-b596-314106a2133c">
+    <name>ТипПроизводственногоПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип производственного процесса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production process type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыПроизводственныхПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9a888cbb-78e6-437c-8404-16f32a26bd9d">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Packaging unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>DataProcessor.ДелениеПартииПроизводства.Attribute.ОсновноеИзделиеНоменклатура</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="db3e1c25-23f7-45a4-9cbe-44dc1de9267e">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <comment>Для совместимости со структурой данных ДанныеПартииПроизводства</comment>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e626aa65-a6d9-4628-9e7c-876f601ac195">
+    <name>ХозяйственнаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transaction</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Собственное производство / Производство из давальческого сырья</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>In-house production/Subcontracting</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="dfd015fa-49b8-4498-be70-b2aab244edb3">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭтапПроизводства2_2</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="942343e7-5372-493c-8ee7-caf204117bd9">
+    <name>СНачалаПартии</name>
+    <synonym>
+      <key>ru</key>
+      <value>С начала партии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>From the beginning of the lot</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="369571c0-f17a-4f36-b888-236216847823">
+    <name>СНачалаЭтапа</name>
+    <synonym>
+      <key>ru</key>
+      <value>С начала этапа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>From the beginning of the stage</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a674904a-d154-471f-9b0e-f0c880aa9a9a">
+    <name>ПромежуточноеИзделиеНоменклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Промежуточное изделие номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Intermediate product item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9ad86a66-ebfa-4b10-a49f-9e31aff570e8">
+    <name>ПромежуточноеИзделиеХарактеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Промежуточное изделие характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Intermediate product variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dca63663-f307-435d-993b-4a70af89c838">
+    <name>ПромежуточноеИзделиеУпаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Промежуточное изделие упаковка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Intermediate product packaging unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bf750600-853c-4856-bef2-5b95dde20996">
+    <name>КоличествоУпаковокБрак</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество упаковок брак</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of packaging units nonconformity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="45e0fa14-077c-43fe-ab78-007defe16c00">
+    <name>ЭтоПоследнийЭтапИОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это последний этап и операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is last stage and operation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4192cd96-9a2c-4898-91e7-4329ee4b2df4">
+    <name>ЭтоПоследняяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это последняя операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is last operation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="af4d4488-e92b-4a1f-916d-c27511a17784">
+    <name>ВЭтапеЗаполненыДолиСтоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>В этапе заполнены доли стоимости</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost shares are filled in stage</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="20d6b840-fb19-45ac-979f-4a67aeedf1a0">
+    <producedTypes>
+      <objectType typeId="e5e05018-1d3e-4e21-a7ee-73dde8a22e96" valueTypeId="793fa2e4-0c97-4088-9a29-93bafb1435db"/>
+      <rowType typeId="34076fff-056f-4867-a293-176930d6dd3f" valueTypeId="0214a34f-d1ac-46e1-88d8-49ec70c0249a"/>
+    </producedTypes>
+    <name>Партии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lots</value>
+    </synonym>
+    <comment>Новые партии</comment>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="6f4a39d4-111f-4336-8a3a-e23c1a402c45">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ТипНоменклатуры</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Работа</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fa590ade-1aa5-4237-99d5-37c2d9c2d9ba">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6cf6492c-a53d-4fa8-9d5e-92f534faacf3">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="186ee80e-7094-4c7b-bfff-873de55e608b">
+      <name>КоличествоУпаковок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="76518532-bae7-469a-bc83-64bbdb0df9bd">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (в единицах хранения)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity (Stock UOM)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="86ddb9ea-39ec-4116-8ba8-baf3895b2b13">
+      <name>Получатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Получатель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Recipient</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0c577303-b9b6-40a0-b980-d6c13feebf57">
+      <name>Назначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Assignment</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    </attributes>
+    <attributes uuid="475621ff-a6ef-4ac4-aad0-5fc8d958cb54">
+      <name>Произведено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Произведено</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Produced</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8accb2f3-b761-4218-a690-7ae8edca8ff6">
+      <name>ДатаПроизводства</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата производства</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Production date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e9322200-c8cd-4e5e-9463-6e8daed48fc7">
+      <name>Серия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Склад</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.Получатель</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Характеристика</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.Характеристика</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bd98fd74-6510-4215-8e01-a5b227493a3f">
+      <name>СтатусУказанияСерий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус указания серий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch specification status</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Служебный реквизит который определяет состояние ввода серий для строки ТЧ. Формируется автоматически, пользователем не редактируется.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Service attribute that determines the batch input state for a table row. It is generated automatically, not user-editable.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f521795b-c86a-4987-ac9c-d5aa487c4a90">
+      <name>СтатусУказанияСерийОтправитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус указания серий отправитель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch specification status sender</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак того, что согласно политике учета серии необходимо указать для приемки выпущенной продукции в подразделение, которое его выпустило</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Shows that according to the accounting policy batch must be specified to receive released products to the business unit that released them </value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c07acdfa-1010-463a-b81f-857433718f61">
+      <name>СтатусУказанияСерийПолучатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус указания серий получатель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch specification status consignee</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак того, что согласно политике учета серии необходимо указать для приемки выпущенной продукции в цеховой кладовой</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Indicates that according to the accounting policy batch must be specified to receive released products in the shop floor stockroom</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="038082cb-0551-40ef-bd62-4ef179edf4be">
+      <name>ДоляСтоимости</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля стоимости</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cost share</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="24b437e8-047b-48d7-af67-6aaa46d1fe79">
+      <name>ДоляСтоимостиНаЕдиницу</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля стоимости на единицу</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cost share per unit</value>
+      </synonym>
+      <comment>Служебный реквизит для автоматического заполнения доли стоимости</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="065bbba6-75a0-47dc-bf03-c4f66a50eca7">
+      <name>СписатьНаРасходы</name>
+      <synonym>
+        <key>ru</key>
+        <value>Списать на расходы</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Expense as</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="14319d55-7c95-445f-8cfb-a97abafe409b">
+      <name>СтатьяРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расходов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Expense item</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+        <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="357eeb33-71bc-484d-8b30-7a16996b24ad">
+      <name>АналитикаРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Аналитика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Dimension</value>
+      </synonym>
+      <type>
+        <types>Characteristic.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.СтатьяРасходов</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c19ff4ed-2392-4616-9376-f047d9b70f47">
+      <name>АналитикаАктивовПассивов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Аналитика активов/пассивов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Dimension of assets/liabilities</value>
+      </synonym>
+      <type>
+        <types>Characteristic.СтатьиАктивовПассивов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.СтатьяРасходов</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ae1c5e55-981e-415f-88b7-8f1ce875f996">
+      <name>ВидЗапасов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид запасов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Inventory owner attributes</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыЗапасов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.РеализацияЗапасовДругойОрганизации</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a368dc51-ab93-4093-95bd-5cbfe1d5ac23">
+      <name>АналитикаУчетаНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Аналитика учета номенклатуры</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Inventory location attributes</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КлючиАналитикиУчетаНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="13f14d2d-6024-46db-a825-fd402b22ea37">
+      <name>ПередатьДавальцу</name>
+      <synonym>
+        <key>ru</key>
+        <value>(не используется) Передать давальцу</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>(not used) Transfer to material provider</value>
+      </synonym>
+      <comment>Добавлено для совместимости</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак, определяющий необходимость оформления отчета давальцу на выходное изделие, исходя из назначения выходного изделия.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Shows whether a report on the finished products must be registered as &quot;Consumption report — Subcontracting services delivered&quot; based on the purpose of finished products.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="84b60a3b-75c2-4c51-a319-247336afa288">
+      <name>ОбработатьПоСпецификации</name>
+      <synonym>
+        <key>ru</key>
+        <value>(не используется) Обработать по спецификации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>(not used) Process by BOM</value>
+      </synonym>
+      <comment>Добавлено для совместимости</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Выходное изделие является полуфабрикатом, который в дальнейшем обрабатывается по указанной спецификации</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Finished product is a semi-finished product which is further processed according to the specified BOM</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7560fed2-64ef-4e5c-8079-1ed165cc9387">
+      <name>Спецификация</name>
+      <synonym>
+        <key>ru</key>
+        <value>(не используется) Спецификация</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>(not used) Bill of materials</value>
+      </synonym>
+      <comment>Добавлено для совместимости</comment>
+      <type>
+        <types>CatalogRef.РесурсныеСпецификации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Продолжить обработку по спецификации</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Continue processing by BOM</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="adeddb1f-7472-49ed-88f5-db1297f8fdfe">
+      <name>Отменено</name>
+      <synonym>
+        <key>ru</key>
+        <value>(не используется) Отменено</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>(not used) Canceled</value>
+      </synonym>
+      <comment>Добавлено для совместимости</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак отмены выпуска изделия</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Shows that product release is canceled</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5b55e73f-725d-430f-9634-630b068ce335">
+      <name>УпаковкаПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ДелениеПартииПроизводства.Attribute.ОсновноеИзделиеНоменклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4642c212-d6b2-4fb7-8520-5334bd6238dd">
+      <name>КоличествоУпаковокПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество упаковок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="44e5e9ce-d11c-48e7-9b3c-ce23462635ab">
+      <name>КоличествоПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3bfa03dd-231f-4a51-aea0-55fa489fb507">
+      <name>ПродолжитьОбработку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить обработку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue processing</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5a9d5fe9-230e-4f6b-a29f-ad15dbc79942">
+      <name>ПродолжитьСпецификация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить спецификация</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue BOM</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РесурсныеСпецификации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceForm>Catalog.РесурсныеСпецификации.Form.ФормаВыбораПоНоменклатуре</choiceForm>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="33f20348-67ab-4daa-9bb5-9660fe11944d">
+      <name>ПродолжитьЭтап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить этап</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue stage</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ЭтапыПроизводства</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d4a6154e-4516-49a0-9878-27b06313dea9">
+      <name>ПродолжитьОперация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить операция</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue operation</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ТехнологическиеОперации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8e643483-df68-4931-829a-a4cf5b51d264">
+      <name>ПродолжитьИдентификаторОперации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить идентификатор операции</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue operation ID</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>25</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="14b1a624-f958-4ec4-9bd7-6a38d308ea6a">
+      <name>ПродолжитьЭтоПерваяОперация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить это первая операция</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue this is the first operation</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dec0c0ab-af1d-4236-971c-8192379ef591">
+      <name>ИндексПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Индекс партии</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Lot index</value>
+      </synonym>
+      <comment>Технический реквизит для связи с ТЧ Серии</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ce930230-2477-4be6-8416-c5acd28d1857">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ПроизводственноеПодразделение</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c8cd4622-4857-40d0-a252-2b79e0e924d2">
+      <name>НастройкаСчетовУчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Настройка счетов учета</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Ledger account settings</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НастройкиСчетовУчетаПрочихОпераций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1905952f-0183-48c0-9f6e-1d3d586e1842">
+      <name>НоменклатураИсходногоКачества</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура исходного качества</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items of original quality</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0ce65c85-083c-4c04-a208-ce3da86258ac">
+      <name>ХарактеристикаИсходногоКачества</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика исходного качества</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant of original quality</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="12802c77-6992-4973-ac3c-1cdbf1f75f28">
+      <name>ИзменитьВыпускаемоеИзделие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Изменить выпускаемое изделие</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Change product to be released</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="78f1f9c6-af86-4e79-9a4d-6df68ad135e2">
+      <name>ПродолжитьНоменклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ТипНоменклатуры</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Работа</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e3b1eae2-d604-4632-9290-602123226a5c">
+      <name>ПродолжитьХарактеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Продолжить характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Continue variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <field>DataProcessor.ДелениеПартииПроизводства.TabularSection.Партии.Attribute.ПродолжитьНоменклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="33575cf4-e583-4a3b-ae9d-6d29f02b17a6">
+      <name>ОтменитьИзделиеВЗаказе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отменить (изменить) изделие в заказе</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cancel (change) finished product in order</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="193940a9-f617-4ec5-b9dd-305d3e1a40a5">
+      <name>ПричинаОтменыИзделия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Причина отмены изделия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Reason for canceling finished product</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПричиныОтменыПроизводства</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="0acf10c8-783c-427a-b512-f2b5a0ce193f">
+    <producedTypes>
+      <objectType typeId="4093e9c8-845f-479b-bb23-e4e639f42ff2" valueTypeId="aac9ee1c-e88b-48a4-bbc9-3c2294a46277"/>
+      <rowType typeId="bcba41f5-df2f-4f43-9a80-44cf21947566" valueTypeId="a872a70a-7291-4b15-885d-08d7b590b765"/>
+    </producedTypes>
+    <name>Серии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Batch</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="2319ae7e-7313-40e8-a730-705c0f45ea94">
+      <name>Серия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Серия товаров</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Goods batch</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e87396bd-8278-4fc5-90fb-ac7d80522aa8">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Номенклатура, для которой указывается серия.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Items that have batch specified.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ТипНоменклатуры</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f5cb1457-1dfa-44ab-9cb3-c52b48ab2d5a">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Характеристика номенклатуры, для которой указывается серия.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Item variant that has batch specified.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c91900f5-cd56-4d15-ab00-623371ed7494">
+      <name>Получатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Получатель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Recipient</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Склад или подразделение, на который необходимо передать изделие</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Warehouse or business unit to which it is required to transfer the product</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="02a1e3c2-cf9d-4a77-a437-3e9ea2fb969c">
+      <name>Назначение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Назначение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Assignment</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Назначения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Назначение выходного изделия</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Product assignment</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceForm>Catalog.Назначения.Form.ФормаВыбораПоОстаткамВПодразделении</choiceForm>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dfa80e4e-8bc5-4867-b98e-f12db2f4a853">
+      <name>Произведено</name>
+      <synonym>
+        <key>ru</key>
+        <value>Произведено</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Produced</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="16db3217-a238-462f-b180-44662b3cb6a7">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество в единицах хранения, отгружаемое по указанной серии товаров</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity in stock UOM shipped for the specified goods batch</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9947dd4a-8200-450e-a11d-8ea2a77c28b3">
+      <name>ДатаПроизводства</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата производства</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Production date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="03b9a108-adaf-40c9-a41e-9a4da1d8690f">
+      <name>ИндексПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Индекс партии</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Lot index</value>
+      </synonym>
+      <comment>Технический реквизит для связи с ТЧ Партии</comment>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d2a66c31-fbd6-46fd-bb66-15203d853284">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ПроизводственноеПодразделение</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0bb7c5b5-9deb-4dca-8774-23fa5d568bde">
+    <name>РабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Workplace</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6875017f-7f8b-436b-ba74-a4cdc4044a60">
+    <name>ПодборНазначений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор назначений</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment picking</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2cd6df49-58f2-40ba-82ca-39970521ffda">
+    <name>Настройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Settings</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="70f5dd0d-20ca-4e7d-9c68-6106b747c626">
+    <name>ЗаполнениеПоСпецификации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заполнение по спецификации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fill in by BOM</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eecfe742-26e6-49aa-921a-bd9dff1bb5bf">
+  <producedTypes>
+    <selectionType typeId="67212f5e-6d0e-4908-8bca-9f7fd7749de4" valueTypeId="b139782d-c678-408e-bf2f-d781071389a6"/>
+    <listType typeId="f3eeb31f-75f8-432f-8c2e-cbcb4f98405f" valueTypeId="e85ba10d-95ff-4d80-a8c4-0cc0e4557338"/>
+    <managerType typeId="242f088f-edb9-4939-bb8c-fe008944e57e" valueTypeId="bac8b2ab-c508-4b6d-bb4e-59359bf22bdb"/>
+    <recordSetType typeId="0901a747-32a7-4b72-bc5e-170a66ba83e4" valueTypeId="c6136b4e-0339-47de-bdbf-5cb8b784e49e"/>
+    <recordKeyType typeId="6be63729-90dd-4950-9d17-3ee3251121ef" valueTypeId="f0b45d02-2f17-4dd6-9025-465c0f967957"/>
+    <recordType typeId="ddc9f5fc-e456-41ea-956b-8d53b13763b7" valueTypeId="39ad866b-ef75-49e0-aa2c-ae8de1a91ec9"/>
+    <recordManagerType typeId="88da6126-cae7-4119-92b4-6fd89fee0c96" valueTypeId="3d1978e0-7bb2-49c5-9808-ab12eb6fbf21"/>
+  </producedTypes>
+  <name>ПооперационноеРасписание</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пооперационное расписание</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Operation timetable</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Операция расписания</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Timetable operation</value>
+  </recordPresentation>
+  <resources uuid="878431c1-dd10-4fad-897b-625ea4da0f78">
+    <name>ВремяПлан</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время выполнения план.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Execution time plan.</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Плановое время выполнения операции (в секундах).</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Planned operation execution time (in seconds).</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5eca943b-3e49-43bb-a9a2-6d859a70f28b">
+    <name>ВремяПерехода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время перехода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transfer time</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Время перехода на следующую операцию (в секундах).</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Time of transfer to the next operation (in seconds).</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f5050868-702d-491a-b675-3f4a857f790e">
+    <name>Загрузка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Load</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Загрузка рабочего центра при выполнении операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center load on executing the operation.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9e1689fc-18cd-4520-a0cd-6f4bba955e4b">
+    <name>ЭтоПереналадка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это переналадка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is changeover</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ee5bad0e-3f7d-4a9c-a86c-d558e40d223b">
+    <name>СтатусВыполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус выполнения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Execution status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыВыполненияОпераций</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статус выполнения операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation status.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e92e16f8-8ab0-452f-b528-c4d0fdf84fdb">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение в котором выполняется операция.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit in which the operation is carried out.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d2eeef77-7a77-41ed-a076-792a55f8ea3e">
+    <name>Вспомогательная</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вспомогательная</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Secondary</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Операция выполняется на вспомогательном рабочем центре.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The operation is executed in additional work center.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dac020ab-3e5f-417b-bfe6-4ce5ba634267">
+    <name>Моделирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Моделирование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Modeling</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Запись является предварительной и не относится к актуальными данным пооперационного расписания.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The record is a preliminary one. It does not show relevant data of operation planning.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8c22f491-dc24-4465-8b26-f4c55d3f40c0">
+    <name>ДатаИзмененияСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения статуса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status modification date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата изменения статуса операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation status change date.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2b49b8bf-1da0-4430-8175-5b37b123e242">
+    <name>Штрихкод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Штрихкод</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Barcode</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>13</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Штрихкод номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Items barcode</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <dimensions uuid="c132aab3-b9d6-45fc-ab42-1ddbdbdf976d">
+    <name>ИдентификаторОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation ID</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Идентификатор операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation ID.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7059da58-300e-44c7-9e70-82a66326fc14">
+    <name>Начало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата и время начала выполнения операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation start date and time.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="367111a5-f297-4ef9-92b3-a72429671f71">
+    <name>Окончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата и время окончания выполнения операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation end date and time.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b4ba6ebf-6c70-4c17-a610-d5a5ca5b85d9">
+    <name>РабочийЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочий центр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <types>CatalogRef.РабочиеЦентры</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Рабочий центр на котором выполняется операция.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center in which the operation is executed.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2be90d8a-aea2-4314-b42e-61c82c328472">
+    <name>МаршрутныйЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрутный лист</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation sheet</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.МаршрутныйЛистПроизводства</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Маршрутный лист.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Route sheet.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6314e542-47c4-4493-84bc-0d8f773a82f8">
+    <name>МодельРасписания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Модель расписания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Timetable model</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Модель (вариант) расписания.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Timetable option.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8c7797aa-8b87-4e7f-8c27-4251d83b0d6f">
+    <name>МодельПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Модель планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planning model</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МоделиПооперационногоПланирования</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Модель планирования.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Planning model.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8c42c777-fc83-4f57-bb75-4fab48b36b5c">
+    <name>ЭтоУдалениеОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это удаление операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is operation deletion</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Запись содержит данные неактуальной операции, которая будет удалена в случае сохранения данной модели расписания.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The record contains irrelevant operation data that will be deleted if you save the timetable model.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="13750fb4-3e4d-42eb-b582-350b45d6096b">
+    <name>ТактПараллельнойЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Такт параллельной загрузки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parallel load time</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0dda5b48-1acd-4a54-ad51-8700477c2572">
+  <producedTypes>
+    <selectionType typeId="d6696768-3fc9-4351-98b0-4abced0a4856" valueTypeId="7ab1a15f-2e76-4876-82fc-81b12c30af49"/>
+    <listType typeId="87cfec02-9e13-4ce7-91ce-1dbff26b31e5" valueTypeId="fc9b153c-5b39-4293-bb11-1eb6383c91db"/>
+    <managerType typeId="85862ea2-57b0-41f6-8738-876dd833799a" valueTypeId="a8884575-d77d-4a61-8312-4e33606e8cc3"/>
+    <recordSetType typeId="b4bdfeb1-24ef-4db8-832f-5b21a0c09c3a" valueTypeId="643c780e-e0e7-49cd-bae4-e6ae1005fb91"/>
+    <recordKeyType typeId="28491773-f022-47dc-9453-df5418f8c589" valueTypeId="bd25d387-e4bd-4777-a1c9-e3efb9599737"/>
+    <recordType typeId="1392e9cc-8475-4ec1-b92a-f10a238ffd55" valueTypeId="0e06941a-ebdb-4dd8-9696-42773d443ac6"/>
+    <recordManagerType typeId="c72786a6-8733-42a3-bea0-2e14ff29f75b" valueTypeId="2000eb5b-9461-4d87-83c1-7c7ac7b777b7"/>
+  </producedTypes>
+  <name>ИсправлениеПараметровНалогаНаИмущество</name>
+  <synonym>
+    <key>ru</key>
+    <value>Исправление параметров налога на имущество</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Adjust financial details of property tax</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4aef8d67-dcf3-41ab-9287-025b2bd562a3">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2d81935f-73e6-4240-bc9e-3391adad0065">
+    <name>Амортизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Амортизация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Depreciation</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="9cd7af0f-1be5-447d-862e-8f9e7dc9c0cc">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4aac5443-a4bc-4fd4-afe6-ea47fbe7f9ba">
+    <name>ОсновноеСредство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fixed asset</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыЭксплуатации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="06e0474d-03d3-43c5-8d0b-13dd281f1aad">
+    <name>ДатаИсправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата исправления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Correction date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="448ea9a7-497d-40a9-a43c-00733b9d5000">
+    <name>ДатаДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата действия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Valid date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

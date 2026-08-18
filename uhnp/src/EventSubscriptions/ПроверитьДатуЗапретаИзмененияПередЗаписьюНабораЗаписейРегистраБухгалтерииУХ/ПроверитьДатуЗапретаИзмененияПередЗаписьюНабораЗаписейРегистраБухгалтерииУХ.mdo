@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c4657398-d1a2-40d1-b61f-637034cfba59">
+  <name>ПроверитьДатуЗапретаИзмененияПередЗаписьюНабораЗаписейРегистраБухгалтерииУХ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату запрета изменения перед записью набора записей регистра бухгалтерии УХ</value>
+  </synonym>
+  <comment>Подписка создана при внедрении подсистемы ДатыЗапретаИзменения для проверки регистров бухгалтерии</comment>
+  <source>
+    <types>AccountingRegisterRecordSet.МСФО</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ДатыЗапретаИзменения.ПроверитьДатуЗапретаИзмененияПередЗаписьюНабораЗаписейРегистраБухгалтерии</handler>
+</mdclass:EventSubscription>

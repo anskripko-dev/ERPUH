@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e50c67c1-05ac-49cc-bc3e-19066f38c4a1">
+  <producedTypes>
+    <objectType typeId="063ab054-824f-4f29-b7b7-0e1b06575e9c" valueTypeId="ce7488dd-d7c9-487e-a4ca-14482594d8a2"/>
+    <managerType typeId="04e333e6-f18a-4aad-b900-b579150775c4" valueTypeId="d713f935-a19b-4fe4-b73d-6081e64d6f07"/>
+  </producedTypes>
+  <name>ИмпортОбъектовИзExcel</name>
+  <synonym>
+    <key>ru</key>
+    <value>Импорт форм сбора данных из Microsoft Excel</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ИмпортОбъектовИзExcel.Form.Форма</defaultForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="7e95274f-19b6-4e02-a23c-b021f3853256">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a9e069ef-8c15-47a9-8340-3f7c03d02cb0">
+    <name>ПериодОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период отчета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7de0c348-0cfe-4c01-9367-c8092cb2365a">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e6608937-5324-442b-a2f9-eb1018712602">
+    <name>ОсновнаяВалюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="16ab2239-1fb9-4387-8c9e-06014f025a1a">
+    <name>ПутьКФайлам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь к файлам</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7fbd647d-ce6a-471f-b635-18f7a15734af">
+    <name>ИмпортИзФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Импорт из файла</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="46d21813-5bfd-4b85-bad9-10c4269e6297">
+    <name>ЗаписыватьПоРезультатамЗаполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Записывать по результатам заполнения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a31b3505-f34b-4a84-82ef-92863c6af639">
+    <name>ПереименовыватьФайлыПослеИмпорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Переименовывать файлы после импорта</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1c0ec4e4-d793-4e0d-abaf-44ca2d22dccf">
+    <name>ПроводитьДокументыПослеИмпорта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проводить документы после импорта</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="95e852a0-405b-4f7a-9af1-5ee3ebe8d57b">
+    <name>ВыполнятьПовторныйИмпорт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выполнять повторный импорт</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fa0bab8f-cece-44f3-bff0-6926f9850f92">
+    <name>Проект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Проекты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ff96889e-769d-4c1a-9ef1-bdb75cebdef3">
+    <name>ИскатьВПодкаталогах</name>
+    <synonym>
+      <key>ru</key>
+      <value>Искать в подкаталогах</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cc8892ba-bcfc-4772-9ed4-117ae2cecbbc">
+    <name>ЗагрузкаДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка документов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="9a9193b3-cf91-439e-9c92-20079e671c10">
+    <producedTypes>
+      <objectType typeId="3171f9b5-d723-4943-af93-bac6f8c1723d" valueTypeId="31fd5df5-d236-4d5d-99b2-053c479f0dfb"/>
+      <rowType typeId="4eb9d158-c1cb-42c1-b5ac-a7108d67cb24" valueTypeId="0d6732ab-1a8c-4e9e-b282-c46909ef449f"/>
+    </producedTypes>
+    <name>ОбработанныеЭкземплярыОтчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработанные экземпляры отчетов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="823cc58c-ef8e-465d-bb9e-15ced54291cc">
+      <name>ЭкземплярОтчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Экземпляр отчета</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.НастраиваемыйОтчет</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0a3527eb-5f44-452b-8598-610d9de0d055">
+      <name>Состояние</name>
+      <synonym>
+        <key>ru</key>
+        <value>Состояние</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СостоянияОтчетов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e534dc5-b7b5-4d20-ba41-476182bd60a3">
+      <name>ЕстьОшибки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть ошибки</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8c4087cb-eb0a-47eb-872c-612e9333283a">
+      <name>ВидОтчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид отчета</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыОтчетов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59f7a288-7fc9-412a-a328-1e4c136d3c30">
+      <name>ИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="09cdf626-5705-4052-9fc4-39fd00824e5e">
+      <name>ПолноеИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Полное имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="b2398ce0-c064-4850-af12-4c9dec1bf735">
+      <name>ИмяФайлаБезРасширения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла без расширения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="b34575c8-5d1b-4422-bc05-e96ec98baf05">
+      <name>ВерсияХранимогоФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Версия хранимого файла</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХранимыеФайлыОрганизацийПрисоединенныеФайлы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b088a7ba-2b86-404e-8aff-ae5effc389a6">
+      <name>ПравилоОбработки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Правило обработки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПравилаОбработки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="89ad4b98-12be-415c-a8c1-9928d26497f1">
+    <producedTypes>
+      <objectType typeId="19675e69-a929-4711-9df8-eeb2925a72f7" valueTypeId="86156d5c-d332-4939-b78b-7e053bad548d"/>
+      <rowType typeId="9f5b1f99-3a7c-488a-bb4f-71ab421c2fa7" valueTypeId="37b42358-0851-4ac8-8222-f7be2492a0ef"/>
+    </producedTypes>
+    <name>ИмпортированныеПакеты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Импортированные пакеты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a808393d-523e-449d-8f74-8d03f99de37f">
+      <name>ПакетПравилИмпортаТаблиц</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пакет правил импорта таблиц</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПакетыПравилИмпортаТаблиц</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d724bf97-0b41-443f-be77-e96b819ad605">
+      <name>ДокументПараллельногоУчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ параллельного учета</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2882a6e3-82ec-4a65-9571-9338cafde3c7">
+      <name>ЕстьОшибки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть ошибки</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="29cd7197-9198-4ddb-bd84-ca0cbdaadd78">
+      <name>ИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="f26b4bd6-9261-454d-bc0e-8aa39e5d038c">
+      <name>ПолноеИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Полное имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="9ac66f41-150a-4596-a520-0eb35da81ab8">
+      <name>ИмяФайлаБезРасширения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла без расширения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="33766c3e-9ac9-49d5-aa48-d00c0ec3032c">
+      <name>ВерсияХранимогоФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Версия хранимого файла</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХранимыеФайлыОрганизацийПрисоединенныеФайлы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="821809df-8d93-4f8d-bc91-75d4d157d1e7">
+    <producedTypes>
+      <objectType typeId="d9eed148-4b1a-49db-8a40-d330a1c89805" valueTypeId="2362b1b7-fa18-41d8-9aa4-a213e7c63b8e"/>
+      <rowType typeId="90a52d16-c305-4130-a2dc-676da7606766" valueTypeId="7ee6ac00-361a-413d-bbe9-d815b372afa6"/>
+    </producedTypes>
+    <name>ИмпортированныеОбъекты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Импортированные объекты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0138c649-f295-4b99-b31b-8b26139aba51">
+      <name>ПравилоЗаполнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Правило заполнения</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПравилаЗаполненияОбъектовБД</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="419172f6-0b86-43fb-b446-f1509ea0b442">
+      <name>ДокументПараллельногоУчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обработанный объект</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34ba865b-7cca-4029-90c7-5909201a3bfd">
+      <name>ЕстьОшибкиИмпорта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть ошибки импорта</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="29affda6-daa6-4a75-a9f5-c36cd07a0772">
+      <name>ИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="48f996d1-f7a9-4cdb-bb2b-c10bf077fc0e">
+      <name>ПолноеИмяФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Полное имя файла</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="f4f54406-02c1-4e80-a54e-ee1733dfd200">
+      <name>ИмяФайлаБезРасширения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя файла без расширения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="52d2b142-1bca-4d40-866b-d6cc211682b1">
+      <name>ВерсияХранимогоФайла</name>
+      <synonym>
+        <key>ru</key>
+        <value>Версия хранимого файла</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХранимыеФайлыОрганизацийПрисоединенныеФайлы</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f5125828-2be1-4f2f-a327-d392b633218a">
+      <name>ДокументБД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ БД</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДокументыБД</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="23fe1fd3-f386-47c2-899d-6a26afec228d">
+      <name>ОбработкаЗавершена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обработка завершена</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="6ec90fcd-ffb5-4d3a-946a-411134740f05">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <includeHelpInContents>true</includeHelpInContents>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

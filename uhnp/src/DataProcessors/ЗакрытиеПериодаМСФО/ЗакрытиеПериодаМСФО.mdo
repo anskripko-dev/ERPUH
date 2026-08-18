@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cf94c711-18f4-4926-bc4f-13c54205685d">
+  <producedTypes>
+    <objectType typeId="4b604ae4-7899-41b8-889f-14e3d76587bf" valueTypeId="72c6df7a-18d4-433f-ad27-1fd59f2eb0dc"/>
+    <managerType typeId="64d2cef1-8f3e-4f89-ba01-dc94d9bb7a14" valueTypeId="9bde9db6-1862-47b0-9bae-8d93db3f823e"/>
+  </producedTypes>
+  <name>ЗакрытиеПериодаМСФО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Закрытие периода МСФО</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗакрытиеПериодаМСФО.Form.Форма</defaultForm>
+  <attributes uuid="c152e895-abfb-4c38-abea-3db59ef582de">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9daed86c-f283-4d85-920a-6b09b7839286">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a6348d20-fc86-4a75-b3c5-57993193611b">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="a2020b63-0710-4757-b4f4-088da928b6b8">
+    <producedTypes>
+      <objectType typeId="1e8e491e-b578-4be3-9209-d9086fe36a22" valueTypeId="33a20c9d-86c6-4180-bb38-449abd1672c6"/>
+      <rowType typeId="69e96255-c0bb-4159-aa74-77713edc2061" valueTypeId="142a4309-ba6b-4b8e-82f6-c22b9cf6b404"/>
+    </producedTypes>
+    <name>ТаблицаОпераций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица операций</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="42a8f0d1-cedc-4304-92c0-a5154f764af1">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="a646a84d-d6a7-49f5-84e4-911506d0e4b7">
+      <name>ВидОперации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид операции</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="3ca402a2-be29-473b-8501-7e051f9ef487">
+      <name>Требуется</name>
+      <synonym>
+        <key>ru</key>
+        <value>Требуется</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b1083565-aebc-4ce9-8683-8baac618be6c">
+      <name>Ссылка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ff899555-1323-4dce-9ccd-18593fa2b3c8">
+      <name>Состояние</name>
+      <synonym>
+        <key>ru</key>
+        <value>Состояние</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыСостоянийРегламентныхОпераций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="30567ea3-8ae7-438b-b0c6-b850ebf44bea">
+      <name>Представление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Представление</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>150</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="74a70101-cb5a-4555-ac16-37e927503ff8">
+      <name>Ответственный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ответственный</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Пользователи</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7f5b37fd-5b8e-44e4-a9fd-eaa7bf546d99">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата последнего формирования</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7c997265-a706-4929-8ed3-dbbe13937e58">
+      <name>Картинка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Картинка</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d0e237f2-6148-4928-bff5-e747d57b278b">
+      <name>Проведен</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проведен</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1bd4dc79-a2b7-4fe0-8f6f-b2e0594b2816">
+      <name>Справочно</name>
+      <synonym>
+        <key>ru</key>
+        <value>Справочно</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="c4a04ace-835b-436f-ada8-fb192591792e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="43dec7a3-e525-4598-94ee-77e60c06b840">
+    <name>СписокОпераций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список операций</value>
+    </synonym>
+  </templates>
+  <commands uuid="303b322e-b0c5-4f51-b9bd-b6cd380652a8">
+    <name>ЗакрытиеПериодаМСФО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закрытие периода МСФО</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

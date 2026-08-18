@@ -1,0 +1,931 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f761fbac-617d-400e-b7d3-cce7cd471534">
+  <producedTypes>
+    <objectType typeId="59828a0c-2cff-40ec-bb86-bec57757da75" valueTypeId="b7630191-5d0a-462f-a776-8e5f01928128"/>
+    <refType typeId="41315347-1ad9-4083-9888-52fdcf00246d" valueTypeId="36aa0df4-659e-417e-83f4-02e482e00c71"/>
+    <selectionType typeId="d8e05f66-3ce0-47fe-a681-cca035fa91f0" valueTypeId="23660048-b332-40e5-af8f-d95cb981365d"/>
+    <listType typeId="dcebe3e6-e642-41b1-9864-4db9f5c505ec" valueTypeId="5fc22768-eb5f-40a3-bf8d-dc6eb13f2c40"/>
+    <managerType typeId="8a95646d-3047-4c46-8e1b-4fa201b83aed" valueTypeId="0d0cc007-5f35-4dd9-ba9f-be36391edc76"/>
+  </producedTypes>
+  <name>ПараметрыЦеннойБумагиВексель</name>
+  <synonym>
+    <key>ru</key>
+    <value>Вексель</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.ПараметрыЦеннойБумагиВексель.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <listPresentation>
+    <key>ru</key>
+    <value>Параметры векселей</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <registerRecords>AccountingRegister.Хозрасчетный</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="616bc2c4-eb03-4c3e-810b-47e304073cf3">
+    <name>ФинансовыйИнструмент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Финансовый инструмент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЦенныеБумаги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0ef4e2ee-8c52-40d1-ada1-e427c18b5b32">
+    <name>ФормаВекселя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма векселя</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ФормаВекселя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ФормаВекселя.EnumValue.Простой</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b680b8d9-03b9-485a-b67a-bb994565923a">
+    <name>Номинал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номинал</value>
+    </synonym>
+    <comment>БПМСФО</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>18</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3a6a2a8c-4963-43af-af87-17307947939d">
+    <name>ВалютаНоминала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта номинала</value>
+    </synonym>
+    <comment>БПМСФО</comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6142efca-487c-4ff6-83f5-be82afa848ce">
+    <name>Векселедатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Векселедатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f37eec8b-352b-4ab7-8243-7aa36eb4e8b2">
+    <name>Поручитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поручитель (авалист)</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d83dd018-1d81-4a87-ae07-83db8eb0d874">
+    <name>Должник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плательщик</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c32cc6fe-04d4-4ae9-8131-2565978f7a80">
+    <name>МестоПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место платежа</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1c232c8c-506e-4f1d-975b-84f686745d20">
+    <name>МестоСоставления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место составления</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:StringValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="b35dd30d-931e-4bd9-9d9f-e2d66fb48f92">
+    <name>ПодписантРуководитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Руководитель</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Руководитель организации-векселедателя, чья подпись указана на векселе</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2e2ca1f9-1534-4dd8-9f14-0b8a930c146d">
+    <name>ПодписантГлавныйБухгалтер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Главный бухгалтер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Главный бухгалтер организации-векселедателя, чья подпись указана на векселе</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="19ce2c3f-9aac-41a6-8d44-ea28ac94c4aa">
+    <name>ПервыйПолучатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Первый векселедержатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c7de6d96-72a0-4471-b866-35cc6541113e">
+    <name>СрокПлатежаПоВекселю</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок платежа</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СрокиПлатежаПоВекселю</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СрокиПлатежаПоВекселю.EnumValue.ПоПредъявлении</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6d310279-0fd0-4f0d-8485-0fcf0fa7ecb0">
+    <name>ПредусмотренПроцентныйДоход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предусмотрен процентный доход</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Проценты могут начисляться только для векселей сроком по предъявлении</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4a6d6316-fd0a-42be-8a37-e57b3b4a3aa0">
+    <name>ПроцентнаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процентная ставка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c045e873-fcc2-4e03-9541-1cad42a85839">
+    <name>ДатаНачалаНачисленияПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала начисления процентов</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7b8ec997-319b-4db7-8858-3dffc589c717">
+    <name>ОтсрочкаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отсрочка платежа</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="abda8871-054b-49d8-94b3-ebf67fb3c212">
+    <name>ДатаОкончанияНачисленияПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания начисления процентов</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="394dc8ee-e9ff-476e-b951-ea485fcdd5cd">
+    <name>ДатаПредъявленияНеРанее</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата предъявления не ранее</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f78a016f-b6e6-4952-8604-640e5f706753">
+    <name>ДатаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата платежа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="aa03261e-d57b-4243-9877-2798d5e7d3ac">
+    <name>ДатаСоставления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата составления</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="96c19988-7cfd-4fbf-83dc-973cb84b4153">
+    <name>МаксимальнаяСуммаПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальная сумма процентов</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="1f337141-eac8-4fe7-b01c-587197a26315">
+    <name>ВариантДатыНачалаНачисленияПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант даты начала начисления процентов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыДатыНачалаНачисленияПроцентовПоВекселю</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВариантыДатыНачалаНачисленияПроцентовПоВекселю.EnumValue.СДатыВозможногоПредъявления</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="973063ab-4f35-46b9-a905-98df7b20e0a6">
+    <name>СпособУказанияДатыПредъявления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ указания даты предъявления</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыУказанияДатыПредъявленияВекселя</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СпособыУказанияДатыПредъявленияВекселя.EnumValue.СДатыСоставления</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="423bb7c7-f70d-4ab0-b7a2-da1e38ddd96a">
+    <name>ТипПроцентнойСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип процентной ставки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыСтавокДляРасчетаПериодическихОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ТипыСтавокДляРасчетаПериодическихОпераций.EnumValue.Фиксированная</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d3a234f6-79af-49e6-aa80-1f0d9e2a9a7f">
+    <name>ИндикативнаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Индикативная ставка</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыКотировокФинансовыхИнструментов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="515f07a6-0374-4b87-8f9d-571bca434498">
+    <name>ПлавающаяСтавкаМинимум</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плавающая ставка минимум</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3394a069-a2cf-4936-9f5a-3e201a1c734b">
+    <name>ПлавающаяСтавкаМаксимум</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плавающая ставка максимум</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6a7ed58c-13c1-489a-84a8-b363c8e1115b">
+    <name>ПереносДатСНерабочихДней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перенос дат с нерабочих дней</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыПереносаОперацийСНерабочегоДня</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СпособыПереносаОперацийСНерабочегоДня.EnumValue.НеПереносить</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c162d7ba-5324-45f6-ac82-6a4112e3f330">
+    <name>ИзменяетсяДлительностьПроцентногоПериодаПриПереносе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменяется длительность процентного периода при переносе</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="525a980a-52eb-4044-936c-fe989eb6fb4a">
+    <name>ПроизводственныйКалендарь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производственный календарь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроизводственныеКалендари</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f207e0ec-a14d-407d-92ad-60ad401248ff">
+    <name>ПериодичностьУплатыПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность уплаты процентов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.Ссылка</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.Периодичность.EnumValue.Месяц</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.Периодичность.EnumValue.Квартал</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.Периодичность.EnumValue.Год</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.Периодичность.EnumValue.Полугодие</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.Периодичность.EnumValue.День</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.Периодичность.EnumValue.Месяц</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d5cb9a62-5028-45d7-be9b-e58f65e775c3">
+    <name>СдвигДатыУплатыПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдвиг даты уплаты процентов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ff654a1a-f6ad-49aa-b402-0e8c55eb9cfd">
+    <name>ТочкаОтсчетаСдвигаДатыУплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка отсчета сдвига даты уплаты</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыОпределенияДатыОперацииПоПериоду</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СпособыОпределенияДатыОперацииПоПериоду.EnumValue.ОкончаниеПериода</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3c9c17e8-9229-4bf7-8a2b-5c2ee9d9a81a">
+    <name>ТочкаОтсчетаДатыФиксацииСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Точка отсчета даты фиксации ставки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыОпределенияДатыОперацииПоПериоду</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СпособыОпределенияДатыОперацииПоПериоду.EnumValue.ОкончаниеПериода</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ee1f11c9-71fc-427c-9fcc-5dd5326ef5a0">
+    <name>РучноеУправлениеИзменениямиСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ручное управление изменениями ставки</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="f43c46f6-e2a6-4a57-8fcc-685522761cdf">
+    <name>ВыплачиватьПроцентыВДатыПогашенияТела</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выплачивать проценты в даты погашения тела</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="ed5d10c7-8cd1-4fb2-bca1-a24da44cce88">
+    <name>ВыплачиватьПроцентыПериодически</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выплачивать проценты периодически</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:BooleanValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="446a01a6-f88f-4c48-ba0d-837dea130121">
+    <name>БазаДляРасчетаПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>База для расчета процентов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыРасчетаДнейПериодическихОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.СпособыРасчетаДнейПериодическихОпераций.ГодФактМесяцФакт</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d661ab46-2b5c-4e98-b8b1-d973842d93fe">
+    <name>ДатаОтсчетаПроцентныхПериодов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отсчета процентных периодов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыДатОтсчетаПериодичности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ВидыДатОтсчетаПериодичности.EnumValue.ДатаОткрытияКредита</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="4c8e20a7-26a1-4c40-8a02-5c88db53d24e">
+    <name>СдвигДатыФиксацииСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сдвиг даты фиксации ставки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="3de3f914-0bac-4096-a3ff-b296b6373d73">
+    <name>ПорядокОпределенияСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок определения ставки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПорядокОпределенияСтавки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ПорядокОпределенияСтавки.EnumValue.ПериодическаяФиксация</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="a672f73a-7b27-4243-8e82-91a45671bb20">
+    <producedTypes>
+      <objectType typeId="bf1a3913-8471-4f5c-bbf9-95344affdaf3" valueTypeId="56e86895-8cc5-4599-8129-ce0aab911668"/>
+      <rowType typeId="22ce5379-8ed9-4d7b-9496-4c4adaa05fce" valueTypeId="b27c7cbc-bd71-402b-acff-011a2945a65e"/>
+    </producedTypes>
+    <name>ПроцентныеСтавки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процентные ставки</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="181bcdb6-d73a-49a5-ab30-e791691da8d3">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e7ab6419-cd81-419f-9f3c-8dfcef4f7e95">
+      <name>ФиксированнаяЧасть</name>
+      <synonym>
+        <key>ru</key>
+        <value>Фиксированная часть</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="8bf5d71a-e368-4a90-9dc1-ccedcc720fc3">
+      <name>ПлавающаяЧасть</name>
+      <synonym>
+        <key>ru</key>
+        <value>Плавающая часть</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9b091fb0-30dc-4d18-ac84-768b498a013e">
+      <name>ПроцентнаяСтавка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ставка</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>4</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

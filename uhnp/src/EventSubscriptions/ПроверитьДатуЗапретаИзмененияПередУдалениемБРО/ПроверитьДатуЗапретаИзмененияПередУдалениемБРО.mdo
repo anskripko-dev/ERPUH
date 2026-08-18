@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c8bfa5b7-5f97-415b-adde-d5fd3801d662">
+  <name>ПроверитьДатуЗапретаИзмененияПередУдалениемБРО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату запрета изменения перед удалением БРО</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Проверить дату запрета изменения перед удалением БРО</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ОтветСтрахователяНаОбращениеСФР</types>
+    <types>DocumentObject.УведомлениеОПрекращенииПолномочийПредставителя</types>
+    <types>DocumentObject.ОбращениеСФРКСтрахователю</types>
+    <types>DocumentObject.ЗаявлениеНаФормированиеСправкиОРасчетах</types>
+    <types>DocumentObject.ОтветСтрахователяНаТребованиеПроверкиФСС</types>
+    <types>DocumentObject.ВходящийДокументСЭДОФСС</types>
+    <types>DocumentObject.УведомлениеОПредоставленииПолномочийПредставителю</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ДатыЗапретаИзменения.ПроверитьДатуЗапретаИзмененияПередУдалением</handler>
+</mdclass:EventSubscription>

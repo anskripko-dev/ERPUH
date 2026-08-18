@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="805bed7c-6a0b-4317-8652-a48729c384d5">
+  <name>тн_ПроверкаРеквизитовПечатиПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверка реквизитов печати перед записью (ТН)</value>
+  </synonym>
+  <comment>// Хоменко Вадим 20.10.2021 Выполнение задач №000039297</comment>
+  <source>
+    <types>DocumentObject.ВозвратТоваровПоставщику</types>
+    <types>DocumentObject.КорректировкаПриобретения</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.тн_ПроверкаРеквизитовПечати.тн_ПроверкаРеквизитовПечатиПередЗаписью</handler>
+</mdclass:EventSubscription>

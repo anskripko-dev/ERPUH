@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="55329892-46af-40a9-881e-0eda1758f942">
+  <producedTypes>
+    <selectionType typeId="93e4b5fc-bc70-4ba2-aaa1-51c7df0ef98d" valueTypeId="bc77065d-c4a1-4ed4-98d3-caf7dccbc308"/>
+    <listType typeId="944d3926-c090-4061-ad93-72faa43e44cd" valueTypeId="0e972173-8458-4382-9e4d-83c414d6b2f7"/>
+    <managerType typeId="b6cd9a99-d086-48f0-8f39-099bb9bef438" valueTypeId="425bf6c0-5329-42df-956e-732b77a1a5a2"/>
+    <recordSetType typeId="c3dcac05-bed4-491c-9682-f15fb1a67b84" valueTypeId="0fd9a08d-6a9e-4419-ab4d-d0fcc61fa3bd"/>
+    <recordKeyType typeId="3bf8fb04-2dae-46d5-a6d3-c2f3351197ae" valueTypeId="09fdd794-b243-4687-9f0e-8116878f6561"/>
+    <recordType typeId="ed772fe9-c85f-4d43-a709-ba8247c07d7b" valueTypeId="52ed1be0-3d6e-45c8-8a17-41836de20dab"/>
+    <recordManagerType typeId="890a8b47-0d4a-4771-8652-480a8ff08bac" valueTypeId="f1eb3960-910c-4cea-b5f4-d052d8e70c77"/>
+  </producedTypes>
+  <name>СведенияОбЭЛН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сведения об ЭЛН</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>ESLR information</value>
+  </synonym>
+  <comment>Сведения об электронных листках нетрудоспособности</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.СведенияОбЭЛН.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.СведенияОбЭЛН.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="e2c85e69-bbbf-4b18-9e47-c4a0e9069eaf">
+    <name>ТребуетсяРеестрЭЛН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется реестр ЭЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ESLR registry is required</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6c248744-77a4-4409-a24f-7ba290ef7cd0">
+    <name>ИзмененияПринятыФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Изменения приняты ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Changes accepted by SSF</value>
+    </synonym>
+    <comment>Актуализируется при проведении больничных, включается при отправке реестров.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="586ebac4-27a3-4709-84fd-d65a0527be31">
+    <name>Хеш</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хеш</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hash</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН, при отправке реестров и при обновлении Хэша ЭЛН.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>32</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="85d60503-82b1-4fb0-bb6d-fb19729ac886">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Филиал</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Branch office</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ГоловнаяОрганизация</name>
+      <field>InformationRegister.СведенияОбЭЛН.Dimension.ГоловнаяОрганизация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="5956ea0d-31d7-42a2-a18b-67585a3c7d61">
+    <name>ПодготовленныйКОтправкеРеестр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подготовленный к отправке реестр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registry prepared for sending</value>
+    </synonym>
+    <comment>Заполняется при проведении реестров.</comment>
+    <type>
+      <types>DocumentRef.РеестрДанныхЭЛНЗаполняемыхРаботодателем</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="abbc38ed-0d7d-41df-a1dd-4964eaf84dad">
+    <name>ПринятыйРеестр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Принятый реестр ЭЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Received electronic sick leave record registry</value>
+    </synonym>
+    <comment>Заполняется при отправке ЭЛН и при проведении реестров.</comment>
+    <type>
+      <types>DocumentRef.РеестрДанныхЭЛНЗаполняемыхРаботодателем</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="7c632828-0cd4-49d1-8c2b-46729291a801">
+    <name>СостояниеОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние отправки (реестр ЭЛН)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sending state (Electronic sick leave record registry)</value>
+    </synonym>
+    <comment>Заполняется при отправке ЭЛН и при проведении реестров.</comment>
+    <type>
+      <types>EnumRef.СостоянияЭЛНВРеестрахЭЛН</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="babc2aad-788c-42f1-91f9-a569dbe09f24">
+    <name>СостояниеФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус ЭЛН в ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ESLR status in SSF</value>
+    </synonym>
+    <comment>АПК:58 Обратная совместимость.</comment>
+    <type>
+      <types>EnumRef.СостоянияЭЛНВФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="501ac382-2908-4410-9aca-81270acc9b3a">
+    <name>ДоступенИсходныйXML</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступен исходный XML</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source XML available</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="53c6a0f1-6651-49fe-96e5-89bd406eed7d">
+    <name>Исправление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исправление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Correction</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="95b17247-acec-48c2-bacd-9d7d374549b7">
+    <name>КодПричиныИсправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код причины исправления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Code of reason for correction</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>2</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="856d3ca0-ff98-4af4-9bcc-1d49b28bae42">
+    <name>ОписаниеПричиныИсправления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание причины исправления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description of reason for correction</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="e1bf99e1-b029-4279-a4f7-2fb54d804a54">
+    <name>ДатаНачалаСобытия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала события</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Event start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a300ca75-ab12-445f-9ae4-daaf924c6a86">
+    <name>НомерПервичногоЛН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер первичного ЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Primary sick leave record number</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="a094d389-ef6c-4955-a2dc-8f249479a471">
+    <name>НомерЗаменяемогоЛН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер заменяемого ЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of replaced SLR</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="dea886a0-1a07-4bee-862e-941e450e279e">
+    <name>ВходящийЗапрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Входящий запрос</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Incoming request</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВходящийЗапросФССДляРасчетаПособия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5b1cb46a-93dd-49c1-b8b9-c3008b1a3d1c">
+    <name>ОтветНаЗапрос</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответ на запрос</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Response to query</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ОтветНаЗапросФССДляРасчетаПособия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="23f1fcda-af26-4c77-9df8-1e335e599bac">
+    <name>СообщениеОСтраховомСлучае</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сообщение о страховом случае</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Message about insured event</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ИсходящееСообщениеОСтраховомСлучаеФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="81324740-719e-4066-a46a-0900b5e356de">
+    <name>ДанныеСФРДляРасчетаПособия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Данные СФРДля расчета пособия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Данные СФРДля расчета пособия</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ДанныеСФРДляРасчетаПособия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="8be82590-f27f-43c7-a337-753c8e4e718c">
+    <name>Больничный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Больничный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sick leave </value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>DocumentRef.БольничныйЛист</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Последний больничный лист в цепочке исправлений. В случае отсутствия проведенных больничных - последний измененный больничный лист, не помеченный на удаление.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The last sick leave record in the correction chain. If there are no posted sick leave records, use the last modified sick leave, not marked for deletion.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d1488ee3-e6fc-4619-b174-f8f331995456">
+    <name>БольничныйПроведен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Больничный проведен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sick leave is posted</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b7003a49-ea9f-4c08-a71a-18720caea406">
+    <name>ДатаБольничного</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата больничного</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sick leave date</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3ba915c0-806c-4b36-b2b5-d1d60c457a33">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ГоловнаяОрганизация</name>
+      <field>InformationRegister.СведенияОбЭЛН.Dimension.ГоловнаяОрганизация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7e3222d2-8a25-4b93-8d64-de260f8b228f">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Person</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ГоловнаяОрганизация</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.СведенияОбЭЛН.Dimension.ГоловнаяОрганизация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d23bb600-9ee3-4d80-bb37-12c468a153dd">
+    <name>ПричинаНетрудоспособности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина нетрудоспособности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reason for incapacity for work</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>EnumRef.ПричиныНетрудоспособности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ПричиныНетрудоспособности.EmptyRef</value>
+    </fillValue>
+  </attributes>
+  <attributes uuid="a9424123-9f90-4f02-9d9c-134440fe8e40">
+    <name>ПериодНетрудоспособностиНачало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период нетрудоспособности: Начало</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period of incapacity for work: Beginning</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9f4d765b-de2c-4bd5-a508-877a0bf9c02b">
+    <name>ПериодНетрудоспособностиОкончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период нетрудоспособности: Окончание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period of incapacity for work: End</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН и при проведении больничных.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1d27a345-6b2f-49b0-99a6-2f58b2db28d1">
+    <name>ОтправленныйРеестр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправленный реестр ЭЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sent ESLR registry</value>
+    </synonym>
+    <comment>Заполняется при отправке ЭЛН и при проведении реестров.</comment>
+    <type>
+      <types>DocumentRef.РеестрДанныхЭЛНЗаполняемыхРаботодателем</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="98f17373-8739-4c87-a3a5-8c23dab3d802">
+    <name>ДатаОтправки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отправки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date sent</value>
+    </synonym>
+    <comment>Заполняется при отправке ЭЛН и при проведении реестров.</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e188dc48-976e-43d7-bd96-2cab8da8f009">
+    <name>КомментарийКСостоянию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий к состоянию</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment to state</value>
+    </synonym>
+    <comment>Заполняется при отправке ЭЛН и при проведении реестров.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="61340d80-9594-4523-9257-4f3f2352c18e">
+    <name>ИсходныйXML</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исходный XML</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source XML</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="12fa7b6a-1b6e-498e-bb07-648217f09573">
+    <name>СНИЛС</name>
+    <synonym>
+      <key>ru</key>
+      <value>СНИЛС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>IIAN</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>14</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Страховой номер ПФР</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>PF insurance number</value>
+    </toolTip>
+    <mask>999-999-999 99</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="bff655bd-af36-4da4-8a63-5597b40e6be7">
+    <name>Фамилия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фамилия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Last name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>60</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b4fb4698-651d-4813-a338-689ed7215372">
+    <name>Имя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>60</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="66ff7b1d-008f-4497-ad06-e82c0df2ec81">
+    <name>Отчество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Middle name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>60</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f1efc3c7-bcc2-4181-9bba-cddfccc208bb">
+    <name>Страхователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страхователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Insurant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="baf9524d-cb68-4a45-a189-5d0bee0d5bb2">
+    <name>НомерЛисткаНетрудоспособности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер листка нетрудоспособности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sick leave record number</value>
+    </synonym>
+    <comment>Заполняется при получении ЭЛН.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b1b84c7b-95d6-4812-aeb1-2c8b81d183f4">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ОбособленноеПодразделение</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="5691d224-cc9a-4f02-831b-46a0f12f639c">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="72ab9864-35b5-4524-b166-f97afefca096">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bd86aaa7-71ef-4ff5-92ab-e724ab355adb">
+    <name>ПериодыЛеченияРодственниковЭЛН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периоды лечения родственников ЭЛН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Relative care periods ESLR</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

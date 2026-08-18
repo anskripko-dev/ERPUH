@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="48edc18e-c283-40c9-99e7-73605550df50">
+  <producedTypes>
+    <selectionType typeId="2f571f6a-5beb-4113-8d5e-91cb94b42bca" valueTypeId="3afa1920-e182-40a1-a400-dd18af900832"/>
+    <listType typeId="9caae4b6-2a1e-48e6-a10a-314d3bcbb92f" valueTypeId="b659ff6e-4634-441e-b49f-2832110d435f"/>
+    <managerType typeId="60de6869-1d39-440b-8792-fd3a6ef9a2a2" valueTypeId="5d92c76c-2ba5-47c2-ae43-726fef1c413a"/>
+    <recordSetType typeId="ca4602e1-1be2-4f94-833e-a4d93a3f4945" valueTypeId="2eefd6de-5906-44b7-a597-f966114624b8"/>
+    <recordKeyType typeId="56e83bfc-5b4f-421f-8db5-1c5f5333339b" valueTypeId="cadec930-b73d-48e2-8135-e9302f44704a"/>
+    <recordType typeId="3fa3f02c-cade-4b02-aed9-0312c9ec779a" valueTypeId="4c8ed12e-4bf2-4e21-b4f7-3005e5396db8"/>
+  </producedTypes>
+  <name>ПартииНДСКРаспределению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Партии НДС к распределению</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>VAT lots for allocation</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="f371258b-7b2a-4af9-abcb-13b6d7914e29">
+    <name>СтоимостьРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость регл</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Local cost</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Суммовая оценка без НДС затрат, по которым распределяется налог, в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Total estimate of expenses (excluding VAT) used for tax allocation, in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="385de85d-e7a4-4f8b-9785-7066b4071bb3">
+    <name>НДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT (local)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС к распределению в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>VAT amount for allocation in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0d426b2b-4aa4-45b3-9351-0b224155c165">
+    <name>НДСУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT (mgmt)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС к распределению в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>VAT amount for allocation in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="ed62fe05-3dd8-4874-9d08-58f37b6df942">
+    <name>КорВидДеятельностиНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кор. вид деятельности НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cor VAT activity types</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7c476e74-f8e4-40b2-afae-604f9a20fb99">
+    <name>ДокументРеализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ реализации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sales document</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеСчетФактураВыданный</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d2ba2632-4223-4ed6-8b8a-248026ec6a08">
+    <name>СтатьяОтраженияРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья отражения расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense item</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="a7e9cd54-8988-4259-a2d5-45981a41b253">
+    <name>АналитикаОтраженияРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика отражения расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense posting dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика отражения расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense posting dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dbbb11c5-5a28-4885-9d66-61fb902575a1">
+    <name>НастройкаХозяйственнойОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка хозяйственной операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business transactions setting</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиХозяйственныхОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0c6170fb-55a0-4751-8b99-ce9f687e234f">
+    <name>ИдентификаторФинЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор финансовой записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Financial record ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dba2dc70-2395-4f33-997b-92caa31949f2">
+    <name>РасчетПартий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет партий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lot calculation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="996e4e88-5321-4758-a391-24ef87d7b82d">
+    <name>ПериодБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период базы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период базы распределения НДС</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Period of VAT allocation base</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dc8aa5e2-0e04-4440-b5bf-92f20c3c229b">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="9909ad03-4b67-4433-942a-e4686a3e3942">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, в рамках которой учитываются партии НДС</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company in which VAT lots are recorded</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bc570da2-80c6-4fdc-bb83-48092a48e75d">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, являющееся источником партий НДС к распределению.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operating unit used as source for VAT lots for allocation.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="417d215f-96b8-4952-a7d2-e8949edd4bf3">
+    <name>НаправлениеДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line of business</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8394604f-b736-4393-bbbb-6f38bf7f56f8">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense item</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья расходов, по которой отражены расходы.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense item to record expenses.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d9864885-a024-462d-afd7-14ec72581010">
+    <name>АналитикаРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика отнесения расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense allocation dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="089f06ee-ec76-40ed-9bec-8c6998f809b7">
+    <name>АналитикаАктивовПассивов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика активов пассивов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension of assets/liabilities</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика прочих активов/пассивов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Other asset/liability dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="fc3042e4-ab90-4fdb-b42c-95fe98f5d74c">
+    <name>Поставщик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поставщик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Vendor</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9e041241-7056-4400-b725-5d5301f10dee">
+    <name>ДокументПоступленияРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ поступления расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense receipt document</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПартии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e718e226-6095-41e4-8b4b-158b0dfbb1e8">
+    <name>ВидДеятельностиНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид деятельности НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT activity type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Налогообложение НДС</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>VAT taxation</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f5a976b7-1000-411a-9bb8-3928219c1a15">
+    <name>ВидЦенности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид ценности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset tax class</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыЦенностей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="34feab59-60fe-4262-9431-c291f80bfc93">
+    <name>СтавкаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT rate</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтавкиНДС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="99941ca4-c768-4778-a71c-9c1dc9d274f1">
+  <producedTypes>
+    <selectionType typeId="b6431013-8f67-426f-96c0-e756a6bb7254" valueTypeId="008a87cc-583c-44c1-a6b3-d57ea119fbd0"/>
+    <listType typeId="f95d1a6b-ed02-4358-a547-318994aba199" valueTypeId="1f2eb9fb-dbd7-444d-8156-2fad9dd8c118"/>
+    <managerType typeId="67ced8c7-f2b4-4219-b40a-73f2e434af70" valueTypeId="8b55a8ab-8496-4f38-8214-fc884bff7e39"/>
+    <recordSetType typeId="ab4c9ca0-fc68-4337-a544-c1c65bda4b7d" valueTypeId="29a7aad8-0c97-4453-ab96-bc0fcc5a5952"/>
+    <recordKeyType typeId="008d3bcb-4b8b-45a6-a23e-2a1a1f4c2b43" valueTypeId="ce52ac44-c183-450b-bdf7-590ea604d820"/>
+    <recordType typeId="3c25a91c-40d4-4a7c-b0a1-37039b36affa" valueTypeId="ba449c41-3bc9-4d02-bcc0-4e8ac92a3b03"/>
+    <recordManagerType typeId="526d4ec3-8de9-4739-bcb4-c1f9c6f4c3d4" valueTypeId="3e860371-b2d0-4640-84b5-7dcfcabdbd40"/>
+  </producedTypes>
+  <name>Удалить_ОсновныеШаблоныТрансляцииПлановСчетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>(Не используется) основные шаблоны трансляции планов счетов</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.Удалить_ОсновныеШаблоныТрансляцииПлановСчетов.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.Удалить_ОсновныеШаблоныТрансляцииПлановСчетов.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действует с</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="dd6cf97c-ab1d-4b5b-bc0e-96d8b1b89c3e">
+    <name>ШаблонТрансляцииПараллельныйУчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон трансляции</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШаблоныТрансляций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.ПланСчетовИсточник</name>
+      <field>InformationRegister.Удалить_ОсновныеШаблоныТрансляцииПлановСчетов.Dimension.ПланСчетов</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="2d0f8109-98d2-4c91-94c4-82160e5da864">
+    <name>ПланСчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>План счетов НСБУ</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПланыСчетовБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0f243c48-f75a-446c-b2a2-5091e7f2339b">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="82af4435-5c69-4730-b0a0-cfb12a3a56b1">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ed99c0e0-0b3f-4bc9-b25a-1155ed38e22d">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="caa0727a-03d4-41d6-87ae-c12d2266102d">
+  <producedTypes>
+    <objectType typeId="be79a918-fdf4-4e33-989d-be65e44dfaf4" valueTypeId="8e959b45-ec92-463d-ac63-365e39377234"/>
+    <managerType typeId="47bb4325-c5f4-448c-befd-d4423cef7361" valueTypeId="848deb77-f844-458c-9f8f-8301aa1fbf48"/>
+  </producedTypes>
+  <name>тн_ГрупповаяПечатьСчетовФактурАванс</name>
+  <synonym>
+    <key>ru</key>
+    <value>Групповая печать счетов-фактур на аванс (тн)</value>
+  </synonym>
+  <comment>Выполнение задач №000041040</comment>
+  <defaultForm>DataProcessor.тн_ГрупповаяПечатьСчетовФактурАванс.Form.Форма</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Групповая печать счетов-фактур на аванс</value>
+  </extendedPresentation>
+  <attributes uuid="d0b69e81-4778-4b45-a258-c883ea507bab">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="df41b87a-ccb3-42b9-9ac5-fbd8a3e98865">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5bcfe099-63a5-4d7d-8d01-cf060a2a6486">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b05f74ff-2cfb-4e10-b776-73a585c4c4be">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="aeb4b790-0bbd-42e1-9e27-c19d18a7f9f8">
+    <producedTypes>
+      <objectType typeId="c23b42fa-9856-4689-aa2a-ecfc59feb89d" valueTypeId="63a898a8-6a23-4ddf-a9d4-5012ba7bc28f"/>
+      <rowType typeId="b597b69f-a9da-42bd-80c6-322fadd0ec7f" valueTypeId="0e161ab7-72f1-4cc3-8301-d01fbe8a2be8"/>
+    </producedTypes>
+    <name>ПопадающиеСчетаФактуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Попадающие счета фактуры</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8d80d60a-0a78-47d2-bb7b-f8badbfe88f8">
+      <name>Пометка</name>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6c30f6e4-d21a-48b4-83ed-2b4a284dba73">
+      <name>СчетФактура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет-фактура</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданныйАванс</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b8114d38-bc1a-4d89-8b7e-4769b6d7e838">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="02eb90b8-cf76-44c6-bf94-4d40a457732d">
+    <producedTypes>
+      <objectType typeId="86748b85-bed8-4250-9363-3167772c0d06" valueTypeId="3850da7c-5fed-4ad3-93e8-a2ef9f4eb28f"/>
+      <rowType typeId="3f1f12eb-8cbd-4f6d-95b1-79954ab4f646" valueTypeId="6e18dae7-f0fd-4f24-81b0-6123b6796852"/>
+    </producedTypes>
+    <name>НепопадающиеСчетаФактуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Непопадающие счета фактуры</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="190d4195-3171-4b3a-ae22-dc200115a6cb">
+      <name>Пометка</name>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="45ada25b-205d-4274-a137-4fe0c9769b3a">
+      <name>СчетФактура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет-фактура</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданныйАванс</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a80249ed-b6c9-43fd-9b2d-fd04e4fb94b3">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="bea75764-f032-40fb-bed3-d5466499a95d">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="489e029d-43a2-45f1-b45c-2aaab03cd516">
+    <name>ГрупповаяПечатьСчетовФактурНаАванс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Групповая печать счетов-фактур на аванс</value>
+    </synonym>
+    <comment>тн_ИспользованиеОбработкиГрупповаяПечатьСФНаАванс</comment>
+    <group>ActionsPanelTools</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

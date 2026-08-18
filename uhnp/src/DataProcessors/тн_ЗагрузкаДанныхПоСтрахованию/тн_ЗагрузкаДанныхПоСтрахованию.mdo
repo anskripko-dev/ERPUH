@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2079dfdd-3d74-4da0-b879-861f963d0fa2">
+  <producedTypes>
+    <objectType typeId="b3e2f941-c079-42d8-a0cd-4b59949e7b1d" valueTypeId="cf7d67e9-6d2c-43e0-aa5d-db78a18ae2ae"/>
+    <managerType typeId="595b40bf-9fa0-459d-9064-5173a0718281" valueTypeId="0c3d4713-ba76-4050-ba53-b7f24c5f4b3c"/>
+  </producedTypes>
+  <name>тн_ЗагрузкаДанныхПоСтрахованию</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка данных по страхованию (тн)</value>
+  </synonym>
+  <comment>// ГенатулинМА 23.11.21 Выполнение задач №000039287</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ЗагрузкаДанныхПоСтрахованию.Form.Форма</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Загрузка данных по страхованию</value>
+  </extendedPresentation>
+  <attributes uuid="95abe4fa-7eb4-42b5-b6b4-a741e8a4f014">
+    <name>ВыбранныйФайл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранный файл</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6c6dda93-5575-485e-932f-09bd2176a17a">
+    <name>ВыбранныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранный документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриобретениеУслугПрочихАктивов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b6fc8212-20d1-40c5-9744-dda32ce0e386">
+    <name>СтатьяРасходов76_01</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов/активов (76.01)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item of expenses/assets</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья расходов или прочих активов, по которой отражается услуга партнера.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense item or other asset item by which partner service is displayed.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ХозяйственнаяОперация</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ХозяйственныеОперации.EnumValue.ЗакупкаУПоставщика</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>РазрешитьВыборСтатьиАктивовПассивов</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="85fd6ef7-7e60-44ac-88cc-23c6a24f3444">
+    <name>СтатьяРасходов73_03</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов/активов (73.03)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item of expenses/assets</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья расходов или прочих активов, по которой отражается услуга партнера.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense item or other asset item by which partner service is displayed.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ХозяйственнаяОперация</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ХозяйственныеОперации.EnumValue.ЗакупкаУПоставщика</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>РазрешитьВыборСтатьиАктивовПассивов</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <tabularSections uuid="1b0d817d-cacf-4948-916a-eea63410ee2a">
+    <producedTypes>
+      <objectType typeId="135dc355-719d-4c25-a223-c79c1a900bd3" valueTypeId="f7a96ea1-2744-41c0-b4ab-62279626e08f"/>
+      <rowType typeId="96a13860-f73d-4d9a-ac96-ccf690a6942d" valueTypeId="6b8ca40b-c705-4a00-b009-360e23dd87e9"/>
+    </producedTypes>
+    <name>ТаблицаДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+  </tabularSections>
+  <forms uuid="e9a37726-79d7-412e-9f55-ba2a7d4882a8">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="db8b190d-74f5-4205-8ed2-57ea49c183eb">
+    <name>МакетСопоставленияКолонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет сопоставления колонок</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

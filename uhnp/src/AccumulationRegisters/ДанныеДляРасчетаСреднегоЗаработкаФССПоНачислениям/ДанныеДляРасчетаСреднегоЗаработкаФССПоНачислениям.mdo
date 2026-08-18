@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="050f83f2-0b58-47ee-9016-287a4e3cc2d1">
+  <producedTypes>
+    <selectionType typeId="95c7c33f-4ce3-46df-86f5-f649ef052683" valueTypeId="7f88a3bc-8149-4e7c-9258-0d6ac63b29c0"/>
+    <listType typeId="739eb27e-3f44-403c-9fcc-bbe369654313" valueTypeId="9284658a-c602-454e-8e60-faf256baf555"/>
+    <managerType typeId="6bb18cd7-f5be-4595-973e-8bc461bc9279" valueTypeId="8a0af2eb-bad4-4228-a266-97beca0041f5"/>
+    <recordSetType typeId="53bdc989-1acb-4d84-9a3b-e7b563d6f7a1" valueTypeId="91e8ff5d-26de-42a5-88c0-6eadbe0667ec"/>
+    <recordKeyType typeId="dd058d65-6e79-49f9-b5d6-8102ba527416" valueTypeId="0a45fd9c-325a-4cce-b8c6-de9b0aea7589"/>
+    <recordType typeId="7e975329-031d-4ded-aeaa-25c20a69d617" valueTypeId="a7db50cd-a366-444a-90ce-c1ce6f3f98b2"/>
+  </producedTypes>
+  <name>ДанныеДляРасчетаСреднегоЗаработкаФССПоНачислениям</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные для расчета среднего заработка по начислениям (ФСС)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Data for average earnings calculation by accruals (SSF)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="a7f41b22-8aa2-4696-b2bb-de74cabff93d">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="0b1a9956-7f22-48c4-98c2-4de1701b6a77">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="335c3413-ac1a-4393-af7d-38e2abe87c88">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Individual</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Физическое лицо, начисления которого регистрируются</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Individual whose accruals are registered</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="16e3440b-17fc-43f4-a620-227323e3a580">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parent company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Головная организация, к которой относятся начисления</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Parent company the accruals belong to</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="b18b5541-7b4f-406c-88e1-8656f3a68e7b">
+    <name>Сотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сотрудники</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="ae533ad3-8d19-4380-bbd1-a703684560d6">
+    <name>Начисление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accrual</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ВидыНачисленийСреднегоЗаработкаФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="d8e58a38-df05-42fb-bf20-1678ebca907c">
+    <name>ПорядокРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок расчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Calculation method</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПорядокРасчетаСреднегоЗаработкаФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="0277b4a2-6520-4c1a-b5f0-b3f7268c1e17">
+    <name>СтатьяФинансирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья финансирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Financing item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Источник финансирования регистрируемой части заработка</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Funding source of registered earnings</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="402c2c97-e8b6-4d91-8c20-6262d4315ad0">
+    <name>СпособОтраженияЗарплатыВБухучете</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ отражения зарплаты в бухучете</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Method of recording salary in accounting</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВБухУчете</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="6bfbfe50-17df-44cb-803c-3b13dac6ddeb">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиРасходовЗарплата</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="4b7deca4-744a-424f-ade4-deef0cca0bfa">
+    <name>ОблагаетсяЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Облагается ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subject to UTII</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+  <dimensions uuid="1facb85c-5e6b-4972-9cb3-e2c2849de122">
+    <name>СпособУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting method</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УчетНачисленийВСреднемЗаработкеФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </dimensions>
+</mdclass:AccumulationRegister>

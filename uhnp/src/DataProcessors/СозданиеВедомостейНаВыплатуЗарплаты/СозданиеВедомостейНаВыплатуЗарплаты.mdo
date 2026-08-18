@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="72d9ff4f-e3a6-4a1f-ac8c-a44277c09891">
+  <producedTypes>
+    <objectType typeId="63b3022f-a937-4abf-842c-ae6574a8a16b" valueTypeId="a474ed82-142f-4a82-bf65-959bc87dbf50"/>
+    <managerType typeId="3e3979cb-6279-476c-9b77-f0afdffae183" valueTypeId="a914a7fd-fdd5-4fd9-b8ed-3022897eb7c4"/>
+  </producedTypes>
+  <name>СозданиеВедомостейНаВыплатуЗарплаты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создание ведомостей на выплату зарплаты</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Create paysheets</value>
+  </synonym>
+  <defaultForm>DataProcessor.СозданиеВедомостейНаВыплатуЗарплаты.Form.ВедомостиПоРасчетномуДокументу</defaultForm>
+  <attributes uuid="01336012-79dc-4ab9-b5e9-f70b75115335">
+    <name>Ссылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ref</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ВедомостьНаВыплатуЗарплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="212c1cc0-dd09-48a1-9f81-e576db75a253">
+    <name>Номер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>11</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9a5fe4b5-d2cd-478f-8a4e-887c2eff2a4b">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DLF=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DLF=D</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="4aacaa7f-e3ce-475a-89c9-a32431976982">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Month</value>
+    </synonym>
+    <comment>АПК:58 Период регистрации - месяц</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MMMM yyyy'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DF='MMMM yyyy'</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="f339d87a-26ff-4b90-8ab4-7988d8fe4935">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e61dd6ec-a091-46c2-b9c3-198cddfc5c8f">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="04503ba0-12b3-4e5d-8a4d-4fe06d6c483d">
+    <name>СтатьяФинансирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья финансирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Financing item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ВАрхиве</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="e43d572e-9d89-405e-a638-5dc93c8a9c26">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиРасходовЗарплата</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8574db1f-8068-4c5a-8e7b-0664b254de69">
+    <name>МестоВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Место выплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment location</value>
+    </synonym>
+    <type>
+      <types>DefinedType.МестоВыплатыЗарплатыСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f20345ce-cf09-4ea6-b167-0bd1a5fd32ce">
+    <name>ВидДоходаИсполнительногоПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид дохода исполнительного производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Enforcement proceedings income kind</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыДоходовИсполнительногоПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2ed0c09d-6218-43fd-ae37-4f1001457758">
+    <name>СпособВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ выплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment method</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыВыплатыЗарплаты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выплата конкретного начисления, аванса или окончательная выплата зарплаты &quot;под расчет&quot;</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Payment of a certain accrued amount, advance, or the final payment of salary in arrears  </value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="762d1182-ac46-4cb3-b022-dde5b9da964c">
+    <name>Округление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Округление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rounding</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыОкругленияПриРасчетеЗарплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="97ba23c2-b8b9-4eba-8417-b2b4207780f0">
+    <name>ДатаВыплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата выплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DLF=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DLF=D</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4bcb7e52-58c5-4e20-925e-6eeeaccf467a">
+    <name>Руководитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Руководитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Manager</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d6f468fb-7a2b-4b0e-bc4e-51e0a721306d">
+    <name>ДолжностьРуководителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность руководителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Job title of the executive</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3676a1b1-468b-45f3-bc9b-7390f7da9be6">
+    <name>ОснованиеПодписиРуководителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи руководителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Manager signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e3ec68c5-ffd0-4d95-a86f-350207bd1e6d">
+    <name>ГлавныйБухгалтер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Главный бухгалтер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Chief Accountant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cb582dfa-316a-4a3e-a2a9-f8fc9146ffa4">
+    <name>ДолжностьГлавногоБухгалтера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность главного бухгалтера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Chief accountant position</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7e0a3acb-aa35-4143-a680-ac622424eda6">
+    <name>ОснованиеПодписиГлавногоБухгалтера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи главного бухгалтера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Chief accountant signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="37e4054b-640c-4083-8da4-1f9fa02cbf13">
+    <name>Кассир</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кассир</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cashier</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3e0e7eba-d050-4dbf-9956-d5e50b51bc36">
+    <name>ДолжностьКассира</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность кассира</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cashier</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ac73cc1a-0cbd-4877-aa22-826a68b5304a">
+    <name>ОснованиеПодписиКассира</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи кассира</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cashier signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f6c97b33-02d3-41f8-b007-96d4b4ba7dbc">
+    <name>Бухгалтер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бухгалтер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accountant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e3314560-651d-4064-83ef-69769cdd0c7f">
+    <name>ДолжностьБухгалтера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность бухгалтера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accountant position</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7e50b9bc-461b-41ac-9b86-85fe074549d1">
+    <name>ОснованиеПодписиБухгалтера</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи бухгалтера</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accountant signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cd97c373-79cb-4c08-a723-84e11fd4ba87">
+    <name>Составил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Составил</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Created</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f956775f-e0ee-40b3-9a3b-6f01e6b8a650">
+    <name>ДолжностьСоставившего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность составившего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creator position </value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="63a32cff-f5ce-4e3b-a48f-028e88a5f1ee">
+    <name>ОснованиеПодписиСоставившего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи составившего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Creator signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3587d62c-2078-4667-929b-43be7f9fd2ae">
+    <name>Проверил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверил</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Checked</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b0eb5658-0752-4914-89d4-bb270d287458">
+    <name>ДолжностьПроверившего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность проверившего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Verifier position</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="49c62d18-44c9-41c6-8a2d-c4c68931e9d1">
+    <name>ОснованиеПодписиПроверившего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи проверившего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Verifier signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="62ed81ae-8203-414d-babf-f39d9f833151">
+    <name>Раздатчик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раздатчик</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Distributor</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="756c4191-e64d-405c-af14-268c9b75d9ec">
+    <name>ДолжностьРаздатчика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Должность раздатчика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Distributor position</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Должности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8893454f-9920-4860-803e-bddc9692bd4d">
+    <name>ОснованиеПодписиРаздатчика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание подписи раздатчика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Distributor signature basis</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеПодписи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e40c6e6d-1dd6-414d-aecf-4219a4f9b742">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible person</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="819e5f33-8868-4411-a819-247c729c3d4e">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="4f47401a-5c5a-46c7-b085-65ca3b849ea8">
+    <producedTypes>
+      <objectType typeId="9bc5ba6f-7c13-4427-8764-6de210649a2d" valueTypeId="58cf2426-2845-4a2a-8226-19ff580fd3af"/>
+      <rowType typeId="179a884a-f22d-4ba9-b669-8e62d1af89b4" valueTypeId="2f577624-f708-483d-aeaa-885ac258fbdc"/>
+    </producedTypes>
+    <name>Состав</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состав</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Content</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="40583ba4-34e7-4725-954f-1c363ec77d48">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Line ID</value>
+      </synonym>
+      <type>
+        <types>UUID</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cd8ad962-a682-4c5f-87de-146380ecd7aa">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <comment>АПК:58 физлицо является сотрудником</comment>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="62a4d4dd-2eed-471b-af71-f077d89ab7de">
+      <name>ВзысканнаяСумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Взысканная сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Collected amount</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="041e393e-51c3-4f91-adba-90332db7f737">
+    <producedTypes>
+      <objectType typeId="eacb9ff9-91e1-41aa-b32f-7ab2d433d9b4" valueTypeId="d2fd192f-1f32-4da2-8d7b-a39525c12fac"/>
+      <rowType typeId="5a289dd9-ed3e-4f30-bb18-d675c5e09f02" valueTypeId="808af3f8-9377-4dc5-a888-1a18fa1e3326"/>
+    </producedTypes>
+    <name>Зарплата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарплата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Salary</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f9b265f0-d5f2-4d4b-8e62-9fef0307ac2f">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Line ID</value>
+      </synonym>
+      <type>
+        <types>UUID</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3ffc2cb6-30b5-43eb-a3ff-81d395c251d5">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Сотрудники</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>УчитыватьОтборПоПодразделению</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0ee55997-a6e4-4e9a-b51c-82b1c04d7d6b">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физическое лицо</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Individual</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f10b1d2a-138c-4c66-b6bd-dbd87872b2e8">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="859f3944-7b9c-4528-8393-d711bac56a5c">
+      <name>ПериодВзаиморасчетов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период взаиморасчетов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Settlements period</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d677f572-95b8-4c9d-ad07-53c7c6852027">
+      <name>СтатьяФинансирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья финансирования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financing item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e9afbd4a-95fa-4ccb-ab47-730847eba569">
+      <name>СтатьяРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расходов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Expense item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиРасходовЗарплата</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2156c37a-a841-41e1-aa06-e0d5060fa238">
+      <name>ВидДоходаИсполнительногоПроизводства</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид дохода исполнительного производства</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Enforcement proceedings income kind</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыДоходовИсполнительногоПроизводства</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5d19779f-8a91-4613-b282-71580690f0d0">
+      <name>ДокументОснование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ-основание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Basis document</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДокументОснованиеЗарплатыКВыплате</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="674ad283-b6d6-4595-a3cd-b75c2f250423">
+      <name>КВыплате</name>
+      <synonym>
+        <key>ru</key>
+        <value>К выплате</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>To be paid</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="46159364-9517-48c3-85c9-17c89ee03ad1">
+    <producedTypes>
+      <objectType typeId="d8c4614c-a43a-4f7b-b58e-c13a52f37d2f" valueTypeId="bfd4fa1b-7025-4a59-a248-b7c91a7f6728"/>
+      <rowType typeId="17fcae22-034c-4778-87c2-814c32dc3e7e" valueTypeId="36003a2d-5fa3-4f94-a007-11d607bc78cb"/>
+    </producedTypes>
+    <name>НДФЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДФЛ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>PIT</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="6485cdb6-258a-42c3-bdf3-da1a21d2c6cd">
+      <name>ИдентификаторСтроки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор строки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Line ID</value>
+      </synonym>
+      <type>
+        <types>UUID</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="113bed1c-8736-4548-b798-94dde924797d">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <comment>АПК:58 физлицо является сотрудником</comment>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.ВАрхиве</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e40f29a0-3f14-4774-8904-0e12467cbcd1">
+      <name>СтавкаНалогообложенияРезидента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ставка налогообложения резидента</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Resident tax rate</value>
+      </synonym>
+      <type>
+        <types>EnumRef.НДФЛСтавкиНалогообложенияРезидента</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5483c0f4-d854-40ef-b5de-6ca9f77c8e68">
+      <name>МесяцНалоговогоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата получения дохода</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date of income receipt</value>
+      </synonym>
+      <comment>АПК:58 имя сохранено ради обратной совместимости</comment>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="79562f18-830b-409c-a4b0-07b909b4dee5">
+      <name>КодДохода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код дохода</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Income code</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыДоходовНДФЛ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.СтавкаНалогообложенияРезидента</name>
+        <field>DataProcessor.СозданиеВедомостейНаВыплатуЗарплаты.TabularSection.НДФЛ.Attribute.СтавкаНалогообложенияРезидента</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bf8a8e96-5c18-4199-a716-6e4705e19dfb">
+      <name>РегистрацияВНалоговомОргане</name>
+      <synonym>
+        <key>ru</key>
+        <value>Регистрация в налоговом органе</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Registration with tax authority</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РегистрацииВНалоговомОргане</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d3742f79-b857-4e97-a194-3f655d61b7d0">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ТерриторияВыполненияРаботВОрганизации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d557ccfe-07cc-46ab-818e-65bf370a71e6">
+      <name>ВключатьВДекларациюПоНалогуНаПрибыль</name>
+      <synonym>
+        <key>ru</key>
+        <value>Соответствует статье 214.9 НК РФ, до 2023 года - статье 226.1</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Compliant with Article 214.9 of the Tax Code of the Russian Federation. Before 2023, to Article 226.1</value>
+      </synonym>
+      <comment>АПК:58 - различия имени и синонима вызваны обратной совместимостью</comment>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Используется для дивидендов</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Used for dividends</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fc1bf6b0-dced-4ab8-b896-f3b5df41bc84">
+      <name>ДокументОснование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ основание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Base document</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДокументыОснованияНДФЛ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="887c25d3-631c-4050-8d1e-27095145ad61">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1946d582-7f13-4aef-b529-214f55a0195e">
+      <name>СуммаСПревышения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с прев. (15%)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount with excess (15%)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7bbbc62b-8c49-47ed-93c0-90b499486b06">
+      <name>СтатьяФинансирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья финансирования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financing item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="32a413e0-8922-4922-a966-5e18581a1377">
+      <name>СтатьяРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расходов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Expense item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиРасходовЗарплата</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ea255502-e91c-4463-b45d-273367cf6093">
+      <name>КатегорияДохода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид дохода</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Income kind</value>
+      </synonym>
+      <comment>АПК:58 имя ВидДохода уже занято</comment>
+      <type>
+        <types>EnumRef.КатегорииДоходовНДФЛ</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="edea51f7-6573-4de2-907c-0e6c1aacabb0">
+      <name>СуммаСПревышенияПоСтавке18</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с прев. (18%)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount with excess (18%)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3a141c59-8771-44de-8e5f-76088f9703d5">
+      <name>СуммаСПревышенияПоСтавке20</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с прев. (20%)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount with excess (20%)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9398a100-e8f6-4e4b-bdc3-cc6e7b702252">
+      <name>СуммаСПревышенияПоСтавке22</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с прев. (22%)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount with excess (22%)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="52dceffd-53e7-491e-a547-ae3e2b1881df">
+    <name>ВедомостиПоРасчетномуДокументу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ведомости по расчетному документу</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Paysheets against the accounting document</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="635c9935-2bf3-414a-86e6-cc8631f14776">
+    <name>Ведомость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ведомость</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Paysheet</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="61e60010-29ca-45e7-8671-1e97933610db">
+    <name>СоздатьВедомостиПоРасчетномуДокументу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выплатить</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Pay</value>
+    </synonym>
+    <comment>АПК:58 Имя отличается от синонима для удобства сценарного тестирования</comment>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DefinedType.ДокументОснованиеВедомостиНаВыплатуЗарплаты</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Создать ведомости на выплату зарплаты по документу</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Create paysheets by the document</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ПоказатьОплаченныеВедомости</picture>
+    </picture>
+  </commands>
+</mdclass:DataProcessor>

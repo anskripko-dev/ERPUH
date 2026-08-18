@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e6c48058-9447-4c79-b929-1d012ddbeefd">
+  <producedTypes>
+    <selectionType typeId="1f64ceba-281e-480e-9ef6-43bb60a4447d" valueTypeId="ccb01b54-b0b7-4e1a-bdce-3e61a94a4cff"/>
+    <listType typeId="5c32f920-8663-4fe9-abfa-b7b4de74fc3d" valueTypeId="fd0197ba-db4f-4d8c-90a7-07b68d94c1aa"/>
+    <managerType typeId="af4bc073-8e6e-43e8-8d3c-cb4f5315f623" valueTypeId="65a80bc2-037f-433d-a7e8-3ae4888f5b1b"/>
+    <recordSetType typeId="4a425f78-dc4d-4826-b18e-6714f266f4d8" valueTypeId="6b84bb28-6392-49c5-b61d-37787b1c8dd9"/>
+    <recordKeyType typeId="2e6382f4-6091-4316-bf36-426ff28dfc94" valueTypeId="be61978b-e570-47fd-adb1-ed4db87c7118"/>
+    <recordType typeId="ab67b43f-88d9-40f0-9bc0-53236ebcf102" valueTypeId="6b16099d-8b44-4542-bb93-ce1ad6a773dd"/>
+    <recordManagerType typeId="0668abf6-5b39-45c9-93c2-4d73a0c0a702" valueTypeId="6b0a0424-01ae-44bc-bc91-2be0184ca37f"/>
+  </producedTypes>
+  <name>РасчетПереоценкиВалютныхСредствНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет переоценки валютных средств НУ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Calculation of TA currency revaluation</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="3a47c518-56db-450e-a7b0-fba75ba9b4b0">
+    <name>ОстатокВВалюте</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остаток в валюте</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Balance in currency</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="64711851-770c-40cd-98bd-c0fb6c601e66">
+    <name>ОстатокВРубляхНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остаток в рублях НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Balance in rubles TA</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a7a297de-d992-4311-989a-131a5a6a6e66">
+    <name>ОстатокПоКурсуПереоценки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остаток по курсу переоценки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Balance by revaluation rate</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1b6a9928-902b-4264-bf57-8b3b38eaeb88">
+    <name>СуммаПереоценкиНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма переоценки НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TA revaluation amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e1f7c76a-7574-42a7-92a4-69c4f1141666">
+    <name>ПогашениеВВалюте</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашение в валюте</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Repayment in currency</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2113838c-0418-4d9f-83ea-4898acf0b7ee">
+    <name>ОстатокОД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остаток ОД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred income balance</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ebe8dbe2-3bd4-428c-8873-b15cb764c45a">
+    <name>ОстатокОР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остаток ОР</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred expense balance</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f551b169-0487-4128-988b-923d3bcb81f8">
+    <name>ОтложенныйДоход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенный доход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred income</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a73b8b79-c023-49a1-a32c-00a28506c2ce">
+    <name>ОтложенныйРасход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенный расход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred expense</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="7698281e-cf3f-4d10-9d48-4262a9a9365f">
+    <name>Курс</name>
+    <synonym>
+      <key>ru</key>
+      <value>Курс</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rate</value>
+    </synonym>
+    <type>
+      <types>DefinedType.КурсВалюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="50000ec6-66a3-4a13-88d0-921dbb972e1f">
+    <name>Кратность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Кратность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Multiplier</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="de75d84d-8ece-4c66-a498-9ac661fb71ba">
+    <name>ЭтоТребование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это требование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is a requirement</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="07e4294d-adc9-4ae1-b2e3-84058298d557">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e18a41ce-f19b-4dc2-a30e-e64f1a24b442">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="38805aab-a2ad-4f7f-8828-9b3365a3b73f">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account</value>
+    </synonym>
+    <type>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8e18ecf5-9e91-402c-81d1-8d3ed5dceeef">
+    <name>Аналитика1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension1</value>
+    </synonym>
+    <type>
+      <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="627877dc-77e8-4ba4-87bd-31ecdfa0e2de">
+    <name>Аналитика2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика2</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension2</value>
+    </synonym>
+    <type>
+      <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="046848c2-0771-4a3c-a409-a3e32e2aa29f">
+    <name>Аналитика3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика3</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension3</value>
+    </synonym>
+    <type>
+      <types>Characteristic.ВидыСубконтоХозрасчетные</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="98606761-0ec4-421b-8bae-350552d5d458">
+    <name>ДокументОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ оплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP transaction</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ВозвратТоваровОтКлиента</types>
+      <types>DocumentRef.ОперацияПоПлатежнойКарте</types>
+      <types>DocumentRef.ТаможеннаяДекларацияИмпорт</types>
+      <types>DocumentRef.ПоступлениеУслугПоАренде</types>
+      <types>DocumentRef.ОтчетКомиссионера</types>
+      <types>DocumentRef.ОтчетДавальцу</types>
+      <types>DocumentRef.Бронирование</types>
+      <types>DocumentRef.РасчетКурсовыхРазниц</types>
+      <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.ОперацияПоЯндексКассе</types>
+      <types>DocumentRef.ВыкупПринятыхНаХранениеТоваров</types>
+      <types>DocumentRef.КорректировкаРегистров</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетКомитенту</types>
+      <types>DocumentRef.ИзменениеУсловийДоговораАренды</types>
+      <types>DocumentRef.КорректировкаРеализации</types>
+      <types>DocumentRef.Сторно</types>
+      <types>DocumentRef.ОтчетОператораСистемыПлатон</types>
+      <types>DocumentRef.КорректировкаЗадолженностиПоФинансовымИнструментам</types>
+      <types>DocumentRef.ВыбытиеДенежныхДокументов</types>
+      <types>DocumentRef.ПоступлениеДенежныхДокументов</types>
+      <types>DocumentRef.АвансовыйОтчет</types>
+      <types>DocumentRef.ОтчетПоКомиссииМеждуОрганизациямиОСписании</types>
+      <types>DocumentRef.КорректировкаПриобретения</types>
+      <types>DocumentRef.ОтчетКомитентуОСписании</types>
+      <types>DocumentRef.ОтчетПереработчика</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыКлиентом</types>
+      <types>DocumentRef.ОтчетДавальцу2_5</types>
+      <types>DocumentRef.КорректировкаЗадолженности</types>
+      <types>DocumentRef.ВозвратТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ОтчетОСписанииТоваровСХранения</types>
+      <types>DocumentRef.ОтчетОСписанииТоваровУХранителя</types>
+      <types>DocumentRef.ОтчетКомиссионераОСписании</types>
+      <types>DocumentRef.ВыкупАрендованныхОС</types>
+      <types>DocumentRef.ПередачаТоваровМеждуОрганизациями</types>
+      <types>DocumentRef.ВыкупВозвратнойТарыУПоставщика</types>
+      <types>DocumentRef.ВзаимозачетЗадолженности</types>
+      <types>DocumentRef.ОтчетПереработчика2_5</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.ВыкупТоваровХранителем</types>
+      <types>DocumentRef.ПрекращениеДоговораАренды</types>
+      <types>DocumentRef.ЗаключениеДоговораАренды</types>
+      <types>DocumentRef.ОтражениеЗарплатыВФинансовомУчете2_5</types>
+      <types>DocumentRef.ОтчетКомитентуОЗакупках</types>
+      <types>DocumentRef.ОтчетДавальцуМеждуОрганизациями</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d953d2ad-a3c7-4800-9de6-6e820468b0c4">
+    <name>ОбъектРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект расчетов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP object</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыРасчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7e05c487-4404-41eb-93e8-e7dd9220f733">
+    <name>ТипСуммы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип суммы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыСуммГрафикаКредитовИДепозитов</types>
+      <types>EnumRef.ТипыПлатежейПоАренде</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4b4034f7-a8af-4d0e-98a3-5177d8014b51">
+    <name>Получатель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recipient</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КассыККМ</types>
+      <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      <types>CatalogRef.Кассы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Банковский счет или касса, на пути к которым находятся денежные средства</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Destination bank account or cash account for the cash being transferred</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

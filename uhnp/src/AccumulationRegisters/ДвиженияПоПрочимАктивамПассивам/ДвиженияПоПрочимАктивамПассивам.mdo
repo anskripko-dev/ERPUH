@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4357d22b-0897-4821-939c-552e06375325">
+  <producedTypes>
+    <selectionType typeId="58814d1c-ab06-4167-85cd-a57987c1d4e5" valueTypeId="862ec986-0894-4ddc-af0b-ff3f77bf415d"/>
+    <listType typeId="b83fa33d-0cfd-454a-b68d-7c5a61cff2b8" valueTypeId="fd8c7294-4535-425e-a356-06c391f6fbfe"/>
+    <managerType typeId="c4c25051-4d66-4ec2-ba13-16b372564790" valueTypeId="fd38e39b-17e4-4818-a770-48bf2ee25e59"/>
+    <recordSetType typeId="920d5476-fa4a-42a9-8a4b-569093898e7f" valueTypeId="fb021319-0cf3-42c4-95c7-ab70dc0ae412"/>
+    <recordKeyType typeId="f1870f68-88b7-4c79-9ab2-fd5a508af734" valueTypeId="9cfd2505-c7e8-45e8-b6f2-42f3b369ea4d"/>
+    <recordType typeId="36b73629-8f37-4800-beaf-9a4978d423d3" valueTypeId="bb5632c3-b40d-49a1-a43d-423f6678c677"/>
+  </producedTypes>
+  <name>ДвиженияПоПрочимАктивамПассивам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Движения Прочие активы и пассивы</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Other assets and liabilities records</value>
+  </synonym>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="604184f9-ce19-419f-939d-009ef79a965c">
+    <name>СуммаБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма без НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount excluding VAT</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Суммовая оценка актива или пассива без НДС в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount estimation of asset or liability excluding VAT in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0516d810-649a-4be1-9213-6140e3177a04">
+    <name>СуммаСНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма с НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount including VAT</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Суммовая оценка актива или пассива с НДС в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount estimation of asset or liability including VAT in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6e62139f-1edb-41a7-82aa-f0990fad3b21">
+    <name>СуммаРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма регл</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Local amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Суммовая оценка актива или пассива в валюте регламентированного учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount valuation of asset or liability in local accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6a585be7-d368-4efe-a611-c9dbe058d4e5">
+    <name>СуммаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма упр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount, mgmt</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Суммовая оценка актива или пассива в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount estimation of asset or liability in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2fcc1874-aaa9-4603-b532-35efd21f40c2">
+    <name>ПостояннаяРазница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма (ПР)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount (PD)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="b5691211-6aa9-4af4-832b-c684fe38941d">
+    <name>ВременнаяРазница</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма (ВР)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount (TD)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="9a2da4e2-47a7-4c84-b9e0-a37fd14a48e7">
+    <name>ОбъектРасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект расчетов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP object</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыРасчетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект расчетов с клиентом</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>AR/AP object with customer</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7b846109-57e5-4385-8386-8160d4fd31ee">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ed500b1b-a244-432d-ad9d-505e7735f5b4">
+    <name>НастройкаХозяйственнойОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка хозяйственной операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business transactions setting</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиХозяйственныхОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0784b909-3fa4-4eaf-af0d-7357971c2676">
+    <name>ИдентификаторФинЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор фин. записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fin. record ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="c5b49b93-1d7b-47ff-ac71-1dab7cac4a5d">
+    <name>РасчетСебестоимости</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет себестоимости</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost calculation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Движение сформировано регламентной операцией закрытия месяца</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Record is generated from the month-end transaction</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8c3f7b62-1167-4fcb-8717-4958051170b0">
+    <name>РасчетПартий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет партий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lot calculation</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Движение сформировано регламентной операцией закрытия месяца</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Record is generated from the month-end transaction</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7ad9b111-ca22-49f4-89ae-d98238c8c5af">
+    <name>ВидИсточника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид источника</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Source kind</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыИсточниковДвижений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="0dcdb9f7-4529-4c67-a98a-91c710f53af2">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="53f52122-8eac-4321-a457-84d42b2de9fb">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8d6ce192-d0d7-46c9-b2da-1b79b1620e20">
+    <name>НаправлениеДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Направление деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line of business</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Направление к которому относится актив или пассив.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Line of business of asset or liability.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c3279455-1a42-4d9c-b382-7ef6e0ad8d08">
+    <name>Статья</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья прочих активов/пассивов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Item of other assets/liabilities</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="114b28d4-6e34-4d05-a703-abe13d30145d">
+    <name>Аналитика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика статьи прочих активов/пассивов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Dimension other asset/liability items</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="51ff0155-46e2-4130-83e7-1274dcd505b7">
+    <name>НастройкаСчетовУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка счетов учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ledger account settings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиСчетовУчетаПрочихОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f527c0d7-9d8f-418f-a6d9-cc0f7b2feb48">
+    <name>ДебетКредит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид движения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement kind</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВидыДвиженийПрочихАктивовПассивов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d342dbc4-58cc-4a30-9411-e30a14aeeb41">
+  <producedTypes>
+    <objectType typeId="c394cc4d-37ee-4fe5-8e7c-6f6fe26aad9d" valueTypeId="cac8b505-a593-429e-a484-8df18ddc625b"/>
+    <managerType typeId="56910366-da35-4233-bb47-ab6f6e2ff5ca" valueTypeId="5d1a0cee-a246-401d-8c38-08080dd3d2e3"/>
+  </producedTypes>
+  <name>СправкаРасчетНормированияРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Справка-расчет &quot;Нормирование расходов&quot;</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Detailed calculation &quot;Expense rationing&quot;</value>
+  </synonym>
+  <comment>Справка-расчет &quot;Нормирование расходов&quot;</comment>
+  <defaultForm>Report.СправкаРасчетНормированияРасходов.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.СправкаРасчетНормированияРасходов.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <variantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</variantsStorage>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="cc45f266-86bc-4051-a474-d335b49feca3">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, для которой формируется перечень нормируемых расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company for which the normalized expenses list is generated</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="b09db518-a7d1-4283-aa15-c8fc6b95a80b">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Начало периода, за который формируется перечень нормируемых расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Beginning of the period for which the normalized expenses list is generated</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fc970ddb-1204-4b9e-9d07-e45bd9a76d4c">
+    <name>КонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period end</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Окончание периода, за который формируется перечень нормируемых расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>End of the period for which the normalized expenses list is generated</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="acd598d1-5ce3-4368-8378-b8652e3c4fd4">
+    <name>ПоказательБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>БУ (данные бухгалтерского учета)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Local accounting (local accounting data)</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a6d09256-8616-4946-b4a1-a04e60efbb00">
+    <name>ПоказательНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>НУ (данные налогового учета)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TA (tax accounting data)</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="992e6616-a8d1-4225-bb8b-c80b1a6dfb61">
+    <name>ПоказательПР</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПР (данные по учету постоянных разниц)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>PD (permanent difference accounting data)</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d280f619-0e40-4b3f-a7d7-a3fb85d87a1e">
+    <name>ПоказательВР</name>
+    <synonym>
+      <key>ru</key>
+      <value>ВР (данные по учету временных разниц)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TD (temporary difference accounting data)</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="96aa519d-b814-4577-a39a-52647ca9102c">
+    <name>РежимРасшифровки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим расшифровки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down mode</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f5d3d225-f90d-44f5-8102-1d0e3a319702">
+    <name>НаборПоказателейОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Набор показателей отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Report indicator set</value>
+    </synonym>
+    <comment>Не отображается на форме</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="b107ab18-bf63-496b-8b78-0204fd6c857f">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Report form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="84149253-4df2-47b8-b4dc-515e5ee69090">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main data composition schema</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

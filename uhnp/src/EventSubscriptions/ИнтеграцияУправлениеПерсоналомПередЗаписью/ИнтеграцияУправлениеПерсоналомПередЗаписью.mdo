@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c49b8396-557b-4b26-9daf-a55f1d90d794">
+  <name>ИнтеграцияУправлениеПерсоналомПередЗаписью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Интеграция управление персоналом перед записью</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Integration HR management before saving</value>
+  </synonym>
+  <source>
+    <types>CatalogObject.Должности</types>
+    <types>CatalogObject.УдалитьМашиночитаемыеДоверенностиКЭДО</types>
+    <types>CatalogObject.ШтатноеРасписание</types>
+    <types>CatalogObject.МашиночитаемыеДоверенности</types>
+    <types>CatalogObject.ШаблоныДокументов</types>
+    <types>CatalogObject.СтруктураПредприятия</types>
+    <types>CatalogObject.ПодразделенияОрганизаций</types>
+    <types>CatalogObject.Организации</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ИнтеграцияУправлениеПерсоналомСобытия.ОбъектПередЗаписью</handler>
+</mdclass:EventSubscription>

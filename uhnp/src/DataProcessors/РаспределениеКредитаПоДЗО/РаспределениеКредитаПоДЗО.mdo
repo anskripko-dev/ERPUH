@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="035d3347-d383-4bcf-8a20-7c6db2fd1f44">
+  <producedTypes>
+    <objectType typeId="a66f40fe-71aa-4e37-bc4a-02e0cb80c01c" valueTypeId="c40a8c8d-05e7-47a4-bc0a-e63c6d9070e3"/>
+    <managerType typeId="2e552869-8d32-4af5-989d-d69ca9d84424" valueTypeId="820dc560-9de7-4220-a84a-aa849a932529"/>
+  </producedTypes>
+  <name>РаспределениеКредитаПоДЗО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение кредита по ДЗО</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.РаспределениеКредитаПоДЗО.Form.Форма</defaultForm>
+  <attributes uuid="8ed8990e-83bc-49ef-ad39-cfe596b55705">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>РО</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="5d8a60a7-fd07-4052-880b-11a94f4f51bb">
+    <name>Кредит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор кредита</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДоговорКредитаДепозита</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>DataProcessor.РаспределениеКредитаПоДЗО.Attribute.Организация</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.ВидФинансовогоИнструмента</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВидыФинансовыхИнструментов.EnumValue.КредитПолученный</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ВидыФинансовыхИнструментов.EnumValue.ЗаемПолученный</value>
+        </values>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="6f06308c-a0e4-4d1b-9129-9111986e27ec">
+    <name>СуммаКредита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма кредита</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="21c45deb-ebdc-4478-a396-47157fdf71ef">
+    <name>ВалютаКредита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта кредита</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ae9b293d-6a03-4d22-828b-2a5306c9f12f">
+    <name>ВерсияКредит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Версия кредит</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВерсияСоглашенияКредит</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="713b1b1d-2842-4c04-b858-cea5b47e2058">
+    <name>ПроцентнаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="f51061a2-e2ef-4e87-8255-a22ccc90f4e2">
+    <producedTypes>
+      <objectType typeId="e6c86a29-afc1-4437-9d7e-f060baf62c8a" valueTypeId="01829e8b-412f-4447-815e-d8700c42b0ac"/>
+      <rowType typeId="d44b90b9-d796-4d17-b4b7-cbcd7d171a76" valueTypeId="01acb039-2ce9-4e0f-af4c-127a84fc8935"/>
+    </producedTypes>
+    <name>ПолучателиЗаймов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получатели займов</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="d221c0c0-1c9b-476f-89e9-7358983ff59e">
+      <name>Получатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Получатель</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="338366ed-79b3-4832-aef7-03ded51d5b6a">
+      <name>ДоговорЗайма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор займа</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДоговорКредитаДепозита</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.ВалютаВзаиморасчетов</name>
+        <field>DataProcessor.РаспределениеКредитаПоДЗО.Attribute.ВалютаКредита</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.РаспределениеКредитаПоДЗО.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>DataProcessor.РаспределениеКредитаПоДЗО.TabularSection.ПолучателиЗаймов.Attribute.Получатель</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ВидФинансовогоИнструмента</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.ВидыФинансовыхИнструментов.EnumValue.ЗаемВыданный</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="43c35067-4453-4ee4-9582-b7e39c081333">
+      <name>СуммаЗайма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма займа</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2661c45e-4f79-4aef-9ff9-3f767565d7b7">
+      <name>ДатаВыдачи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата выдачи</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="082afca2-c4cf-46d1-ab44-0024f86c8e4c">
+      <name>ДатаВозврата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата возврата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="ec89a6ce-a96b-40a7-9ac6-35976a68b317">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

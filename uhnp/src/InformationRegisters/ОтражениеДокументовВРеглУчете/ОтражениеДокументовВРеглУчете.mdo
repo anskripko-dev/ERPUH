@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="43c6a321-f341-4fbf-945d-625f4d232221">
+  <producedTypes>
+    <selectionType typeId="a835bb36-b058-4e84-80fe-c7cf6170fbbf" valueTypeId="3d169201-314c-495a-94a9-c28aa7ea38f6"/>
+    <listType typeId="8fcb9871-d821-491f-bc43-cef75a241049" valueTypeId="9ab01151-3dd6-4a9c-a5d8-b58f142fabf5"/>
+    <managerType typeId="a7b1e3c4-91b7-4b57-a01f-cc3af0a64288" valueTypeId="7a81695a-bc70-460f-b395-e1c4c669de58"/>
+    <recordSetType typeId="029a8989-87af-48b7-8863-5aec5a3d9480" valueTypeId="75b23a32-fb01-4a68-961e-c994e996c91b"/>
+    <recordKeyType typeId="7d0b8856-d687-4e06-9a2e-d2279b37bea3" valueTypeId="b7d0769f-c125-4d44-b4c6-ba2b10dce443"/>
+    <recordType typeId="61fe63bf-36af-43f5-9169-84c01898db4c" valueTypeId="45d7c7af-f3aa-45f5-b629-ce9b073c9a4b"/>
+    <recordManagerType typeId="33e09c67-8928-447e-bae8-6cea6a5e7e05" valueTypeId="c5e7ca85-05ab-4331-a4fc-da89f276d5e3"/>
+  </producedTypes>
+  <name>ОтражениеДокументовВРеглУчете</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отражение документов в регл учете</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Local accounting posting</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ОтражениеДокументовВРеглУчете.Form.ФормаСписка</defaultListForm>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="66011d81-4e6d-4f1b-9d5e-bd71f8ac7713">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыОтраженияДокументовВРеглУчете</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="597975b7-ae9b-4008-bcea-65ab209530ce">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Комментарий к статусу отражения документа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Comment to document record status</value>
+    </toolTip>
+    <multiLine>true</multiLine>
+    <extendedEdit>true</extendedEdit>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <attributes uuid="c8b5012d-74b2-4965-85f1-7bee6097a34f">
+    <name>ИдентификаторСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор статуса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status ID</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="2cb12f6e-217f-4665-84cf-6a648ed174c2">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация документа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company mentioned in the document</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7018707b-c8ae-4f90-afde-522c2b2e93b0">
+    <name>ДатаОтражения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата отражения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="7248e697-dc8c-4352-a322-40134443b8c2">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d90af734-7cc4-4ae5-a3bf-a576e4eeab29">
+    <name>ФормаРедактированияЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма редактирования записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Entry edit form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

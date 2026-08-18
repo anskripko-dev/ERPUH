@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6ead684a-9c5e-4798-8720-7ecdf3947bb0">
+  <producedTypes>
+    <objectType typeId="16c2664d-4da6-4463-bc46-5a74b55fb21a" valueTypeId="99ed87b1-fabc-4057-a1c7-3775836c6526"/>
+    <managerType typeId="4a0c1a7b-ab5b-45af-aa6a-20a72d48bc87" valueTypeId="dbb59d09-fccb-4d7f-8854-2ac94db42451"/>
+  </producedTypes>
+  <name>тн_ПересчетЦенВозвратовПоПартии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пересчет цен возвратов по партии (тн)</value>
+  </synonym>
+  <comment>// Юдина Екатерина 08.05.2024 Выполнение задач №000049502</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ПересчетЦенВозвратовПоПартии.Form.Форма</defaultForm>
+  <attributes uuid="a08130f4-e0bc-41f1-864f-e78e7ebe5e18">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="736deb1b-b4a3-4e1b-b391-da331c8dff3f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5b9ef6f0-5601-423b-9b60-f4b019fc775f">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="2cc9e3a2-967f-4ae2-87e1-7cc993d00e92">
+    <producedTypes>
+      <objectType typeId="02892196-b244-407d-b2b1-edf22b019648" valueTypeId="f5a3d0ea-6a5a-4877-8486-9a3b93d277e9"/>
+      <rowType typeId="04fd1702-55ee-4a64-a28f-d42c578745dc" valueTypeId="3e1bb759-f58c-487c-b6ee-ad4d097df3f3"/>
+    </producedTypes>
+    <name>СписокДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список документов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b76a76c1-314d-443e-8b56-d0b8ef3e5b9e">
+      <name>Расхождение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расхождение</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ac997424-b184-44b2-b444-5a5069156002">
+      <name>ВозвратТоваровПоставщику</name>
+      <synonym>
+        <key>ru</key>
+        <value>Возврат товаров поставщику</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ВозвратТоваровПоставщику</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9685606a-cf9c-4866-9f9f-8d133592b70a">
+      <name>ДокументПартии</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ партии</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8237c10d-0775-4b95-a09d-beac95d879c0">
+      <name>ДокументОбработан</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ обработан</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="18dea09a-21e9-4390-9014-e76cedb31219">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

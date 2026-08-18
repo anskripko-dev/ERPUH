@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8e97cf6b-c781-4f6c-ae99-2d42a99084fe">
+  <producedTypes>
+    <objectType typeId="c40dc3ba-ee5b-4eee-a777-cd0078ce059c" valueTypeId="90ff656f-e85c-45c8-8b4a-e7e2d35afc00"/>
+    <managerType typeId="f22cbea2-631b-49b5-b81c-af69a45b2f0f" valueTypeId="50e7d755-0f40-4c87-adfe-82bd57b6e4a9"/>
+  </producedTypes>
+  <name>ОтчетПоРегиструБухгалтерииБД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отчет по регистру бухгалтерии</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Accounting register report</value>
+  </synonym>
+  <synonym>
+    <key>tr</key>
+    <value>Muhasebe kayıt raporu</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.ОтчетПоРегиструБухгалтерииБД.Form.ФормаОтчета</defaultForm>
+  <attributes uuid="a56d92a1-7a03-4c37-a421-f411a570669a">
+    <name>ИспользуемаяИБ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используемая ИБ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Used infobase</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kullanılan infobase</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВнешниеИнформационныеБазы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>ВнешняяИБ</name>
+      <field>Report.ОтчетПоРегиструБухгалтерииБД.Attribute.ВнешняяИБ</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="eff9d1f6-8b3d-466f-971b-2dccd4c888d9">
+    <name>РегистрБД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистр ВИБ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>EIB register</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dış infobase kayıdı</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегистрыБухгалтерииБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="03f0b4e7-a79f-4fde-bc8e-f6c47fb83f3a">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Hesap</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СчетаБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>Report.ОтчетПоРегиструБухгалтерииБД.Attribute.ПланСчетовБД</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="f2efd1f8-377a-401e-affa-939c5a76dd11">
+    <name>ДатаНач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата нач</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Başlangıç ​​tarihi</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c1d01888-dd44-4d36-bb5c-cbff619ab3c1">
+    <name>ДатаКон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата кон</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End date</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bitiş tarihi</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="67d38a3e-6376-4055-aee7-0568302c01ba">
+    <name>ПоСубсчетам</name>
+    <synonym>
+      <key>ru</key>
+      <value>По субсчетам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>By subaccounts</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Alt hesaplara göre</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bc7414fa-bb1f-49c8-a468-0cc4efbfad39">
+    <name>СохраненныеНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сохраненные настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Saved settings</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kayıtlı ayarlar</value>
+    </synonym>
+    <type/>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="27745e66-4c81-4a77-9e33-b5858d75aba1">
+    <name>РазвернутоеСальдо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Развернутое сальдо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Detailed balance</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiye</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5f03f9c4-ba1e-4950-b850-e36a7bdbb8f7">
+    <name>КоррСчет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корр счет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corr account</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Muhabir hesabı</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СчетаБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>Report.ОтчетПоРегиструБухгалтерииБД.Attribute.ПланСчетовБД</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="7530b4d2-dc14-4abc-b100-579a334cbf63">
+    <name>ВидОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Report kind</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Rapor türü</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8831e712-a42e-4660-a166-d826357c7e5f">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Dönem</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3d14b954-5041-47f6-bef0-db9527ed9a59">
+    <name>ТабПравилаВычисленияПараметров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таб правила вычисления параметров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Table parameter calculation rules</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Parametre hesaplama kuralları tablosu</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7930cdd9-0e60-4956-b61b-82644b3ea03b">
+    <name>ТабПоляДетализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таб поля детализации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Table details fields</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Tablo ayrıntı alanları</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d599961a-b059-4026-9367-f9a286745f7c">
+    <name>ПоСубсчетамИСубконто</name>
+    <synonym>
+      <key>ru</key>
+      <value>По субсчетам и субконто</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>By subaccounts and extra dimensions</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Alt hesaplara ve ekstra boyutlara göre</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="64068de4-288e-4cbc-b667-8c482dc88246">
+    <name>ПоКорСубсчетамИСубконто</name>
+    <synonym>
+      <key>ru</key>
+      <value>По кор субсчетам и субконто</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>By corr subaccounts and extra dimension </value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Doğru alt hesaplara ve ekstra boyuta göre</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="22f22d55-0c3e-43c6-b273-194f96741b6c">
+    <name>ПоЗабалансовымСчетам</name>
+    <synonym>
+      <key>ru</key>
+      <value>По забалансовым счетам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>By off-balance accounts</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Bilanço dışı hesaplarla</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ae837af2-a6a1-423f-a861-cd0d2f30a39d">
+    <name>ПравилаВыводаИтогов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила вывода итогов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Totals display rules</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Toplam görüntüleme kuralları</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c5d22e8e-a943-43b3-8d0d-9f31ab0da274">
+    <name>ПравилаРазвернутогоСальдо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Правила развернутого сальдо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Detailed balance rules</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ayrıntılı bakiye kuralları</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c6380f71-e17b-4794-9a91-1ba191eb0009">
+    <name>ТабВыводимыеРесурсы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таб выводимые ресурсы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Displayed resource table</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Görüntülenen kaynak tablosu</value>
+    </synonym>
+    <type>
+      <types>ValueTable</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f750dba4-9031-4fb9-8c0f-c11be5bb7c5f">
+    <name>ТипБД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип БД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Database type</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Veri tabanı türü</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТипыБазДанных</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="89e8a906-cb79-4055-a68e-1cbf2085cb5f">
+    <name>ВнешняяИБ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внешняя ИБ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>External infobase</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Harici infobase</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6c6e3681-d2fa-4729-8122-906ac64c9c44">
+    <name>ОсновнаяТаблицаРегистра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная таблица регистра</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main register table</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ana kayıt tablosu</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="000b86a8-ee04-42ec-a116-797f1848cd8c">
+    <name>ВидДвижения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид движения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Movement kind</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Hareket türü</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="da5c5852-8ecf-4b0c-a47e-fd6901798242">
+    <name>ПланСчетовБД</name>
+    <synonym>
+      <key>ru</key>
+      <value>План счетов БД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Chart of accounts DB</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Veritabanı hesap planı</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПланыСчетовБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c0bf5e81-0457-4df3-aecd-38b51bc9182c">
+    <name>ТекстОтбораИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст отбора источник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Filter text source</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Metin kaynak filtresi</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="756e1ca7-5394-4cdc-a193-b17c2c36abbc">
+    <name>ИсточникДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Data source</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Veri kaynağı</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ИсточникиДанныхДляРасчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="bd59f217-8661-4e13-86d1-79ba545b84a2">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Report form</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Rapor formu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="22684c00-1735-4ed3-ae32-d575d81b8e7f">
+    <name>ФормаВыбораПолей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора полей</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Field choice form</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Alan seçim formu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7d4829b0-e9e6-4d78-b952-e0efc5975cde">
+    <name>ФормаВыбораСубконто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора субконто</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Extra dimension choice form</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Ekstra boyut seçim formu</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="100f2503-6f59-46bb-a784-6fa33b143d0e">
+    <name>ОборотноСальдоваяВедомостьПоСчету</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОстаткиИОбороты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ОстаткиИОбороты</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>ОстаткиИОбороты</value>
+    </synonym>
+  </templates>
+  <templates uuid="f3db5f82-334c-470e-b870-f6fb9cf18721">
+    <name>КарточкаСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>КарточкаСчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>КарточкаСчета</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>КарточкаСчета</value>
+    </synonym>
+  </templates>
+  <templates uuid="7abf1fa3-74d9-45d4-a237-89ae6be2c5f4">
+    <name>ОтчетПоПроводкам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчет по проводкам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Entry report</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Kayıt raporu</value>
+    </synonym>
+  </templates>
+  <templates uuid="80ed9ed7-dfcb-46ab-88b4-84337259b974">
+    <name>АнализСчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Анализ счета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Account analysis </value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Hesap analizi</value>
+    </synonym>
+  </templates>
+  <templates uuid="057f79ee-bd3b-46c0-8d8b-161936567cae">
+    <name>ОборотноСальдоваяВедомость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оборотно-сальдовая ведомость</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Trial balance</value>
+    </synonym>
+    <synonym>
+      <key>tr</key>
+      <value>Geçici Mizan</value>
+    </synonym>
+  </templates>
+</mdclass:Report>

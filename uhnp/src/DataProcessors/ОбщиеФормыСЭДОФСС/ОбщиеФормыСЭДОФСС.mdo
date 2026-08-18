@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3f9b89d5-69e1-4d59-9557-1c1ad67ba92e">
+  <producedTypes>
+    <objectType typeId="b2e4c02c-eca0-40bd-8704-283dbf7e4cc4" valueTypeId="e1bd7ec9-ff48-43ea-abe9-bcc2918d26c5"/>
+    <managerType typeId="2e1b87ca-8a02-4aa2-975f-0462f9ccd064" valueTypeId="4d4e960f-0956-4410-9aff-53408a1e22a9"/>
+  </producedTypes>
+  <name>ОбщиеФормыСЭДОФСС</name>
+  <synonym>
+    <key>ru</key>
+    <value>Общие формы СЭДО ФСС</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Common SSF EDI forms</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <forms uuid="e784cedc-3957-457a-8611-7b63f5ca6ce2">
+    <name>ПолучениеСообщенийЗаПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получение сообщений за период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receiving messages for the period</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6faeeb1a-a6ed-4622-aac1-07bbeaf75eed">
+    <name>ОтправкаДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправка документов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Send documents</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="264bb9ad-0fb6-46ef-9da4-f06f58264727">
+    <name>ТекущиеДелаПоСЭДО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текущие дела по СЭДО СФР</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>EDI to-do list Social Insurance Fund</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c9677d7d-0b96-45bf-ba5b-24a68cd586d0">
+    <name>ОбновлениеРегистрационногоНомераСФР</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обновление регистрационного номера СФР</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Update registration number in Social Insurance Fund of Russia</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="785e20ca-c31b-42d7-bbf0-90eaa6f6bbf7">
+    <name>ОтправитьВФонд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отправить в Фонд</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Send to SSF</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DefinedType.ИсходящиеДокументыСЭДОФСС</types>
+    </commandParameterType>
+    <parameterUseMode>Multiple</parameterUseMode>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Провести и отправить документ в ФСС</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Post and send the document to SSF</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ОрганФСС</picture>
+    </picture>
+  </commands>
+  <commands uuid="ac06c40c-e150-4e06-b8b4-d92ef62ede29">
+    <name>ПолучитьНовыеСообщенияСЭДОФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить сообщения СЭДО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receive EDI messages</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Проверить наличие новых электронных документов и получить из СЭДО СФР</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Check whether there are new electronic documents and receive them from Social Insurance Fund EDI</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ОрганФСС</picture>
+    </picture>
+  </commands>
+  <commands uuid="6ee5c8b7-3396-4cad-9535-1441db31491c">
+    <name>ПолучитьСообщенияСЭДОФССЗаПериод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить сообщения СЭДО за период</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receive EDI messages for period</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Получить все сообщения СЭДО СФР за указанные даты</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Receive all messages of Social Insurance Fund EDI for the specified dates</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.SetDateInterval</picture>
+    </picture>
+  </commands>
+  <commands uuid="879c0ce2-3d41-4fce-8da6-8704c4098a62">
+    <name>ПовторноПолучитьИзФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Повторно получить из СЭДО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receive again from EDI</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DefinedType.ВходящиеДокументыСЭДОФСС</types>
+    </commandParameterType>
+    <parameterUseMode>Multiple</parameterUseMode>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Заполнить документ по XML-данным полученным от СЭДО СФР</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Fill the document using XML data received from Social Insurance Fund EDI</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>CommonPicture.ЗаполнитьФорму</picture>
+    </picture>
+  </commands>
+  <commands uuid="979886b0-8753-4264-be71-ff6be50bb123">
+    <name>ТекущиеДелаПоСЭДО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текущие дела по СЭДО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>EDI to-do list</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <representation>Auto</representation>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.SetDateInterval</picture>
+    </picture>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="63642f38-3712-4586-bde8-31ab5fe88180">
+  <producedTypes>
+    <selectionType typeId="2ef20882-07c1-4d02-b4e8-31377040699b" valueTypeId="c72efa55-8ad2-4a65-93c2-531bcac744b8"/>
+    <listType typeId="5881ae5d-3c2d-4ca7-8879-2f66fbecbe60" valueTypeId="e19805c8-6685-48c5-88cc-90a32479d726"/>
+    <managerType typeId="df38ffaf-e0d2-4293-8e9c-ab79a650d1ab" valueTypeId="c7fb0b56-7d71-4f52-97ca-92edf6138723"/>
+    <recordSetType typeId="17289994-7563-4ef9-90de-23b91420e792" valueTypeId="7eff9f63-342a-4e56-8e5b-4fc805392dbc"/>
+    <recordKeyType typeId="e9e4e36a-f456-4023-be2c-9587cfbe873c" valueTypeId="6a8b4282-7661-443e-a661-545103bf2ae3"/>
+    <recordType typeId="5fe4ac02-96e2-43e6-add8-79cf25639a35" valueTypeId="066cf8f9-cefc-4941-8c11-26aa28a92092"/>
+    <recordManagerType typeId="35614464-c3b0-475b-a993-d24807bd4df0" valueTypeId="f93fd04f-6345-40c9-ad55-90f672c57ecf"/>
+  </producedTypes>
+  <name>ЭтапыОплат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Этапы оплат</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="efd1347f-3406-48e3-a490-84dab9269387">
+    <name>УдалитьПроцентОплат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Удалить процент оплат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="35e39ec6-f134-4d16-9905-7a5b7dc42bdb">
+    <name>ДатаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата поступления</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="46d7be89-1d87-4eca-8383-6105b9430db6">
+    <name>ДатаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата платежа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ad5d27e7-1391-4e43-bad0-d6a0ea2db485">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.Лот</types>
+      <types>DocumentRef.ПланЗакупок</types>
+      <types>DocumentRef.СтрокаПланаЗакупок</types>
+      <types>DocumentRef.ПредложениеПоставщика</types>
+      <types>DocumentRef.ПротоколВыбораПобедителей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c1db7ee3-766c-494a-b8af-7d32284bbbca">
+    <name>ПроцентОплат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент оплат</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

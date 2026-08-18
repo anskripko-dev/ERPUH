@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a150f60-466b-414f-be5e-160ce5beb584">
+  <producedTypes>
+    <objectType typeId="68f5235f-0a22-4974-adb5-c572b952c6cc" valueTypeId="9bf2db91-0724-4f02-a9fd-256d9c42d3eb"/>
+    <managerType typeId="c22eff22-213a-42b3-83fe-db8294d7d438" valueTypeId="e8d41237-9d13-4174-828d-7db288212912"/>
+  </producedTypes>
+  <name>ВыгрузкаЭД_ПоПотокам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выгрузка электронных документов в потоках (по операторам ЭДО)</value>
+  </synonym>
+  <comment>//Смирнов Д.А. 04.07.2025 Выполнение задач №000052291</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ВыгрузкаЭД_ПоПотокам.Form.Форма</defaultForm>
+  <attributes uuid="0159f2c8-7576-442c-8025-8c1d015731ee">
+    <name>КоличествоПотоков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество потоков</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:StringValue">
+      <value>1</value>
+    </minValue>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="fd741d36-addc-4f94-893e-375d7e76df53">
+    <name>ОператорЭДО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор ЭДО</value>
+    </synonym>
+    <type>
+      <types>EnumRef.тн_ОператорыЭДО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="7ba64acb-c5fe-4303-940a-81c65bec2e21">
+    <name>КоличествоЗаписейДляВыборки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ограничить выборку количеством записей</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="2002a4f8-0acc-433f-8a46-5ff3224a89c7">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

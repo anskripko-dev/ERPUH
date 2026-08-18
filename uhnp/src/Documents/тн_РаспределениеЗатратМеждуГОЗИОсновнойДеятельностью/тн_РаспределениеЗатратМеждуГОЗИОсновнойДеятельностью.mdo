@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="70803fc3-7108-4241-87a0-e946448bac6f">
+  <producedTypes>
+    <objectType typeId="191e8054-7a00-4747-b4ae-03538b90f948" valueTypeId="0d231b36-b1c1-42ce-9f1d-e199d2339dd1"/>
+    <refType typeId="eff3ecc1-ade5-4737-aef1-97dfb0b93539" valueTypeId="34d9d471-63f5-4b8f-a9a1-eb69f9ac702e"/>
+    <selectionType typeId="e9679776-fbbb-4490-ad1c-8a5bcc717c5a" valueTypeId="7c9c8067-4fd7-4b0c-a525-a9bf943ed956"/>
+    <listType typeId="4cc94dad-0b56-4637-ab67-3cda8f040107" valueTypeId="0c7d8321-db99-4121-8e0d-c24471f530f0"/>
+    <managerType typeId="62e33e5f-e8f0-4c43-88a0-62bd9c32f078" valueTypeId="c7db9922-dad5-4698-8e97-56a19c46057a"/>
+  </producedTypes>
+  <name>тн_РаспределениеЗатратМеждуГОЗИОсновнойДеятельностью</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение затрат между ГОЗ и основной деятельностью (тн)</value>
+  </synonym>
+  <comment>//Ведутенко С.А. от 13.12.2023 Выполнение задач №000047803</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Document.тн_РаспределениеЗатратМеждуГОЗИОсновнойДеятельностью.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Распределение затрат между ГОЗ и основной деятельностью</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Распределение затрат между ГОЗ и основной деятельностью</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultObjectForm>Document.тн_РаспределениеЗатратМеждуГОЗИОсновнойДеятельностью.Form.ФормаДокумента</defaultObjectForm>
+  <defaultListForm>Document.тн_РаспределениеЗатратМеждуГОЗИОсновнойДеятельностью.Form.ФормаСписка</defaultListForm>
+  <registerRecords>AccumulationRegister.тн_РасходыПоГосударственнымКонтрактам</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <attributes uuid="deabd6e6-83a7-4c58-8aa3-70120a6d63c2">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="affc5909-e9a4-4f23-a83a-cdba6f45635e">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c26099f2-4419-44c2-b8e2-18ca9bbff34d">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <comment>Любая дополнительная информация</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="2efa9a25-0e7c-4c20-a4da-9679b7d23007">
+    <name>БазаРаспределения</name>
+    <synonym>
+      <key>ru</key>
+      <value>База распределения</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="0b95e9fa-0bc7-4ed0-81b0-bde9a9f4d92d">
+    <name>ВариантРаспределенияЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант распределения затрат</value>
+    </synonym>
+    <type>
+      <types>EnumRef.тн_ВариантыРаспределенияЗатратМеждуГОЗИОсновнойДеятельностью</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="6941022a-7e2a-4604-b60c-b24a7414abfc">
+    <name>ИсключатьСтоимостьУслуг</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исключать стоимость услуг</value>
+    </synonym>
+    <comment>//Морозов А.В. (Код-Эксперт) 22.01.2026 Выполнение задач №000056468</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="26c1958f-cdc0-4ea9-9276-1668adc1d535">
+    <name>ФормаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма документа</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="4db51ade-039f-41e5-9d02-8e3f314b342e">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="690f0e13-1032-45cd-9f18-04952fdc9e4b">
+    <name>ПечатнаяФорма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Печатная форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="289a0401-5982-4bff-808c-c3353387cdb7">
+    <producedTypes>
+      <objectType typeId="b144c4d6-9b4e-45d5-810e-12a2ef1d3eaf" valueTypeId="0ecb4e7d-ed1b-42bd-8d9c-45f14085cce5"/>
+      <rowType typeId="dfcd5672-60a8-4303-950e-3fbb6baa9836" valueTypeId="25c5258f-1849-4a82-878d-e1502a55189a"/>
+    </producedTypes>
+    <name>РасходыОсновнойДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы основной деятельности</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="84675f15-2c54-475a-8535-0395656afff2">
+      <name>Счет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет</value>
+      </synonym>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="1e1756b6-4945-4529-8596-acfd4a13845a">
+      <name>СтатьяЗатрат</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья затрат</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="6ee2e290-4b3d-4677-92f2-bcdb6b2eacb5">
+      <name>ДокументРасхода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ расхода</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b4ec9504-408c-4cb4-a2fc-23605d139fa7">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="aed3b1c8-782b-48ff-bcc7-9e53671dcd14">
+    <producedTypes>
+      <objectType typeId="339351e0-69b8-4ff9-9048-97024405aead" valueTypeId="55235892-548d-41c4-a8ab-1d3c030ee4ac"/>
+      <rowType typeId="b5a56908-17b7-4d1f-8aab-d75795154caf" valueTypeId="6e45e005-8b48-4e8b-8307-b976ec355677"/>
+    </producedTypes>
+    <name>БазаРаспределенияПоГосударственнымКонтрактам</name>
+    <synonym>
+      <key>ru</key>
+      <value>База распределения по государственным контрактам</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7b89e4e5-9cf7-4273-b2ea-091786507b11">
+      <name>ДокументПоСебестоимости</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ по себестоимости</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияУслугПрочихАктивов</types>
+        <types>DocumentRef.КорректировкаРеализации</types>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+        <types>DocumentRef.Сторно</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="34042fec-e408-413a-ba32-7672cb98b259">
+      <name>ГосударственныйКонтракт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Государственный контракт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ГосударственныеКонтракты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="3efdb92d-c3ee-4f73-a94b-07ac9787f722">
+      <name>ДоговорКонтрагента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор контрагента</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ВерсияСоглашения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="730f9573-3a2e-4d14-b14b-1aa4ebf0c8f1">
+      <name>ИдентификационныйКодЗакупки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификационный код закупки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.тн_ИдентификационныеКодыЗакупок</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="9f674c08-d229-4166-8cad-54987d7834ed">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="3bd792ed-57e9-4e64-b885-f87b54bdde44">
+    <producedTypes>
+      <objectType typeId="223a7cc7-26fe-464c-8192-f56753c630e0" valueTypeId="922bf166-205d-4d06-81f6-8e7f8695c1fe"/>
+      <rowType typeId="0a217e26-d9c9-439b-975c-9514e57b3f1c" valueTypeId="9a512bc1-4ade-4919-9e08-4f95d9b02cba"/>
+    </producedTypes>
+    <name>РаспределенныеСуммыПоГосударственнымКонтрактам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распределенные суммы по государственным контрактам</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="cac4aa66-8d1d-40e3-a488-2b6e54456c87">
+      <name>СтатьяЗатрат</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья затрат</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="ea6bdf1a-9ca9-4e01-aa8f-0418bccb6cfa">
+      <name>ГосударственныйКонтракт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Государственный контракт</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ГосударственныеКонтракты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="80e14161-5035-4dcd-8168-a5c98969f0d7">
+      <name>ДоговорКонтрагента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор контрагента</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ВерсияСоглашения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0d637049-964c-4272-84e5-2713ea0d1728">
+      <name>ИдентификационныйКодЗакупки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификационный код закупки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.тн_ИдентификационныеКодыЗакупок</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a361d7e6-ff86-43e9-a4af-fb3e72d8a750">
+      <name>КоэффициентРаспределения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Коэффициент распределения</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b8af386c-c32d-47f0-973c-7e69f9a7aa98">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4a9c05a3-3c41-4686-83c7-ca5ea68f03fb">
+    <producedTypes>
+      <objectType typeId="f3dd73e3-1e5b-4128-955c-9616c7124dd1" valueTypeId="0481485b-8a06-44ca-8204-59ca80f05ebe"/>
+      <rowType typeId="bcb3c0e2-05c2-47d6-9a49-e463dd80a092" valueTypeId="1319839d-f279-4895-bc3f-12ffc316c34b"/>
+    </producedTypes>
+    <name>СписокОтборов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список отборов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="5426c912-054b-4ac1-a22b-f4461d35b604">
+      <name>ИмяПоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя поля</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d6c95c8b-f065-4b4d-bfd1-76fab62691b7">
+      <name>ВидСравнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид сравнения</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="85d35d0c-d4c4-4028-a969-6e31f06cb8ab">
+      <name>ЗначениеПоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение поля</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <templates uuid="345182a9-3c8f-42fb-89e9-e20b13cd8c28">
+    <name>РаспределенныеСуммыПоСтатьям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распределенные суммы по статьям</value>
+    </synonym>
+  </templates>
+  <templates uuid="ab862693-67f6-4915-a776-3182f45d4bec">
+    <name>РасшифровкаСебестоимостиПоГосКонтрактам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка себестоимости по гос контрактам</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Document>

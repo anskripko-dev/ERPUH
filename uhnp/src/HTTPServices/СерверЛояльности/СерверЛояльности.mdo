@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="07392695-ab3c-429a-896e-8de7fca09433">
+  <name>СерверЛояльности</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сервер лояльности</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Loyalty server</value>
+  </synonym>
+  <rootURL>loyaltyservice</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="fc05dfdf-8002-4dc2-9126-20dc12269575">
+    <name>ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>ping</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>ping</value>
+    </synonym>
+    <template>/ping/</template>
+    <methods uuid="f6213a2f-900c-4344-9372-b44ac0ec1260">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>pingGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e0c5bdf0-f740-4f5f-8163-33df54ae0af2">
+    <name>ПолучитьБонусыКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить бонусы клиента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get customer bonus points</value>
+    </synonym>
+    <template>/getclientbonuses/</template>
+    <methods uuid="49263947-3a82-42d6-84c4-048d629e17f4">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьБонусыКлиентаGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="a052e13f-4aef-45c9-97b4-d6c18317fa88">
+    <name>РазблокироватьБонусыКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать бонусы клиента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock customer bonus points</value>
+    </synonym>
+    <template>/unlockclientbonuses/</template>
+    <methods uuid="857ffed1-377a-471c-9b3b-a3d415e3dcaf">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьБонусыКлиентаPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="805e97e2-200d-4ba2-b020-a917f3f2315b">
+    <name>СписатьБонусыКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать бонусы клиента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Write off customer bonus points</value>
+    </synonym>
+    <template>/writeoffclientbonuses/</template>
+    <methods uuid="b4c7074c-18cf-434d-9dd0-ef76c43653cc">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СписатьБонусыКлиентаPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="416f8e2b-ad66-4111-a6a8-d8eb598f80e2">
+    <name>ВыдатьКартуКлиенту</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выдать карту клиенту</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Issue card to customer</value>
+    </synonym>
+    <template>/issueclientcard/</template>
+    <methods uuid="0d7c9d62-7f80-4518-8bb0-78634c186ec9">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ВыдатьКартуКлиентуPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="5ae83dba-8d2d-4b15-9c24-063fe13104e6">
+    <name>ИнформацияОЗапретахПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Информация о запретах продаж</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Information on sales restriction</value>
+    </synonym>
+    <template>/salesrestrictionsinfo/</template>
+    <methods uuid="d62ee234-bba0-4b57-9798-71942bf909e1">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ИнформацияОЗапретахПродажGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="ad85cafe-bd8e-4c6b-95a2-5d7e2f277ca2">
+    <name>ПолучитьДанныеПодарочногоСертификата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить данные подарочного сертификата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get gift card data</value>
+    </synonym>
+    <template>/getgiftcardinfo/</template>
+    <methods uuid="789c8900-e5e6-49ff-a1ec-16acbb178701">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьДанныеПодарочногоСертификатаGET</handler>
+    </methods>
+    <methods uuid="e90b1574-c3af-4202-8600-2dc6e8ef40e4">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьДанныеПодарочногоСертификатаPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="201f8e7d-1351-41f8-992b-e416c3895374">
+    <name>РазблокироватьПодарочныйСертификат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать подарочный сертификат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock gift card</value>
+    </synonym>
+    <template>/unlockgiftcard/</template>
+    <methods uuid="e5b4f307-fa29-4b0f-b371-9835b7642be4">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьПодарочныйСертификатPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="5fe290bb-d2f7-4c67-b619-159751be6089">
+    <name>СписатьПодарочныйСертификат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать подарочный сертификат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Write off gift card</value>
+    </synonym>
+    <template>/writeoffgiftcard/</template>
+    <methods uuid="cde0732a-f573-4235-8cfa-6523db56c733">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СписатьПодарочныйСертификатPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="99faea2f-eac1-4cee-aa00-67951b6270c9">
+    <name>ИспользоватьАвтоматическиеСкидки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать автоматические скидки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Use discounts</value>
+    </synonym>
+    <template>/useautomaticdiscounts/</template>
+    <methods uuid="4a967be5-9229-47f4-8eea-f18123864fcb">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ИспользоватьАвтоматическиеСкидкиGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9234fb54-50c1-4940-87c9-9e56f7cbfbdd">
+    <name>РассчитатьАвтоматическиеСкидки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рассчитать автоматические скидки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Calculate discounts</value>
+    </synonym>
+    <template>/calculatediscounts/</template>
+    <methods uuid="c9af0002-f71e-44d0-9c80-79db3005fd92">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>РассчитатьАвтоматическиеСкидкиGET</handler>
+    </methods>
+    <methods uuid="23cd5835-26da-463e-8d62-39b97ee884b7">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РассчитатьАвтоматическиеСкидкиPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="582fae70-ae47-4dc9-af7b-ea1a63f6392d">
+    <name>ПроверитьПодарочныйСертификат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проверить подарочный сертификат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Check gift card</value>
+    </synonym>
+    <template>/checkgiftcard/</template>
+    <methods uuid="dd1399ba-0f55-4122-bd99-04d13093f497">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПроверитьПодарочныйСертификатGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="2c1a71ec-3798-438e-bf44-db9e167d2fa6">
+    <name>ПолучитьСписокУправляемыхСкидок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список управляемых скидок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get list of managed discounts</value>
+    </synonym>
+    <template>/getcontrolleddiscountslist/</template>
+    <methods uuid="ab07124a-097c-4dc1-80bd-a394f1971ea1">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьСписокУправляемыхСкидокGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="88c1cf65-0958-4d26-9b85-d51e7e3ade27">
+    <name>РазблокироватьПромокод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать промокод</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock promo code</value>
+    </synonym>
+    <template>/unlockpromocode/</template>
+    <methods uuid="c14a5b7e-6a15-4173-910e-557b81e70060">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьПромокодPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="e1fb5674-6b3f-478b-963f-b5f7559c9d2b">
+    <name>ПолучитьДанныеПромокода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить данные промокода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get promo code data</value>
+    </synonym>
+    <template>/promocodeinfo/</template>
+    <methods uuid="16c64f7d-66f6-41f5-b134-a0663baf8882">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьДанныеПромокодаGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f147d5c6-9a48-4245-a253-0f69d6f9a4e5">
+    <name>ПолучитьОстатки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить остатки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get balance</value>
+    </synonym>
+    <template>/getleftovers/</template>
+    <methods uuid="f77227bc-c5c1-401d-8221-1f9e6ed04047">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьОстаткиGET</handler>
+    </methods>
+    <methods uuid="3efec888-5159-47ed-8fc2-4cd8c57d9159">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьОстаткиPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="054be924-394c-4bd5-944d-ca6dda43a11b">
+    <name>НайтиКартуКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Найти карту клиента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Find customer card</value>
+    </synonym>
+    <template>/findclientcard/</template>
+    <methods uuid="cb55e595-7f2b-41e0-8d5f-6dfedd8ff120">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>НайтиКартуКлиентаGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="31d20a67-349d-4b0c-85ba-d22e931c0293">
+    <name>ПолучитьОборотыПродаж</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить обороты продаж</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get sales turnovers</value>
+    </synonym>
+    <template>/salesturnover/</template>
+    <methods uuid="6cafe566-a9bb-4e2d-94f9-e356572b445f">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьОборотыПродажGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="77dc4999-4a59-4e93-8c70-8ff137d47d97">
+    <name>ПолучитьВидыКарт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить виды карт</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get card kinds</value>
+    </synonym>
+    <template>/getcardtypes/</template>
+    <methods uuid="73f17afb-bdd0-40fa-8abd-8f6f1c265c49">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьВидыКартGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="9dac9ba1-5327-400d-9980-7772269b7589">
+    <name>ПолучитьСписокПродавцов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список продавцов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get seller list</value>
+    </synonym>
+    <template>/listofemployees/</template>
+    <methods uuid="b8a8406b-55ee-4557-a0e8-08a16c3358bc">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьСписокПродавцовGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="eb40f16c-8717-45b5-b894-552c0e97ebda">
+    <name>ПолучитьСписокСерийПоОтбору</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список серий по отбору</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get batch list by filter</value>
+    </synonym>
+    <template>/getlistbatches/</template>
+    <methods uuid="268d5409-4bab-4c34-b2d1-c82f1c178493">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьСписокСерийПоОтборуGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f1acc915-8f6c-410e-86c3-57e40150500b">
+    <name>ПолучитьДанныеСерии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить данные серии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get batch data</value>
+    </synonym>
+    <template>/getseriesdata/</template>
+    <methods uuid="71840a3b-1d24-4d6b-84b7-b794c046e183">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьДанныеСерииGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="4de7762d-ca52-41a4-977e-1a1071339df1">
+    <name>ОбработатьКодМаркировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обработать код маркировки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Process marking code</value>
+    </synonym>
+    <template>/processmarkingcode/</template>
+    <methods uuid="ac984b3d-384a-4a7e-9f8e-4fc07152a335">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОбработатьКодМаркировкиPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="f8f3c922-57a5-48e6-8ed6-da4ac43c579e">
+    <name>ПолучитьТокенАвторизацииГосИС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить токен авторизации ГосИС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get authorization token of State information system</value>
+    </synonym>
+    <template>/getgosisauthorizationtoken/</template>
+    <methods uuid="7434debf-faa7-47af-bb2c-d1132c99211a">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ПолучитьТокенАвторизацииГосИСPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="7e3d2ee2-fe7f-447b-b436-c52506a5f944">
+    <name>ПолучитьАктуальнуюЦену</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить актуальную цену</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get relevant price</value>
+    </synonym>
+    <template>/getprice/</template>
+    <methods uuid="be228227-2491-44fb-b798-a82017471b12">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьАктуальнуюЦенуGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="99c68e40-4802-486a-94f1-c04503df6e94">
+    <name>ПолучитьСписокСкидокПоВидамОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получить список скидок по видам оплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Get list of discounts by payment kinds</value>
+    </synonym>
+    <template>/getlistonpaydiscounts/</template>
+    <methods uuid="a852ddf9-2743-46b4-ac71-7a11aa8fa194">
+      <name>GET</name>
+      <synonym>
+        <key>ru</key>
+        <value>GET</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>GET</value>
+      </synonym>
+      <handler>ПолучитьСписокСкидокПоВидамОплатыGET</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="17e60c39-be0a-4d82-897b-53a895c777fb">
+    <name>ОбъединитьБонусныеКарты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объединить бонусные карты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Combine bonus cards</value>
+    </synonym>
+    <template>/unitedbonuscards/</template>
+    <methods uuid="bdcfb92b-7dd8-4d27-a5b4-d852edb31797">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>ОбъединитьБонусныеКартыPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="bb214cc3-f510-4ffa-9583-4bf947eab8ff">
+    <name>РазблокироватьБонусыКлиентаНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать бонусы клиента новый</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock customer bonus points new</value>
+    </synonym>
+    <template>/unlockclientbonusesnew/</template>
+    <methods uuid="f8a9b8b6-04f1-4392-a682-5143a7f28334">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьБонусыКлиентаНовыйPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="31495aca-b516-428a-adbd-f981d8c692e0">
+    <name>СписатьБонусыКлиентаНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать бонусы клиента новый</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Write off customer bonus points new</value>
+    </synonym>
+    <template>/writeoffclientbonusesnew/</template>
+    <methods uuid="13688d03-9e26-45c8-a777-b7cbc81dae74">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СписатьБонусыКлиентаНовыйPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c2827a7e-cffa-44e5-bcde-8dba3f4db475">
+    <name>РазблокироватьПодарочныйСертификатНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать подарочный сертификат новый</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock gift card new</value>
+    </synonym>
+    <template>/unlockgiftcardnew/</template>
+    <methods uuid="f28a4580-339b-4f8a-98fa-8651d4649157">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьПодарочныйСертификатНовыйPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="c19c7f9b-1c3c-4929-9f65-be0e55c18506">
+    <name>СписатьПодарочныйСертификатНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списать подарочный сертификат новый</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Write off gift card new</value>
+    </synonym>
+    <template>/writeoffgiftcardnew/</template>
+    <methods uuid="8fd144fc-8d50-4835-9e0d-6251fd0cc03f">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>СписатьПодарочныйСертификатНовыйPOST</handler>
+    </methods>
+  </urlTemplates>
+  <urlTemplates uuid="83655ac4-b347-42aa-8eb8-00ee90a7f367">
+    <name>РазблокироватьПромокодНовый</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разблокировать промокод новый</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unlock promo code new</value>
+    </synonym>
+    <template>/unlockpromocodenew/</template>
+    <methods uuid="f761fe92-d242-4572-9ed4-00af8b486650">
+      <name>POST</name>
+      <synonym>
+        <key>ru</key>
+        <value>POST</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>POST</value>
+      </synonym>
+      <httpMethod>POST</httpMethod>
+      <handler>РазблокироватьПромокодНовыйPOST</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

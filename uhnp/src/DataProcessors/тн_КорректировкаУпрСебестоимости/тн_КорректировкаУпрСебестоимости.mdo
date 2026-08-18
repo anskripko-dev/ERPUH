@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="31ff6c45-55d8-4370-8237-44148bd07929">
+  <producedTypes>
+    <objectType typeId="a3a68bfd-2afd-42c2-8629-c31a3716d88e" valueTypeId="996b4d6c-82eb-4718-9400-670ab04a4e36"/>
+    <managerType typeId="131b43b4-d8a7-4adc-b7a1-b5c7dd993e81" valueTypeId="5d8a6c14-50bb-4470-b16d-82bb121ac5a6"/>
+  </producedTypes>
+  <name>тн_КорректировкаУпрСебестоимости</name>
+  <synonym>
+    <key>ru</key>
+    <value>Корректировка упр. себестоимости (тн)</value>
+  </synonym>
+  <comment>//Сафиуллина З.Р. 08.07.2024 Выполнение задач №000049924</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_КорректировкаУпрСебестоимости.Form.Форма</defaultForm>
+  <attributes uuid="76c5609e-a8c9-438c-9ae3-badadf90e457">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="e778b594-b47e-4f09-a038-db72c81835cb">
+    <producedTypes>
+      <objectType typeId="cc52c976-30d5-4fef-8404-78b27d55fe7e" valueTypeId="f08fb70d-2c75-4665-b5c5-ae6092cc6301"/>
+      <rowType typeId="be42b289-1eef-4058-811e-3643e3fd622b" valueTypeId="e266ba5e-f2b9-467f-ac06-7c15fde56ea4"/>
+    </producedTypes>
+    <name>ОбрабатываемыеДокументы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обрабатываемые документы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8bf1549d-c21c-4d15-810f-cd33309738aa">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПриобретениеТоваровУслуг</types>
+        <types>DocumentRef.ПоступлениеТоваровНаСклад</types>
+        <types>DocumentRef.ПеремещениеТоваров</types>
+        <types>DocumentRef.ПересортицаТоваров</types>
+        <types>DocumentRef.ОприходованиеИзлишковТоваров</types>
+        <types>DocumentRef.ПрочееОприходованиеТоваров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="7b46417b-a968-41c1-8dbf-5e7e330bb55a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

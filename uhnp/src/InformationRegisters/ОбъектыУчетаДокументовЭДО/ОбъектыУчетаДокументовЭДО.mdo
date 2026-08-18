@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="bcf41334-eb2e-44b0-a65d-485ae86685ac">
+  <producedTypes>
+    <selectionType typeId="c66127d8-931c-42d0-993c-3ced597038f6" valueTypeId="70994db5-91b8-4299-8257-1a4e011aed7c"/>
+    <listType typeId="5ea5afd4-f4ba-4246-a03c-453f29821d2f" valueTypeId="19b93290-024f-4917-bb99-9e06a10f7686"/>
+    <managerType typeId="0e88d4ca-6055-4bb2-a16b-7343293fbb4d" valueTypeId="bf122408-ce42-4ecf-85ff-b981c9326cf7"/>
+    <recordSetType typeId="6730f48d-78f5-44ae-87ab-dc5c56aaed52" valueTypeId="04cba738-6396-4305-89ad-87f7bd25b213"/>
+    <recordKeyType typeId="735510a7-ef72-4af0-821a-fd21820dfe2e" valueTypeId="16512984-520f-4696-89ae-6569039cb509"/>
+    <recordType typeId="ae2fa1f0-fa3a-4bfa-accb-533f27c0a2e6" valueTypeId="12cbacf7-c348-49c2-b6fa-68ab5894967e"/>
+    <recordManagerType typeId="7d8ddcee-8ac7-4ab1-9219-ded10ff07f4a" valueTypeId="d09f95f1-264d-4cb9-82bc-1263ae4d533b"/>
+  </producedTypes>
+  <name>ОбъектыУчетаДокументовЭДО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты учета электронного документооборота</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>EDI accounting objects</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="89f9d179-6024-4a7a-acfd-7dce2e1c2d98">
+    <name>СпособОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ обработки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Processing method</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="6e5e65b7-41c1-462d-8b65-96b51f5a546b">
+    <name>Актуальный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Актуальный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Relevant</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="d84e13ac-8312-444c-be1b-9ddf19e5831f">
+    <name>ТребуетсяПересчетАктуальности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется пересчет актуальности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recalculate relevance</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="62a5d467-88e2-456c-ac8f-ea541c5d6442">
+    <name>ЭлектронныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Электронный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Electronic document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭлектронныйДокументВходящийЭДО</types>
+      <types>DocumentRef.ЭлектронныйДокументИсходящийЭДО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a5b5a428-c3cf-4e39-8fe4-fb5a76213b4f">
+    <name>ОбъектУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting object</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованияЭлектронныхДокументовЭДО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

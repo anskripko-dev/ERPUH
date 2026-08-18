@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DocumentJournal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="44bb6e4f-fdff-4911-9987-cf880797900d">
+  <producedTypes>
+    <selectionType typeId="72e69a88-b56b-4694-af49-e11f708d9565" valueTypeId="3c7bbcce-bfd5-4f14-a1be-ac5525087431"/>
+    <listType typeId="ef70beeb-cb99-4e1b-b6f3-86e15c0a6c17" valueTypeId="f5e34739-ee13-4440-b4cc-223974f5ec16"/>
+    <managerType typeId="1c227102-8f5d-440c-8fea-7c0ad979f568" valueTypeId="0ebb511c-d8e6-4d00-be15-2fc494900236"/>
+  </producedTypes>
+  <name>ДокументыЦессии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Документы цессии</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registeredDocuments>Document.ЦессияВходящая</registeredDocuments>
+  <registeredDocuments>Document.ЦессияИсходящая</registeredDocuments>
+  <registeredDocuments>Document.ЦессияДолжника</registeredDocuments>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Type</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Date</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Posted</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>DeletionMark</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Number</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <columns uuid="75b7dcc9-e17d-4fb7-aa06-9254b2d36c0d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <references>Document.ЦессияИсходящая.Attribute.Организация</references>
+    <references>Document.ЦессияВходящая.Attribute.Организация</references>
+    <references>Document.ЦессияДолжника.Attribute.Организация</references>
+  </columns>
+  <columns uuid="51b8b80b-423b-4a5b-9bd7-b6aba29dcc36">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <references>Document.ЦессияДолжника.Attribute.Цедент</references>
+    <references>Document.ЦессияВходящая.Attribute.Контрагент</references>
+    <references>Document.ЦессияИсходящая.Attribute.Контрагент</references>
+  </columns>
+  <columns uuid="a5ffd46e-ce09-43d7-a4e1-a404ebf91cc9">
+    <name>СуммаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма документа</value>
+    </synonym>
+    <references>Document.ЦессияИсходящая.Attribute.СуммаДокумента</references>
+    <references>Document.ЦессияВходящая.Attribute.СуммаДокумента</references>
+    <references>Document.ЦессияДолжника.Attribute.СуммаДокумента</references>
+  </columns>
+  <columns uuid="792f6aff-9f6d-45af-baab-c135e2f153e5">
+    <name>ВалютаДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта документа</value>
+    </synonym>
+    <references>Document.ЦессияИсходящая.Attribute.ВалютаДокумента</references>
+    <references>Document.ЦессияВходящая.Attribute.ВалютаДокумента</references>
+    <references>Document.ЦессияДолжника.Attribute.ВалютаДокумента</references>
+  </columns>
+</mdclass:DocumentJournal>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="45c85a1f-37d9-4f61-a71d-9f5c7509bdb7">
+  <producedTypes>
+    <selectionType typeId="131c1ad0-96ae-4360-bac9-400d5c601bf8" valueTypeId="3abdd231-42eb-4fd0-b2d0-6be7d75651bb"/>
+    <listType typeId="7482cc79-4be3-468f-ba81-14aefd373479" valueTypeId="b924398f-3023-4950-b0ee-0489bbc6365e"/>
+    <managerType typeId="e00b83bc-572d-4f2b-ae8a-e546d91a37b4" valueTypeId="a5cb245e-ffb4-43ee-b816-feab054c7e87"/>
+    <recordSetType typeId="9d728854-3b4c-47c4-8b02-9257075b033f" valueTypeId="a7456427-0e78-4126-88be-09804f01e93b"/>
+    <recordKeyType typeId="d0490bf9-8431-4eec-a9d4-a80bb8f770ba" valueTypeId="a0265beb-69e4-49b6-a9a4-01f018cbc589"/>
+    <recordType typeId="218c729a-e847-4ba2-94b3-0523b7e303bf" valueTypeId="4ad5796b-df8e-47ba-8e9e-841a752c7746"/>
+    <recordManagerType typeId="c6c06fa3-bc07-4461-94a1-0f973e849e0b" valueTypeId="adef0e2f-38cb-4d30-b234-f6c6fac91234"/>
+  </producedTypes>
+  <name>ПризнакиЗадолженности</name>
+  <synonym>
+    <key>ru</key>
+    <value>Группы параметров расчета резервов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ПризнакиЗадолженности.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ПризнакиЗадолженности.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действует с</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="91d63a39-18df-4aba-842b-0dd3c35d873a">
+    <name>ГруппаПризнака</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа параметра расчета резерва</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыПараметровРасчетаРезервов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.ПризнакиЗадолженности.Dimension.ПараметрРасчетаРезервов</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="8aaa0def-66bd-468a-add0-f2a7c7c13221">
+    <name>Объект</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="920d7bea-1966-43e1-9027-bbac9dafb3fe">
+    <name>ПараметрРасчетаРезервов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметр расчета резервов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПараметрыРасчетаРезервовПоДЗ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fec13bb1-96fb-42c1-b823-a61c207e3da3">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="fb1967f9-ed5c-43fd-a803-bc3f0d833780">
+    <name>ГрупповаяУстановкаПризнаковОбъектов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Групповая установка признаков объектов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8124bd27-f5f3-4e1c-8aca-da3a73377ab1">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="a9bde2d7-1f1a-4e8d-8cc2-570bd2c4e432">
+    <name>ЗагрузитьГруппыПараметра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузить группы параметра</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.ПараметрыРасчетаРезервовПоДЗ</types>
+    </commandParameterType>
+    <representation>PictureAndText</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Загружает все группы по выбранному параметру расчета резерва</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.SpreadsheetShowHeaders</picture>
+    </picture>
+  </commands>
+</mdclass:InformationRegister>

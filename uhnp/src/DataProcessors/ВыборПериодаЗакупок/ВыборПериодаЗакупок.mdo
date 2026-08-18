@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="52f20b40-7643-44a3-ab80-ac60a10e6904">
+  <producedTypes>
+    <objectType typeId="0c2f831e-7997-4bb9-b901-53c9ec85f5f1" valueTypeId="56cd8e8d-7278-4cf4-9ae0-53cedffa6c21"/>
+    <managerType typeId="4c4206f3-50b6-4505-ab47-d408c345b762" valueTypeId="e69e306e-9a00-4f37-b5f6-922589275e9e"/>
+  </producedTypes>
+  <name>ВыборПериодаЗакупок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Выбор периода закупок</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ВыборПериодаЗакупок.Form.Форма</defaultForm>
+  <explanation>
+    <key>ru</key>
+    <value>Техническая обработка содержащая набор функций предназначенных для выбора периода закупки с учетом различных сценариев работы системы.</value>
+  </explanation>
+  <attributes uuid="9d1d0fcb-ac7d-4073-b5af-1ba9994e72c5">
+    <name>Инновационный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Закупка инновационной продукции, высокотехнологичной продукции и лекарственных средств</value>
+    </synonym>
+    <comment>Если да, то длительность периода - 7 лет. Иначе периодичность определяется из константы.</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d8fadb85-8076-42f3-83cb-1892d68174d3">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="45b78fd7-6314-4e3b-9bc6-4d07272f1b15">
+    <name>ПериодНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период начала</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период с которого начинаются закупки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Периодичность</name>
+      <field>DataProcessor.ВыборПериодаЗакупок.Attribute.Периодичность</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="bf3d775c-9525-448a-b13b-032d6fc33a3e">
+    <name>ПериодОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период окончания</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Период (включая) с которого заканчиваются закупки</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Периодичность</name>
+      <field>DataProcessor.ВыборПериодаЗакупок.Attribute.Периодичность</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="757ad06d-85f1-4aea-ac4d-8e1dc41ccb81">
+    <name>ПериодЗакупок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период закупок</value>
+    </synonym>
+    <comment>Если инновационный, то период закупок - это года начала плана, т.е. совпадает с период начала. Если не инновационный, то это год включающий период начала (период окончания может лежать вне указанного периода закупок).</comment>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Охватывающий период закупок (содержит период начала закупок).</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="c36a52e6-a1f5-4f08-ab5c-4b91041fe4a4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

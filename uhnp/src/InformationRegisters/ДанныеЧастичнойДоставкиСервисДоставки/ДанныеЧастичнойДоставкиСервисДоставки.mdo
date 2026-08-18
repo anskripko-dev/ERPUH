@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a38ddb62-0b4b-4b8b-8abb-6b12f4b55064">
+  <producedTypes>
+    <selectionType typeId="b2541fb6-92fc-4189-90b8-ebf23a9e405d" valueTypeId="62e0a641-4347-4955-bb06-3b8db65521e2"/>
+    <listType typeId="4b9362c1-3f30-4f32-a7d4-f4b280e85621" valueTypeId="7ce982af-e6b7-4901-8589-524e13fb0b31"/>
+    <managerType typeId="a67df74e-b179-4268-b7a4-fe150e1b0b53" valueTypeId="3bbda910-f5e3-42b6-b3a9-c7629985868a"/>
+    <recordSetType typeId="7692db66-8bf4-488a-a757-81a5988e702f" valueTypeId="d0922d88-c37e-4839-8cb4-59982cc817ba"/>
+    <recordKeyType typeId="27745e59-46ef-49c5-b2b0-a70397d867ac" valueTypeId="eda13f4a-4986-4e2f-bc99-f444a5754669"/>
+    <recordType typeId="7e36f6d7-bbba-4bd8-b38f-d0486f1e34f5" valueTypeId="2f2a7756-e4a6-4915-8f64-6eacfa9cc867"/>
+    <recordManagerType typeId="35f45490-58b5-46de-b79c-42d140d7b2c6" valueTypeId="0edf3eb5-847c-4341-be50-b58e63748274"/>
+  </producedTypes>
+  <name>ДанныеЧастичнойДоставкиСервисДоставки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Данные частичной доставки (Сервис доставки)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Partial delivery data (Delivery service)</value>
+  </synonym>
+  <comment>Предназначен для хранения данных, указывающих на необходимость корректировки документов-оснований заказов на доставку. После корректировки документов-оснований данные из регистра удаляются</comment>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Данные частичной доставки (Сервис доставки)</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Partial delivery data (Delivery service)</value>
+  </recordPresentation>
+  <resources uuid="33481cf1-31e7-468f-85c2-ed111ae88f28">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <comment>Количество товара заявленного к доставке</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8cdddb8d-e813-40fa-905e-998a59edf0d1">
+    <name>КоличествоВозврат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество возврат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity return</value>
+    </synonym>
+    <comment>Количество товара не принятого получателем</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="38a23e3b-cd5d-48da-bec6-d38d31229512">
+    <name>ИдентификаторДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document ID</value>
+    </synonym>
+    <comment>Идентификатор заказа на доставку в сервисе интеграции</comment>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d035d276-8bd8-4566-ad78-29dc5f4080e3">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base document</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОснованиеЗаказаСервисДоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="954f8bd6-d02c-4748-beca-4569dd4bb8f2">
+    <name>ИдентификаторСтроки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор строки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line ID</value>
+    </synonym>
+    <comment>Идентификатор строки в документе-основании</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>36</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

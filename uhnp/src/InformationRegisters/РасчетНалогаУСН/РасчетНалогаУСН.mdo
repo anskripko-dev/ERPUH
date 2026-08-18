@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="721d627e-7469-4af6-a382-415c18fc8612">
+  <producedTypes>
+    <selectionType typeId="97482a20-753c-461f-82b2-2c37c4fb1123" valueTypeId="02ac7d59-85b3-46b9-9150-1b8043c18215"/>
+    <listType typeId="772d3f6c-4801-429c-ba7c-98cffc39943a" valueTypeId="295962ad-acdd-40d4-bd1b-9a853160db58"/>
+    <managerType typeId="faa45ce5-ea34-4754-a676-1089fe841dd0" valueTypeId="2226f733-e5fa-4562-a1f0-72618ebb83dc"/>
+    <recordSetType typeId="1d923cbc-afb6-4da4-aca4-ff2e8594f833" valueTypeId="8442f405-64d2-4c24-849c-5be41659e57d"/>
+    <recordKeyType typeId="e18a27cb-7a2f-48f6-8526-9cdee70b06b5" valueTypeId="f6b65e14-c56e-405e-b986-7b46fa7aec6c"/>
+    <recordType typeId="dcce57f7-9c6d-4b5f-bc07-71a066f56ab3" valueTypeId="f040043f-b515-4594-817d-d4dfb17c703a"/>
+    <recordManagerType typeId="9736ae36-069f-48c9-bc20-4ed4fd7a3dbe" valueTypeId="a348fc60-be82-48dc-a8b6-8e9240c84d47"/>
+  </producedTypes>
+  <name>РасчетНалогаУСН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет налога, уплачиваемого при УСН</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Calculation of tax paid under STS</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="1a10dcb7-a950-41b5-9bcf-c90842f95064">
+    <name>ОбъектНалогообложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект налогообложения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Taxation object</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ОбъектыНалогообложенияПоУСН</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="55ea9776-4f98-4f2d-9528-448842ece85f">
+    <name>Доходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="69e8c1c9-708e-496f-9cbc-7638059cd5b5">
+    <name>Расходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expenses</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8e9e8a65-7804-4208-9ff8-a7c68874d458">
+    <name>ПеренесенныеУбытки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Убытки прошлых периодов, перенесенные на текущий год</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Losses of previous periods transferred to the current year</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7b3fae87-c586-4e32-be1a-53f90091ff97">
+    <name>НалоговаяБаза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая база</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax base</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="57a599d9-3493-48e3-bfbc-bb26c6b654fa">
+    <name>СтавкаНалогаУСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка налога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax rate</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="347a7978-ef1b-4107-ac84-34383ab7b9d8">
+    <name>НалогВсего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог всего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax total</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5b728a24-ff9a-4417-a90d-ba67e967f1cb">
+    <name>РасходыУменьшающиеНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы уменьшающие налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax reducing expenses</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="a8d69053-b98f-4a64-883f-ecc1e3aa549e">
+    <name>ПроцентУменьшенияНалога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент уменьшения налога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax reduction percentage</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="36da97a5-fd93-4f05-b952-d7739d7d2e48">
+    <name>УменьшениеНалогаФакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Уменьшение налога факт</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax reduction fact</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e57e82ea-6891-44f8-8110-354c7b82c694">
+    <name>НалогИсчисленныйВсего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог исчисленный всего</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Calculated tax total</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8cb10f43-9bde-4dab-a37c-54be1b2922b7">
+    <name>МинимальныйНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Минимальный налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Min tax</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="da86acb9-5488-4279-bfcc-e7dfff0fb7c4">
+    <name>АвансовыеПлатежи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авансовые платежи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Advance payments</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="317def70-d334-4f22-a4a4-4d5463e0fea2">
+    <name>НалогКУплате</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог к уплате</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax payable</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="660b2f00-9b57-4d7f-9117-8f314293d9d6">
+    <name>ПериодПревышенияЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период превышения лимитов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Limits exceeding period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="50905130-5538-43dc-9cd3-8c29745be330">
+    <name>СредняяЧисленностьРаботников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Средняя численность работников</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Average number of employees</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="8994a158-b8c3-435a-8d01-d8e5b19c22b7">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bb52eb72-8ee9-4b13-a2b1-bfc020306f28">
+    <name>ПериодРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период расчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Calculation period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5e218add-a876-48f6-8869-9baf2a88d82c">
+    <name>ДеятельностьНаТорговомСборе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Деятельность на торговом сборе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sales charge activity</value>
+    </synonym>
+    <comment>Для выделения показателей по деятельности на торговом сборе</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="56e9bef9-1ac7-4660-a987-e0207c12aaa5">
+  <producedTypes>
+    <selectionType typeId="71745e1c-1cc7-4f2d-9142-d6c5f33c33cf" valueTypeId="b537e1b2-2a81-4ca1-a26d-7a90f1f28d67"/>
+    <listType typeId="8d41f95a-5f10-4e5a-94f7-7098db7fa028" valueTypeId="daa44044-7b02-4539-838e-7d720346f656"/>
+    <managerType typeId="d3baec87-632d-4cb3-b2e6-4d7ed0509d6e" valueTypeId="fd4d969c-dc1a-46cc-9c05-b105a36f70c3"/>
+    <recordSetType typeId="d2b285c6-5e66-41d0-94fe-38bf316d061b" valueTypeId="62e999d3-7a2b-4a59-8c32-794d81026523"/>
+    <recordKeyType typeId="5891a3db-f7cf-40c3-9e3f-96ceae3a784e" valueTypeId="e774a323-801c-4d81-97e2-d648cb2dde3a"/>
+    <recordType typeId="c2e7659b-528f-4b92-a17c-e655b345b681" valueTypeId="86772626-8fb0-49cb-8b47-04ca3ade0f4f"/>
+    <recordManagerType typeId="79190730-2841-4998-ac7d-cefbf6d0d0d8" valueTypeId="b4bff175-78a4-499a-86ac-cf441ac56f6a"/>
+  </producedTypes>
+  <name>ДетализацияСебестоимостиПартииТоваров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Детализация себестоимости партий товаров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Itemize goods lot cost</value>
+  </synonym>
+  <defaultListForm>InformationRegister.ДетализацияСебестоимостиПартииТоваров.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="35b15cef-b1bb-44ff-9911-fb366f3833f9">
+    <name>СтоимостьСНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость с НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost incl. VAT</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1c676ecc-d213-49ac-94a2-964588dc7297">
+    <name>СтоимостьБезНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость без НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost excl. VAT</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5dd91061-5465-410b-86bc-a1b81f8e9918">
+    <name>СтоимостьБезНДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость без НДС (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost excluding VAT (local)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="420a319a-0358-4d5f-b662-cf5eca13cc2e">
+    <name>НДСРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT (local)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ef44e39b-3d9e-4510-b593-a0c7be780441">
+    <name>СтоимостьБезНДСУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость без НДС (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cost excluding VAT (manag.)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0c39cf6a-0419-447e-b977-c5d088083bc0">
+    <name>НДСУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>НДС (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT (manag.)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>31</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="9c26e3a7-7816-4c91-a3ad-0a811dfd77b7">
+    <name>Партия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lot</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПартии</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Партия номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Product lot</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4673f20e-7629-4d38-bcad-6902efcdddc5">
+    <name>АналитикаУчетаПартий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета партий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lot: vendor attributes</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПартий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика учета партии номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Product lot: vendor attributes</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c06254f7-1d80-4cb4-a0c4-37969add68af">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация,  для которой отражено движение товаров.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company for which goods movement is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Организации.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="02a9b635-4ef4-421a-8ed5-ec6d3cd651dc">
+    <name>ВидЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид запасов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory owner attributes</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид запасов поступившего товара</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Inventory owner attributes of received goods</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="bd1b8f78-2122-4641-8727-ca50dfd573b1">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="454d342b-cbea-4a4f-a729-780224899a5d">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8b57845f-a394-4f85-b4dd-5318c2317769">
+    <name>ЗатратыПредыдущихПеределов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Затраты предыдущих переделов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Previous redistribution costs</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ec38ff66-18a5-4a4c-a878-3a1c50f02917">
+    <name>ПериодРегистрации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период регистрации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registration period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="138e3817-46a1-4b63-aa6d-9b4462f43570">
+    <name>ДокументПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receipt document</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументПартии</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ, по которому состоялось поступление номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The document under which the item was received</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b00b13fc-524a-4b03-a60a-aefad5aabd0d">
+    <name>АналитикаУчетаПартийДокументаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета партий документа поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Lot: vendor attributes of the receipt document</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПартий</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика учета партии номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Product lot: vendor attributes</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9f9130cc-275b-41c4-9539-764b4255d923">
+    <name>АналитикаУчетаНоменклатурыДокументаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры документа поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory location attributes of the receipt document</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика, определяющая детализацию учета номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Dimension determining item accounting granularity</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="224076da-84b5-4791-80c9-3a5642a93e58">
+    <name>АналитикаУчетаНоменклатурыНЗП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета номенклатуры НЗП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>WIP inventory location attributes</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика, определяющая детализацию учета номенклатуры в НЗП</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Dimension that determines item accounting details in WIP</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ab3403ba-3703-4a76-868f-d32c01ccdfa3">
+    <name>ТипЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыЗаписейПартий</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="2f9fc965-418b-46ab-8469-43ed0fa97444">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

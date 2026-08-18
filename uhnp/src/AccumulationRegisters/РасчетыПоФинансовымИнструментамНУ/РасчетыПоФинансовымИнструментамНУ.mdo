@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f3d7a50-9715-4e8a-ab47-3ef495e77a69">
+  <producedTypes>
+    <selectionType typeId="b50478ef-2273-4658-a339-7df799c3268d" valueTypeId="a54de9ce-0af2-4393-a67e-700a35385d67"/>
+    <listType typeId="c2a5cfad-1ae3-4ff8-9de9-048edef94c5a" valueTypeId="7e0c8529-b22c-4bf7-a4dc-dd0541564e7b"/>
+    <managerType typeId="874dc077-ccc7-4370-8959-70d9932c1aac" valueTypeId="426ac838-517e-4f4e-b3ce-9f4d2e87c363"/>
+    <recordSetType typeId="186f017c-08dc-4580-a87c-dddb3359dc1a" valueTypeId="6f40ceed-556b-40ce-96d5-2a80b217c13f"/>
+    <recordKeyType typeId="fe9cdb7c-cc73-4ede-a642-b4227a59a16d" valueTypeId="29b55b65-9ab3-4f2c-9bae-66f03a4cab48"/>
+    <recordType typeId="0ade9ad7-5f11-4ee2-a1b0-55d038e64cb8" valueTypeId="f6663938-aa1f-485f-8c44-678a7df33bb9"/>
+  </producedTypes>
+  <name>РасчетыПоФинансовымИнструментамНУ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчеты по финансовым инструментам (налоговый учет)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>AR/AP accounting of financial instruments (tax accounting)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.РасчетыПоФинансовымИнструментамНУ.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <explanation>
+    <key>ru</key>
+    <value>Положительный остаток в этом регистре это сумма долга дебитора перед нами.
+Отрицательный остаток - наш долг перед кредитором.</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>Positive balance in this register is the debtor's debt to us. 
+Negative balance is our debt to the creditor.</value>
+  </explanation>
+  <resources uuid="49d28ef0-ed7c-47a4-90b1-81edc8af4ac8">
+    <name>СуммаНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TA amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма долга в валюте договора.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Debt amount in contract currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0ec55ace-5dc6-4961-aef5-b28b91089d16">
+    <name>ОтложенныйДоход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенный доход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred income</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ccf22a6e-d558-4319-ba1d-bf2afbf88faf">
+    <name>ОтложенныйРасход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложенный расход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deferred expense</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="09e21bf2-1156-47b7-9fa5-a5b12f0df36b">
+    <name>ДокументРегистратор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ регистратор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recorder document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+      <types>DocumentRef.ПоступлениеУслугПоАренде</types>
+      <types>DocumentRef.ВводОстатковВзаиморасчетовПоАренде</types>
+      <types>DocumentRef.РасчетКурсовыхРазниц</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.ВводОстатковДенежныхСредств</types>
+      <types>DocumentRef.ВводОстатковТМЦВЭксплуатации</types>
+      <types>DocumentRef.ВводОстатков</types>
+      <types>DocumentRef.ИзменениеУсловийДоговораАренды</types>
+      <types>DocumentRef.Сторно</types>
+      <types>DocumentRef.ВводОстатковНДСПредъявленного</types>
+      <types>DocumentRef.ВводОстатковВнеоборотныхАктивов2_4</types>
+      <types>DocumentRef.ВводОстатковВнеоборотныхАктивов</types>
+      <types>DocumentRef.КорректировкаЗадолженностиПоФинансовымИнструментам</types>
+      <types>DocumentRef.ВводОстатковРасходовПриУСН</types>
+      <types>DocumentRef.ВводОстатковПоФинансовымИнструментам</types>
+      <types>DocumentRef.НачислениеПроцентовПоАренде</types>
+      <types>DocumentRef.ВыкупАрендованныхОС</types>
+      <types>DocumentRef.ВводОстатковПрочиеРасходы</types>
+      <types>DocumentRef.РегламентнаяОперация</types>
+      <types>DocumentRef.НачисленияКредитовИДепозитов</types>
+      <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+      <types>DocumentRef.ВводОстатковВзаиморасчетов</types>
+      <types>DocumentRef.ВводОстатковРасчетовПоЭквайрингу</types>
+      <types>DocumentRef.ПрекращениеДоговораАренды</types>
+      <types>DocumentRef.ВводОстатковСПодотчетниками</types>
+      <types>DocumentRef.ЗаключениеДоговораАренды</types>
+      <types>DocumentRef.ВводОстатковПрочихАктивовПассивов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="2b0c766d-6ad6-4dec-80aa-b242124fd2f1">
+    <name>АналитикаУчетаПоПартнерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета по партнерам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting dimension by partners</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПоПартнерам</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет ключ аналитики расчетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines a dimension key of settlements.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="55f4c51a-78a5-4284-84de-69dc573eec77">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор кредита / депозита, аренды.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Loan/deposit, rental agreement.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="86d55c47-5615-4481-ab06-a90ff9106afd">
+    <name>ТипСуммы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип суммы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыСуммГрафикаКредитовИДепозитов</types>
+      <types>EnumRef.ТипыПлатежейПоАренде</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Классификатор сумм задолженности.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Debt amount classifier.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e20fd2ae-ae50-4146-bbae-1e6ecdd4688c">
+    <name>РасчетныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.РасходныйКассовыйОрдер</types>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Обеспечительный платеж по аренде.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Rental security deposit.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="fa2477a1-ce6d-4a62-9067-df7b974fc90c">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта расчетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Payment currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="cb31db69-9733-4487-a19f-d7911f75ed37">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

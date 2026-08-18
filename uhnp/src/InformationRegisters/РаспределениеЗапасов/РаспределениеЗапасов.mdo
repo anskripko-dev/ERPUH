@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="45342faa-1ece-480b-81d1-d8e80e853d58">
+  <producedTypes>
+    <selectionType typeId="10ea8639-20b3-47e0-9895-36038bb4bf51" valueTypeId="219ba932-1b64-4e39-9ea9-e0ce0fdeeb11"/>
+    <listType typeId="36559fa3-52dd-4664-8b68-e14e14fbbbb6" valueTypeId="994e788c-8ebe-4524-b6ef-d395559517f8"/>
+    <managerType typeId="128d82c8-e74b-4c7d-aed2-81c0f9161cc8" valueTypeId="8b4b2616-5559-4039-9907-761547152245"/>
+    <recordSetType typeId="a5e7f292-56b9-41b4-81bc-edd84b9dfc87" valueTypeId="1e2cf903-41e5-4787-8aa7-90ee2e4fe32c"/>
+    <recordKeyType typeId="83b32c1f-bff7-439d-9113-3f675c60e259" valueTypeId="92a6cc10-d4d3-4409-9cb5-7d147ee794b3"/>
+    <recordType typeId="494e67df-9de7-452d-b1a3-553ccef4817e" valueTypeId="dce7bc91-59cc-4227-9360-33e248b76101"/>
+    <recordManagerType typeId="d5ca384e-3580-43ac-b30e-cc0fd5007a6c" valueTypeId="066aa8ca-084d-45ba-b91e-c1135d67e63c"/>
+  </producedTypes>
+  <name>РаспределениеЗапасов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Распределение запасов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Inventory allocation</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.РаспределениеЗапасов.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9efb51da-7a4d-4d32-982b-58c144a21ccf">
+    <name>РезервироватьПоМереПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резервировать по мере поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reserve upon receipt</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5482fa87-20f2-4a19-ab14-873fb7ea7b95">
+    <name>КОбеспечениюБезРезерва</name>
+    <synonym>
+      <key>ru</key>
+      <value>К обеспечению</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>To supply</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="efa2f5bc-0e1c-4dde-b69d-6348f7626468">
+    <name>ОтложитьРезервирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отложить резервирование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Put reservation on hold</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0607377e-fee8-4608-9afb-b5a6f4e840ad">
+    <name>Резервировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резервировать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reserve</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7661a70e-8eb4-4d91-802a-616a1ac841bb">
+    <name>НеОбеспечивать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не обеспечивать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Do not supply</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3edada72-6355-41c9-a573-31af580e1078">
+    <name>Зарезервировано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарезервировано</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reserved</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="da36be43-5e81-4278-9f10-463495eba182">
+    <name>Обеспечено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обеспечено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Supplied</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8144c0d0-6b3e-49b9-beb5-7d2291783cce">
+    <name>НеОбеспечено</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не обеспечено</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Not supplied</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="63380d67-a9d1-4dad-8840-41c7249204ab">
+    <name>Запас</name>
+    <synonym>
+      <key>ru</key>
+      <value>Запас</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b1640808-e7c6-4807-936d-bd90cf45049d">
+    <name>Свободно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Свободно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Available</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1e4c922a-b382-44d6-9fd3-4680173f4a41">
+    <name>Излишек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Излишек</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Surplus</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="261e7ab2-2140-4288-a9b8-49b2ba6ae33a">
+    <name>ВНаличии</name>
+    <synonym>
+      <key>ru</key>
+      <value>В наличии</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>In stock</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ce0d4416-9083-47d2-9ac4-20bebe7a8b22">
+    <name>РезервироватьНаСкладеПоВсемЗаказамСводно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резервировать на складе по всем заказам сводно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reserve at warehouse for all orders summary</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="07d9b412-d603-469e-ab48-60c2bfa34bee">
+    <name>РезервироватьПоМереПоступленияИтогНаДату</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резервировать по мере поступления итог на дату</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reserve upon receipt total for the date</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3b0831aa-fa4a-4ec4-a515-ac2d8dcc02ad">
+    <name>НеОбеспеченоКОбеспечению</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не обеспечено к обеспечению</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Not supplied to supply</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="071db416-83a1-49bb-8727-0c50e9b7962d">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Items</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="908bbc1b-86a0-43c8-b40a-a1c31cf89ac3">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7ebc9523-5df4-4dfc-ab70-41061e5b8b4f">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад / Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Warehouse / Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="aca20c25-c763-4dc8-909a-2cbf809a16f1">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2a3bab03-6376-456d-9d36-7b51914fe435">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РаспределениеЗапасовСостояния</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c3838a94-5f51-4ad4-832f-097e04916376">
+    <name>ЗаказНаОтгрузку</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ на отгрузку</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shipment order</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОжидаемаяОтгрузка</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f4169bf1-1ff0-488a-99aa-221a36f91319">
+    <name>ЖелаемаяДатаОтгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Желаемая дата отгрузки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Requested supply date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="2e9cee72-6315-424e-b5e7-2820869c03f8">
+    <name>ЗаказНаПоступление</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ на поступление</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receipt order</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОжидаемоеПоступление</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ee2253b1-ab42-48e3-9904-a2aee6d27c4d">
+    <name>ДатаПоступления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата поступления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date of receipt</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="01679aa4-d527-4955-8909-4fd6d96702ac">
+    <name>ТипЗаписиРаспределенияЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип записи распределения запасов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory allocation record type</value>
+    </synonym>
+    <comment>Дополнительный разделитель для ускорения записи наборов</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <forms uuid="98a069db-fc2f-46eb-8326-d3cd1faad2e4">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

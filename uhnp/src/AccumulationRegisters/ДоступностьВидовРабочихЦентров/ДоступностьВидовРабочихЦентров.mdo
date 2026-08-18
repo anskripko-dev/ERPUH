@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="77879a52-3f9f-46d9-8a7c-5310a3d50a14">
+  <producedTypes>
+    <selectionType typeId="b06656ee-1ec9-4b8e-9ff4-3e3178a5926d" valueTypeId="673a0336-7825-43cd-8a4d-8ff672f98a63"/>
+    <listType typeId="fe26b353-db84-41b4-a159-95aa74308afd" valueTypeId="2abf7d80-098f-4408-9ddf-7b854e9ed1dc"/>
+    <managerType typeId="1dcb8257-b94e-4db2-b0c5-1d51e661eafa" valueTypeId="fb3cc5c1-085b-4060-bc0d-38df1328d292"/>
+    <recordSetType typeId="8763850d-65b4-4c42-845e-515076e07937" valueTypeId="88051530-ba15-46c8-8d7c-6f1e513ec011"/>
+    <recordKeyType typeId="f8512321-abb3-444b-bab6-c6e9957c1dea" valueTypeId="3d97c0cb-7da6-4b8c-aba7-fc3d4af6c30c"/>
+    <recordType typeId="7517b89b-43e2-4389-88de-0b44791912fc" valueTypeId="e3a5f3d0-640d-4d5c-b992-923564770d8f"/>
+  </producedTypes>
+  <name>ДоступностьВидовРабочихЦентров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Доступность видов рабочих центров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Work center types capacity</value>
+  </synonym>
+  <defaultListForm>AccumulationRegister.ДоступностьВидовРабочихЦентров.Form.ФормаСписка</defaultListForm>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="66c74c19-a3ff-49ac-8753-518ee5f9f78e">
+    <name>Занято</name>
+    <synonym>
+      <key>ru</key>
+      <value>Занято</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Used</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="bc67f9af-23bf-4055-9a15-9023512ce519">
+    <name>ДоступностьПоВидуРЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступность по виду РЦ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Capacity by work center type</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="84929fd1-f860-4cc8-b6f5-ef75699d7619">
+    <name>ДоступностьПоРЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступность по РЦ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Capacity by work center</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="a72f2919-76b2-4664-8ef0-eb94851063dc">
+    <name>МаксимальнаяДоступность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальная доступность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Maximum capacity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <scale>1</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="6a9cccdc-ee8a-49da-b792-7a627794f8e9">
+    <name>МаксимальнаяДоступностьПоВидуРЦ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальная доступность по виду РЦ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Maximum capacity by work center type</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>8</precision>
+        <scale>1</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="b3564446-b98d-4360-9158-3bf5f7fbe2af">
+    <name>КодСтрокиПродукция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (продукция)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (products)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вспомогательный реквизит, предназначен для идентификации строки продукции заказа на производство.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Auxiliary attribute to identify the production order line.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d1b4f6fc-cc42-4d11-8ef0-ed3f26b2ab50">
+    <name>КодСтрокиЭтапыГрафик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (график выполнения этапов)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (stage execution schedule)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вспомогательный реквизит, предназначен для идентификации строки графика производства.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Auxiliary attribute to identify the production schedule line.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="1f1d68a3-4f04-4026-905d-116eb2cda3f7">
+    <name>ВариантНаладки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант наладки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setup settings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыНаладки</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вариант наладки рабочего центра</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center setup settings</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="38eaa8eb-bed1-429e-b5a6-359c0b88ef9a">
+    <name>ЭтоДвижениеВводаДоступности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это движение ввода доступности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is capacity input movement</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="454d1b18-2ebf-4530-8a39-b657d34407c6">
+    <name>ЭтоДвижениеЗаказаНаПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это движение заказа на производство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is production order movement</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="a372fb87-1124-4fee-985b-ce55c6c88629">
+    <name>ЭтоДвижениеМаршрутногоЛиста</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это движение маршрутного листа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>This is operation sheet record</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d5d5cc83-7c43-4a5e-8c95-64d7b630e3e7">
+    <name>Распоряжение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распоряжение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+      <types>DocumentRef.ЗаказНаПроизводство2_2</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="10624ee9-5548-4022-a3ad-1054b38db989">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="80763514-49ad-43c6-8058-85788c411095">
+    <name>Смена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Смена</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shift</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Календари</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dfa76591-7da6-40ce-85ae-66237017df51">
+    <name>КлючПартия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ партия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Key lot</value>
+    </synonym>
+    <comment>Ключ связи, идентификатор узла структуры заказа</comment>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="0f41555c-32dd-41a1-ae6c-0a3cb913dad9">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭтапПроизводства2_2</types>
+      <types>CatalogRef.ЭтапыПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="d4a7a18f-2a84-49f5-9175-42ab143e6208">
+    <name>ВидРабочегоЦентра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид рабочего центра</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРабочихЦентров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="51d7b5fd-5bb1-40bb-bfcf-c3872e144add">
+    <name>ДатаИнтервала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата интервала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interval date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="06da3899-ed9c-44a6-b5a6-13e9c23f98ff">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

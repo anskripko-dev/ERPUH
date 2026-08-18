@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="687298cb-c37f-459d-bad4-56c5386975e1">
+  <producedTypes>
+    <objectType typeId="9793eb01-2c6f-496e-99e5-fc8f8efc6ee1" valueTypeId="948c4910-5d62-4c20-a760-ad1c86a4d87a"/>
+    <managerType typeId="9c0c10d3-bbe8-4274-8ce9-26cd259ec2fc" valueTypeId="3f92e397-437e-4149-8661-73bc59eacc17"/>
+  </producedTypes>
+  <name>ПрайсЛист</name>
+  <synonym>
+    <key>ru</key>
+    <value>Цены (прайс-лист)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Prices (price list)</value>
+  </synonym>
+  <defaultForm>DataProcessor.ПрайсЛист.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="fd0086da-31a5-418d-a9ef-e1dc810298ac">
+    <producedTypes>
+      <objectType typeId="1c67f0cd-124c-4577-9d2c-980904dd740b" valueTypeId="7371633b-ad23-464f-bb72-093c3cdbc4e3"/>
+      <rowType typeId="e7704c49-4644-4367-974b-61e6b298aa9f" valueTypeId="ccd103c3-ef4a-4839-8ffe-96f44c0c16fd"/>
+    </producedTypes>
+    <name>Товары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Товары</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Goods</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="bdbf7846-b532-4bd7-b31e-307ed8cbe0b2">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар или Услуга</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of Goods or Service kind</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e2e0cf1a-e13a-468c-979f-d6663ae28918">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>If variants are used for the selected item, select a variant</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d4d3c194-5dc7-4c03-b008-305ba40b55dd">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются упаковки, то можно выбрать упаковку номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>If packaging units are used for the selected item, you can select a packaging unit for this product.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ebab57a0-9f00-442f-b590-8741fb28be4b">
+      <name>ВидЦены</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид цены</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыЦен</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Вид цены номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Item price type</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="69904a33-4a94-4b03-8354-148f0d7f609d">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Цена номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Item price</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34917e38-b1b2-428a-8cc7-3d59f96686ad">
+      <name>ЦенаИзмененаВручную</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена изменена вручную</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price is changed manually</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Флаг устанавливается при изменении значения цены вручную.
+Если цена рассчитана автоматически, то флаг не устанавливается.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Check box is selected if you change price value manually. 
+If the price is calculated automatically, check box is not selected.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="02e1e310-2b64-4a6d-a0e7-f60ec63a9f8b">
+      <name>Формула</name>
+      <synonym>
+        <key>ru</key>
+        <value>Формула</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Formula</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="142517fb-eb15-4a9b-b80f-790c8b7a201c">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Currency</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="2549c6ef-efe0-429d-befa-58efc3f583cb">
+    <producedTypes>
+      <objectType typeId="7f971cef-ff63-4bde-9740-daba024cda65" valueTypeId="8f68cdad-582b-4ce9-a77f-54aa2475a4fe"/>
+      <rowType typeId="3f129d32-6855-45c0-a190-ef7f39b740e4" valueTypeId="bae224e4-75a0-467b-9e34-01927dc34610"/>
+    </producedTypes>
+    <name>Товары2_5</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары 2.5</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods 2.5</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Товары</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Goods</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="43bfbc73-65ca-4567-a1ee-ad1ed6200d81">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар или Услуга</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of Goods or Service kind</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="78a05935-1fe7-4e12-b601-41800e9de922">
+      <name>ХарактеристикаЦО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика ценообразования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Pricing variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатурыДляЦенообразования</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>If variants are used for the selected item, select a variant</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары2_5.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8b03699f-d9f1-40ef-8921-e8f05b340d39">
+      <name>СерияЦО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серии ценообразования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Pricing batch</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатурыДляЦенообразования</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары2_5.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="26160d40-651e-4567-91f6-db06b5269b20">
+      <name>УпаковкаЦО</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка ценообразования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Pricing packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары2_5.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f622a565-cef2-4612-bd44-05065e2ad7d2">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются упаковки, то можно выбрать упаковку номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>If packaging units are used for the selected item, you can select a packaging unit for this product.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПрайсЛист.TabularSection.Товары2_5.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="39a68613-fab6-44e4-9689-0f704adab9f3">
+      <name>ВидЦены</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид цены</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыЦен</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Вид цены номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Item price type</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4b46dd77-9f50-4f1f-b0d3-6960c596800b">
+      <name>Цена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Цена номенклатуры</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Item price</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="11959c04-946a-4319-9ff4-8da4996817d3">
+      <name>ЦенаИзмененаВручную</name>
+      <synonym>
+        <key>ru</key>
+        <value>Цена изменена вручную</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Price is changed manually</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Флаг устанавливается при изменении значения цены вручную.
+Если цена рассчитана автоматически, то флаг не устанавливается.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Check box is selected if you change price value manually. 
+If the price is calculated automatically, check box is not selected.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f1f5044c-fa54-426b-ba70-84f2364bfb04">
+      <name>Формула</name>
+      <synonym>
+        <key>ru</key>
+        <value>Формула</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Formula</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="59973aa7-5329-45ad-adac-d930ef27681d">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Currency</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3b59ffe7-4996-42c1-9ba1-5eec9d0af980">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прайс-лист</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Price list</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="91845058-f60f-48a8-ac24-493455105402">
+    <name>ФормаНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка прайс-листа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Customize price list</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="47e0bf29-bc91-4b8a-922f-7c0086a607e5">
+    <name>ФормаПримененияЦен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма применения цен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Price application form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5d5ce297-3d80-434b-b8ca-e6e054b1ab0f">
+    <name>ФормаНастройкиВыводимойИнформации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки выводимой информации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form of displayed information setup</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="64561ae5-95a6-4df7-b6d4-e085f67e218f">
+    <name>АктуальныеВидыЦен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Актуальные виды цен</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Relevant price types</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="117dd0ad-2130-4d9f-aba5-eb2b13a71c3a">
+    <name>ПрайсЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цены (прайс-лист)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Prices (price list)</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

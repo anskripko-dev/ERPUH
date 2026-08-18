@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1074be13-9ef7-4389-9832-a03b4e2bb4c2">
+  <producedTypes>
+    <objectType typeId="32f0ba29-e012-464d-a95d-9872b060aaa4" valueTypeId="43cc813d-5366-4be2-b902-2ad152ae59bb"/>
+    <managerType typeId="e9920073-3348-4c9c-8037-90554df215f9" valueTypeId="4bcc86ef-3c8b-4b64-b768-15f30cc49aab"/>
+  </producedTypes>
+  <name>АнализЗаполненияПоказателей</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ заполнения показателей</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.АнализЗаполненияПоказателей.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="7b77e84c-0c6b-486b-97a2-3e28b5625e81">
+    <name>ВидГруппаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид группа отчета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+  </attributes>
+  <attributes uuid="90078d44-c651-47c8-8175-44ea4ffd56c5">
+    <name>ЭкземплярОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Экземпляр отчета</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.НастраиваемыйОтчет</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.ВидОтчета</name>
+      <field>DataProcessor.АнализЗаполненияПоказателей.Attribute.ВидГруппаОтчета</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="dd9d8acd-f398-4fc4-b7e5-5e994d0b3ac0">
+    <name>ЧислоВыполнений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Число выполнений</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9f7e424f-d4c6-4c30-ae10-4d73f2395845">
+    <name>ПоказыватьМакетыСОшибками</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показывать макеты с ошибками</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="352d7f2d-2d5f-45be-9221-a489e4945bce">
+    <name>ПутьДляСохраненияОтчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь для сохранения отчетов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>100</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5aab1c3a-7573-4c5a-93df-5ee7370c467d">
+    <name>СравнениеСКлассическимАлгоритмомРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сравнение с классическим алгоритмом расчета</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="f26a7b04-a019-45b0-b10f-6a3ffe0a79cc">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="56da7967-c215-4461-9d26-3d5ed32e9033">
+    <name>ШаблонПротоколаТестирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон протокола тестирования</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

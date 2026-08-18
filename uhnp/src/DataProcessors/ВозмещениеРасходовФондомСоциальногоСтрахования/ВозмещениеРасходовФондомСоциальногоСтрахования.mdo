@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e088a938-fd74-4a6a-9c33-00ec8b7f25b1">
+  <producedTypes>
+    <objectType typeId="f439716b-9d16-4475-bcec-161db494b59e" valueTypeId="fd0636bb-3165-404a-b78a-752f536c81d2"/>
+    <managerType typeId="92d0234f-fd3d-4617-82cb-14d7daa173a3" valueTypeId="e22d5fc8-a0cd-4442-8071-c15d597bc5f5"/>
+  </producedTypes>
+  <name>ВозмещениеРасходовФондомСоциальногоСтрахования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отражение возмещения расходов фондом социального страхования в отчете РСВ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Record the expense compensation by the social security fund in RSV report </value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ВозмещениеРасходовФондомСоциальногоСтрахования.Form.Форма</defaultForm>
+  <attributes uuid="f94ccfa3-4a94-487d-959d-7e3587ae76f9">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="8b56ff7d-63df-4be6-b959-298b68fb7a2b">
+    <producedTypes>
+      <objectType typeId="dd8adf82-8a81-4df1-b46e-5fc679b6b23a" valueTypeId="cb759b99-dd78-45bf-b9e2-13760be4d462"/>
+      <rowType typeId="08e1e832-3057-4985-95b6-3c8a970c9ac9" valueTypeId="866fb9de-1cbe-446b-8b14-c5164383e266"/>
+    </producedTypes>
+    <name>Возмещения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Возмещения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Compensation</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8c085a69-d804-4b8b-acf6-b820e941764f">
+      <name>ДокументОснование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основание</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Base</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="18aecb92-94f7-4602-99ab-f3c991cd9b33">
+      <name>ПредставлениеОснования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Поступление ДС</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cash receipt</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="1bd3d544-5358-4532-af98-c3d10305a23a">
+      <name>ВидСтрахования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид страхования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Insurance kind</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыОбязательногоСтрахованияСотрудников</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.Ссылка</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ВидыОбязательногоСтрахованияСотрудников.EnumValue.ФСС</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ВидыОбязательногоСтрахованияСотрудников.EnumValue.ФССНесчастныеСлучаи</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <quickChoice>Use</quickChoice>
+      <createOnInput>DontUse</createOnInput>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.ВидыОбязательногоСтрахованияСотрудников.EnumValue.ФСС</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="d042fb98-e376-4e7e-91a0-2ed00e6ab41d">
+      <name>ДатаВозмещения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата возмещения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Compensation date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cc1387b5-8e58-4b1a-8da6-64ac07a18bc0">
+      <name>СуммаВозмещения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возмещения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Compensation amount</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5732d6f0-63de-4f22-aeaa-1fddd7c7dcb8">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Mark</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="8ceacf3c-2949-4036-8ab7-220e33c10d3e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="24c4ad13-1bfa-480b-b7f0-42d884f3b390">
+    <name>ПолучениеВозмещенияПособийОтФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Получение возмещения пособий от ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receive payment compensation from SSF</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

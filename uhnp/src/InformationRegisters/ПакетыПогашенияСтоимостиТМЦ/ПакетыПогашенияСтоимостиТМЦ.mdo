@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d445fd10-ee0d-48d9-a48c-564a633700d9">
+  <producedTypes>
+    <selectionType typeId="caf5c99d-a1ac-444f-97ad-eff1ef93687c" valueTypeId="79488c63-b285-4bc6-8977-948446108828"/>
+    <listType typeId="4dd69ab3-94c8-4dbf-9a01-697bf5f79fcb" valueTypeId="9a532356-6d5a-43ea-88f3-cc85a71f6ce8"/>
+    <managerType typeId="439b642b-cf61-48cb-a095-e0559b5e4f7b" valueTypeId="2291d1ca-f23d-4935-9ebf-cac2871dfa20"/>
+    <recordSetType typeId="8f876746-4fd1-473a-a9d1-6172d06edd1e" valueTypeId="8e46bd2c-c76d-4ed6-9e2c-dd48a144318a"/>
+    <recordKeyType typeId="f82d175b-c5fa-4599-8698-dd3b949e852c" valueTypeId="25ebbd9e-8441-42d7-9d1f-19cca0e9b97c"/>
+    <recordType typeId="7ae75999-6927-440b-88a8-7aad62319c7b" valueTypeId="3d4c2c93-cabb-406d-a83e-4b44adaf2cee"/>
+    <recordManagerType typeId="6c7ca53d-2cb2-490e-ae2d-90dbfe20e2f2" valueTypeId="771447e8-f2ca-4790-ad6d-5140856f8652"/>
+  </producedTypes>
+  <name>ПакетыПогашенияСтоимостиТМЦ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Пакеты погашения стоимости ТМЦ в эксплуатации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Repayment packages of inventory in operation</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="490d997b-3d2d-42c3-b12c-6d1777b6aff2">
+    <name>НомерПакета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер пакета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Package number</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="43034382-e969-4843-a5cd-4017d317c27a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ccd3b7b6-025c-44d0-b745-b5f06ca0ced9">
+    <name>Партия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Batch</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПартииТМЦВЭксплуатации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <quickChoice>DontUse</quickChoice>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="87e67298-3bbf-4523-8143-b15b28587e88">
+    <name>ВыборПакета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор пакета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Select package</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

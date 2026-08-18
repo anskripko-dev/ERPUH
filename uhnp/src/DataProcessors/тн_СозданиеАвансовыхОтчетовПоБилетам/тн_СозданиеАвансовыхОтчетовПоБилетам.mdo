@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2c1d1930-00ae-4d9a-969f-46c64b65e5f3">
+  <producedTypes>
+    <objectType typeId="193fbe37-632e-4f8f-bf79-27f700d46370" valueTypeId="0a636aed-2a39-48c4-baf6-f215037a042d"/>
+    <managerType typeId="b7edef36-7999-470c-86c7-eecdae2a9ee2" valueTypeId="b2cda13f-e28e-4764-a4e5-bff4a209d04b"/>
+  </producedTypes>
+  <name>тн_СозданиеАвансовыхОтчетовПоБилетам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создание авансовых отчетов по билетам (тн)</value>
+  </synonym>
+  <comment>//Блинова М.А. 23.01.2026 Выполнение задач №000056362</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_СозданиеАвансовыхОтчетовПоБилетам.Form.Форма</defaultForm>
+  <attributes uuid="0c4c1d1f-f227-4f96-91d4-2319bb6d252c">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="af63d2c3-d395-4586-b656-276fd7d44b99">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8dea9bdc-7f05-4b00-b960-2cce97ece5b4">
+    <name>ПодотчетноеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подотчетное лицо</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="f6f4fd11-6894-43d3-be8f-bff851ebae08">
+    <producedTypes>
+      <objectType typeId="2af81f8f-3877-40c7-b2a1-c0de2524051b" valueTypeId="0cd3e04a-6d05-4a28-a624-d8c7f01608f1"/>
+      <rowType typeId="082a0e50-9169-4a23-a259-ebb9c5c288a3" valueTypeId="6dd4e377-af5a-4690-b615-beb10f6cd0e5"/>
+    </producedTypes>
+    <name>ТаблицаДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="43d8c31f-20a4-4086-93ff-6cf6691070d6">
+      <name>Физлицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физлицо</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c2a8d52e-5702-41e9-999a-a3f37bf7bb56">
+      <name>АвансовыйОтчет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Авансовый отчет</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.АвансовыйОтчет</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2527099a-b585-49f6-82bb-6475fe470429">
+      <name>Бронирование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Бронирование</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.Бронирование</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="0f581cd4-9bad-4013-bfc7-415527667cea">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

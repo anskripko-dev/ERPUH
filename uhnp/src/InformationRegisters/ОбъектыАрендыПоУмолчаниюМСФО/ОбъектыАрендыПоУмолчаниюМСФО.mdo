@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="94edb352-0957-457a-bdcf-fd777f2b986e">
+  <producedTypes>
+    <selectionType typeId="ea4ad562-88f6-4254-97c0-946ab86054ce" valueTypeId="ad656790-4112-43a4-b6f0-f0e6bfc6f369"/>
+    <listType typeId="f4220969-15e6-4a44-bc2f-772b9f317f48" valueTypeId="665914e6-dced-4f62-99b0-d91395ccd4dc"/>
+    <managerType typeId="8eb2d546-dcb0-4367-b270-dcfb1007d088" valueTypeId="3529aa12-54bc-494b-b7c8-3a8a4956485e"/>
+    <recordSetType typeId="5589f72d-6961-4208-9406-db3f56601650" valueTypeId="3b2c8765-feec-487e-af38-065e4b524533"/>
+    <recordKeyType typeId="3fcf7fb0-e1e5-46b5-8aab-ae2b9b40c7e2" valueTypeId="71a8fb4e-d0e6-4941-b79f-2d184cddc6cb"/>
+    <recordType typeId="228c79a8-9824-44a7-a2cf-93002877376f" valueTypeId="e6b84975-f135-4b57-b77e-f98bc042afc7"/>
+    <recordManagerType typeId="d70af4e2-e4ee-4780-a1af-c2b508c7e324" valueTypeId="0a94490f-5bce-4476-89e2-c117bc8d9e27"/>
+  </producedTypes>
+  <name>ОбъектыАрендыПоУмолчаниюМСФО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Объекты аренды по умолчанию (МСФО)</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ОбъектыАрендыПоУмолчаниюМСФО.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="2d304665-5934-4463-a4ee-1694c2d05c05">
+    <name>ФИ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Финансовый инструмент</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ФинансовыйИнструмент</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b912a9dd-69d8-4ba7-b56e-2586a7dce7d5">
+    <name>ВНА</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основное средство</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ИсточникВНА</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="699e7760-2130-4e80-b121-0f9bc3dc8ac8">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="dc5f9482-eef3-4b5e-9e1e-3ca571c56018">
+    <name>ОбъектыАрендыМСФОпоУмолчанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты аренды МСФО по умолчанию</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>DefinedType.ФинансовыйИнструмент</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Объекты аренды МСФО по умолчанию для заполения документа &quot;ФИ по амортизированной стоимости&quot;</value>
+    </toolTip>
+  </commands>
+</mdclass:InformationRegister>

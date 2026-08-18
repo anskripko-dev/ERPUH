@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e0a85c8-0678-4668-b6d7-c6c4ca8edaa9">
+  <producedTypes>
+    <selectionType typeId="90b103fa-02ae-48df-9c13-05376b85e267" valueTypeId="9788e7a3-132e-4ee9-a7cc-75dde0af21c6"/>
+    <listType typeId="7328d537-be76-43fd-9eb1-b5b14cdf751c" valueTypeId="9052bb53-56a8-4dd8-a866-e15399f9f6be"/>
+    <managerType typeId="c746f685-fe11-41dc-9b1d-f7ec58ed48c3" valueTypeId="ba9b2c21-b215-4466-a792-e90b7b053da9"/>
+    <recordSetType typeId="abb07599-30e0-4b1e-a5cb-ddf14d8c3510" valueTypeId="add5cc2e-fcaa-42a2-8f8d-9bc36631b944"/>
+    <recordKeyType typeId="a1dabf5e-31a5-4732-837f-7df2e41e7532" valueTypeId="6078ba7f-3888-4cac-bb94-80b802ad0f26"/>
+    <recordType typeId="add78a1f-a0bd-482e-8b5c-bdba23b323e5" valueTypeId="85a98d1f-5b24-4dd6-884c-5337fce56eb3"/>
+    <recordManagerType typeId="e875ad9b-b8fa-44c1-ae7b-46e8d7e0dfe4" valueTypeId="c9b799bd-a1cf-4fa1-871a-b37647802a84"/>
+  </producedTypes>
+  <name>УсловияДоговоровАренды</name>
+  <synonym>
+    <key>ru</key>
+    <value>Условия договоров аренды</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Rental terms</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <resources uuid="ddf0378b-e22b-4cde-9527-4ab96c0b26c9">
+    <name>Состояние</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияДоговоровКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4b7cee08-f612-4f7c-8ee3-32c107e38ad1">
+    <name>СтавкаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT rate</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтавкиНДС</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ставка НДС, применяемая при расчетах</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>VAT rate applied in settlements</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="15a2cc1c-5fc7-4069-8af1-7afc95dbad6a">
+    <name>СуммаОбеспечительногоПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма обеспечительного платежа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Security deposit amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Авансовый платеж по договору в счет будущей поставки предмета аренды
+Зачитывается частями на протяжении срока аренды</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Advance payment under the contract for the future rental objects delivery.
+It is recorded in installments during the rental</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="17e9504a-a0db-4e36-9a2c-4ea5b7290035">
+    <name>СуммаУслугПоАренде</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма услуг по аренде</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental services amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="dfdb284c-aca0-4d2c-9bd1-4a848936479d">
+    <name>СуммаВыкупаПредметовАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выкупа предметов аренды</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount of rental objects redemption</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма, за которую можно выкупить предмет аренды после истечения срока аренды
+В течение срока аренды выкупная стоимость может выплачиваться частями (авансом)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The amount for which the rental object can be bought out after the rental expires
+During the rental term, the buyout value can be paid in installments (in advance)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="52041cbf-d3df-4217-a745-8a9c39dca679">
+    <name>СуммаПроцентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма процентов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interest amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="b6cf0a9f-44e3-4e47-b605-fcec00bd18a2">
+    <name>СтоимостьПредметовАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость предметов аренды</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental objects cost</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f6874fc0-67db-4d21-b030-04799397f649">
+    <name>СуммаНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма НДС для обязательства по аренде.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>VAT amount for the rental liability.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="13c8e589-f634-4d00-aa38-c3a5ff25a25c">
+    <name>СрокЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок (лет)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Term (years)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d256c515-a1f6-45ed-8c1e-0f0914dd3f82">
+    <name>СрокМес</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок (месяцев)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Term (months)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4c8f7a9c-38a2-4a23-ba2f-2d4802b3cd87">
+    <name>СрокДней</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок (дней)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Term (days)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="41ee40bb-f999-4b32-ba79-42b5c1bf13f8">
+    <name>ДатаНачалаАренды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала аренды</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rental start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3a3e4a5c-3b62-41b0-a5a1-adcc6fd19849">
+    <name>ДатаПервогоПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата первого платежа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date of the first payment</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="184b8646-df09-44ba-b986-455d2385edd2">
+    <name>ДатаПервогоОбеспечительногоПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата первого обеспечительного платежа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date of the first security deposit</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="614b8dcd-e676-4f9b-a468-db7910b340d6">
+    <name>ДатаВыкупа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата выкупа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Redemption date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата выкупа предметов аренды</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date of rental objects redemption</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9a409ee7-4032-4e95-8553-acd06cb6799f">
+    <name>ПроцентнаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Rate</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>4</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5177c8bb-561b-4ddd-86d9-c6e89f36b559">
+    <name>ПериодичностьОплат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность оплат</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment frequency</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПериодичностьГрафика</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d5b1c37e-ff45-4be5-878e-c49aee240027">
+    <name>ПериодичностьНачислений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность начислений</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Charge frequency</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПериодичностьГрафика</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="acc1726b-7575-4923-856e-f574cf8bf2bf">
+    <name>ОплатаУслугиПоАренде</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платеж за услуги по аренде</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment for rental services</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="95d82a9a-55d1-411a-ad72-df6e34b402f3">
+    <name>НачислениеУслугиПоАренде</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисление услуги по аренде</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accrual of rental service</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c11332a3-7ce2-401e-9009-88508fd0f30b">
+    <name>ГрафикНачисленияПроцентовВведенВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>График начисления процентов введен вручную</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interest accrual schedule is entered manually</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="fcd6d9a5-bd11-49db-9323-dfed57805b2c">
+    <name>АктуальныеУсловияДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Актуальные условия договора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Effective contract terms</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ВводОстатковВзаиморасчетовПоАренде</types>
+      <types>DocumentRef.КорректировкаРегистров</types>
+      <types>DocumentRef.ИзменениеУсловийДоговораАренды</types>
+      <types>DocumentRef.ВводОстатковВнеоборотныхАктивов2_4</types>
+      <types>DocumentRef.ВводОстатковВнеоборотныхАктивов</types>
+      <types>DocumentRef.ЗаключениеДоговораАренды</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Документ, изменивший условия договора.
+Используется для получения нужной версии графиков.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The document that changed the contract terms.
+Used to receive the required version of the schedules.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4b6048e2-53a0-43e7-b4b8-ad64ce47498f">
+    <name>НалогообложениеНДС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налогообложение НДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>VAT taxation</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыНалогообложенияНДС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="721cc1b8-0238-4243-8869-f5f00373d7fe">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

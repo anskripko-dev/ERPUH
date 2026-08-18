@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3bb8f85e-629f-44b4-91b4-033bd94bee8b">
+  <producedTypes>
+    <selectionType typeId="60ac5dbe-3f28-4fa3-be08-f81da08d86ac" valueTypeId="61e1d627-601c-4401-8998-5748c99e34e0"/>
+    <listType typeId="99066e3f-ee14-4748-8c48-72c36cf16d2f" valueTypeId="18a627d4-db1c-4463-84d3-2870c655917c"/>
+    <managerType typeId="d0996919-afd6-4eec-99ad-349de0e4be6e" valueTypeId="00108609-c731-4b29-b158-521a8e674471"/>
+    <recordSetType typeId="50d1e281-6fdb-4bac-9083-4ab0090f8a00" valueTypeId="dfd37165-95c5-4865-a25d-1c1f71e16502"/>
+    <recordKeyType typeId="f6d05f26-2019-4ee3-bfb7-bea53a69ee0c" valueTypeId="54971f1a-1e8b-483f-a27c-9d29005d365f"/>
+    <recordType typeId="e3952ca7-cd94-4ab3-8018-4b27fef41a79" valueTypeId="c46820cb-1bab-4cf5-be3a-4d4ace20a321"/>
+    <recordManagerType typeId="b248557c-b953-44ea-b014-0bf9e58d072a" valueTypeId="dc907a8c-082e-4c26-81c5-2b5aea7c4890"/>
+  </producedTypes>
+  <name>СопоставлениеПланФактОперацийНачисленияМСФО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сопоставление план факт операций начисления МСФО</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="caac5ab1-450c-4581-b54f-f27ff1d67945">
+    <name>СуммаФакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма факт</value>
+    </synonym>
+    <comment>Сумма документа факт отнесенная на документ план</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="d17935e1-28a0-4b8e-aa02-f436bdc29685">
+    <name>Корректировка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ТрансформационнаяКорректировка</types>
+      <types>DocumentRef.ОперацияМСФО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="6b19789c-679d-4770-87a1-cfb9255e0481">
+    <name>ДокументПлан</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ план</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4a06b4de-c7a3-4bc7-83cb-7373fd6c61fc">
+    <name>ДокументФакт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ факт</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3a992bbb-4fba-43a7-aa26-77426db18077">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1c541fb3-5c8c-4e0d-baec-54312348db93">
+  <producedTypes>
+    <objectType typeId="c53a3e4e-a299-49e0-9cfc-d096b446c79f" valueTypeId="7b53c508-c3c3-4846-a587-bbe7857e0def"/>
+    <managerType typeId="9fc97c27-9257-43e7-bc2f-d76dbd52bdcf" valueTypeId="3a3ce1ed-ae2c-47c4-a862-f6da912deb20"/>
+  </producedTypes>
+  <name>УрегулированиеДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Урегулирование внутригрупповых документов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.УрегулированиеДокументов.Form.Форма</defaultForm>
+  <attributes uuid="67245ba9-7c55-41b5-809b-43d729cfe15f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Покупатель</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="705c8f78-7782-46b0-bbb4-3b38c472d16b">
+    <name>Продавец</name>
+    <synonym>
+      <key>ru</key>
+      <value>Продавец</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a99bc4e6-e3dd-4de1-b179-029548036db6">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="70a05319-fc01-4c43-b42a-bfeb7400d07e">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Договор</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="904264d0-402b-47e9-88ba-f2502003bfbf">
+    <producedTypes>
+      <objectType typeId="e1f1448f-f1b9-4a23-bd5b-a596c5d0692c" valueTypeId="55b28328-e0f0-411a-a9bb-6f309e1d17b9"/>
+      <rowType typeId="ffb200b8-05a8-40c6-bfa2-84d920ed29ed" valueTypeId="b00c4333-5f1c-44f0-8858-b4c9c0475482"/>
+    </producedTypes>
+    <name>Документы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="6052df9c-057e-44a7-9170-748f0eab1d0a">
+      <name>ДокументПродавца</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ продавца</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.УрегулированиеДокументов.Attribute.Продавец</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7e6be912-43a4-43b8-8183-ff37953097a0">
+      <name>ДокументПокупателя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ покупателя</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.УрегулированиеДокументов.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d95fb345-b436-4492-82b3-580238a134f5">
+      <name>ДатаПродажи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата продажи</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="065de0e9-562f-44c0-bce1-46fe82628a98">
+      <name>ДатаПокупки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата покупки</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6546ff3f-b690-40f3-b1b8-c2892c5755be">
+      <name>СуммаПродажи</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма продажи</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1ed8bb23-785b-4217-bc4e-7d63cadd5f2d">
+      <name>СуммаПокупки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма покупки</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dc5ce2d1-7470-480a-88a8-c8a2b7bcd893">
+      <name>Расхождение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Расхождение</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="c5de8189-7d76-48a6-a198-6c0c34e0d171">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="df67aee2-14b4-4f28-87a5-9682dcffc754">
+    <name>УрегулированиеДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Урегулирование внутригрупповых документов</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

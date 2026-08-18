@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="41c904c1-165c-4d12-8814-91c9c99ae41a">
+  <producedTypes>
+    <objectType typeId="1f457b11-18ef-4c77-9999-9b00b8932595" valueTypeId="942e64f8-2cca-42a8-8059-d6f3a5d2214c"/>
+    <managerType typeId="c6b6ccb8-782b-4a35-a3e5-b20942b997f8" valueTypeId="55d54507-b684-4089-a045-2af5c3b94eeb"/>
+  </producedTypes>
+  <name>ЗагрузкаСтавокЦБРФ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка ставок ЦБ РФ</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузкаСтавокЦБРФ.Form.Форма</defaultForm>
+  <attributes uuid="43952d27-e9f8-4b9c-abe2-f939c1229f40">
+    <name>НачалоПериодаЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода загрузки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата начала периода загрузки курсов валют</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="95abc6f0-c6ab-4395-9da1-69e25ff60539">
+    <name>ОкончаниеПериодаЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание периода загрузки</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата окончания периода загрузки курсов валют</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="ba50258b-4933-4f7f-976a-a751f2f68a62">
+    <producedTypes>
+      <objectType typeId="0d4ef371-fbbb-4859-899c-7daf35b526f2" valueTypeId="fe9870f0-6939-4893-925d-1e922dd7ff72"/>
+      <rowType typeId="95dc174d-4d89-444b-aa3b-a44f499e7c13" valueTypeId="da53b7fe-679e-40ab-b690-b60e99e7bc12"/>
+    </producedTypes>
+    <name>СписокИндикаторов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список индикаторов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="61801ac5-c29d-43d6-adf1-93329ff59d4e">
+      <name>Загружать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Загружать</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Загружать курс</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5ed419f0-f4c7-4fd4-8333-2d87d00a21b6">
+      <name>ВидСтавки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид ставки</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыКотировокФинансовыхИнструментов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bba569d9-3965-44a2-9cbc-2b53ddc6d7d7">
+      <name>КодСтавки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ставки</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>15</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="0e2760c1-f75f-4f7c-998f-3eb90cdc99eb">
+      <name>ДатаСтавки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата ставки</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ca6af8a4-a617-4e60-b59f-afd0c891d2a6">
+      <name>ЗначениеСтавки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение ставки</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>5</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="8d6bd89c-7156-4fc5-a0f2-c40d037f413a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

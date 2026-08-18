@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1ab70613-b380-4b44-ae56-7e7cb81fdd04">
+  <producedTypes>
+    <objectType typeId="a4b08ce5-c919-4a7e-9bb8-d5384f9111c9" valueTypeId="1f462a68-76f0-4253-b963-ba8a933776f5"/>
+    <managerType typeId="5585ca4e-3da6-4b55-8a75-8126433578b9" valueTypeId="e02a25ae-3d57-43cf-bd1e-82e65dfd5abb"/>
+  </producedTypes>
+  <name>СоответствиеСчетовМеждународногоИРегламентированногоУчета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Соответствие счетов международного и регламентированного учета</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Equivalence of international and local accounts</value>
+  </synonym>
+  <defaultForm>CommonForm.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.СоответствиеСчетовМеждународногоИРегламентированногоУчета.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <defaultSettingsForm>CommonForm.ФормаНастроекОтчета</defaultSettingsForm>
+  <defaultVariantForm>CommonForm.ФормаВариантаОтчета</defaultVariantForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="6149fe6c-f458-4b35-b9e0-8e64c5f99e6b">
+    <producedTypes>
+      <objectType typeId="ba47afe1-4bd7-4ff1-b4a0-7afbbf8d7091" valueTypeId="c241be36-df23-43e3-919a-f4f6b51de8bc"/>
+      <rowType typeId="cf1f3eb6-63d2-41a0-82b2-ed18f556d134" valueTypeId="251750d3-b8e1-4de0-a0e5-8657add3182f"/>
+    </producedTypes>
+    <name>ЗначенияСубконто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значения субконто</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Extra dimension values</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f7bbd9ea-74b9-4ea1-9c63-0735a42c13ee">
+      <name>ВидСубконто</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид субконто</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Extra dimension type</value>
+      </synonym>
+      <type>
+        <types>ChartOfAccountsRef.Международный</types>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6d6e0bd3-1840-48ff-8944-204a0df9240a">
+      <name>Субконто</name>
+      <synonym>
+        <key>ru</key>
+        <value>Субконто</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>ExtDimension</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+        <types>String</types>
+        <types>Date</types>
+        <types>Number</types>
+        <types>DocumentRef</types>
+        <types>EnumRef</types>
+        <types>ChartOfAccountsRef</types>
+        <types>CatalogRef</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <templates uuid="dee64310-1a62-4719-b6a8-2a42ba175f40">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main data composition schema</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="f31056df-d0bb-4fe1-ae47-1228ab12f291">
+    <name>СоответствующиеСчетаМеждународногоУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствующие счета международного учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corresponding financial accounting accounts</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="81491846-ab4b-4c6d-8d9c-f00cab0f972c">
+    <name>СоответствующиеСчетаРеглУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствующие счета регл. учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corresponding accounts of regulated accounting</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>ChartOfAccountsRef.Международный</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

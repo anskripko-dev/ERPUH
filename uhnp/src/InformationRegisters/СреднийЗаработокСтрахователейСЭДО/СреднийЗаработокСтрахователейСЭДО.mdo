@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="018d7d86-b93b-47b2-bf92-743c65893f7b">
+  <producedTypes>
+    <selectionType typeId="3fe20385-38eb-4fbc-80b7-b11df0503bba" valueTypeId="561d979a-dab5-4c72-913b-39d29584e558"/>
+    <listType typeId="724ea215-0075-4c6b-85c4-bdf201353d4e" valueTypeId="c8f46089-f05f-4369-a53b-ad7a87dc2ba0"/>
+    <managerType typeId="741b8f01-09ec-4e94-8bb9-78928f33bc53" valueTypeId="8b5d021f-18f4-4fd6-9b70-f224e9edf59a"/>
+    <recordSetType typeId="6e567d76-4a51-45ad-aee7-e8a6629ff282" valueTypeId="2cd3d75f-263a-41b8-8043-dbb0a5bc0ad7"/>
+    <recordKeyType typeId="785c966c-91d9-451e-b1bb-d40c1f7ad310" valueTypeId="bb04d12a-e08a-4bb9-b890-241638fdb9e4"/>
+    <recordType typeId="8d318a87-2bb6-4e7d-957c-ab5584159c73" valueTypeId="f6795344-1d8b-4619-b2fe-fb5bb6df2bb5"/>
+    <recordManagerType typeId="ea2ef87f-3229-45e0-8f4c-74a93782773b" valueTypeId="3ac2800f-bed2-4517-a841-bb18aff65fdf"/>
+  </producedTypes>
+  <name>СреднийЗаработокСтрахователейСЭДО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Средний заработок страхователей СЭДО</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Average earnings of EDI insurants</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSliceLast>true</enableTotalsSliceLast>
+  <resources uuid="4fd58bb4-9a03-4e4a-b18d-a44bb7c877c6">
+    <name>ЗаработокПоТекущему</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заработок по текущему страхователю</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Earnings of current insurant</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Общая сумма заработка по по одному (текущему) страхователю не превышающая предельной величиной базы страховых взносов.
+Учитываются только доходы включенные в базу страховых взносов (с 2023 года с учетом ГПХ).</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Total amount of earnings of one (current) insurant that does not exceed the maximum amount of the insurance contribution base.
+Only income included in the insurance contribution base is considered (since 2023 including civil law contracts).</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="87599c30-05ff-442b-a387-ea3e24335d17">
+    <name>ЗаработокПоТекущемуГПХ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заработок по текущему страхователю ГПХ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Earnings of current civil law contract insurant</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Общая сумма заработка по по одному (текущему) страхователю ГПХ не превышающая предельной величиной базы страховых взносов.
+Учитываются только доходы включенные в базу страховых взносов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Total amount of earnings of one (current) civil law contract insurant that does not exceed the maximum amount of the insurance contribution base.
+Only income included in the insurance contribution base is considered.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="9b99046f-ca65-47f5-b6ad-36056a6f7a17">
+    <name>СНИЛС</name>
+    <synonym>
+      <key>ru</key>
+      <value>СНИЛС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SNILS</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>14</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Страховой номер ПФР</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>PF insurance number</value>
+    </toolTip>
+    <mask>999-999-999 99</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="3e4af2e6-baae-454e-b8c0-1b74a800bad2">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Individual</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="1a7c5eb4-f0b2-4a4a-b5d3-51f8da010d34">
+    <name>РасчетныйГод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчетный год</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payroll year</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ЧГ=</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>NG=</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ЧГ=</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>NG=</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6560992c-4e5c-49f2-aa50-188156ada47e">
+    <name>Страхователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страхователь</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Insurant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

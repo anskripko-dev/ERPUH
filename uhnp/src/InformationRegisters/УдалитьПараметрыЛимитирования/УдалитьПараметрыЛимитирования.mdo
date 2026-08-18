@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="558942b8-226f-444c-a305-77e652fc0644">
+  <producedTypes>
+    <selectionType typeId="b000659c-4085-4e26-88cf-5bf06936e951" valueTypeId="8063eb49-5a16-40fd-a41d-c0fdf143ca0f"/>
+    <listType typeId="725ff2bc-9d16-4829-867a-5993e389f7c3" valueTypeId="4184c9dc-fe64-44c4-94bf-83c95a90268a"/>
+    <managerType typeId="49c811ce-8ce6-4aa3-92eb-024927959820" valueTypeId="64b9fb9a-3bfc-4808-9ea9-f0c64469aefe"/>
+    <recordSetType typeId="1f417150-5c37-4923-97cc-845bc53f8087" valueTypeId="abe05ab8-6629-4d42-baa3-cbac588700da"/>
+    <recordKeyType typeId="96b5c5e6-bfd2-4c72-a533-77caff97804d" valueTypeId="74ed4dde-d00a-416f-8805-4620ca3241e2"/>
+    <recordType typeId="0d60f4df-1170-4424-a845-2f9b851ef80b" valueTypeId="edbbb860-e6ca-4f3b-8ea0-56af5a62eb98"/>
+    <recordManagerType typeId="27fb1c7a-1cd3-4b1e-a6c0-e3770505d511" valueTypeId="83810237-c9eb-43b7-959d-b5306058ae78"/>
+  </producedTypes>
+  <name>УдалитьПараметрыЛимитирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Параметры контроля бюджета</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действует с</value>
+    </synonym>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="76477afe-5f5e-485e-bdb4-85d58dbd8fbe">
+    <name>ПериодичностьЛимитирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность лимитирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.Периодичность.EnumValue.Год</value>
+    </fillValue>
+  </resources>
+  <resources uuid="4ab6028c-d834-4589-a85e-215107aba877">
+    <name>КоличествоПериодовЛимитирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество периодов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:NumberValue">
+      <value>1</value>
+    </fillValue>
+  </resources>
+  <resources uuid="f051c2cb-4f13-42ae-b1b3-3bfc2188a43b">
+    <name>ИспользоватьЛимитирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать лимитирование</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:BooleanValue">
+      <value>true</value>
+    </fillValue>
+  </resources>
+  <resources uuid="37de8af1-7386-400e-a309-cddda72c7547">
+    <name>ИспользоватьРезервирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать резервирование</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:BooleanValue">
+      <value>true</value>
+    </fillValue>
+  </resources>
+  <resources uuid="e16897e5-cd09-44e6-9334-6e1666e1f407">
+    <name>СпособОпределенияВалютыЛимитирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыОпределенияВалютыЛимитирования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.СпособыОпределенияВалютыЛимитирования.EnumValue.ВалютаУпрУчета</value>
+    </fillValue>
+  </resources>
+  <resources uuid="c004d62f-b4bb-4983-90a9-70098864637d">
+    <name>КонтрольЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль лимитов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыКонтроляДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c74446f0-a6df-4e8d-aa19-b2a2894f5456">
+    <name>КонтрольРезервов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль резервов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыКонтроляДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>ИспользоватьЛимитирование</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.УдалитьПараметрыЛимитирования.Resource.ИспользоватьЛимитирование</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>КонтрольЛимитов</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.УдалитьПараметрыЛимитирования.Resource.КонтрольЛимитов</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e8f06475-de21-424d-8cc9-91d039db89dc">
+    <name>УдалитьЗапрещатьПроведениеДокументовПриПревышенииЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Запрещать проведение документов при превышении лимитов</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0bf04809-f633-482e-b7e3-01778190a851">
+    <name>НастройкиКонтроляВСтатье</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки контроля в статье</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9e7f6830-bc9d-46eb-a9d5-263d34bb5c69">
+    <name>УчитыватьАналитикиСтатьиБюджетаПриКонтроле</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывать аналитики статьи бюджета при контроле</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="8cbfee17-c667-4267-9dbc-9a71966f7b20">
+    <name>ВалютаПоУмолчанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта по умолчанию</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5eb91c6b-a9ba-421a-b13d-9e993101b953">
+    <name>ПериодичностьПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность планирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.Периодичность.EnumValue.Год</value>
+    </fillValue>
+  </resources>
+  <resources uuid="4bb2854a-a127-4c11-966d-87eb4661e2e5">
+    <name>ПланированиеЗакупок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используется для планирования и контроля закупок</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="bfbb3ecd-571d-4c23-a4c7-7c59abc6c8c1">
+    <name>ВидБюджета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид бюджета</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВидыБюджетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>ChartOfCharacteristicTypes.ВидыБюджетов.БюджетДвиженияДенежныхСредств</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

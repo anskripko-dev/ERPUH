@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9962bffd-a655-4603-857d-8dec7dfef9ce">
+  <producedTypes>
+    <selectionType typeId="7d6523c9-f930-49e5-9785-9d1e248fb8bd" valueTypeId="39692bdc-c4d9-46f8-be88-ab2a13563416"/>
+    <listType typeId="040f6c5d-a65d-4b67-bd2f-63ce5130b1d7" valueTypeId="05baedea-9eec-406f-b634-a5faf30d4d74"/>
+    <managerType typeId="5fd0f286-e71b-478d-b211-c998c76af27c" valueTypeId="6f061e92-1ec0-40c7-8f1a-e8ac3746f216"/>
+    <recordSetType typeId="2ff9fa18-f7f1-481b-a9df-495db1dda057" valueTypeId="a09728ed-43ca-4815-8499-2e20b60a058a"/>
+    <recordKeyType typeId="7e34addd-8532-4b30-bf6c-019901ff2c6b" valueTypeId="3650076a-1349-44a0-bf64-01aa96f1ace9"/>
+    <recordType typeId="0d8a3e64-5fe4-4125-9a4d-e236f2c0fe9c" valueTypeId="0e4f9b7d-f862-4f86-8e37-447378f96397"/>
+    <recordManagerType typeId="f58b1901-02e2-4ba1-82c3-788ededc5670" valueTypeId="60659586-55e5-40d0-bc71-5301be8e39a9"/>
+  </producedTypes>
+  <name>АналитикаПланирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аналитика планирования</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="215959ec-3bff-42a0-92b2-dbfeec9a12ea">
+    <name>КлючАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ аналитики</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикПланирования</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Ключ аналитики учета статей бюджета.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <dimensions uuid="aa89d537-c0cb-4aff-962a-7393b347f7e5">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЭтапыПланированияПотребностей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f2bf0579-f26d-485a-ab60-532c55addbbd">
+    <name>ОбъектПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект планирования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыПланирования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3fa7c991-745c-48fb-bd2e-f0b5329f7e8e">
+    <name>АналитикаСтруктуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика структуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияСтруктуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика, определяющая детализацию по ЦФО, проектам и  юр.лицам.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d91d7166-fd1a-4dcd-8ffc-d1c7f1efe308">
+    <name>АналитикаНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика номенклатуры</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика, определяющая детализацию учета номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0ec22098-72f4-4e7f-aa2f-5136b9f240c4">
+    <name>АналитикаПотребностей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика потребностей</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияПотребностей</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика, определяющая детализацию учета номенклатуры</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="9b812b50-4f1a-4745-8ae3-a736d73d075f">
+    <name>АналитикаПоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика поставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияПоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="54d94823-abca-4204-a7a9-62e4679eadbe">
+    <name>УсловиеОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Условие оплаты</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УсловияОплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f777f5d4-6b25-44f6-9d29-401e17df820d">
+    <name>ДатаОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата операции</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="8b95b26e-7f48-4a68-9436-0460b3b201a8">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="366a43e8-3593-44e8-bc02-6bfd24106b19">
+    <name>Цена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цена</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="11b0f8dd-b6e8-4bd9-be01-86d3b199e073">
+    <name>АналитикаСтатейБюджетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика статей бюджетов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияСтатейБюджетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0b2e769e-3d0c-4bd7-a803-6f757cbbb0d6">
+    <name>АналитикаСтатейБюджетовПоставки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика статей бюджетов поставки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиПланированияСтатейБюджетовПоставки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

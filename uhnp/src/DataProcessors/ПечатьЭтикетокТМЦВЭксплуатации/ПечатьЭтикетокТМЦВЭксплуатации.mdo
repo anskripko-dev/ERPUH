@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e7a9b904-b4af-4c6c-ba29-13fa4bcbcb9a">
+  <producedTypes>
+    <objectType typeId="e6d8fcd5-266b-4398-8d94-b4057ab2662a" valueTypeId="d230d067-c1f6-4897-9c52-0b8fa1cc5d81"/>
+    <managerType typeId="d7c707bc-7757-4b84-996f-34e80925456f" valueTypeId="11e8adff-0d90-4dd4-9e61-d4359b25a723"/>
+  </producedTypes>
+  <name>ПечатьЭтикетокТМЦВЭксплуатации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Печать этикеток ТМЦ в эксплуатации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Print labels of inventory in operation</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.Form.ФормаПечати</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="d60413d7-4612-43a8-9ec8-638a811fba4f">
+    <name>ШаблонЭтикетки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Template</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШаблоныЭтикетокИЦенников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Назначение</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.НазначенияШаблоновЭтикетокИЦенников.EnumValue.ЭтикеткаТМЦВЭксплуатацииЛента</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.НазначенияШаблоновЭтикетокИЦенников.EnumValue.ЭтикеткаТМЦВЭксплуатацииБумага</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>Use</createOnInput>
+  </attributes>
+  <attributes uuid="72726045-6496-4608-8963-7f900e810400">
+    <name>КоличествоЭкземпляров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество экземпляров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of copies</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество экземпляров этикеток(ценников), выводимых на печать.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of label (price tags) copies sent to print.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="cfdd7079-d4ce-4343-b781-3015788c82f1">
+    <name>Ссылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <type/>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="ea01e0a8-49a8-4cc4-ac09-d39c53a1a26b">
+    <producedTypes>
+      <objectType typeId="01fb8be1-9334-4bf3-96b5-1cf0ddde048c" valueTypeId="bc527308-7ade-4edb-9ed4-0870b8a5a7f3"/>
+      <rowType typeId="57886045-7d11-439d-9e03-2abba501b6f1" valueTypeId="d5f92761-ee1e-45f1-ab2e-448171faf2ae"/>
+    </producedTypes>
+    <name>ТМЦВЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>ТМЦ в эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory in operation</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="22d4b88f-f169-4629-bdef-9639ccd8797d">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Необходимо выбрать номенклатуру с видом Товар.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Select items of the Goods kind.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ТипНоменклатуры</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c33860ef-ba3a-4490-a7ca-38971e550e9c">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>If variants are used for the selected item, select a variant.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d6fb5758-97da-4b91-bc7c-926b8f2ff36b">
+      <name>Серия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Серия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СерииНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    </attributes>
+    <attributes uuid="69faf674-02ad-4f87-adef-b4c968c26403">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физическое лицо</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Person</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Материально ответственное лицо</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Responsible person</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b27dc62c-a950-4cb9-a64a-2c3018da8b53">
+      <name>ИнвентарныйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инв. №</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Inv. No.</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ИнвентарныйНомерТМЦВЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7270efcc-f73f-46b4-a92e-cc7aadea98f6">
+      <name>Партия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Lot</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПартииТМЦВЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Характеристика</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.Характеристика</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Серия</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.Серия</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>ИнвентарныйНомер</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.ИнвентарныйНомер</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>ФизическоеЛицо</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПечатьЭтикетокТМЦВЭксплуатации.TabularSection.ТМЦВЭксплуатации.Attribute.ФизическоеЛицо</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>ВозвращатьСтруктуруПриВыборе</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <choiceForm>Catalog.ПартииТМЦВЭксплуатации.Form.ФормаПодбора</choiceForm>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+    </attributes>
+    <attributes uuid="928b9c26-eccb-4be3-a9c1-c75f9e80cfbc">
+      <name>СтатусУказанияСерий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статус указания серий</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Batch specification status</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>2</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Служебный реквизит который определяет состояние ввода серий для строки ТЧ. Формируется автоматически, пользователем не редактируется.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Service attribute that determines the batch input state for a table row. It is generated automatically, not user-editable.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="caf78706-28b1-48aa-94ea-c8bab8f5b24a">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество единиц позиции ТМЦ</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity of inventory item units</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3c1e50ba-bf78-48df-bf81-e00127b31681">
+    <name>ФормаПечати</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма печати</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Print form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="c03870f9-e577-4554-98c8-11ab78637791">
+    <name>ПоляШаблонаТМЦВЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля шаблона ТМЦ в эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Template fields of inventory in operation</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

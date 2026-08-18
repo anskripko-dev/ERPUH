@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="33f34382-6654-4f89-ad3c-3c7279850ae3">
+  <producedTypes>
+    <objectType typeId="5b486353-c700-4ed2-a070-acd2d85399aa" valueTypeId="54c1af21-af1c-4ac3-b702-197c1fb72463"/>
+    <managerType typeId="6c171b5d-ad00-4f34-84be-67cbed49d59b" valueTypeId="96e92fa2-52d4-4499-b4bb-dbc2df701662"/>
+  </producedTypes>
+  <name>АнализПроцессов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ процессов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.АнализПроцессов.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.АнализПроцессов.Template.МакетАнализПоОрганизациям</mainDataCompositionSchema>
+  <defaultSettingsForm>Report.АнализПроцессов.Form.ФормаНастроек</defaultSettingsForm>
+  <variantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</variantsStorage>
+  <attributes uuid="ad6fe953-d5ab-4d41-a012-afa8b9468bfb">
+    <name>ШаблонПроцесса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон процесса</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШаблоныУниверсальныхПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6456efa6-18fa-40b3-8232-75441784bc7f">
+    <name>ДатаНачалаАнализа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала анализа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5ec5445f-25c7-42a2-bea1-94ba8f8f8a21">
+    <name>ДатаОкончанияАнализа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания анализа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f284788d-2db7-44a0-99cb-0f876dc2b79a">
+    <name>ОтборОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9a1612dd-a957-48d2-bd58-0b51e6e56de1">
+    <name>Метрика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Метрика</value>
+    </synonym>
+    <type>
+      <types>EnumRef.МетрикиАнализаПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="13250cd9-8335-4e2e-9a47-1296781550ad">
+    <name>АдресХранилищаДанныеРасшифровки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища данные расшифровки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="39520b17-0f0d-4617-9366-6eb1fc3bb69b">
+    <name>АдресХранилищаСхемаКомпоновки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища схема компоновки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="09316b90-7b50-49eb-a59f-7cad2ac2b373">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПериодичностиАнализаПроцессов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="671a7509-91a9-4aea-ab91-7c0b4b33ce0f">
+    <name>ФормаНастроек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настроек</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f9ffa71d-36ca-4e52-9576-043e9c350a39">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="6e8c0cb9-c81b-4f7d-82b0-bf4bcbe40c8c">
+    <name>ФормаАнализПоПроцессам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма анализ по процессам</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="fd1f63c3-cb09-4789-89cc-6ca4609eafbb">
+    <name>ФормаРасшифровкиРаспределения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма расшифровки распределения</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="75e94979-51e5-44ce-9e10-af73d4fc728e">
+    <name>МакетАнализПоОрганизациям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет анализ по организациям</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="4de94eb6-272e-45f7-8e07-983532694f4c">
+    <name>МакетИсходныеДанные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет исходные данные</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="306863ae-3c4e-4fbf-86f1-4f4e86d39fb7">
+    <name>МакетРаспределениеМетрики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет распределение метрики</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:Report>

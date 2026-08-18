@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b45264e7-979f-497f-bd4a-8da1875a4ac0">
+  <producedTypes>
+    <selectionType typeId="67a8070e-f140-49dd-b355-4e99e4619502" valueTypeId="2f8a4fa6-4602-4f96-ae53-97d7c5ca307a"/>
+    <listType typeId="7c951558-ad09-47e2-8565-7fdc74c1026c" valueTypeId="da559fef-16c0-43c9-b7fb-b01aefd6bd9f"/>
+    <managerType typeId="f34dff5b-e220-4291-8d8b-054332f13831" valueTypeId="3f147105-b335-4648-b937-2849698be2a1"/>
+    <recordSetType typeId="ec321539-1167-40af-8777-768f407a2c9c" valueTypeId="a43c748d-650e-49c1-8479-d96c1b05320a"/>
+    <recordKeyType typeId="fa04fcbe-fa55-4927-a947-d77740889f77" valueTypeId="1a8084c4-f4aa-4f71-99a0-dd10353e9621"/>
+    <recordType typeId="dde438df-eac3-4b88-90fc-963d03baeba9" valueTypeId="1ab2688c-1270-4755-a5bb-29fb0d0bad31"/>
+    <recordManagerType typeId="b982563e-c209-4582-9fb9-995228086d68" valueTypeId="5244c11b-69e3-451c-aac1-e7b06c786232"/>
+  </producedTypes>
+  <name>тн_КлассификацияЗадолженностиМСФО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Классификация задолженности МСФО (тн)</value>
+  </synonym>
+  <comment>//Сафиуллина З.Р. 27.06.2025 Выполнение задач №000054153</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Классификация задолженности МСФО</value>
+  </listPresentation>
+  <resources uuid="f381347c-90d8-4e4b-98b4-98d601589507">
+    <name>СчетМСФО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет МСФО</value>
+    </synonym>
+    <type>
+      <types>ChartOfAccountsRef.МСФО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="0c5cd956-cbc7-4cf7-9378-42d1cc2357c0">
+    <name>НаименованиеСчетаМСФО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование счета МСФО</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>200</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="a540fe8f-2c84-4495-9e09-8e611ec051cd">
+    <name>ТипКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип контрагента</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2481c063-f9c4-419e-ae8a-aec5c863bfd8">
+    <name>ВидВзаиморасчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид взаиморасчетов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.тн_ВидыВзаиморасчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

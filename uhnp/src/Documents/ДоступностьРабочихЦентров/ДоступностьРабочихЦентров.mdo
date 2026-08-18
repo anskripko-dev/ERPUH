@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="52fe94d9-12a3-4d8e-9f1a-3ca816eb591e">
+  <producedTypes>
+    <objectType typeId="240869ef-7bd0-4c2a-8f22-f8cee97c71d8" valueTypeId="7a867942-9c6c-40fe-a6ad-6d2ed07fe484"/>
+    <refType typeId="8bff4308-77b3-47d8-a4e2-5ec1c80f4ab0" valueTypeId="472ec4fb-02b2-4206-bde0-e30cbc4cb75d"/>
+    <selectionType typeId="4d2ec93b-b915-429a-ab51-dbc4ce9ed27b" valueTypeId="4ee01b90-b108-4cee-97e3-3460a562e8ae"/>
+    <listType typeId="4cbdbae2-0f0b-4895-974a-aeddb0c92fc4" valueTypeId="d8eacaa4-4dbf-4cf6-8304-1e4ee56bcf43"/>
+    <managerType typeId="d61c53ff-59a3-4004-9169-28f8e119aafd" valueTypeId="2b97e1ec-edc6-44e8-9083-513384aa4b22"/>
+  </producedTypes>
+  <name>ДоступностьРабочихЦентров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Доступность рабочих центров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Capacity of work centers</value>
+  </synonym>
+  <inputByString>Document.ДоступностьРабочихЦентров.StandardAttribute.Number</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <dataLockFields>Document.ДоступностьРабочихЦентров.Attribute.ВидРабочегоЦентра</dataLockFields>
+  <dataLockFields>Document.ДоступностьРабочихЦентров.Attribute.ДатаГрафика</dataLockFields>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <fullTextSearch>Use</fullTextSearch>
+  <listPresentation>
+    <key>ru</key>
+    <value>Доступность рабочих центров</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Capacity of work centers</value>
+  </listPresentation>
+  <numberType>String</numberType>
+  <numberLength>9</numberLength>
+  <numberAllowedLength>Variable</numberAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultListForm>Document.ДоступностьРабочихЦентров.Form.ФормаСписка</defaultListForm>
+  <realTimePosting>Deny</realTimePosting>
+  <registerRecordsDeletion>AutoDeleteOff</registerRecordsDeletion>
+  <registerRecords>InformationRegister.ДоступностьРабочихЦентров</registerRecords>
+  <registerRecords>AccumulationRegister.ДоступностьВидовРабочихЦентров</registerRecords>
+  <registerRecords>AccumulationRegister.СостоянияРабочихЦентров</registerRecords>
+  <postInPrivilegedMode>true</postInPrivilegedMode>
+  <unpostInPrivilegedMode>true</unpostInPrivilegedMode>
+  <choiceHistoryOnInput>DontUse</choiceHistoryOnInput>
+  <attributes uuid="f6ab2670-7654-4e66-8efc-71a1b2d8287d">
+    <name>ВидРабочегоЦентра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид рабочего центра</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРабочихЦентров</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид рабочего центра, по которому вводится график</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center type whose schedule is entered</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.УчитыватьДоступностьПоГрафикуРаботы</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="d2de4ee5-6416-4fca-be4b-26fed8b0f377">
+    <name>ВнесеныРучныеИзменения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Внесены ручные изменения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Manual changes made</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак того что в расписание внесены ручные изменения</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Shows that manual changes were made to the timetable</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="c9b5622f-cc11-493f-a240-8b2d2bef417f">
+    <name>ДатаГрафика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата графика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Schedule date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата графика работы</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work schedule date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="8a868387-ba22-4aef-8508-6cfcaee5ec8a">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <tabularSections uuid="2182282f-f9c9-47e8-abe7-dc7d03f97899">
+    <producedTypes>
+      <objectType typeId="341ffe27-56a0-4037-bcb1-bb43eba3562a" valueTypeId="b9bdcee9-50e5-456f-9752-a8fa5009635d"/>
+      <rowType typeId="a813e3f5-a79a-4f50-b61b-544bb0b55f7c" valueTypeId="3e1ef3ee-4f0b-420c-b59e-d6df93f77979"/>
+    </producedTypes>
+    <name>Интервалы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интервалы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Intervals</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="6c4a892e-6498-46b0-b58d-8b7aa03bc90d">
+      <name>РабочийЦентр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РабочиеЦентры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Рабочий центр, для которого указывается доступность</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Work center for which capacity is specified</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <indexing>Index</indexing>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="e22f8bd8-e0b1-427f-8d39-0e81b7035a24">
+      <name>ДатаГрафика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата графика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Schedule date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата графика работы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Work schedule date</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d4a85fb4-5cbc-4622-9f88-5ef50fffe178">
+      <name>ВремяНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Время начала</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Start time</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Time</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Начало интервала графика</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Schedule interval start</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="c0c60da3-5887-46ad-b2fb-b12d3e88dae1">
+      <name>ВремяОкончания</name>
+      <synonym>
+        <key>ru</key>
+        <value>Время окончания</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>End time</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Time</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Окончание интервала графика</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Schedule interval end</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="a72655f6-98c4-42e1-adbe-3014df922be7">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество доступных часов</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity of available hours</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="00ff57b8-4883-4e8c-83cd-5fba6c7b5628">
+      <name>Смена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Смена</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Shift</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Календари</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f429cef6-3970-4b63-9f18-0cd3002656f3">
+    <producedTypes>
+      <objectType typeId="ee8ae359-e723-48a8-b3f2-30b144956d79" valueTypeId="f9922c7c-d799-434a-9780-85707a1383b1"/>
+      <rowType typeId="6ab37732-b1a2-4ec4-b0b5-411661c23106" valueTypeId="8afcaf58-6481-4af9-9f48-194207db8793"/>
+    </producedTypes>
+    <name>Доступность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доступность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Capacity</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Графики рабочих центров.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center schedules.</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ca200870-d52d-4574-9191-e554fd4184b2">
+      <name>РабочийЦентр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РабочиеЦентры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Рабочий центр, для которого указывается доступность</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Work center for which capacity is specified</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="183f73b0-c592-406a-beb4-408d362b2b5a">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество доступных секунд</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Quantity of available seconds</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="0d3032a0-f9ac-4c4e-920d-56cf525b84f6">
+      <name>ВнесеныРучныеИзменения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Внесены ручные изменения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Manual changes made</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Признак того что в расписание рабочего центра внесены ручные изменения</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Shows that manual changes were made to work center timetable</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="b1a7cefd-b26d-4838-95e1-d3f8fc0b2f49">
+      <name>Смена</name>
+      <synonym>
+        <key>ru</key>
+        <value>Смена</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Shift</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Календари</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Document>

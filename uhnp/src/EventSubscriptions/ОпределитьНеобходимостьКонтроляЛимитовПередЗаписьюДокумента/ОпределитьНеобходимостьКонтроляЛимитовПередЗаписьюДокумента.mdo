@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1fec7c30-c2bf-4190-8f81-fcb045a1e0c2">
+  <name>ОпределитьНеобходимостьКонтроляЛимитовПередЗаписьюДокумента</name>
+  <synonym>
+    <key>ru</key>
+    <value>Определить необходимость контроля лимитов перед записью документа</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Identify whether limit control before saving document is required</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.ЗаявкаНаРасходованиеДенежныхСредств</types>
+    <types>DocumentObject.СписаниеБезналичныхДенежныхСредств</types>
+    <types>DocumentObject.РасходныйКассовыйОрдер</types>
+    <types>DocumentObject.ЗаявкаНаКомандировку</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ЛимитыПоДаннымБюджетированияСервер.ОпределитьНеобходимостьКонтроляЛимитовПередЗаписьюДокумента</handler>
+</mdclass:EventSubscription>

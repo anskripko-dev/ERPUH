@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b27583b6-b2da-4973-b465-9e7dea4ec7e3">
+  <producedTypes>
+    <objectType typeId="32aedffe-5f70-44a4-bfcc-bc317116e8c0" valueTypeId="795533c3-e2c7-48d3-b3e9-5542315d5452"/>
+    <managerType typeId="1b573374-c10d-457d-bb4c-d8554e32932c" valueTypeId="f389735c-a748-41d0-be54-d11712d2c1c9"/>
+  </producedTypes>
+  <name>АнализСостоянияНалоговогоУчетаПоНалогуНаПрибыль</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ учета по налогу на прибыль</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Profit tax accounting analysis</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.АнализСостоянияНалоговогоУчетаПоНалогуНаПрибыль.Form.ФормаОтчета</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Анализ состояния налогового учета по налогу на прибыль</value>
+  </extendedPresentation>
+  <extendedPresentation>
+    <key>en</key>
+    <value>Analysis of state of profit tax accounting</value>
+  </extendedPresentation>
+  <attributes uuid="6e0e795e-3c15-471d-b683-1e50d2654232">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="a5de3fcb-9482-4f4f-b973-341df184f62c">
+    <name>КонецПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Конец периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period end</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="f42293b1-0319-422a-b1cc-9fb43c13f621">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="b634e181-6cbc-4b4f-9664-f011e7702664">
+    <name>СохраняемыеРеквизиты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сохраняемые реквизиты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Saved attributes</value>
+    </synonym>
+    <type/>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="86b2ff69-ed74-4a56-8b5e-f6a3858c299c">
+    <name>ВключатьОбособленныеПодразделения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Включая обособленные подразделения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Including branch offices</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a36d6076-de87-4d94-b233-abb914f96b22">
+    <name>ОрганизацияРасшифровки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация расшифровки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down organization</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d62a84c9-5b80-4fe6-88f0-dc1446246d5a">
+    <name>ИмяРасшифровки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Имя расшифровки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>255</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="a4971b66-9bcc-4cfc-a445-4f254bc8791d">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Report form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="62c2b564-659f-464d-8e8f-278d990ac916">
+    <name>Карта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Карта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Map</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="926962c1-7213-4542-9986-fec8d8fecfaf">
+    <name>КартаЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Карта ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII map</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="9c22badc-7362-4198-897a-8e70e668f0ad">
+    <name>РасчетНалогаНаПрибыль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет налога на прибыль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corporate profit tax calculation</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="7adeafeb-11a2-4250-8514-0395b8aea946">
+    <name>Доходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="efa26135-52b2-4185-a6a6-700d2240a100">
+    <name>Расходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="bed894ed-4316-4d5e-a535-bc57061ba469">
+    <name>РасходыЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="4a965779-62a9-4ced-a230-65991ed9325b">
+    <name>КосвенныеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Косвенные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Indirect expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="02297f4c-2346-4876-acd0-b90c4ce916ca">
+    <name>РасходыОбычные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы обычные</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ordinary expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="a9b9e5da-561f-4abf-a0d4-129c313287ff">
+    <name>РасходыПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="6ce4fe55-c825-4de8-92a6-70f3379cfcf0">
+    <name>РасходыПроизводстваЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы производства ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII production expenses </value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="64034eaf-28e3-4cec-a3e7-9404d7bad51e">
+    <name>ТранспортныеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспортные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transportation expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="ec0488bf-5396-4201-89f7-5f9fbeb5eabd">
+    <name>РасходыРаспределяемые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы распределяемые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Allocated expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="a35f392f-70e0-47c8-a4bd-9b9bc486083b">
+    <name>РасходыПрочие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы прочие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Other expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="01bfeda9-3556-4ed1-80c9-41a003d489e6">
+    <name>РасходыПрочиеЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы прочие ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expenses other UTII</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="0b757632-5011-4836-914c-ee4c630bed33">
+    <name>СтоимостьСписанияТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость списания товаров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods write-off cost</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="cd05b812-daaa-47c7-843b-27faff8553f7">
+    <name>СтоимостьСписанияТоваровЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость списания товаров ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods write-off cost UTII</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="4fcdbb77-9b34-4c6b-95a4-15b83c94738e">
+    <name>СтоимостьТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость товаров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods cost</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="c4a24094-0837-48aa-a989-16731eb789bb">
+    <name>Карта82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Карта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Map</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="3ef18358-4084-420a-9976-05819bb0a6f3">
+    <name>КартаЕНВД82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Карта ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII map</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="b3a4643f-4483-41d9-9b7b-874759e325db">
+    <name>РасчетНалогаНаПрибыль82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет налога на прибыль</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corporate profit tax calculation</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="fb5221c7-74e5-42d0-9969-99a6d30c8731">
+    <name>Доходы82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="caf92ce0-b7db-4139-9d54-b177a3473a07">
+    <name>Расходы82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="a2d31ec3-dfeb-460e-b212-4bd4622671e9">
+    <name>РасходыЕНВД82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="46f46f57-004e-4bc2-bffd-5e3a84925358">
+    <name>КосвенныеРасходы82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Косвенные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Indirect expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="3c844bdb-2d3d-4baf-b51d-0f96b3d438fc">
+    <name>РасходыОбычные82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы обычные</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ordinary expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="1903d30f-6e6c-46bf-a2e1-39b04a7f13cf">
+    <name>РасходыПроизводства82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="6d5ed4dd-4d1f-4102-89aa-ebf697aac7af">
+    <name>РасходыПроизводстваЕНВД82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы производства ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>UTII production expenses </value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="9d584ab8-8726-4e96-9314-c783214ba984">
+    <name>ТранспортныеРасходы82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Транспортные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transportation expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="fc2e18e1-c045-4103-a5fa-1950820a88cd">
+    <name>РасходыРаспределяемые82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы распределяемые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Allocated expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="775441cc-57c2-4865-aae4-22ecc16b27c3">
+    <name>РасходыПрочие82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы прочие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Other expenses</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="48d43256-a614-4d29-a4bd-11ed1e23a291">
+    <name>РасходыПрочиеЕНВД82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расходы прочие ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expenses other UTII</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="caec910f-c671-4036-b4ae-ea326c5f8640">
+    <name>СтоимостьСписанияТоваров82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость списания товаров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods write-off cost</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="628558b5-27e3-4de7-81d0-5d1e7a1033a7">
+    <name>СтоимостьСписанияТоваровЕНВД82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость списания товаров ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods write-off cost UTII</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="b5eeca14-6cc8-434f-9ad6-ea2b9488f794">
+    <name>СтоимостьТоваров82</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость товаров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods cost</value>
+    </synonym>
+    <templateType>GraphicalSchema</templateType>
+  </templates>
+  <templates uuid="6eb131ff-d2b1-496b-8fd4-9defbff44b8a">
+    <name>МакетЗаголовкаРасшифровки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет заголовка расшифровки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down title template</value>
+    </synonym>
+  </templates>
+  <templates uuid="348537f5-a6c7-4fd6-80c3-cc4a44f8e034">
+    <name>РасшифровкаАмортизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка амортизация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for depreciation</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="c7dcd9fd-7aea-46fc-845a-b814116f37ee">
+    <name>РасшифровкаАмортизацияРБПТоварыНеРеализация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка амортизация РБП товары не реализация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for depreciation DE goods not sales </value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="d816a0e1-83f3-4455-8fbd-482224285061">
+    <name>РасшифровкаВыручкаПоОбычнымВидамДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка выручка по обычным видам деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for revenue for ordinary activities</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="12c32020-6d26-48d1-88bd-3f9d8f4906ef">
+    <name>РасшифровкаДоходыНеУчитываемыеВНалоговойБазе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка доходы не учитываемые в налоговой базе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for income not included into tax base</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="27be9158-1de9-4a1e-8f20-cce115edb19c">
+    <name>РасшифровкаДоходыУчитываемыеПриОпределенииНалоговойБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка доходы учитываемые при определении налоговой базы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for income included into tax base</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="65688fc1-198c-4c89-989d-9151bcacafc9">
+    <name>РасшифровкаДругиеПрочиеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка другие прочие расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="99f4bb37-f3fc-41bc-9c2b-556f78ecbe5d">
+    <name>РасшифровкаКосвенныеРаспределяемыеРасходыУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные распределяемые расходы учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect distributable expenses registered in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e5f0e45b-6af4-432a-9317-fc8fa1b7f779">
+    <name>РасшифровкаКосвенныеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="f6693482-d0cc-47b6-ba82-c71477778c50">
+    <name>РасшифровкаКосвенныеРасходыЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for UTII indirect expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="3a4b203e-e403-4e2f-9370-17211d9d2f9f">
+    <name>РасшифровкаКосвенныеРасходыНеВкл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы не вкл</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses not incl</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="0bf0cbdf-041f-41dd-b180-ee5051eeeaf3">
+    <name>РасшифровкаКосвенныеРасходыНеВключенные</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы не включенные</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses not included</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="831ff276-c705-4d2e-b1c6-7208f13e1cb0">
+    <name>РасшифровкаКосвенныеРасходыНеЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы не ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses not UTII</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="3dccdddb-2a0b-42c5-b2a4-8def03289d6d">
+    <name>РасшифровкаКосвенныеРасходыНеУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы не учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses not recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="fa254095-c802-4d19-bdd2-beca5cb88b91">
+    <name>РасшифровкаКосвенныеРасходыУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка косвенные расходы учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for indirect expenses recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="4bb4305b-e5aa-4246-b774-ead69accefa7">
+    <name>РасшифровкаНезавершенноеПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка незавершенное производство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for unfinished production</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="fe845af4-d38b-4400-b31e-b97cd1c23544">
+    <name>РасшифровкаНезавершенноеПроизводствоПрошлыхЛет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка незавершенное производство прошлых лет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for unfinished production of previous years</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="bc3f0bc0-6efb-45fa-b0db-b3a6fdaf6c6d">
+    <name>РасшифровкаОПРиОХРСписанныеНаПрямые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка ОПР и ОХР списанные на прямые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for GME and GBE written off as direct expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="a09a910a-e7e8-4f47-8658-961a70c7b168">
+    <name>РасшифровкаОПРиОХРСписанныеНаПрямыеРаспределяемые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка ОПР и ОХР списанные на прямые распределяемые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for GME and GBE written off as direct distributed expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="1018d692-2451-4620-98b8-ed43bafd7ff2">
+    <name>РасшифровкаОприходованиеИзлишков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка оприходование излишков</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for surplus recording as received</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="9c2217f6-ee22-4e41-bcbf-44ae23a3411f">
+    <name>РасшифровкаПрочиеДоходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие доходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other income</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="f4f6d6da-d96a-4f88-ac34-70827a668547">
+    <name>РасшифровкаПрочиеДоходыУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие доходы учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other income recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="17aa65ef-83d6-46aa-97df-46512aeab01c">
+    <name>РасшифровкаПрочиеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e33f9be2-b69e-4e5a-a8ce-666ad1ac32ca">
+    <name>РасшифровкаПрочиеРасходыНеЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы не ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses not UTII</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="37b7e7c0-a76b-4621-853d-be4921e80342">
+    <name>РасшифровкаПрочиеРасходыНеУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы не учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses not recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="cdc991d0-6b23-455c-95df-2fe4e8041ec7">
+    <name>РасшифровкаПрочиеРасходыОтнесенныеНаЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы отнесенные на ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses referred to UTII</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="cff5f225-1e0f-4ac0-806c-e811de6fbdd0">
+    <name>РасшифровкаПрочиеРасходыРаспределяемые</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы распределяемые</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other allocated expenses </value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="9aa451df-4c1f-4258-a888-70a64fa56a82">
+    <name>РасшифровкаПрочиеРасходыУчитываемыеВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прочие расходы учитываемые ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for other expenses recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e48a8cac-9fc6-4de0-9ac7-f150001ed09c">
+    <name>РасшифровкаПрямыеПроизводственныеРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прямые производственные расходы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for direct production expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="8f04e452-8e62-4338-a25a-7554a81edaea">
+    <name>РасшифровкаПрямыеРасходыЕНВД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прямые расходы ЕНВД</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for direct UTII expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="96935704-6e6e-4b20-862b-934dffa0e700">
+    <name>РасшифровкаПрямыеРасходыПоРеализованнымТоварамНеУчНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прямые расходы по реализованным товарам не уч НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for direct expenses on sold goods not recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="62bbfcf3-f382-42be-b57f-6412acec3907">
+    <name>РасшифровкаПрямыеРасходыПоРеализованнымТоварамУчНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прямые расходы по реализованным товарам уч НУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for direct expenses on sold goods taken into account in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="d888a273-297d-4577-a18c-fed2a33d3c26">
+    <name>РасшифровкаПрямыеРасходыПоРеализованнымУслугам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка прямые расходы по реализованным услугам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for direct expenses on provided services</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="6013c8ab-6ab9-4a1b-a431-c37c9f8ef586">
+    <name>РасшифровкаРасходыНаПриобретениеТоваровАмортизируемогоИмуществаРБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка расходы на приобретение товаров амортизируемого имущества РБП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for expenses for acquisition of goods depreciable fixed assets DE</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="03f1e85d-8335-497a-8718-3ac713f1ed4e">
+    <name>РасшифровкаРасходыОтносящиесяКСтоимостиРеализованногоИмущества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка расходы относящиеся к стоимости реализованного имущества</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for expenses related to the value of sold property</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="e3edbc56-afa4-4dbd-885e-306a545e4b90">
+    <name>РасшифровкаСтоимостьВыпущеннойПродукции</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка стоимость выпущенной продукции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for released product cost</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="15059ec3-6cf1-4dd9-9a4e-f4a1ca24bcca">
+    <name>РасшифровкаСтоимостьНеСписанныхТоваровРБПАмортизируемогоИмущества</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка стоимость не списанных товаров РБП амортизируемого имущества</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for cost of non-written off goods deferred expenses of depreciable fixed assets</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="508cde39-1b99-48f1-b3f1-34adab073a0a">
+    <name>РасшифровкаСтоимостьТоваровИАмортизацияНеСписаннаяВПрошлыхПериодах</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка стоимость товаров и амортизация не списанная в прошлых периодах</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for cost of goods and depreciation not written off in previous periods</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="baa8ffc9-e44f-4844-8505-c04a7636139d">
+    <name>РасшифровкаСтоимостьТоваровРБП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка стоимость товаров РБП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for cost of deferred expense goods</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="df8ec693-e184-4394-9ec5-838d1c0ee088">
+    <name>РасшифровкаТранспортныхРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка транспортных расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for transportation expenses</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="03209237-2954-43c6-89f1-1178bbae4739">
+    <name>РасшифровкаТранспортныхРасходовОтнесенныхНаНачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка транспортных расходов отнесенных на начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for transportation expenses allocated to the beginning of the period</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="a935c4e2-953c-44d1-a1bf-5a77fb281314">
+    <name>РасшифровкаТранспортныхРасходовОтнесенныхНаОстаток</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка транспортных расходов отнесенных на остаток</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for transportation expenses allocated to the balance</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="8f53f0f7-bc36-4a8e-84eb-9f1e4a5e4bc1">
+    <name>РасшифровкаТранспортныхРасходовУчитываемыхВНУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка транспортных расходов учитываемых ВНУ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for transportation expenses recorded in TA</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="23aafe28-a5e0-469f-891b-464e9617074f">
+    <name>РасшифровкаУслугиСтороннихОрганизаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расшифровка услуги сторонних организаций</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Drill-down for third party services</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="d36c5eb8-93be-4048-8fee-6714df186db6">
+    <name>СписокОрганизаций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список организаций</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company list</value>
+    </synonym>
+  </templates>
+</mdclass:Report>

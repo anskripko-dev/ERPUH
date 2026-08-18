@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2d14a396-e754-49fc-bf83-49ac8e12b0f0">
+  <name>УстановитьПометкуУдаленияПрисоединенныхФайловДокументовБЭД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Установить пометку удаления присоединенных файлов документов БЭД</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Mark the attached EDL document files for deletion</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.СообщениеОбменСБанками</types>
+    <types>DocumentObject.ПисьмоОбменСБанками</types>
+    <types>DocumentObject.КоммерческоеПредложениеПоставщика</types>
+    <types>DocumentObject.ПакетОбменСБанками</types>
+    <types>DocumentObject.ЭлектронныйДокументИсходящийЭДО</types>
+    <types>DocumentObject.ЗапросКоммерческогоПредложенияОтКлиента</types>
+    <types>DocumentObject.СообщениеЭДО</types>
+    <types>DocumentObject.ЗапросКоммерческихПредложенийПоставщиков</types>
+    <types>DocumentObject.ЭлектронныйДокументВходящийЭДО</types>
+    <types>DocumentObject.КоммерческоеПредложениеКлиенту</types>
+    <types>DocumentObject.ТранспортныйКонтейнерЭДО</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.РаботаСФайлами.УстановитьПометкуУдаленияПрисоединенныхФайловДокументов</handler>
+</mdclass:EventSubscription>

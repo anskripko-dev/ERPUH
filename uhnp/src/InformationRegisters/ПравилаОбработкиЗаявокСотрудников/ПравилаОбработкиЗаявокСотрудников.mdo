@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1471819f-a4a7-4e37-8d00-d5ca97747ce3">
+  <producedTypes>
+    <selectionType typeId="d0039f4f-a6f6-4abb-a0e9-aa69cc26d0b7" valueTypeId="7216ba9d-2b59-4d40-92d3-d83755dbe534"/>
+    <listType typeId="b458aa13-f2d4-49dd-b5b4-6ec98b07e8cc" valueTypeId="b72ac019-5cc7-47c7-8e78-22e3faec2b56"/>
+    <managerType typeId="4ea34488-d19d-4c98-8d93-0092504169af" valueTypeId="cb51a268-f8e6-453f-98b6-d396d59c10df"/>
+    <recordSetType typeId="2acbb372-a7a1-4db0-8e84-7077f9aa0f11" valueTypeId="a9318361-d0ca-4682-9bc3-e9735c0c7990"/>
+    <recordKeyType typeId="8a421857-3fd1-4fd0-b2a6-57cfc768098d" valueTypeId="7dce750e-e89a-45ab-a5e4-ffaf5b9370fb"/>
+    <recordType typeId="e74925f5-7820-47d5-8c08-70086e682772" valueTypeId="3568916e-58b0-44a5-80ab-c48ade44af18"/>
+    <recordManagerType typeId="8b11af44-46b3-4a77-ad9e-5415c255bb9f" valueTypeId="6acba3f4-baf5-411f-824b-883084189dab"/>
+  </producedTypes>
+  <name>ПравилаОбработкиЗаявокСотрудников</name>
+  <synonym>
+    <key>ru</key>
+    <value>Правила обработки заявок сотрудников</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Rules for processing employee requests</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="095e76e6-48e6-4e8a-802c-1229388c93cc">
+    <name>СрокЗадачи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок задачи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Task due date</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="d5d33660-b406-4ef4-9ba5-21b5bbc2363b">
+    <name>ТребуетсяПодпись</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется подпись</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Signature is required</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b9cf94b1-72e2-4b0d-89e2-d267058e1052">
+    <name>РольИсполнителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль исполнителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business role</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РолиИсполнителей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e6cce567-19ec-48dd-877b-6aad97b7f4ed">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fe3b65c4-a269-4dd4-b6e8-bbcd96870502">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыЗаявокСотрудников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e0944e27-affa-4f08-9eee-ce6090929d71">
+    <name>ШаблонДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон документа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document template</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШаблоныДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

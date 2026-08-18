@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e1d3a3a2-d1bc-4462-9b61-e1108e364d74">
+  <producedTypes>
+    <objectType typeId="fb180245-a2c4-43b6-bddc-7ce8b0b2147a" valueTypeId="6e67b638-a354-4f1d-94d8-468fd76bb42f"/>
+    <managerType typeId="6178c098-4339-4e94-8843-0f462f6e17c4" valueTypeId="76c048a3-be46-4cde-887c-c364168df816"/>
+  </producedTypes>
+  <name>тн_ДанныеАвтосверкаБуНу</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сверка БУ/НУ ERP-УПП (тн)</value>
+  </synonym>
+  <comment>№000050333</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ДанныеАвтосверкаБуНу.Form.Форма</defaultForm>
+  <attributes uuid="97aa62b8-3bc4-4146-a274-26c988ac2ca4">
+    <name>РезультатТД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Результат ТД</value>
+    </synonym>
+    <type>
+      <types>SpreadsheetDocument</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fecb451c-d2b3-4626-964a-21f9b58f08d8">
+    <name>КомпоновщикНастроек</name>
+    <synonym>
+      <key>ru</key>
+      <value>Компоновщик настроек</value>
+    </synonym>
+    <type>
+      <types>DataCompositionSettingsComposer</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4d1c46a5-8cc1-4ca2-a75a-7f080c0243af">
+    <name>ДанныеРасшифровки_ERP_УПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>ДанныеРасшифровки_ERP_УПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="83edb27f-5e10-4af7-8a2b-ffc304ceabe4">
+    <name>НормативноеВремяОжиданияОтветаСекунд</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нормативное время ожидания ответа на запрос в УПП, секунд</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>4</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d8a22680-7ceb-4d14-83d9-9a2282aba868">
+    <name>СообщениеЗапросERP_В_УПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сообщение запрос ERP в УПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fa6819bd-82ab-4624-8261-86403c08c74c">
+    <name>СообщениеОтветERP_От_УПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сообщение ответ ERP от УПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9bc32131-a8c4-4f48-b7e6-fe57f6fa8cbb">
+    <name>Активно_БУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активно БУ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="27f173aa-77f1-48b6-b39c-4ad8f84a98ff">
+    <name>Активно_НУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Активно НУ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="18e40495-b004-4ffd-94bb-15bc3e5e5ba7">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f5b5ea83-cab4-4947-8e82-5cd1c6ebf5e5">
+    <name>ЭтоОтладка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это отладка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c4d107ac-6541-4a05-9fff-cb0b4375dc2f">
+    <name>ДатаСверкиНач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата сверки (начальная)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="937cde69-5261-4d5d-9149-6beac1502bfe">
+    <name>ДатаСверкиКон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата сверки (конечная)</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8a27d9ba-cfcb-4b57-86e7-2b51f7931509">
+    <name>ПоказательБУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>БУ/НУ</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="83645533-7a66-4ab8-adfa-2ec2e1d762f6">
+    <name>ПоказательВал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валютная сумма</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="92390eb4-9fb2-4a73-a1bb-8d56dd0fbe8d">
+    <name>ПоказательКол</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="80e689ff-b70e-49a5-b5bd-1ef4b95c9814">
+    <name>РазвернутьДоСубсчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>По субсчетам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d7e37362-e9a0-4cb0-be37-94e592f84f85">
+    <name>РазвернутьДоСубконто</name>
+    <synonym>
+      <key>ru</key>
+      <value>До субконто</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="18575819-2427-4832-a968-665ffaa051a3">
+    <name>ТолькоРасхождения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Только расхождения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="930bfefe-b225-4472-9b88-67e10d9527ce">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <comment>// Юдина Екатерина 03.02.2026 Выполнение задач №000056622</comment>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="eb7328df-61a9-422c-a4d3-0eea5514aee5">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="22eb0a14-2e08-4c26-ba7b-a42d9fa7afaa">
+    <name>ERP_СчетОтбор</name>
+    <synonym>
+      <key>ru</key>
+      <value>ERP счет отбор</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="13ea54d1-7e61-4a41-9e2d-1911f52d963b">
+    <name>ERP_БУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ERP БУ</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="6a8c1a04-955a-40a5-8f12-8adce367b505">
+    <name>ERP_НУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>ERP НУ</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="73ff0e9d-495f-41a1-af69-cd220dd3c07a">
+    <name>ERP_БУ_НУ_Результат</name>
+    <synonym>
+      <key>ru</key>
+      <value>ERP БУ/НУ результат</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

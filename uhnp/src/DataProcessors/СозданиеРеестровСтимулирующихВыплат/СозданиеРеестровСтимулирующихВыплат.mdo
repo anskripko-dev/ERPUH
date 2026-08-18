@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ca4b811c-6135-4eda-8e0f-6a279986fd2b">
+  <producedTypes>
+    <objectType typeId="9c04af99-3b7e-485b-ab68-63ad4ce560c3" valueTypeId="9a2ed750-3436-42c1-9d9b-82843650dbbe"/>
+    <managerType typeId="596d6bf6-9045-48ed-85ba-4c6872be496d" valueTypeId="1e2736eb-4d0f-455e-a113-e041f45f9655"/>
+  </producedTypes>
+  <name>СозданиеРеестровСтимулирующихВыплат</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создание реестров стимулирующих выплат</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Creation of incentive payments registers</value>
+  </synonym>
+  <defaultForm>DataProcessor.СозданиеРеестровСтимулирующихВыплат.Form.РеестрыПоДокументуПереводНаРаботуСКоронавирусом</defaultForm>
+  <attributes uuid="ec42f0c2-f6b4-4ccd-86a8-41ea0383cdad">
+    <name>Ссылка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ссылка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ref</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ВедомостьНаВыплатуЗарплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d23f7eb4-a3ba-45a3-91cc-c9df703fb097">
+    <name>Номер</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>11</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b924c787-e92c-4a5b-828f-caa4ce63f53f">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DLF=D</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДЛФ=D</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DLF=D</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="531148d8-c433-4fbd-9f81-b460230b356d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="18b26458-a24d-4fdc-94ad-55c48a4b579e">
+    <name>РеестрСоставил</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реестр составил</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registry created by</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="87227a83-d05c-4d1f-ab8c-43f0ba260813">
+    <name>ФИОСоставителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>ФИО Составителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Compiler full name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="35d4b9ab-5a0b-4874-ac2f-35fb3403e267">
+    <name>ТелефонСоставителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Телефон составителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Author phone</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>30</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="78cc4beb-265e-4dad-81d5-5e0df08a9af5">
+    <name>АдресЭлектроннойПочтыСоставителя</name>
+    <synonym>
+      <key>ru</key>
+      <value>E-mail составителя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Author email</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>40</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Адрес электронной почты составителя</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Author email address </value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="851097a3-a482-4c41-b0cc-d07aff5ce8b8">
+    <name>НаименованиеСтрахователя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование страхователя</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Insurant name</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Используется для размещения полного официального наименования организации  для вывода в печатные формы документов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Used to place a full official name of the company in a print form of a document.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="a16653e6-345d-4313-ba9b-3d9380c17d8b">
+    <name>КПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>KPP</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>9</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="6dd52326-324f-40d4-8f25-7716ef3d61b3">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TIN</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="14f848b1-0672-4c7e-af26-a055eda5296d">
+    <name>ОГРН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ОГРН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company registration number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>15</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Основной государственный регистрационный номер. Получение ОГРН свидетельствует о внесении предприятия в государственный реестр.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Primary state registration number. Registration number receipt certifies the company registration with the national registry.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="81912257-6b02-447f-8110-b1c791cd156c">
+    <name>РегистрационныйНомерФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрационный номер в ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SIF registration number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Регистрационный номер страхователя</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Insurant registration number</value>
+    </toolTip>
+    <mask>9999999999</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="70a4882b-7bdb-4c36-9c87-9b8882d07aed">
+    <name>КодПодчиненностиФСС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код подчиненности ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>SIF subordination code</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>5</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>5 цифр, указан в Извещении о регистрации в ФСС в качестве страхователя</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>5 numbers, specified in the notice of registration with SIF as an insurant</value>
+    </toolTip>
+    <mask>99999</mask>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="eb4428d1-0e32-45a9-a3a2-0d0764952b8c">
+    <name>МесяцНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц начисления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accrual month</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MMMM yyyy'</value>
+    </format>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="2057a2f8-4fc0-471a-a3c3-cefd0df5d665">
+    <name>ВидПособия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид пособия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Allowance kind</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПолучательСтимулирующихВыплатФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="b197cc9b-318e-438e-8577-68564a870ea0">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Responsible person</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9f22dc63-315d-49f8-a0fb-f981405a4771">
+    <name>ВОрганизацииВыявленКоронавирус</name>
+    <synonym>
+      <key>ru</key>
+      <value>В организации выявлен коронавирус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Coronavirus detected in the company</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bf05a68e-83c4-4202-b666-ecf6cec73015">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="cf0c6737-a7de-4dc9-9364-f173a975a7f9">
+    <name>ОкончаниеПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period end</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b7f49579-a895-48db-8241-929757c77a12">
+    <name>Комментарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Комментарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Comment</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="82fa9983-408f-4bde-8972-0acd6bcb6f61">
+    <name>СостояниеРеестра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Состояние реестра</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registry status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СостоянияРеестровФСС</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="5eab23d6-a568-486d-8772-9bfd31ab3b5a">
+    <producedTypes>
+      <objectType typeId="0f3d5da1-8c2c-45cb-a148-8573113788b3" valueTypeId="56fb23c3-ddca-4088-83f7-98fbc7a90f90"/>
+      <rowType typeId="9d75860c-0937-467d-80ae-7ef322f2d139" valueTypeId="73fd28a8-078a-415d-b19a-6bccffed9f7f"/>
+    </producedTypes>
+    <name>Сотрудники</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудники</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employees</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0178eefe-aa1c-4a5d-85bd-9463b1688550">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Сотрудники</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ВАрхиве</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="763ba582-52e2-47ea-bf88-80bac3e7adc4">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физическое лицо</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Person</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d974b5cb-f176-4438-886e-7159492c1c4c">
+      <name>СтраховойНомерПФР</name>
+      <synonym>
+        <key>ru</key>
+        <value>СНИЛС</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>IIAN</value>
+      </synonym>
+      <comment>АПК:58</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>14</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Страховой номер ПФР</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>PF insurance number</value>
+      </toolTip>
+      <mask>999-999-999 99</mask>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="480bbd0d-ce56-4531-99d2-47c8478d905f">
+      <name>Фамилия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Фамилия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Last name</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="f3a581d3-2e2f-4ef7-8132-9e6305d548f1">
+      <name>Имя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Name</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="c0131826-a8fd-4869-be26-bbf538bf7738">
+      <name>Отчество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отчество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Patronymic</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>40</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="8693fbc8-d1c5-44db-baf2-0afa357ab4d3">
+      <name>СпособВыплатыПособия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Способ выплаты пособия</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Allowance payment method</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СпособыВыплатыПособия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>2 - банковский счет (карта МИР),
+1 - банковский счет (расчетный счет),
+0 - почтовый перевод</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>2 - current account (MIR card),
+1 - current account (current account),
+0 - postal order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f700c8a1-a313-4a21-b6a5-138144b5dde1">
+      <name>КартаМИР</name>
+      <synonym>
+        <key>ru</key>
+        <value>Карта МИР</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MIR card</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеКартыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <field>DataProcessor.СозданиеРеестровСтимулирующихВыплат.TabularSection.Сотрудники.Attribute.ФизическоеЛицо</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ЭтоНациональныйПлатежныйИнструмент</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ВАрхиве</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1202736d-f01c-4256-9966-db0339651645">
+      <name>ДатаРождения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата рождения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date of birth</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bf65617b-daa5-4e81-ab16-f9ce845fb89d">
+      <name>Должность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Должность</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Job title</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Должности</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="577e8e51-2fd9-4828-a16d-6077d1e95093">
+      <name>КатегорияПолучателя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Категория получателя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Recipient category</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КатегорииПолучателейСтимулирующихВыплатФСС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Отбор.ПолучательСтимулирующихВыплатФСС</name>
+        <field>DataProcessor.СозданиеРеестровСтимулирующихВыплат.Attribute.ВидПособия</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34927c39-6b2b-46a9-a99d-1df454081a7c">
+      <name>ДнейКОплате</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество дней</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Number of days</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="87997da1-c58b-4a30-b189-c1a2cbb72ef8">
+      <name>СменКОплате</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество смен</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Number of shifts</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>3</precision>
+          <scale>1</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="433000e5-14ff-45a7-89d6-4f9c738a8c7f">
+      <name>РайонныйКоэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Районный коэффициент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Regional factor</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fe635d4e-e4e1-463c-b666-461dc79e8853">
+      <name>КомментарийСтрахователя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Комментарий страхователя</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Insurer's comment</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="e8f66bda-f26a-46e1-923f-e4a3b46fc02f">
+      <name>ТерриториальныйКоэффициент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Территориальный коэффициент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Territorial factor</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ТерриторииСПовышающимКоэффициентомПоКоронавирусу</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af10ea5a-6c7a-4e4a-b39c-448ae51f104c">
+      <name>Банк</name>
+      <synonym>
+        <key>ru</key>
+        <value>Банк</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Bank</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КлассификаторБанков</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="774bb019-9e15-4a3b-9cae-33e56aea51e8">
+      <name>НомерЛицевогоСчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер лицевого счета</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Personal account number</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="c37ccafc-8425-41f8-bea5-5cecd2c263aa">
+      <name>ВидЗанятости</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид занятости</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employment kind</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыЗанятости</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Основное место работы или совместительство</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Primary or secondary employment</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="b2dec782-f6db-4ca8-af5a-cc5ded07ee66">
+    <name>РеестрыПоДокументуПереводНаРаботуСКоронавирусом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реестры по документу перевод на работу с коронавирусом</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registers based on document transfer to work with coronavirus</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="cbc9aed7-c709-42db-ba4b-ea7d03fd955e">
+    <name>Реестр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Реестр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registry</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="b5ab5212-126e-4438-99b0-b2528ed3feb8">
+    <name>СоздатьРеестрыПоДокументуПереводНаРаботуСКоронавирусом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать реестры для ФСС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Create registers for SSF</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>DocumentRef.ПереводНаРаботуСКоронавирусом</types>
+    </commandParameterType>
+    <toolTip>
+      <key>ru</key>
+      <value>Создатьреестры стимулирующих выплат ФСС по документу</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Create SSF incentive payments registers based on document</value>
+    </toolTip>
+  </commands>
+</mdclass:DataProcessor>

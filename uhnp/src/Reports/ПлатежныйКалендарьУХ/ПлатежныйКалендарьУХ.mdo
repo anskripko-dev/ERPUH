@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="aecb3479-411a-496f-b24a-48e2aa228215">
+  <producedTypes>
+    <objectType typeId="81018696-c61a-4fcd-89d5-ba3010855c16" valueTypeId="5a335c26-91b1-4b9e-80ac-0334545befd4"/>
+    <managerType typeId="6b048f9e-6e7c-4e1e-a2be-68e92bae5e54" valueTypeId="d1f8b70e-c19e-435a-a172-196dfa14c969"/>
+  </producedTypes>
+  <name>ПлатежныйКалендарьУХ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Платежный календарь</value>
+  </synonym>
+  <comment>(-УХ)</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.ПлатежныйКалендарьУХ.Form.ФормаОтчета</defaultForm>
+  <mainDataCompositionSchema>Report.ПлатежныйКалендарьУХ.Template.ОсновнаяСхемаКомпоновкиДанных</mainDataCompositionSchema>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="e045b353-fb0b-4642-afb9-3ee15c9ed1e0">
+    <name>Пользователь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пользователь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dfecca84-13d7-4e7b-ab0f-c88d265944eb">
+    <name>ПериодОтбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период планирования</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4ae0e75f-811e-4df8-946a-489f45644881">
+    <name>СохраненнаяВерсияПлатежногоКалендаря</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сохраненная версия платежного календаря</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СохраненныеВерсииПлатежногоКалендаря</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0bd33d02-36c7-4e48-8247-baaa49f25195">
+    <name>ВалютаОтображения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта отображения</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9563e860-0145-46c0-8219-7ca16768a671">
+    <name>ВыводитьОстаткиСУчетомОвердрафтов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить остатки с учетом овердрафтов и МНО</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="68eba57a-9d70-4352-8a4a-45f94ea96c91">
+    <name>ОтображатьПоступленияПередСписаниями</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать поступления перед списаниями</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="45d8e62e-a86e-4d30-87db-acc5027f7683">
+    <name>СворачиватьНеуправляемыеСписания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сворачивать неуправляемые списания</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f614689b-83e6-4062-b5a0-78869324b138">
+    <name>СортироватьУправляемыеСписанияПоПриоритету</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировать управляемые списания по приоритету</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1f0cb5c8-59ec-4e33-8a57-9aa0e6eefa96">
+    <name>СортироватьУправляемыеСписанияПоПриоритетуПоУбыванию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировать управляемые списания по приоритету по убыванию</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d52fa88-206e-45e1-b49f-e0a116a00beb">
+    <name>СортироватьУправляемыеСписанияПоСумме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировать управляемые списания по сумме</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a89e647e-cdb5-43bd-a677-fbc0b26f8856">
+    <name>СортироватьУправляемыеСписанияПоСуммеПоУбыванию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сортировать управляемые списания по сумме по убыванию</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2ae24877-e195-4a5b-a877-4b4ff44dceb8">
+    <name>ЧислоДнейОперативногоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Число дней оперативного планирования</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e7b9f200-783d-4021-ac66-3bc789e01dd6">
+    <name>ГлубинаОтображенияПросроченныхПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глубина отображения просроченных платежей</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="60067add-d9a3-4efd-8757-094657190e0d">
+    <name>СценарийСтрессТестированияЛиквидности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий стресс-тестирования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СценарииСтрессТестированияЛиквидности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="79d3df0a-f2c0-4332-8f3b-43ea699efa11">
+    <name>ВыводитьДиаграмму</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить диаграмму</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d517f58-ed8b-4d61-a79c-c200fa0e4545">
+    <name>ВыводитьОбороты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить обороты</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="95af9488-eac4-42c1-908b-f33522d57182">
+    <name>ГоризонтОперативногоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Горизонт оперативного планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="72464567-fea3-4044-a00e-e360fa32ca89">
+    <name>АдресХранилищаТаблицыОстатковИОборотов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища таблицы остатков и оборотов</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d38982c7-0608-4539-b6f0-61d9448326f2">
+    <name>АдресМакетаОформления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес макета оформления</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="314ec56f-2ab9-47c1-b327-f2a9b51c3123">
+    <name>ПроизводственныйКалендарь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производственный календарь</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроизводственныеКалендари</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d3e1e474-52bd-4a4e-a92f-251dd9ef88a6">
+    <name>НачалоОтбораПросроченныхЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало отбора просроченных заявок</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="add4dc33-015f-4305-9b7c-e0a87e8e79db">
+    <name>СтоимостьПереводаМеждуСчетами</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость перевода между счетами</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>18</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dfde9c83-9978-4d7e-8bde-9f916a9a2524">
+    <name>ПроцентКомиссииПриКонвертацииВалюты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процент комиссии при конвертации валюты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="40f7371a-6bf1-4f11-93a9-0c2aa8df6d0d">
+    <name>СущественнаяРазницаСтоимостиКредитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Существенная разница стоимости кредитов</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>18</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="396ecd91-064e-4083-a4f1-f0a869129880">
+    <name>ВыводитьДанныеВВалютеОтображения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить данные в валюте отображения</value>
+    </synonym>
+    <comment>Выводить данные календаря в валюте отображения</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6e98c61e-ab12-47c5-b192-086e64613c72">
+    <name>ГруппировкиОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группировки отчета</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bbef1155-ceb7-4ab7-ad30-1f5c769d02cd">
+    <name>ГоризонтТактическогоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Горизонт тактического планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7bbce0d1-e659-4a79-8006-5db6e1930f48">
+    <name>ПериодичностьОперативногоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность оперативного планирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dec7e4b0-832d-4594-973c-8252bb2404de">
+    <name>ВыводитьТолькоКассовыеРазрывы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить только кассовые разрывы</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Выводить в платежном календаре только дни с кассовыми разрывами</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d57bb5de-5820-43ed-bf31-1cda2fe72d59">
+    <name>ВариантПлатежногоКалендаря</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыПлатежногоКалендаря</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a27d8e5f-4e4a-466d-8eed-a32aa9a81e17">
+    <name>ИсточникВходящихОстатков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Входящие остатки</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="03d80550-e92a-42ee-a58a-2f209d64a164">
+    <name>ИсточникСобытияФормированияОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источник события формирования отчета</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7c9026e1-cbd9-426d-859d-bb160681b622">
+    <name>РежимВыводаОборотов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим вывода оборотов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыВыводаОборотовПлатежногоКалендаря</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="807d91fa-6ab0-44bf-b7d6-da118874d93a">
+    <name>ГлубинаАнализаЭкстраполяцииДенежныхПотоков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Глубина анализа экстраполяции денежных потоков</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="79f8450a-2656-48b9-8541-399765b6b564">
+    <name>КоличествоПериодовДолгосрочногоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Горизонт долгосрочного планирования</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c890b1c2-eaa4-41b8-a34b-a084d860f00f">
+    <name>ГоризонтДолгосрочногоПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Горизонт долгосрочного планирования</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f054434c-95dd-457f-a718-2d7745240fec">
+    <name>ВыводитьДополнительныеСведения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выводить дополнительные сведения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="206d52ef-ca24-444b-bf93-dd4bbd00b139">
+    <name>ДополнительныеСведения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительные сведения</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5c127901-1770-47d1-9902-0cb445ddd2da">
+    <name>АдресХранилищаДанныхДоговоров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Адрес хранилища данных договоров</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d004315c-7f88-44a9-a903-f5fd2e93e995">
+    <name>ФиксироватьДополнительныеСведения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фиксировать дополнительные сведения</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dc9b0a00-eb4f-4d50-942e-2008d917782b">
+    <name>ИспользоватьДоверительныеКоэффициентыПриПланированииПоступлений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать доверительные коэффициенты при планировании поступлений</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c3feebe6-8eb2-49dd-b278-f282ba96c745">
+    <name>ЭтоБазоваяФункциональность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Это базовая функциональность</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="9f10eea5-a7fd-4f61-b336-00ea0f3db956">
+    <producedTypes>
+      <objectType typeId="43e27b44-a6fd-465d-af41-fb3224ae8592" valueTypeId="d2f971c2-7fe5-4d7a-b842-0fce0e76a871"/>
+      <rowType typeId="9de44771-5d51-4c87-a940-ce276e758cd3" valueTypeId="006459b8-585b-4d25-a273-e0a333b7a2d5"/>
+    </producedTypes>
+    <name>ПлановыеКурсы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Плановые курсы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="fed09f4d-511e-42ac-8f95-ff8bee111a7b">
+      <name>Период</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ee7f06ca-7977-436b-bf34-2a5b4cf4408e">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3f61e945-c13d-4fa7-b5ed-98286b1654f9">
+      <name>Курс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Курс</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>4</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e35c2ed-e40d-4d1f-af5e-2cb424365ebf">
+      <name>Кратность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Кратность</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4797fab9-293f-4522-ad25-c3f0944a84b0">
+    <producedTypes>
+      <objectType typeId="7cbd665a-19ab-4c00-9217-da9cf5da2077" valueTypeId="e54b9d22-ddb9-4b69-83ea-6113fcb4bdcd"/>
+      <rowType typeId="25a48efa-3c1a-4b7e-94b5-9aca360cb444" valueTypeId="8a5b2ac5-1af2-4eeb-92ff-d8b77ba8ff93"/>
+    </producedTypes>
+    <name>МатрицаВесовЛиквидности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Матрица весов ликвидности</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="8d448adc-aff1-4d12-9743-293b088a7ce0">
+      <name>Источник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Источник</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ИсточникиДанныхПлатежногоКалендаря</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a74d8129-60e4-4d0b-b1d8-378f29677128">
+      <name>ПриходРасход</name>
+      <synonym>
+        <key>ru</key>
+        <value>Приход расход</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидыДвиженийПриходРасход</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2c2b9ada-0a6c-45f0-9977-eb4122f744a7">
+      <name>ГоризонтПланированияЛиквидности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Горизонт планирования ликвидности</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ГоризонтыПланированияЛиквидности</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9acd6dd7-51f1-44c9-a321-aeacf60c707a">
+      <name>Вес</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вес</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ВесИсточникаДанныхПлатежногоКалендаря</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e7163e35-6368-42d4-894a-4eb5034e4556">
+    <producedTypes>
+      <objectType typeId="529c37db-3403-410a-9a45-8e98cc93c049" valueTypeId="be637420-228c-4b68-b115-e42aca8bf9a3"/>
+      <rowType typeId="17bf2aa4-a442-4593-ba41-8007895b2fbd" valueTypeId="06f9a970-3c9c-48da-be4e-4133eae64b20"/>
+    </producedTypes>
+    <name>НастройкаВариантовОптимизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка вариантов оптимизации</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="0945da32-2b11-42d7-9c63-cb7cdc7bcd98">
+      <name>ВариантОптимизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вариант оптимизации</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВариантыОптимизацииПлатежногоКалендаря</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9cebfcca-1ae7-4323-8c6f-6e1d597d8304">
+      <name>Используется</name>
+      <synonym>
+        <key>ru</key>
+        <value>Используется</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="bdf1dc0d-176d-4190-91c4-077089d674b0">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="79968079-5472-40f3-b052-5abd79342e90">
+    <name>ФормаПереводаКонверсии</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перевод/конвертация собственных средств</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1c874764-76d8-4046-8d57-2c5f6efb944d">
+    <name>ФормаПодбораФинансовыхИнструментов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма подбора финансовых инструментов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c0e9d21d-143d-4da7-8f00-e2b952b8703f">
+    <name>ФормаРазделенияОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Разделение операции</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="4ecb40a6-00de-495d-8294-f2d554ca68bd">
+    <name>ФормаРазмещенияЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Размещение на счете</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="a2178294-52ed-4f82-be80-2abbc6609be7">
+    <name>ФормаНастройкаДетализации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка детализации оборотов</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="106a6bab-7af5-4197-93bd-57c6b3528bc1">
+    <name>ФормаПоискаЗаявок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поиск заявки</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="e702b195-731c-4780-8436-021a7f83438f">
+    <name>ФормаПереходаКЯчейкамОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма перехода к ячейкам операции</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="10561801-9920-47e1-8f3b-44d8bc6ac70a">
+    <name>ФормаНастройкиГруппировок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки группировок</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="84355155-ce98-4e1a-ba1c-a147aa08b106">
+    <name>ФормаМоделированиеОстановкиПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Моделирование остановки платежей</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ce15e8a6-4acf-4060-80c5-91dd5a960470">
+    <name>ФормаПогашенияКредита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашение кредита</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="505b7c55-d428-47d1-b451-a9a159b83447">
+    <name>ФормаВыбораИсточниковДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Источники данных платежного календаря</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="68135f9c-d92f-4645-a303-801375cad11b">
+    <name>ФормаСозданияРеестровПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создание реестров платежей</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bee2c39e-82fd-4847-bae8-2ac36d1baf65">
+    <name>ФормаПросмотраПротоколаИзменений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операции перераспределения, размещения и привлечения ликвидности</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8a1be891-1f28-4352-8b61-d74855f109ad">
+    <name>ФормаНастроекДополнительныхСведений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки дополнительных сведений</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f489e2aa-9e55-4ef3-bba0-5c7dd6d5451f">
+    <name>ФормаПросмотраДополнительныхСведений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дополнительные сведения</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="fed636a3-215b-4fca-a189-342e56669e6e">
+    <name>ОсновнаяСхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="81f2a043-6803-40af-8df4-2f2ee090b944">
+    <name>МакетОформления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет оформления</value>
+    </synonym>
+    <templateType>DataCompositionAppearanceTemplate</templateType>
+  </templates>
+  <templates uuid="d3fe5c71-f7bb-4506-9ab1-90acfa8fc286">
+    <name>ОстановкаПлатежей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Остановка платежей</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="4c2a0928-da52-4ba2-a9ac-99fc1a2fe71e">
+    <name>ПлатежныйКалендарь</name>
+    <synonym>
+      <key>ru</key>
+      <value>Платежный календарь</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

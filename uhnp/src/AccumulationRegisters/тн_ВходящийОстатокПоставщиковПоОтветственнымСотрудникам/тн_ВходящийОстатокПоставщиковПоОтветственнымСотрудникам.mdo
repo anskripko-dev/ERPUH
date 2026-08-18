@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3a7fe727-cbb5-481d-94dd-629e5232f33e">
+  <producedTypes>
+    <selectionType typeId="2e45d0e6-1b55-49c9-8ec2-d065896820f2" valueTypeId="d6729b41-3f22-4beb-87b6-fc235f1f35bc"/>
+    <listType typeId="de9f8923-11e0-45a9-9a19-11d4a98efa83" valueTypeId="0ea94700-3858-43e4-8ba8-8303105c18c2"/>
+    <managerType typeId="26ee5936-ab35-4bf8-b4f4-537325bab9d5" valueTypeId="a02e116f-58b2-47ec-8827-22d64f42cb7b"/>
+    <recordSetType typeId="d8406c4d-4066-434c-aac9-22e4feb61364" valueTypeId="54b34d2f-0138-4b99-9c81-d2837fdf6d02"/>
+    <recordKeyType typeId="ae5cdf2e-1a0c-4d91-b89c-30e88b5870c2" valueTypeId="bb75443d-ea97-45a5-bcb4-47cb3e54da26"/>
+    <recordType typeId="a7123298-0dea-41e0-9258-effe9dfff4a1" valueTypeId="3bb728b1-0768-4cb2-bd6e-33577e6c6f48"/>
+  </producedTypes>
+  <name>тн_ВходящийОстатокПоставщиковПоОтветственнымСотрудникам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Входящий остаток поставщиков по ответственным сотрудникам (тн)</value>
+  </synonym>
+  <comment>// Гутарова Екатерина 10.01.2024 Выполнение задач №000048065</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Входящий остаток поставщиков по ответственным сотрудникам</value>
+  </listPresentation>
+  <resources uuid="60bea977-3ce8-4fcf-8c3b-a8ad5c659b43">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Total document amount</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="1d2fab2d-8269-4c23-92cb-5cfa266ad369">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Enterprise company on whose behalf a sales document is created</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="84773ec7-d595-4b40-a259-6e2819f49147">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Counterparty to whom goods and services are sold.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="88473370-ead5-4933-a356-af7883abadae">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Contract under which the sale is documented</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="830187e3-1e0e-4e29-8c08-55cd23caccc0">
+    <name>ОсновнойДокументОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основной документ оплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Warehouse</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.СписаниеБезналичныхДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>en</key>
+      <value>Origin warehouse</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="73374594-6ed0-4c63-a1aa-00938a0d023c">
+    <name>ОтветственныйСотрудник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный сотрудник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

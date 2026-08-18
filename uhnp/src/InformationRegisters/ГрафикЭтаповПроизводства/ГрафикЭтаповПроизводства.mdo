@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ffe12791-a097-4984-9ac9-abc065728b59">
+  <producedTypes>
+    <selectionType typeId="41ee9fa5-fe7e-4bc7-865e-8f59c4d94ef2" valueTypeId="b9fb3496-e55b-4e9e-8fe6-aad2a44d6fa2"/>
+    <listType typeId="0e8a7107-955c-4ac7-8c04-3539c75ac159" valueTypeId="474564f5-16dc-4c43-a2a8-950705e831ba"/>
+    <managerType typeId="d18085c8-9a0a-499c-94e6-149b31baf7a4" valueTypeId="006c950a-302f-4457-9030-d83596828144"/>
+    <recordSetType typeId="3c9f6d92-ced6-4446-b515-49f7860b3b58" valueTypeId="f4ca9f0c-dc72-42ff-8f49-d418e41a9f9c"/>
+    <recordKeyType typeId="83a4505b-8252-4878-b16c-be2d13812885" valueTypeId="b68135cd-d950-4e2a-be4e-82bb23ff051d"/>
+    <recordType typeId="fd6227b7-1dc0-4858-97c1-0e517f7b3fe7" valueTypeId="72790c80-8f4b-445b-be05-7ea563847c94"/>
+    <recordManagerType typeId="f858b75f-9cf7-4d1c-b133-f5dbbebee7d0" valueTypeId="616433d2-c89a-437b-a99f-252ce7aa3d59"/>
+  </producedTypes>
+  <name>ГрафикЭтаповПроизводства</name>
+  <synonym>
+    <key>ru</key>
+    <value>График этапов производства</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Production stage schedule</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.ГрафикЭтаповПроизводства.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4ecc3990-34cc-43de-82ab-281a33092895">
+    <name>Запланировано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество этапов (запланировано)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of stages (planned)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сколько осталось запланировать.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of stages to plan</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="ee23b883-8570-4829-872d-1ad64233916d">
+    <name>КВыполнению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К выполнению</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ready for fulfillment</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сколько осталось выполнить.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of stages to execute</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="e5566119-3576-4893-8190-071f5fb3fe0f">
+    <name>ТребуетсяПерепланировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Требуется перепланировать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Replanning is required</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак, что этап требуется перепланировать</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Shows that the stage should be replanned</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2d83a4f9-9d8b-4725-ab8d-11ed7432743b">
+    <name>НачалоЭтапа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало этапа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата начала этапа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Stage start date</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4ce38123-1f03-42a8-9edf-d4cf62b19715">
+    <name>ПроизводствоНаСтороне</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производство на стороне</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production by third party</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак того что этап выполняется силами сторонней организации</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Indicates that a step is performed by a third party</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="201692f1-695c-402e-be55-246ccdbbac71">
+    <name>Распоряжение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распоряжение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ на производство</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Production order</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7cbb72d3-82d8-4268-be87-5b22b7bfd70c">
+    <name>КодСтрокиПродукция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (продукция)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (manufactured products)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Код строки продукции в Заказе на производство</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Product line code in production order</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="985f2d61-ce4f-425e-aa37-b6fe39c1778d">
+    <name>КодСтрокиЭтапыГрафик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (график выполнения этапов)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (stage execution schedule)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Код строки этапа графика в Заказе на производство</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Line code of the schedule stage in the production order</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3c1af5ac-85fa-41c2-835f-3dce2be233d6">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыПроизводства</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Этап спецификации, указанный в Заказе на производство</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>BOM step specified in the production order</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="873ca4d9-cf73-4e0f-83fa-0e57e21392cd">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение в котором выполняется работа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit in which the work is carried out</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="feed7371-aa18-4c6f-926b-34493db8008e">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>
