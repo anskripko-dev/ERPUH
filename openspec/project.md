@@ -28,11 +28,13 @@ Code paths (EDT):
 
 - **БСП / SSL** (patterns, module structure, API style): `C:\Projects\SSL`
 - **1C development standards**: `C:\Projects\Instructions\стандарты-разработки-1с.md`
-- Other instructions in `C:\Projects\Instructions\` (СКД, внешние обработки, и т.д.) as needed
+- Other instructions in `C:\Projects\Instructions\` (СКД и т.д.) as needed
+- **Внешние обработки (не ПФ)**: `Instructions/внешние-обработки.md` + шаблон `ExternalDataProcessors/_Шаблон_ВнешняяОбработка`
 
 ## This workspace (`C:\Projects\ERPUH`)
 
 - OpenSpec planning home: specs, changes, Cursor commands/skills
+- External processors / print forms sources: `ExternalDataProcessors/`
 - Does **not** contain the full UH configuration dump — code lives under `C:\EDTProjects\uh_np`
 
 ## Notes for AI Agents
