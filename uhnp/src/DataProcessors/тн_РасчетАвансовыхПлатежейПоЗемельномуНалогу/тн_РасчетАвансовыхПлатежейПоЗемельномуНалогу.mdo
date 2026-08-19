@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4841c0db-9fb1-4882-b474-e9fc795205ca">
+  <producedTypes>
+    <objectType typeId="141ac6f2-41f0-474b-8a17-7864e12e8d74" valueTypeId="3e5c6bfe-76bc-43cd-8722-88032214ceab"/>
+    <managerType typeId="3d882ec9-8cfe-4ca8-ada1-bc9ad07e7fd1" valueTypeId="913f66fa-f129-4346-828a-a1787f18e574"/>
+  </producedTypes>
+  <name>тн_РасчетАвансовыхПлатежейПоЗемельномуНалогу</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет авансовых платежей по земельному налогу (тн)</value>
+  </synonym>
+  <comment>//Блинова М.А. 21.10.2024 Выполнение задач №000051247</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_РасчетАвансовыхПлатежейПоЗемельномуНалогу.Form.Форма</defaultForm>
+  <attributes uuid="3cd706e2-e7e5-4242-a888-7aa9e09f280c">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7bc63537-4479-478c-9c34-de6fdb4d6fc0">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f07aec0c-ee8c-4999-92a6-d8e7743b848c">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="404dbea5-536e-4d1a-936d-9f7a1f1ef3f1">
+    <producedTypes>
+      <objectType typeId="723427f4-c36d-403a-a69a-08e90c655357" valueTypeId="3128b052-2013-4fec-9ec2-42226e7e3b47"/>
+      <rowType typeId="3821276f-275a-4480-bdbd-794c0b2cd3be" valueTypeId="0a8c3aac-bed0-4835-aff0-a1db28553df1"/>
+    </producedTypes>
+    <name>АвансовыеПлатежи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Авансовые платежи</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="cd101420-2ea1-48fd-a5e1-04c791d6df41">
+      <name>КодПоОКАТО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ОКТМО (ОКАТО)</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="cc0a52f5-a519-45c5-bdbf-6808b4afaba3">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="39a8c19f-f21c-4558-b979-2c96ecbc1711">
+    <producedTypes>
+      <objectType typeId="4d503244-8898-4898-aef2-e5af1aff1525" valueTypeId="cbf4db98-a3b6-4257-bf62-3a5433c3021a"/>
+      <rowType typeId="e0ed146a-7387-4c3c-8b58-823e713e40bc" valueTypeId="d71a87d0-1718-4102-8e5e-a454661d5591"/>
+    </producedTypes>
+    <name>ЗемельныеУчастки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Земельные участки</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="23870d98-bd19-4474-bba2-b3db155adbff">
+      <name>КодКатегорииЗемель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код категории земель</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>12</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5c7becfd-3907-4d88-b448-488f6c8879d0">
+      <name>КадастровыйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Кадастровый номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="55cd74a9-0314-4204-8b92-5af16fcb5753">
+      <name>КадастроваяСтоимость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Кадастровая стоимость</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0fc4e5f8-bdc3-4706-b6b7-fda003a106aa">
+      <name>ОбщаяСобственность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Участок находится в общей долевой (совместной) собственности</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f51f3b96-46e5-4121-8390-faeadbfbad19">
+      <name>ДоляВПравеОбщейСобственностиЧислитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля в праве общей собственности (числитель)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:NumberValue">
+        <value>1</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="4541f100-c779-4fa3-a341-ac3fd8077a0a">
+      <name>ДоляВПравеОбщейСобственностиЗнаменатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля в праве общей собственности (знаменатель)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:NumberValue">
+        <value>1</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="a8583ddd-d941-4726-ad5d-989f0134fd3a">
+      <name>ЖилищноеСтроительство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Жилищное строительство</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e3f6486-a83a-4727-80ed-fab7878c018c">
+      <name>ДатаНачалаПроектирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала проектирования</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="203b3a44-36ff-4423-99cb-350d43fc743d">
+      <name>ДатаРегистрацииПравНаОбъектНедвижимости</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата регистрации прав на объект недвижимости</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="742f5953-28c2-45e0-a1e8-3dd670508016">
+      <name>КодПоОКАТО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ОКТМО (ОКАТО)</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>11</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0c15c7f3-5536-4f0c-abd6-e2f2a5dd6dc0">
+      <name>КБК</name>
+      <synonym>
+        <key>ru</key>
+        <value>КБК</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>20</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c26d0890-729f-4a5d-a5b9-3ced452d3135">
+      <name>НалоговаяСтавка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговая ставка</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6d285760-1813-4643-9d8b-bd93ed9db4fa">
+      <name>НалоговаяЛьготаПоНалоговойБазе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговая льгота по налоговой базе</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ВидНалоговойЛьготыПоНалоговойБазеПоЗемельномуНалогуДо2020</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f655e4e3-e9c6-40fc-b188-d3931a774b2c">
+      <name>КодНалоговойЛьготыОсвобождениеОтНалогообложенияПоСтатье395</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код налоговой льготы (освобождение от налогообложения на федеральном уровне) </value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="572e80be-fe7a-48f9-9451-63ed45de0ddc">
+      <name>КодНалоговойЛьготыУменьшениеНалоговойБазыПоСтатье391</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код налоговой льготы (не облагаемая налогом сумма на федеральном уровне)</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>7</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8fc77daa-28fc-44dc-a32a-77b3d7561caa">
+      <name>УменьшениеНалоговойБазыПоСтатье391</name>
+      <synonym>
+        <key>ru</key>
+        <value>Уменьшение налоговой базы по статье391</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6d3a5e1e-313b-4000-a4f0-056d6205985d">
+      <name>УменьшениеНалоговойБазыНаСумму</name>
+      <synonym>
+        <key>ru</key>
+        <value>Уменьшение налоговой базы на сумму</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="40dc6138-a3fe-435d-a8a5-477be041ecee">
+      <name>ДоляНеОблагаемойНалогомПлощадиЧислитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля не облагаемой налогом площади (числитель)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="15ddb8f4-0534-4982-8c73-a1c88a1d8881">
+      <name>ДоляНеОблагаемойНалогомПлощадиЗнаменатель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Доля не облагаемой налогом площади (знаменатель)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2a2a3b22-e8f6-42dd-83ad-ef4d980fa3b4">
+      <name>НеОблагаемаяНалогомСумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Не облагаемая налогом сумма</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="65728bce-4625-4ece-a6ad-e8e023f15f4b">
+      <name>СниженнаяНалоговаяСтавка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сниженная налоговая ставка</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="79ae2960-f15a-439c-9d1f-a6404713b510">
+      <name>ПроцентУменьшенияСуммыНалога</name>
+      <synonym>
+        <key>ru</key>
+        <value>Процент уменьшения суммы налога</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>7</precision>
+          <scale>4</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cbffa7c0-18dd-442a-a391-a51688b8c21a">
+      <name>СуммаУменьшенияСуммыНалога</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма уменьшения суммы налога</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="51b0da0f-fabd-433a-b4b3-7f0915cfe2be">
+      <name>НалоговаяБаза</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговая база</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bd1b6946-177f-4c30-b607-4783c7326e75">
+      <name>СуммаНалога</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма налога</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="98d9a355-4361-48cc-ba67-661334722695">
+      <name>СуммаНалогаКуплате</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма налога к уплате</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d040927b-cfac-4ea4-9982-8643836b00c2">
+      <name>ТекстНалоговойЛьготы</name>
+      <synonym>
+        <key>ru</key>
+        <value>Текст налоговой льготы</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>250</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="5798f67c-094a-4c06-aab6-69c587d46191">
+      <name>КоличествоМесяцевВладения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество месяцев владения</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="868ecfcc-95dd-4f8b-8537-47b79d31b461">
+      <name>КоличествоМесяцевПримененияЛьготы</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество месяцев применения льготы</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>5</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9c361184-4a89-4201-8a14-df72b90e901a">
+      <name>ПериодСтроительства</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период строительства</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bdd68aa8-c76e-428d-9a59-e7a1f1138217">
+      <name>ДатаРегистрации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата регистрации</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f12f7d06-48fe-4c9f-bd32-39a6b3b9a8f4">
+      <name>ДатаСнятияСУчета</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата снятия с учета</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b9f7c99c-8dbe-4638-98de-309609064c05">
+      <name>ДатаСведений</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата сведений</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d5495a27-de88-400c-b56d-2dd677ba6fb2">
+      <name>ОснованиеЛьготыПоНалоговойБазе</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основание льготы по налоговой базе</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОснованияЛьготПоИмущественнымНалогам</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="59151f83-9c56-47fe-a88d-18ca3a1d8698">
+      <name>НалоговыйОрган</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налоговый орган</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="cee4dadd-eda8-4fc0-94d9-d360c5a0cb81">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="fbc6fbe6-b75e-4d4c-8125-94c16bfc977f">
+    <name>Списки2011Кв1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Списки2011 кв1</value>
+    </synonym>
+  </templates>
+  <templates uuid="1f71bf76-d70e-4eef-8f39-206382d91ce2">
+    <name>СправкаРасчетТН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Справка расчет ТН</value>
+    </synonym>
+  </templates>
+  <templates uuid="b299d2bc-b0c3-484f-878e-55c0b9ca77cd">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

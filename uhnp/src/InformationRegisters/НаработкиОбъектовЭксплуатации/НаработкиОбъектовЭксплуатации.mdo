@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="6a8a90d0-fe11-4e3d-b58c-bd6e700db9d8">
+  <producedTypes>
+    <selectionType typeId="1d0f90bb-1cae-42d8-a986-59fec124a5ce" valueTypeId="2d28dc1a-2ce0-481a-9552-38f978fba523"/>
+    <listType typeId="8207e650-ed18-4543-97a9-803923aadd3a" valueTypeId="8be60e2d-57e5-4aec-92eb-54bd7a148347"/>
+    <managerType typeId="f8fc0b2f-9bda-4d8f-bd70-2882eec9b76f" valueTypeId="8fe5d234-7bf4-46b1-81b4-af00c032e4b8"/>
+    <recordSetType typeId="108121d5-64cb-4316-bd6e-9f6e6ae7f0e6" valueTypeId="5e90f55a-f992-496f-9bb0-24ee0e126e3d"/>
+    <recordKeyType typeId="2e37ed4b-83aa-480f-819c-6d68b62c8d3c" valueTypeId="d68340fe-2d79-4855-950c-ead0c561695a"/>
+    <recordType typeId="8ac42e4f-5ba0-4ab9-8db9-593378a21c70" valueTypeId="03d08646-abe9-4ee9-b5da-7d27fc7ab814"/>
+    <recordManagerType typeId="6b530b60-b7e2-465d-adb1-3ff2ff8a4224" valueTypeId="be25b73b-551d-4e02-bb27-01a44558ffae"/>
+  </producedTypes>
+  <name>НаработкиОбъектовЭксплуатации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Наработки объектов эксплуатации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Asset activity record register</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="cbd75138-8669-4ab4-b259-a032ba34216a">
+    <name>Значение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Value</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение показателя наработки</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Asset activity value</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="01a24d53-9f7b-4d72-b7b6-8baebc897c07">
+    <name>СреднесуточноеЗначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Среднесуточное значение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Average daily value</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Среднесуточное значение показателя наработки</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Average daily asset activity value</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="4c7d4ea4-ed66-4dc8-b968-37014ef0824a">
+    <name>КорректировочнаяЗапись</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировочная запись</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Corrective entry</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="232e2252-e635-420b-aaca-e16a8fb1bc04">
+    <name>ОбъектЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ОбъектыЭксплуатации</types>
+      <types>CatalogRef.УзлыОбъектовЭксплуатации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект эксплуатации, для которого регистрируется значение наработки</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Asset for which the running time value is being registered</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="a800eed4-57f1-470f-b55e-d8d392a0323f">
+    <name>ПоказательНаработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показатель наработки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset activity measure</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоказателиНаработки</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Показатель наработки объекта эксплуатации</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Asset activity measure</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <commands uuid="f905c167-ae7b-4a56-9527-4d6a090b8c26">
+    <name>Наработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наработки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset activity</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.ОбъектыЭксплуатации</types>
+      <types>CatalogRef.УзлыОбъектовЭксплуатации</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="386260d0-bb2a-4794-8346-d7ef91ba13f0">
+  <producedTypes>
+    <selectionType typeId="0dd17ca4-1097-4038-a817-8830251627ce" valueTypeId="8b86a676-4764-437e-8d82-cc26cecd9197"/>
+    <listType typeId="e234d49a-f7b7-474c-899f-e846f93b0b8c" valueTypeId="e2dc521f-cb3e-4856-8f3e-cf47376c6462"/>
+    <managerType typeId="d9460401-ddc8-4f93-aff1-40a560a8c76f" valueTypeId="6acd4b61-839e-4444-b32b-66e67bb56225"/>
+    <recordSetType typeId="35c2137f-9a28-4f71-b513-d41f61aa55d6" valueTypeId="5e8a0d41-e096-42d8-a808-fffaa1d0bfad"/>
+    <recordKeyType typeId="57d7eb01-346a-4707-bad4-a5278f2a855a" valueTypeId="003bac78-3261-4d86-a781-17949cb1868f"/>
+    <recordType typeId="775af11a-49b9-427e-82de-12c7847b0c21" valueTypeId="4e7dc4a8-c38a-4852-8a31-8bf7111d2d40"/>
+  </producedTypes>
+  <name>тн_РасходыПоГосударственнымКонтрактам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расходы по государственным контрактам (тн)</value>
+  </synonym>
+  <comment>//Ведутенко С.А. от 13.12.2023 Выполнение задач №000047803</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Расходы по государственным контрактам</value>
+  </listPresentation>
+  <resources uuid="9f7bf96d-ed3f-43ed-81ff-88a3128650d6">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="0e12edf5-5d90-465e-9128-c306e83c0dff">
+    <name>ГосударственныйКонтракт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Государственный контракт</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГосударственныеКонтракты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a7bca3c4-a014-4503-a663-db69aadd7c6d">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ВерсияСоглашения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d0257525-227a-43a5-baf7-e7ecd19983d0">
+    <name>ИдентификационныйКодЗакупки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификационный код закупки</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.тн_ИдентификационныеКодыЗакупок</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="419381de-e6a3-4342-9107-8be845288c2d">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

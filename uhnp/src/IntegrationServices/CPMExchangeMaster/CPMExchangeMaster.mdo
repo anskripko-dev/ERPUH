@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:IntegrationService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="864431ad-95a7-466c-9372-a5160b7953c7">
+  <producedTypes>
+    <managerType typeId="133e3a05-8f9c-481a-9d4d-8e3683050f1d" valueTypeId="1b9e01ac-6226-49e5-ac25-8a836140e849"/>
+  </producedTypes>
+  <name>CPMExchangeMaster</name>
+  <synonym>
+    <key>ru</key>
+    <value>CPMExchange master</value>
+  </synonym>
+  <externalIntegrationServiceAddress>http://127.0.0.1:9090/applications/CPM-Exchange</externalIntegrationServiceAddress>
+  <integrationServiceChannels uuid="b9452382-1745-4d54-9f4b-51e5b94780c8">
+    <producedTypes>
+      <managerType typeId="4b6e53d1-30ea-4074-9260-39b5bcef77f6" valueTypeId="d939ccc5-4b0e-4d27-a4e2-feec46c42f0e"/>
+    </producedTypes>
+    <name>CPM_Data_Exchange_To_CPM</name>
+    <synonym>
+      <key>ru</key>
+      <value>CPM data exchange to CPM</value>
+    </synonym>
+    <externalIntegrationServiceChannelName>Основной::CPM_Data_Exchange.To_CPM</externalIntegrationServiceChannelName>
+    <messageDirection>Receive</messageDirection>
+    <receiveMessageProcessing>CPM_Data_Exchange_To_CPMОбработкаПолученияСообщения</receiveMessageProcessing>
+    <transactioned>true</transactioned>
+  </integrationServiceChannels>
+  <integrationServiceChannels uuid="f5c5bf9b-2138-4cb3-aebf-3baafa496203">
+    <producedTypes>
+      <managerType typeId="8343d81d-1893-4041-81da-66ea9c8f9343" valueTypeId="e5a8c53d-24c7-4c9a-b11f-8f9d633ebb95"/>
+    </producedTypes>
+    <name>CPM_Data_Exchange_From_CPM</name>
+    <synonym>
+      <key>ru</key>
+      <value>CPM data exchange from CPM</value>
+    </synonym>
+    <externalIntegrationServiceChannelName>Основной::CPM_Data_Exchange.From_CPM</externalIntegrationServiceChannelName>
+    <transactioned>true</transactioned>
+  </integrationServiceChannels>
+</mdclass:IntegrationService>

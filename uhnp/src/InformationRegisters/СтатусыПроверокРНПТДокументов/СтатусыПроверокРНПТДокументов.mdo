@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e05bea1f-578d-4f11-9191-62630a3751fb">
+  <producedTypes>
+    <selectionType typeId="0dd205a8-16ac-44e6-8418-3c111b2c56ce" valueTypeId="e661c199-30ce-4cef-9f5a-30dac81c4742"/>
+    <listType typeId="29c66396-7101-41bf-b23e-0c4d26379949" valueTypeId="80f59f0f-5f38-4f3e-a041-61d9ae71837b"/>
+    <managerType typeId="f8981153-2809-4c73-8068-108eda5eeb3a" valueTypeId="e153cf24-602c-481e-bc7a-beac6c22c6e0"/>
+    <recordSetType typeId="883314c1-3e33-4fb1-aae5-ba30aeca1a34" valueTypeId="9514ada3-dba8-4e0d-8fd6-f7052eee0a95"/>
+    <recordKeyType typeId="59aa38a9-b569-4080-9d94-d522ae83d801" valueTypeId="543fae2e-07fa-43b2-8b3f-b115407325a3"/>
+    <recordType typeId="9b270e50-5837-42a8-b59a-72fc2c1c8d6f" valueTypeId="a249402a-f098-416a-8e85-deeadef210d6"/>
+    <recordManagerType typeId="47ba1dfa-5d83-4e0c-97e8-bf755bb427a3" valueTypeId="e2610889-f549-460b-9178-1e01bbe73236"/>
+  </producedTypes>
+  <name>СтатусыПроверокРНПТДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы проверок РНПТ документов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Document RNPT check statuses</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="677146ea-ee87-4136-bd30-072c07198b23">
+    <name>СтатусПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус проверки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Integrity check status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПроверкиРНПТ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="978bd0af-c3ed-4f7c-b9f6-e811f606e3f7">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Error details</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <dimensions uuid="b8c1bbaf-2ae0-480c-bfd2-68bdbf6c8024">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b93856ac-ad52-4aa3-9b3e-371f48e04b65">
+    <name>Документ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="811733e3-e322-485b-add1-c9b8cd7b9bab">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty</value>
+    </synonym>
+    <type>
+      <types>DefinedType.КонтрагентПрослеживаемость</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

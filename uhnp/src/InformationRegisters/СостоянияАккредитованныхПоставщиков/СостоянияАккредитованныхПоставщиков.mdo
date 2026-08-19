@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="67d4ac41-baa0-405c-9e87-7775d20f3a26">
+  <producedTypes>
+    <selectionType typeId="3e72d66a-ba9e-4555-ac03-dc84c1ce53ff" valueTypeId="1ff2885b-f95f-489a-ad70-73b434aabf00"/>
+    <listType typeId="dbea61ef-9578-45a5-905d-366a631936eb" valueTypeId="10518c92-336d-4607-a560-257f94127919"/>
+    <managerType typeId="d4d9de82-4e9a-492f-8508-29f035f09b1b" valueTypeId="6b9b8cfa-4a34-4df3-bad3-befddba54541"/>
+    <recordSetType typeId="fbb1ac85-3ca0-4539-b8e8-b36f63557879" valueTypeId="a6d9c5b2-f3f1-4b23-9ea8-b46b0faabea8"/>
+    <recordKeyType typeId="01f073f3-3d16-4922-a48b-4e2e8a124ac7" valueTypeId="becda9bb-811f-4bca-ae07-90f941f3acb1"/>
+    <recordType typeId="0a2ce326-ac5a-4ae9-b080-f8d745887a71" valueTypeId="90619efe-3306-491d-80b0-e4254d2bdc65"/>
+    <recordManagerType typeId="e62d9dc6-9519-42f8-af75-c9582a212802" valueTypeId="7c07ac2e-2f37-44c6-bc5e-8d927b481930"/>
+  </producedTypes>
+  <name>СостоянияАккредитованныхПоставщиков</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояния аккредитованных поставщиков</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Представление состояния аккредитации для отображения в форма. Пустая Организация позволяет узнать общее состояние поставщика. В этом случае, поставщик считается аккредитованным, если он аккредитован хотя бы по одной организации.</value>
+  </explanation>
+  <resources uuid="51b8380f-4fcf-4e5b-85d7-4c74d9cf45d5">
+    <name>Аккредитован</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аккредитован</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9f67b6b6-15fb-450e-86d1-b37ae9defc41">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания срока действия</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если аккредитован, то показывает до какой даты действует аккредитация. Иначе содержит дату периода записи.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6cedbfab-5910-4c28-8449-0d38da3733b5">
+    <name>АнкетаПоставщика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Анкета поставщика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.АнкетыПоставщиков</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

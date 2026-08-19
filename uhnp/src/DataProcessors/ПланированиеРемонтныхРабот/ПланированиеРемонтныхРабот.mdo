@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="00f87c77-862a-4fd8-b7cf-ba9cd9440227">
+  <producedTypes>
+    <objectType typeId="d2d8b5f2-ec17-43d4-a836-3a0a8bc3800b" valueTypeId="443823f1-9b5a-4419-81a7-33539082fcc0"/>
+    <managerType typeId="d66a30ce-038e-4b0f-b2d7-73b9a5e7e1f6" valueTypeId="b8399a13-b457-427c-90e8-2d8b555913a8"/>
+  </producedTypes>
+  <name>ПланированиеРемонтныхРабот</name>
+  <synonym>
+    <key>ru</key>
+    <value>Планирование ремонтных работ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Create planned R&amp;M orders</value>
+  </synonym>
+  <defaultForm>DataProcessor.ПланированиеРемонтныхРабот.Form.ФормаОбработки</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="6f884af2-2fe0-45ed-98c4-4ca1fec68205">
+    <producedTypes>
+      <objectType typeId="8d553c60-44d4-4c87-83bc-c6f5e9425d88" valueTypeId="8343ffd2-da3f-4140-a750-0f7aef36d601"/>
+      <rowType typeId="e127748d-0814-448f-8dd5-0ede71e1894d" valueTypeId="548745bf-6bcc-42bc-9347-b39aa0c76422"/>
+    </producedTypes>
+    <name>ОбъектыРемонтаКПланированию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты ремонта к планированию</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Objects for R&amp;M scheduling</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="7d2d7549-b4d4-4602-a7ac-1b7031ca1b30">
+      <name>ОбъектЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыЭксплуатации</types>
+        <types>CatalogRef.УзлыОбъектовЭксплуатации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Объект ремонта, по которому необходимо запланировать ремонтные работы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The object that requires scheduling of R&amp;M activities</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="f4458fbe-4549-4d3a-ad2f-0bb253896f63">
+    <producedTypes>
+      <objectType typeId="db1d70f5-b60f-46f2-a9cb-b6ca0ccd1160" valueTypeId="4a89e15b-edda-4028-a405-435a88b24ce3"/>
+      <rowType typeId="a7156770-a8d6-4426-9461-6d6ac49e8cf7" valueTypeId="67e9ae74-da6a-478f-aae5-3ce6785ef56a"/>
+    </producedTypes>
+    <name>ОбщиеВидыРемонтовКПланированию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Общие виды ремонтов к планированию</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M work types for planning</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="12baa3eb-c21c-46b5-9b0c-baefd443f551">
+      <name>ОбщийВидРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбщиеВидыРемонтов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="6da0cef2-9149-45d3-8332-45410da84ae2">
+    <producedTypes>
+      <objectType typeId="7ad2d976-14ee-4ad4-a048-1d9195d83256" valueTypeId="5d46fd52-57dc-4a64-adc4-3092206de4a5"/>
+      <rowType typeId="1a3f1f87-a702-4728-891e-4330e9193677" valueTypeId="2cafc18c-6d5c-471f-a338-35e05dfe52e5"/>
+    </producedTypes>
+    <name>ЧастотыКПланированию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Частоты к планированию</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planning frequency</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b4d08a3c-590d-4057-82f7-f9794cedbff2">
+      <name>ЧастотаПланирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Частота планирования</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Planning frequency</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ЧастотаПланированияРемонтов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="b02792a1-a850-44cc-b875-dbb49e0cb506">
+    <producedTypes>
+      <objectType typeId="3c255c98-4c20-4500-b7c0-0b216d359aef" valueTypeId="2412f7e9-4789-4e70-8d91-bf0bf1e40ad1"/>
+      <rowType typeId="e5dea208-d016-4770-a03a-30ac6c0e6765" valueTypeId="0956592c-0c3f-4515-a924-397bda4b3fb7"/>
+    </producedTypes>
+    <name>ЗаказыНаРемонт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказы на ремонт</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M orders</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f743d5c7-84a1-4257-8068-879e61472c9e">
+      <name>КодЗаказаНаРемонт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код заказа на ремонт</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M order code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2cfd9cd8-66fb-4d0d-85af-8e722b0274ba">
+      <name>ОбъектЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыЭксплуатации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Объект эксплуатации, для которого выполняются ремонты по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The asset that is being repaired according to the R&amp;M order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="938f24b0-40df-4b14-ba77-4b2765a05833">
+      <name>ДатаНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Start date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата начала выполнения заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Date the R&amp;M order execution starts</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f7dd3251-76aa-4737-825e-ba4a14f1d6e9">
+      <name>ДатаЗавершения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата завершения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>End date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Дата завершения выполнения заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Date the R&amp;M order execution ends</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4c75991b-6032-4df9-8c14-55df8cd21ae1">
+      <name>Длительность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Длительность</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Длительность выполнения ремонтов по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Duration of R&amp;M under order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="50e6c22f-b54b-4c5a-a95b-0e38bc3caadc">
+      <name>ЕдиницаИзмеренияДлительности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Единица измерения длительности</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration unit of measure</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ЕдиницыИзмеренияВремени</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Единица измерения длительности</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Duration unit of measure</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.Ссылка</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.Минута</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.Час</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.День</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.День</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="0562fc18-db42-49c7-afe1-6016882cd232">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Подразделение документа заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Business unit that issued the R&amp;M order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f84d6911-fd37-404e-9576-89fca544b59e">
+      <name>РемонтноеМероприятие</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ремонтное мероприятие</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M activity</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РемонтныеМероприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Ремонтное мероприятие заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>R&amp;M order activity</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9ac9a352-a90b-42e2-90a1-10c683b70669">
+      <name>ОбщийВидРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбщиеВидыРемонтов</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Общий ремонт для данного вида </value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>General R&amp;M for this type</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="260dbd49-1991-47b9-81c3-551b1a297082">
+    <producedTypes>
+      <objectType typeId="4a887f28-8725-43b6-be62-225306f63e60" valueTypeId="ffa9b1e1-8ef8-4b74-a985-b5389503c65c"/>
+      <rowType typeId="3eddfbf4-14e9-4ed0-a2fa-0ba1c866e56a" valueTypeId="fb3f3b82-5e75-4957-8c2a-6630a754eb2a"/>
+    </producedTypes>
+    <name>Ремонты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ремонты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>R&amp;M works</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="32115e9e-870b-40f1-899a-659039aef9cf">
+      <name>ОбъектЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="95a3fb89-8172-4284-bfea-45b0c5f1dcbb">
+      <name>Узел</name>
+      <synonym>
+        <key>ru</key>
+        <value>Узел</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Sub-asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УзлыОбъектовЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="727f5e1e-e487-4afb-aedf-446169bdb875">
+      <name>ВидРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыРемонтов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dca7360c-75ce-424a-9bb9-0579423fb186">
+      <name>ДатаНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Start date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="379ba1ad-1830-413c-96f3-7a3b3c655901">
+      <name>ДатаЗавершения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата завершения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>End date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e1cdbd60-cb6a-4e23-bd43-f98c9f523ac9">
+      <name>Длительность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Длительность (дней)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration (days)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="759ba2f1-02d9-4b02-8950-facc50652785">
+      <name>ЕдиницаИзмеренияДлительности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ед. изм. длительности</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Duration Unit</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ЕдиницыИзмеренияВремени</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameters>
+        <name>Отбор.Ссылка</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.Минута</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.Час</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.День</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.ЕдиницыИзмеренияВремени.EnumValue.День</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="8e7f62e0-a1e2-48c5-a7ac-8cea4151bff9">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f70d0ce3-e3fb-4ba7-819e-5f8499b40c83">
+      <name>КодРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="85b9549f-a453-4c96-b8e9-ce016cbe749c">
+      <name>КодЗаказаНаРемонт</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код заказа на ремонт</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M order code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="eb98ffe6-1879-4dec-bba2-b1044c295e4d">
+      <name>РемонтныйЦикл</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ремонтный цикл</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M cycle</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9bd7c9e7-831e-4242-86de-a8ec13f4330a">
+      <name>ОбщийВидРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Общий вид ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M work type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбщиеВидыРемонтов</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Общий ремонт для данного вида </value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>General R&amp;M for this type</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="abd26005-e2fe-4cdf-8741-1a54975a9e94">
+      <name>ГрафикРаботы</name>
+      <synonym>
+        <key>ru</key>
+        <value>График работы</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work schedule</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Календари</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="e4273782-1f6b-48a5-8e36-f11b78ac3060">
+    <producedTypes>
+      <objectType typeId="6b2f8a4d-0895-4298-9e16-4f92b2d95bd7" valueTypeId="7f71b411-5c31-4369-8a5f-f040c592064f"/>
+      <rowType typeId="3198bb27-9b90-4ce3-a29b-46b6e3a8ec39" valueTypeId="1645ffaa-e831-4c98-9407-c859865b99ea"/>
+    </producedTypes>
+    <name>МатериалыИРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Материалы и работы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Materials and works</value>
+    </synonym>
+    <toolTip>
+      <key>ru</key>
+      <value>Материалы и работы, которые потребляются и выполняются для проведения ремонта.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Materials consumed and labor performed during R&amp;M.</value>
+    </toolTip>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9ab67d8d-1be1-488d-a4d1-2784d9dd53aa">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Items</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Материал или услуга.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Material or service.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ТипНоменклатуры</name>
+        <value xsi:type="core:FixedArrayValue">
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+          </values>
+          <values xsi:type="core:ReferenceValue">
+            <value>Enum.ТипыНоменклатуры.EnumValue.Работа</value>
+          </values>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="17c9c9c6-cf6d-4237-bcb7-03605b4dad0f">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Характеристика материала (услуги), если есть.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Variants of the material (service) if any.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПланированиеРемонтныхРабот.TabularSection.МатериалыИРаботы.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ae15bcec-22fd-47ee-bc57-2562923d7a40">
+      <name>Упаковка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Упаковка</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Packaging unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Упаковка материала, если есть.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Packaging unit of material, if any.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Номенклатура</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПланированиеРемонтныхРабот.TabularSection.МатериалыИРаботы.Attribute.Номенклатура</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b2e75a73-4b4e-4d5e-88c5-5019bff94d2a">
+      <name>КоличествоУпаковок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество упаковок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество упаковок или единиц материала.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Number of packaging units or units of the material.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f4deabbf-0f22-4aa1-b5c3-1496f92c0fe8">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (в единицах хранения)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity (Stock UOM)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество единиц рассчитывается автоматически. Если для номенклатуры указана упаковка, то количество единиц можно отредактировать с автоматическим пересчетом количества упаковок.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>The number of units is calculated automatically. If a packaging unit is specified for the items, editing the number of units will result in automatic recalculation of the number of packaging units.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3fc8367b-8ac0-4a22-a489-61ff33c0288f">
+      <name>КодРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Уникальный идентификатор ремонта</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>R&amp;M unique ID</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="4b67c66e-ad9b-4822-b404-7ab8fe96e1b7">
+    <producedTypes>
+      <objectType typeId="7a32ac84-b3c1-46a2-9ce2-9ec8c6eb0b14" valueTypeId="af57823c-27b5-4c52-86d9-e8edb93a57fe"/>
+      <rowType typeId="7a217498-c367-4dc6-bdc0-2dfa4b7f0b49" valueTypeId="0725e0fc-1ada-4a81-af8b-6ff87cf7776c"/>
+    </producedTypes>
+    <name>Трудозатраты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трудозатраты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Labor costs</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="4ff67d72-300e-409c-872a-939fc92fb580">
+      <name>ВидРабот</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид работ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Activity kind</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыРаботСотрудников</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Вид трудозатрат, выполняемых в рамках заказа на ремонт</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Labor costs type for the R&amp;M order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b65d5824-5b7f-48a7-b241-1d280aa70f33">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (норма)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity (standard)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество работ данного вида</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Number of works of the type</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1d8775ba-6b4d-4e62-8481-91227fc851f9">
+      <name>КодРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Уникальный идентификатор строки заказа</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Unique ID of the order line</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d4236e80-a9db-445e-a897-1765c41c1719">
+    <producedTypes>
+      <objectType typeId="a9486cc8-5cbd-498a-9136-4599cb064f5b" valueTypeId="85c62b80-7379-4a40-9394-a714088f004a"/>
+      <rowType typeId="cc5ab118-37b3-412d-b5e3-557a531cec1e" valueTypeId="24e4b68c-3490-4954-8ebc-5a84ac730e69"/>
+    </producedTypes>
+    <name>РабочиеЦентры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочие центры</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work centers</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="c78cbee8-3aaa-495e-bf68-02cb84dbeffe">
+      <name>РабочийЦентр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РабочиеЦентры</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Рабочий центр останавливаемый при выполнении ремонтов по заказу</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Work center that is stopped during R&amp;M activities under order</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b5fe66c2-99f3-4d7a-b984-4bb5cac9fdcc">
+      <name>КодРемонта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код ремонта</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>R&amp;M code</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="9246ed39-d711-41ad-9884-4f65e90be0a5">
+    <name>ФормаОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма обработки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Data processor form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="a86f9a5c-4c7a-49c5-8d77-0b7947eb27bd">
+    <name>МакетКомпоновкиДанныхДляСерверныхОтборов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет компоновки данных для серверных отборов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Data layout for server filters</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="2386cddc-3f7b-4d93-b4e2-d320e9e5db82">
+    <name>ПланированиеРемонтныхРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Планирование ремонтных работ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Create planned R&amp;M orders</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="95d4e809-1515-430d-844e-e5b8a53c54d1">
+  <name>ПроверитьКорректностьУстановкиСлужебныхКонстант</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить корректность установки служебных констант</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Check if internal constants are set correctly</value>
+  </synonym>
+  <source>
+    <types>ConstantValueManager.БазоваяВерсия</types>
+    <types>ConstantValueManager.КомплекснаяАвтоматизация</types>
+    <types>ConstantValueManager.УправлениеТорговлей</types>
+    <types>ConstantValueManager.УправлениеПредприятием</types>
+    <types>ConstantValueManager.ЛокализацияРФ</types>
+    <types>ConstantValueManager.НеУправлениеХолдингом</types>
+    <types>ConstantValueManager.НеБазоваяВерсия</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбновлениеИнформационнойБазыУТ.УстановитьСлужебныеКонстанты</handler>
+</mdclass:EventSubscription>

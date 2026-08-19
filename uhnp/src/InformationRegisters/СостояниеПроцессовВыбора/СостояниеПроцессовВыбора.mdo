@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="01025793-cb2e-4034-bc09-6cbcf5d3b7ea">
+  <producedTypes>
+    <selectionType typeId="f08e7716-39f1-4411-b993-856a7a175862" valueTypeId="62d4358a-1326-45ce-946b-d90bf21bce44"/>
+    <listType typeId="6d39de91-c8b1-4583-86ec-359e4b5956f2" valueTypeId="abcc8529-83bf-42d7-8dc5-728a3d59a890"/>
+    <managerType typeId="6a51fd04-974c-4de6-938f-01d8ce5cea25" valueTypeId="0ff728c4-10d4-4a79-b9bd-44032430b2d7"/>
+    <recordSetType typeId="c477fe2f-2d7d-4565-86c3-64957e4b0de7" valueTypeId="b2867665-9e4f-470c-a715-02e4f4117814"/>
+    <recordKeyType typeId="27e58f90-73f3-4d1d-b7e2-1eef41352ddd" valueTypeId="05e6d8da-c1f6-4804-9636-1a7e3ed45c93"/>
+    <recordType typeId="32149862-c6c8-4304-9d36-c1c947d8d96c" valueTypeId="548f1d97-bbb8-4022-888b-282769f9598e"/>
+    <recordManagerType typeId="88272d46-7e31-4d46-bd14-919e2ccba339" valueTypeId="ba4c853c-5f41-40b1-bb87-0704d32f8268"/>
+  </producedTypes>
+  <name>СостояниеПроцессовВыбора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Состояние процессов выбора</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="f65db6d1-bef3-4c37-bf78-6171676e0d1d">
+    <name>ТекущийЭтапВыбора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текущий этап выбора</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыОценки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="94183311-fdad-4350-a09a-83504d8f9532">
+    <name>ПроцессВыбораЗавершен</name>
+    <synonym>
+      <key>ru</key>
+      <value>Процесс выбора завершен</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="6ee546ea-0355-4a65-bfa9-7ca591ffadde">
+    <name>Владелец</name>
+    <synonym>
+      <key>ru</key>
+      <value>Владелец</value>
+    </synonym>
+    <comment>Владелец объектов выбора определяет состояние процесса</comment>
+    <type>
+      <types>DefinedType.ВладельцыОбъектовВыбора</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="58cd9c56-cebe-49c5-a221-e0af7c1fb224">
+    <name>НомерПереторжки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер переторжки</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Разделитель состояния процесса по номеру переторжки. Используется для лотов закупочной процедуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="93da252a-299a-434c-b875-fd7005587924">
+  <producedTypes>
+    <objectType typeId="9d348e7d-17e1-4354-98d6-df7448a5af38" valueTypeId="5b6e9cdb-04b1-48b7-b105-1dce42f6d030"/>
+    <managerType typeId="62b7b679-5b70-46b2-8b3f-99c897c49bc6" valueTypeId="288871c9-7a69-455a-9ad8-4e881327399c"/>
+  </producedTypes>
+  <name>тн_ПереносОстатковТМЦФилиалаНаГоловнуюОрганизацию_Спецодежда</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перенос остатков ТМЦ с филиала на головную организацию (спецодежда) (тн)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Inventory adjustment wizard</value>
+  </synonym>
+  <comment>// Юдина Екатерина 01.11.2025 Выполнение задач №000055688</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ПереносОстатковТМЦФилиалаНаГоловнуюОрганизацию_Спецодежда.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="c6c116ad-ea6a-4d8e-8ff4-64f6386ff092">
+    <producedTypes>
+      <objectType typeId="0517d7cb-bf73-4850-b0c3-284c2eaa1b42" valueTypeId="84e4f7dd-c74e-4813-82fb-f11f0d1db660"/>
+      <rowType typeId="eeddddce-d4c3-4bce-9b63-5bcd4b8b4e4a" valueTypeId="82a288fd-5cb2-42e0-908d-0251246ba04a"/>
+    </producedTypes>
+    <name>ТаблицаДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a02d275e-9657-4644-93e7-34b7292e1eb5">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dd304da0-bb22-4e87-b76b-7a07868e0c4e">
+      <name>КоличествоОстаток</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (остаток)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5230c4fa-36b5-4cce-b7f3-2dd35b0d7e55">
+      <name>СтоимостьРеглОстаток</name>
+      <synonym>
+        <key>ru</key>
+        <value>Стоимость регл. (остаток)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="db6738db-4c20-457b-b805-7c23f58d4632">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Debt type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Классификатор суммы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Amount classifier</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="62f194a5-9f99-4f0f-ba83-170e3a9e8baf">
+      <name>Партия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партия</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПартииТМЦВЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f05a197a-46ce-4cc2-81cc-962765973ab4">
+      <name>ИнвентарныйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инвентарный номер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Debt type</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ИнвентарныйНомерТМЦВЭксплуатации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Классификатор суммы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Amount classifier</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4db32dad-9f36-4c18-bae9-c6a742399479">
+      <name>ДатаНачалаЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Debt type</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Классификатор суммы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Amount classifier</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="74ed8175-b2fe-4714-a41d-68f44b1b66dd">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Физическое лицо</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Debt type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Классификатор суммы</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Amount classifier</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5e9090ef-ad91-473e-ab0c-99ffad309dbd">
+      <name>НомерГТД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер ГТД</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>CCD number</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НомераГТД</types>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Work RNPT number</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="379ea29f-5a6b-4f0c-9383-290a2e138280">
+      <name>КатегорияЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Категория эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Operation category</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.КатегорииЭксплуатации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Категория эксплуатации ТМЦ</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Inventory operation category</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cb5c7e74-617a-4c2d-aff5-e03ecdc8d631">
+      <name>СтатьяРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расходов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Expense item</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="48338ae4-0d5c-4a98-82a5-22cc81446848">
+      <name>КоличествоПоРНПТОстаток</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество по РНПТ (остаток)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="98ae825b-6be2-462c-a733-8e07a1d93c91">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Default form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="3d74889f-a8e7-4d26-8105-988d943506fb">
+    <name>МакетВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет выгрузки</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

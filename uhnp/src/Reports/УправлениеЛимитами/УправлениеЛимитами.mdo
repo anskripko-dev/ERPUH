@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="98ca4400-a70b-4745-9478-780c91f6a8e9">
+  <producedTypes>
+    <objectType typeId="99133069-4cc4-4668-bc7a-2b4e44034a2a" valueTypeId="52785da6-68af-467c-9677-35fda24ac3ec"/>
+    <managerType typeId="1d1f9bc7-e062-4cc0-b16f-6c96f13de18b" valueTypeId="dbf2c293-0078-4ce8-9e58-6ada60743211"/>
+  </producedTypes>
+  <name>УправлениеЛимитами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Управление планами и лимитами</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>Report.УправлениеЛимитами.Form.ОсновнаяФорма</defaultForm>
+  <mainDataCompositionSchema>Report.УправлениеЛимитами.Template.СКД_УправлениеЛимитами</mainDataCompositionSchema>
+  <defaultSettingsForm>Report.УправлениеЛимитами.Form.ОсновнаяФорма</defaultSettingsForm>
+  <includeHelpInContents>true</includeHelpInContents>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="1e638164-2934-48b4-9cf0-6650e29ee414">
+    <name>ВидБюджета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид бюджета</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВидыБюджетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="344b770d-a96b-4115-95e6-a9d31e6ea754">
+    <name>ОтчетнаяДата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отчетная дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="279eef40-5a68-444b-9003-e797d78a6856">
+    <name>Предназначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Предназначение</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ПредназначенияЭлементовСтруктурыОтчета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="aeac94dd-317f-4f1a-b357-5a65a4f454d9">
+    <name>УОП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Для установки будет использован</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УправлениеПериодомСценария</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fc7b8d33-c3dc-4108-80f5-f63285aa386c">
+    <name>ПериодичностьЛимитирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность лимитирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a5beff73-dd70-492e-934a-d636c3ff288d">
+    <name>СпособОпределенияВалютыЛимитирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ определения валюты лимитирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыОпределенияВалютыЛимитирования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5027420c-a2d5-47ba-b9f0-ef5c19be4dbc">
+    <name>ВалютаПоУмолчанию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта по умолчанию</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="bcc6602b-fc52-4c1d-ab2e-44d2e31ad3aa">
+    <name>УчитыватьАналитикиСтатьиБюджетаПриКонтроле</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывать аналитики статьи бюджета при контроле</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="119f9169-7a9b-48ac-94f6-0fd819b0f29a">
+    <name>КонтрольЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль лимитов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыКонтроляДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ba1b567a-de90-4908-9ff6-824b5b929bf2">
+    <name>КонтрольРезервов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль резервов</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыКонтроляДокументов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="10fc5e01-4e7f-41b6-8c10-77a5f8fe1f39">
+    <name>ПериодичностьПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность планирования</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="212ec935-7c84-4fb2-905d-ba7c853da78b">
+    <name>ПланированиеЗакупок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контроль закупок</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="772c26a4-5770-43d3-8414-6d29a984ee2e">
+    <name>РезервированиеВПериодичностиПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Резервирование в периодичности планирования</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="47ce5e0e-3b78-48f8-8643-3eea67e8b3bd">
+    <producedTypes>
+      <objectType typeId="27b0d2fc-3883-45c4-89f4-1200c0819fd4" valueTypeId="147f59e4-b057-4cc8-9079-07c5ece5e740"/>
+      <rowType typeId="3bb4e9b8-8f15-4b09-bfa8-c1e5e4342ef4" valueTypeId="7187f8b5-0aeb-499c-a37d-69b9ad8b6d2f"/>
+    </producedTypes>
+    <name>Периоды</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периоды</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="42926e7f-3da1-4a58-a522-12edea3e53b2">
+      <name>ПериодЛимитирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период лимитирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Периоды</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3b8bc67d-7e25-4dc6-8c6c-870e6927e866">
+      <name>НачалоПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Начало периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0c4c4028-fe54-4e43-978c-56681e7cc63e">
+      <name>ОкончаниеПериода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Окончание периода</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="bbc29ec5-89a7-4f35-a24e-4df75e94a534">
+    <producedTypes>
+      <objectType typeId="39aeda91-6f47-419d-b27f-4d9f98ca0dfd" valueTypeId="beea799b-282e-475a-bf7e-a3abe59b56ba"/>
+      <rowType typeId="1c257e95-26a2-434e-92eb-c29da979ebd2" valueTypeId="4c2a43bc-4ef9-4ef0-9dff-26646984e7d1"/>
+    </producedTypes>
+    <name>ЦФОПроекты</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЦФО и проекты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="471cf965-9ab2-4c70-9989-49eb642b7a6c">
+      <name>ЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФО</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ЦФО</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="be31cc23-62b3-44aa-99f3-670a75a669b0">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="418f6fd1-9f26-4245-a8d3-bb04a7c80cd9">
+    <producedTypes>
+      <objectType typeId="2752b18e-b6fc-4955-b0b6-152a51f5f09e" valueTypeId="f534875e-8e5e-4083-99b8-e15257a71a2f"/>
+      <rowType typeId="c929e6e6-08b6-4ee7-9b4e-cc92dfe84c21" valueTypeId="9c34c3d9-d2fc-4d9a-8e38-977db5c2102d"/>
+    </producedTypes>
+    <name>КУстановкеУОП</name>
+    <synonym>
+      <key>ru</key>
+      <value>К установке УОП</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="b18384f3-ef54-46d0-b44d-f4d69e7876dc">
+      <name>ЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФО</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ЦФО</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ffa9ed2c-074f-49b1-9c53-f804e47c2fbf">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c669f166-6468-42fb-8ed1-c7f963b52195">
+      <name>ПериодЛимитирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период лимитирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Периоды</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="526fde94-a6be-47c1-ac66-efcdf399471b">
+      <name>УОП</name>
+      <synonym>
+        <key>ru</key>
+        <value>УОП</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9cefcba5-6e71-4dd6-b061-d719c3e73e06">
+      <name>Сценарий</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сценарий</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Сценарии</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="04f78363-8c61-40d4-ae4c-01f7011d2678">
+    <producedTypes>
+      <objectType typeId="1fe04f99-1a36-4ca7-8973-5a848a1e9991" valueTypeId="6fe8bacb-7482-4ef6-b86f-6797c64ad0d9"/>
+      <rowType typeId="0e367439-03ee-4127-adb1-97f58a057a08" valueTypeId="c913d008-a848-441f-a6da-16965cbcee91"/>
+    </producedTypes>
+    <name>КОткрытиюЗакрытиюПериодов</name>
+    <synonym>
+      <key>ru</key>
+      <value>К открытию закрытию периодов</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="339fbf23-815f-4207-adde-8c3a0e01c604">
+      <name>ЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФО</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ЦФО</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="fd5dc4ef-d81d-4dc1-966f-c274f38a8b72">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5300d27c-5081-46c7-902c-04d98041612c">
+      <name>ПериодЛимитирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период лимитирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Периоды</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d2ea5050-c27e-4437-a3ef-d9b4c2135950">
+    <producedTypes>
+      <objectType typeId="8a6c17d6-da12-4a46-8444-d2b740f5edfd" valueTypeId="b01b43a7-6b6f-4be4-b680-d66495198af5"/>
+      <rowType typeId="60036311-6244-4763-9e3d-83e9aaee6c75" valueTypeId="e37f7410-5168-46dd-a383-ddb6fcdb03ab"/>
+    </producedTypes>
+    <name>ЦФОПроектыПериодыЛимитированияВалюты</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЦФО, проекты, периоды лимитировнаия и валюты</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a3e12272-3150-4847-bad5-e93cc2eafa00">
+      <name>ЦФО</name>
+      <synonym>
+        <key>ru</key>
+        <value>ЦФО</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ЦФО</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5f3365c0-6c4b-4f73-a889-247c1ef8cd3c">
+      <name>Проект</name>
+      <synonym>
+        <key>ru</key>
+        <value>Проект</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Проекты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a0f85181-4f14-4740-97a7-9b1c5921d3f2">
+      <name>ПериодЛимитирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Период лимитирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Периоды</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7a9f74e6-fe5a-4416-aeb7-0f4f39b359f7">
+      <name>Валюта</name>
+      <synonym>
+        <key>ru</key>
+        <value>Валюта</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Валюты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="efdb85c4-4212-43e9-9977-ef2d36631368">
+      <name>ДатаНачала</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата начала</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="1e57be99-1730-40ca-ad0b-2b9bb3e88798">
+    <name>ФормаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="af1173f7-d451-46b2-a083-92d52b172bd9">
+    <name>ФормаВыбораСценарияДляУстановкиЛимита</name>
+    <synonym>
+      <key>ru</key>
+      <value>Установка лимитов по УОП</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="517ec83a-6874-4bf6-aa15-8a2f5898dd8f">
+    <name>ФормаУстановкиУОПДляВыбранныхПозиций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма установки УОП для выбранных позиций</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="813697a7-037c-4b1c-9090-c7a5653db033">
+    <name>ОсновнаяФорма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основная форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="836db059-9fc1-4bf4-a60e-2f1cff1fb96c">
+    <name>СКД_УправлениеЛимитами</name>
+    <synonym>
+      <key>ru</key>
+      <value>СКД управление лимитами</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="dc3501da-f417-46d6-a9ac-5787cdf3fa7c">
+    <name>СКД_КонтрольИсполнения</name>
+    <synonym>
+      <key>ru</key>
+      <value>СКД контроль исполнения</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="f63c6f1d-bcd2-4e22-8b5f-c4f11a204ca0">
+    <name>КомандаУправлениеЛимитами</name>
+    <synonym>
+      <key>ru</key>
+      <value>Управление планами и лимитами</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

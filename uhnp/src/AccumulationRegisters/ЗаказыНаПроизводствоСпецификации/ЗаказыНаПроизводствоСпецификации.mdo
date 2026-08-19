@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d1d899e6-238f-4735-bae2-4ed253a1a028">
+  <producedTypes>
+    <selectionType typeId="c7e3e49f-eca7-425a-815b-e24ac5f1f5bd" valueTypeId="1107f0d1-151f-4699-82e7-50200d3d8d49"/>
+    <listType typeId="962a71ef-a810-469e-9ddf-2771d09ed088" valueTypeId="0b831fdf-aa8c-4c01-8c53-0b5c979aa55a"/>
+    <managerType typeId="4a56b7a7-c37e-4d4e-b086-b2da39cae0c3" valueTypeId="a1d7394a-fbaf-4a99-ae7a-0c2f3dd1d50f"/>
+    <recordSetType typeId="9a82360a-ee80-4c80-a8c7-59fb47402557" valueTypeId="8247c2a1-9d75-41f9-af85-f0b13184e961"/>
+    <recordKeyType typeId="ce7b52c4-fa0e-4f33-ae32-bf372e995aaf" valueTypeId="77a9d225-cb5c-4442-8e6e-5978783eb534"/>
+    <recordType typeId="695437e4-d99c-4aa5-bebe-5a6905847603" valueTypeId="a03edd11-628e-4866-9dc3-7eda6682aa95"/>
+  </producedTypes>
+  <name>ЗаказыНаПроизводствоСпецификации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заказы на производство спецификации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Production orders bills of materials</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <resources uuid="8934a900-173c-455e-9c21-ed03c25f925b">
+    <name>Заказано</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказано</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ordered</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество заказанной продукции, материалов (услуг)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Quantity of ordered products, materials (services)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="cc8ae287-73c2-4c7f-b452-7fbaeac61ab9">
+    <name>ЗаказНаПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ на производство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production order</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ, в рамках которого отражаются обязательства по его выполнению.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Order containing liability for its execution</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8936aa2b-bd62-4d51-ad1f-be768c321962">
+    <name>КодСтрокиПродукция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (продукция)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (manufactured products)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Уникальный идентификатор строки заказа.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Unique ID of the order line.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f24fe61a-3d11-4219-80f3-392c7c6e9a1d">
+    <name>КодСтрокиЭтапыГрафик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки (график выполнения этапов)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line code (stage execution schedule)</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Связывает текущую строку со строкой из ТЧ &quot;Продукция&quot;.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Links the current row with a row from TS &quot;Products&quot;.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="00623449-9c10-4d6a-a3d2-58426cff4434">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="c95e68ae-f0e4-4abc-b6b2-eac8de07a9e7">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, в котором выполняется этап.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit in which the stage is performed.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="11ef5e51-d1a8-4870-9c1b-646499c48a38">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Products</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, по которой учитываются обязательства.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Items for which liabilities are taken into account.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3fbdd11f-4bd3-4233-83cf-3a39f2ba59b1">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Characteristic</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, по которой учитываются обязательства.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Item variant used for liability accounting.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>AccumulationRegister.ЗаказыНаПроизводствоСпецификации.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e7e17798-c781-440f-b147-653a41933c60">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Warehouse</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="af6a4711-6aae-44df-a728-62a03038d5db">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b11a4e7c-6849-4adc-b440-05a8ad03db99">
+    <name>ТипДвиженияЗапасов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип движения запасов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inventory transfer type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыДвиженияЗапасов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип выполняемой операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Performed transaction type.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b2cfc916-07eb-4467-b7db-a26b890f5d7b">
+    <name>ПроизводитсяВПроцессе</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производится в процессе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Produced in process</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Признак полуфабриката</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Indicates a semi-finished product</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0c964735-6d54-4fb1-b2a1-a36a13ca78e8">
+    <name>ВариантОбеспечения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант обеспечения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Supply option</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыОбеспечения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9096a68d-aace-4ac0-91c3-8621651a4e60">
+    <name>Обособленно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Обособленно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Separately</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="52b9f83a-0240-4b2b-9f76-c2e5a8d76baf">
+    <name>Серия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Серия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Series</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СерииНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Серия товаров</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Goods batch</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="43852b94-553d-48e4-b8c6-3d22ab1af3ae">
+    <name>ДатаПотребности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата потребности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Demand date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата потребности в материале</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date of material demand</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

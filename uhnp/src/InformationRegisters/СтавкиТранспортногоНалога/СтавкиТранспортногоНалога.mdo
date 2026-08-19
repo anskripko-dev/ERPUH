@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="cd7ae523-9666-4ccd-92cd-1bc061b56d6c">
+  <producedTypes>
+    <selectionType typeId="7483c085-1711-43fa-a50d-1fcdde42aa4b" valueTypeId="745108ba-ffdf-4730-8e47-5962463c0f57"/>
+    <listType typeId="9af17fe9-20a2-4681-b42e-b589376349a8" valueTypeId="90c8581b-a660-43f4-bed1-67bf9127468f"/>
+    <managerType typeId="146a2233-3b20-40d7-bb3a-9838823903fb" valueTypeId="5a1a4892-d4e2-47d5-bc17-3b4a1dffbd35"/>
+    <recordSetType typeId="83b88b4d-18e7-4f12-90bf-372fe56f5ff4" valueTypeId="f27b5898-01e9-4154-b52b-4ddcdf853c8a"/>
+    <recordKeyType typeId="3e7d6f6e-eb7f-4025-9eef-8a4b32f12c26" valueTypeId="36a5b860-52d5-4c73-884f-a67cab08435b"/>
+    <recordType typeId="8d863ea7-cab7-4436-a4c5-93bfc67c9183" valueTypeId="491f7192-c839-4561-8a26-e6a3d235d042"/>
+    <recordManagerType typeId="2a4cfe83-09d0-4a95-b24f-96abccba0611" valueTypeId="4c388305-38d7-4373-881d-c58a91d303b4"/>
+  </producedTypes>
+  <name>СтавкиТранспортногоНалога</name>
+  <synonym>
+    <key>ru</key>
+    <value>Ставки транспортного налога</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Vehicle tax rates</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.СтавкиТранспортногоНалога.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.СтавкиТранспортногоНалога.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <synonym>
+      <key>ru</key>
+      <value>Действует с</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Valid from</value>
+    </synonym>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Year</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="72d359cd-a7d8-4e28-bf04-ea14dd105e0a">
+    <name>НалоговаяСтавка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая ставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax rate</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>11</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="209d301c-a410-42a4-b141-bc3c7e0178a7">
+    <name>ОКТМО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регион</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>State</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>8</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="56352abf-c749-4d50-b603-105aedc21a11">
+    <name>НаименованиеОбъектаНалогообложения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Object</value>
+    </synonym>
+    <type>
+      <types>EnumRef.КатегорииТранспортныхСредств</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ae21d693-91f7-4e1d-9ff9-ba7cc8a2d6d5">
+    <name>МинимальноеЗначениеМощности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Минимальное значение мощности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Minimum power value</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="da153da7-b4d9-49d4-9cdf-4dd262508724">
+    <name>МаксимальноеЗначениеМощности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальное значение мощности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Maximum power value</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6db625c3-f901-4819-a3ad-7a9c95476576">
+    <name>МинимальноеКоличествоЛетСГодаВыпускаТС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Минимальное количество лет, прошедших с года выпуска ТС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Minimum number of years passed since the vehicle manufacturing</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0d3f3b63-9948-40e7-9891-e93b4fc4467c">
+    <name>МаксимальноеКоличествоЛетСГодаВыпускаТС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Максимальное количество лет, прошедших с года выпуска ТС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Maximum number of years passed since the vehicle manufacturing</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="888a0986-9f14-4a7d-b69f-a4d13b08afd3">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="41575625-c8dc-4654-a2f4-9cda2eaac731">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="dd1ef86f-8377-4edf-a1d0-4fb3de75ac23">
+    <name>КодыОКТМОСубъектовРФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коды ОКТМО субъектов РФ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>RF subjects municipal territory classifier codes</value>
+    </synonym>
+    <templateType>TextDocument</templateType>
+  </templates>
+</mdclass:InformationRegister>

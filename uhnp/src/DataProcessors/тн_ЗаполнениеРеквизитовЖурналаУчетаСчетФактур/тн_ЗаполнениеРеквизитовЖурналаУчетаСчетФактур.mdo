@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="32ce819c-248d-42ee-b581-50e144d37104">
+  <producedTypes>
+    <objectType typeId="6e5c41d7-cdee-421e-a8e3-cf01755fcb10" valueTypeId="20a98639-6f59-476b-972f-7e6afa4cff4e"/>
+    <managerType typeId="9bf68888-fafe-46a8-bbe2-4985b7373a9d" valueTypeId="072855fa-3d8c-484e-8ba4-84cb835ac6d2"/>
+  </producedTypes>
+  <name>тн_ЗаполнениеРеквизитовЖурналаУчетаСчетФактур</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнение реквизитов Журнала учета счет-фактур</value>
+  </synonym>
+  <comment>// Егоров Петр 18.01.2024 Выполнение задач №000048159</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ЗаполнениеРеквизитовЖурналаУчетаСчетФактур.Form.Форма</defaultForm>
+  <attributes uuid="1e567401-ddeb-4264-afa7-6430a624d9fd">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="14b5ff0e-e097-483c-90cc-4ef1415db4f0">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a3e116cd-3ba0-41bf-8ae2-f3d0176f0681">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="399a9cf5-7c12-497e-9617-28f78a0af62c">
+    <producedTypes>
+      <objectType typeId="7eec1ac5-b3ea-4dbf-ba2d-7ea657781f0e" valueTypeId="b7277be9-1555-4c82-8b54-2af65e67b6c5"/>
+      <rowType typeId="a06b0376-c7e9-4568-83fd-299ecc335413" valueTypeId="11b785ac-54f3-454f-81c3-28a8f775c664"/>
+    </producedTypes>
+    <name>СФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>СФ</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="f5224171-d313-4a4f-82aa-5de82c4053a4">
+      <name>Отметка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отметка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="672a2d00-1c1a-4d5b-93b2-13e904e99edf">
+      <name>НомерСФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер СФ</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="409c354e-ea75-4b0b-820b-8713b2db2da9">
+      <name>ДатаСФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата СФ</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="349c0dc5-fa9e-4179-8919-2aff3bf260fc">
+      <name>СФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>СФ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураПолученный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5b8a305f-aedc-44ef-b843-cd6d9b9acfcc">
+      <name>Корректировка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Корректировка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="389c458d-293e-4171-b6d8-9a8d01aa2661">
+      <name>ДатаСФЖурнал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата СФЖурнал</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7cd6887f-ddc2-4d50-903f-f62a64540eeb">
+      <name>НомерСФЖурнал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер СФЖурнал</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="08a269dd-ade3-4e1a-a95d-a81a63bb2e3b">
+      <name>СчетФактура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураПолученный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="efd63cac-dc05-41fe-bdba-c60e3fdd7ba7">
+      <name>КодВидаОперации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код вида операции</value>
+      </synonym>
+      <comment>//Сафиуллина З.Р. 11.09.2025 Выполнение задач №000055085</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="cf5a4018-7b3b-4226-a358-643c0bf7356a">
+      <name>КодВидаОперацииЖурнал</name>
+      <synonym>
+        <key>ru</key>
+        <value>Код вида операции журнал</value>
+      </synonym>
+      <comment>//Сафиуллина З.Р. 11.09.2025 Выполнение задач №000055085</comment>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3888561d-2cda-4283-abaa-938832bcc6da">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <comment>// Егоров Петр 18.01.2024 Выполнение задач №000048159</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="e7f427ad-1782-453d-a8fe-20d4024493d2">
+  <producedTypes>
+    <objectType typeId="eb8f8e62-244d-44ed-afb3-cb9791689924" valueTypeId="e7d4e676-e0aa-47f2-8b97-3e42260fcb01"/>
+    <managerType typeId="bb22df7e-5401-4e6b-a369-9b0253579b80" valueTypeId="10083cef-e40f-44f8-a628-226a5998352f"/>
+  </producedTypes>
+  <name>ПечатьЭтикетокОбъектовЭксплуатации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Печать этикеток объектов эксплуатации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Label printing of assets</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПечатьЭтикетокОбъектовЭксплуатации.Form.ФормаОбъектыЭксплуатации</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="bb3d34f9-36ff-4531-bcc9-183430f6bb47">
+    <name>ШаблонЭтикетки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Шаблон этикетки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Label template</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ШаблоныЭтикетокИЦенников</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Назначение</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.НазначенияШаблоновЭтикетокИЦенников.EnumValue.ЭтикеткаОбъектаЭксплуатацииЛента</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.НазначенияШаблоновЭтикетокИЦенников.EnumValue.ЭтикеткаОбъектаЭксплуатацииБумага</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <quickChoice>DontUse</quickChoice>
+    <createOnInput>Use</createOnInput>
+  </attributes>
+  <attributes uuid="498bf088-8914-414b-8880-af126220f8c4">
+    <name>КоличествоЭкземпляров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество экземпляров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of copies</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>2</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество экземпляров этикеток(ценников), выводимых на печать.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of label (price tags) copies sent to print.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="48707077-430d-4c23-b0d9-eb2f90dc9020">
+    <producedTypes>
+      <objectType typeId="d918090f-2fab-456f-a7af-7a5d245ebaa2" valueTypeId="be4f6d2a-e3d2-4c29-bac0-6742a30ff3b6"/>
+      <rowType typeId="a85c15be-f39f-4c1b-a930-39e470079cee" valueTypeId="15e71576-b1c8-4ee5-9f9f-74306c60c00a"/>
+    </producedTypes>
+    <name>ОбъектыЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assets</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="9595a99d-f2a4-49d2-841d-bb1e6d4708ce">
+      <name>ОбъектЭксплуатации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект эксплуатации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Контекст</name>
+        <value xsi:type="core:StringValue">
+          <value>БУ, УУ</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="201b29e4-7561-4106-9469-6eb50c6f5935">
+      <name>Штрихкод</name>
+      <synonym>
+        <key>ru</key>
+        <value>Штрихкод</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Barcode</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>200</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="0604b10c-3f51-4bb9-afb7-ad22d9c60a3f">
+      <name>тн_МОЛ</name>
+      <synonym>
+        <key>ru</key>
+        <value>МОЛ</value>
+      </synonym>
+      <comment> Редько Екатерина 04.07.2022 Выполнение задач №000041810</comment>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="3bd42e31-ed03-4f57-a6bf-8e7b42faeacb">
+    <name>ФормаОбъектыЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма объекты эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assets form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="36410e5c-5fab-44b7-be1c-b51d9dc3a64a">
+    <name>ПоляШаблонаОбъектыЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля шаблона объекты эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fields of the template assets</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="a5bbfe5a-f790-4182-bd09-7e1d2f050a8d">
+    <name>тн_ПоляШаблонаОбъектыЭксплуатации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Поля шаблона объекты эксплуатации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fields of the template assets</value>
+    </synonym>
+    <comment>// Редько Екатерина 04.07.2022 Выполнение задач №000041810</comment>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

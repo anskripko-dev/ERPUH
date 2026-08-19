@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="edac6706-3b0e-4385-803d-32630f94ba0e">
+  <producedTypes>
+    <selectionType typeId="dc4de93c-ee39-41d3-9611-d8c0b569e7ec" valueTypeId="8403cd03-030e-4bdc-8e73-b6d49db4e80e"/>
+    <listType typeId="2d7bcdc3-ebbd-4401-a856-2e0e21abfc85" valueTypeId="2cd28d1c-f4a4-404a-bbcf-86413c9a279a"/>
+    <managerType typeId="46835569-c886-4db4-962e-0351acfd8f78" valueTypeId="00b8a815-6471-4f90-84f7-9b9f350e32b9"/>
+    <recordSetType typeId="fe8017d0-4e87-4f32-b48a-10e0856fce0c" valueTypeId="812a8ad1-f811-401c-a470-a094471952cd"/>
+    <recordKeyType typeId="4eda66da-4957-4a3f-b3f5-9d4a66bcfed7" valueTypeId="61b318bd-2f7d-4905-9222-e783ae3cbd61"/>
+    <recordType typeId="13809014-d3fb-4d09-9e84-47cd11ca866a" valueTypeId="7e81d1af-e754-48d8-b8f7-080486729c04"/>
+  </producedTypes>
+  <name>ПартииЦенныхБумаг</name>
+  <synonym>
+    <key>ru</key>
+    <value>Партии ценных бумаг</value>
+  </synonym>
+  <comment>Партии для БУ, номинал и количество - это фактический остаток платежного календаря</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="4d8af28f-f8f8-46c3-986a-5d0d5deb63d7">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <type>
+      <types>DefinedType.КоличествоЦенныхБумаг</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="d98bf412-cb20-4f78-8bd5-1ce435494853">
+    <name>Стоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Стоимость</value>
+    </synonym>
+    <comment>Номинал*Количество + ПремияДисконт(При покупке-продаже) + НКД(при покупке-продаже)</comment>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="6df4c135-d567-4416-b1a7-fd4f48eb0b04">
+    <name>Номинал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номинал</value>
+    </synonym>
+    <comment>для платежного календаря</comment>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="0b306774-e325-49f1-8465-e6b9f7a8c354">
+    <name>РыночнаяСтоимость</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рыночная стоимость</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="031e63d5-b162-4cba-ac2c-00ecca00c4b3">
+    <name>ФинансовыйИнструмент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Финансовый инструмент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЦенныеБумаги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="37550972-ce60-489d-b6f7-1c330b81e25e">
+    <name>Партия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ПриобретениеЦеннойБумаги</types>
+      <types>DocumentRef.ВыпускЦеннойБумаги</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="91a12a9c-c319-4173-b425-4c3930f47412">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор взаиморасчетов с брокером</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

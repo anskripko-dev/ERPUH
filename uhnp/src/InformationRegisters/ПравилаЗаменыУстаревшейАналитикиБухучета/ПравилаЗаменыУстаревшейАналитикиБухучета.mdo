@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9f474806-1d31-4b35-8748-8bfbd61c2708">
+  <producedTypes>
+    <selectionType typeId="cebb37d0-798a-409d-978d-b4ea8b8b9c1c" valueTypeId="3dcf3267-8f87-4f14-8bad-640a8e28da88"/>
+    <listType typeId="3d013ca6-ef21-41d0-9e3a-ffeae2d2c67e" valueTypeId="9350ad2b-d3d0-408b-b648-2a6d154d3066"/>
+    <managerType typeId="6efaca93-b678-4580-83e9-4170f648dccc" valueTypeId="96f4cd22-e7b6-42bc-a850-a6ce05cc371e"/>
+    <recordSetType typeId="9b9f9a17-da5f-40fd-a85e-ef42e2aa9659" valueTypeId="5fab0abc-e42d-4d35-9b24-65868f325885"/>
+    <recordKeyType typeId="c7e5ad9c-3501-401e-87b1-eb66dc8009b8" valueTypeId="21059093-47e4-439b-9347-3dcc2adde885"/>
+    <recordType typeId="8c5db2fb-eff5-4c0a-9c41-c9568579e42b" valueTypeId="f010dbbc-0db7-475b-b256-508bf064031c"/>
+    <recordManagerType typeId="cb5cec34-c01b-4f35-bba8-6f4ecb6f1e4b" valueTypeId="714c4762-0c00-4b32-a4e9-c165825c9b24"/>
+  </producedTypes>
+  <name>ПравилаЗаменыУстаревшейАналитикиБухучета</name>
+  <synonym>
+    <key>ru</key>
+    <value>Правила замены устаревшей аналитики бухучета</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Rules for replacing outdated accounting dimension</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Month</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6a3dbab7-41e6-4bca-94c2-a2f43eab8e6b">
+    <name>НоваяАналитика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Новая аналитика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>New dimension</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВБухУчете</types>
+      <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="84bdac5b-a6fe-4e50-a6b5-dc0f36e3092b">
+    <name>СтараяАналитика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Старая аналитика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Old dimension</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СпособыОтраженияЗарплатыВБухУчете</types>
+      <types>CatalogRef.СтатьиФинансированияЗарплата</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="23475510-9418-4217-a744-5007383f07dc">
+    <name>РедактированиеИстории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование истории</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Edit history</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="16a40a58-2691-4020-8121-5ee9d7dba365">
+  <producedTypes>
+    <selectionType typeId="9d70d202-4432-4566-b95f-e68dfbec720b" valueTypeId="861e4076-55d6-4248-8c7d-79988e1b50bd"/>
+    <listType typeId="35d86967-3c3f-4529-99df-c3c859c97546" valueTypeId="f6f37f98-3344-457c-a7ba-f80da86600a8"/>
+    <managerType typeId="be163087-7b8d-42ff-8b39-92f9561f1998" valueTypeId="f17e14fc-4047-4491-b91a-d80e7de77580"/>
+    <recordSetType typeId="ec14ca78-39c3-4e4c-b8a1-937240ae12e3" valueTypeId="851e08cc-97e8-446a-824e-07db8fdb138f"/>
+    <recordKeyType typeId="74f7a422-a6b5-4f56-b492-46e51e38519e" valueTypeId="23e531b6-7894-409a-86cf-e6336d0c3ad1"/>
+    <recordType typeId="610b7c86-7cb4-4928-8d91-fa744e9e61b9" valueTypeId="7a81c18f-5b43-4fd5-af25-5aa5d0422fe2"/>
+    <recordManagerType typeId="06c25eb8-84ee-49cb-9789-ab50c21949c1" valueTypeId="d88b2689-c01d-4f38-a28f-7f2c74481f66"/>
+  </producedTypes>
+  <name>РасписаниеРаботыРабочихЦентров</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расписание работы рабочих центров</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Work center timetable</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="4112ddf4-c260-42cc-b0a2-02cc3c5d95a3">
+    <name>ВариантНаладки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант наладки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setup settings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыНаладки</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вариант наладки рабочего центра</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center setup settings</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="cbe7848f-5d7c-4f32-b59a-020bb8dae155">
+    <name>ВремяПереналадки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время переналадки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Changeover time</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Время переналадки рабочего центра (в секундах)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center changeover time (in seconds)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="11436023-c945-4e36-b7fb-b6d94595ce43">
+    <name>ВремяПереналадкиВРабочееВремя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время переналадки в рабочее время</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Changeover time during the working hours</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Время переналадки рабочего центра в рабочее время (в секундах)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center changeover time during the working hours (in seconds)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="86a9f3d5-e4c2-4c62-b6b7-9a27601ca9dd">
+    <name>ВремяРаботы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время работы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Working time</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Какое время (в секундах) занимает производство запланированных единиц/партий изделий в данном интервале</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Time (in seconds) required to produce the planned quantity of units/batches in the given interval</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f142f440-6946-4e08-b27a-54e9a6c462ce">
+    <name>ВремяРаботыВРабочееВремя</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время работы в рабочее время</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation time in work time</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Какое время (в секундах) занимает производство запланированных единиц/партий изделий в данном интервале в рабочее время</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Time (in seconds) required to produce the planned quantity of units/batches in the given interval during working hours</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="15c7f163-4b66-4493-80c6-8406aa5e65f2">
+    <name>ВремяРаботыИзмененоПользователем</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время работы изменено пользователем</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation time changed by user</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Показывает, что время работы изменено пользователем</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Shows that working time is changed by user</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c3404706-9e20-493e-b57b-0a81da42d222">
+    <name>Загрузка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Load</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Загрузка вида рабочего центра при производстве запланированных единиц/партий изделий в данном интервале</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center type load on manufacturing planned product units/batches within the interval</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3e041b71-4543-4413-86dd-1a4d0efb4d3d">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>На какое количество единиц/партий изделий составлено расписание</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>For what quantity of product units/batches the timetable is created</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="4a7c748f-6a22-40ea-af72-2974465d34d3">
+    <name>Начало</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Начало выполнения маршрутного листа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Start of route sheet execution</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="f1cb4cd7-f55c-4bb5-9267-9c6f02446432">
+    <name>НачалоПриРучномВводеРасписания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало при ручном вводе расписания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start on manual timetable input</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Начало выполнения маршрутного листа (при ручном вводе расписания)</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Beginning of route sheet completion (in case of manual input of the timetable)</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="59eeb340-a045-4738-b5b9-a9fedfd2aa40">
+    <name>Окончание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>ДФ='dd.MM.yyyy ЧЧ:мм'</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>DF='MM/dd/yyyy hh:mm t'</value>
+    </editFormat>
+    <toolTip>
+      <key>ru</key>
+      <value>Окончание выполнения маршрутного листа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>End of route sheet execution</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="78c180f5-7641-41b8-8c8d-b556c1969eae">
+    <name>Порядок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sequence</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Порядок выполнения маршрутного листа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Route sheet completion sequence</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2e09b7fa-3ada-4c20-9c4a-e05df68a4770">
+    <name>ПроблемыПриФормированииРасписания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проблемы при формировании расписания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Issues when creating a timetable</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="66b2d49d-845a-4879-b807-474eb05bf151">
+    <name>РабочийЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочий центр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РабочиеЦентры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Рабочий центр, которому назначено выполнение маршрутного листа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work center assigned to execute the route sheet</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5288150a-dd3e-43ac-aa47-c24f81eab13f">
+    <name>РасписаниеВведеноВручную</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расписание введено вручную</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Timetable is entered manually</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Расписание введено вручную</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Timetable is entered manually</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="87c3c45a-ebdd-4dcf-84e4-b450e15e451a">
+    <name>МаршрутныйЛист</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрутный лист</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation sheet</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.МаршрутныйЛистПроизводства</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Маршрутный лист, для которого составлено расписание.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Route sheet for which a timetable is created.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="632452da-4698-460f-bc0b-e20ee744df9d">
+    <name>ДатаИнтервала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата интервала</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Interval date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата интервала планирования на которое составлено расписание.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date of planning interval for which the timetable is created.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

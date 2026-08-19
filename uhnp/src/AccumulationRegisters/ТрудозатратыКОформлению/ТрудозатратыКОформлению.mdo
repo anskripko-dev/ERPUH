@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d4a0e5e4-fdde-4c73-91c5-c1234a343efe">
+  <producedTypes>
+    <selectionType typeId="ecf376d5-b420-44dc-b340-2ee844fc4178" valueTypeId="e48ab064-9a32-4826-9589-cdd13411ffc0"/>
+    <listType typeId="e6062598-59a9-4639-8a3b-2a6c3f3dd87c" valueTypeId="34198841-9166-4a0e-a789-15031a251997"/>
+    <managerType typeId="49f9197c-83ff-4996-829b-4a592a1838f3" valueTypeId="023e6a9e-1b34-40db-9f8e-999c74a054f1"/>
+    <recordSetType typeId="13e341a1-a93c-469b-80b6-09ab787880c2" valueTypeId="f46b0d57-d39e-4e38-8c70-8ff912f646fb"/>
+    <recordKeyType typeId="0959abd9-b0ea-4ba1-8012-8befa738437c" valueTypeId="1c1fef33-4c50-4ead-ba99-da40485ef9b4"/>
+    <recordType typeId="4893baf6-0394-44dd-abdf-db5e89ede790" valueTypeId="ad382df2-637a-4f2b-920f-243706e233d9"/>
+  </producedTypes>
+  <name>ТрудозатратыКОформлению</name>
+  <synonym>
+    <key>ru</key>
+    <value>Трудозатраты к оформлению</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Labor costs to register</value>
+  </synonym>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="5fff280d-7001-4d62-95bb-cc02bd543dab">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество выполненных работ</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Quantity of performed works</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="1b369bb3-83b9-4438-8c30-a6d73345176d">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="ed7af56b-0fd7-4b77-8692-d625bc417687">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, по которой ведется учет</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company for which the records are kept</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d5ac1e6e-12a5-43fe-bcb7-56b5abd9fd9c">
+    <name>ПартияПроизводства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Партия производства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Production lot</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПартииПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="bb9bab5a-e1ff-489c-8c91-6f7643691627">
+    <name>Распоряжение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Распоряжение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭтапПроизводства2_2</types>
+      <types>DocumentRef.ПроизводственнаяОперация2_2</types>
+      <types>DocumentRef.ПроизводствоБезЗаказа</types>
+      <types>DocumentRef.МаршрутныйЛистПроизводства</types>
+      <types>DocumentRef.ЗаказНаРемонт</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Распоряжение, по которому выполнялись работы</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Reference based on which works were performed</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ccd8539c-0593-40fb-9230-c9fc9ce67676">
+    <name>ВидРабот</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид работ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Activity kind</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРаботСотрудников</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Вид выполненных работ</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Kind of performed works</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="a71271ef-4f19-4cf7-aff0-35d5e82031f4">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignee</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ИсполнительРабот</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Бригада, выполнявшая работы</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work team which performed the works</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="14b5f840-56a3-4306-b849-ea9ed3d1cfc9">
+    <name>КодСтрокиРаспоряжения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код строки распоряжения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reference line code</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Код строки распоряжения, по которому выполнялись работы</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Reference line code of performed works</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="5e3ddeaf-7e2b-4ba8-88f9-20b2bcbf4b1b">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

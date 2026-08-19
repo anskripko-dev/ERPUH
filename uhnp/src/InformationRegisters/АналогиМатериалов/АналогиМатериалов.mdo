@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b963a501-2eaf-4bcc-9752-4c56b2d40cf6">
+  <producedTypes>
+    <selectionType typeId="759e69b1-40fa-4155-8c9d-86c2dd2378a1" valueTypeId="a26cedac-fa39-4aa6-a355-1960af1d31a7"/>
+    <listType typeId="30e5e61d-17d9-40ce-8c65-20965a1f2cf9" valueTypeId="fc64bb1f-7261-454b-b927-09db5cc2367e"/>
+    <managerType typeId="35b89d80-3785-4093-9979-a087292a48e5" valueTypeId="8273014b-8b3a-4c66-a078-24a6f4162e4a"/>
+    <recordSetType typeId="27d2f729-17f5-45d1-84c2-3ea4b6d14fe9" valueTypeId="fae7c959-d8e3-4916-aeb3-d46783d597ca"/>
+    <recordKeyType typeId="8b3812f3-f38f-45d8-9949-bcd9fad8244e" valueTypeId="f2d26116-d3bf-4dd6-bde2-6b12d59275dd"/>
+    <recordType typeId="0990e912-bf43-4895-9385-60a16af7ce12" valueTypeId="ec41e026-6007-4c17-b9d5-b95bce521c16"/>
+    <recordManagerType typeId="0637f0e1-1462-4405-bf7e-d93c14cbdcc1" valueTypeId="89aff720-d0af-46b0-bd44-315cb47d1449"/>
+  </producedTypes>
+  <name>АналогиМатериалов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Аналоги материалов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Substitutes</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>RecorderPosition</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="d211e971-7de4-4b9b-b686-6a126dda4cb2">
+    <name>ПериодЗавершения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период завершения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата, по которую действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date until which permission is valid</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="81ad9d32-4465-42cb-9d54-c4cddd40ac45">
+    <name>Упаковка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Упаковка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Packaging unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Упаковка материала, если есть</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Material packaging unit if any</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e824f075-1733-4ad8-9808-5fa20b3cc8d8">
+    <name>КоличествоУпаковок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество упаковок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of packaging units</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество упаковок заменяемого материала</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of packaging units of the substituted material</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7391bc0e-dac8-4fc4-9365-124234e726eb">
+    <name>УдалитьУпаковкаАналога</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Упаковка аналога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(not used) Substitute packaging unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.УпаковкиЕдиницыИзмерения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Упаковка аналога, если есть</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Substitute packaging unit if any</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c90df6ee-00de-492a-bc11-0ff43ce4e56c">
+    <name>УдалитьКоличествоУпаковокАналога</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Количество упаковок аналога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(not used) Number of substitute packaging units</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="6afe93bd-4cdc-4128-b0e4-7cf171804db1">
+    <name>МаксимальныйПриоритетОбластиДействия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Priority</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f386967c-cd81-4280-995d-efe63bad3723">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заменяемый материал</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Substituted material</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="6979471b-3f9b-4d88-9c7d-c00cb1265d43">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика заменяемого материала</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Variant of the substituted material</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="4bbfbd80-7ca3-4994-abf3-905dc0bc4264">
+    <name>УдалитьСпецификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Спецификация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Bill of materials</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РесурсныеСпецификации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Спецификация, для которой действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Bill of materials to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="96f87ee5-e00a-4246-b20e-b8c713ddc07c">
+    <name>УдалитьЭтап</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Stage</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭтапыПроизводства</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.АналогиМатериалов.Dimension.УдалитьСпецификация</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="aec5dcce-092a-4ba9-bb7b-e10b950e4ab7">
+    <name>УдалитьКлючСвязиСпецификация</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не исплользуется) Ключ связи спецификация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Link key bill of materials</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Строка спецификации, для которой действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>BOM line to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="190ddbc4-58e7-4692-823f-22b302b18d32">
+    <name>УдалитьПодразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, для которого действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="61ee5e9b-4035-4d77-af94-c1e0d6662a87">
+    <name>УдалитьЗаказКлиента</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Заказ клиента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Sales orders</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ клиента, для которого действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sales order to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b040b66c-3ac1-44ae-b897-8bf0bc91f006">
+    <name>УдалитьЗаказНаПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Заказ на производство</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Production order</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство</types>
+      <types>DocumentRef.ЗаказНаПроизводство2_2</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ на производство, для которого действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Production order to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f58a7f00-327f-4652-9ddd-d299a3a4ab50">
+    <name>УдалитьИзделие</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Изделие</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Finished product</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Производимое изделие, для которого действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Manufactured product to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e2630e1f-b99a-46b2-bbcf-466e6a775697">
+    <name>УдалитьХарактеристикаИзделия</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Характеристика изделия</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Item variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика производимого изделия, для которого действует разрешение</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Variant of the manufactured product to which the permission applies</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="be44c573-22fb-4fa7-85a9-93d78aec2cd8">
+    <name>УдалитьНаправлениеДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Направление деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Line of business</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НаправленияДеятельности</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ea51280d-a62b-476e-9c95-6b6e51f8dbdc">
+    <name>УдалитьАналог</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Аналог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Substitute</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналог номенклатуры</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Substitute</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="f2cf808e-e9d1-468a-aea1-9d8f74369155">
+    <name>ИдентификаторСтроки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор строки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Line ID</value>
+    </synonym>
+    <type>
+      <types>UUID</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="30faf556-a6ee-42bd-9589-e19ae15954e4">
+    <name>УдалитьХарактеристикаАналога</name>
+    <synonym>
+      <key>ru</key>
+      <value>(Не используется) Характеристика аналога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(Not used) Substitute variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2476cb99-ddff-44b5-b7de-b92f071b25bb">
+    <name>РольНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Роль номенклатуры</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item role</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РолиАналогов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

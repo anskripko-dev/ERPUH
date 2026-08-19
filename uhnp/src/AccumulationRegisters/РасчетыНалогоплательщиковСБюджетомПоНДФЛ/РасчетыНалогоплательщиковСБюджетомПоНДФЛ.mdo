@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0cead18e-318e-496f-b798-cb85b9956853">
+  <producedTypes>
+    <selectionType typeId="56c14263-ea9a-4f38-bc94-e2c7519472e9" valueTypeId="62a7a74e-46a8-48be-97a1-03dfc7132ac1"/>
+    <listType typeId="f9e786e9-b960-405f-8838-85b2126e2052" valueTypeId="5bb89c46-a918-4a5c-84f1-697ba2363fa6"/>
+    <managerType typeId="1114f39b-d712-487f-a41a-7b54b14ecfb3" valueTypeId="c0c656f6-562c-4a04-aeca-f40eaf76505b"/>
+    <recordSetType typeId="a913aa10-2753-4455-a46a-805858f9b74a" valueTypeId="bc2a2eaf-562d-498e-a766-016373e10fa0"/>
+    <recordKeyType typeId="7b5a10a6-46ef-4516-a492-99e0b9253152" valueTypeId="893223c9-badc-4d40-a825-651097a84392"/>
+    <recordType typeId="83a6e751-b55c-4043-979b-c8b260fd73d0" valueTypeId="19d7e30a-0f67-4377-a951-c1821ad09731"/>
+  </producedTypes>
+  <name>РасчетыНалогоплательщиковСБюджетомПоНДФЛ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчеты налогоплательщиков с бюджетом по НДФЛ</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Taxpayer settlements with the budget on PIT</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultListForm>AccumulationRegister.РасчетыНалогоплательщиковСБюджетомПоНДФЛ.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>RecordType</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="30f6e718-c62d-4991-8045-aee864e3badf">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="87c36aba-659a-4c57-9921-e4bc48c6a7aa">
+    <name>СуммаСПревышения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма с превышения по ставке 15%</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount from 15% rate excess</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ff763084-5a1f-41eb-84c6-cd5322117fd2">
+    <name>НалогНаПрибыльДляДивидендов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог на прибыль для дивидендов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income tax for dividends</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="4f6af014-ff58-49bd-85d6-4cde09443e8f">
+    <name>СуммаДоходаСКоторогоНеУдержанНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма дохода, с которого не удержан налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount of income whose tax is not deducted</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="47eb0aaa-9bbd-415f-9be4-55053246f869">
+    <name>НалогСДивидендовУплаченныйЗаРубежом</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налог с дивидендов уплаченный за рубежом</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax from dividends paid abroad</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="04069c8a-184b-48a8-9a41-dc01d4959278">
+    <name>СуммаСПревышенияПоСтавке18</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма с превышения по ставке 18%</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount from 18% rate excess</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="87b92970-a440-45a3-98e6-b5421a1d6d79">
+    <name>СуммаСПревышенияПоСтавке20</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма с превышения по ставке 20%</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount from 20% rate excess</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="2c7cc56f-c600-4c49-93b1-bf0b6c856d44">
+    <name>СуммаСПревышенияПоСтавке22</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма с превышения по ставке 22%</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount from 22% rate excess</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>13</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="1c4cc0b9-a775-4118-bfaa-2282467bddc8">
+    <name>СуммаДоходаСПревышенияСКоторогоНеУдержанНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма дохода по ставке 15%, с которого не удержан налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income amount at rate of 15% whose tax is not deducted</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="b930128c-5fbe-4f8e-85c4-0f254b3ecb64">
+    <name>СуммаДоходаСПревышенияПоСтавке18СКоторогоНеУдержанНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма дохода по ставке 18%, с которого не удержан налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income amount at rate of 18% whose tax is not deducted</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="f7928442-60be-42b1-be74-487ad3d6586d">
+    <name>СуммаДоходаСПревышенияПоСтавке20СКоторогоНеУдержанНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма дохода по ставке 20%, с которого не удержан налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income amount at rate of 20% whose tax is not deducted</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="a2e42d55-2ae6-4acb-9bf2-d333fa22ed27">
+    <name>СуммаДоходаСПревышенияПоСтавке22СКоторогоНеУдержанНалог</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма дохода по ставке 22%, с которого не удержан налог</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income amount at rate of 20% whose tax is not deducted</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="f05d9106-bda4-40e8-9f9e-eaf106a3419b">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ТерриторияВыполненияРаботВОрганизации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7cb9f0e7-e1f9-40b9-9e2b-9bdc8b324084">
+    <name>ДокументОснование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документ основание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Base document</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДокументыОснованияНДФЛ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ce39b7f2-3408-4376-a3a5-47f0e7ada804">
+    <name>ВариантУдержания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант удержания</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Deduction option</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыУдержанияНДФЛ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="3892709a-a4f3-4ddc-95e1-65bc28db37b4">
+    <name>ВключатьВДекларациюПоНалогуНаПрибыль</name>
+    <synonym>
+      <key>ru</key>
+      <value>Соответствует статье 214.9 НК РФ (до 2023 года - статье 226.1)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Compliant with Article 214.9 of the Tax Code of the Russian Federation (before 2023, to Article 226.1)</value>
+    </synonym>
+    <comment>АПК:58 - различия имени и синонима вызваны обратной совместимостью</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Используется для дивидендов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Used for dividends</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="d3e8e740-b3ee-4a9f-84a8-dfa7a1be93cc">
+    <name>РасчетМежрасчетногоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расчет межрасчетного периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payroll period calculation  </value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="3dc438da-22a7-4c67-a361-4835d47736f7">
+    <name>СуммаВыплаченногоДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма выплаченного дохода (2016-2020 годы)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Paid income amount (2016-2020)</value>
+    </synonym>
+    <comment>АПК:58 </comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="79ad3e88-67f2-4adc-b7d2-6b4db182cd99">
+    <name>СрокПеречисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок определения крайнего срока перечисления (до 2023 года)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Procedure to determine transfer period (before 2023)</value>
+    </synonym>
+    <comment>АПК:58 </comment>
+    <type>
+      <types>EnumRef.СрокиПеречисляемогоНалога</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="47bc3396-894d-43c7-b480-1b16aa2588d2">
+    <name>КрайнийСрокУплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Срок перечисления (до 2023 года - крайний срок уплаты)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Transfer period (before 2023, it was Payment deadline)</value>
+    </synonym>
+    <comment>АПК:58 - различия имени и синонима вызваны обратной совместимостью</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="ab706ce3-b532-4ce4-9246-20d3a3f1ebbe">
+    <name>УчитыватьВыплаченныйДоходВ6НДФЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Учитывать выплаченный доход в 6-НДФЛ (2016-2020 годы)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Take into account the income in 6-PIT (2016 – 2020)</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>БЛ=Нет; БИ=Да</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>BF=No; BT=Yes</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>БЛ=Нет; БИ=Да</value>
+    </editFormat>
+    <editFormat>
+      <key>en</key>
+      <value>BF=No; BT=Yes</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="125f6678-d8ce-4c8f-a3cf-e6491e57faae">
+    <name>ДатаПолученияДоходаФиксирована</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата получения дохода фиксирована (до 2023 года)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income receipt date is fixed (before 2023)</value>
+    </synonym>
+    <comment>АПК:58 </comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="8d7d5ba4-143a-473d-bf31-6da33c1a2296">
+    <name>УстаревшаяДатаПолученияДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Устаревшая дата получения дохода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Obsolete date of income receipt</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="063d2bc8-0681-44fc-96f4-1158b176e181">
+    <name>ЗарегистрированоПриНачисленииАванса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Зарегистрировано при начислении аванса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registered at advance payment accrual</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="eee35caf-b1cb-4efa-9702-05ad6d229197">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f566dcb1-4cec-4657-92a2-151d6379c115">
+    <name>ГоловнаяОрганизация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Головная организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Parent company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3e061102-01fa-4f59-8eef-a0d64829b194">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физическое лицо</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Individual</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="2bef22a0-c06e-4196-9523-7f5d40207753">
+    <name>СтавкаНалогообложенияРезидента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ставка налогообложения резидента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Resident tax rate</value>
+    </synonym>
+    <type>
+      <types>EnumRef.НДФЛСтавкиНалогообложенияРезидента</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f759e6a3-1abe-4644-97af-90d40a195ba2">
+    <name>МесяцНалоговогоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата получения дохода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Date of income receipt</value>
+    </synonym>
+    <comment>АПК:58 имя сохранено ради обратной совместимости</comment>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="253fd9b5-e57b-4d7e-a180-99eaf091c661">
+    <name>КатегорияДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид дохода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income kind</value>
+    </synonym>
+    <comment>АПК:58 имя ВидДохода уже занято</comment>
+    <type>
+      <types>EnumRef.КатегорииДоходовНДФЛ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8c402997-a8eb-4ee5-bcb7-e71bf5da5d9e">
+    <name>РегистрацияВНалоговомОргане</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registration</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>CatalogRef.РегистрацииВНалоговомОргане</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="66c07f91-f3df-4a1d-97c2-f173170cadfa">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3194cd2a-4460-4dcf-bd89-3d2d0f5dc81d">
+    <name>УдалитьКодДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Код дохода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>(not used) Income code</value>
+    </synonym>
+    <comment>АПК:58</comment>
+    <type>
+      <types>CatalogRef.УдалитьВидыДоходовНДФЛ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.СтавкаНалогообложенияРезидента</name>
+      <field>AccumulationRegister.РасчетыНалогоплательщиковСБюджетомПоНДФЛ.Dimension.СтавкаНалогообложенияРезидента</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="551ed78b-68d9-46c4-9b6e-a47260fbb29e">
+    <name>КодДохода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код дохода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income code</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыДоходовНДФЛ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.СтавкаНалогообложенияРезидента</name>
+      <field>AccumulationRegister.РасчетыНалогоплательщиковСБюджетомПоНДФЛ.Dimension.СтавкаНалогообложенияРезидента</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <forms uuid="5f5a158c-adbf-4047-8cfa-9e44dc50c949">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:AccumulationRegister>

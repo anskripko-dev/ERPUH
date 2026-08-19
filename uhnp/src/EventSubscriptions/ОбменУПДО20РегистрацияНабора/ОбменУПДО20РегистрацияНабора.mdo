@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7d6b3534-46a3-4a60-8508-af338d1b5044">
+  <name>ОбменУПДО20РегистрацияНабора</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обмен УП - ДО2.0, зарегистрировать изменение набора записей</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Exchange EM - DF 2.0, register record set change</value>
+  </synonym>
+  <source>
+    <types>InformationRegisterRecordSet.КурсыВалют</types>
+    <types>InformationRegisterRecordSet.ИсполнителиЗадач</types>
+    <types>InformationRegisterRecordSet.ДокументыФизическихЛиц</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ОбменДаннымиСобытияУПДО.ОбменДаннымиОбменУправлениеПредприятиемДокументооборот20ПередЗаписьюРегистра</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3736f8aa-d8f6-4394-8369-97eea1e90429">
+  <producedTypes>
+    <objectType typeId="d3ab4ea4-ce98-49e8-9655-c66ac50074c0" valueTypeId="d0120225-1eec-445f-afff-04fed7a2c65e"/>
+    <managerType typeId="e0029d7f-d7dd-49a4-b88a-942a9890d57b" valueTypeId="ffc609b3-b77d-4674-87e9-4c67226ce1c3"/>
+  </producedTypes>
+  <name>ПубликацияРасчетныхЛистковКабинетСотрудника</name>
+  <synonym>
+    <key>ru</key>
+    <value>Публикация расчетных листков кабинет сотрудника</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Payslips publishing employee account</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ПубликацияРасчетныхЛистковКабинетСотрудника.Form.ПубликацияРасчетныхЛистков</defaultForm>
+  <attributes uuid="1938ff7c-0f18-4ca7-84c0-c4150afa5897">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6f647fdf-a7f5-4908-9970-c321863a502f">
+    <name>Месяц</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Month</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0eca044a-c27e-47fc-b3ff-24d9396a5875">
+    <name>МесяцОпубликованных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц опубликованных</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Published month</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="84cc440d-8ce1-4d7f-8760-7529a49b649c">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>DataProcessor.ПубликацияРасчетныхЛистковКабинетСотрудника.Attribute.Организация</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="fbd554e1-afdc-43b3-baf0-06ae9013b379">
+    <name>ПодразделениеОпубликованных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПодразделенияОрганизаций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>DataProcessor.ПубликацияРасчетныхЛистковКабинетСотрудника.Attribute.Организация</field>
+    </choiceParameterLinks>
+  </attributes>
+  <tabularSections uuid="4ffa5fe0-4a56-4191-8b1b-b31345f525e7">
+    <producedTypes>
+      <objectType typeId="68d4625b-9806-4b88-be1e-f794e1ce114f" valueTypeId="970f9e81-a6e3-4ce0-a96c-6c4139f7b72b"/>
+      <rowType typeId="1d53cbdf-0e29-40d8-aad7-2e434c2a0ecd" valueTypeId="755b2346-3956-4f6b-989d-d83c266e3da1"/>
+    </producedTypes>
+    <name>ФизическиеЛицаКПубликации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Физические лица к публикации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Individuals for publishing</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="03293db3-aaad-4483-bf6d-eb3b35a51ce7">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <comment>АПК:58 физическое лицо является сотрудником</comment>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a2d3c572-5a9f-4cb0-9f52-f61b8867e58b">
+      <name>Публиковать</name>
+      <synonym>
+        <key>ru</key>
+        <value>Публиковать</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Publish</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="96644b71-68ba-48c8-b09c-e9eec360e271">
+    <name>ПубликацияРасчетныхЛистков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Публикация расчетных листков</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Publishing payslips</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

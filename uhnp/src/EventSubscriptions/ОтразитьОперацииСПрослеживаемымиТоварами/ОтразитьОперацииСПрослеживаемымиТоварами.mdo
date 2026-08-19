@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9de25393-28ca-45cc-91c1-3451d1f53b3e">
+  <name>ОтразитьОперацииСПрослеживаемымиТоварами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Отразить операции с прослеживаемыми товарами</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Record operations with traceable goods</value>
+  </synonym>
+  <source>
+    <types>AccumulationRegisterRecordSet.ТМЦВЭксплуатации</types>
+    <types>AccumulationRegisterRecordSet.ПрослеживаемыеТоварыВСоставеОС</types>
+    <types>AccumulationRegisterRecordSet.ТоварыОрганизаций</types>
+    <types>AccumulationRegisterRecordSet.РНПТМатериаловВПроизводстве</types>
+    <types>AccumulationRegisterRecordSet.ТоварыПереданныеНаКомиссию</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ПрослеживаемостьУП.ОтразитьОперацииСПрослеживаемымиТоварами</handler>
+</mdclass:EventSubscription>

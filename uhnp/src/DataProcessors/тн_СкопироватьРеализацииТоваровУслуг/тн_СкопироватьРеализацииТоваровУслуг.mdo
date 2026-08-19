@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="0ae7f756-a551-46e7-8dab-76ffcef89dea">
+  <producedTypes>
+    <objectType typeId="7f096ef5-3a9c-494d-bd69-59fdd9328548" valueTypeId="6306606a-89a7-4b15-9346-abb3fa99b318"/>
+    <managerType typeId="c7134277-e7db-43f0-96f5-0bfa53e59789" valueTypeId="b3d07d92-53ea-412d-81ae-f0a27c5153d5"/>
+  </producedTypes>
+  <name>тн_СкопироватьРеализацииТоваровУслуг</name>
+  <synonym>
+    <key>ru</key>
+    <value>Скопировать документы &quot;Реализация товаров и услуг&quot; (услуги) (тн)</value>
+  </synonym>
+  <comment>//Блинова М.А. 07.10.2025 Выполнение задач №000055374</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_СкопироватьРеализацииТоваровУслуг.Form.Форма</defaultForm>
+  <attributes uuid="1d209010-ceb5-4eda-b66b-ddfcbf44760a">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7cc4a8c5-70c4-4816-b4dc-5a1c208924ed">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="6dcbbd5f-1507-48e2-933c-ae767a16278d">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b21ece86-0629-4f87-a1ec-e66896e660b2">
+    <name>ДатаСоздаваемогоДокумента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата создаваемого документа</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="fb44f7bb-1184-40c2-ac24-2e392db0c2be">
+    <producedTypes>
+      <objectType typeId="bae301fa-12bc-46c4-8949-c41e513d8ffb" valueTypeId="d589760c-cca1-4821-9082-0db905b9f0c7"/>
+      <rowType typeId="edb6c943-9e85-46fb-ac81-781589706201" valueTypeId="11d425cf-4432-42ad-b4b2-7c2e4f6b3b3e"/>
+    </producedTypes>
+    <name>Документы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="42557c44-0d34-496b-b1fe-bd4221b592d9">
+      <name>РеализацияТоваровУслугИсходная</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реализация товаров услуг (исходная)</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c5672fb0-91fd-4e79-9ce5-6fc658b00c9e">
+      <name>СчетФактураИсходный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет-фактура (исходный)</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7dfbe0f9-6ef1-4ea1-978a-28d3b990d870">
+      <name>КонтрагентИсходный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент (исходный)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="091ce573-b5ee-4e36-ae11-cdc43a4ba9ec">
+      <name>ДоговорИсходный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор (исходный)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d0325692-e66c-40b7-8f4d-95fdca168fb9">
+      <name>СуммаСНДСИсходная</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с НДС (исходная)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3e4a12ef-d960-4c1b-99b0-284550817ce7">
+      <name>КоличествоИсходное</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (исходное)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="989bf9d8-12db-4f52-83a6-31ae06ae609f">
+      <name>РеализацияТоваровУслугКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реализация товаров услуг (копия)</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="24a0507e-1897-45b3-ab31-66586f257870">
+      <name>СчетФактураКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет-фактура (копия)</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4864a40f-5f1f-4162-95d0-c643dce1fce1">
+      <name>КонтрагентКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент (копия)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e5128d88-6589-4a9c-b157-b5868fe3c3fc">
+      <name>ДоговорКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор (копия)</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2614c54d-2fe1-44d3-8a72-9ba7b1fafcfc">
+      <name>СуммаСНДСКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма с НДС (копия)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d942ee0b-b36e-445c-83ec-1307ddfd9bbe">
+      <name>КоличествоКопия</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество (копия)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="73051a2e-7323-41d1-8836-5844332f2c8a">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

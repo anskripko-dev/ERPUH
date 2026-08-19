@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="eeba0123-7170-4f74-aa70-d829adaac71a">
+  <name>ПроверитьДатуЗапретаИзмененияПередУдалениемБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить дату запрета изменения перед удалением БП</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Check change closing date before EA deletion</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.УведомлениеОбИсчисленныхСуммахНалогов</types>
+    <types>DocumentObject.ПервичныйДокумент</types>
+  </source>
+  <event>BeforeDelete</event>
+  <handler>CommonModule.ДатыЗапретаИзменения.ПроверитьДатуЗапретаИзмененияПередУдалением</handler>
+</mdclass:EventSubscription>

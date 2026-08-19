@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="3b200fc8-3b5f-4356-ab28-c1cb11024849">
+  <producedTypes>
+    <objectType typeId="dfc5264d-15c4-434b-a6f3-97ffbb7edc6d" valueTypeId="b427c2c2-8bd4-40d5-a5e9-4bb2c6d0f3b7"/>
+    <managerType typeId="585d4dae-d6a9-4090-b586-8cf7e7f64efb" valueTypeId="f1c3f8bc-4fe7-45ef-8c63-eceaf87278b3"/>
+  </producedTypes>
+  <name>ФормированиеСменныхЗаданий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Формирование сменных заданий</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Generate shift tasks</value>
+  </synonym>
+  <defaultForm>DataProcessor.ФормированиеСменныхЗаданий.Form.РабочееМесто</defaultForm>
+  <tabularSections uuid="77586b62-0576-4e72-9de0-568f3908610a">
+    <producedTypes>
+      <objectType typeId="3343d78d-7996-4153-b6f6-e5704f56bf6f" valueTypeId="38798df0-7fc9-4788-8645-d617b46f1f4e"/>
+      <rowType typeId="fe4cd4e9-e7e9-4b29-84af-87ff2991b540" valueTypeId="417bfa31-bf79-42cc-938c-1318d6bf64d3"/>
+    </producedTypes>
+    <name>ПодборОпераций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор операций</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Pick operations</value>
+    </synonym>
+    <fillChecking>ShowError</fillChecking>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="54fa163a-b564-45a7-bfa7-70b18bc53cab">
+      <name>Этап</name>
+      <synonym>
+        <key>ru</key>
+        <value>Этап</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Stage</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ЭтапПроизводства2_2</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Этап производства</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Production stage</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="39546860-01e7-4fd1-9a88-ad31a688d83d">
+      <name>Операция</name>
+      <synonym>
+        <key>ru</key>
+        <value>Операция</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Operation</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ТехнологическиеОперации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Технологическая операция</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Manufacturing operation</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e04ac7ef-84e0-45e5-a19d-14bf134e4dbc">
+      <name>Исполнитель</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исполнитель</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Assignee</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ИсполнительРабот</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Бригада или работник, выполняющий работу</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Work team or worker who performed the work</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d54460e9-3fa7-43f6-818f-c632640e581d">
+      <name>Участок</name>
+      <synonym>
+        <key>ru</key>
+        <value>Участок</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Area</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПроизводственныеУчастки</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="89a32875-4fdf-47e9-937c-40d15be95e1c">
+      <name>РабочийЦентр</name>
+      <synonym>
+        <key>ru</key>
+        <value>Рабочий центр</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work center</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.РабочиеЦентры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.ВидРабочегоЦентра</name>
+        <field>DataProcessor.ФормированиеСменныхЗаданий.TabularSection.ПодборОпераций.Attribute.ВидРабочегоЦентра</field>
+      </choiceParameterLinks>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="34ef8b9a-9652-41c9-8ff5-2de54f3f7b9d">
+      <name>ВидРабочегоЦентра</name>
+      <synonym>
+        <key>ru</key>
+        <value>Вид рабочего центра</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Work center type</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ВидыРабочихЦентров</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8da694cd-0a91-464d-bf43-687a4420ebfb">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Quantity</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Количество запланированных операций.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Scheduled operations count.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bd315b77-77de-45ef-970a-28b630067662">
+      <name>ВремяВыполнения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Время выполнения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Execution time</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>10</precision>
+          <scale>1</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Время выполнения операции.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Operation time.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6301e903-8418-42e5-ba1b-352eaacce49c">
+      <name>ВремяВыполненияЕдИзм</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ед. изм.</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Unit</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ЕдиницыИзмеренияВремени</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="b4cf5b06-3314-4669-af39-956688f62d34">
+    <name>РабочееМесто</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочее место</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Workplace</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b3a053b4-3dfd-45c9-862b-730ff7ab0b47">
+    <name>ПодборИсполнителей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подбор исполнителей</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Pick assignees</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3aa7f045-a5ee-42a6-8721-f2586cc781a1">
+    <name>НазначениеОпераций</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение операций</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation assignment</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7dab7c3d-8a0f-4250-8eb2-576e1bfa79a1">
+    <name>ДобавлениеОперацийВДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Добавление операций в документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Add operations to document</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="bbe5fca3-3c29-4da7-bac5-15314144d6c8">
+    <name>ВыборУчастков</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор участков</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Select areas</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="755e98d1-75b3-4da1-9075-0e8e52a5aeaa">
+    <name>ФормированиеСменныхЗаданий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Формирование сменных заданий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Generate shift tasks</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

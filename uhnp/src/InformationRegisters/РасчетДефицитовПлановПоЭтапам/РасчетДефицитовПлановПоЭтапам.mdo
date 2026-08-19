@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="52d118f2-b296-4ca3-b2a2-70c1da6020da">
+  <producedTypes>
+    <selectionType typeId="94f9b25a-97f3-4ddc-ae8f-7d9112e7d6f3" valueTypeId="9f9dfe6b-e9c4-43d0-888e-0ba60c26f0c0"/>
+    <listType typeId="4fbc0342-9ce6-40f6-ae00-541facac51c4" valueTypeId="280bba32-498f-4f53-a691-0b21f292128a"/>
+    <managerType typeId="f0e25a1e-4cd6-4482-bf56-88804ae28d8c" valueTypeId="79112571-ce06-4612-b2fe-481214359c7b"/>
+    <recordSetType typeId="5b5ca783-1ad2-46ed-aa9f-3afa043da7aa" valueTypeId="3f5e1e4b-e54e-49b6-8766-2980dbf6a2c9"/>
+    <recordKeyType typeId="09bed423-d8d4-4747-b932-b88be2bad927" valueTypeId="b13cc668-4243-468c-912b-47fa4e9fb59a"/>
+    <recordType typeId="d0f22605-f799-4813-b3ef-456a1c5c0a4f" valueTypeId="60c57e9c-a67d-4f93-a2e3-008ed9768394"/>
+    <recordManagerType typeId="597c4a85-56d9-4d0c-9ab8-104c7e75b13c" valueTypeId="ab5f92a3-f84a-45d0-b27a-c9f980a93a6d"/>
+  </producedTypes>
+  <name>РасчетДефицитовПлановПоЭтапам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет дефицитов планов по этапам</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Calculation of plan shortages by stages</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="af988b55-6f87-435a-8b4e-3051d0bf0d63">
+    <name>НачальныйОстаток</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начальный остаток</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Opening balance</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="39b4df64-350a-4ef5-bb32-cc3f6627261a">
+    <name>Дефицит</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дефицит</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shortage</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="1f20a362-e784-4aa4-9d3a-34cb4e9e355b">
+    <name>КИзменению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К изменению</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>To change</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c0929ede-c9cb-491a-9ace-8a3ebb0f4abd">
+    <name>Пересчитать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Пересчитать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Recalculate</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="5c2f9b6a-3edb-4621-a2ed-bd953dffc9a8">
+    <name>Приход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Inflow</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="6ec63aff-4101-4460-b07f-90cbda9551ec">
+    <name>КОбеспечению</name>
+    <synonym>
+      <key>ru</key>
+      <value>К обеспечению</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>To supply</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="2760cf91-0c72-490c-ad3a-6b862f4978e1">
+    <name>Расход</name>
+    <synonym>
+      <key>ru</key>
+      <value>Расход</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Outflow</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="aed607cb-286f-4720-99b5-7c7a4febde7c">
+    <name>ИнтервалПотребностиОт</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интервал потребности от</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Range of demand from</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Потребность ниже которой пересчитывается товар по дефициту</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Demand below which the goods are recalculated by shortage</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="770a1b4b-ff36-4197-b83b-da5d3d22e939">
+    <name>ИнтервалПотребностиДо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Интервал потребности до</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Range of demand to</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Потребность выше которой пересчитывается товар по дефициту</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Demand above which the goods are recalculated by shortages</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="34b07f1f-4559-45e0-86d8-c77bd5580978">
+    <name>ЗаданИнтервалПотребности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Задан интервал потребности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Demand range is specified</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7eb1d557-5796-467c-9730-7cbfbaf8ec10">
+    <name>КорректировкаРасхода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка расхода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense adjustment</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="41154ad0-3865-423d-adf5-2cc21451f09d">
+    <name>КорректировкаПотребностейКПроверке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка потребностей к проверке</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Adjustment demand to check</value>
+    </synonym>
+    <comment>Отладка Удалить</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="53ab4641-c530-4819-b5c3-5ccfcfae59df">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Scenario</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СценарииТоварногоПланирования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fc31027b-4a92-4da0-b289-e0f1f4fb1a85">
+    <name>ВидПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид плана</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Plan profile</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыПланов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="da1df078-600c-4d81-b116-d06c8bbd4db1">
+    <name>ПериодПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planning period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="3627b09c-357c-4a1f-8b0e-90be19af8d98">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Items</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="cf1b24b9-e635-4075-ab15-c7f94d7f873e">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+  <dimensions uuid="ae3c60c9-94f6-417d-b2a1-3dba7b44a23e">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </dimensions>
+</mdclass:InformationRegister>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c3ae5cf5-64f7-4179-8659-99fc817317c3">
+  <producedTypes>
+    <objectType typeId="965e04dd-c156-47cf-9728-3f07db2e3944" valueTypeId="342c2ec5-98ad-4bd0-ace0-39f8340fa432"/>
+    <managerType typeId="1776cd3d-73c6-427b-8b59-62e05eea0d5a" valueTypeId="0bdc45fe-72a8-405b-8161-2521f8a6ca30"/>
+  </producedTypes>
+  <name>УточнениеМатВыгодыПоЗаймам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Уточнение мат. выгоды по займам</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Refine financial gain on loans</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.УточнениеМатВыгодыПоЗаймам.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="624be4f8-80c0-49d5-b03d-b02c6c76bba8">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0d84b3a7-4c35-4b8c-b903-63ecf666c70a">
+    <name>НачислениеЗарплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисление зарплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payroll accrual</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.НачислениеЗарплаты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>DataProcessor.УточнениеМатВыгодыПоЗаймам.Attribute.Организация</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="eb0a2f9c-3eba-4320-a67d-183209156391">
+    <name>МесяцНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Месяц начисления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accrual month</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>ДФ='ММММ гггг'</value>
+    </format>
+    <format>
+      <key>en</key>
+      <value>DF='MMMM yyyy'</value>
+    </format>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="c05b9067-cdc3-4457-8592-44bbddc22fae">
+    <producedTypes>
+      <objectType typeId="8323848a-5b8c-4c41-9df1-90428a3674c6" valueTypeId="8735b4d0-ef35-493e-960c-bcb037e72f38"/>
+      <rowType typeId="caa1fe86-f237-488d-b84b-ace199dc714f" valueTypeId="370c5bc8-e78e-4441-9d80-8e5714a11bba"/>
+    </producedTypes>
+    <name>ПогашениеЗаймов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Погашение займов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Repayment of loans</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="69130f9b-0eea-415d-b76c-f01c6dcb7fd1">
+      <name>Регистратор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Регистратор</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Recorder</value>
+      </synonym>
+      <type>
+        <types>DocumentRef</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6b64b19b-16d6-4200-9a58-1e8d8d02cb8a">
+      <name>Сотрудник</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Сотрудники</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="84a44087-ef13-4f5e-a271-ca002c84c493">
+      <name>ФизическоеЛицо</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сотрудник</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Employee</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ФизическиеЛица</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <choiceParameters>
+        <name>Отбор.ВАрхиве</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="40faa94f-c547-4df0-a0e5-bb54d44f503d">
+      <name>ДоговорЗайма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор займа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Loan agreement</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ДоговорЗаймаСотруднику</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e176f518-270b-4c53-a51b-c5b946cc90ca">
+      <name>МатериальнаяВыгода</name>
+      <synonym>
+        <key>ru</key>
+        <value>Мат. выгода (корректировка)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain (adjustment)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a1d8bbb1-edd9-4153-a2ee-4b0fd472d8f6">
+      <name>НалогНаМатериальнуюВыгоду</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налог на мат. выгоду (корректировка)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain tax (adjustment)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="58084208-aba8-48bc-a6ff-2f007fd1da9f">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ПодразделенияОрганизаций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="db79fe21-23f4-43b4-8646-b266f2a75a9a">
+      <name>МатериальнаяВыгодаС2024</name>
+      <synonym>
+        <key>ru</key>
+        <value>Мат. выгода с 2024</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain since 2024</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bfe558e1-7c21-47d5-96d4-67b69343594e">
+      <name>НалогНаМатериальнуюВыгодуС2024</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налог на мат. выгоду с 2024</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain tax since 2024</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6157c23c-887a-4371-a719-67084b1e5525">
+      <name>МатериальнаяВыгодаДо2024</name>
+      <synonym>
+        <key>ru</key>
+        <value>Мат. выгода (алгоритм до 2024 г)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain (algorithm before 2024)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="92ec5a9d-ac3c-4ed6-8846-b3965f7c5557">
+      <name>НалогНаМатериальнуюВыгодуДо2024</name>
+      <synonym>
+        <key>ru</key>
+        <value>Налог на мат. выгоду (алгоритм до 2024 г)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Financial gain tax (algorithm before 2024)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>13</precision>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2a3ad163-b26e-457c-bbdc-0c9901dc7ab8">
+      <name>ДатаПогашения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата погашения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Repayment date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5bdd0c37-9aa0-4a63-811a-66dcef4d1d7b">
+      <name>МесяцПогашения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Месяц погашения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Repayment month</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ДФ='ММММ гггг'</value>
+      </format>
+      <format>
+        <key>en</key>
+        <value>DF='MMMM yyyy'</value>
+      </format>
+      <editFormat>
+        <key>ru</key>
+        <value>ДФ='ММММ гггг'</value>
+      </editFormat>
+      <editFormat>
+        <key>en</key>
+        <value>DF='MMMM yyyy'</value>
+      </editFormat>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="2f499c0a-5624-4030-8415-113be81a30d4">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

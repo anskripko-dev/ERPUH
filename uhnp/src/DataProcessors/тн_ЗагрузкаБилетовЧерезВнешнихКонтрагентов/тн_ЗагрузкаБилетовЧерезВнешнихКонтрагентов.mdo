@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="dcf515e2-94d8-46ff-b3b9-e5d0f60e6d62">
+  <producedTypes>
+    <objectType typeId="d11dbc53-e013-434a-ba6e-b3addd737fe7" valueTypeId="5bcad22a-1463-4176-bab9-dd5e3a66a802"/>
+    <managerType typeId="60b52dbc-9e7e-4c8a-83e7-ccc132772287" valueTypeId="218e71c7-1ffa-44ca-827f-11f25637a042"/>
+  </producedTypes>
+  <name>тн_ЗагрузкаБилетовЧерезВнешнихКонтрагентов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка билетов через внешних контрагентов (тн)</value>
+  </synonym>
+  <comment>№000040506</comment>
+  <defaultForm>DataProcessor.тн_ЗагрузкаБилетовЧерезВнешнихКонтрагентов.Form.Форма</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Загрузка билетов через внешних контрагентов</value>
+  </extendedPresentation>
+  <attributes uuid="7cd71baf-1bfe-4629-962c-971ad61507c7">
+    <name>ВыбранныйФайл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбранный файл</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="67af2726-0636-4f87-8edf-23ce6298fcd2">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b38c4645-29cd-4009-b626-d53bb39038e9">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4962f7ee-2080-4c5e-a1d9-de61288216f6">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Контрагент</name>
+      <field>DataProcessor.тн_ЗагрузкаБилетовЧерезВнешнихКонтрагентов.Attribute.Контрагент</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>DataProcessor.тн_ЗагрузкаБилетовЧерезВнешнихКонтрагентов.Attribute.Организация</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.Статус</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.СтатусыДоговоровКонтрагентов.EnumValue.Действует</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.ХозяйственнаяОперация</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ХозяйственныеОперации.EnumValue.ЗакупкаУПоставщика</value>
+      </value>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.ПометкаУдаления</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <choiceParameters>
+      <name>Отбор.ПорядокРасчетов</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Enum.ПорядокРасчетов.EnumValue.ПоДоговорамКонтрагентов</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="4c45a2d0-03cd-42b3-a67b-f0c1485e039d">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="86ab2567-605b-4990-9575-8d2902bc347e">
+    <producedTypes>
+      <objectType typeId="2954d264-3aff-45bc-a430-22138053c33d" valueTypeId="194dea57-b203-46b4-8f72-9a196a0ce779"/>
+      <rowType typeId="7b462a98-b73c-41a4-baa2-676a7b8f129d" valueTypeId="091adc64-398e-476e-a6a7-b1f71dc1907a"/>
+    </producedTypes>
+    <name>ТаблицаДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+  </tabularSections>
+  <tabularSections uuid="ef363a72-3d20-459b-b817-9d5625a94d12">
+    <producedTypes>
+      <objectType typeId="aa5a2eaf-5bf6-436a-965d-179c8d575797" valueTypeId="752d24b9-2d9c-4007-b912-40b87c5a20d7"/>
+      <rowType typeId="582ae683-7a38-4ca9-adb2-459a9d878bb7" valueTypeId="22acab6b-d891-483c-9a88-5d670bd024c5"/>
+    </producedTypes>
+    <name>ТаблицаДанныхПТиУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных ПТиУ</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+  </tabularSections>
+  <forms uuid="4efe7ed5-125a-4aeb-a9be-7a91937619d3">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="b72c1a5d-cfcb-478f-a8af-5b6b490dfc9a">
+    <name>ФормаНеоднозначности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма неоднозначности</value>
+    </synonym>
+    <comment>№000045851</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="7bd3f879-d909-453b-b8ba-e8393ebb5244">
+    <name>МакетСопоставленияКолонокБилет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет сопоставления колонок билет</value>
+    </synonym>
+  </templates>
+  <templates uuid="74e03537-95c8-4e24-9751-3f86e3143715">
+    <name>МакетСопоставленияКолонокПТиУ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет сопоставления колонок ПТиУ</value>
+    </synonym>
+  </templates>
+  <commands uuid="fbba1c2b-4b91-4be3-aa74-4fafb7ee67ae">
+    <name>ОткрытьЗагрузкаБилетовЧерезВнешнихКонтрагентов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка билетов через внешних контрагентов</value>
+    </synonym>
+    <group>CommandGroup.РазделГлавное100_Казначейство</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

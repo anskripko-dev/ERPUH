@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f0a397ce-f1c0-4a9c-a7cf-23327ce53072">
+  <producedTypes>
+    <objectType typeId="3d4b24fd-0b8f-465c-9dd6-c283811e27b5" valueTypeId="77fe3f5c-fa65-4ca3-b69b-9d5ac52f5f62"/>
+    <managerType typeId="cd500bdd-14fd-45de-8008-444268ff3f5f" valueTypeId="968e5cd4-d538-46d3-85e3-6b81f72795a6"/>
+  </producedTypes>
+  <name>тн_ПеренумерованиеСФ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перенумерация СФ (сч/ф выданный, сч/ф на аванс, сч/ф (агент)</value>
+  </synonym>
+  <comment>Выполнение задач №000037658 (перенесена из расширения)</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ПеренумерованиеСФ.Form.Форма</defaultForm>
+  <attributes uuid="59480ff7-48d3-4371-9205-b018f2edf687">
+    <name>ДатаНачала</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата начала</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="23ca71e7-702b-4ecf-96cf-3985e01c2762">
+    <name>ДатаОкончания</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата окончания</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="e35f06a5-3105-455f-b5c8-7e27ad44d840">
+    <producedTypes>
+      <objectType typeId="bebc19c5-f7e7-47bb-a5e0-56e18670b7e1" valueTypeId="19f007ba-52f4-4a03-a31c-7042f6b63e59"/>
+      <rowType typeId="2d7826ac-8f83-4672-9aa3-b7dab353638d" valueTypeId="cb054648-08d6-48a5-95f1-0741b7ee59e7"/>
+    </producedTypes>
+    <name>СФ</name>
+    <synonym>
+      <key>ru</key>
+      <value>СФ</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="89fb841d-8052-43c9-b349-6b68cb78c261">
+      <name>Отметка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Отметка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ff754543-0d04-4c15-90fb-56d5a11bb67a">
+      <name>Номер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>12</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="f94a3383-dad4-45b3-97ba-7439338632db">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="055977f2-97f6-4faf-b2ca-0892a3913e19">
+      <name>СФ</name>
+      <synonym>
+        <key>ru</key>
+        <value>СФ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданныйАванс</types>
+        <types>DocumentRef.СчетФактураВыданный</types>
+        <types>DocumentRef.СчетФактураНалоговыйАгент</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="15bf7041-72c3-47ed-93cd-74cf36a97091">
+      <name>Исправление</name>
+      <synonym>
+        <key>ru</key>
+        <value>Исправление</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3df568d1-e5f4-4847-804e-6dbb580b591e">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="76a4f88a-c969-40ac-9876-58e3e86ff10f">
+      <name>НайденнныйМаксНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Найденнный макс номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>12</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="2c4f2f8a-a96c-4fdb-bf4d-b30993a14067">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

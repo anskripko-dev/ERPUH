@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1f4c2bb0-c6ae-4b11-8f5d-4784ca0d2111">
+  <producedTypes>
+    <selectionType typeId="6a4c0856-c521-4c3f-9146-09e66b66cafa" valueTypeId="07a6fd61-ed48-4048-b1af-304de76f47d2"/>
+    <listType typeId="dfdd257f-e9b8-4e03-acf9-08dd075214f2" valueTypeId="d26f0ea1-4318-486f-82a3-759d2169672f"/>
+    <managerType typeId="e32d7747-bc5d-49bd-bb82-ac8cf1483388" valueTypeId="4d8eccf6-ed9f-4d37-9292-c44d32e28287"/>
+    <recordSetType typeId="b85ab313-19c8-4047-a296-0ce0cf92ed4b" valueTypeId="c88df843-9bc5-457a-bc48-8a29ba619900"/>
+    <recordKeyType typeId="1ffa4efd-f198-4f2b-891c-cde32fe0661c" valueTypeId="30c3cc1e-6b2b-401f-af0e-e9ca76a19903"/>
+    <recordType typeId="42deda62-5ad9-4345-a92e-bbf33243c0e6" valueTypeId="09c4d05d-2c1d-44be-b3e2-a9ee17ee3a48"/>
+    <recordManagerType typeId="6180ef73-5e3b-47d1-865d-9510c54db199" valueTypeId="23a24850-7e76-4f57-b821-965eb7b912db"/>
+  </producedTypes>
+  <name>тн_СоответствиеСчетаУППТипуНалога</name>
+  <synonym>
+    <key>ru</key>
+    <value>Соответствие счета УПП типу налога (тн)</value>
+  </synonym>
+  <comment>//Блинова М.А. 29.12.2023 Выполнение задач №000047842</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="960387d2-5ac1-43e3-a066-e19609721947">
+    <name>ТипНалога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид налога</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Вид налога</value>
+    </synonym>
+    <comment>// Николаев Павел 08.11.2024 Выполнение задач №000051555</comment>
+    <type>
+      <types>CatalogRef.ВидыНалоговВзносов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="bd731ce5-8135-400d-9966-506c5f51f5a8">
+    <name>СчетУчета_ПеречислениеНалога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет учета Перечисление налога</value>
+    </synonym>
+    <comment>Выполнение задач №000049443</comment>
+    <type>
+      <types>ChartOfAccountsRef.Хозрасчетный</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="014331a5-646c-454a-a95c-8389fb6b2fcc">
+    <name>УдалитьТипНалога</name>
+    <synonym>
+      <key>ru</key>
+      <value>(не используется) Тип налога</value>
+    </synonym>
+    <type>
+      <types>EnumRef.УдалитьТипыНалогов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="b4e816ce-a523-48c2-8f8e-12ac540acc08">
+    <name>СчетУПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет УПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>7</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

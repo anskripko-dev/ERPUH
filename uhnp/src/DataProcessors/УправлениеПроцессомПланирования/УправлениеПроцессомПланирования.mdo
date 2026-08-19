@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="98e4b025-e79f-478c-aaa7-5f64893f7f04">
+  <producedTypes>
+    <objectType typeId="845554e4-19ec-4477-bea7-0d400c9c2b39" valueTypeId="3c81045b-8f6b-4335-806c-04171f315169"/>
+    <managerType typeId="57a26d3d-024d-4562-97e7-be74eaf2a44d" valueTypeId="123ce911-19cc-4f0e-9a94-63ef97ba71d5"/>
+  </producedTypes>
+  <name>УправлениеПроцессомПланирования</name>
+  <synonym>
+    <key>ru</key>
+    <value>Управление процессом планирования</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Planning process management</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.УправлениеПроцессомПланирования.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="7fcc9175-d4d4-4002-bc04-4c2b472b630e">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Scenario</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СценарииТоварногоПланирования</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.УправлениеПроцессомПланирования</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="25ce8da3-8f8c-47f4-9ff8-246c1bdaab5e">
+    <name>НачалоПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начало периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period start</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет границу начала периода плана.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines a boundary of the plan period start.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="3bd32b88-75cd-4252-b3a0-c004e9c389d7">
+    <name>ОкончаниеПериода</name>
+    <synonym>
+      <key>ru</key>
+      <value>Окончание периода</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Period end</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет границу окончания периода плана.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines a boundary of the plan period end.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="776ddbf5-39a1-4214-b250-264c68706b1a">
+    <name>Периодичность</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Frequency</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет период, на который формируется план.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines the plan period.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="217384ca-e85b-490b-9d41-8b753e5d2a0d">
+    <name>Назначение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Назначения</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Назначение под которое будет запланирована закупка.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Assignment for which purchase will be planned.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="67feb545-4008-4b42-ae82-c04824dced9f">
+    <name>Ответственный</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ответственный</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Person responsible</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Пользователи</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Пользователь, ответственный за документ.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>User responsible for the document.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="08c16567-78db-4262-8792-c3a25f71edf9">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="03bc4fa8-c27e-4085-8b2e-91e130bdcb31">
+    <name>ФормаДокументов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Детализация планов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Plan details</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="769abbf1-d0b1-44e8-a45b-84382267afac">
+    <name>ФильтрНоменклатурыПлановПоДефицитам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Фильтр номенклатуры планов по дефицитам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Plan items filter by shortages</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="c3ee0853-2f0f-420e-b952-232d95e9b4f5">
+    <name>Макет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Template</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="43316a82-44f3-42e2-bc2a-e09690e846bc">
+    <name>УправлениеПроцессомПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Управление процессом планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planning process management</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

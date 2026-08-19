@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2e4506ef-0971-4c33-8dd3-ce53a4a2b801">
+  <producedTypes>
+    <objectType typeId="48406160-3810-46a3-8c75-6cf263596244" valueTypeId="6bc32d05-a271-4d35-b415-2c95861c5739"/>
+    <managerType typeId="435a7ff5-c4bf-4013-a9d8-8b3f6a844645" valueTypeId="d581799c-7966-455a-9046-05163687c32c"/>
+  </producedTypes>
+  <name>СопоставлениеПланФактОперацийМСФО</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сопоставление фактических документов с начислениями прошлого периода</value>
+  </synonym>
+  <defaultForm>DataProcessor.СопоставлениеПланФактОперацийМСФО.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="ed10505c-bedd-4ca0-aa55-4ef28ef47dd8">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="da7e022e-e00e-45e4-aabc-63ae65aa0f94">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="91cc01e1-c458-4035-93f6-86810551be21">
+    <name>ПериодНачисления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период начислений</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="4df061b7-9405-4cf1-9ac5-a994c1f57ec8">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="58c8cd18-24cc-4550-96fc-ba0d1393b0ac">
+    <name>ДоговорКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор контрагента</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Договор</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>DataProcessor.СопоставлениеПланФактОперацийМСФО.Attribute.Контрагент</field>
+    </choiceParameterLinks>
+    <choiceParameterLinks>
+      <name>Отбор.Организация</name>
+      <field>DataProcessor.СопоставлениеПланФактОперацийМСФО.Attribute.Организация</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="d31dd4d3-9ec2-4c8a-8892-c77ca3b345a6">
+    <name>ПериодСценария</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период документов факта</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="e5c0dc09-04eb-43df-94a1-4ee4a40a1054">
+    <name>ВидыДокументовПлана</name>
+    <synonym>
+      <key>ru</key>
+      <value>Начисления</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="484d3264-e92b-4a18-a1a3-bd08f9e3a2a2">
+    <name>ВидыДокументовФакта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы факта</value>
+    </synonym>
+    <type>
+      <types>ValueList</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <forms uuid="71deac2a-9333-4596-9e84-f207fea0fc89">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="1e5175b8-8bc9-4631-a2fd-fd2067cf121d">
+    <name>СопоставлениеПланФактОперацийМСФО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сопоставление фактических документов с начислениями</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

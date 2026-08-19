@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9bd238a0-44ae-471a-bfc4-a2b492d98814">
+  <producedTypes>
+    <selectionType typeId="04b4570d-b44d-42f4-abdb-d757c352c3b5" valueTypeId="bf3f799e-abbd-4d1f-ac27-2d85a16866da"/>
+    <listType typeId="50c3070b-fdc1-4e41-96a3-5d7a93515be7" valueTypeId="76713168-3f5e-4e65-856f-c4bb727ece99"/>
+    <managerType typeId="4223992d-1607-4a56-9b63-1130f1962baf" valueTypeId="c76414a4-230b-44db-94b4-585cda2457bb"/>
+    <recordSetType typeId="f4d5e1b8-44d9-4aa0-a98c-0aeacbff761e" valueTypeId="229de7e8-ee0b-4c7f-b713-ac5cb0299e37"/>
+    <recordKeyType typeId="90e0de46-ae8c-462a-b150-1cf2aa2571f8" valueTypeId="b990fe65-d81a-4902-9b15-15af4c21b446"/>
+    <recordType typeId="531bdd6a-0b9e-499b-b687-ebbd3f04c548" valueTypeId="3f0370f5-b213-44f9-8908-e3a571e6e1bd"/>
+    <recordManagerType typeId="ae4c7832-8192-4269-8bd1-69fb01385ba9" valueTypeId="6ffd56cf-207c-4ddb-85b4-eb196562a369"/>
+  </producedTypes>
+  <name>СтатусыПубликацииОбъектовНаЭТП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статусы публикации объектов на ЭТП</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Second</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <explanation>
+    <key>ru</key>
+    <value>Жесткое ограничение: объект может быть размещен только на одной площадке.</value>
+  </explanation>
+  <resources uuid="48f039cc-3557-4a39-b705-5bacc0b7bf0d">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПубликацииЗакупок</types>
+      <types>EnumRef.СтатусыПубликацииОбъектовНаЭТП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="9603d532-b222-4c12-ac03-b002db8c9411">
+    <name>ЭТП</name>
+    <synonym>
+      <key>ru</key>
+      <value>ЭТП</value>
+    </synonym>
+    <comment>Электронная торговая площадка</comment>
+    <type>
+      <types>CatalogRef.ЭлектронныеТорговыеПлощадки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="4cf8cabc-fb90-4559-a6c3-eb6fc504e235">
+    <name>ОбъектОбмена</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект обмена</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ОбъектыЦУЗОбменаСЭТП_УХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

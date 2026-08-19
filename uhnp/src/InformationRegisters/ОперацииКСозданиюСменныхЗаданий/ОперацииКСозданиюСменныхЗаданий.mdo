@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d0d7b8e6-b660-4c9f-b449-09ca1d41e55a">
+  <producedTypes>
+    <selectionType typeId="f6dd3b76-9f22-4ffa-9566-6faa4f9703d2" valueTypeId="dfd7917b-f1e2-4212-8152-1020e546edd3"/>
+    <listType typeId="3b2031d2-0f94-4f45-8199-ce9eaa79f35f" valueTypeId="371babe8-fb2e-49eb-b7d4-2bf47501099b"/>
+    <managerType typeId="042287d8-6070-4f62-963a-75bbd21c0c1b" valueTypeId="646d5ee8-f64f-4553-a19c-3251f0602c83"/>
+    <recordSetType typeId="e6ae5b5b-2c3a-4d79-8a62-ac4dd937796d" valueTypeId="78a77723-5bc0-4d3a-b570-364adf769d50"/>
+    <recordKeyType typeId="a62674db-ac04-4e16-9654-1c15a4de7fa0" valueTypeId="d8ddc2e6-3926-41a8-9da2-1b313d65e3ff"/>
+    <recordType typeId="7c0e8ea0-142b-4cb2-ba81-fae71d729205" valueTypeId="c42e13fa-9694-495c-87d3-03d85aa1e988"/>
+    <recordManagerType typeId="84eb298b-9a55-48a0-a94d-dbfa5bc8007d" valueTypeId="76cc4c65-b786-4a75-acb9-11d4f139090e"/>
+  </producedTypes>
+  <name>ОперацииКСозданиюСменныхЗаданий</name>
+  <synonym>
+    <key>ru</key>
+    <value>Операции к созданию сменных заданий</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Operations to create shift tasks</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ОперацииКСозданиюСменныхЗаданий.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="5b83e2f2-ec76-4927-b0f5-84a22308e4d9">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Количество запланированных операций.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Scheduled operations count.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="e6acab1c-19d5-40cc-9c6c-34694f9b55ac">
+    <name>ВремяШтучное</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время штучное</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Time per piece</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>1</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Штучное время выполнения операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation execution time per piece.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="975e9d54-74f1-46a2-bd07-3b6dd5b5c767">
+    <name>ВремяПЗ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Время ПЗ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setup time</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <scale>1</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подготовительно-заключительное время.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Setup time.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="45ec189d-a676-4c36-afcc-60499f1f8867">
+    <name>ВремяЕдИзм</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ед. изм.</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Unit</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ЕдиницыИзмеренияВремени</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7ad469eb-d62f-433e-9b9f-f9c7632f818e">
+    <name>МожноНазначать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Можно назначать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>To assign</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+  </resources>
+  <resources uuid="283ea998-a5ea-42ca-9aa1-ee21192fff9f">
+    <name>НужноНазначать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нужно назначать</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>To be assigned</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="766af2ad-0303-4856-92bd-b3c9d7255b75">
+    <name>НарушенПорядокНазначения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Нарушен порядок назначения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignment procedure is violated</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="d7a8943d-516f-40df-b8c1-7bd6b5476dd3">
+    <name>Распоряжение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Order</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказНаПроизводство2_2</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f210687a-e2f5-4198-9662-e3036af3344b">
+    <name>НомерОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation number</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation number.</value>
+    </toolTip>
+    <minValue xsi:type="core:StringValue">
+      <value>1</value>
+    </minValue>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5084cc30-26ce-4906-bb58-53c5386c4424">
+    <name>НомерСледующейОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Следующая операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Next operation</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>10</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Операция, которая выполняется после текущей.
+Не заполняется, если это последняя операция.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Operation performed after the current one.
+It is not performed if it is the last one.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="c47c0614-9c13-42f6-8b9a-b57cca66fda4">
+    <name>Порядок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Порядок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Sequence</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>14</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="71532909-d9ef-4a3b-a006-dfb31db64de6">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, ответственное за выполнение производственной операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit responsible for executing the routing operation.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b2817a32-d11d-4d51-9bea-e2378f93872c">
+    <name>СменноеЗадание</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сменное задание</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Shift task</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.СменноеЗадание</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="38b65802-f7e5-478c-960f-f1eb73d92524">
+    <name>Этап</name>
+    <synonym>
+      <key>ru</key>
+      <value>Этап</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Stage</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЭтапПроизводства2_2</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Этап производства</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Production stage</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c1742e5d-6646-4e66-b334-54951b815867">
+    <name>Операция</name>
+    <synonym>
+      <key>ru</key>
+      <value>Операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ТехнологическиеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Технологическая операция</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Manufacturing operation</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c97fb6ef-048e-451d-861d-f8b562b2b102">
+    <name>ИдентификаторОперации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор операции</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Operation ID</value>
+    </synonym>
+    <comment>Уникальный идентификатор операции в маршрутной карте</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>25</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="ec9268b6-36a8-4b34-8116-a68bfba6a5d6">
+    <name>Исполнитель</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнитель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assignee</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ИсполнительРабот</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Бригада или работник, выполняющий работу</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Work team or worker who performed the work</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7cbda146-c6d1-4e8d-a921-35395b6e8695">
+    <name>Участок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Участок</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Area</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПроизводственныеУчастки</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b0b448ca-1fae-4b38-9e9c-bd7cb531b6d2">
+    <name>РабочийЦентр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочий центр</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РабочиеЦентры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c33b965b-ed83-4a4d-9cbf-c9fc3bff7b40">
+    <name>ВидРабочегоЦентра</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид рабочего центра</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Work center type</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыРабочихЦентров</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="33af7cc9-c1f4-40ee-a426-2b016525058c">
+    <name>НазначатьНеРанее</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначать не ранее</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assign not earlier than</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="d7eb4579-1103-4f61-95da-f12aa171b113">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

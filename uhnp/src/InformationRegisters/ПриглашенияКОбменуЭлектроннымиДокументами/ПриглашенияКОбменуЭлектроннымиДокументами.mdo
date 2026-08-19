@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="80f26308-7a32-4a5c-ab7a-ba29e5c4a4f7">
+  <producedTypes>
+    <selectionType typeId="8523bfb4-69d0-47b9-af11-87591b43951b" valueTypeId="ca686438-d5bf-4517-8f3d-4582bc246678"/>
+    <listType typeId="d855a3f0-d6e2-4d46-adab-d73282316915" valueTypeId="09841115-5121-456d-bdf5-13f8449a5685"/>
+    <managerType typeId="65df9772-df3b-4ec5-8a72-fc3d479d004d" valueTypeId="277e7aef-bc2f-4fb5-a7f5-3f6303897291"/>
+    <recordSetType typeId="04094a0b-abc9-4aac-b9f6-4d79774ca581" valueTypeId="beebbfb8-41d5-4c49-9124-ff09147b3f79"/>
+    <recordKeyType typeId="c31e41e6-994a-4252-a118-523f0276d54a" valueTypeId="e083cc90-6068-42ff-bc07-8e8fbb43e80a"/>
+    <recordType typeId="dcd0b53c-eb92-433b-a535-a0b978a8a90f" valueTypeId="37be5c16-2909-4df4-a5ba-bb7ad182f7b3"/>
+    <recordManagerType typeId="3ac1cb22-dfde-4c18-a6fc-79b181387847" valueTypeId="8dfafd0e-432e-4830-8786-0285c7eae054"/>
+  </producedTypes>
+  <name>ПриглашенияКОбменуЭлектроннымиДокументами</name>
+  <synonym>
+    <key>ru</key>
+    <value>Приглашения к обмену электронными документами</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Invitations for electronic document exchange</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.ПриглашенияКОбменуЭлектроннымиДокументами.Form.ФормаПриглашения</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Приглашение к обмену</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Invitation to exchange</value>
+  </recordPresentation>
+  <resources uuid="4412f6f9-98fc-4fa4-9fad-3e8e34ab0e59">
+    <name>ИдентификаторКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="9e21d039-48ba-4105-a444-b5ab6064767e">
+    <name>ИдентификаторОператора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор оператора</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Provider ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="e313c676-6baf-4da1-a420-8684c66e1fc7">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>TIN</value>
+    </synonym>
+    <comment>Данные организации, владеющей идентификатором контрагента, указанном в приглашении. Являются достоверными только при статусах приглашения &quot;Принято&quot;, &quot;ТребуетсяСогласие&quot;. Используется для: 1) заполнения в служебных квитанциях (извещении о получении, уведомлении об уточнении, предложении об аннулировании), так как в них указываются данные транспортных участников обмена, а не логических (т.е. в документе может быть один контрагент, а получен он может быть от другого).</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>12</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="02e18213-56d0-45c4-8200-43028053326c">
+    <name>КПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>KPP</value>
+    </synonym>
+    <comment>Данные организации, владеющей идентификатором контрагента, указанном в приглашении. Являются достоверными только при статусах приглашения &quot;Принято&quot;, &quot;ТребуетсяСогласие&quot;. Используется для: 1) заполнения в служебных квитанциях (извещении о получении, уведомлении об уточнении, предложении об аннулировании), так как в них указываются данные транспортных участников обмена, а не логических (т.е. в документе может быть один контрагент, а получен он может быть от другого).</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>10</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </resources>
+  <resources uuid="7d657db7-5202-48c4-b905-b7131aea6c2b">
+    <name>ОператорЭДОКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оператор ЭДО контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty EDI provider</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>3</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="0951e99d-a053-4f74-8bab-3bdeb2a63433">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПриглашений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="9d9c3308-4a3b-4575-906a-b1c6cac3dc26">
+    <name>Тип</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыПриглашений</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ba924012-6542-424a-baa0-a9b45e14f1b6">
+    <name>ДатаИзмененияСтатуса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата изменения статуса</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status modification date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bcd1f1fa-974f-4b36-be42-d62aa1c94c1c">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>DefinedType.Организация</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, от имени которой будет выполнятся обмен ЭД</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company on whose behalf the ED interchange will be performed</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="16e533b5-b3db-4ef4-96b1-377c56e24a66">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty</value>
+    </synonym>
+    <comment>Ссылка на контрагента информационной базы, соответствующего владельцу идентификатора контрагента, указанного в приглашении. Используется для: 1) заполнения его во входящем произвольном документе в случае, если данные контрагента не указаны в транспортной информации; 2) вывода и фильтрации в списке приглашений; 3) стартового создания настроек отправки/получения при переходе связи в состояние &quot;Принято&quot;.</comment>
+    <type>
+      <types>DefinedType.УчастникЭДО</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b6954fde-1dbb-47f6-a39f-7b673df600d8">
+    <name>Наименование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Description</value>
+    </synonym>
+    <comment>Данные организации, владеющей идентификатором контрагента, указанном в приглашении. Являются достоверными только при статусах приглашения &quot;Принято&quot;, &quot;ТребуетсяСогласие&quot;. Используется для: 1) заполнения в служебных квитанциях (извещении о получении, уведомлении об уточнении, предложении об аннулировании), так как в них указываются данные транспортных участников обмена, а не логических (т.е. в документе может быть один контрагент, а получен он может быть от другого).</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>150</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="26e66123-94aa-4b38-9255-e2e45162b05b">
+    <name>EmailКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Email контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Counterparty email</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="b0c4520b-ab10-4da4-8670-c1997381b262">
+    <name>EmailОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Email организации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company email</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="c299225d-4e8d-4134-8d14-68637d10c201">
+    <name>ТекстПриглашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст приглашения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invitation text</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="8906a76e-9911-4e9e-8689-4cab87b4f6aa">
+    <name>ОписаниеОшибки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Описание ошибки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Error details</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="182a4a6f-da34-46f7-b440-7f6dcc509a91">
+    <name>ПричинаОтказа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Причина отказа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Reason for refusal</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+  </attributes>
+  <attributes uuid="69b4aa75-d5bc-4949-b1c2-497fdec8ac51">
+    <name>Ознакомиться</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ознакомиться</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Read</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="48ef0d80-ba69-4233-8028-22f4d6b454ed">
+    <name>Ключ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Key</value>
+    </synonym>
+    <comment>Для внутренних операций - &quot;КлючПриглашения&quot;, для взаимодействия с сервисом - &quot;ВнешнийКод&quot;, &quot;ExternalContactId&quot;. При отправке широковещательного приглашения не заполняется.</comment>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="5ea61da0-02b7-4706-8d21-ae471700c803">
+    <name>ИдентификаторОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор организации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company ID</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:StringValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="383ed90c-7f31-48ee-ab42-abb5ace77077">
+    <name>ФормаПриглашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма приглашения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invitation form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8758a2d8-d500-47fd-8175-5f6009c255e1">
+    <name>ПомощникОтправкиПриглашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помощник отправки приглашения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invitation sending wizard</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="7b936c35-e19a-4662-980d-e8c3d1271d5b">
+    <name>ПомощникМассовойОтправкиПриглашений</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помощник массовой отправки приглашений</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Bulk invitation sending wizard</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c046a587-28e8-444d-a628-22f2d888396c">
+    <name>ПомощникОтправкиПриглашенияЛегкийКлиентЭДО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помощник отправки приглашения легкий клиент ЭДО</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Invitation sending wizard standard EDI client</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="0abdb586-26f1-44c8-92fb-4579805f944c">
+    <name>ПриглашениеИностранногоКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приглашение иностранного контрагента</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Приглашение иностранного контрагента</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

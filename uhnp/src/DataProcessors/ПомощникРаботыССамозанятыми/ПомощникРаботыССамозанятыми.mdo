@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5d6c54f8-dc8e-49ec-acc1-8436e66c12ae">
+  <producedTypes>
+    <objectType typeId="c40b0c2d-cd93-44bd-af98-d472d1184028" valueTypeId="83ebf0d6-6ba8-493b-bedf-3121a0c3e393"/>
+    <managerType typeId="518d6c5f-a3f5-46de-8c3b-0b39f5bd334d" valueTypeId="225f3c11-afff-41d6-8f8d-7493f5363193"/>
+  </producedTypes>
+  <name>ПомощникРаботыССамозанятыми</name>
+  <synonym>
+    <key>ru</key>
+    <value>Помощник работы с самозанятыми</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Wizard for self-employed persons</value>
+  </synonym>
+  <defaultForm>DataProcessor.ПомощникРаботыССамозанятыми.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <explanation>
+    <key>ru</key>
+    <value>Помощник работы с реестром самозанятых</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>Wizard for registry of self-employed persons</value>
+  </explanation>
+  <attributes uuid="2b1ff4f4-ef87-4e67-b5b9-eec6a816319b">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="c612ea55-487a-4490-8d3d-68b819231587">
+    <producedTypes>
+      <objectType typeId="bfca7de0-f2af-40cb-9772-a9a9e3c7df4c" valueTypeId="2902bc43-b141-4589-97ca-46c0ad16b52d"/>
+      <rowType typeId="15511b27-d7e6-4c92-936a-a20461908194" valueTypeId="2e4c0c6c-6c6f-4910-a2fb-cfbd2195a306"/>
+    </producedTypes>
+    <name>ДокументыОплаты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы оплаты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>AR/AP transactions</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ce62f330-479a-473f-9572-08660d104021">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Counterparty</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="92ced867-0269-421f-a28e-f00f172dde0e">
+      <name>Партнер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партнер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Partner</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Партнеры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Контрагент</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.Поставщик</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bdcce4d9-ff94-46f2-b264-f6fd49e17ddf">
+      <name>Договор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Contract</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Партнер</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Партнер</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.Статус</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.СтатусыДоговоровКонтрагентов.EnumValue.Действует</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ДоговорССамозанятым</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b5a490d0-a5da-42c1-a287-c76d027613d6">
+      <name>ОбъектРасчетов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект расчетов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AR/AP object</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыРасчетов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.БанковскийСчетКонтрагента</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.БанковскийСчетКонтрагента</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.БанковскийСчетОрганизации</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.БанковскийСчетОрганизации</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Договор</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Договор</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Партнер</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Партнер</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ТипРасчетов</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыРасчетовСПартнерами.EnumValue.РасчетыСПоставщиком</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d86404ed-0a32-4294-95b4-29f0747b9485">
+      <name>БанковскийСчетКонтрагента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Банковский счет контрагента</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Bank account of the counterparty</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеСчетаКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыОплаты.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.Закрыт</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="874528fb-359b-4eed-ae8f-b44317ab7482">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7616b45a-489a-450d-b65b-2272321fc45b">
+      <name>ДатаПлатежа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата платежа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="2bd925c0-c541-4fb2-a99b-cb34ec8da4b9">
+      <name>СтатьяДвиженияДенежныхСредств</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья движения денежных средств</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cash flow item</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6ae36e47-df59-4f48-b4c8-4a10c38dbde9">
+      <name>БанковскийСчетОрганизации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Банковский счет организации</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Company bank account</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.БанковскиеСчетаОрганизаций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <changeMode>DontChange</changeMode>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.Закрыт</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="ba7288d0-f8fd-4428-890c-dea98ef1a605">
+    <producedTypes>
+      <objectType typeId="3cccc78f-3ce8-4430-8873-26e31bcfb40c" valueTypeId="18ce709a-c1b5-4bc6-ab0a-b0116c249d5d"/>
+      <rowType typeId="43be270f-5f0e-4291-a0f3-675b808a0d95" valueTypeId="bb5b433b-4989-4f7e-9a25-5546dce1f23c"/>
+    </producedTypes>
+    <name>ДокументыПриобретения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы приобретения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Purchase documents</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a0ab9c09-eb6f-4442-8f74-4478d65e073e">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Counterparty</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8d11aaa7-d833-4689-a31f-e331d283ab94">
+      <name>Партнер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Партнер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Partner</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Партнеры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="60caa306-23fb-4679-bb68-08eca9898fbc">
+      <name>Договор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Contract</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ДоговорыКонтрагентов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыПриобретения.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Партнер</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыПриобретения.Attribute.Партнер</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.Статус</name>
+        <value xsi:type="core:ReferenceValue">
+          <value>Enum.СтатусыДоговоровКонтрагентов.EnumValue.Действует</value>
+        </value>
+      </choiceParameters>
+      <choiceParameters>
+        <name>Отбор.ДоговорССамозанятым</name>
+        <value xsi:type="core:BooleanValue">
+          <value>true</value>
+        </value>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="caf9fa94-b0a2-4a37-8851-06d0bcca753b">
+      <name>ОбъектРасчетов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект расчетов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AR/AP object</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыРасчетов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.Attribute.Организация</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Договор</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыПриобретения.Attribute.Договор</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Контрагент</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыПриобретения.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Партнер</name>
+        <field>DataProcessor.ПомощникРаботыССамозанятыми.TabularSection.ДокументыПриобретения.Attribute.Партнер</field>
+      </choiceParameterLinks>
+      <choiceParameters>
+        <name>Отбор.ПометкаУдаления</name>
+        <value xsi:type="core:BooleanValue"/>
+      </choiceParameters>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cd902975-b690-41af-8fa7-f5e472be5a7f">
+      <name>Сумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Amount</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4c8e07de-f42a-44e0-ba67-855325ca474d">
+      <name>СсылкаНаЧек</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ссылка на чек</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Receipt link</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="15299fdd-de3c-4c71-acb5-630c881ac07b">
+      <name>НомерЧека</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер чека</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Receipt number</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="cff47826-c772-437d-9ca1-20a4792b4ed0">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="eec9f94a-2251-4450-9e54-c806742890ef">
+    <name>ФормаПараметры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма параметры</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form parameters</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="8b95a59f-dfc6-4984-8896-83762c9a56b6">
+    <name>ПомощникРаботыССамозанятыми</name>
+    <synonym>
+      <key>ru</key>
+      <value>Помощник работы с самозанятыми</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Wizard for self-employed persons</value>
+    </synonym>
+    <group>ActionsPanelTools</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a3851cfd-c953-4fea-96a0-1022c8391f9d">
+  <producedTypes>
+    <selectionType typeId="659b63b3-5246-4576-9cb7-6eccad94e001" valueTypeId="d525f32c-1236-49dc-9f13-c9e3dfac0c02"/>
+    <listType typeId="89323c10-57e7-4bfb-b072-219c28d826ff" valueTypeId="d1de42fd-658e-402c-a0eb-390b29b51683"/>
+    <managerType typeId="fce1da26-814d-49e3-a46d-66f3c2ec56a6" valueTypeId="4dec9de2-70f9-48db-b4bc-395c1f0fdd76"/>
+    <recordSetType typeId="cf9ea004-1941-4aeb-a88c-844d82269c3f" valueTypeId="a13c250a-7e19-4c98-8450-618b5e995408"/>
+    <recordKeyType typeId="971834a4-63e7-4374-aae7-95b920df85be" valueTypeId="309fc018-c194-4c65-b98e-d49e39a9b036"/>
+    <recordType typeId="35e47c74-e0f4-4837-ad84-55d8d5cc3e6e" valueTypeId="2017e84d-af9a-405e-8915-9e7bb17a4eae"/>
+    <recordManagerType typeId="4b8f717e-393d-427e-bb3d-3f69636efe9b" valueTypeId="b4f5784a-813f-4fb4-aef5-d78102dfe8c7"/>
+  </producedTypes>
+  <name>СохраняемыйЗаработокПриВзысканиях</name>
+  <synonym>
+    <key>ru</key>
+    <value>Сохраняемый заработок при взысканиях</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Retained earnings in case of penalties</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="6946d6a0-009b-4f7f-8dea-475d9f9a4e77">
+    <name>КоличествоПрожиточныхМинимумов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество прожиточных минимумов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Number of subsistence levels</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <attributes uuid="9ed297ee-3998-4357-ae23-f940a8bda576">
+    <name>ФизическоеЛицо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сотрудник</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Employee</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ФизическиеЛица</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="a8aed60b-63b0-4111-b14a-36592a2562fb">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, в которую адресован исполнительный лист</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company to which the garnishment order is addressed</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <indexing>IndexWithAdditionalOrder</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <dimensions uuid="f743effa-1935-4cda-a5e6-7e79347768fb">
+    <name>ИсполнительныйДокумент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Исполнительный документ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Garnishment document</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ИсполнительныйЛист</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="56e8a074-88a3-44d1-83bd-00db147b30dd">
+    <name>ПрожиточныйМинимум</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прожиточный минимум</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Subsistence level</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПрожиточныеМинимумы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

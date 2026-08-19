@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="c0028588-edee-493b-a406-db9a05ac104b">
+  <producedTypes>
+    <objectType typeId="956fdc67-432c-4e53-a6b9-10d3f97417c4" valueTypeId="af2c690c-aa2a-4ccc-bfed-1cd038bf00b1"/>
+    <managerType typeId="c1893794-5e7b-4aee-aa63-c1d1c5bc0d78" valueTypeId="8f6c343e-5de4-43a1-a63f-10e3b065a384"/>
+  </producedTypes>
+  <name>ТрансформационнаяТаблица</name>
+  <synonym>
+    <key>ru</key>
+    <value>Трансформационная таблица</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ТрансформационнаяТаблица.Form.ФормаУправляемая</defaultForm>
+  <attributes uuid="e16d9cc3-f88c-4641-8841-8feb89f462b7">
+    <name>ПериодОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период отчета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="ee63bffb-1346-4093-9ca9-b887678de19d">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="8acfa2ff-ff34-46bf-aad7-0831fea84ec7">
+    <name>Дата</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3041bae1-73d0-40c9-a1e6-2e69b8e294b7">
+    <name>Счет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СчетаБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>DataProcessor.ТрансформационнаяТаблица.Attribute.ПланСчетовМСФО</field>
+    </choiceParameterLinks>
+  </attributes>
+  <attributes uuid="c68610e9-8eb1-4698-871b-c38659e6da8f">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="3faa2e3c-97b0-40fc-8131-255a7c72721e">
+    <name>ПланСчетовМСФО</name>
+    <synonym>
+      <key>ru</key>
+      <value>План счетов МСФО</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПланыСчетовБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Владелец</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.ТипыБазДанных.ТекущаяИБ</value>
+      </value>
+    </choiceParameters>
+  </attributes>
+  <attributes uuid="469dc991-8e70-4c3e-b187-307c906d61de">
+    <name>ПоказыватьПоВсемСчетам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Показывать по всем счетам</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="4a7d1772-879f-4d50-83b1-ac1e1dc29d76">
+    <name>РаскрыватьПоВерсиям</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раскрывать по версиям</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2433ec22-9685-4a37-8756-99130daae273">
+    <name>РаскрыватьПоПериметру</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раскрывать по периметру</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="c5675e67-11b5-4e0e-a936-8b9a1110022d">
+    <name>ФормаУправляемая</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма управляемая</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="2f8a0e87-771d-4458-897c-8e75dbdded48">
+    <name>ТрансформационнаяТаблица</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трансформационная таблица</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <templates uuid="2ed08c34-9ec5-45b4-8068-2282797a705d">
+    <name>КонсолидационнаяТаблица</name>
+    <synonym>
+      <key>ru</key>
+      <value>Консолидационная таблица</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="00ca6c59-1011-4e92-8ba5-00c7b4af5604">
+    <name>ТрансформационнаяТаблица</name>
+    <synonym>
+      <key>ru</key>
+      <value>Трансформационная таблица</value>
+    </synonym>
+    <group>NavigationPanelImportant</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

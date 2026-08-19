@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="765efb92-fc23-4f0a-83aa-0025abc61d64">
+  <name>тн_УпрУчетНДСОтложенныйПриПроведении</name>
+  <synonym>
+    <key>ru</key>
+    <value>Управленческий учет НДС отложенный при проведенииидокументов</value>
+  </synonym>
+  <comment>Выполнение задач №000040445</comment>
+  <source>
+    <types>DocumentObject.РеализацияУслугПрочихАктивов</types>
+    <types>DocumentObject.ВозвратТоваровПоставщику</types>
+    <types>DocumentObject.КорректировкаПриобретения</types>
+    <types>DocumentObject.КорректировкаРеализации</types>
+    <types>DocumentObject.ОтчетПереработчика</types>
+    <types>DocumentObject.РеализацияТоваровУслуг</types>
+    <types>DocumentObject.ПриобретениеТоваровУслуг</types>
+    <types>DocumentObject.ПриобретениеУслугПрочихАктивов</types>
+  </source>
+  <event>Posting</event>
+  <handler>CommonModule.тн_УчетНДСОтложенный.тн_ПриПроведенииУпрУчетНДСОбработкаПроведения</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="725514c8-b93a-4826-9ced-5865ccbff9b1">
+  <producedTypes>
+    <objectType typeId="08212f14-ad2b-49b7-9481-f6e8b0bb4c86" valueTypeId="ea904505-f717-49a4-9bd3-4747f2a829c3"/>
+    <managerType typeId="5f1f67e2-8ee6-4009-a67d-fa95ec63b165" valueTypeId="897a66f5-5331-4f12-ab60-ad170cda6a86"/>
+  </producedTypes>
+  <name>ГрупповоеИзменениеЭлементовАмортизации</name>
+  <synonym>
+    <key>ru</key>
+    <value>Групповое изменение элементов амортизации</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Bulk edit of depreciation items</value>
+  </synonym>
+  <comment>Групповое создание документов &quot;Изменение параметров ОС&quot; и &quot;Корректировка стоимости и амортизации ОС&quot;</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ГрупповоеИзменениеЭлементовАмортизации.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="e89f4168-2697-48e4-bc4e-59f4c03a97c7">
+    <name>СтатьяДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья доходов/пассивов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income/liability item</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+      <types>ChartOfCharacteristicTypesRef.СтатьиДоходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья признания доходов от полученных средств целевого финансирования</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Recognition item of income from received target funds</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="648cc2e9-84cd-4698-bf86-888ec260c9fd">
+    <name>АналитикаДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика доходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиДоходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Аналитика статьи доходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Income item dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="9930ae9d-8b50-4558-9944-67510a950226">
+    <name>СтатьяРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья расходов/активов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Asset/expense item</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      <types>ChartOfCharacteristicTypesRef.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья отражения расходов от уценки восстановительной стоимости</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Item recording the expenses on the replacement cost markdown</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="8a10875f-b8ec-4f9b-be5d-21064405c347">
+    <name>АналитикаРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика расходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиРасходов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект аналитики расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Expense dimension item</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="d0b6b18f-f9fc-4d93-8141-f9a951d6b15d">
+    <name>АналитикаАктивовПассивов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика активов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Assets dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект аналитики прочих расходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Object of other expenditure dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1f7c913b-263e-4f9c-8e3d-5c17acf67158">
+    <name>АналитикаАктивовПассивовДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика пассивов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Liability dimension</value>
+    </synonym>
+    <type>
+      <types>Characteristic.СтатьиАктивовПассивов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Объект аналитики прочих доходов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Object of income dimension</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="eaeaed86-5f8f-4228-a633-b65bf13ecef1">
+    <name>НастройкаСчетовУчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка счетов учета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Ledger account settings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиСчетовУчетаПрочихОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3f8c1dd6-ba96-47f4-a6ec-910c2bbc04d1">
+    <name>НастройкаСчетовУчетаДоходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка счетов учета доходов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Income ledger accounts settings</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.НастройкиСчетовУчетаПрочихОпераций</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="44cc2529-9fed-4793-88d4-66e353c4e356">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация предприятия, от имени которой оформляется документ</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company that reconciles its records</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <tabularSections uuid="5e1eb42b-b167-4291-bcf1-8ca7c41e3528">
+    <producedTypes>
+      <objectType typeId="e2351e89-86e5-415a-8dc1-631f5dbc8a1f" valueTypeId="6f186542-2ccd-4eae-ba54-5bdc4ef4d4fd"/>
+      <rowType typeId="00dc9098-d5c6-4229-bc0d-5c1f3546371a" valueTypeId="7037796c-7885-4b9c-8735-2324f67d6925"/>
+    </producedTypes>
+    <name>ОсновныеСредства</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основные средства</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Fixed assets</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="a674e430-1209-47d0-8c8c-459af622c268">
+      <name>ОсновноеСредство</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основное средство</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fixed asset</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ОбъектыЭксплуатации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af5a55ad-9a67-477a-82b9-bf5c5b7b186f">
+      <name>ИнвентарныйНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инв. №</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Inventory number</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ИнвентарныйНомерОбъектовЭксплуатации</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Инвентарный номер</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Inventory number</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7f3edbfc-365c-4213-a59c-b3737c1dcd0e">
+      <name>СрокИспользованияБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Срок использования (БУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Useful life (AC)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>11</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="216d70de-8a9e-4fc8-b3ab-e1d41ac897a2">
+      <name>СрокИспользованияУУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Срок использования (УУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Useful life (MA)</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>4</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3d88448f-e358-48d8-a9ab-447e07dfdfb3">
+      <name>ОбъемНаработки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объем наработки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Asset activity value</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>3</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="882d55f8-e821-47ff-b545-cebd7cee661d">
+      <name>ЛиквидационнаяСтоимостьРегл</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ликвидационная стоимость (БУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Residual value (AC)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dd716b6d-57e9-4794-a000-1b4682aa7698">
+      <name>ЛиквидационнаяСтоимость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Ликвидационная стоимость (УУ)</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Residual value (MA)</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7e61f392-a305-4df7-99c9-66e3790ab2ac">
+      <name>СостояниеБУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Состояние БУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>AC state</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СостоянияОС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a38f12ae-a451-4e52-bc9b-51709385e7e1">
+      <name>СостояниеУУ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Состояние УУ</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>MA state</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СостоянияОС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="28508939-cdb7-4753-a0e3-a97ccf62bb4a">
+      <name>Организация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Организация</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Company</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="24daaa0f-33bf-4527-8fdd-5be9b683224e">
+      <name>ДокументКорректировкиСтоимости</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ корректировки стоимости</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Cost adjustment document</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ИзменениеПараметровОС2_4</types>
+        <types>DocumentRef.КорректировкаСтоимостиИАмортизацииОС</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0dcf47d6-00b7-4267-911c-a48d081fe515">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Business unit</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="376060ca-f988-4254-9a24-416264f4757e">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="6dc58104-b912-47f0-a3c1-d1aaba65485d">
+    <name>ЗагрузкаИзФайла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Загрузка из файла</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import from file</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

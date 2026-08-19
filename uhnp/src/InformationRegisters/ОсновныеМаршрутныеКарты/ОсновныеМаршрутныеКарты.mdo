@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="77650c7d-34e8-4f6d-9a64-19cc49fd7b0e">
+  <producedTypes>
+    <selectionType typeId="9fba5440-57d5-42c4-b82c-284517c3de3a" valueTypeId="dc33bfef-6474-4f4e-8bb9-3d5245b58f9b"/>
+    <listType typeId="72d7febb-6ba8-4a5e-b932-e0cfee261315" valueTypeId="f91830c2-88d4-4e25-ba1e-700526861489"/>
+    <managerType typeId="d0688086-34ed-40e4-8f0b-0c7a0aefb486" valueTypeId="d96fe39c-08a4-4157-b29e-396b9d7bb8ba"/>
+    <recordSetType typeId="f0f2f070-b9a6-4399-9931-17e2a9ef6309" valueTypeId="8396324f-36c3-4624-a6ff-032cefd56922"/>
+    <recordKeyType typeId="96c70458-2a92-4e47-9dfc-0d1e6a63b3e4" valueTypeId="2b6d622f-4074-42a0-ad43-6b0a86e2c201"/>
+    <recordType typeId="c8c538e9-3c26-4929-b68a-c07267b04ac7" valueTypeId="6fd7a944-af93-4de2-adde-c85f0a55c5ac"/>
+    <recordManagerType typeId="20601b1d-5bf6-4489-8ef8-44ccf1855d6b" valueTypeId="57a10c50-bbc2-44f2-a82e-da639d904cc2"/>
+  </producedTypes>
+  <name>ОсновныеМаршрутныеКарты</name>
+  <synonym>
+    <key>ru</key>
+    <value>Основные маршрутные карты</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Main route sheets</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ОсновныеМаршрутныеКарты.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ОсновныеМаршрутныеКарты.Form.ФормаСписка</defaultListForm>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <recordPresentation>
+    <key>ru</key>
+    <value>Основная маршрутная карта</value>
+  </recordPresentation>
+  <recordPresentation>
+    <key>en</key>
+    <value>Main route sheet</value>
+  </recordPresentation>
+  <resources uuid="0c68753f-6a4f-4b98-8f14-eb29547091d3">
+    <name>МаршрутнаяКарта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Маршрутная карта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Route sheet</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.МаршрутныеКарты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Основная маршрутная карта.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Main route sheet.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="34655680-50cc-4bdb-880e-193219e517a8">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Items</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, для которой определяется основная маршрутная карта.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Items for which the main route sheet is defined.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="0b4f2dc2-17da-4cdc-aae7-892b5ec069f6">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Variant</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, для которой определяется основная маршрутная карта.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Item variant for which the main route sheet is defined.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="270f2c55-675c-425d-8929-31c989ca07fe">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, для которого определяется основная маршрутная карта.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit for which the main route sheet is defined.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ПроизводственноеПодразделение</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="6e912bfb-26af-446f-9ac9-a844bf55f28a">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <help>
+      <pages>
+        <lang>ru</lang>
+      </pages>
+    </help>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="ee310294-8c79-4f3b-85fa-a4ce331863dd">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="99bba5db-53c6-4e1b-90a8-22abe036efc9">
+    <name>ФормаЗаписиДляЗаданнойНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи для заданной номенклатуры</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form entries for specified products</value>
+    </synonym>
+    <comment>Предназначена для назначения основных спецификаций для определенной номенклатуры</comment>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="eb5e3ade-8b36-4a5a-9196-5d5d5e32235b">
+    <name>НазначитьОсновной</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначить основной</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Set as the main one</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="b2d98dd0-62c4-4b1f-a842-6de19ea08359">
+    <name>ОсновныеМаршрутныеКарты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основные маршрутные карты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Main route sheets</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Перейти к списку применяемых спецификаций.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Go to the list of applied bills of materials.</value>
+    </toolTip>
+  </commands>
+  <commands uuid="2578c429-6fb5-4e37-9265-10b17dc56456">
+    <name>НазначитьОсновной</name>
+    <synonym>
+      <key>ru</key>
+      <value>Назначить основной</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Set as the main one</value>
+    </synonym>
+    <group>FormCommandBarImportant</group>
+    <commandParameterType>
+      <types>CatalogRef.МаршрутныеКарты</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Назначить основной маршрутной картой</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Set as main route sheet</value>
+    </toolTip>
+  </commands>
+</mdclass:InformationRegister>

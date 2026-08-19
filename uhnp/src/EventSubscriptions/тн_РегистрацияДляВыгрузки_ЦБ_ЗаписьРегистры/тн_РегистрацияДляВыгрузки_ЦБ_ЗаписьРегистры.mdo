@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5f606bf0-5879-404b-b078-6b10d029e6df">
+  <name>тн_РегистрацияДляВыгрузки_ЦБ_ЗаписьРегистры</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрация для выгрузки ЦБ запись (тн)</value>
+  </synonym>
+  <comment>// Гутарова Екатерина 10.10.2023 Выполнение задач №000047114</comment>
+  <source>
+    <types>InformationRegisterRecordSet.ПараметрыАмортизацииОСУУ</types>
+    <types>AccumulationRegisterRecordSet.тн_ОборотыПоНЗСиОС</types>
+    <types>AccumulationRegisterRecordSet.тн_ОстаткиПоНЗСиОС</types>
+    <types>InformationRegisterRecordSet.ПервоначальныеСведенияОС</types>
+    <types>InformationRegisterRecordSet.тн_ПропорцияТипаНазначенияОсновныхСредств</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.тн_Интеграция_УПП_Подписки.тн_РегистрацияДляВыгрузки_ЦБ_ЗаписьРегистрыПриЗаписи</handler>
+</mdclass:EventSubscription>

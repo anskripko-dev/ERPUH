@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7d5ac528-fafd-4587-9325-2207f7a91f23">
+  <producedTypes>
+    <objectType typeId="c9d2f7d3-6fdd-4acb-8f50-d13d99311d16" valueTypeId="e520d477-9850-4c09-a439-92dd3a64c579"/>
+    <managerType typeId="419a9a24-813d-433a-a9dc-1338a6a3cac4" valueTypeId="6f21f5b0-1beb-4f69-8ea6-cd3d89e4ffc8"/>
+  </producedTypes>
+  <name>НастройкаПередачиМатериаловВПроизводство</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройка передачи материалов в производство</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Configure material transfer to production</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.НастройкаПередачиМатериаловВПроизводство.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="36be1262-6fd2-4919-958a-204b1d967d09">
+    <producedTypes>
+      <objectType typeId="f22d522a-812c-4043-8249-8745c41c6283" valueTypeId="6a7e8df3-9de2-49fa-b71b-14d456cdaf23"/>
+      <rowType typeId="2d273fb8-47a7-4820-be41-45676a7894ff" valueTypeId="da90907f-1ca1-4e8f-bb14-cf059e77b9f2"/>
+    </producedTypes>
+    <name>Товары</name>
+    <synonym>
+      <key>ru</key>
+      <value>Товары</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Goods</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="03b3fa3f-c9c9-404c-bcb8-5f186908ca94">
+      <name>Номенклатура</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номенклатура</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Products</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Номенклатура</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4f6dfb65-8a4e-49f7-b785-51d5b5107c7f">
+      <name>Характеристика</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристика</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variant</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="cc33a968-9ae5-4205-b797-669479b7d7f6">
+      <name>ЭлементГруппа</name>
+      <synonym>
+        <key>ru</key>
+        <value>Элемент группа</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Item group</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>1</precision>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7d862fc2-8f3b-4120-8579-7c81bebdbd1b">
+      <name>Склад</name>
+      <synonym>
+        <key>ru</key>
+        <value>Склад материалов</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Materials warehouse</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>Склад, с которого передаются материалы в подразделение.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Warehouse from which materials are transferred to business unit.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Catalog.Склады.EmptyRef</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="4c697fb6-61ee-4124-8bb0-322aaee44f95">
+      <name>ОснованиеДляПолучения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Основание для получения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Receipt basis</value>
+      </synonym>
+      <type>
+        <types>EnumRef.ОснованияДляПолученияМатериаловВПроизводстве</types>
+      </type>
+      <toolTip>
+        <key>ru</key>
+        <value>На основании чего выполняется получение материала в подразделении.</value>
+      </toolTip>
+      <toolTip>
+        <key>en</key>
+        <value>Basis of receiving material in the business unit.</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillChecking>ShowError</fillChecking>
+      <fillValue xsi:type="core:ReferenceValue">
+        <value>Enum.ОснованияДляПолученияМатериаловВПроизводстве.EmptyRef</value>
+      </fillValue>
+    </attributes>
+    <attributes uuid="7393add3-beca-4d6f-85e6-f3a6db2e8576">
+      <name>ХарактеристикиИспользуются</name>
+      <synonym>
+        <key>ru</key>
+        <value>Характеристики используются</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Variants are used</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="7d6f8e43-cb01-41fb-9168-bee13e8c1e4d">
+      <name>СпособНастройки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Способ настройки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Setup method</value>
+      </synonym>
+      <type>
+        <types>EnumRef.СпособыНастройкиПередачиМатериаловВПроизводство</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c1171379-8134-46c3-8bc3-da10a31b8c22">
+      <name>ЕстьНастройкаДляНоменклатуры</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть настройка для номенклатуры</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>There is product setting</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f77a9dc0-c7a5-4921-a696-31e60eb0fa1a">
+      <name>НастройкаХарактеристики</name>
+      <synonym>
+        <key>ru</key>
+        <value>Настройка характеристики</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Setting characteristics</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="b9ba0074-b919-4d4e-9cd9-9cf6ec82352b">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="80882756-1c8a-45dc-be8f-82e220122325">
+    <name>ЗаполнениеПоОтбору</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заполнение по отбору</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Filling in by picking</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3df47c21-c910-419c-b59e-59cba73dc2fd">
+    <name>НастройкаПоНоменклатуре</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка по номенклатуре</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setting by products</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="38cf2a87-13ed-46f8-bd64-ac2860cc1e6f">
+    <name>ОтборНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор номенклатуры</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Item filter</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="ae7705dc-4de8-4712-89e1-c2b5f1653813">
+    <name>НастройкаПередачиМатериаловВПроизводство</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка передачи материалов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Configure material transfer</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

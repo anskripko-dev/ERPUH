@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="9e4482b9-dd2e-4364-a5aa-02b52372bfc0">
+  <producedTypes>
+    <objectType typeId="7d6c7954-fce6-47e9-8375-80a03bfdc19f" valueTypeId="610cd391-d5dc-47ed-ac9b-a92567832852"/>
+    <managerType typeId="6a61712f-8870-4f18-809c-4a6d8dd44106" valueTypeId="6c6311e1-2ff2-41fa-a322-12c1c2a19f01"/>
+  </producedTypes>
+  <name>КопированиеПоСрезам</name>
+  <synonym>
+    <key>ru</key>
+    <value>Копирование значений показателей отчетов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.КопированиеПоСрезам.Form.Форма</defaultForm>
+  <attributes uuid="c7130b35-0f52-4dcf-bd38-f89792c45227">
+    <name>ВидОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид отчета</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВидыОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="234a2802-3fe7-4ed3-b48a-76a7b35f7f4e">
+    <name>СценарийИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий источник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="782051bb-40d5-4dd8-a61c-b54ceae976ed">
+    <name>СценарийПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий приемник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="8046c73a-e43d-4859-9cde-6c065f6d6036">
+    <name>Режим</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="ab1f4b2d-ae28-4d9f-8eb0-db00b5674858">
+    <name>ПериодИсточникС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период источник С</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="9cf3fe14-3a82-49e6-a473-3cbbdf25f40c">
+    <name>ПериодИсточникПо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период источник по</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="4cf31582-61b2-4edf-8e38-0cd3ce964f29">
+    <name>ПериодПриемникС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период приемник С</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="31503d6d-4fd0-41e3-8e5e-091f20e2152c">
+    <name>ПериодПриемникПо</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период приемник по</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="005a6e51-5c17-4f6c-ad07-cef3cdd2ef27">
+    <name>ОрганизацияИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация источник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="21dcfd09-cf59-46d0-bba6-aff51e0a6ad6">
+    <name>ОрганизацияПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация приемник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="236ea844-4d45-426a-b42e-16037153311c">
+    <name>ПроектИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект источник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Проекты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="14c77f87-84df-4e66-af7c-ce63bdae843e">
+    <name>ПроектПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проект приемник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Проекты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f2bc73d7-b41a-49ce-b346-8d46075736b4">
+    <name>Бланк</name>
+    <synonym>
+      <key>ru</key>
+      <value>Бланк</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.БланкиОтчетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ab541030-3f87-4785-97b2-ac5aa004592e">
+    <name>ПериодичностьИсточника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность источника</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="c9da1c86-6503-4908-a45b-aa123bab86e8">
+    <name>ПериодичностьПриемника</name>
+    <synonym>
+      <key>ru</key>
+      <value>Периодичность приемника</value>
+    </synonym>
+    <type>
+      <types>EnumRef.Периодичность</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="37d9c185-8dd9-4dbe-9b03-5852d3c6fd40">
+    <name>ОтборПоСоставуБланка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отбор по составу бланка</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="efcc40d0-3c44-4adc-9449-d36cf2e45082">
+    <name>РежимРаботыОбработки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Режим работы обработки</value>
+    </synonym>
+    <type>
+      <types>EnumRef.РежимыКопированияДанныхПоказателей</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="8c422049-c8d8-4c61-a3f5-2d402e68aafb">
+    <name>УОПИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>УОПИсточник</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УправлениеПериодомСценария</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="bf06a5a9-4331-4e43-8f57-f5a09929fd72">
+    <name>УОППриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>УОППриемник</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.УправлениеПериодомСценария</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="81e9e3bd-ebd8-4a95-8cd0-34e19a62af3f">
+    <name>ПеренестиЭкземплярыОтчетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Перенести экземпляры отчетов</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="02bf495f-edfe-4eed-8b14-cf98fcc51339">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="989efcb8-ad1c-4754-b8f9-e06ff3ec4b3b">
+    <name>ФормаОтборовАналитик</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отборов аналитик</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="c90c00c5-87b2-41ce-806c-57e0f5dc3cce">
+    <name>ФормаОтбораКолонок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма отбора колонок</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="9e36634c-f124-451e-a046-8a2cfeb7c0b3">
+    <name>ФормаПодбораПоказателейВидаОтчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма подбора показателей вида отчета</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="71da9625-61dc-4b27-bf90-504331c7f69d">
+    <name>МакетОтборовСКД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет отборов СКД</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

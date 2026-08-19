@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b7e11f17-d390-4fe3-a81b-eccae2388cb8">
+  <name>тн_РегистрацияДляВыгрузки_ЗУП_Запись</name>
+  <synonym>
+    <key>ru</key>
+    <value>Регистрация для выгрузки в ЗУП (запись)</value>
+  </synonym>
+  <comment>Выполнение задач №000038257</comment>
+  <source>
+    <types>DocumentObject.РезервыПоОплатеТруда</types>
+    <types>DocumentObject.ОтражениеЗарплатыВФинансовомУчете</types>
+    <types>CatalogObject.СтруктураПредприятия</types>
+  </source>
+  <event>OnWrite</event>
+  <handler>CommonModule.тн_Интеграция_УПП_Подписки.тн_РегистрацияДляВыгрузки_ЗУП_ЗаписьПриЗаписи</handler>
+</mdclass:EventSubscription>

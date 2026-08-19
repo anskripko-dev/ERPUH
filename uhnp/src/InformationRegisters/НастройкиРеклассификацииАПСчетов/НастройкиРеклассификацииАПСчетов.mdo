@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ada61412-ecac-4ae2-8843-4084ae019518">
+  <producedTypes>
+    <selectionType typeId="1a28fd35-e2f0-4789-bc53-f75a5d6d7f69" valueTypeId="8687f196-59be-40b2-bbe9-36cbcf2cb7cf"/>
+    <listType typeId="e38383c8-0641-43a4-8e68-7b980e40bf64" valueTypeId="e60e3876-c32d-4f9f-a0f3-054a75709978"/>
+    <managerType typeId="1f979583-93bd-4595-a142-790c97aae431" valueTypeId="4b359cd5-4b7e-4a86-8202-11ab7ddcfcd3"/>
+    <recordSetType typeId="5ffcfc96-9067-48ed-bb9c-f6ede929211c" valueTypeId="0f582580-e681-462e-b34d-afc739829e33"/>
+    <recordKeyType typeId="ca4bc439-dce3-40d8-978b-8aa7e98c16ef" valueTypeId="29b67d79-f742-433e-ad36-31c621a18e18"/>
+    <recordType typeId="417435d5-4c45-4a79-a7bb-e2d645c91783" valueTypeId="3799eb67-e6d8-45ee-88f1-3af67faa1639"/>
+    <recordManagerType typeId="a429bbb4-f147-4bd0-a82d-3be724d61f76" valueTypeId="521b81ad-da10-45eb-acf1-714524495958"/>
+  </producedTypes>
+  <name>НастройкиРеклассификацииАПСчетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки реклассификации активно-пассивных счетов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НастройкиРеклассификацииАПСчетов.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <dimensions uuid="2222cc90-d0e8-48c4-822b-0c437c7e0a00">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="476bb94d-eecb-4161-8521-4ba61ed36c1e">
+    <name>СчетДляПроверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основной счет (трансляция)</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СчетаБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.НастройкиРеклассификацииАПСчетов.Dimension.ПланСчетовБД</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.Забалансовый</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="b566bab4-0d25-47c4-b962-a6e54f36b64e">
+    <name>СчетДляКорректировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Счет реклассификации</value>
+    </synonym>
+    <comment>Счет будет стоять в Дт проводки по реклассу остатка</comment>
+    <type>
+      <types>CatalogRef.СчетаБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.НастройкиРеклассификацииАПСчетов.Dimension.ПланСчетовБД</field>
+    </choiceParameterLinks>
+    <choiceParameters>
+      <name>Отбор.Забалансовый</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="d5c40fa0-0d87-4387-bb25-35570096dcbc">
+    <name>ПланСчетовБД</name>
+    <synonym>
+      <key>ru</key>
+      <value>План счетов БД</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПланыСчетовБД</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.Владелец</name>
+      <value xsi:type="core:ReferenceValue">
+        <value>Catalog.ТипыБазДанных.ТекущаяИБ</value>
+      </value>
+    </choiceParameters>
+    <quickChoice>Use</quickChoice>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="32bff731-3b13-402b-9354-6560162866f1">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

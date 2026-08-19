@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a2caab4c-7cff-4be8-882b-b83064093342">
+  <producedTypes>
+    <selectionType typeId="732cd755-081a-469c-8ea4-fced520a81c5" valueTypeId="9a600874-a291-47ac-ae64-3e8dbc404c24"/>
+    <listType typeId="1bb8b091-6aff-4101-9f5c-ea5f9ac06e36" valueTypeId="f95f38e5-4238-4edd-ad5e-98da7329a58d"/>
+    <managerType typeId="93617124-3b46-4f57-a10b-ffa52c408602" valueTypeId="15861559-5cd1-4291-91f0-420e99988975"/>
+    <recordSetType typeId="6a5d3217-c6b8-443b-a59c-632f64fa4c1b" valueTypeId="2ffe2079-048c-4c44-a1cd-6184a3f990f8"/>
+    <recordKeyType typeId="fb47d9eb-b4ca-4f65-af0b-f32eb6b719c2" valueTypeId="2d49a1a8-c640-448c-800c-272e0c20d5f6"/>
+    <recordType typeId="49b3e7be-38ff-47e7-87c3-2876a40a7c94" valueTypeId="ae4a4eed-fc19-403a-96cb-79723f8214b0"/>
+    <recordManagerType typeId="ce8689c9-91b4-431a-a3c8-1974d4670b16" valueTypeId="df10e057-1866-4ab3-8b61-ef0abd912b70"/>
+  </producedTypes>
+  <name>УдалитьПараметрыЛимитированияГруппыСтатейСостав</name>
+  <synonym>
+    <key>ru</key>
+    <value>(не используется) Параметры лимитирования группы статей состав</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.УдалитьПараметрыЛимитированияГруппыСтатейСостав.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.УдалитьПараметрыЛимитированияГруппыСтатейСостав.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="18d692cc-fa94-4821-91be-59891f1bd3b9">
+    <name>ГруппаСтатей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа статей</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыСтатейБюджета</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Отбор.Владелец</name>
+      <field>InformationRegister.УдалитьПараметрыЛимитированияГруппыСтатейСостав.Dimension.ВидБюджета</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="ce165325-a482-45de-9a41-b111bde27c78">
+    <name>ВидБюджета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вид бюджета</value>
+    </synonym>
+    <type>
+      <types>ChartOfCharacteristicTypesRef.ВидыБюджетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="7e9e9b17-74a3-4b2f-b5fa-c3caeaef078e">
+    <name>СтатьяБюджета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья бюджета</value>
+    </synonym>
+    <type>
+      <types>Characteristic.ВидыБюджетов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <linkByType>
+      <field>InformationRegister.УдалитьПараметрыЛимитированияГруппыСтатейСостав.Dimension.ВидБюджета</field>
+    </linkByType>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="25caca3f-fec2-455a-a023-81acb6056aff">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="1bc6f2b8-fde8-4068-aea3-a517d26ef9ac">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

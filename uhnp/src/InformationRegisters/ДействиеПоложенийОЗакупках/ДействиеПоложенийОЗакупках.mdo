@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7256bb8c-053f-4642-8e8e-66b394442839">
+  <producedTypes>
+    <selectionType typeId="5f93bb00-15ed-4571-8f36-2b811d291461" valueTypeId="b2575727-8405-4f57-9fbc-b0ed0ca17257"/>
+    <listType typeId="96bf07db-20bb-4aaf-9fa7-36d24999ac92" valueTypeId="93823a55-e746-4a40-a745-2ce8ddddaeea"/>
+    <managerType typeId="316ec319-a4e1-4465-a330-0dd4ec11e5de" valueTypeId="67ae75f7-e527-458c-890b-dd7e62400386"/>
+    <recordSetType typeId="ecbbe1e7-54ce-44db-bf31-54c127e8b796" valueTypeId="7d584242-b361-4779-be5e-c45fca590288"/>
+    <recordKeyType typeId="b4a759cd-e1db-4619-938f-eab81d20568d" valueTypeId="ee5d0c9a-670f-4a8a-b279-37e5e8065366"/>
+    <recordType typeId="0f2d32fc-82c9-4889-b888-4f86cb22369a" valueTypeId="2803d51f-b5db-48f4-aff3-5efd8521b7b1"/>
+    <recordManagerType typeId="777ed004-785f-4ed0-b5c7-a40553feca1d" valueTypeId="10b968e8-f672-4844-8c37-2d43d2137cf8"/>
+  </producedTypes>
+  <name>ДействиеПоложенийОЗакупках</name>
+  <synonym>
+    <key>ru</key>
+    <value>Положения о закупках организации</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.ДействиеПоложенийОЗакупках.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.ДействиеПоложенийОЗакупках.Form.ФормаСпискаПоГодам</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="8b5bd85b-a1b9-4f47-86ce-f0a79595e9bc">
+    <name>Положение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Положение</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ПоложениеОЗакупках</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="c547227f-d8cd-47de-a71b-6d3c659d0049">
+    <name>Контролировать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контролировать в документах</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="699f31d8-769b-4ba1-b29a-f55f20acaa08">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="74f19750-9cc0-4d3e-959c-7d03cef3eea2">
+    <name>ПериодЗакупок</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период закупок</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Периоды</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.Произвольный</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="34a8fdac-f7a6-4a3b-aa60-a48d4ceaff47">
+    <name>Приоритет</name>
+    <synonym>
+      <key>ru</key>
+      <value>Приоритет</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="95a3289b-b4dd-45fb-8efe-c95f8691d690">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="194b92e0-c440-4d6a-b2f8-9ab085671905">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="dfcb15e5-e17a-40ed-a67f-d2ac98fd9fa3">
+    <name>ФормаСпискаПоГодам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка по годам</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

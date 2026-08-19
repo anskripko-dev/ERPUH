@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="367ff582-304b-4bdc-a0a4-19892f24d1a9">
+  <producedTypes>
+    <selectionType typeId="2618d8b6-c5f8-465e-a9b7-eeaf20d4848f" valueTypeId="eccd3d11-7490-46f9-b421-e068e0cc7add"/>
+    <listType typeId="e50e2f74-08cf-4443-9130-dae33710b9f6" valueTypeId="f8eda0c6-5815-4016-97fd-8a57f357da89"/>
+    <managerType typeId="32fa4f8c-ea2a-44b6-811f-b8abba89f65d" valueTypeId="4b877fcf-72c4-4e2f-ba35-0335260a6dde"/>
+    <recordSetType typeId="84cd5dba-70ac-4c91-b8ad-ac8119c7978e" valueTypeId="88d5e918-b52e-430f-bb99-1adb45ce17a9"/>
+    <recordKeyType typeId="22ab14d7-640c-4baa-a550-712342391f54" valueTypeId="1504598b-072d-4a5e-88d7-6080c4c5e054"/>
+    <recordType typeId="a353262b-535f-46e2-ad16-73d774f4e5e7" valueTypeId="459208c3-b18b-4a2d-93ba-1260c591f0ce"/>
+    <recordManagerType typeId="6aae0780-10ff-4390-b9a6-921364d034a4" valueTypeId="6c81e3cf-9ad9-4f17-ad85-bb290a52b2bb"/>
+  </producedTypes>
+  <name>НастройкиУчетаУСН</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки учета УСН</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>STS accounting settings</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultRecordForm>InformationRegister.НастройкиУчетаУСН.Form.ФормаЗаписи</defaultRecordForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Quarter</informationRegisterPeriodicity>
+  <mainFilterOnPeriod>true</mainFilterOnPeriod>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="37493791-58c9-48de-8d19-3207cf882c2e">
+    <name>СтавкаНалогаУСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая ставка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax rate</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>5</precision>
+        <scale>2</scale>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7c72d996-6254-437c-958f-4ac64bd96cf9">
+    <name>БазаРаспределенияРасходовПоВидамДеятельности</name>
+    <synonym>
+      <key>ru</key>
+      <value>База распределения расходов по видам деятельности</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Expense allocation base according to activity categories</value>
+    </synonym>
+    <type>
+      <types>EnumRef.БазыРаспределенияКосвенныхРасходовПоВидамДеятельности</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет, что является базой для определения коэффициента отнесения расходов к деятельности облагаемой ЕНВД.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines what is a base to determine a factor of expense allocation to activity subject to UTII.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.БазыРаспределенияКосвенныхРасходовПоВидамДеятельности.EnumValue.ДоходыОтРеализации</value>
+    </fillValue>
+  </resources>
+  <resources uuid="eb3c24a6-54d1-41b5-8996-20373e7dc0f3">
+    <name>ОбъектНалогообложенияУСН</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объект налогообложения УСН</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>STS taxation object</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ОбъектыНалогообложенияПоУСН</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ОбъектыНалогообложенияПоУСН.EnumValue.Доходы</value>
+    </fillValue>
+  </resources>
+  <resources uuid="c84f5de5-558f-4051-81ec-c57b6380793a">
+    <name>ПрименяетсяУСНДоходыМинусРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Применяется УСН (доходы минус расходы)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>STS is applied (income minus expenses)</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="811fef67-3553-4a21-b89b-702176c09592">
+    <name>РаздельныйУчетТоваров</name>
+    <synonym>
+      <key>ru</key>
+      <value>Раздельный учет товаров</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Separate accounting of goods</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="7e1ffb60-ea01-401b-9398-7893b01eebe6">
+    <name>ИспользуетсяТрудНаемныхРаботников</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используется труд наемных работников</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hired workers are employed</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:BooleanValue">
+      <value>true</value>
+    </fillValue>
+  </resources>
+  <resources uuid="42d26cd9-0795-4fc2-9954-70ef490f3436">
+    <name>ИспользуетсяТрудНаемныхРаботниковНеТребуетОбновления</name>
+    <synonym>
+      <key>ru</key>
+      <value>Используется труд наемных работников не требует обновления</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Hired workers are employed no update required</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:BooleanValue">
+      <value>true</value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="135605c9-55d1-4cd7-a4e7-9fbafe04c3ab">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ОбособленноеПодразделение</name>
+      <value xsi:type="core:BooleanValue"/>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="1208b6e2-8628-49f8-8ef3-1103bb2899d9">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f2b001f3-dcdf-40b4-805d-6874e054d3b8">
+    <name>РедактированиеИстории</name>
+    <synonym>
+      <key>ru</key>
+      <value>Редактирование истории</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Edit history</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

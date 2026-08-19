@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d5999443-1a6b-463e-9487-0dc1580aae0c">
+  <producedTypes>
+    <objectType typeId="f6cb5ebc-4ce4-4acf-bde1-770a7f0b3383" valueTypeId="180f60fb-82a6-410f-993c-0a59829f9c89"/>
+    <managerType typeId="a4d57043-9ba9-44fa-a985-bcff76cdec7b" valueTypeId="7b2cdcc9-3d98-4360-ad23-b82dd7fa1798"/>
+  </producedTypes>
+  <name>РаботаСДоговорамиУХ</name>
+  <synonym>
+    <key>ru</key>
+    <value>Работа с договорами (УХ)</value>
+  </synonym>
+  <comment>Содержит вспомогательные формы для работы с договорами</comment>
+  <defaultForm>DataProcessor.РаботаСДоговорамиУХ.Form.Форма</defaultForm>
+  <forms uuid="bb7654ae-15b7-403c-9787-459665b1ad77">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="46daaa54-fc7a-451b-91cf-b6b682c4de08">
+    <name>ФормаПроизводственныеКалендари</name>
+    <synonym>
+      <key>ru</key>
+      <value>Производственные календари</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="2d5d9201-4686-47f6-8151-b062bc84032e">
+    <name>ФормаПозицияГрафика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Позиция графика</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="5eec0f64-293b-41d6-8c69-6a7313edf26d">
+    <name>ФормаКорректировкаПереносСуммы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка / Перенос суммы</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="ce8efa6c-b8da-4091-b7be-5cd20b8a4a05">
+    <name>ДокументыБюджетирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы оперативного планирования</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+    <toolTip>
+      <key>ru</key>
+      <value>Документы оперативного планирования по договору</value>
+    </toolTip>
+    <picture xsi:type="core:PictureRef">
+      <picture>StdPicture.DocumentJournal</picture>
+    </picture>
+  </commands>
+  <commands uuid="151bffcc-86ba-47e5-befa-fb6405255300">
+    <name>СписокВерсийСоглашения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Список версий соглашения</value>
+    </synonym>
+    <group>FormNavigationPanelGoTo</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="97d0d2d7-a6bb-405c-9253-b626c8104561">
+    <name>СоздатьСпецификацию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Спецификация к договору</value>
+    </synonym>
+    <group>FormCommandBarCreateBasedOn</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="15fe4266-e1fb-4a1a-89d2-a2f48aefe5b0">
+    <name>СоздатьНовуюВерсию</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать новую версию</value>
+    </synonym>
+    <comment>Создать новую версию соглашения</comment>
+    <group>FormCommandBarCreateBasedOn</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="528bc101-28d5-4727-af35-94d692b3d8de">
+    <name>СоздатьЗаявкуНаКорректировкуПлановИЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заявка на корректировку планов и лимитов</value>
+    </synonym>
+    <group>FormCommandBarCreateBasedOn</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+  <commands uuid="437ca6e7-ff2c-4729-a211-f4955a44314b">
+    <name>СоздатьКорректировкуПлановИЛимитов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировка планов и лимитов</value>
+    </synonym>
+    <group>FormCommandBarCreateBasedOn</group>
+    <commandParameterType>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+      <types>CatalogRef.ДоговорыКредитовИДепозитов</types>
+      <types>CatalogRef.ДоговорыАренды</types>
+    </commandParameterType>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

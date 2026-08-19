@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7338092b-e6f4-4704-8dcc-7b56c5b9cbe0">
+  <producedTypes>
+    <objectType typeId="ef7a59a2-4ece-492c-8384-2ce9007f2214" valueTypeId="66b8015a-589c-4316-8418-b43c99ba35ae"/>
+    <managerType typeId="208216f0-4848-4581-beac-2097e666972c" valueTypeId="b5c53554-8a6d-494f-9f5f-bcc1e564ed74"/>
+  </producedTypes>
+  <name>ЗагрузкаОтчетаБанкаПоСБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Загрузка отчета банка по СБП</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Import FPS bank report</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.ЗагрузкаОтчетаБанкаПоСБП.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="268153b6-05cc-4ea1-98c4-097df43ebbd5">
+    <name>ДатаНач</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата нач</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Start date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="58fe532d-feb6-4ea0-9ee0-9544de39e423">
+    <name>ДатаКон</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата кон</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>End date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="a7dce810-116c-47e7-82d0-903ab513b27e">
+    <name>ДоговорПодключенияКПлатежнойСистеме</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор подключения к платежной системе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment system contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыЭквайринга</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="6d63b9df-0fe1-46c3-bd74-87dd451da646">
+    <name>ПроводитьДокументыПриЗагрузке</name>
+    <synonym>
+      <key>ru</key>
+      <value>Проводить документы при загрузке</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Post documents on import</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8117bc4f-cbc2-426a-94b2-d993b4d4b0c3">
+    <name>ВариантЗагрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант загрузки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Import data</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ВариантыЗагрузкиОтчетаБанкаПоСБП</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="cf23b185-a4a6-46d1-8e57-894fc7f4ce0b">
+    <producedTypes>
+      <objectType typeId="86762a7b-22e9-41d3-9925-79da32966000" valueTypeId="9f0d6129-ead7-4dbb-82d3-4845f017eeb9"/>
+      <rowType typeId="416956e2-9701-4501-b53f-f7610775ede4" valueTypeId="4404b57c-a36a-47b2-993e-0ad25f902497"/>
+    </producedTypes>
+    <name>НастройкиПодключения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройки подключения</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Connection settings</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="4839b808-2145-4e59-aed2-2cda1dfd6cec">
+      <name>НастройкаПодключения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Настройка подключения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Connection settings</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НастройкиПодключенияКСистемеБыстрыхПлатежей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3cba74e3-c2d9-42d8-a731-4a04b23301b4">
+      <name>Магазин</name>
+      <synonym>
+        <key>ru</key>
+        <value>Магазин</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Store</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Склады</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceFoldersAndItems>FoldersAndItems</choiceFoldersAndItems>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="67d4aadc-dbfc-46b8-ada0-f4e678b2b734">
+      <name>ЗагруженБезОшибки</name>
+      <synonym>
+        <key>ru</key>
+        <value>Загружен без ошибки</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Imported without error</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9f2c6ee3-cc0e-44d2-a4bd-bccf0a615e93">
+      <name>ЗагруженСОшибкой</name>
+      <synonym>
+        <key>ru</key>
+        <value>Загружен с ошибкой</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Imported with error</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9dc6cfbe-74c0-4abb-a73d-ac07197013f0">
+      <name>СуммаОплатПоДокументам</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплат по документам</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount by documents</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9a350d86-d015-499d-861d-60625e7cb59e">
+      <name>СуммаВозвратовПоДокументам</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возвратов по документам</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount by documents</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="54563182-273d-4fb0-99f5-bd607516c212">
+      <name>СуммаКомиссииПоДокументам</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма комиссии по документам</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fee amount by documents</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9a722ff4-a284-47af-ac66-0bb2d0011c69">
+      <name>СуммаОплатПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплат по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="9828774f-6a22-4ada-8835-bbe875b6987c">
+      <name>СуммаВозвратовПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возвратов по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="78a2b6c5-285c-4b03-9c35-2d5b920723e8">
+      <name>СуммаКомиссииПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма комиссии по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fee amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="55be1bf8-249e-4c6a-b635-3dfabfb3d42a">
+      <name>ЕстьОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>There is variance</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0a529cf7-798a-40fb-893d-cce936f3041e">
+      <name>СуммаОплатОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплат отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount variance</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4a74ecc1-8da7-4f35-995e-3145e8ba3364">
+      <name>СуммаВозвратовОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возвратов отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount variance</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c1cd7c51-d780-4e37-8bb5-ec5376a78974">
+      <name>СуммаКомиссииОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма комиссии отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fee amount variance</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="a91b176a-9c14-4f43-8a67-0d3732c35d08">
+    <producedTypes>
+      <objectType typeId="d0623f45-eafc-4353-a195-f12095c21106" valueTypeId="f03ee0ed-5d97-4807-96f6-cadb1a3c9912"/>
+      <rowType typeId="ca55e8a8-c2f3-4f1e-bb90-7b3ecaaf8be8" valueTypeId="34095a34-3cdd-4715-a399-228adfc1be4c"/>
+    </producedTypes>
+    <name>ДетальныеДанныеСверки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Детальные данные сверки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Detailed reconciliation data</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="99af9093-2c0a-48ec-835c-fb3f2d431e83">
+      <name>НастройкаПодключения</name>
+      <synonym>
+        <key>ru</key>
+        <value>Настройка подключения</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Connection settings</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НастройкиПодключенияКСистемеБыстрыхПлатежей</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="596a9bec-ba95-4eb2-be48-04e311fe7788">
+      <name>ДатаОперации</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата операции</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Transaction date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1e88f37c-3657-4c17-b033-ce44ba3b6c09">
+      <name>ИдентификаторОплатыСБП</name>
+      <synonym>
+        <key>ru</key>
+        <value>Идентификатор оплаты СБП</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>FPS payment ID</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>100</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="093c71ef-d29d-4cbf-a7dc-d15b8a4c6156">
+      <name>СуммаОплатыПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="b74f29e1-604d-4dec-a967-5ad4ed3f6eef">
+      <name>СуммаВозвратаПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возврата по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c9f98711-07f5-4bb1-98d8-5ecd82df93b7">
+      <name>СуммаКомиссииПоБанку</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма комиссии по банку</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Fee amount by bank</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d70b1bb4-dbce-468f-952c-dc5c051df8f5">
+      <name>СуммаОплатыПоДокументам</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты по документам</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount by documents</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="8501c1b8-4e55-4f78-a30b-3b979661656b">
+      <name>СуммаВозвратаПоДокументам</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возврата по документам</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount by documents</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c9cb403f-2c66-4b46-bac1-0f5271f8e44b">
+      <name>СуммаОплатыОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма оплаты отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Payment amount variance</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d77160ed-57e6-4f14-adee-e600c2a2d6ea">
+      <name>СуммаВозвратаОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма возврата отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Refund amount variance</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d7371b9f-7175-4dc2-91d9-b4226da650ee">
+      <name>ЕстьОтклонение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Есть отклонение</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>There is variance</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="67c99b30-1f0b-46aa-9388-055df66bd8f0">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:DataProcessor>

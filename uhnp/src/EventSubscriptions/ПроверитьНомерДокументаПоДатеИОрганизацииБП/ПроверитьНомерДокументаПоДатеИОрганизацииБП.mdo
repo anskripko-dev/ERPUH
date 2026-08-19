@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:EventSubscription xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a073d7da-ef0d-4d04-a343-15f42b5d025b">
+  <name>ПроверитьНомерДокументаПоДатеИОрганизацииБП</name>
+  <synonym>
+    <key>ru</key>
+    <value>Проверить номер документа по дате и организации БП</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Check the document number by date and EA company</value>
+  </synonym>
+  <source>
+    <types>DocumentObject.КнигаПокупокДляПередачиВЭлектронномВиде</types>
+    <types>DocumentObject.УведомлениеОбИсчисленныхСуммахНалогов</types>
+    <types>DocumentObject.КнигаПродажДляПередачиВЭлектронномВиде</types>
+    <types>DocumentObject.ДопЛистКнигиПокупокДляПередачиВЭлектронномВиде</types>
+    <types>DocumentObject.ДопЛистКнигиПродажДляПередачиВЭлектронномВиде</types>
+    <types>DocumentObject.ПервичныйДокумент</types>
+    <types>DocumentObject.ЖурналУчетаСчетовФактурДляПередачиВЭлектронномВиде</types>
+    <types>DocumentObject.ФормированиеЗаписейРаздела7ДекларацииНДС</types>
+    <types>DocumentObject.ОперацияБух</types>
+  </source>
+  <event>BeforeWrite</event>
+  <handler>CommonModule.ПрефиксацияОбъектовСобытия.ПроверитьНомерДокументаПоДатеИОрганизации</handler>
+</mdclass:EventSubscription>

@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="20f0ffc1-2f60-4566-8038-386bb31bfe2d">
+  <producedTypes>
+    <objectType typeId="2ecccc5c-2c8b-4615-819a-904b9edbc8a7" valueTypeId="9785e745-ce33-4bfb-bdc6-6a4a1bf3ec1b"/>
+    <managerType typeId="c267a310-c3c9-4fbe-9936-767d50998200" valueTypeId="a340733c-49ba-440e-91a0-9fddb563b0b6"/>
+  </producedTypes>
+  <name>тн_ЗаполнениеПлатежноРасчетныхДокументов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Заполнение платежно расчетных документов (для ОКС-Сбыт) (тн)</value>
+  </synonym>
+  <comment>// Юдина Екатерина 23.03.2026 Выполнение задач №000057134</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ЗаполнениеПлатежноРасчетныхДокументов.Form.Форма</defaultForm>
+  <extendedPresentation>
+    <key>ru</key>
+    <value>Заполнение платежно расчетных документов (для ОКС-Сбыт)</value>
+  </extendedPresentation>
+  <attributes uuid="bd307dcc-a051-454e-83f3-29c5bd00b082">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e97ba167-a116-4fc7-aad9-b4d0b7c0c21f">
+    <name>Период</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период</value>
+    </synonym>
+    <type>
+      <types>StandardPeriod</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="e638b5f7-6677-4a87-bdb3-12be62058f04">
+    <producedTypes>
+      <objectType typeId="fd779acd-56fb-4c16-a9db-7b83da0160b5" valueTypeId="5982928e-ec8b-42eb-ad75-04267f0c9c4b"/>
+      <rowType typeId="67b132c9-01ee-4437-bd32-8035963de828" valueTypeId="2c4e2f33-8c6e-4c54-b4cb-5a4941ac57ac"/>
+    </producedTypes>
+    <name>Документы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Документы</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="aec577ec-4f60-4f33-8f8c-80b559f2c3f6">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="ab43cebb-708b-4f74-b4a8-2335c965b4e1">
+      <name>СчетФактураНаАванс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура на аванс</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданныйАванс</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="66350b73-ebd5-40d2-9a26-8491a9b1e78e">
+      <name>СчетФактураНаАвансСумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура на аванс сумма</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="78c90c87-7321-4b90-b474-b6d40f00678f">
+      <name>СчетФактураНаАвансСуммаНДС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура на аванс сумма НДС</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f1e98202-f17c-4457-bf46-d7dbc032c6fd">
+      <name>ДокументОснование</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ основание</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПриходныйКассовыйОрдер</types>
+        <types>DocumentRef.ОперацияПоПлатежнойКарте</types>
+        <types>DocumentRef.КорректировкаРеализации</types>
+        <types>DocumentRef.ОтчетБанкаПоОперациямЭквайринга</types>
+        <types>DocumentRef.КорректировкаЗадолженности</types>
+        <types>DocumentRef.ВзаимозачетЗадолженности</types>
+        <types>DocumentRef.ПоступлениеБезналичныхДенежныхСредств</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="07da39f0-c626-4c3d-bac8-a98d6ffd54ae">
+      <name>ДокументОснованиеНомер</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ основание номер</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>500</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="c7ee2f07-8106-4096-af35-3d4cd552412c">
+      <name>ДокументОснованиеДата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ основание дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bc50dc43-6836-4566-814c-60848bf63aa9">
+      <name>Пометка</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пометка</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1960ce91-e5e1-4e4d-8a1b-c4a6899479e6">
+      <name>СчетФактураВыданный</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура выданный</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.СчетФактураВыданный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e6bf065f-18e5-430d-8d85-bdbf7af6a73a">
+      <name>РеализацияТоваровУслуг</name>
+      <synonym>
+        <key>ru</key>
+        <value>Реализация товаров услуг</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.РеализацияТоваровУслуг</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="d34dde83-6932-42e6-bc07-9441718302f5">
+      <name>СчетФактураВыданныйСумма</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура выданный сумма</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="4043b971-b39a-4c4f-8196-5a41162e05d3">
+      <name>СчетФактураВыданныйСуммаНДС</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет фактура выданный сумма НДС</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="71d40203-7237-492a-a57f-0bd586433a0d">
+      <name>НомерПлатежноРасчетногоДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Number</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>30</length>
+        </stringQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Number of AR/AP document used to pay the advance from the customer</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="ca0b4c57-3424-4dbd-9442-4953161082aa">
+      <name>ДатаПлатежноРасчетногоДокумента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Date</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <toolTip>
+        <key>en</key>
+        <value>Date of AR/AP document used to pay the advance from the customer</value>
+      </toolTip>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="6d645935-366a-4e5a-846d-06d761fa7339">
+      <name>НомерСчетаФактурыНаАванс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Номер счета-фактуры на аванс</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Номер счета-фактуры на аванс</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="26d432b7-cbe7-41f0-a960-1f234c10c8ae">
+      <name>ДатаСчетаФактурыНаАванс</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата счета-фактуры на аванс</value>
+      </synonym>
+      <synonym>
+        <key>en</key>
+        <value>Дата счета-фактуры на аванс</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="671da590-062c-427f-b462-d0fd713b5206">
+      <name>ПустаяПРД</name>
+      <synonym>
+        <key>ru</key>
+        <value>Пустая ПРД</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="9536fc36-ca4a-4b8d-a587-9ecaaaad3e8c">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="0cde77b2-35cc-47e7-820e-c3ee15c57e01">
+    <name>СхемаКомпоновкиДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Схема компоновки данных</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+</mdclass:DataProcessor>

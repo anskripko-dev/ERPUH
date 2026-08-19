@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="915e3c82-97ff-42de-a50c-61dbf951d401">
+  <producedTypes>
+    <objectType typeId="6ba3c4bb-a88f-4319-a18e-df6b372571cc" valueTypeId="5329a3aa-40fc-4e2c-a0b6-fa2087bc8df1"/>
+    <managerType typeId="f2a66fb6-e6ef-4c50-9008-f91f5d3efbc7" valueTypeId="dbe60faf-31b5-471f-91c3-2df2729fe0c3"/>
+  </producedTypes>
+  <name>СтруктураВладения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Структура владения</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.СтруктураВладения.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <attributes uuid="cf7a41df-5cca-4eed-8b4d-9eed94aa8c51">
+    <name>ЦветПоследовательности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цвет выделения последовательности</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="45183b74-c91d-403a-ac0b-24a861a40f23">
+    <name>ИспользоватьМоделирование</name>
+    <synonym>
+      <key>ru</key>
+      <value>Применить операции</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5259a7d9-e566-478b-a22d-bd6d18b8112a">
+    <name>ОформлениеИнвестор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оформление инвестор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="80e1c215-64d7-4e8d-a65b-a4a5eb7b8854">
+    <name>ОформлениеОбъектИнвестирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Оформление объект инвестирования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="500729d4-dafd-4abb-acc9-deed11b52ad6">
+    <name>Вывод</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление</value>
+    </synonym>
+    <comment>диаграмма(0), таблица последовательностей(1)</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:StringValue">
+      <value>1</value>
+    </maxValue>
+  </attributes>
+  <attributes uuid="fdde41b0-357c-4bad-bb33-020c8ff1a1e5">
+    <name>Отображение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доли участия</value>
+    </synonym>
+    <comment>прямые доли(0), эффективные доли(1)</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:StringValue">
+      <value>1</value>
+    </maxValue>
+  </attributes>
+  <attributes uuid="ca48661a-1a70-43ea-a99b-c8e178dc2c1d">
+    <name>ЦветМоделирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Цвет моделирования</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ca288ac5-f128-405d-aebf-de84677d06cd">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="318750b3-40ee-4ad0-9b31-f78c55d0b73f">
+    <name>ДатаАктуальности</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата актуальности</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+  </attributes>
+  <attributes uuid="3914bc33-8527-4fb1-87c3-b4a4716e72a8">
+    <name>Инвестор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Объекты инвестирования по инвестору</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2eeaec0d-beca-488a-96cc-bcbf9639924b">
+    <name>ОбъектИнвестирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Инвесторы по объекту инвестирования</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f492180a-0a8e-41d1-8a8a-1ab33d3c9bd7">
+    <name>ПредставлениеУзла</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление узла</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="627b7b0d-8e0f-4fb2-b59d-c7616b9cb904">
+    <name>ПредставлениеСвязи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Представление связи</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="d44fa4c6-bdf1-415c-b106-61aad2b6d98e">
+    <name>ЦветПАО</name>
+    <synonym>
+      <key>ru</key>
+      <value>ПАО</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="fef055bf-b770-4895-9d31-d5f46ebb3a95">
+    <name>ЦветИО</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иностранная организация</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b5ad9ed3-47ce-4f72-a640-688c21d9345a">
+    <name>ЦветИС</name>
+    <synonym>
+      <key>ru</key>
+      <value>Иностранная структура</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="44b3453d-26b9-4011-b6d2-285b5dc8c394">
+    <name>ЦветКИК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контролируемая иностранная компания</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="26b508be-b7b2-4d94-8207-d57b9ceae1f2">
+    <name>ЦветУчастие</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация с участием</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="16f73abf-b9b7-4200-bca2-8552a210536c">
+    <name>ЦветНеКИК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Не является КИК</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f19ef736-38dd-47b5-9da5-fdf789a0a00b">
+    <name>ЦветДочернее</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дочернее</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="394824d8-f26c-40ee-808a-971823c66093">
+    <name>ЦветАссоциат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ассоциат</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2dfd21f8-d9b9-41d7-a647-56846004b608">
+    <name>ЦветСовместное</name>
+    <synonym>
+      <key>ru</key>
+      <value>СовместноеПредприятие</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="b85c0703-f007-482d-b641-b56a2e07a031">
+    <name>ЦветТретьяСторона</name>
+    <synonym>
+      <key>ru</key>
+      <value>Третья сторона</value>
+    </synonym>
+    <type>
+      <types>Color</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="27c76899-fd13-49cf-b734-dd92c1488e4a">
+    <name>ОтображатьСвязиКИК</name>
+    <synonym>
+      <key>ru</key>
+      <value>Отображать связи</value>
+    </synonym>
+    <comment>Связи КИК или МСФО при эффективных долях</comment>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <format>
+      <key>ru</key>
+      <value>БЛ='Отношения к группе'; БИ='Статусы иностранных компаний'</value>
+    </format>
+    <editFormat>
+      <key>ru</key>
+      <value>БЛ='Отношения к группе'; БИ='Статусы иностранных компаний'</value>
+    </editFormat>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <tabularSections uuid="99d4c476-057d-4a96-9f03-b0d33339cb57">
+    <producedTypes>
+      <objectType typeId="ce9b632b-46b2-42be-ac37-427d7272f828" valueTypeId="7e9966f3-3fd5-4265-b18b-95ce81de3670"/>
+      <rowType typeId="e8b79074-2b87-48a6-9956-d38712ff1759" valueTypeId="a97d3d96-924a-4012-bce3-ca427f2fa8a1"/>
+    </producedTypes>
+    <name>Корректировки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Корректировки</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="93732b17-d366-48c3-afc1-e8ff1f5909bb">
+      <name>Инвестор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инвестор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="41d49048-9ca1-4ceb-b26d-be1ec8a0f322">
+      <name>ОбъектИнвестирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект инвестирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="0dae9d0d-a007-4ff3-8bfb-049a54bb3cd4">
+      <name>ПрямаяДоля</name>
+      <synonym>
+        <key>ru</key>
+        <value>Изменение доли</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДоляВладения</types>
+      </type>
+      <format>
+        <key>ru</key>
+        <value>ЧДЦ=3</value>
+      </format>
+      <minValue xsi:type="core:StringValue">
+        <value>-100</value>
+      </minValue>
+      <maxValue xsi:type="core:StringValue">
+        <value>100</value>
+      </maxValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="c162ff31-2d49-4080-a71a-6d7612360eee">
+      <name>Дата</name>
+      <synonym>
+        <key>ru</key>
+        <value>Дата</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <dateQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="84c7119c-6234-4b06-8db0-447e1f341594">
+      <name>Инвестиции</name>
+      <synonym>
+        <key>ru</key>
+        <value>Переданное возмещение</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+          <nonNegative>true</nonNegative>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f0d55a9d-af68-4e36-9b99-18e4afb38038">
+      <name>Количество</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество акций</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>5</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="1f9ded2c-f1b4-4832-ac71-7d069e168498">
+      <name>КоличествоПривилегированных</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество привилегированных акций</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>5</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="af9fd4d7-053d-4ed4-a080-efe111681669">
+      <name>КоличествоВДоверительномУправлении</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество акций в доверительном управлении</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>5</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="82974418-219d-4148-aabc-db816f4a4590">
+      <name>КоличествоГолосующих</name>
+      <synonym>
+        <key>ru</key>
+        <value>Количество голосующих</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>18</precision>
+          <scale>5</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="e20b3f18-1d5d-4daf-a18d-cce54da2dfa8">
+      <name>Описание</name>
+      <synonym>
+        <key>ru</key>
+        <value>Обоснование контроля / существенного влияния</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>300</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="73503706-3519-42b9-b5e0-9687f8cfbaeb">
+      <name>БалансоваяСтоимость</name>
+      <synonym>
+        <key>ru</key>
+        <value>Балансовая стоимость инвестиции</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5843a50d-84e8-4237-bebc-954f99516f51">
+      <name>Контрагент</name>
+      <synonym>
+        <key>ru</key>
+        <value>Контрагент</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Контрагенты</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="160195c5-9879-4c5b-86df-57e132dc4a79">
+      <name>ДоговорКонтрагента</name>
+      <synonym>
+        <key>ru</key>
+        <value>Договор</value>
+      </synonym>
+      <type>
+        <types>DefinedType.ДоговорКонтрагента</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <choiceParameterLinks>
+        <name>Отбор.Организация</name>
+        <field>DataProcessor.СтруктураВладения.TabularSection.Корректировки.Attribute.Инвестор</field>
+      </choiceParameterLinks>
+      <choiceParameterLinks>
+        <name>Отбор.Владелец</name>
+        <field>DataProcessor.СтруктураВладения.TabularSection.Корректировки.Attribute.Контрагент</field>
+      </choiceParameterLinks>
+      <fillFromFillingValue>true</fillFromFillingValue>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3ef01615-3566-468b-baa5-6cdfcca7df5d">
+      <name>Документ</name>
+      <synonym>
+        <key>ru</key>
+        <value>Документ</value>
+      </synonym>
+      <type>
+        <types>DocumentRef.ПоступлениеИнвестиций</types>
+        <types>DocumentRef.ВыбытиеИнвестиций</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <tabularSections uuid="d0cb2430-29b5-4ef8-b95f-90a094e0adc5">
+    <producedTypes>
+      <objectType typeId="20ff95d9-de14-4124-89c8-8e712f65e6eb" valueTypeId="700ff12e-7d64-4deb-abd5-cb22685dd6f2"/>
+      <rowType typeId="7aad4345-6d4d-434f-9c6a-341088de65c1" valueTypeId="2a08c3bd-cd9f-4291-848a-e959fb2541a6"/>
+    </producedTypes>
+    <name>ПоследовательностиУчастия</name>
+    <synonym>
+      <key>ru</key>
+      <value>Последовательности участия</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="dcbe3aab-6c26-4ec2-9687-9db1bc770d40">
+      <name>Последовательность</name>
+      <synonym>
+        <key>ru</key>
+        <value>Последовательность</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers/>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:StringValue"/>
+    </attributes>
+    <attributes uuid="872de53f-ba75-4711-8009-394cd238abc1">
+      <name>Выбран</name>
+      <synonym>
+        <key>ru</key>
+        <value>Выбран</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="55851b03-e2e3-472d-b5a5-9a5696439749">
+      <name>Инвестор</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инвестор</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="852bd99b-4194-4ed2-896e-3dc1315f7d2b">
+      <name>ОбъектИнвестирования</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект инвестирования</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.Организации</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="f668148a-58ec-42fd-b38c-df8d255ed85b">
+      <name>ИнвесторИностраннаяОрганизация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Инвестор иностранная организация</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="3958853e-d620-4ff6-9cc4-585e1f29c56b">
+      <name>ОбъектИнвестированияИностраннаяОрганизация</name>
+      <synonym>
+        <key>ru</key>
+        <value>Объект инвестирования иностранная организация</value>
+      </synonym>
+      <type>
+        <types>Boolean</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="879b9100-288a-44ff-800d-ff38f4a57f60">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="635fb778-d69e-40e6-80e7-c85ab941d3e6">
+    <name>ВыборПолей</name>
+    <synonym>
+      <key>ru</key>
+      <value>Выбор полей</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="776b144f-1f86-4f0a-a4cc-83c54b9642bc">
+    <name>ФормаМоделированиеПоЕГРЮЛ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма моделирование по ЕГРЮЛ</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="4e70e970-9de8-4c4e-9989-e39ed134c364">
+    <name>ПрямыеДоли</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прямые доли</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="3f17554f-62ee-4158-be83-cd6f6d23ee26">
+    <name>СтруктураВладения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Структура владения</value>
+    </synonym>
+    <group>NavigationPanelOrdinary</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:DataProcessor>

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f22fc0f1-021a-4f93-be53-85b0520a42c0">
+  <producedTypes>
+    <selectionType typeId="5760e34e-a8a3-44db-aea9-cffc89fbcbda" valueTypeId="b7d2db76-11b8-41e8-b85f-abda61ed2754"/>
+    <listType typeId="3e94158e-8ec8-4310-9922-21f4b326fe6b" valueTypeId="136c5e16-49c3-412b-8d6b-649dde154d73"/>
+    <managerType typeId="853541fa-9c50-49ac-b284-d68bb19bdf98" valueTypeId="fe846e7a-faf9-48cc-801a-d557b72a255c"/>
+    <recordSetType typeId="a1059a46-5a46-4a1a-94ac-81ddc09c0cca" valueTypeId="42fabe7e-059c-4537-9cb1-fed893e95501"/>
+    <recordKeyType typeId="3bf18ced-7d52-4685-a4ea-755e7c06c010" valueTypeId="f5dccb72-da6c-4631-8fbc-7bfab50866a7"/>
+    <recordType typeId="a53f45c2-d3bd-40aa-b4df-c9de9b097d11" valueTypeId="0122870b-f3dd-4026-b2f7-12ebe520095d"/>
+  </producedTypes>
+  <name>РасчетыПоЭквайрингу</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчеты по эквайрингу</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Acquiring contract AR/AP</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <explanation>
+    <key>ru</key>
+    <value>Расчеты с банками по платежам, совершенным с помощью платежных карт.</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>Settlements with banks by payments performed by payment cards.</value>
+  </explanation>
+  <resources uuid="37c98825-4b64-4de6-b26e-81f163867ab8">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма денежных средств</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Cash amount</value>
+    </toolTip>
+    <markNegatives>true</markNegatives>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <attributes uuid="edaaa6a5-6a3f-4c10-afc7-84afb39940bf">
+    <name>ХозяйственнаяОперация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Хозяйственная операция</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business transaction</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ХозяйственныеОперации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Хозяйственная операция, по которой отражены движения денежных средств.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business transaction for which cash flow is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="7c6ba8da-072a-43ed-89ce-8a219441c4b1">
+    <name>АналитикаУчетаПоПартнерам</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика учета по партнерам</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Accounting dimension by partners</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.КлючиАналитикиУчетаПоПартнерам</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Определяет аналитику расчетов с поставщиками и клиентами.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Determines dimension of vendors and customers AR/AP.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="e5a873b0-6c1a-4804-ad9b-fc42bc953f6d">
+    <name>Заказ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Заказ</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Order</value>
+    </synonym>
+    <type>
+      <types>DocumentRef.ЗаказПоставщику</types>
+      <types>DocumentRef.ЗаказКлиента</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Заказ клиента или заказ поставщику, по которому производится поступление или списание денежных средств</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sales order or purchase order for which cash is received or debited</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="fcee6a87-aa10-4de8-ad1b-c3f2ce267c93">
+    <name>СтатьяДвиженияДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья ДДС</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cash flow item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья движения денежных средств, по которой планируется поступление безналичных денежных средств</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Cash flow item for which &quot;Incoming payment — Bank account&quot; is planned</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="914c1036-8aa5-4ebc-9a8a-9a959cc8e105">
+    <name>КодАвторизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код авторизации</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Authorization code</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>6</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Код авторизации при проведении транзакции оплаты.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Authorization code when performing payment transaction.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="5586bf39-bef4-47e7-8f5d-44cb26e671a9">
+    <name>НомерПлатежнойКарты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер платежной карты</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment card number</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>22</length>
+      </stringQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номер платежной карты, по которой произведена операция</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Number of payment card used in the transaction.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <attributes uuid="dff4db36-9cf7-4443-a5c6-3ca97cebec2f">
+    <name>Сторно</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сторно</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Storno</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </attributes>
+  <dimensions uuid="fb3947c1-6749-4688-b8f1-e6764f86998d">
+    <name>ДатаПлатежа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата платежа</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Payment date</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата осуществления платежа</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Date of payment</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="aeb5aa26-c355-4871-b702-66168256a523">
+    <name>ЭквайринговыйТерминал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Эквайринговый терминал</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>POS terminal</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ЭквайринговыеТерминалы</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Терминал регистрации оплат по платежным картам</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Payment card terminal</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0f6c75fc-4790-4c1a-9533-8fddcffeca44">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Contract</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыЭквайринга</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Договор подключения к платежной системе.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Payment system contract.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="8268a834-cf99-46c0-bea4-279b9eae07db">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация предприятия, от имени которой произведена операция.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Enterprise company on which behalf the transaction has been performed.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3ee12cf8-8d1f-4051-9563-624d996c7809">
+    <name>ТипДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип денежных средств</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Cash type</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ТипыДенежныхСредствПоЭквайрингу</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Тип денежных средств, отраженных операцией.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>The type of cash recorded in the transaction.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7148a231-4171-4bc3-adf7-70659a7c8bd3">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта взаиморасчетов с партнером.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>AR/AP currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

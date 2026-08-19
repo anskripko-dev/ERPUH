@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="2aa02c3c-1632-4238-81bb-e70b4880cc85">
+  <producedTypes>
+    <selectionType typeId="430ae380-c5ed-4ab6-bde8-f2bc75b840ed" valueTypeId="cdd7d79e-acfb-448e-b775-ab5baf382e8a"/>
+    <listType typeId="bb6c4a03-5b4c-4a16-b284-bfea8530f66f" valueTypeId="2d388775-e26b-4b43-81da-a01ca63b16f1"/>
+    <managerType typeId="148eff96-4036-48a4-95a2-e57cf40183bb" valueTypeId="6009baf5-de72-4b20-99c2-a630f56ca1ce"/>
+    <recordSetType typeId="91a1e7a8-c5ee-4aea-a9d6-0317f0840fb4" valueTypeId="b577e95c-7fef-4f66-85ec-07b3c8867565"/>
+    <recordKeyType typeId="493ad9dd-b5d4-41b3-976a-e96dec6f50ff" valueTypeId="85d8dc8b-7190-4f88-b631-4ceb53075a7f"/>
+    <recordType typeId="f03c8a9e-e95b-457e-8f91-8633ed047f6c" valueTypeId="c8480474-392f-48e9-8717-bca8867a60ea"/>
+    <recordManagerType typeId="adc6e27d-1c80-4c36-a552-076b18a4aa56" valueTypeId="87e4a5ba-0fd8-4f07-a061-0ff6f1a47608"/>
+  </producedTypes>
+  <name>НастройкаПередачиМатериаловВПроизводство</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройка передачи материалов в производство</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Configure material transfer to production</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultRecordForm>InformationRegister.НастройкаПередачиМатериаловВПроизводство.Form.ФормаЗаписи</defaultRecordForm>
+  <defaultListForm>InformationRegister.НастройкаПередачиМатериаловВПроизводство.Form.ФормаСписка</defaultListForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <listPresentation>
+    <key>ru</key>
+    <value>Настройка передачи материалов в производство</value>
+  </listPresentation>
+  <listPresentation>
+    <key>en</key>
+    <value>Configure material transfer to production</value>
+  </listPresentation>
+  <resources uuid="45216616-4860-4ffb-ae6f-52fcd96a0f70">
+    <name>Склад</name>
+    <synonym>
+      <key>ru</key>
+      <value>Склад материалов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Materials warehouse</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Склады</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Склад, с которого передаются материалы в подразделение.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Warehouse from which materials are transferred to business unit.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Склады.EmptyRef</value>
+    </fillValue>
+  </resources>
+  <resources uuid="37d8e28e-a685-49a3-95a2-bddc89d34561">
+    <name>ОснованиеДляПолучения</name>
+    <synonym>
+      <key>ru</key>
+      <value>Основание для получения материала в подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Basis for receiving material to business unit</value>
+    </synonym>
+    <type>
+      <types>EnumRef.ОснованияДляПолученияМатериаловВПроизводстве</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>На основании чего выполняется получение материала в подразделении.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Basis of receiving material in the business unit.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.ОснованияДляПолученияМатериаловВПроизводстве.EnumValue.ПоЗаказуНаПроизводство</value>
+    </fillValue>
+  </resources>
+  <dimensions uuid="935420ed-e03b-45f2-9ef9-5c7a63250ca1">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение-получатель</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Receiving business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, для которого определяются настройка.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit for which the setting is defined.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameters>
+      <name>Отбор.ПроизводственноеПодразделение</name>
+      <value xsi:type="core:BooleanValue">
+        <value>true</value>
+      </value>
+    </choiceParameters>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="72523a9e-7b3b-44a2-95aa-52b7277a3038">
+    <name>Номенклатура</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Items</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Номенклатура</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Номенклатура, для которой определяются настройка.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Products for which the setting is defined.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameters>
+      <name>Отбор.ТипНоменклатуры</name>
+      <value xsi:type="core:FixedArrayValue">
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.Товар</value>
+        </values>
+        <values xsi:type="core:ReferenceValue">
+          <value>Enum.ТипыНоменклатуры.EnumValue.МногооборотнаяТара</value>
+        </values>
+      </value>
+    </choiceParameters>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.Номенклатура.EmptyRef</value>
+    </fillValue>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="39e39a94-587d-4887-abe4-6461aa43f21e">
+    <name>Характеристика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Characteristic</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Характеристика номенклатуры, для которой определяются настройка.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Characteristic of products to which the setting is applied.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <changeMode>DontChange</changeMode>
+      <field>InformationRegister.НастройкаПередачиМатериаловВПроизводство.Dimension.Номенклатура</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Catalog.ХарактеристикиНоменклатуры.EmptyRef</value>
+    </fillValue>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="fe380f7d-e864-496e-901a-a92815bf48d6">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Record form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="3042069f-d16b-4da2-b0ce-d4b64ff076ad">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>List form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="150f3b76-7019-4102-bb25-10a67233ef11">
+    <name>ФормаНастройки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма настройки</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Setup form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+</mdclass:InformationRegister>

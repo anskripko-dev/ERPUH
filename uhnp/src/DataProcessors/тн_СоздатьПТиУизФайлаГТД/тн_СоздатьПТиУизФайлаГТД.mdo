@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d139f9a7-adac-465a-ad7b-54b64f84beba">
+  <producedTypes>
+    <objectType typeId="de890ae6-4bc9-4a63-8414-ff8a72689f1b" valueTypeId="cf067b63-bcc5-4e20-a11a-6d96d1564904"/>
+    <managerType typeId="520bdfd5-b47a-4c48-b888-86dd5d4ee003" valueTypeId="8810a19c-3cae-40fe-a64a-3fd0766eb1ab"/>
+  </producedTypes>
+  <name>тн_СоздатьПТиУизФайлаГТД</name>
+  <synonym>
+    <key>ru</key>
+    <value>Создать документ &quot;Приобретение товаров и услуг&quot; из xml-файла с данными о ГТД</value>
+  </synonym>
+  <comment>//Блинова М.А. 09.07.2024 Выполнение задач №000050145</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_СоздатьПТиУизФайлаГТД.Form.Форма</defaultForm>
+  <attributes uuid="c499edb3-6098-489c-b850-f62690f4ca37">
+    <name>ПутьКФайлу</name>
+    <synonym>
+      <key>ru</key>
+      <value>Путь к файлу с данными</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>256</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="10bde788-29de-4abc-bcc0-be26b2444f3e">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8e0d7b94-4eac-4cb4-90fa-95b4714d02b0">
+    <name>ИНН</name>
+    <synonym>
+      <key>ru</key>
+      <value>ИНН</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="93d98c41-09be-49d5-82d5-84ca9d76217b">
+    <name>КПП</name>
+    <synonym>
+      <key>ru</key>
+      <value>КПП</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>25</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ad255bae-69df-4b73-b7d2-0ef8f0152f59">
+    <name>Контрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Контрагент</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Контрагенты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="7ee2b3a7-c4c7-4c40-b625-0235dac93851">
+    <name>ГруппаКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Группа контрагента</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ГруппыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="5cc39b53-f984-410f-bad7-be890bd75c41">
+    <name>НаименованиеКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Наименование</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="f6dfad86-a738-43b8-a2fa-fad1ff1df60f">
+    <name>СоздатьНовыйКонтрагент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать новый контрагент</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e6d3a0fe-4464-4372-adc5-3f1dd3df58b3">
+    <name>Договор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Договор</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ДоговорыКонтрагентов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="0166d0e5-fcd2-4478-9650-47b309b6ca61">
+    <name>ДатаДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="3e7f949e-06a5-46f4-a19a-a9092813c619">
+    <name>НомерДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номер</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>92</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="74d751e2-9720-4e79-bed9-5d7aeb9229cd">
+    <name>СоздатьНовыйДоговор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать новый договор</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="07802b8f-6497-42a7-8014-2913954737c0">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <comment>(Общ)</comment>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="36b39f57-cea2-4796-83f5-32d026b3a7ae">
+    <name>КодВалюты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код валюты</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8de635c7-7fd9-423a-bcaf-59ac53646c7a">
+    <name>ДатаВходящего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Дата документа сторонней организации</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="1a0d6796-fd86-4ce1-97af-dacd2e520e3e">
+    <name>Страна</name>
+    <synonym>
+      <key>ru</key>
+      <value>Страна</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтраныМира</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="88ebb042-492f-4c31-8580-5219fd6413d2">
+    <name>КодАльфа2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код Альфа-2</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>20</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="dcce95c6-9c80-430a-80b0-2ed9a54cd592">
+    <name>КодГТД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Код ГТД</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="8e7d5dc5-cb85-41c4-a8db-5d71335b331d">
+    <name>СоздатьНовыйНомерГТД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Создать новый номер ГТД</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="93df2038-ec1d-4448-8d6d-59904cd32e0e">
+    <name>СтатусОрганизации</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус организации</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="076b860f-78c1-4b6e-8d7a-355db1529dfa">
+    <name>СтатусКонтрагента</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус контрагента</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="100e7b8b-1757-4219-9aeb-8847d3745ebc">
+    <name>СтатусДоговора</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус договора</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="e83f29a7-189b-41c6-bd7a-42bb60bc7315">
+    <name>СтатусСтраны</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус страны</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="ecd99bf1-ea67-4521-9f76-64af30e6932e">
+    <name>СтатусНомераГТД</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус номера ГТД</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="2a1667b4-0d6b-4786-a61f-1019f9335c22">
+    <name>СтатусВалюты</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус валюты</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <attributes uuid="02d962ed-44f3-4b2f-8805-e003340b25a6">
+    <name>СтатусДатыВходящего</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус даты входящего</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>1</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </attributes>
+  <forms uuid="d83021d9-f818-40ee-a230-3096491c6cc2">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="1c389a94-12c0-44a8-96a8-02aa68b1b75f">
+    <name>КодыДТ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коды ДТ</value>
+    </synonym>
+    <comment>Майдан В.К. 30.11.2021 Выполнение задач №000038014</comment>
+  </templates>
+</mdclass:DataProcessor>

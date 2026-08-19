@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:DataProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="af5bc856-8617-4591-98e0-d8c6d2fe0759">
+  <producedTypes>
+    <objectType typeId="18a3897d-bfde-4475-a7e2-6206412d98de" valueTypeId="a8569887-76bf-4875-9ee2-8f3b2acd6013"/>
+    <managerType typeId="aa82f9c6-7e1e-40b0-bc1e-3986d20cf2d7" valueTypeId="aa59f921-9ae7-4f1a-b5b2-3434d6f65593"/>
+  </producedTypes>
+  <name>тн_ПереносОстатковРасходовБудущегоПериода</name>
+  <synonym>
+    <key>ru</key>
+    <value>Перенос остатков РБП с филиала на головную организацию (счет 97,76.01) (тн)</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Inventory adjustment wizard</value>
+  </synonym>
+  <comment>//Блинова М.А. 01.12.2025 Выполнение задач №000055789</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <defaultForm>DataProcessor.тн_ПереносОстатковРасходовБудущегоПериода.Form.Форма</defaultForm>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
+  <tabularSections uuid="56ac159b-c8fe-43b6-885c-11ea7a9e0be8">
+    <producedTypes>
+      <objectType typeId="8fd09e7f-8123-43f0-8124-462baba91486" valueTypeId="c9d75f00-86cd-4f64-8fec-dd842559d0f5"/>
+      <rowType typeId="da5ae4db-859d-44a0-8e32-f2cb35b388cd" valueTypeId="e4d906f6-d74a-437c-9003-a5c2c91d10c2"/>
+    </producedTypes>
+    <name>ТаблицаДанных</name>
+    <synonym>
+      <key>ru</key>
+      <value>Таблица данных</value>
+    </synonym>
+    <standardAttributes>
+      <dataHistory>Use</dataHistory>
+      <name>LineNumber</name>
+      <fillValue xsi:type="core:UndefinedValue"/>
+      <fullTextSearch>Use</fullTextSearch>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+    </standardAttributes>
+    <attributes uuid="ef39aee4-af3c-4063-b007-4cb98abed430">
+      <name>СтатьяРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Статья расходов</value>
+      </synonym>
+      <type>
+        <types>ChartOfCharacteristicTypesRef.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="bedf018b-44f0-489d-b4b5-ea21ccae1bbd">
+      <name>АналитикаРасходов</name>
+      <synonym>
+        <key>ru</key>
+        <value>Аналитика расходов</value>
+      </synonym>
+      <type>
+        <types>Characteristic.СтатьиРасходов</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="dbd84d38-c63b-4cbd-8c37-6e4faf8c7221">
+      <name>Счет</name>
+      <synonym>
+        <key>ru</key>
+        <value>Счет</value>
+      </synonym>
+      <type>
+        <types>ChartOfAccountsRef.Хозрасчетный</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="5825b147-61ee-40d8-b44d-82f1cceaf48d">
+      <name>СуммаОстаток</name>
+      <synonym>
+        <key>ru</key>
+        <value>Сумма остаток</value>
+      </synonym>
+      <type>
+        <types>Number</types>
+        <numberQualifiers>
+          <precision>15</precision>
+          <scale>2</scale>
+        </numberQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="059a8b1c-bea8-4971-b549-240c5e91d3de">
+      <name>Подразделение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Подразделение</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.СтруктураПредприятия</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+    <attributes uuid="a85b6e8b-9293-4a58-bb3e-cd7e2a2bcf99">
+      <name>НаправлениеДеятельности</name>
+      <synonym>
+        <key>ru</key>
+        <value>Направление деятельности</value>
+      </synonym>
+      <type>
+        <types>CatalogRef.НаправленияДеятельности</types>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <fillValue xsi:type="core:UndefinedValue"/>
+    </attributes>
+  </tabularSections>
+  <forms uuid="a2ecf16e-b407-4147-b4f3-25cd1356b080">
+    <name>Форма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Default form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <templates uuid="9e7ad25a-f0fa-439b-919e-0b0c39118be4">
+    <name>МакетВыгрузки</name>
+    <synonym>
+      <key>ru</key>
+      <value>Макет выгрузки</value>
+    </synonym>
+  </templates>
+</mdclass:DataProcessor>

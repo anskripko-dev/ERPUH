@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="7285c361-8c8c-49c8-9979-3eaa309548ed">
+  <producedTypes>
+    <selectionType typeId="44b489d2-3176-4df2-958b-c05f918624bd" valueTypeId="311735be-5f6e-4090-9e83-f177d572a9f0"/>
+    <listType typeId="6a9de3a4-b7b6-41b7-851f-51f75b8b7a2f" valueTypeId="3770fc41-8e22-470a-b0f8-e40f00c0dc3a"/>
+    <managerType typeId="2ae30dfa-e380-4767-a126-823e9f491522" valueTypeId="c6eebe7c-322f-4ab7-ac3d-c9e999fdc8fb"/>
+    <recordSetType typeId="c3c7f072-ad7f-4db4-a4dc-66e472699188" valueTypeId="a43e3dfb-219a-4b64-b930-dac35564caed"/>
+    <recordKeyType typeId="133931fa-e482-414c-bd55-ca6a19cec2cf" valueTypeId="3bae4712-5ad8-46db-9257-c7b021c88a19"/>
+    <recordType typeId="fe2da8a6-67b8-4de4-8ea3-e6c3b7d749ca" valueTypeId="0649e555-251b-42de-9504-2a9c1d71da6c"/>
+    <recordManagerType typeId="937cb5c0-4468-4d5f-b92c-e84ad03ec2da" valueTypeId="486fe368-f889-4d8b-b96d-88eacf6db100"/>
+  </producedTypes>
+  <name>РасчетДолейБазыНалогаНаПрибыльПоВариантамНалогообложения</name>
+  <synonym>
+    <key>ru</key>
+    <value>Расчет долей базы налога на прибыль по вариантам налогообложения</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Calculate income tax base shares by taxation options</value>
+  </synonym>
+  <comment>Расчет долей базы налога на прибыль в разрезе вариантов налогообложения</comment>
+  <useStandardCommands>true</useStandardCommands>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <writeMode>RecorderSubordinate</writeMode>
+  <explanation>
+    <key>ru</key>
+    <value>Используется в связке с регистром &quot;Расчет долей базы налога на прибыль&quot;</value>
+  </explanation>
+  <explanation>
+    <key>en</key>
+    <value>Used together with the &quot;Calculation of income tax base shares&quot; register</value>
+  </explanation>
+  <resources uuid="0698785a-8f06-44b3-9991-ce1de7e85ac3">
+    <name>НалоговаяБаза</name>
+    <synonym>
+      <key>ru</key>
+      <value>Налоговая база с учетом доли</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Tax base with share</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаНеотрицательная</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <resources uuid="3bd267b5-9e34-4064-8154-35e828e07d8b">
+    <name>ДоляНалоговойБазы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Доля налоговой базы</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Percentage of tax base</value>
+    </synonym>
+    <comment>Доля по отношению к базе налога по всей организации</comment>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>12</precision>
+        <scale>10</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="85acc34e-cb55-4794-9c52-81703af5c832">
+    <name>ПериодРасчета</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период расчета</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Calculation period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="09f6c162-081e-4a3b-ab9e-dcbd8bc429b3">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="c871aeaf-233e-46f0-8e07-b24b0821f2fd">
+    <name>РегистрацияВНалоговомОргане</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистрация в налоговом органе</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Registration with tax authority</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.РегистрацииВНалоговомОргане</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e10ffb10-b931-409f-83e0-c55944c5a660">
+    <name>ВариантНалогообложенияПрибыли</name>
+    <synonym>
+      <key>ru</key>
+      <value>Вариант налогообложения прибыли</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Profit taxation option</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ВариантыНалогообложенияПрибыли</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+</mdclass:InformationRegister>

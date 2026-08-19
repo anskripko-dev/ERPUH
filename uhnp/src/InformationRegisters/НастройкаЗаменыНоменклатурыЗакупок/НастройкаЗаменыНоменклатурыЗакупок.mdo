@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="1ddaedba-30e9-434b-95e5-e6338db6fd64">
+  <producedTypes>
+    <selectionType typeId="b4f7229f-5539-4847-af2b-340aa5c18512" valueTypeId="9051a669-127c-4dcc-af04-11f2c9afb5e6"/>
+    <listType typeId="ad53914f-f076-414a-a6c2-ec3a755204cf" valueTypeId="8cfbc9ee-f395-4330-b04e-80bb9b105e3f"/>
+    <managerType typeId="02f5c387-61ec-4678-92b1-6cd85fc854f1" valueTypeId="284ffb9d-6a03-488e-875c-730e22b5617b"/>
+    <recordSetType typeId="d0f2fc32-003d-4fd2-a6a3-fab5333982bb" valueTypeId="14279da8-cf45-4da0-95d0-3ac8e8b5d799"/>
+    <recordKeyType typeId="21206128-c9f0-48e9-902c-bd3aafc8c390" valueTypeId="22fdb4ac-8ca2-48f1-926e-f48d78149081"/>
+    <recordType typeId="5da857c7-2ebe-41da-bbc3-e3857682ba9f" valueTypeId="afd43a7c-1a68-4edd-baf8-ace075d19265"/>
+    <recordManagerType typeId="e107890c-99c6-4cb5-bf8f-9c0529c885c5" valueTypeId="ecebb6ba-d36e-45f6-a32a-fdebae5bb72a"/>
+  </producedTypes>
+  <name>НастройкаЗаменыНоменклатурыЗакупок</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройка замены номенклатуры закупок</value>
+  </synonym>
+  <editType>InDialog</editType>
+  <defaultListForm>InformationRegister.НастройкаЗаменыНоменклатурыЗакупок.Form.ФормаСписка</defaultListForm>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <informationRegisterPeriodicity>Day</informationRegisterPeriodicity>
+  <writeMode>RecorderSubordinate</writeMode>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <resources uuid="9bb4e749-71a7-47c8-ab74-dc7695bd2eac">
+    <name>Коэффициент</name>
+    <synonym>
+      <key>ru</key>
+      <value>Коэфф. пересчета ед. изм.</value>
+    </synonym>
+    <comment>Если количество в единицах источника умножить на коэффициент, то получим количество в единицах приемника</comment>
+    <type>
+      <types>DefinedType.КоэффициентЕдиницыИзмеренияУХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+  </resources>
+  <dimensions uuid="61d0eb37-46fa-4244-b8f9-de452eff1777">
+    <name>СпособЗамены</name>
+    <synonym>
+      <key>ru</key>
+      <value>Способ замены</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СпособыЗаменыНоменклатуры</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="400eb091-8ac6-45f3-9b32-532daac8d3f6">
+    <name>НоменклатураИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура источник</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ТипНоменклатураЕХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="2acbf38c-5a28-42a3-a393-e411a5872669">
+    <name>ХарактеристикаИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика источник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>InformationRegister.НастройкаЗаменыНоменклатурыЗакупок.Dimension.НоменклатураИсточник</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="e7ccba57-b090-499c-b94c-7a0b4555b478">
+    <name>ЕдиницаИзмеренияИсточник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения источник</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ТипЕдиницаИзмеренияЕХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="fd65293e-ec21-4a1c-9324-2c8b818c0531">
+    <name>НоменклатураПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатура замены</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ТипНоменклатураЕХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="33a51c2e-c372-4547-a586-3f727ac6b585">
+    <name>ХарактеристикаПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Характеристика приемник</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.ХарактеристикиНоменклатуры</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Если у выбранной номенклатуры используются характеристики, то необходимо выбрать характеристику номенклатуры.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <choiceParameterLinks>
+      <name>Номенклатура</name>
+      <field>InformationRegister.НастройкаЗаменыНоменклатурыЗакупок.Dimension.НоменклатураПриемник</field>
+    </choiceParameterLinks>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <dimensions uuid="33d95b8d-b5c4-437b-91f3-49c2c25b6515">
+    <name>ЕдиницаИзмеренияПриемник</name>
+    <synonym>
+      <key>ru</key>
+      <value>Единица измерения приемник</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ТипЕдиницаИзмеренияЕХ</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+    <fillFromFillingValue>true</fillFromFillingValue>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <master>true</master>
+    <mainFilter>true</mainFilter>
+  </dimensions>
+  <forms uuid="97b3498c-00e6-4778-888f-f47245448a75">
+    <name>ФормаСписка</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма списка</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="8cb86441-faa5-4f72-9afd-60003ed4422d">
+    <name>ФормаЗаписи</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма записи</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="f70e8ba9-4c75-4739-92b3-29d50fc3b5fc">
+    <name>ФормаВыбораНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора номенклатуры</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="06beb28c-5808-4777-a5d9-6849cc07c154">
+    <name>ФормаВыбораАналога</name>
+    <synonym>
+      <key>ru</key>
+      <value>Форма выбора аналога</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <commands uuid="2772a613-f2b8-46bd-9b54-0535b216d966">
+    <name>НастройкаЗаменыНоменклатуры</name>
+    <synonym>
+      <key>ru</key>
+      <value>Настройка замены номенклатуры</value>
+    </synonym>
+    <group>NavigationPanelSeeAlso</group>
+    <modifiesData>true</modifiesData>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:InformationRegister>

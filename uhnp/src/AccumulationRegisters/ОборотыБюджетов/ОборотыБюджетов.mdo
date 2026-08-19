@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="4a55d6ca-957a-46c7-bede-97d23ac04df5">
+  <producedTypes>
+    <selectionType typeId="a31373f2-ea80-4a4e-a08a-d0202cf63851" valueTypeId="978869fc-5e2c-4de4-8d54-e01f7c79a878"/>
+    <listType typeId="a84b4868-3d52-452a-8350-c425fb3fb8a6" valueTypeId="55ced7d0-c3c3-46ec-b439-55c16fed1456"/>
+    <managerType typeId="ad4d74bb-3121-4e34-bfac-c3bd52ef59cf" valueTypeId="cc199e02-102b-4abf-962d-418d98bc64c3"/>
+    <recordSetType typeId="a06d25cd-18cc-4455-bd64-9cff2d11f95a" valueTypeId="0071baa1-2b0a-4b15-98f7-167d5e0b36e8"/>
+    <recordKeyType typeId="a8067c75-598b-44a0-ab4b-c7ca15483f45" valueTypeId="325e825b-6057-4906-bf96-e7859bd52064"/>
+    <recordType typeId="1d824b25-c8b8-4133-82d7-f045631dae60" valueTypeId="bd1d433d-6d3c-46e3-821e-5ff65d2938a0"/>
+  </producedTypes>
+  <name>ОборотыБюджетов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Обороты бюджетов</value>
+  </synonym>
+  <synonym>
+    <key>en</key>
+    <value>Budget turnovers</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Active</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>LineNumber</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Recorder</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Period</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <resources uuid="6feb3385-0bef-4ea2-95eb-b81e378d7179">
+    <name>Количество</name>
+    <synonym>
+      <key>ru</key>
+      <value>Количество</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Quantity</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>3</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="820e6376-40ea-4b72-adcf-23be8096fa0a">
+    <name>СуммаУпр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма (упр.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount, manag.</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте управленческого учета</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount in management accounting currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="c6c2ef89-8425-4fce-b189-854d16dbfff0">
+    <name>СуммаСценария</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма сценария</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Scenario amount</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте сценария</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount in the scenario currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ff05b2e8-4f84-4441-9e62-933d66a3ac77">
+    <name>СуммаРегл</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма (регл.)</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount (local)</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте регламентированного учета.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount in local accounting currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <resources uuid="ac960476-c1f9-40ff-9b0d-96b1eb475064">
+    <name>СуммаВВалюте</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма в валюте</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Amount in currency</value>
+    </synonym>
+    <type>
+      <types>DefinedType.ДенежнаяСуммаЛюбогоЗнака</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сумма в валюте операции</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Amount in the transaction currency</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="a3fbf38b-421c-480e-a45f-cd54becfc4d9">
+    <name>ПериодПланирования</name>
+    <synonym>
+      <key>ru</key>
+      <value>Период планирования</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Planning period</value>
+    </synonym>
+    <type>
+      <types>Date</types>
+      <dateQualifiers>
+        <dateFractions>Date</dateFractions>
+      </dateQualifiers>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Дата начала периода, в котором отражается оборот по бюджету.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Start date of the period the budget turnover is recorded in.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ee07d846-abba-4327-be39-f76e2e910aac">
+    <name>Сценарий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сценарий</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Scenario</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Сценарии</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Сценарий, по которому отражается оборот по бюджету.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Scenario using which budget turnover is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="01db03e5-9dbc-4aec-a0f6-049dcaa0a10b">
+    <name>Статус</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статус</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Status</value>
+    </synonym>
+    <type>
+      <types>EnumRef.СтатусыПланов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статус оборота бюджетов</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Budget turnover status</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="e155f8b4-431b-47a2-814e-2f1ed68ad24c">
+    <name>СтатьяБюджетов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья бюджетов</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Budget flow item</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиБюджетов</types>
+      <types>CatalogRef.ПоказателиБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Статья, по которой отражается оборот по бюджету.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Item using which the budget turnover is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0cf8323e-a69d-4943-85b3-2b89fbc2215b">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Company</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Организация, по которой отражается оборот по бюджету.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Company for which budget turnover is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="4080816c-0902-4c72-8f7a-54b97bae1582">
+    <name>Подразделение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Подразделение</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Business unit</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтруктураПредприятия</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Подразделение, по которому отражается оборот по бюджету.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Business unit for which budget turnover is recorded.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <indexing>Index</indexing>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="1eb5e914-6ae3-482b-a986-4b83c7ac4683">
+    <name>Валюта</name>
+    <synonym>
+      <key>ru</key>
+      <value>Валюта</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Currency</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Валюты</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Валюта операции.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Transaction currency.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="3f538a5d-68cd-4b0b-9796-29d4bd6e2085">
+    <name>Аналитика1</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 1</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 1</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение первой аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>First dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="d91b05bf-4087-4261-8f29-71809d91e2c7">
+    <name>Аналитика2</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 2</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 2</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение второй аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Second dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="b12992a2-b13e-416b-907a-50f27fc3d046">
+    <name>Аналитика3</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 3</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 3</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение третьей аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Third dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0dbf0446-ee99-43cf-b4fa-4fb8744cc998">
+    <name>Аналитика4</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 4</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 4</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение четвертой аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Fourth dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="7a44b951-33a8-4625-8d94-d57cf0a9e085">
+    <name>Аналитика5</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 5</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 5</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение пятой аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Fifth dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="ec878455-408d-464a-a3f5-75d3e5e2af24">
+    <name>Аналитика6</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика 6</value>
+    </synonym>
+    <synonym>
+      <key>en</key>
+      <value>Dimension 6</value>
+    </synonym>
+    <type>
+      <types>Characteristic.АналитикиСтатейБюджетов</types>
+    </type>
+    <toolTip>
+      <key>ru</key>
+      <value>Значение шестой аналитики статьи бюджетов.</value>
+    </toolTip>
+    <toolTip>
+      <key>en</key>
+      <value>Sixth dimension value of the budget flow item.</value>
+    </toolTip>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>
