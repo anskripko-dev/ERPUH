@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<Title>
+		<v8:item>
+			<v8:lang>ru</v8:lang>
+			<v8:content>Повторная обработка пакетов интеграции</v8:content>
+		</v8:item>
+	</Title>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаНайтиПакеты" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.НайтиПакеты</CommandName>
+				<ExtendedTooltip name="ФормаНайтиПакетыРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаОбработатьВыбранные" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОбработатьВыбранные</CommandName>
+				<ExtendedTooltip name="ФормаОбработатьВыбранныеРасширеннаяПодсказка" id="4"/>
+			</Button>
+			<Button name="ФормаОтметитьВсе" id="5">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтметитьВсе</CommandName>
+				<ExtendedTooltip name="ФормаОтметитьВсеРасширеннаяПодсказка" id="6"/>
+			</Button>
+			<Button name="ФормаСнятьВсе" id="7">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СнятьВсе</CommandName>
+				<ExtendedTooltip name="ФормаСнятьВсеРасширеннаяПодсказка" id="8"/>
+			</Button>
+			<Button name="ФормаПоказатьПакет" id="9">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ПоказатьПакет</CommandName>
+				<ExtendedTooltip name="ФормаПоказатьПакетРасширеннаяПодсказка" id="10"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="ГруппаОтбор" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отбор</v8:content>
+				</v8:item>
+			</Title>
+			<Group>Vertical</Group>
+			<Representation>WeakSeparation</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОтборРасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаОтборСтрока1" id="13">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтборСтрока1РасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<InputField name="Период" id="15">
+							<DataPath>Период</DataPath>
+							<ContextMenu name="ПериодКонтекстноеМеню" id="16"/>
+							<ExtendedTooltip name="ПериодРасширеннаяПодсказка" id="17"/>
+						</InputField>
+						<InputField name="ВидСообщения" id="18">
+							<DataPath>ВидСообщения</DataPath>
+							<ClearButton>true</ClearButton>
+							<ContextMenu name="ВидСообщенияКонтекстноеМеню" id="19"/>
+							<ExtendedTooltip name="ВидСообщенияРасширеннаяПодсказка" id="20"/>
+						</InputField>
+						<InputField name="Лимит" id="21">
+							<DataPath>Лимит</DataPath>
+							<SpinButton>true</SpinButton>
+							<ContextMenu name="ЛимитКонтекстноеМеню" id="22"/>
+							<ExtendedTooltip name="ЛимитРасширеннаяПодсказка" id="23"/>
+						</InputField>
+						<CheckBoxField name="ПоставитьВОчередь" id="24">
+							<DataPath>ПоставитьВОчередь</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ПоставитьВОчередьКонтекстноеМеню" id="25"/>
+							<ExtendedTooltip name="ПоставитьВОчередьРасширеннаяПодсказка" id="26"/>
+						</CheckBoxField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаОтборСтрока2" id="27">
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаОтборСтрока2РасширеннаяПодсказка" id="28"/>
+					<ChildItems>
+						<InputField name="ИДСообщения" id="29">
+							<DataPath>ИДСообщения</DataPath>
+							<Width>28</Width>
+							<ContextMenu name="ИДСообщенияКонтекстноеМеню" id="30"/>
+							<ExtendedTooltip name="ИДСообщенияРасширеннаяПодсказка" id="31"/>
+						</InputField>
+						<InputField name="БазаРеспондентИД" id="32">
+							<DataPath>БазаРеспондентИД</DataPath>
+							<Width>20</Width>
+							<ContextMenu name="БазаРеспондентИДКонтекстноеМеню" id="33"/>
+							<ExtendedTooltip name="БазаРеспондентИДРасширеннаяПодсказка" id="34"/>
+						</InputField>
+						<InputField name="СтрокаПоиска" id="35">
+							<DataPath>СтрокаПоиска</DataPath>
+							<AutoMaxWidth>false</AutoMaxWidth>
+							<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="36"/>
+							<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="37"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+		<Table name="НайденныеПакеты" id="38">
+			<Representation>List</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
+			<HeightInTableRows>12</HeightInTableRows>
+			<AutoInsertNewRow>false</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>НайденныеПакеты</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="НайденныеПакетыКонтекстноеМеню" id="39"/>
+			<AutoCommandBar name="НайденныеПакетыКоманднаяПанель" id="40">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="НайденныеПакетыРасширеннаяПодсказка" id="41"/>
+			<SearchStringAddition name="НайденныеПакетыСтрокаПоиска" id="42">
+				<AdditionSource>
+					<Item>НайденныеПакеты</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НайденныеПакетыСтрокаПоискаКонтекстноеМеню" id="43"/>
+				<ExtendedTooltip name="НайденныеПакетыСтрокаПоискаРасширеннаяПодсказка" id="44"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="НайденныеПакетыСостояниеПросмотра" id="45">
+				<AdditionSource>
+					<Item>НайденныеПакеты</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="НайденныеПакетыСостояниеПросмотраКонтекстноеМеню" id="46"/>
+				<ExtendedTooltip name="НайденныеПакетыСостояниеПросмотраРасширеннаяПодсказка" id="47"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="НайденныеПакетыУправлениеПоиском" id="48">
+				<AdditionSource>
+					<Item>НайденныеПакеты</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="НайденныеПакетыУправлениеПоискомКонтекстноеМеню" id="49"/>
+				<ExtendedTooltip name="НайденныеПакетыУправлениеПоискомРасширеннаяПодсказка" id="50"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<CheckBoxField name="НайденныеПакетыПометка" id="51">
+					<DataPath>НайденныеПакеты.Пометка</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="НайденныеПакетыПометкаКонтекстноеМеню" id="52"/>
+					<ExtendedTooltip name="НайденныеПакетыПометкаРасширеннаяПодсказка" id="53"/>
+				</CheckBoxField>
+				<InputField name="НайденныеПакетыПериод" id="54">
+					<DataPath>НайденныеПакеты.Период</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыПериодКонтекстноеМеню" id="55"/>
+					<ExtendedTooltip name="НайденныеПакетыПериодРасширеннаяПодсказка" id="56"/>
+				</InputField>
+				<InputField name="НайденныеПакетыВидСообщения" id="57">
+					<DataPath>НайденныеПакеты.ВидСообщения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыВидСообщенияКонтекстноеМеню" id="58"/>
+					<ExtendedTooltip name="НайденныеПакетыВидСообщенияРасширеннаяПодсказка" id="59"/>
+				</InputField>
+				<InputField name="НайденныеПакетыВидСобытия" id="60">
+					<DataPath>НайденныеПакеты.ВидСобытия</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыВидСобытияКонтекстноеМеню" id="61"/>
+					<ExtendedTooltip name="НайденныеПакетыВидСобытияРасширеннаяПодсказка" id="62"/>
+				</InputField>
+				<InputField name="НайденныеПакетыИДСообщения" id="63">
+					<DataPath>НайденныеПакеты.ИДСообщения</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыИДСообщенияКонтекстноеМеню" id="64"/>
+					<ExtendedTooltip name="НайденныеПакетыИДСообщенияРасширеннаяПодсказка" id="65"/>
+				</InputField>
+				<InputField name="НайденныеПакетыБазаРеспондентИД" id="66">
+					<DataPath>НайденныеПакеты.БазаРеспондентИД</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыБазаРеспондентИДКонтекстноеМеню" id="67"/>
+					<ExtendedTooltip name="НайденныеПакетыБазаРеспондентИДРасширеннаяПодсказка" id="68"/>
+				</InputField>
+				<InputField name="НайденныеПакетыРезультатОбработки" id="69">
+					<DataPath>НайденныеПакеты.РезультатОбработки</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="НайденныеПакетыРезультатОбработкиКонтекстноеМеню" id="70"/>
+					<ExtendedTooltip name="НайденныеПакетыРезультатОбработкиРасширеннаяПодсказка" id="71"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<InputField name="ТекстПакета" id="72">
+			<DataPath>ТекстПакета</DataPath>
+			<TitleLocation>Top</TitleLocation>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>6</Height>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ТекстПакетаКонтекстноеМеню" id="73"/>
+			<ExtendedTooltip name="ТекстПакетаРасширеннаяПодсказка" id="74"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.нп_ПовторнаяОбработкаПакетовИнтеграции</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДополнительнаяОбработкаСсылка" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дополнительная обработка ссылка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДополнительныеОтчетыИОбработки</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Период" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Период</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:StandardPeriod</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВидСообщения" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вид сообщения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:EnumRef.тн_ВидыСообщений_ERP_УХ</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Лимит" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Лимит</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>6</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоставитьВОчередь" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Поставить в очередь</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ИДСообщения" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ИД сообщения</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="БазаРеспондентИД" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>База респондент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>36</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="СтрокаПоиска" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подстрока в пакете</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТекстПакета" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Текст пакета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="НайденныеПакеты" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найденные пакеты</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="Пометка" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content> </v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Период" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Период</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:dateTime</v8:Type>
+						<v8:DateQualifiers>
+							<v8:DateFractions>DateTime</v8:DateFractions>
+						</v8:DateQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидИнтеграции" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид интеграции</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.тн_ВидыИнтеграций</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Ключ" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Ключ</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>v8:UUID</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ВидСообщения" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>300</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ВидСобытия" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид события</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:EnumRef.тн_ВидыСобытийИнтеграции</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИДСообщения" id="7">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ИД сообщения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="БазаРеспондентИД" id="8">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>База респондент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>36</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ОписаниеОшибки" id="9">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Описание ошибки</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="РезультатОбработки" id="10">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Результат</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="НайтиПакеты" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Найти пакеты в логе интеграции</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.Find</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>НайтиПакеты</Action>
+			<Representation>TextPicture</Representation>
+		</Command>
+		<Command name="ОбработатьВыбранные" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Обработать выбранные</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Повторно загрузить отмеченные пакеты</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОбработатьВыбранные</Action>
+		</Command>
+		<Command name="ОтметитьВсе" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ОтметитьВсе</Action>
+		</Command>
+		<Command name="СнятьВсе" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<Action>СнятьВсе</Action>
+		</Command>
+		<Command name="ПоказатьПакет" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показать пакет</v8:content>
+				</v8:item>
+			</Title>
+			<Action>ПоказатьПакет</Action>
+		</Command>
+	</Commands>
+</Form>
