@@ -25,16 +25,6 @@
 			<field>Наименование</field>
 		</field>
 		<field xsi:type="DataSetFieldField">
-			<dataPath>Родитель</dataPath>
-			<field>Родитель</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Группа</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
 			<dataPath>ЭтоГруппа</dataPath>
 			<field>ЭтоГруппа</field>
 			<title xsi:type="v8:LocalStringType">
@@ -62,23 +52,26 @@
 			<dataPath>ИНН</dataPath>
 			<field>ИНН</field>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>КПП</dataPath>
+			<field>КПП</field>
+		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ ПЕРВЫЕ 1000
 	Справочник.Ссылка КАК Ссылка,
 	Справочник.Код КАК Код,
 	Справочник.Наименование КАК Наименование,
-	Справочник.Родитель КАК Родитель,
 	Справочник.ЭтоГруппа КАК ЭтоГруппа,
 	Справочник.ПометкаУдаления КАК ПометкаУдаления,
 	Справочник.Артикул КАК Артикул,
-	"""" КАК ИНН
+	"""" КАК ИНН,
+	"""" КАК КПП
 ИЗ
 	Справочник.Номенклатура КАК Справочник
 {ГДЕ
 	Справочник.Ссылка.* КАК Ссылка,
 	Справочник.Код,
 	Справочник.Наименование,
-	Справочник.Родитель.* КАК Родитель,
 	Справочник.ЭтоГруппа КАК ЭтоГруппа,
 	Справочник.ПометкаУдаления КАК ПометкаУдаления,
 	Справочник.Артикул
@@ -312,6 +305,10 @@
 					<dcsset:field>ИНН</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
+					<dcsset:field>КПП</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ТипЗначения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -439,7 +436,11 @@
 					<dcsset:field>Ссылка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:use>false</dcsset:use>
 					<dcsset:field>Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>КПП</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:use>false</dcsset:use>
@@ -502,7 +503,7 @@
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>Код</dcsset:field>
+					<dcsset:field>КПП</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
