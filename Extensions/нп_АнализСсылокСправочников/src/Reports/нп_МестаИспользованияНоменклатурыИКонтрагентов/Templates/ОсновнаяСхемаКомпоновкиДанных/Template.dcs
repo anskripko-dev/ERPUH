@@ -16,41 +16,13 @@
 				</v8:item>
 			</title>
 		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Код</dataPath>
-			<field>Код</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Наименование</dataPath>
-			<field>Наименование</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Артикул</dataPath>
-			<field>Артикул</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>ИНН</dataPath>
-			<field>ИНН</field>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>КПП</dataPath>
-			<field>КПП</field>
-		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ ПЕРВЫЕ 1000
-	Справочник.Ссылка КАК Ссылка,
-	Справочник.Код КАК Код,
-	Справочник.Наименование КАК Наименование,
-	Справочник.Артикул КАК Артикул,
-	"""" КАК ИНН,
-	"""" КАК КПП
+	Справочник.Ссылка КАК Ссылка
 ИЗ
 	Справочник.Номенклатура КАК Справочник
 {ГДЕ
-	Справочник.Ссылка.*,
-	Справочник.Код,
-	Справочник.Наименование,
-	Справочник.Артикул
+	Справочник.Ссылка.*
 }
 {ХАРАКТЕРИСТИКИ
 	ТИП(Справочник.Номенклатура)
@@ -271,20 +243,6 @@
 					<dcsset:field>Ссылка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Код</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Артикул</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:field>ИНН</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:field>КПП</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ТипЗначения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -309,11 +267,7 @@
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>Наименование</dcsset:field>
-					<dcsset:orderType>Asc</dcsset:orderType>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>Код</dcsset:field>
+					<dcsset:field>Ссылка</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
@@ -387,20 +341,6 @@
 					<dcsset:field>Ссылка</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:field>Код</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>КПП</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:use>false</dcsset:use>
-					<dcsset:field>Артикул</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>ИНН</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ТипЗначения</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
@@ -425,11 +365,7 @@
 			</dcsset:dataParameters>
 			<dcsset:order>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>Наименование</dcsset:field>
-					<dcsset:orderType>Asc</dcsset:orderType>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:OrderItemField">
-					<dcsset:field>КПП</dcsset:field>
+					<dcsset:field>Ссылка</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>
 				</dcsset:item>
 			</dcsset:order>
