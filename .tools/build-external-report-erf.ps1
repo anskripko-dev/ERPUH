@@ -28,8 +28,12 @@
 .PARAMETER Password
     Пароль пользователя ИБ.
 
+.PARAMETER ReportName
+    Имя внешнего отчёта (каталог и файл без расширения), например
+    `нп_МестаИспользованияНоменклатуры` или `нп_МестаИспользованияКонтрагентов`.
+
 .EXAMPLE
-    .\build-external-report-erf.ps1 -V8Path "C:\Program Files\1cv8\8.3.24.1691\bin" -InfoBasePath "C:\Bases\ERP_UH"
+    .\build-external-report-erf.ps1 -V8Path "C:\Program Files\1cv8\8.3.24.1691\bin" -InfoBasePath "C:\Bases\ERP_UH" -ReportName "нп_МестаИспользованияНоменклатуры"
 #>
 [CmdletBinding(DefaultParameterSetName = 'FileIB')]
 param(
@@ -46,15 +50,17 @@ param(
     [string]$InfoBaseRef,
 
     [string]$UserName,
-    [string]$Password
+    [string]$Password,
+
+    [string]$ReportName = 'нп_МестаИспользованияНоменклатуры'
 )
 
 $ErrorActionPreference = 'Stop'
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$ReportDir = Join-Path $RepoRoot 'ExternalReports\нп_МестаИспользованияНоменклатурыИКонтрагентов'
-$SourceFile = Join-Path $ReportDir 'нп_МестаИспользованияНоменклатурыИКонтрагентов.xml'
-$OutputFile = Join-Path $ReportDir 'нп_МестаИспользованияНоменклатурыИКонтрагентов.erf'
+$ReportDir = Join-Path $RepoRoot "ExternalReports\$ReportName"
+$SourceFile = Join-Path $ReportDir "$ReportName.xml"
+$OutputFile = Join-Path $ReportDir "$ReportName.erf"
 $LogFile = Join-Path $env:TEMP 'build-external-report-erf.log'
 
 if (-not (Test-Path -LiteralPath $SourceFile)) {
