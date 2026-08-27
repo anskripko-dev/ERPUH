@@ -7,6 +7,8 @@ import sys
 import unittest
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 ROOT = Path(__file__).resolve().parents[1]
 CFG = ROOT / "configurator"
 MODULE = (CFG / "CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl").read_text(encoding="utf-8")
@@ -304,6 +306,44 @@ class LayoutTests(unittest.TestCase):
                 text,
             )
         self.assertGreaterEqual(found, 4)
+
+
+class DumpXmlStructureTests(unittest.TestCase):
+    def test_constant_has_no_child_objects(self) -> None:
+        constant = (
+            CFG / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета.xml"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("<ChildObjects>", constant)
+        self.assertIn("<DefaultForm>Constant.нп_ПолучателиУведомленийСдвигаДатЗапрета.Form.ФормаКонстанты</DefaultForm>", constant)
+        self.assertTrue(
+            (CFG / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета/Forms/ФормаКонстанты.xml").is_file()
+        )
+
+    def test_mdclasses_rejects_extra_children(self) -> None:
+        from validate_dump_xml import load_xsd, validate_tree
+
+        xsd = load_xsd()
+        errors = validate_tree(CFG, xsd)
+        self.assertEqual(errors, [], "\n".join(errors))
+
+    def test_validator_catches_constant_child_objects(self) -> None:
+        from validate_dump_xml import load_xsd, validate_tree
+        import tempfile
+
+        snippet = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" version="2.20">
+	<Constant uuid="00000000-0000-0000-0000-000000000001">
+		<Properties><Name>Test</Name></Properties>
+		<ChildObjects><Form>ФормаКонстанты</Form></ChildObjects>
+	</Constant>
+</MetaDataObject>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "Constants" / "Test.xml"
+            path.parent.mkdir(parents=True)
+            path.write_text(snippet, encoding="utf-8")
+            errors = validate_tree(Path(tmp), load_xsd())
+        self.assertTrue(any("ChildObjects" in e and "Constant" in e for e in errors), errors)
 
 
 if __name__ == "__main__":

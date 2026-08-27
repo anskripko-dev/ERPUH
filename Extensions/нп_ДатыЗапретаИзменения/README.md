@@ -43,6 +43,15 @@ Extensions/нп_ДатыЗапретаИзменения/
 
 В корне каталога должен быть `Configuration.xml`.
 
+Перед загрузкой в конфигуратор проверка структуры XML (XSD MDClasses 2.20, без ИБ 1С):
+
+```
+python3 Extensions/нп_ДатыЗапретаИзменения/tests/validate_dump_xml.py
+python3 Extensions/нп_ДатыЗапретаИзменения/tests/test_rules.py
+```
+
+В Cursor на ПК для `verify_xml` нужен MCP `1c-code-metadata-mcp` (`http://localhost:8000/mcp`) — Docker OneRPA с `LICENSE_KEY`. Уже подключённый `1c-syntax-checker-mcp` на `:8002` проверяет только BSL, не дамп метаданных.
+
 3. Обновить конфигурацию БД расширения, включить расширение.
 4. Для поставки: Конфигурация → Расширения → сохранить как `нп_ДатыЗапретаИзменения.cfe`.
 
