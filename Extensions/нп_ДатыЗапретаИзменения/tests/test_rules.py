@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 ROOT = Path(__file__).resolve().parents[1]
 CFG = ROOT / "configurator"
 MODULE = (CFG / "CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl").read_text(encoding="utf-8")
-RIGHTS = (CFG / "Roles/нп_БазовыеПрава/Ext/Rights.xml").read_text(encoding="utf-8")
+RIGHTS = (CFG / "Roles/нп_БазовыеПраваДатЗапрета/Ext/Rights.xml").read_text(encoding="utf-8")
 CFG_XML = (CFG / "Configuration.xml").read_text(encoding="utf-8")
 SCHEDULE = (CFG / "ScheduledJobs/нп_СдвигДатЗапретаИзменения/Ext/Schedule.xml").read_text(encoding="utf-8")
 DOC_XML = (CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода.xml").read_text(encoding="utf-8")
@@ -232,6 +232,11 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("<NamePrefix>нп_</NamePrefix>", CFG_XML)
         self.assertIn("нп_СдвигДатЗапретаИзменения", MODULE)
         self.assertIn("нп_авто", MODULE)
+
+    def test_role_name_does_not_clash_with_np(self) -> None:
+        self.assertIn("<Role>нп_БазовыеПраваДатЗапрета</Role>", CFG_XML)
+        self.assertNotIn("<Role>нп_БазовыеПрава</Role>", CFG_XML)
+        self.assertIn("<Name>нп_БазовыеПраваДатЗапрета</Name>", (CFG / "Roles/нп_БазовыеПраваДатЗапрета.xml").read_text(encoding="utf-8"))
 
 
 class LayoutTests(unittest.TestCase):
