@@ -153,6 +153,7 @@ def validate_tree(dump_root: Path, xsd_root: ET.Element | None = None) -> list[s
             if (up.text or "").strip():
                 errors.append(f"{path}: UsePurposes must be FixedArray, not a scalar")
     errors.extend(duplicate_generated_id_errors(dump_root))
+    errors.extend(common_picture_file_errors(dump_root))
     return errors
 
 
@@ -183,6 +184,39 @@ def duplicate_generated_id_errors(dump_root: Path) -> list[str]:
             continue
         errors.append(
             f"duplicate InternalInfo id {value} in {', '.join(sorted(set(places)))}"
+        )
+    return errors
+
+
+def common_picture_file_errors(dump_root: Path) -> list[str]:
+    """Конфигуратор ищет бинарник в Ext/Picture/<имя из xr:Abs>, не в Ext/."""
+    errors: list[str] = []
+    pictures_root = dump_root / "CommonPictures"
+    if not pictures_root.is_dir():
+        return errors
+    for meta in sorted(pictures_root.glob("*.xml")):
+        ext_dir = pictures_root / meta.stem / "Ext"
+        picture_xml = ext_dir / "Picture.xml"
+        if not picture_xml.is_file():
+            continue
+        try:
+            tree = ET.parse(picture_xml)
+        except ET.ParseError as exc:
+            errors.append(f"{picture_xml.relative_to(dump_root)}: XML parse error: {exc}")
+            continue
+        abs_name = ""
+        for el in tree.iter():
+            if local(el.tag) == "Abs":
+                abs_name = (el.text or "").strip()
+                break
+        if not abs_name:
+            continue
+        expected = ext_dir / "Picture" / abs_name
+        if expected.is_file():
+            continue
+        rel = expected.relative_to(dump_root)
+        errors.append(
+            f"{rel}: CommonPicture binary missing; configurator path is Ext/Picture/{abs_name}"
         )
     return errors
 

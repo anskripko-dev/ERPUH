@@ -248,7 +248,7 @@ class LayoutTests(unittest.TestCase):
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
-        "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.png",
+        "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png",
         "README.md",
     ]
 
@@ -278,7 +278,7 @@ class LayoutTests(unittest.TestCase):
         subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
         self.assertIn("CommonPicture.нп_ДатыЗапретаИзменения16", subsystem)
         self.assertIn("<CommonPicture>нп_ДатыЗапретаИзменения16</CommonPicture>", CFG_XML)
-        png = CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.png"
+        png = CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png"
         self.assertGreaterEqual(png.stat().st_size, 50)
         self.assertEqual(png.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
 
@@ -462,6 +462,39 @@ class DumpXmlStructureTests(unittest.TestCase):
         self.assertIn("0000000020a0", enum_xml)
         self.assertNotIn("000000002094", enum_xml)
         self.assertIn("000000002094", report_xml)
+
+    def test_common_picture_binary_is_in_ext_picture_folder(self) -> None:
+        from validate_dump_xml import common_picture_file_errors
+
+        self.assertEqual(common_picture_file_errors(CFG), [])
+        png = CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png"
+        self.assertTrue(png.is_file(), png)
+        self.assertFalse(
+            (CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.png").exists()
+        )
+
+    def test_validator_catches_common_picture_in_wrong_folder(self) -> None:
+        from validate_dump_xml import common_picture_file_errors
+        import tempfile
+
+        picture_xml = """<?xml version="1.0" encoding="UTF-8"?>
+<ExtPicture xmlns="http://v8.1c.ru/8.3/xcf/extrnprops" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" version="2.20">
+	<Picture>
+		<xr:Abs>Picture.png</xr:Abs>
+	</Picture>
+</ExtPicture>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            ext = root / "CommonPictures" / "Тест" / "Ext"
+            ext.mkdir(parents=True)
+            (root / "CommonPictures" / "Тест.xml").write_text(
+                "<MetaDataObject/>", encoding="utf-8"
+            )
+            (ext / "Picture.xml").write_text(picture_xml, encoding="utf-8")
+            (ext / "Picture.png").write_bytes(b"\x89PNG\r\n\x1a\nnot-a-real-png")
+            errors = common_picture_file_errors(root)
+        self.assertTrue(any("Ext/Picture/Picture.png" in e for e in errors), errors)
 
     def test_validator_catches_duplicate_generated_ids(self) -> None:
         from validate_dump_xml import duplicate_generated_id_errors
