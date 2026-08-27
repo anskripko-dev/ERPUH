@@ -324,6 +324,24 @@ class LayoutTests(unittest.TestCase):
         self.assertNotIn("Объект.Number", FORM_XML)
         self.assertNotIn("Объект.Date", FORM_XML)
 
+    def test_request_form_plain_labels_and_typical_mode(self) -> None:
+        self.assertIn("Пользователь (кому)", FORM_XML)
+        self.assertIn(">Раздел</v8:content>", FORM_XML)
+        self.assertIn(">Объект</v8:content>", FORM_XML)
+        self.assertNotIn("Раздел даты запрета", FORM_XML)
+        self.assertNotIn("Объект даты запрета", FORM_XML)
+        self.assertIn("<Height>2</Height>", FORM_XML)
+        self.assertIn("<HorizontalStretch>true</HorizontalStretch>", FORM_XML)
+        self.assertIn('name="СпособУказания"', FORM_XML)
+        self.assertIn("Объект.Объекты.РазделДатыЗапрета", FORM_XML)
+        self.assertIn("Согласованная заявка разрешает менять документы", MODULE)
+        self.assertNotIn("Отсечка открывает", MODULE)
+        enum_xml = (CFG / "Enums/нп_СпособыУказанияОткрытияПериода.xml").read_text(encoding="utf-8")
+        self.assertIn("<Name>ПоРазделам</Name>", enum_xml)
+        self.assertIn("<Name>ПоРазделамИОбъектам</Name>", enum_xml)
+        self.assertIn("УказаниеЗаявкиПоРазделам", MODULE)
+        self.assertIn("<Enum>нп_СпособыУказанияОткрытияПериода</Enum>", CFG_XML)
+
     def test_settings_list_has_columns(self) -> None:
         list_form = (
             CFG

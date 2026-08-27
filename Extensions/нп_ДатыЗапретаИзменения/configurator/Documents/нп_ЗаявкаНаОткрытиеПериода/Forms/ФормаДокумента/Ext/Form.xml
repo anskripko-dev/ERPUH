@@ -23,7 +23,7 @@
 		<LabelDecoration name="ПояснениеОтсечки" id="1">
 			<Width>80</Width>
 			<AutoMaxWidth>false</AutoMaxWidth>
-			<MaxWidth>80</MaxWidth>
+			<MaxWidth>100</MaxWidth>
 			<HorizontalStretch>true</HorizontalStretch>
 			<Title formatted="false">
 				<v8:item>
@@ -64,13 +64,14 @@
 			<ContextMenu name="СрокДействияКонтекстноеМеню" id="601"/>
 			<ExtendedTooltip name="СрокДействияРасширеннаяПодсказка" id="602"/>
 		</InputField>
-		<InputField name="РазделДатыЗапрета" id="7">
-			<DataPath>Объект.РазделДатыЗапрета</DataPath>
-			<ContextMenu name="РазделДатыЗапретаКонтекстноеМеню" id="701"/>
-			<ExtendedTooltip name="РазделДатыЗапретаРасширеннаяПодсказка" id="702"/>
-		</InputField>
 		<InputField name="Пользователь" id="8">
 			<DataPath>Объект.Пользователь</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь (кому)</v8:content>
+				</v8:item>
+			</Title>
 			<ContextMenu name="ПользовательКонтекстноеМеню" id="801"/>
 			<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="802"/>
 		</InputField>
@@ -82,17 +83,61 @@
 		</InputField>
 		<InputField name="ПричинаОткрытия" id="10">
 			<DataPath>Объект.ПричинаОткрытия</DataPath>
+			<AutoMaxWidth>false</AutoMaxWidth>
+			<Height>2</Height>
+			<MaxHeight>3</MaxHeight>
+			<HorizontalStretch>true</HorizontalStretch>
+			<VerticalStretch>false</VerticalStretch>
 			<MultiLine>true</MultiLine>
 			<ContextMenu name="ПричинаОткрытияКонтекстноеМеню" id="1001"/>
 			<ExtendedTooltip name="ПричинаОткрытияРасширеннаяПодсказка" id="1002"/>
 		</InputField>
+		<RadioButtonField name="СпособУказания" id="14">
+			<DataPath>Объект.СпособУказания</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Указывать</v8:content>
+				</v8:item>
+			</Title>
+			<RadioButtonType>Tumbler</RadioButtonType>
+			<ColumnsCount>2</ColumnsCount>
+			<ContextMenu name="СпособУказанияКонтекстноеМеню" id="1401"/>
+			<ExtendedTooltip name="СпособУказанияРасширеннаяПодсказка" id="1402"/>
+			<Events>
+				<Event name="OnChange">СпособУказанияПриИзменении</Event>
+			</Events>
+		</RadioButtonField>
 		<Table name="Объекты" id="11">
 			<DataPath>Объект.Объекты</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Разделы и объекты</v8:content>
+				</v8:item>
+			</Title>
 			<AutoAdd>true</AutoAdd>
 			<AutoCommandBar name="ОбъектыКоманднаяПанель" id="12"/>
 			<ChildItems>
+				<InputField name="ОбъектыРазделДатыЗапрета" id="15">
+					<DataPath>Объект.Объекты.РазделДатыЗапрета</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Раздел</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОбъектыРазделДатыЗапретаКонтекстноеМеню" id="1501"/>
+					<ExtendedTooltip name="ОбъектыРазделДатыЗапретаРасширеннаяПодсказка" id="1502"/>
+				</InputField>
 				<InputField name="ОбъектыОбъектДатыЗапрета" id="13">
 					<DataPath>Объект.Объекты.ОбъектДатыЗапрета</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
 					<ContextMenu name="ОбъектыОбъектДатыЗапретаКонтекстноеМеню" id="1301"/>
 					<ExtendedTooltip name="ОбъектыОбъектДатыЗапретаРасширеннаяПодсказка" id="1302"/>
 				</InputField>
