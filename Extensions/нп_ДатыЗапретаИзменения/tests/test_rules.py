@@ -227,6 +227,35 @@ class JobAndRightsTests(unittest.TestCase):
             / "CommonModules/ИнтеграцияС1СДокументооборотБазоваяФункциональностьПереопределяемый/Ext/Module.bsl"
         ).read_text(encoding="utf-8")
         self.assertIn('&После("ПриИзмененииСостоянияСогласования")', handler)
+        self.assertIn('&После("ПриОпределенииТиповОбъектовПоддерживающихИнтеграцию")', handler)
+        self.assertIn("ДокументСсылка.нп_ЗаявкаНаОткрытиеПериода", handler)
+
+    def test_request_is_in_do_integration_defined_types(self) -> None:
+        all_refs = (
+            CFG / "DefinedTypes/ИнтеграцияС1СДокументооборотВсеСсылкиПереопределяемый.xml"
+        ).read_text(encoding="utf-8")
+        doc_objects = (
+            CFG / "DefinedTypes/ИнтеграцияС1СДокументооборотДокументыОбъектыПереопределяемый.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", all_refs)
+        self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", all_refs)
+        self.assertIn("DocumentObject.нп_ЗаявкаНаОткрытиеПериода", doc_objects)
+        self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", doc_objects)
+        self.assertIn(
+            "<DefinedType>ИнтеграцияС1СДокументооборотВсеСсылкиПереопределяемый</DefinedType>",
+            CFG_XML,
+        )
+        self.assertIn(
+            "<DefinedType>ИнтеграцияС1СДокументооборотДокументыОбъектыПереопределяемый</DefinedType>",
+            CFG_XML,
+        )
+        form_module = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn(
+            "ИнтеграцияС1СДокументооборотБазоваяФункциональность.ПриСозданииНаСервере",
+            form_module,
+        )
 
     def test_prefix_np(self) -> None:
         self.assertIn("<NamePrefix>нп_</NamePrefix>", CFG_XML)
@@ -249,6 +278,8 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png",
+        "configurator/DefinedTypes/ИнтеграцияС1СДокументооборотВсеСсылкиПереопределяемый.xml",
+        "configurator/DefinedTypes/ИнтеграцияС1СДокументооборотДокументыОбъектыПереопределяемый.xml",
         "README.md",
     ]
 
