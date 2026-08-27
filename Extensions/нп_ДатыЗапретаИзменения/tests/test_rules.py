@@ -246,6 +246,9 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
+        "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
+        "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
+        "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.png",
         "README.md",
     ]
 
@@ -265,6 +268,41 @@ class LayoutTests(unittest.TestCase):
         self.assertIn("ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)", DCS)
         self.assertIn("ПриКомпоновкеРезультата", REPORT_MODULE)
         self.assertIn("УстановитьПривилегированныйРежим(Истина)", REPORT_MODULE)
+
+    def test_report_dcs_binds_query_to_defined_data_source(self) -> None:
+        self.assertIn("<name>ИсточникДанных1</name>", DCS)
+        self.assertIn("<dataSource>ИсточникДанных1</dataSource>", DCS)
+        self.assertNotIn("ИсточникДанных2", DCS)
+
+    def test_subsystem_has_16px_picture(self) -> None:
+        subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
+        self.assertIn("CommonPicture.нп_ДатыЗапретаИзменения16", subsystem)
+        self.assertIn("<CommonPicture>нп_ДатыЗапретаИзменения16</CommonPicture>", CFG_XML)
+        png = CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.png"
+        self.assertGreaterEqual(png.stat().st_size, 50)
+        self.assertEqual(png.read_bytes()[:8], b"\x89PNG\r\n\x1a\n")
+
+    def test_settings_list_has_single_form_command_bar(self) -> None:
+        list_form = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаСписка/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("<CommandBarLocation>None</CommandBarLocation>", list_form)
+        self.assertIn("<Autofill>false</Autofill>", list_form)
+        self.assertIn("<AutoAdd>false</AutoAdd>", list_form)
+
+    def test_notify_recipients_single_service_command(self) -> None:
+        constant = (
+            CFG / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета.xml"
+        ).read_text(encoding="utf-8")
+        form_meta = (
+            CFG / "CommonForms/нп_ФормаПолучателейУведомленийСдвигаДатЗапрета.xml"
+        ).read_text(encoding="utf-8")
+        subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
+        self.assertIn("<UseStandardCommands>false</UseStandardCommands>", constant)
+        self.assertIn("<UseStandardCommands>true</UseStandardCommands>", form_meta)
+        self.assertIn("CommonForm.нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", subsystem)
+        self.assertEqual(subsystem.count("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета"), 1)
 
     def test_settings_object_types(self) -> None:
         for catalog in (
