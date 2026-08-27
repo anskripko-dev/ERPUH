@@ -206,8 +206,32 @@ class JobAndRightsTests(unittest.TestCase):
     def test_state_register_not_in_command_interface(self) -> None:
         self.assertIn("<UseStandardCommands>false</UseStandardCommands>", STATE_XML)
 
-    def test_settings_reject_empty_pair(self) -> None:
-        self.assertIn("Нельзя записывать настройку с незаполненными объектом и разделом", MODULE)
+    def test_settings_allow_empty_pair(self) -> None:
+        self.assertNotIn(
+            "Нельзя записывать настройку с незаполненными объектом и разделом",
+            MODULE,
+        )
+        self.assertIn("Пустые объект и раздел одновременно допустимы", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, ПустойРаздел, ПустойРаздел)", MODULE)
+
+    def test_request_requires_section_or_object(self) -> None:
+        self.assertIn("Укажите хотя бы один раздел", MODULE)
+        self.assertIn("Укажите разделы и объекты в таблице", MODULE)
+
+    def test_native_np_object_synonyms_have_np_marker(self) -> None:
+        missing = []
+        paths = [CFG / "Configuration.xml", *sorted(CFG.glob("*/нп_*.xml"))]
+        self.assertGreaterEqual(len(paths), 12, paths)
+        for path in paths:
+            text = path.read_text(encoding="utf-8")
+            props = text.split("<Properties>", 1)[-1].split("</Properties>", 1)[0]
+            if "(НП)" not in props:
+                missing.append(str(path.relative_to(CFG)))
+        self.assertEqual(missing, [])
+
+    def test_report_dcs_titles_have_np_marker(self) -> None:
+        self.assertIn("Действующие даты запрета (НП)", DCS)
+        self.assertNotIn("<v8:content>Действующие даты запрета</v8:content>", DCS)
 
     def test_user_mandatory_on_request(self) -> None:
         self.assertIn("Пользователь (или группа пользователей) обязателен", MODULE)
