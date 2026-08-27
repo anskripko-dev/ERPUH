@@ -287,6 +287,24 @@ class LayoutTests(unittest.TestCase):
         self.assertIn("Список.ЧислоДней", list_form)
         self.assertIn("Список.Включено", list_form)
 
+    def test_form_use_purposes_is_fixed_array(self) -> None:
+        found = 0
+        for path in CFG.rglob("*.xml"):
+            text = path.read_text(encoding="utf-8")
+            if "<UsePurposes>" not in text:
+                continue
+            found += 1
+            self.assertNotRegex(
+                text,
+                r"<UsePurposes>[^<\s]",
+                msg=f"UsePurposes must be FixedArray in {path.relative_to(CFG)}",
+            )
+            self.assertIn(
+                '<v8:Value xsi:type="app:ApplicationUsePurpose">PlatformApplication</v8:Value>',
+                text,
+            )
+        self.assertGreaterEqual(found, 4)
+
 
 if __name__ == "__main__":
     suite = unittest.defaultTestLoader.loadTestsFromModule(sys.modules[__name__])
