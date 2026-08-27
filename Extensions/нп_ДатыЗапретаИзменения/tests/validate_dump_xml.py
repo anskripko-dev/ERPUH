@@ -18,6 +18,7 @@ from pathlib import Path
 
 XS = "{http://www.w3.org/2001/XMLSchema}"
 MD = "{http://v8.1c.ru/8.3/MDClasses}"
+XR = "{http://v8.1c.ru/8.3/xcf/readable}"
 XSD_URL = (
     "https://raw.githubusercontent.com/yellow-hammer/namespace-forest/"
     "main/schemas/2.20/v8.1c.ru-8.3-MDClasses.xsd"
@@ -34,6 +35,14 @@ NO_CHILD_OBJECTS = {
     "DefinedType",
     "EventSubscription",
 }
+
+DOCUMENT_ROOT_TYPE_PREFIXES = (
+    "DocumentObject.",
+    "DocumentRef.",
+    "DocumentSelection.",
+    "DocumentList.",
+    "DocumentManager.",
+)
 
 
 def load_xsd(path: Path | None = None) -> ET.Element:
@@ -113,11 +122,28 @@ def validate_tree(dump_root: Path, xsd_root: ET.Element | None = None) -> list[s
             if tname not in NO_CHILD_OBJECTS:
                 allowed.add("ChildObjects")
         extras = [local(ch.tag) for ch in obj if local(ch.tag) not in allowed]
+        rel = path.relative_to(dump_root) if dump_root in path.parents else path
         if extras:
-            rel = path.relative_to(dump_root) if dump_root in path.parents else path
             errors.append(
                 f"{rel}: extra {extras} in {tname}; allowed={sorted(allowed)}"
             )
+        if tname == "Constant":
+            default_form = obj.find(f"{MD}Properties/{MD}DefaultForm")
+            ref = (default_form.text if default_form is not None else "") or ""
+            if ref.strip():
+                errors.append(
+                    f"{rel}: Constant DefaultForm={ref!r} but dump format has no constant forms"
+                )
+        if tname == "Document":
+            internal = obj.find(f"{MD}InternalInfo")
+            if internal is not None:
+                for gt in internal.findall(f"{XR}GeneratedType"):
+                    name = gt.get("name") or ""
+                    if not name.startswith(DOCUMENT_ROOT_TYPE_PREFIXES):
+                        errors.append(
+                            f"{rel}: Document InternalInfo has {name}; "
+                            "TabularSection types belong on the tabular section"
+                        )
         for up in tree.iter():
             if local(up.tag) != "UsePurposes":
                 continue

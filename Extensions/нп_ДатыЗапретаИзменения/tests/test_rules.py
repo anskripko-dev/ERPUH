@@ -201,6 +201,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", RIGHTS)
         self.assertNotIn("нп_НастройкиАвтоматическойУстановкиДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
+        self.assertNotIn("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", RIGHTS)
 
     def test_state_register_not_in_command_interface(self) -> None:
         self.assertIn("<UseStandardCommands>false</UseStandardCommands>", STATE_XML)
@@ -314,10 +315,31 @@ class DumpXmlStructureTests(unittest.TestCase):
             CFG / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета.xml"
         ).read_text(encoding="utf-8")
         self.assertNotIn("<ChildObjects>", constant)
-        self.assertIn("<DefaultForm>Constant.нп_ПолучателиУведомленийСдвигаДатЗапрета.Form.ФормаКонстанты</DefaultForm>", constant)
+        self.assertIn("<DefaultForm/>", constant)
+        self.assertNotIn("Form.ФормаКонстанты", constant)
         self.assertTrue(
-            (CFG / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета/Forms/ФормаКонстанты.xml").is_file()
+            (
+                CFG
+                / "CommonForms/нп_ФормаПолучателейУведомленийСдвигаДатЗапрета.xml"
+            ).is_file()
         )
+        self.assertTrue(
+            (
+                CFG
+                / "CommonForms/нп_ФормаПолучателейУведомленийСдвигаДатЗапрета/Ext/Form.xml"
+            ).is_file()
+        )
+        self.assertFalse(
+            (
+                CFG
+                / "Constants/нп_ПолучателиУведомленийСдвигаДатЗапрета/Forms"
+            ).exists()
+        )
+
+    def test_document_internal_info_has_no_tabular_section_types(self) -> None:
+        internal = DOC_XML.split("<Properties>", 1)[0]
+        self.assertNotIn("DocumentTabularSection.", internal)
+        self.assertIn("DocumentTabularSection.нп_ЗаявкаНаОткрытиеПериода.Объекты", DOC_XML)
 
     def test_mdclasses_rejects_extra_children(self) -> None:
         from validate_dump_xml import load_xsd, validate_tree
@@ -344,6 +366,50 @@ class DumpXmlStructureTests(unittest.TestCase):
             path.write_text(snippet, encoding="utf-8")
             errors = validate_tree(Path(tmp), load_xsd())
         self.assertTrue(any("ChildObjects" in e and "Constant" in e for e in errors), errors)
+
+    def test_validator_catches_constant_default_form_ref(self) -> None:
+        from validate_dump_xml import load_xsd, validate_tree
+        import tempfile
+
+        snippet = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" version="2.20">
+	<Constant uuid="00000000-0000-0000-0000-000000000001">
+		<Properties>
+			<Name>Test</Name>
+			<DefaultForm>Constant.Test.Form.ФормаКонстанты</DefaultForm>
+		</Properties>
+	</Constant>
+</MetaDataObject>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "Constants" / "Test.xml"
+            path.parent.mkdir(parents=True)
+            path.write_text(snippet, encoding="utf-8")
+            errors = validate_tree(Path(tmp), load_xsd())
+        self.assertTrue(any("DefaultForm" in e for e in errors), errors)
+
+    def test_validator_catches_document_tabular_types_on_root(self) -> None:
+        from validate_dump_xml import load_xsd, validate_tree
+        import tempfile
+
+        snippet = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" version="2.20">
+	<Document uuid="00000000-0000-0000-0000-000000000002">
+		<InternalInfo>
+			<xr:GeneratedType name="DocumentObject.Тест" category="Object"/>
+			<xr:GeneratedType name="DocumentTabularSection.Тест.Объекты" category="TabularSection"/>
+		</InternalInfo>
+		<Properties><Name>Тест</Name></Properties>
+		<ChildObjects/>
+	</Document>
+</MetaDataObject>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "Documents" / "Тест.xml"
+            path.parent.mkdir(parents=True)
+            path.write_text(snippet, encoding="utf-8")
+            errors = validate_tree(Path(tmp), load_xsd())
+        self.assertTrue(any("TabularSection" in e for e in errors), errors)
 
 
 if __name__ == "__main__":
