@@ -449,6 +449,49 @@ class DumpXmlStructureTests(unittest.TestCase):
             errors = validate_tree(Path(tmp), load_xsd())
         self.assertTrue(any("DefaultForm" in e for e in errors), errors)
 
+    def test_generated_type_ids_are_unique(self) -> None:
+        from validate_dump_xml import duplicate_generated_id_errors
+
+        self.assertEqual(duplicate_generated_id_errors(CFG), [])
+        enum_xml = (CFG / "Enums/нп_СпособыУказанияОткрытияПериода.xml").read_text(
+            encoding="utf-8"
+        )
+        report_xml = (CFG / "Reports/нп_ДействующиеДатыЗапрета.xml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("0000000020a0", enum_xml)
+        self.assertNotIn("000000002094", enum_xml)
+        self.assertIn("000000002094", report_xml)
+
+    def test_validator_catches_duplicate_generated_ids(self) -> None:
+        from validate_dump_xml import duplicate_generated_id_errors
+        import tempfile
+
+        snippet_a = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" version="2.20">
+	<Report uuid="00000000-0000-0000-0000-0000000000aa">
+		<InternalInfo>
+			<xr:GeneratedType name="ReportObject.Тест" category="Object">
+				<xr:TypeId>aaaaaaaa-bbbb-cccc-dddd-000000000001</xr:TypeId>
+				<xr:ValueId>aaaaaaaa-bbbb-cccc-dddd-000000000002</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties><Name>Тест</Name></Properties>
+	</Report>
+</MetaDataObject>
+"""
+        snippet_b = snippet_a.replace("0000000000aa", "0000000000bb").replace(
+            "ReportObject.Тест", "EnumRef.Тест"
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "Reports").mkdir()
+            (root / "Enums").mkdir()
+            (root / "Reports" / "A.xml").write_text(snippet_a, encoding="utf-8")
+            (root / "Enums" / "B.xml").write_text(snippet_b, encoding="utf-8")
+            errors = duplicate_generated_id_errors(root)
+        self.assertTrue(any("aaaaaaaa-bbbb-cccc-dddd-000000000001" in e for e in errors), errors)
+
     def test_validator_catches_document_tabular_types_on_root(self) -> None:
         from validate_dump_xml import load_xsd, validate_tree
         import tempfile

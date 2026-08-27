@@ -14,6 +14,7 @@ import argparse
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
+from collections import defaultdict
 from pathlib import Path
 
 XS = "{http://www.w3.org/2001/XMLSchema}"
@@ -151,6 +152,38 @@ def validate_tree(dump_root: Path, xsd_root: ET.Element | None = None) -> list[s
                 continue
             if (up.text or "").strip():
                 errors.append(f"{path}: UsePurposes must be FixedArray, not a scalar")
+    errors.extend(duplicate_generated_id_errors(dump_root))
+    return errors
+
+
+GENERATED_ID_TAGS = {"TypeId", "ValueId", "ObjectId"}
+
+
+def duplicate_generated_id_errors(dump_root: Path) -> list[str]:
+    """Конфигуратор: «тип порождаемый объектом InternalInfo содержит не уникальное значение»."""
+    locations: dict[str, list[str]] = defaultdict(list)
+    for path in sorted(dump_root.rglob("*.xml")):
+        if path.name == "ConfigDumpInfo.xml":
+            continue
+        try:
+            tree = ET.parse(path)
+        except ET.ParseError:
+            continue
+        rel = path.relative_to(dump_root) if dump_root in path.parents else path
+        for el in tree.iter():
+            if local(el.tag) not in GENERATED_ID_TAGS:
+                continue
+            value = (el.text or "").strip().lower()
+            if not value:
+                continue
+            locations[value].append(f"{rel}:{local(el.tag)}")
+    errors: list[str] = []
+    for value, places in sorted(locations.items()):
+        if len(places) < 2:
+            continue
+        errors.append(
+            f"duplicate InternalInfo id {value} in {', '.join(sorted(set(places)))}"
+        )
     return errors
 
 
