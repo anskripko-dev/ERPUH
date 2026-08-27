@@ -268,8 +268,12 @@ class JobAndRightsTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", all_refs)
         self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", all_refs)
+        self.assertIn("<xr:Property>Type</xr:Property>", all_refs)
+        self.assertIn("<xr:State>Extended</xr:State>", all_refs)
         self.assertIn("DocumentObject.нп_ЗаявкаНаОткрытиеПериода", doc_objects)
         self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", doc_objects)
+        self.assertIn("<xr:Property>Type</xr:Property>", doc_objects)
+        self.assertIn("<xr:State>Extended</xr:State>", doc_objects)
         self.assertIn(
             "<DefinedType>ИнтеграцияС1СДокументооборотВсеСсылкиПереопределяемый</DefinedType>",
             CFG_XML,
