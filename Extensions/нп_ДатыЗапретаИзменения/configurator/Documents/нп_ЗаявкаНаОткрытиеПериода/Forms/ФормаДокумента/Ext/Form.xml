@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ОтправитьНаСогласование" id="20">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтправитьНаСогласование</CommandName>
+				<ExtendedTooltip name="ОтправитьНаСогласованиеРасширеннаяПодсказка" id="201"/>
+			</Button>
+			<Button name="ЗакрытьПериодДосрочно" id="21">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗакрытьПериодДосрочно</CommandName>
+				<ExtendedTooltip name="ЗакрытьПериодДосрочноРасширеннаяПодсказка" id="211"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnReadAtServer">ПриЧтенииНаСервере</Event>
+		<Event name="AfterWriteAtServer">ПослеЗаписиНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<LabelField name="ПояснениеОтсечки" id="1">
+			<TitleLocation>None</TitleLocation>
+			<ContextMenu name="ПояснениеОтсечкиКонтекстноеМеню" id="101"/>
+			<ExtendedTooltip name="ПояснениеОтсечкиРасширеннаяПодсказка" id="102"/>
+		</LabelField>
+		<LabelField name="СостояниеСогласования" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Состояние согласования</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="СостояниеСогласованияКонтекстноеМеню" id="202"/>
+			<ExtendedTooltip name="СостояниеСогласованияРасширеннаяПодсказка" id="203"/>
+		</LabelField>
+		<InputField name="Номер" id="3">
+			<DataPath>Объект.Number</DataPath>
+			<ContextMenu name="НомерКонтекстноеМеню" id="301"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="302"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="401"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="402"/>
+		</InputField>
+		<InputField name="ПериодС" id="5">
+			<DataPath>Объект.ПериодС</DataPath>
+			<ContextMenu name="ПериодСКонтекстноеМеню" id="501"/>
+			<ExtendedTooltip name="ПериодСРасширеннаяПодсказка" id="502"/>
+		</InputField>
+		<InputField name="СрокДействия" id="6">
+			<DataPath>Объект.СрокДействия</DataPath>
+			<ContextMenu name="СрокДействияКонтекстноеМеню" id="601"/>
+			<ExtendedTooltip name="СрокДействияРасширеннаяПодсказка" id="602"/>
+		</InputField>
+		<InputField name="РазделДатыЗапрета" id="7">
+			<DataPath>Объект.РазделДатыЗапрета</DataPath>
+			<ContextMenu name="РазделДатыЗапретаКонтекстноеМеню" id="701"/>
+			<ExtendedTooltip name="РазделДатыЗапретаРасширеннаяПодсказка" id="702"/>
+		</InputField>
+		<InputField name="Пользователь" id="8">
+			<DataPath>Объект.Пользователь</DataPath>
+			<ContextMenu name="ПользовательКонтекстноеМеню" id="801"/>
+			<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="802"/>
+		</InputField>
+		<InputField name="Ответственный" id="9">
+			<DataPath>Объект.Ответственный</DataPath>
+			<ReadOnly>true</ReadOnly>
+			<ContextMenu name="ОтветственныйКонтекстноеМеню" id="901"/>
+			<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="902"/>
+		</InputField>
+		<InputField name="ПричинаОткрытия" id="10">
+			<DataPath>Объект.ПричинаОткрытия</DataPath>
+			<MultiLine>true</MultiLine>
+			<ContextMenu name="ПричинаОткрытияКонтекстноеМеню" id="1001"/>
+			<ExtendedTooltip name="ПричинаОткрытияРасширеннаяПодсказка" id="1002"/>
+		</InputField>
+		<Table name="Объекты" id="11">
+			<DataPath>Объект.Объекты</DataPath>
+			<AutoAdd>true</AutoAdd>
+			<AutoCommandBar name="ОбъектыКоманднаяПанель" id="12"/>
+			<ChildItems>
+				<InputField name="ОбъектыОбъектДатыЗапрета" id="13">
+					<DataPath>Объект.Объекты.ОбъектДатыЗапрета</DataPath>
+					<ContextMenu name="ОбъектыОбъектДатыЗапретаКонтекстноеМеню" id="1301"/>
+					<ExtendedTooltip name="ОбъектыОбъектДатыЗапретаРасширеннаяПодсказка" id="1302"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="30">
+			<Type>
+				<v8:Type>cfg:DocumentObject.нп_ЗаявкаНаОткрытиеПериода</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОтправитьНаСогласование" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить на согласование</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отправить заявку на согласование в 1С:Документооборот</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтправитьНаСогласование</Action>
+		</Command>
+		<Command name="ЗакрытьПериодДосрочно" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Закрыть период досрочно</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Доступно полноправному пользователю</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗакрытьПериодДосрочно</Action>
+		</Command>
+	</Commands>
+</Form>

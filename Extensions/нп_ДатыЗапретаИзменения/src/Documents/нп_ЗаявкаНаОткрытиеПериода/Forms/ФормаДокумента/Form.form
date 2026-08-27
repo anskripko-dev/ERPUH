@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <items xsi:type="form:FormField">
+    <name>ПояснениеОтсечки</name>
+    <id>1</id>
+    <visible>true</visible>
+    <enabled>true</enabled>
+    <userVisible>
+      <common>true</common>
+    </userVisible>
+    <titleLocation>None</titleLocation>
+    <type>LabelField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:LabelFieldExtInfo">
+      <width>80</width>
+    </extInfo>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>СостояниеСогласования</name>
+    <id>2</id>
+    <title>
+      <key>ru</key>
+      <value>Состояние согласования</value>
+    </title>
+    <type>LabelField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:LabelFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Номер</name>
+    <id>3</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.Number</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Дата</name>
+    <id>4</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.Date</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ПериодС</name>
+    <id>5</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.ПериодС</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>СрокДействия</name>
+    <id>6</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.СрокДействия</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>РазделДатыЗапрета</name>
+    <id>7</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.РазделДатыЗапрета</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Пользователь</name>
+    <id>8</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.Пользователь</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>Ответственный</name>
+    <id>9</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.Ответственный</segments>
+    </dataPath>
+    <readOnly>true</readOnly>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo"/>
+  </items>
+  <items xsi:type="form:FormField">
+    <name>ПричинаОткрытия</name>
+    <id>10</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.ПричинаОткрытия</segments>
+    </dataPath>
+    <type>InputField</type>
+    <editMode>Enter</editMode>
+    <extInfo xsi:type="form:InputFieldExtInfo">
+      <multiLine>true</multiLine>
+    </extInfo>
+  </items>
+  <items xsi:type="form:Table">
+    <name>Объекты</name>
+    <id>11</id>
+    <dataPath xsi:type="form:DataPath">
+      <segments>Object.Объекты</segments>
+    </dataPath>
+    <autoCommandBar id="12">
+      <name>ОбъектыКоманднаяПанель</name>
+      <autoFill>true</autoFill>
+    </autoCommandBar>
+    <autoAdd>true</autoAdd>
+    <items xsi:type="form:FormField">
+      <name>ОбъектыОбъектДатыЗапрета</name>
+      <id>13</id>
+      <dataPath xsi:type="form:DataPath">
+        <segments>Object.Объекты.ОбъектДатыЗапрета</segments>
+      </dataPath>
+      <type>InputField</type>
+      <editMode>Enter</editMode>
+      <extInfo xsi:type="form:InputFieldExtInfo"/>
+    </items>
+  </items>
+  <autoCommandBar name="ФормаКоманднаяПанель" id="-1">
+    <items xsi:type="form:Button">
+      <name>ОтправитьНаСогласование</name>
+      <id>20</id>
+      <commandName>Form.Command.ОтправитьНаСогласование</commandName>
+    </items>
+    <items xsi:type="form:Button">
+      <name>ЗакрытьПериодДосрочно</name>
+      <id>21</id>
+      <commandName>Form.Command.ЗакрытьПериодДосрочно</commandName>
+    </items>
+  </autoCommandBar>
+  <handlers>
+    <event>OnCreateAtServer</event>
+    <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>OnReadAtServer</event>
+    <name>ПриЧтенииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>AfterWriteAtServer</event>
+    <name>ПослеЗаписиНаСервере</name>
+  </handlers>
+  <autoTitle>true</autoTitle>
+  <group>Vertical</group>
+  <showTitle>true</showTitle>
+  <showCloseButton>true</showCloseButton>
+  <attributes>
+    <name>Object</name>
+    <id>30</id>
+    <valueType>
+      <types>DocumentObject.нп_ЗаявкаНаОткрытиеПериода</types>
+    </valueType>
+    <mainAttribute>true</mainAttribute>
+    <savedData>true</savedData>
+  </attributes>
+  <formCommands>
+    <name>ОтправитьНаСогласование</name>
+    <title>
+      <key>ru</key>
+      <value>Отправить на согласование</value>
+    </title>
+    <id>1</id>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ОтправитьНаСогласование</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ЗакрытьПериодДосрочно</name>
+    <title>
+      <key>ru</key>
+      <value>Закрыть период досрочно</value>
+    </title>
+    <id>2</id>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ЗакрытьПериодДосрочно</name>
+      </handler>
+    </action>
+    <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+</form:Form>
