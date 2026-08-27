@@ -8,19 +8,23 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SRC = ROOT / "src"
 CFG = ROOT / "configurator"
-MODULE = (SRC / "CommonModules/нп_ДатыЗапретаИзменения/Module.bsl").read_text(encoding="utf-8")
-RIGHTS = (SRC / "Roles/нп_БазовыеПрава/Rights.rights").read_text(encoding="utf-8")
+MODULE = (CFG / "CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl").read_text(encoding="utf-8")
+RIGHTS = (CFG / "Roles/нп_БазовыеПрава/Ext/Rights.xml").read_text(encoding="utf-8")
 CFG_XML = (CFG / "Configuration.xml").read_text(encoding="utf-8")
 SCHEDULE = (CFG / "ScheduledJobs/нп_СдвигДатЗапретаИзменения/Ext/Schedule.xml").read_text(encoding="utf-8")
-DOC_MDO = (SRC / "Documents/нп_ЗаявкаНаОткрытиеПериода/нп_ЗаявкаНаОткрытиеПериода.mdo").read_text(encoding="utf-8")
-STATE_MDO = (SRC / "InformationRegisters/нп_СостояниеОткрытыхПериодов/нп_СостояниеОткрытыхПериодов.mdo").read_text(
+DOC_XML = (CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода.xml").read_text(encoding="utf-8")
+STATE_XML = (CFG / "InformationRegisters/нп_СостояниеОткрытыхПериодов.xml").read_text(encoding="utf-8")
+SETTINGS_XML = (CFG / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета.xml").read_text(
     encoding="utf-8"
 )
-SETTINGS_MDO = (
-    SRC / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/нп_НастройкиАвтоматическойУстановкиДатЗапрета.mdo"
+FORM_XML = (
+    CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form.xml"
 ).read_text(encoding="utf-8")
+DCS = (
+    CFG / "Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml"
+).read_text(encoding="utf-8")
+REPORT_MODULE = (CFG / "Reports/нп_ДействующиеДатыЗапрета/Ext/ObjectModule.bsl").read_text(encoding="utf-8")
 
 
 def date_by_n(n: int, run_date: dt.date) -> dt.date:
@@ -97,8 +101,9 @@ class DateRulesTests(unittest.TestCase):
         for n, run, expected in cases:
             self.assertEqual(date_by_n(n, run), expected, f"N={n} on {run}")
 
-    def test_bsl_uses_start_of_day_minus_n(self) -> None:
-        self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней;", MODULE)
+    def test_bsl_subtracts_n_days_in_seconds(self) -> None:
+        self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
+        self.assertNotIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней;", MODULE)
 
     def test_restore_end_date_inclusive(self) -> None:
         end = dt.date(2026, 8, 22)
@@ -109,7 +114,7 @@ class DateRulesTests(unittest.TestCase):
     def test_cutoff_is_period_start_minus_one_day(self) -> None:
         period_from = dt.date(2026, 7, 1)
         self.assertEqual(period_from - dt.timedelta(days=1), dt.date(2026, 6, 30))
-        self.assertIn("Отсечка = НачалоДня(Реквизиты.ПериодС) - 1;", MODULE)
+        self.assertIn("Отсечка = НачалоДня(Реквизиты.ПериодС) - 86400;", MODULE)
 
     def test_k_end_date_inclusive(self) -> None:
         agreed = dt.date(2026, 8, 20)
@@ -143,6 +148,11 @@ class CanonicalWriteTests(unittest.TestCase):
         self.assertIn("ТекущееСостояние.ЗаявкаНаОткрытиеПериода", MODULE)
         self.assertIn("ТекущееСостояние.ДатаЗапретаДоОткрытия", MODULE)
 
+    def test_saves_previous_skip_flag(self) -> None:
+        self.assertIn("ДатыЗапретаИзменения.ПроверкаДатЗапретаОтключена()", MODULE)
+        self.assertIn("ЗакончитьЗаписьТиповогоРегистра(ПроверкаБылаОтключена)", MODULE)
+        self.assertNotIn("Процедура ВыполнитьЗаписьТиповогоРегистра", MODULE)
+
 
 class SectionMapTests(unittest.TestCase):
     def test_eighteen_org_sections_including_ifrs(self) -> None:
@@ -162,6 +172,9 @@ class SectionMapTests(unittest.TestCase):
         self.assertIn('ЗначениеВМассиве("Банк")', MODULE)
         self.assertIn('ЗначениеВМассиве("Бюджетирование")', MODULE)
         self.assertIn('ЗначениеВМассиве("Планирование")', MODULE)
+
+    def test_section_uuid_compare_is_case_insensitive(self) -> None:
+        self.assertIn("НРег(Строка(СсылкаРаздела.УникальныйИдентификатор()))", MODULE)
 
 
 class JobAndRightsTests(unittest.TestCase):
@@ -188,7 +201,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
 
     def test_state_register_not_in_command_interface(self) -> None:
-        self.assertIn("<useStandardCommands>false</useStandardCommands>", STATE_MDO)
+        self.assertIn("<UseStandardCommands>false</UseStandardCommands>", STATE_XML)
 
     def test_settings_reject_empty_pair(self) -> None:
         self.assertIn("Нельзя записывать настройку с незаполненными объектом и разделом", MODULE)
@@ -197,7 +210,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Пользователь (или группа пользователей) обязателен", MODULE)
 
     def test_document_posting_denied(self) -> None:
-        self.assertIn("<posting>Deny</posting>", DOC_MDO)
+        self.assertIn("<Posting>Deny</Posting>", DOC_XML)
 
     def test_keep_mapping_false_in_configurator(self) -> None:
         self.assertIn(
@@ -207,61 +220,43 @@ class JobAndRightsTests(unittest.TestCase):
 
     def test_do_after_handler(self) -> None:
         handler = (
-            SRC / "CommonModules/ИнтеграцияС1СДокументооборотБазоваяФункциональностьПереопределяемый/Module.bsl"
+            CFG
+            / "CommonModules/ИнтеграцияС1СДокументооборотБазоваяФункциональностьПереопределяемый/Ext/Module.bsl"
         ).read_text(encoding="utf-8")
         self.assertIn('&После("ПриИзмененииСостоянияСогласования")', handler)
 
     def test_prefix_np(self) -> None:
-        self.assertIn("<namePrefix>нп_</namePrefix>", (SRC / "Configuration/Configuration.mdo").read_text(encoding="utf-8"))
+        self.assertIn("<NamePrefix>нп_</NamePrefix>", CFG_XML)
         self.assertIn("нп_СдвигДатЗапретаИзменения", MODULE)
         self.assertIn("нп_авто", MODULE)
 
 
 class LayoutTests(unittest.TestCase):
     REQUIRED = [
-        "src/Configuration/Configuration.mdo",
-        "src/CommonModules/нп_ДатыЗапретаИзменения/Module.bsl",
-        "src/Documents/нп_ЗаявкаНаОткрытиеПериода/ObjectModule.bsl",
-        "src/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Template.dcs",
         "configurator/Configuration.xml",
         "configurator/ConfigDumpInfo.xml",
+        "configurator/CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl",
+        "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl",
+        "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "README.md",
     ]
 
     def test_required_files(self) -> None:
         for rel in self.REQUIRED:
             self.assertTrue((ROOT / rel).is_file(), rel)
-
-    def test_src_and_configurator_modules_match(self) -> None:
-        pairs = [
-            (
-                "src/CommonModules/нп_ДатыЗапретаИзменения/Module.bsl",
-                "configurator/CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl",
-            ),
-            (
-                "src/Documents/нп_ЗаявкаНаОткрытиеПериода/ObjectModule.bsl",
-                "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl",
-            ),
-            (
-                "src/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Module.bsl",
-                "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl",
-            ),
-        ]
-        for src_rel, cfg_rel in pairs:
-            self.assertEqual(
-                (ROOT / src_rel).read_text(encoding="utf-8"),
-                (ROOT / cfg_rel).read_text(encoding="utf-8"),
-                src_rel,
-            )
+        self.assertFalse((ROOT / "src").exists(), "EDT src/ must not be shipped")
 
     def test_report_classifies_three_sources(self) -> None:
-        dcs = (
-            SRC / "Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Template.dcs"
-        ).read_text(encoding="utf-8")
-        self.assertIn("Временно открытый период", dcs)
-        self.assertIn("Автоматическая установка", dcs)
-        self.assertIn("Установлено вручную", dcs)
-        self.assertIn("Ответственный", dcs)
+        self.assertIn("Временно открытый период", DCS)
+        self.assertIn("Автоматическая установка", DCS)
+        self.assertIn("Установлено вручную", DCS)
+        self.assertIn("Ответственный", DCS)
+
+    def test_report_empty_composite_join(self) -> None:
+        self.assertIn("ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)", DCS)
+        self.assertIn("ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)", DCS)
+        self.assertIn("ПриКомпоновкеРезультата", REPORT_MODULE)
+        self.assertIn("УстановитьПривилегированныйРежим(Истина)", REPORT_MODULE)
 
     def test_settings_object_types(self) -> None:
         for catalog in (
@@ -272,7 +267,25 @@ class LayoutTests(unittest.TestCase):
             "Сценарии",
             "СценарииТоварногоПланирования",
         ):
-            self.assertIn(f"CatalogRef.{catalog}", SETTINGS_MDO)
+            self.assertIn(f"CatalogRef.{catalog}", SETTINGS_XML)
+
+    def test_form_uses_decorations_and_russian_standard_attrs(self) -> None:
+        self.assertIn('<LabelDecoration name="ПояснениеОтсечки"', FORM_XML)
+        self.assertIn('<LabelDecoration name="СостояниеСогласования"', FORM_XML)
+        self.assertNotIn("LabelField", FORM_XML)
+        self.assertIn("<DataPath>Объект.Номер</DataPath>", FORM_XML)
+        self.assertIn("<DataPath>Объект.Дата</DataPath>", FORM_XML)
+        self.assertNotIn("Объект.Number", FORM_XML)
+        self.assertNotIn("Объект.Date", FORM_XML)
+
+    def test_settings_list_has_columns(self) -> None:
+        list_form = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаСписка/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Список.ОбъектДатыЗапрета", list_form)
+        self.assertIn("Список.ЧислоДней", list_form)
+        self.assertIn("Список.Включено", list_form)
 
 
 if __name__ == "__main__":
