@@ -214,9 +214,10 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Пустые объект и раздел одновременно допустимы", MODULE)
         self.assertIn("ДобавитьКомбинацию(Результат, ПустойРаздел, ПустойРаздел)", MODULE)
 
-    def test_request_requires_section_or_object(self) -> None:
-        self.assertIn("Укажите хотя бы один раздел", MODULE)
-        self.assertIn("Укажите разделы и объекты в таблице", MODULE)
+    def test_request_allows_empty_pair(self) -> None:
+        self.assertNotIn("Укажите хотя бы один раздел", MODULE)
+        self.assertNotIn("Укажите разделы и объекты в таблице", MODULE)
+        self.assertIn("РазвернутыеКомбинацииНастройки(Неопределено, РазделШапки)", MODULE)
 
     def test_native_np_object_synonyms_have_np_marker(self) -> None:
         missing = []
