@@ -235,7 +235,11 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("<v8:content>Действующие даты запрета</v8:content>", DCS)
 
     def test_user_mandatory_on_request(self) -> None:
-        self.assertIn("Пользователь (или группа пользователей) обязателен", MODULE)
+        self.assertGreaterEqual(
+            MODULE.count("Пользователь (или группа пользователей) обязателен"),
+            2,
+        )
+        self.assertIn("не «для всех»", MODULE)
 
     def test_document_posting_denied(self) -> None:
         self.assertIn("<Posting>Deny</Posting>", DOC_XML)
