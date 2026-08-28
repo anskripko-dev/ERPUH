@@ -361,6 +361,8 @@ class PrintFormTests(unittest.TestCase):
             self.assertIn(f"<parameter>{parameter}</parameter>", template)
         self.assertIn("все разделы / общая дата адресата", manager)
         self.assertIn("общая дата раздела", manager)
+        self.assertIn("ПрефиксацияОбъектовКлиентСервер.НомерНаПечать", manager)
+        self.assertIn("<horizontalAlignment>Left</horizontalAlignment>", template)
         self.assertIn("<Template>ПФ_MXL_ЗаявкаНаОткрытиеПериода</Template>", DOC_XML)
         self.assertIn(
             "<DefaultListForm>Document.нп_ЗаявкаНаОткрытиеПериода.Form.ФормаСписка</DefaultListForm>",
@@ -385,6 +387,8 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("<Command name=\"Файлы\"", list_form)
         self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
         self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", list_module)
+        self.assertIn("Элементы.Список.ТекущаяСтрока", list_module)
+        self.assertNotIn("ТекущиеДанные.Ссылка", list_module)
 
     def test_attached_files_catalog_registered_for_bsp_and_do(self) -> None:
         files_xml = (
