@@ -257,6 +257,14 @@ class JobAndRightsTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn('&После("ПриИзмененииСостоянияСогласования")', handler)
         self.assertIn('&После("ПриОпределенииТиповОбъектовПоддерживающихИнтеграцию")', handler)
+        self.assertIn(
+            '&После("ПриОпределенииНеобходимостиВыводитьКомандуПрисоединенныхФайловДО")',
+            handler,
+        )
+        self.assertIn(
+            'Форма.ИмяФормы <> "Документ.нп_ЗаявкаНаОткрытиеПериода.Форма.ФормаДокумента"',
+            handler,
+        )
         self.assertIn("ДокументСсылка.нп_ЗаявкаНаОткрытиеПериода", handler)
 
     def test_request_is_in_do_integration_defined_types(self) -> None:
