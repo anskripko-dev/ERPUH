@@ -290,6 +290,11 @@ class JobAndRightsTests(unittest.TestCase):
             form_module,
         )
         self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", form_module)
+        self.assertIn("ПодключаемыеКомандыКлиент.ПослеЗаписи(ЭтотОбъект, Объект, ПараметрыЗаписи)", form_module)
+        self.assertNotIn(
+            "ПодключаемыеКомандыКлиент.ПослеЗаписи(ЭтотОбъект, ПараметрыЗаписи)",
+            form_module,
+        )
         self.assertIn("Form.Command.Печать", FORM_XML)
         self.assertIn("Form.Command.Файлы", FORM_XML)
         self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
