@@ -363,6 +363,8 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("общая дата раздела", manager)
         self.assertIn("ПрефиксацияОбъектовКлиентСервер.НомерНаПечать", manager)
         self.assertIn("<horizontalAlignment>Left</horizontalAlignment>", template)
+        self.assertIn("Открыть период с", template)
+        self.assertNotIn(">Период с</v8:content>", template)
         self.assertIn("<Template>ПФ_MXL_ЗаявкаНаОткрытиеПериода</Template>", DOC_XML)
         self.assertIn(
             "<DefaultListForm>Document.нп_ЗаявкаНаОткрытиеПериода.Form.ФормаСписка</DefaultListForm>",
@@ -569,6 +571,9 @@ class LayoutTests(unittest.TestCase):
         self.assertIn('name="СпособУказания"', FORM_XML)
         self.assertIn("Объект.Объекты.РазделДатыЗапрета", FORM_XML)
         self.assertIn("Согласованная заявка разрешает менять документы", MODULE)
+        self.assertIn(">Открыть период с</v8:content>", DOC_XML)
+        self.assertIn("«Открыть период с»", MODULE)
+        self.assertNotIn(">Период с</v8:content>", DOC_XML)
         self.assertNotIn("Отсечка открывает", MODULE)
         enum_xml = (CFG / "Enums/нп_СпособыУказанияОткрытияПериода.xml").read_text(encoding="utf-8")
         self.assertIn("<Name>ПоРазделам</Name>", enum_xml)
