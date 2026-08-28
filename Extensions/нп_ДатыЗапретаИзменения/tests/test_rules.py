@@ -317,7 +317,8 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("<PagesRepresentation>None</PagesRepresentation>", FORM_XML)
         self.assertIn(">Основное</v8:content>", FORM_XML)
         self.assertIn("<Command>CommonCommand.ПрисоединенныеФайлы</Command>", FORM_XML)
-        self.assertIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", FORM_XML)
+        self.assertIn("<Command>CommonCommand.нп_Документооборот</Command>", FORM_XML)
+        self.assertNotIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", FORM_XML)
         self.assertIn("<CommandGroup>FormNavigationPanelGoTo</CommandGroup>", FORM_XML)
         self.assertIn("<CommandGroup>CommandGroup.Документооборот</CommandGroup>", FORM_XML)
         self.assertIn("<Attribute>Объект.Ссылка</Attribute>", FORM_XML)
@@ -335,6 +336,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
         self.assertNotIn("ИнтеграцияС1СДокументооборот3Клиент.НачатьОбработку", form_module)
         self.assertIn("<CommonCommand>ИнтеграцияС1СДокументооборот</CommonCommand>", CFG_XML)
+        self.assertIn("<CommonCommand>нп_Документооборот</CommonCommand>", CFG_XML)
         self.assertIn("<CommonCommand>ПрисоединенныеФайлы</CommonCommand>", CFG_XML)
         self.assertIn("<CommandGroup>Документооборот</CommandGroup>", CFG_XML)
         self.assertIn(
@@ -353,7 +355,10 @@ class JobAndRightsTests(unittest.TestCase):
             (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").is_file()
         )
         self.assertTrue((CFG / "CommonCommands/ПрисоединенныеФайлы.xml").is_file())
-        self.assertFalse((CFG / "CommonCommands/нп_Документооборот.xml").is_file())
+        self.assertTrue((CFG / "CommonCommands/нп_Документооборот.xml").is_file())
+        self.assertTrue(
+            (CFG / "CommonCommands/нп_Документооборот/Ext/CommandModule.bsl").is_file()
+        )
         self.assertIn(
             "<ExtendedConfigurationObject>b8a32c33-4e15-4c21-baab-64a86d44321b</ExtendedConfigurationObject>",
             (CFG / "CommonCommands/ПрисоединенныеФайлы.xml").read_text(encoding="utf-8"),
@@ -364,19 +369,35 @@ class JobAndRightsTests(unittest.TestCase):
         start_cmd = (
             CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml"
         ).read_text(encoding="utf-8")
-        self.assertIn("<xr:Property>CommandParameterType</xr:Property>", do_cmd)
-        self.assertIn("<xr:State>Extended</xr:State>", do_cmd)
-        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", do_cmd)
+        native_cmd = (CFG / "CommonCommands/нп_Документооборот.xml").read_text(
+            encoding="utf-8"
+        )
+        native_module = (
+            CFG / "CommonCommands/нп_Документооборот/Ext/CommandModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("<xr:Property>CommandParameterType</xr:Property>", do_cmd)
+        self.assertNotIn("<CommandParameterType>", do_cmd)
+        self.assertNotIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", do_cmd)
         self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", do_cmd)
         self.assertIn(
             "<ExtendedConfigurationObject>68dc1359-7c42-42d1-afe3-445c6347a703</ExtendedConfigurationObject>",
             do_cmd,
         )
-        self.assertIn("<xr:Property>CommandParameterType</xr:Property>", start_cmd)
-        self.assertIn("<xr:State>Extended</xr:State>", start_cmd)
-        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", start_cmd)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", RIGHTS)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", RIGHTS)
+        self.assertNotIn("<xr:Property>CommandParameterType</xr:Property>", start_cmd)
+        self.assertNotIn("<CommandParameterType>", start_cmd)
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", native_cmd)
+        self.assertIn("<Group>CommandGroup.Документооборот</Group>", native_cmd)
+        self.assertIn(">Документооборот</v8:content>", native_cmd)
+        self.assertIn(
+            "ИнтеграцияС1СДокументооборотБазоваяФункциональностьКлиент.ПередВыполнениемКоманды",
+            native_module,
+        )
+        self.assertIn(
+            "Обработка.ИнтеграцияС1СДокументооборот3.Форма.Документооборот",
+            native_module,
+        )
+        self.assertIn("CommonCommand.нп_Документооборот", RIGHTS)
+        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот<", RIGHTS)
         self.assertTrue((CFG / "CommandGroups/Документооборот.xml").is_file())
         self.assertNotIn("РазместитьКомандуДокументооборотНаФорме", MODULE)
         self.assertNotIn('Кнопка.ИмяКоманды = "ОбщаяКоманда.ИнтеграцияС1СДокументооборот"', MODULE)
@@ -480,7 +501,8 @@ class PrintFormTests(unittest.TestCase):
         self.assertNotIn("Form.Command.Файлы", list_form)
         self.assertNotIn("CommandName>CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
         self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
-        self.assertIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", list_form)
+        self.assertIn("<Command>CommonCommand.нп_Документооборот</Command>", list_form)
+        self.assertNotIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", list_form)
         self.assertIn("<Attribute>Список.Ссылка</Attribute>", list_form)
         self.assertIn("<CommandGroup>CommandGroup.Документооборот</CommandGroup>", list_form)
         self.assertIn("<NavigationPanel>", list_form)
@@ -584,6 +606,8 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
         "configurator/CommonCommands/ПрисоединенныеФайлы.xml",
+        "configurator/CommonCommands/нп_Документооборот.xml",
+        "configurator/CommonCommands/нп_Документооборот/Ext/CommandModule.bsl",
         "configurator/CommandGroups/Документооборот.xml",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
