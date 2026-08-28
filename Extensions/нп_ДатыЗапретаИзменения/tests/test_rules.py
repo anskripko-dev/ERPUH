@@ -358,11 +358,8 @@ class JobAndRightsTests(unittest.TestCase):
             (CFG / "CommonCommands/ПрисоединенныеФайлы.xml").read_text(encoding="utf-8"),
         )
         self.assertTrue((CFG / "CommandGroups/Документооборот.xml").is_file())
-        self.assertIn(
-            "Процедура РазместитьКомандуДокументооборотНаФорме(Форма) Экспорт",
-            MODULE,
-        )
-        self.assertIn('Кнопка.ИмяКоманды = "ОбщаяКоманда.ИнтеграцияС1СДокументооборот"', MODULE)
+        self.assertNotIn("РазместитьКомандуДокументооборотНаФорме", MODULE)
+        self.assertNotIn('Кнопка.ИмяКоманды = "ОбщаяКоманда.ИнтеграцияС1СДокументооборот"', MODULE)
 
 
 class PrintFormTests(unittest.TestCase):
@@ -461,10 +458,14 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
         self.assertNotIn("Form.Command.Печать", list_form)
         self.assertNotIn("Form.Command.Файлы", list_form)
-        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
+        self.assertNotIn("CommandName>CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
         self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
+        self.assertIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", list_form)
+        self.assertIn("<Attribute>Список.Ссылка</Attribute>", list_form)
+        self.assertIn("<CommandGroup>CommandGroup.Документооборот</CommandGroup>", list_form)
+        self.assertIn("<NavigationPanel>", list_form)
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", list_module)
-        self.assertIn("РазместитьКомандуДокументооборотНаФорме", list_module)
+        self.assertNotIn("РазместитьКомандуДокументооборотНаФорме", list_module)
         self.assertNotIn("<Command name=\"Печать\"", list_form)
         self.assertNotIn("<Command name=\"Файлы\"", list_form)
         self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
