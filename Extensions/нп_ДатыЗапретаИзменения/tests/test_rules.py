@@ -411,6 +411,14 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("<Name>ТипХраненияФайла</Name>", files_xml)
         self.assertIn("<Hierarchical>true</Hierarchical>", files_xml)
         self.assertIn("<UseStandardCommands>false</UseStandardCommands>", files_xml)
+        self.assertIn("<CodeLength>0</CodeLength>", files_xml)
+        self.assertIn("<InputByString>", files_xml)
+        self.assertIn(
+            "Catalog.нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы.StandardAttribute.Description",
+            files_xml,
+        )
+        self.assertNotIn("StandardAttribute.Code", files_xml)
+        self.assertIn("<CreateOnInput>DontUse</CreateOnInput>", files_xml)
         self.assertIn("<xr:State>Extended</xr:State>", owner_type)
         self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", owner_type)
         self.assertIn("DocumentObject.нп_ЗаявкаНаОткрытиеПериода", owner_object)
@@ -769,6 +777,46 @@ class DumpXmlStructureTests(unittest.TestCase):
             path.write_text(snippet, encoding="utf-8")
             errors = validate_tree(Path(tmp), load_xsd())
         self.assertTrue(any("TabularSection" in e for e in errors), errors)
+
+    def test_validator_catches_code_input_by_string_when_code_length_zero(self) -> None:
+        from validate_dump_xml import catalog_input_by_string_errors
+        import tempfile
+
+        snippet = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" version="2.20">
+	<Catalog uuid="00000000-0000-0000-0000-000000000003">
+		<InternalInfo/>
+		<Properties>
+			<Name>Файлы</Name>
+			<CodeLength>0</CodeLength>
+			<InputByString>
+				<xr:Field>Catalog.Файлы.StandardAttribute.Code</xr:Field>
+			</InputByString>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>
+"""
+        missing = """<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" version="2.20">
+	<Catalog uuid="00000000-0000-0000-0000-000000000004">
+		<InternalInfo/>
+		<Properties>
+			<Name>ФайлыБезВвода</Name>
+			<CodeLength>0</CodeLength>
+		</Properties>
+		<ChildObjects/>
+	</Catalog>
+</MetaDataObject>
+"""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "Catalogs").mkdir()
+            (root / "Catalogs" / "Файлы.xml").write_text(snippet, encoding="utf-8")
+            (root / "Catalogs" / "ФайлыБезВвода.xml").write_text(missing, encoding="utf-8")
+            errors = catalog_input_by_string_errors(root)
+        self.assertTrue(any("CodeLength=0" in e and "Code" in e for e in errors), errors)
+        self.assertTrue(any("requires InputByString" in e for e in errors), errors)
 
 
 if __name__ == "__main__":

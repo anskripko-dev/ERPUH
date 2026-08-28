@@ -2,8 +2,9 @@
 """Структурная проверка XML выгрузки конфигуратора (формат 2.20).
 
 Ловит ошибки вида «текущее ChildObjects, ожидаемое Constant»: лишние
-дочерние элементы объекта, которых нет в XSD MDClasses. Не заменяет
-загрузку в конфигуратор и не требует лицензии OneRPA.
+дочерние элементы объекта, которых нет в XSD MDClasses. Также ловит
+ввод по строке по Коду при CodeLength=0. Не заменяет загрузку в
+конфигуратор и не требует лицензии OneRPA.
 
 Схемы: yellow-hammer/namespace-forest (XSD платформы, © 1С-Софт).
 Скачиваются в кэш при первом запуске, в git не кладутся.
@@ -154,6 +155,7 @@ def validate_tree(dump_root: Path, xsd_root: ET.Element | None = None) -> list[s
                 errors.append(f"{path}: UsePurposes must be FixedArray, not a scalar")
     errors.extend(duplicate_generated_id_errors(dump_root))
     errors.extend(common_picture_file_errors(dump_root))
+    errors.extend(catalog_input_by_string_errors(dump_root))
     return errors
 
 
@@ -185,6 +187,62 @@ def duplicate_generated_id_errors(dump_root: Path) -> list[str]:
         errors.append(
             f"duplicate InternalInfo id {value} in {', '.join(sorted(set(places)))}"
         )
+    return errors
+
+
+def catalog_input_by_string_errors(dump_root: Path) -> list[str]:
+    """Конфигуратор: «Указано неверное поле для ввода по строке: Код» при CodeLength=0."""
+    errors: list[str] = []
+    catalogs = dump_root / "Catalogs"
+    if not catalogs.is_dir():
+        return errors
+    for path in sorted(catalogs.glob("*.xml")):
+        try:
+            tree = ET.parse(path)
+        except ET.ParseError:
+            continue
+        root = tree.getroot()
+        if root.tag != f"{MD}MetaDataObject":
+            continue
+        catalog = root.find(f"{MD}Catalog")
+        if catalog is None:
+            continue
+        props = catalog.find(f"{MD}Properties")
+        if props is None:
+            continue
+        code_length_el = props.find(f"{MD}CodeLength")
+        if code_length_el is None:
+            continue
+        try:
+            code_length = int(float((code_length_el.text or "0").strip() or "0"))
+        except ValueError:
+            continue
+        if code_length != 0:
+            continue
+        rel = path.relative_to(dump_root) if dump_root in path.parents else path
+        input_by_string = props.find(f"{MD}InputByString")
+        fields: list[str] = []
+        if input_by_string is not None:
+            for field in input_by_string:
+                text = (field.text or "").strip()
+                if text:
+                    fields.append(text)
+        if not fields:
+            errors.append(
+                f"{rel}: CodeLength=0 requires InputByString on Description, "
+                "not the default Code field"
+            )
+            continue
+        for field in fields:
+            tail = field.rsplit(".", 1)[-1]
+            if tail == "Code" or field.endswith("StandardAttribute.Code"):
+                errors.append(
+                    f"{rel}: InputByString uses Code while CodeLength=0: {field}"
+                )
+        if not any(f.endswith("StandardAttribute.Description") or f.endswith(".Description") for f in fields):
+            errors.append(
+                f"{rel}: CodeLength=0 InputByString must include StandardAttribute.Description"
+            )
     return errors
 
 
