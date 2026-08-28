@@ -297,6 +297,9 @@ class JobAndRightsTests(unittest.TestCase):
         )
         self.assertIn("Form.Command.Печать", FORM_XML)
         self.assertIn("Form.Command.Файлы", FORM_XML)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", FORM_XML)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", FORM_XML)
+        self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", form_module)
         self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
         self.assertIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
         self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", form_module)
@@ -364,7 +367,10 @@ class PrintFormTests(unittest.TestCase):
             "Объект",
         ):
             self.assertIn(f"<parameter>{parameter}</parameter>", template)
-        self.assertIn("все разделы / общая дата адресата", manager)
+        self.assertIn("Все разделы/объекты", manager)
+        self.assertIn("Все разделы/объекты", template)
+        self.assertNotIn("все разделы / общая дата адресата", manager)
+        self.assertNotIn("общая дата адресата. Пользователь", template)
         self.assertIn("общая дата раздела", manager)
         self.assertIn("ПрефиксацияОбъектовКлиентСервер.НомерНаПечать", manager)
         self.assertIn("<horizontalAlignment>Left</horizontalAlignment>", template)
@@ -390,6 +396,9 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
         self.assertIn("Form.Command.Печать", list_form)
         self.assertIn("Form.Command.Файлы", list_form)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
+        self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", list_module)
         self.assertIn("<Command name=\"Печать\"", list_form)
         self.assertIn("<Command name=\"Файлы\"", list_form)
         self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
@@ -479,6 +488,8 @@ class LayoutTests(unittest.TestCase):
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml",
+        "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
+        "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
         "configurator/Catalogs/нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы.xml",
         "configurator/DefinedTypes/ВладелецПрисоединенныхФайлов.xml",
         "configurator/DefinedTypes/ПрисоединенныйФайл.xml",
