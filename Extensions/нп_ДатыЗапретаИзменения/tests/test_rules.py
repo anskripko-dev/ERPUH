@@ -341,6 +341,7 @@ class LayoutTests(unittest.TestCase):
     def test_subsystem_has_16px_picture(self) -> None:
         subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
         self.assertIn("CommonPicture.нп_ДатыЗапретаИзменения16", subsystem)
+        self.assertIn("<Comment>По заявке на доработку ERP.2026.14</Comment>", subsystem)
         self.assertIn("<CommonPicture>нп_ДатыЗапретаИзменения16</CommonPicture>", CFG_XML)
         png = CFG / "CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png"
         self.assertGreaterEqual(png.stat().st_size, 50)
