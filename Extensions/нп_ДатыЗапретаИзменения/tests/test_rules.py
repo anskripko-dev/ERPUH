@@ -298,6 +298,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", form_module)
         self.assertIn("РаботаСФайлами.ПриСозданииНаСервере", form_module)
         self.assertIn("Подключаемый_КомандаПанелиПрисоединенныхФайлов", form_module)
+        self.assertIn("РазместитьКомандуДокументооборотНаФорме", form_module)
         self.assertIn("Form.Command.ЗакрытьПериодДосрочно", FORM_XML)
         self.assertNotIn("Form.Command.Печать", FORM_XML)
         self.assertNotIn("Form.Command.Файлы", FORM_XML)
@@ -307,7 +308,29 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
         self.assertNotIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
         self.assertNotIn("ИнтеграцияС1СДокументооборот3Клиент.НачатьОбработку", form_module)
-        self.assertNotIn("<CommonCommand>", CFG_XML)
+        self.assertIn("<CommonCommand>ИнтеграцияС1СДокументооборот</CommonCommand>", CFG_XML)
+        self.assertIn("<CommandGroup>Документооборот</CommandGroup>", CFG_XML)
+        self.assertIn(
+            "<CommonModule>СозданиеНаОснованииПереопределяемый</CommonModule>",
+            CFG_XML,
+        )
+        create_based = (
+            CFG / "CommonModules/СозданиеНаОснованииПереопределяемый/Ext/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn('&После("ПриОпределенииОбъектовСКомандамиСозданияНаОсновании")', create_based)
+        self.assertIn("Метаданные.Документы.нп_ЗаявкаНаОткрытиеПериода", create_based)
+        self.assertTrue(
+            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборот.xml").is_file()
+        )
+        self.assertTrue(
+            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").is_file()
+        )
+        self.assertTrue((CFG / "CommandGroups/Документооборот.xml").is_file())
+        self.assertIn(
+            "Процедура РазместитьКомандуДокументооборотНаФорме(Форма) Экспорт",
+            MODULE,
+        )
+        self.assertIn('Кнопка.ИмяКоманды = "ОбщаяКоманда.ИнтеграцияС1СДокументооборот"', MODULE)
 
 
 class PrintFormTests(unittest.TestCase):
@@ -321,6 +344,7 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("Процедура ПриОпределенииНастроекПечати(Настройки) Экспорт", manager)
         self.assertIn("Настройки.ПриДобавленииКомандПечати = Истина", manager)
         self.assertIn("Процедура ДобавитьКомандыПечати(КомандыПечати) Экспорт", manager)
+        self.assertIn("Процедура ДобавитьКомандыСозданияНаОсновании(КомандыСозданияНаОсновании, Параметры) Экспорт", manager)
         self.assertIn('КомандаПечати.Идентификатор = "ЗаявкаНаОткрытиеПериода"', manager)
         self.assertIn(
             'КомандаПечати.МенеджерПечати = "Документ.нп_ЗаявкаНаОткрытиеПериода"',
@@ -408,6 +432,7 @@ class PrintFormTests(unittest.TestCase):
         self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
         self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", list_module)
+        self.assertIn("РазместитьКомандуДокументооборотНаФорме", list_module)
         self.assertNotIn("<Command name=\"Печать\"", list_form)
         self.assertNotIn("<Command name=\"Файлы\"", list_form)
         self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
@@ -502,6 +527,10 @@ class LayoutTests(unittest.TestCase):
         "configurator/DefinedTypes/ВладелецПрисоединенныхФайлов.xml",
         "configurator/DefinedTypes/ПрисоединенныйФайл.xml",
         "configurator/CommonModules/УправлениеПечатьюПереопределяемый/Ext/Module.bsl",
+        "configurator/CommonModules/СозданиеНаОснованииПереопределяемый/Ext/Module.bsl",
+        "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
+        "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
+        "configurator/CommandGroups/Документооборот.xml",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
@@ -515,14 +544,6 @@ class LayoutTests(unittest.TestCase):
         for rel in self.REQUIRED:
             self.assertTrue((ROOT / rel).is_file(), rel)
         self.assertFalse((ROOT / "src").exists(), "EDT src/ must not be shipped")
-        self.assertFalse(
-            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборот.xml").exists(),
-            "типовые команды ДО не заимствуются в расширение",
-        )
-        self.assertFalse(
-            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").exists(),
-            "типовые команды ДО не заимствуются в расширение",
-        )
 
     def test_report_classifies_three_sources(self) -> None:
         self.assertIn("Временно открытый период", DCS)
