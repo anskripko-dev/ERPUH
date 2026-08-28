@@ -295,14 +295,19 @@ class JobAndRightsTests(unittest.TestCase):
             "ПодключаемыеКомандыКлиент.ПослеЗаписи(ЭтотОбъект, ПараметрыЗаписи)",
             form_module,
         )
-        self.assertIn("Form.Command.Печать", FORM_XML)
-        self.assertIn("Form.Command.Файлы", FORM_XML)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", FORM_XML)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", FORM_XML)
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", form_module)
-        self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
-        self.assertIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
-        self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", form_module)
+        self.assertIn("РаботаСФайлами.ПриСозданииНаСервере", form_module)
+        self.assertIn("Подключаемый_КомандаПанелиПрисоединенныхФайлов", form_module)
+        self.assertIn("Form.Command.ЗакрытьПериодДосрочно", FORM_XML)
+        self.assertNotIn("Form.Command.Печать", FORM_XML)
+        self.assertNotIn("Form.Command.Файлы", FORM_XML)
+        self.assertNotIn("Form.Command.ОтправитьНаСогласование", FORM_XML)
+        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот", FORM_XML)
+        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", FORM_XML)
+        self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
+        self.assertNotIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
+        self.assertNotIn("ИнтеграцияС1СДокументооборот3Клиент.НачатьОбработку", form_module)
+        self.assertNotIn("<CommonCommand>", CFG_XML)
 
 
 class PrintFormTests(unittest.TestCase):
@@ -392,18 +397,22 @@ class PrintFormTests(unittest.TestCase):
             / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml"
         ).read_text(encoding="utf-8")
         self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", list_module)
+        self.assertIn(
+            "ИнтеграцияС1СДокументооборотБазоваяФункциональность.ПриСозданииНаСервере",
+            list_module,
+        )
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", list_form)
         self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
-        self.assertIn("Form.Command.Печать", list_form)
-        self.assertIn("Form.Command.Файлы", list_form)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
-        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
+        self.assertNotIn("Form.Command.Печать", list_form)
+        self.assertNotIn("Form.Command.Файлы", list_form)
+        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот", list_form)
+        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", list_form)
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", list_module)
-        self.assertIn("<Command name=\"Печать\"", list_form)
-        self.assertIn("<Command name=\"Файлы\"", list_form)
-        self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
-        self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", list_module)
-        self.assertIn("Элементы.Список.ТекущаяСтрока", list_module)
+        self.assertNotIn("<Command name=\"Печать\"", list_form)
+        self.assertNotIn("<Command name=\"Файлы\"", list_form)
+        self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
+        self.assertNotIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", list_module)
+        self.assertNotIn("Элементы.Список.ТекущаяСтрока", list_module)
         self.assertNotIn("ТекущиеДанные.Ссылка", list_module)
 
     def test_attached_files_catalog_registered_for_bsp_and_do(self) -> None:
@@ -454,6 +463,7 @@ class PrintFormTests(unittest.TestCase):
         )
         self.assertIn("Catalog.нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы", RIGHTS)
         self.assertIn("Процедура ПрисоединитьПечатнуюФормуКДокументу(", manager)
+        self.assertIn("ПрисоединитьПечатнуюФормуКДокументу(ДокументСсылка)", manager)
         self.assertIn("РаботаСФайлами.ДобавитьФайл", manager)
         self.assertIn("РаботаСФайлами.ОбновитьФайл", manager)
         self.assertIn("ТипФайлаТабличногоДокумента.PDF", manager)
@@ -488,8 +498,6 @@ class LayoutTests(unittest.TestCase):
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml",
-        "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
-        "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
         "configurator/Catalogs/нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы.xml",
         "configurator/DefinedTypes/ВладелецПрисоединенныхФайлов.xml",
         "configurator/DefinedTypes/ПрисоединенныйФайл.xml",
@@ -507,6 +515,14 @@ class LayoutTests(unittest.TestCase):
         for rel in self.REQUIRED:
             self.assertTrue((ROOT / rel).is_file(), rel)
         self.assertFalse((ROOT / "src").exists(), "EDT src/ must not be shipped")
+        self.assertFalse(
+            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборот.xml").exists(),
+            "типовые команды ДО не заимствуются в расширение",
+        )
+        self.assertFalse(
+            (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").exists(),
+            "типовые команды ДО не заимствуются в расширение",
+        )
 
     def test_report_classifies_three_sources(self) -> None:
         self.assertIn("Временно открытый период", DCS)
