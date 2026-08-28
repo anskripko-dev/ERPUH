@@ -289,6 +289,91 @@ class JobAndRightsTests(unittest.TestCase):
             "ИнтеграцияС1СДокументооборотБазоваяФункциональность.ПриСозданииНаСервере",
             form_module,
         )
+        self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", form_module)
+
+
+class PrintFormTests(unittest.TestCase):
+    def test_print_command_registered_for_bsp_and_do(self) -> None:
+        manager = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl"
+        ).read_text(encoding="utf-8")
+        print_overridable = (
+            CFG / "CommonModules/УправлениеПечатьюПереопределяемый/Ext/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Процедура ПриОпределенииНастроекПечати(Настройки) Экспорт", manager)
+        self.assertIn("Настройки.ПриДобавленииКомандПечати = Истина", manager)
+        self.assertIn("Процедура ДобавитьКомандыПечати(КомандыПечати) Экспорт", manager)
+        self.assertIn('КомандаПечати.Идентификатор = "ЗаявкаНаОткрытиеПериода"', manager)
+        self.assertIn(
+            'КомандаПечати.МенеджерПечати = "Документ.нп_ЗаявкаНаОткрытиеПериода"',
+            manager,
+        )
+        self.assertIn("Процедура Печать(", manager)
+        self.assertIn('НужноПечататьМакет(КоллекцияПечатныхФорм, "ЗаявкаНаОткрытиеПериода")', manager)
+        self.assertIn("ПроверкаПроведенияПередПечатью = Ложь", manager)
+        self.assertIn('&После("ПриОпределенииНастроекПечати")', print_overridable)
+        self.assertIn(
+            "Настройки.ОбъектыПечати.Добавить(Документы.нп_ЗаявкаНаОткрытиеПериода)",
+            print_overridable,
+        )
+        self.assertIn(
+            "<CommonModule>УправлениеПечатьюПереопределяемый</CommonModule>",
+            CFG_XML,
+        )
+        self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", (
+            CFG / "CommonModules/УправлениеПечатьюПереопределяемый.xml"
+        ).read_text(encoding="utf-8"))
+
+    def test_print_template_has_named_areas_and_main_fields(self) -> None:
+        template = (
+            CFG
+            / "Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml"
+        ).read_text(encoding="utf-8")
+        manager = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("<TemplateType>SpreadsheetDocument</TemplateType>", (
+            CFG
+            / "Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода.xml"
+        ).read_text(encoding="utf-8"))
+        self.assertIn("<Name>ПФ_MXL_ЗаявкаНаОткрытиеПериода</Name>", (
+            CFG
+            / "Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода.xml"
+        ).read_text(encoding="utf-8"))
+        for area in ("Заголовок", "Шапка", "ШапкаТаблицы", "Строка", "СтрокаПустая"):
+            self.assertIn(f"<name>{area}</name>", template)
+            self.assertIn(f'ПолучитьОбласть("{area}")', manager)
+        for parameter in (
+            "Пользователь",
+            "ПериодС",
+            "СрокДействия",
+            "СпособУказания",
+            "ПричинаОткрытия",
+            "Ответственный",
+            "Раздел",
+            "Объект",
+        ):
+            self.assertIn(f"<parameter>{parameter}</parameter>", template)
+        self.assertIn("все разделы / общая дата адресата", manager)
+        self.assertIn("общая дата раздела", manager)
+        self.assertIn("<Template>ПФ_MXL_ЗаявкаНаОткрытиеПериода</Template>", DOC_XML)
+        self.assertIn(
+            "<DefaultListForm>Document.нп_ЗаявкаНаОткрытиеПериода.Form.ФормаСписка</DefaultListForm>",
+            DOC_XML,
+        )
+
+    def test_list_form_has_connected_commands(self) -> None:
+        list_module = (
+            CFG
+            / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        list_form = (
+            CFG
+            / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", list_module)
+        self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", list_form)
+        self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
 
     def test_prefix_np(self) -> None:
         self.assertIn("<NamePrefix>нп_</NamePrefix>", CFG_XML)
@@ -307,6 +392,10 @@ class LayoutTests(unittest.TestCase):
         "configurator/ConfigDumpInfo.xml",
         "configurator/CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl",
+        "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl",
+        "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml",
+        "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml",
+        "configurator/CommonModules/УправлениеПечатьюПереопределяемый/Ext/Module.bsl",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
