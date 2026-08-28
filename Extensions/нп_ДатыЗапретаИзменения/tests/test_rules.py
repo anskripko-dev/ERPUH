@@ -423,6 +423,18 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("Процедура Печать(", manager)
         self.assertIn('НужноПечататьМакет(КоллекцияПечатныхФорм, "ЗаявкаНаОткрытиеПериода")', manager)
         self.assertIn("ПроверкаПроведенияПередПечатью = Ложь", manager)
+        self.assertIn('ПолучитьМакет("ПФ_MXL_ЗаявкаНаОткрытиеПериода")', manager)
+        self.assertIn("ВывестиЗаявкиБезМакета", manager)
+        self.assertIn("ВывестиЗаявкиПоМакету", manager)
+        print_proc = manager.split("Процедура Печать(", 1)[1].split("КонецПроцедуры", 1)[0]
+        self.assertIn("Попытка", print_proc)
+        self.assertIn("ПрисоединитьПечатнуюФормуКДокументу(ДокументСсылка)", print_proc)
+        self.assertIn("ЗаписатьОшибкуПечати", print_proc)
+        self.assertGreater(print_proc.find("Попытка"), print_proc.find("ВывестиТабличныйДокументВКоллекцию"))
+        self.assertGreater(
+            print_proc.find("ПрисоединитьПечатнуюФормуКДокументу(ДокументСсылка)"),
+            print_proc.find("Попытка"),
+        )
         self.assertIn('&После("ПриОпределенииНастроекПечати")', print_overridable)
         self.assertIn(
             "Настройки.ОбъектыПечати.Добавить(Документы.нп_ЗаявкаНаОткрытиеПериода)",
