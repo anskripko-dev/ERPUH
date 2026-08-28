@@ -353,10 +353,30 @@ class JobAndRightsTests(unittest.TestCase):
             (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").is_file()
         )
         self.assertTrue((CFG / "CommonCommands/ПрисоединенныеФайлы.xml").is_file())
+        self.assertFalse((CFG / "CommonCommands/нп_Документооборот.xml").is_file())
         self.assertIn(
             "<ExtendedConfigurationObject>b8a32c33-4e15-4c21-baab-64a86d44321b</ExtendedConfigurationObject>",
             (CFG / "CommonCommands/ПрисоединенныеФайлы.xml").read_text(encoding="utf-8"),
         )
+        do_cmd = (CFG / "CommonCommands/ИнтеграцияС1СДокументооборот.xml").read_text(
+            encoding="utf-8"
+        )
+        start_cmd = (
+            CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("<xr:Property>CommandParameterType</xr:Property>", do_cmd)
+        self.assertIn("<xr:State>Extended</xr:State>", do_cmd)
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", do_cmd)
+        self.assertIn("<ObjectBelonging>Adopted</ObjectBelonging>", do_cmd)
+        self.assertIn(
+            "<ExtendedConfigurationObject>68dc1359-7c42-42d1-afe3-445c6347a703</ExtendedConfigurationObject>",
+            do_cmd,
+        )
+        self.assertIn("<xr:Property>CommandParameterType</xr:Property>", start_cmd)
+        self.assertIn("<xr:State>Extended</xr:State>", start_cmd)
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", start_cmd)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборот", RIGHTS)
+        self.assertIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", RIGHTS)
         self.assertTrue((CFG / "CommandGroups/Документооборот.xml").is_file())
         self.assertNotIn("РазместитьКомандуДокументооборотНаФорме", MODULE)
         self.assertNotIn('Кнопка.ИмяКоманды = "ОбщаяКоманда.ИнтеграцияС1СДокументооборот"', MODULE)
