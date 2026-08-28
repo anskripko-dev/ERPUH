@@ -290,6 +290,11 @@ class JobAndRightsTests(unittest.TestCase):
             form_module,
         )
         self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", form_module)
+        self.assertIn("Form.Command.Печать", FORM_XML)
+        self.assertIn("Form.Command.Файлы", FORM_XML)
+        self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
+        self.assertIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
+        self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", form_module)
 
 
 class PrintFormTests(unittest.TestCase):
@@ -374,6 +379,66 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("ПодключаемыеКоманды.ПриСозданииНаСервере", list_module)
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", list_form)
         self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
+        self.assertIn("Form.Command.Печать", list_form)
+        self.assertIn("Form.Command.Файлы", list_form)
+        self.assertIn("<Command name=\"Печать\"", list_form)
+        self.assertIn("<Command name=\"Файлы\"", list_form)
+        self.assertIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", list_module)
+        self.assertIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", list_module)
+
+    def test_attached_files_catalog_registered_for_bsp_and_do(self) -> None:
+        files_xml = (
+            CFG / "Catalogs/нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы.xml"
+        ).read_text(encoding="utf-8")
+        owner_type = (
+            CFG / "DefinedTypes/ВладелецПрисоединенныхФайлов.xml"
+        ).read_text(encoding="utf-8")
+        owner_object = (
+            CFG / "DefinedTypes/ВладелецПрисоединенныхФайловОбъект.xml"
+        ).read_text(encoding="utf-8")
+        file_type = (CFG / "DefinedTypes/ПрисоединенныйФайл.xml").read_text(encoding="utf-8")
+        file_object = (
+            CFG / "DefinedTypes/ПрисоединенныйФайлОбъект.xml"
+        ).read_text(encoding="utf-8")
+        manager = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("<Name>нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы</Name>", files_xml)
+        self.assertIn("<Name>ВладелецФайла</Name>", files_xml)
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", files_xml)
+        self.assertIn("<Name>Том</Name>", files_xml)
+        self.assertIn("<Name>Служебный</Name>", files_xml)
+        self.assertIn("<Name>ТипХраненияФайла</Name>", files_xml)
+        self.assertIn("<Hierarchical>true</Hierarchical>", files_xml)
+        self.assertIn("<UseStandardCommands>false</UseStandardCommands>", files_xml)
+        self.assertIn("<xr:State>Extended</xr:State>", owner_type)
+        self.assertIn("DocumentRef.нп_ЗаявкаНаОткрытиеПериода", owner_type)
+        self.assertIn("DocumentObject.нп_ЗаявкаНаОткрытиеПериода", owner_object)
+        self.assertIn("CatalogRef.нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы", file_type)
+        self.assertIn("CatalogObject.нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы", file_object)
+        self.assertIn(
+            "<DefinedType>ВладелецПрисоединенныхФайлов</DefinedType>",
+            CFG_XML,
+        )
+        self.assertIn(
+            "<Catalog>нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы</Catalog>",
+            CFG_XML,
+        )
+        self.assertIn("Catalog.нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы", RIGHTS)
+        self.assertIn("Процедура ПрисоединитьПечатнуюФормуКДокументу(", manager)
+        self.assertIn("РаботаСФайлами.ДобавитьФайл", manager)
+        self.assertIn("РаботаСФайлами.ОбновитьФайл", manager)
+        self.assertIn("ТипФайлаТабличногоДокумента.PDF", manager)
+        self.assertIn(
+            "<Catalog>ТомаХраненияФайлов</Catalog>",
+            CFG_XML,
+        )
+        self.assertTrue(
+            (
+                CFG
+                / "Catalogs/нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы/Ext/ManagerModule.bsl"
+            ).is_file()
+        )
 
     def test_prefix_np(self) -> None:
         self.assertIn("<NamePrefix>нп_</NamePrefix>", CFG_XML)
@@ -395,6 +460,9 @@ class LayoutTests(unittest.TestCase):
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаСписка/Ext/Form.xml",
+        "configurator/Catalogs/нп_ЗаявкаНаОткрытиеПериодаПрисоединенныеФайлы.xml",
+        "configurator/DefinedTypes/ВладелецПрисоединенныхФайлов.xml",
+        "configurator/DefinedTypes/ПрисоединенныйФайл.xml",
         "configurator/CommonModules/УправлениеПечатьюПереопределяемый/Ext/Module.bsl",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
