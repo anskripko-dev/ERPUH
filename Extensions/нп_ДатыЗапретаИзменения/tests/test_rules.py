@@ -306,17 +306,36 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Подключаемый_ВыполнитьКомандуИнтеграции", form_module)
         self.assertIn("РаботаСФайлами.ПриСозданииНаСервере", form_module)
         self.assertIn("Подключаемый_КомандаПанелиПрисоединенныхФайлов", form_module)
-        self.assertIn("РазместитьКомандуДокументооборотНаФорме", form_module)
+        self.assertNotIn("РазместитьКомандуДокументооборотНаФорме", form_module)
         self.assertIn("Form.Command.ЗакрытьПериодДосрочно", FORM_XML)
         self.assertNotIn("Form.Command.Печать", FORM_XML)
         self.assertNotIn("Form.Command.Файлы", FORM_XML)
         self.assertNotIn("Form.Command.ОтправитьНаСогласование", FORM_XML)
-        self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборот", FORM_XML)
+        self.assertNotIn("CommandName>CommonCommand.ИнтеграцияС1СДокументооборот", FORM_XML)
+        self.assertNotIn("CommandName>CommonCommand.ПрисоединенныеФайлы", FORM_XML)
         self.assertNotIn("CommonCommand.ИнтеграцияС1СДокументооборотНачатьОбработку", FORM_XML)
+        self.assertIn("<PagesRepresentation>None</PagesRepresentation>", FORM_XML)
+        self.assertIn(">Основное</v8:content>", FORM_XML)
+        self.assertIn("<Command>CommonCommand.ПрисоединенныеФайлы</Command>", FORM_XML)
+        self.assertIn("<Command>CommonCommand.ИнтеграцияС1СДокументооборот</Command>", FORM_XML)
+        self.assertIn("<CommandGroup>FormNavigationPanelGoTo</CommandGroup>", FORM_XML)
+        self.assertIn("<CommandGroup>CommandGroup.Документооборот</CommandGroup>", FORM_XML)
+        self.assertIn("<Attribute>Объект.Ссылка</Attribute>", FORM_XML)
+        self.assertIn("<Type>Added</Type>", FORM_XML)
+        self.assertIn("<NavigationPanel>", FORM_XML)
+        self.assertLess(
+            FORM_XML.find("</AutoCommandBar>"),
+            FORM_XML.find('<Pages name="Страницы"'),
+        )
+        self.assertGreater(
+            FORM_XML.find('<Pages name="Страницы"'),
+            FORM_XML.find("\t<ChildItems>\n\t\t<Pages"),
+        )
         self.assertNotIn("УправлениеПечатьюКлиент.ВыполнитьКомандуПечати", form_module)
         self.assertNotIn("ПрисоединитьПечатнуюФормуКДокументу", form_module)
         self.assertNotIn("ИнтеграцияС1СДокументооборот3Клиент.НачатьОбработку", form_module)
         self.assertIn("<CommonCommand>ИнтеграцияС1СДокументооборот</CommonCommand>", CFG_XML)
+        self.assertIn("<CommonCommand>ПрисоединенныеФайлы</CommonCommand>", CFG_XML)
         self.assertIn("<CommandGroup>Документооборот</CommandGroup>", CFG_XML)
         self.assertIn(
             "<CommonModule>СозданиеНаОснованииПереопределяемый</CommonModule>",
@@ -332,6 +351,11 @@ class JobAndRightsTests(unittest.TestCase):
         )
         self.assertTrue(
             (CFG / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml").is_file()
+        )
+        self.assertTrue((CFG / "CommonCommands/ПрисоединенныеФайлы.xml").is_file())
+        self.assertIn(
+            "<ExtendedConfigurationObject>b8a32c33-4e15-4c21-baab-64a86d44321b</ExtendedConfigurationObject>",
+            (CFG / "CommonCommands/ПрисоединенныеФайлы.xml").read_text(encoding="utf-8"),
         )
         self.assertTrue((CFG / "CommandGroups/Документооборот.xml").is_file())
         self.assertIn(
@@ -538,6 +562,7 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonModules/СозданиеНаОснованииПереопределяемый/Ext/Module.bsl",
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
+        "configurator/CommonCommands/ПрисоединенныеФайлы.xml",
         "configurator/CommandGroups/Документооборот.xml",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
