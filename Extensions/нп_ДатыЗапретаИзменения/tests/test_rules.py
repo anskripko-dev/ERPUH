@@ -187,6 +187,19 @@ class JobAndRightsTests(unittest.TestCase):
         skip = MODULE.index("ЕстьДействующееСостояниеКомбинации")
         self.assertGreater(skip, apply_at)
 
+    def test_job_actualizes_auto_and_skips_manual(self) -> None:
+        self.assertIn("УдалитьУстаревшиеАвтозаписи", MODULE)
+        self.assertIn("ЭтоРучнаяТиповаяЗапись", MODULE)
+        self.assertIn("ЭтоАвтоматическаяТиповаяЗапись", MODULE)
+        self.assertLess(
+            MODULE.index("ПрименитьОднуНастройку"),
+            MODULE.index("УдалитьУстаревшиеАвтозаписи"),
+        )
+        self.assertIn("Даты.Комментарий ПОДОБНО &ПрефиксАвто", MODULE)
+        self.assertIn("ТекущаяТиповая.ЕстьЗапись И ЭтоРучнаяТиповаяЗапись", MODULE)
+        self.assertIn("Если ОшибокНастроек = 0 Тогда", MODULE)
+        self.assertIn("Удалены устаревшие автоматические записи типового регистра", MODULE)
+
     def test_schedule_2300_daily(self) -> None:
         self.assertIn("T23:00:00", SCHEDULE)
         self.assertIn("<v8:DaysRepeatPeriod>1</v8:DaysRepeatPeriod>", SCHEDULE)
