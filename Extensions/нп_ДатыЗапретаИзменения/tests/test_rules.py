@@ -727,6 +727,7 @@ class LayoutTests(unittest.TestCase):
         self.assertIn('name="СпособУказания"', FORM_XML)
         self.assertIn("Объект.Объекты.РазделДатыЗапрета", FORM_XML)
         self.assertIn("Согласованная заявка разрешает менять документы", MODULE)
+        self.assertNotIn("задание каждый день в 23:00", MODULE)
         self.assertIn(">Открыть период с</v8:content>", DOC_XML)
         self.assertIn("«Открыть период с»", MODULE)
         self.assertNotIn(">Период с</v8:content>", DOC_XML)
