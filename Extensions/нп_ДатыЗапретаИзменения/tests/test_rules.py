@@ -729,9 +729,43 @@ class LayoutTests(unittest.TestCase):
             CFG
             / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаСписка/Ext/Form.xml"
         ).read_text(encoding="utf-8")
+        record_form = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаЗаписи/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
         self.assertIn("Список.ОбъектДатыЗапрета", list_form)
         self.assertIn("Список.ЧислоДней", list_form)
         self.assertIn("Список.Включено", list_form)
+        user_pos = SETTINGS_XML.find("<Name>Пользователь</Name>")
+        object_pos = SETTINGS_XML.find("<Name>ОбъектДатыЗапрета</Name>")
+        section_pos = SETTINGS_XML.find("<Name>РазделДатыЗапрета</Name>")
+        self.assertLess(user_pos, object_pos)
+        self.assertLess(object_pos, section_pos)
+        self.assertLess(
+            list_form.find("Список.Пользователь"),
+            list_form.find("Список.ОбъектДатыЗапрета"),
+        )
+        self.assertLess(
+            list_form.find("Список.ОбъектДатыЗапрета"),
+            list_form.find("Список.РазделДатыЗапрета"),
+        )
+        self.assertLess(
+            record_form.find("Запись.Пользователь"),
+            record_form.find("Запись.ОбъектДатыЗапрета"),
+        )
+        self.assertLess(
+            record_form.find("Запись.ОбъектДатыЗапрета"),
+            record_form.find("Запись.РазделДатыЗапрета"),
+        )
+
+    def test_tz_settings_dimensions_order(self) -> None:
+        tz = (
+            ROOT.parents[1]
+            / "openspec/changes/np-dates-of-prohibition-setup/tz-extract.txt"
+        ).read_text(encoding="utf-8")
+        table = tz.split("--- ТАБЛИЦА 2 ---", 1)[1].split("--- ТАБЛИЦА 3 ---", 1)[0]
+        self.assertLess(table.find("Пользователь | Измерение"), table.find("ОбъектДатыЗапрета | Измерение"))
+        self.assertLess(table.find("ОбъектДатыЗапрета | Измерение"), table.find("РазделДатыЗапрета | Измерение"))
 
     def test_form_use_purposes_is_fixed_array(self) -> None:
         found = 0
