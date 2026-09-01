@@ -15,6 +15,33 @@ PROCESSOR = "нп_ВыгрузкаЗагрузкаЭкземпляраОтчет
 
 errors: list[str] = []
 
+XML_TO_BSL = (
+    ("DocumentObject.", "ДокументОбъект."),
+    ("CatalogObject.", "СправочникОбъект."),
+    ("InformationRegisterRecordSet.", "РегистрСведенийНаборЗаписей."),
+)
+
+
+def local_name(tag: str) -> str:
+    return tag.rsplit("}", 1)[-1]
+
+
+def platform_type(node_name: str) -> str | None:
+    for xml_prefix, bsl_prefix in XML_TO_BSL:
+        if node_name.startswith(xml_prefix):
+            return bsl_prefix + node_name[len(xml_prefix) :]
+    return None
+
+
+def package_objects(root: ET.Element) -> list[dict[str, str | None]]:
+    objects: list[dict[str, str | None]] = []
+    for child in list(root):
+        name = local_name(child.tag)
+        if name == "Описание":
+            continue
+        objects.append({"name": name, "type": platform_type(name)})
+    return objects
+
 
 def fail(message: str) -> None:
     errors.append(message)
@@ -83,10 +110,15 @@ def main() -> int:
         "Функция СведенияОВнешнейОбработке()",
         "Функция ВыгрузитьВДвоичныеДанные(",
         "Функция ЗагрузитьИзДвоичныхДанных(",
+        "Функция ПрочитатьОбъектПакета(",
+        "Функция ТипОбъектаПоИмениУзлаXML(",
+        'ПараметрыРегистрации.Версия = "1.5"',
         'Возврат "нп_ПакетЭкземпляровОтчетов"',
         'Возврат "1.0"',
         "ОбменДанными.Загрузка = Истина",
         "ПропуститьЭлементЧтенияXML",
+        "Сериализатор.ПрочитатьXML(ЧтениеXML, ТипОбъекта)",
+        "Обработка версии 1.5",
         "ЗначенияПоказателейОтчетов",
         "ВерсииЗначенийПоказателей",
         "КомментарииЗначенийПоказателей",
@@ -95,6 +127,9 @@ def main() -> int:
     ):
         if needle not in bsl:
             fail(f"object module missing {needle!r}")
+
+    if "Если Сериализатор.ВозможностьЧтенияXML(ЧтениеXML) Тогда" in bsl.split("Функция ПрочитатьОбъектПакета")[0]:
+        fail("load loop must not skip objects when ВозможностьЧтенияXML is false")
 
     if "ЭтоГруппа" in bsl:
         fail("query must not use ЭтоГруппа: catalog ВерсииЗначенийПоказателей is not hierarchical")
@@ -124,14 +159,28 @@ def main() -> int:
     readme_text = text_of(readme)
     if PACKAGE_ROOT not in readme_text or FORMAT_VERSION not in readme_text:
         fail("README does not document package root / format version")
+    if "1.5" not in readme_text:
+        fail("README must mention processor version 1.5")
 
     sample_root = parse_xml(sample)
-    if sample_root.tag != PACKAGE_ROOT:
+    if local_name(sample_root.tag) != PACKAGE_ROOT:
         fail(f"sample root {sample_root.tag!r} != {PACKAGE_ROOT!r}")
     if sample_root.attrib.get("ВерсияФормата") != FORMAT_VERSION:
         fail("sample format version mismatch")
     if sample_root.find("Описание") is None or sample_root.find("Описание/Экземпляр") is None:
         fail("sample package missing Описание/Экземпляр")
+
+    sample_objects = package_objects(sample_root)
+    expected_sample = {
+        "ДокументОбъект.НастраиваемыйОтчет",
+        "СправочникОбъект.ОписаниеВерсий",
+        "СправочникОбъект.ВерсииЗначенийПоказателей",
+        "РегистрСведенийНаборЗаписей.ЗначенияПоказателейОтчетов1",
+    }
+    if {item["type"] for item in sample_objects} != expected_sample:
+        fail(f"sample XDTO types { {item['type'] for item in sample_objects} } != {expected_sample}")
+    if any(item["type"] is None for item in sample_objects):
+        fail("sample contains XML nodes that cannot be mapped to 1C types")
 
     if errors:
         print("FAILED")
@@ -141,7 +190,8 @@ def main() -> int:
     print("OK")
     print(f"processor: {PROCESSOR}")
     print(f"package root: {PACKAGE_ROOT} v{FORMAT_VERSION}")
-    print("checked: metadata XML, object module, form, README, sample package")
+    print(f"sample XDTO objects: {len(sample_objects)}")
+    print("checked: metadata XML, object module, form, README, sample package, XDTO name mapping")
     return 0
 
 
