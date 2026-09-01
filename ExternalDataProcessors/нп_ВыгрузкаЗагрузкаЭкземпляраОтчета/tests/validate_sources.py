@@ -95,6 +95,9 @@ def main() -> int:
         if needle not in bsl:
             fail(f"object module missing {needle!r}")
 
+    if "ЭтоГруппа" in bsl:
+        fail("query must not use ЭтоГруппа: catalog ВерсииЗначенийПоказателей is not hierarchical")
+
     form_bsl = text_of(form_module)
     for needle in (
         "Процедура ВыгрузитьВФайл(",
