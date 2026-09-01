@@ -112,13 +112,16 @@ def main() -> int:
         "Функция ЗагрузитьИзДвоичныхДанных(",
         "Функция ПрочитатьОбъектПакета(",
         "Функция ТипОбъектаПоИмениУзлаXML(",
-        'ПараметрыРегистрации.Версия = "1.5"',
+        'ПараметрыРегистрации.Версия = "1.6"',
         'Возврат "нп_ПакетЭкземпляровОтчетов"',
         'Возврат "1.0"',
         "ОбменДанными.Загрузка = Истина",
         "ПропуститьЭлементЧтенияXML",
         "Сериализатор.ПрочитатьXML(ЧтениеXML, ТипОбъекта)",
-        "Обработка версии 1.5",
+        "Обработка версии 1.6",
+        "Процедура УдалитьПоказателиЭкземпляра(",
+        "ОчиститьПоказателиПоОписаниюПакета",
+        "НаборЗаписей.Записать(Истина)",
         "ЗначенияПоказателейОтчетов",
         "ВерсииЗначенийПоказателей",
         "КомментарииЗначенийПоказателей",
@@ -148,8 +151,8 @@ def main() -> int:
 
     form = parse_xml(form_xml)
     command_names = [el.attrib.get("name") for el in form.iter() if el.tag.endswith("Command") and el.attrib.get("name")]
-    if "ВыгрузитьВФайл" not in command_names or "ЗагрузитьИзФайла" not in command_names:
-        fail(f"form commands {command_names} missing export/import")
+    if "заменяются" not in text_of(form_xml):
+        fail("load form hint must say versions are replaced")
 
     attr_names = [el.attrib.get("name") for el in form.iter() if el.tag.endswith("Attribute") and el.attrib.get("name")]
     for required in ("Экземпляры", "ТолькоАктивныеВерсии", "ВыгружатьЧерновыеВерсии", "ЗамещатьСуществующие", "Протокол"):
@@ -159,8 +162,10 @@ def main() -> int:
     readme_text = text_of(readme)
     if PACKAGE_ROOT not in readme_text or FORMAT_VERSION not in readme_text:
         fail("README does not document package root / format version")
-    if "1.5" not in readme_text:
-        fail("README must mention processor version 1.5")
+    if "1.6" not in readme_text:
+        fail("README must mention processor version 1.6")
+    if "удаляются все текущие версии" not in readme_text:
+        fail("README must document that existing versions are deleted before load")
 
     sample_root = parse_xml(sample)
     if local_name(sample_root.tag) != PACKAGE_ROOT:
@@ -169,6 +174,9 @@ def main() -> int:
         fail("sample format version mismatch")
     if sample_root.find("Описание") is None or sample_root.find("Описание/Экземпляр") is None:
         fail("sample package missing Описание/Экземпляр")
+    instance = sample_root.find("Описание/Экземпляр")
+    if instance is not None and not instance.attrib.get("УИД"):
+        fail("sample Описание/Экземпляр must have УИД for replace-on-load")
 
     sample_objects = package_objects(sample_root)
     expected_sample = {
