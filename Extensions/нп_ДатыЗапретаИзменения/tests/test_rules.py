@@ -216,8 +216,35 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", RIGHTS)
 
-    def test_state_register_not_in_command_interface(self) -> None:
-        self.assertIn("<UseStandardCommands>false</UseStandardCommands>", STATE_XML)
+    def test_state_register_in_command_interface(self) -> None:
+        self.assertIn("<UseStandardCommands>true</UseStandardCommands>", STATE_XML)
+        self.assertIn("Состояния открытых периодов (НП)", STATE_XML)
+        self.assertIn(
+            "InformationRegister.нп_СостояниеОткрытыхПериодов.Form.ФормаСписка",
+            STATE_XML,
+        )
+        subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("<IncludeInCommandInterface>true</IncludeInCommandInterface>", subsystem)
+        self.assertIn(
+            "InformationRegister.нп_СостояниеОткрытыхПериодов",
+            subsystem,
+        )
+        state_rights = RIGHTS.split(
+            "InformationRegister.нп_СостояниеОткрытыхПериодов", 1
+        )[1].split("</object>", 1)[0]
+        self.assertIn("<name>View</name>", state_rights)
+        self.assertNotIn("<name>Update</name>", state_rights)
+        list_form = (
+            CFG
+            / "InformationRegisters/нп_СостояниеОткрытыхПериодов/Forms/ФормаСписка/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
+        self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", list_form)
+        self.assertLess(
+            list_form.find("Список.Пользователь"),
+            list_form.find("Список.ОбъектДатыЗапрета"),
+        )
 
     def test_settings_allow_empty_pair(self) -> None:
         self.assertNotIn(
@@ -635,6 +662,8 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonCommands/нп_Документооборот/Ext/CommandModule.bsl",
         "configurator/CommandGroups/Документооборот.xml",
         "configurator/Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml",
+        "configurator/InformationRegisters/нп_СостояниеОткрытыхПериодов/Forms/ФормаСписка.xml",
+        "configurator/InformationRegisters/нп_СостояниеОткрытыхПериодов/Forms/ФормаСписка/Ext/Form.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture.xml",
         "configurator/CommonPictures/нп_ДатыЗапретаИзменения16/Ext/Picture/Picture.png",
