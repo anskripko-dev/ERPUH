@@ -810,6 +810,28 @@ class LayoutTests(unittest.TestCase):
         self.assertLess(table.find("Пользователь | Измерение"), table.find("ОбъектДатыЗапрета | Измерение"))
         self.assertLess(table.find("ОбъектДатыЗапрета | Измерение"), table.find("РазделДатыЗапрета | Измерение"))
 
+    def test_tz_request_has_no_italic_notes(self) -> None:
+        import zipfile
+
+        italic_notes = (
+            "уточнены алгоритмы, добавлены критерии приёмки",
+            "Заполняется инициатором совместно с администратором ИБ",
+            "предложением инициатора и может быть скорректирован",
+            "Подробные алгоритмы и структура метаданных детализируются",
+        )
+        tz = (
+            ROOT.parents[1]
+            / "openspec/changes/np-dates-of-prohibition-setup/tz-extract.txt"
+        ).read_text(encoding="utf-8")
+        docx = ROOT.parents[1] / "ERP.2026.14 Заявка на доработку 1С ERP УХ (ред. 2)_1.docx"
+        with zipfile.ZipFile(docx) as archive:
+            body = archive.read("word/document.xml").decode("utf-8")
+        self.assertNotIn("<w:i/>", body)
+        self.assertNotIn("<w:i>", body)
+        for note in italic_notes:
+            self.assertNotIn(note, tz)
+            self.assertNotIn(note, body)
+
     def test_form_use_purposes_is_fixed_array(self) -> None:
         found = 0
         for path in CFG.rglob("*.xml"):
