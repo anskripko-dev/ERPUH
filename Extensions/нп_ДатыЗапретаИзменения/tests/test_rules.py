@@ -228,6 +228,17 @@ class JobAndRightsTests(unittest.TestCase):
             MODULE.index("АдресатыГрупп(ДетальныеАдресаты)"),
             MODULE.index("АдресатыПользователей(ДетальныеАдресаты)"),
         )
+        self.assertIn("ОтметитьДетальногоАдресата", MODULE)
+        self.assertIn(
+            "ДополнитьОбщиеДатыДетальнымАдресатам(АктуальныеКлючи, ДетальныеАдресаты)",
+            MODULE,
+        )
+        self.assertNotIn("АдресатыСДетальнымиЗаписями", MODULE)
+        self.assertIn("только на следующем задании", MODULE)
+        self.assertLess(
+            MODULE.index("ОтметитьДетальногоАдресата"),
+            MODULE.index("Процедура ДополнитьОбщиеДатыДетальнымАдресатам"),
+        )
 
     def test_schedule_2300_daily(self) -> None:
         self.assertIn("T23:00:00", SCHEDULE)
