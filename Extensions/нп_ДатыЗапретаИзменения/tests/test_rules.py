@@ -239,6 +239,35 @@ class JobAndRightsTests(unittest.TestCase):
             MODULE.index("ОтметитьДетальногоАдресата"),
             MODULE.index("Процедура ДополнитьОбщиеДатыДетальнымАдресатам"),
         )
+        self.assertIn("НаследоватьНаборРодителяПослеОткрытия", MODULE)
+        self.assertIn("АктуализироватьНаследованиеПослеЗакрытия", MODULE)
+        self.assertIn("ДополнитьДетальнымиАдресатамиОткрытыхПериодов", MODULE)
+        self.assertIn("ЕстьДетальнаяКомбинацияВСписке", MODULE)
+        open_proc = MODULE[
+            MODULE.index("Процедура ОткрытьПериодПоЗаявке") : MODULE.index(
+                "Процедура ЗакрытьПериодДосрочно"
+            )
+        ]
+        self.assertIn("НаследоватьНаборРодителяПослеОткрытия", open_proc)
+        self.assertLess(
+            open_proc.index("НаследоватьНаборРодителяПослеОткрытия"),
+            open_proc.index("ОбновитьВерсиюДатЗапретаИзменения"),
+        )
+        close_proc = MODULE[
+            MODULE.index("Процедура ЗакрытьПериодДосрочно") : MODULE.index(
+                "Функция ДатаЗапретаПоЧислуДней"
+            )
+        ]
+        self.assertIn("АктуализироватьНаследованиеПослеЗакрытия", close_proc)
+        apply_proc = MODULE[
+            MODULE.index("Процедура ПрименитьВключенныеНастройки") : MODULE.index(
+                "Процедура ПрименитьОднуНастройку"
+            )
+        ]
+        self.assertLess(
+            apply_proc.index("ДополнитьДетальнымиАдресатамиОткрытыхПериодов"),
+            apply_proc.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
+        )
 
     def test_schedule_2300_daily(self) -> None:
         self.assertIn("T23:00:00", SCHEDULE)
