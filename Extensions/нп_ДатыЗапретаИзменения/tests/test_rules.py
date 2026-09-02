@@ -193,12 +193,35 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("ЭтоАвтоматическаяТиповаяЗапись", MODULE)
         self.assertLess(
             MODULE.index("ПрименитьОднуНастройку"),
+            MODULE.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
+        )
+        self.assertLess(
+            MODULE.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
             MODULE.index("УдалитьУстаревшиеАвтозаписи"),
         )
         self.assertIn("Даты.Комментарий ПОДОБНО &ПрефиксАвто", MODULE)
         self.assertIn("ТекущаяТиповая.ЕстьЗапись И ЭтоРучнаяТиповаяЗапись", MODULE)
         self.assertIn("Если ОшибокНастроек = 0 Тогда", MODULE)
         self.assertIn("Удалены устаревшие автоматические записи типового регистра", MODULE)
+
+    def test_personal_detail_inherits_parent_empty_pair(self) -> None:
+        self.assertIn("ДополнитьОбщиеДатыДетальнымАдресатам", MODULE)
+        self.assertIn("ЗаписатьНаследуемуюОбщуюДату", MODULE)
+        self.assertIn("ОбщиеДатыВыигрывающихГрупп", MODULE)
+        self.assertIn("РегистрСведений.СоставыГруппПользователей", MODULE)
+        self.assertIn("Комментарий УБЫВ", MODULE)
+        self.assertIn(
+            "личная запись по одному объекту отключает",
+            MODULE,
+        )
+        self.assertGreater(
+            MODULE.index("АдресатыГрупп"),
+            MODULE.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
+        )
+        self.assertGreater(
+            MODULE.index("АдресатыПользователей"),
+            MODULE.index("АдресатыГрупп"),
+        )
 
     def test_schedule_2300_daily(self) -> None:
         self.assertIn("T23:00:00", SCHEDULE)
