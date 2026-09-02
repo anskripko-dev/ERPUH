@@ -204,16 +204,18 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Если ОшибокНастроек = 0 Тогда", MODULE)
         self.assertIn("Удалены устаревшие автоматические записи типового регистра", MODULE)
 
-    def test_personal_detail_inherits_parent_empty_pair(self) -> None:
+    def test_personal_detail_inherits_full_parent_set(self) -> None:
         self.assertIn("ДополнитьОбщиеДатыДетальнымАдресатам", MODULE)
-        self.assertIn("ЗаписатьНаследуемуюОбщуюДату", MODULE)
-        self.assertIn("ОбщиеДатыВыигрывающихГрупп", MODULE)
+        self.assertIn("СкопироватьНаборРодителяНаАдресата", MODULE)
+        self.assertIn("ЗаписатьНаследуемуюЗапись", MODULE)
+        self.assertIn("ВыигрывающиеГруппыПользователей", MODULE)
+        self.assertIn("ЕстьСвояОбщаяДатаНастройки", MODULE)
+        self.assertIn("НельзяНаследоватьНаборРодителя", MODULE)
+        self.assertIn("НаборыЗаписейПоАдресатам", MODULE)
         self.assertIn("РегистрСведений.СоставыГруппПользователей", MODULE)
         self.assertIn("Комментарий УБЫВ", MODULE)
-        self.assertIn(
-            "личная запись по одному объекту отключает",
-            MODULE,
-        )
+        self.assertIn("полный набор родителя", MODULE)
+        self.assertIn("склад группы «Продажи»", MODULE)
         self.assertGreater(
             MODULE.index("АдресатыГрупп"),
             MODULE.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
@@ -221,6 +223,10 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertGreater(
             MODULE.index("АдресатыПользователей"),
             MODULE.index("АдресатыГрупп"),
+        )
+        self.assertLess(
+            MODULE.index("АдресатыГрупп(ДетальныеАдресаты)"),
+            MODULE.index("АдресатыПользователей(ДетальныеАдресаты)"),
         )
 
     def test_schedule_2300_daily(self) -> None:
