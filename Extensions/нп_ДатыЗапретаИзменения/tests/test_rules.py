@@ -53,6 +53,40 @@ def combined_absolute(run_date: dt.date, n: int, grace_days: int) -> dt.date:
     return max(date_by_n(n, run_date), relative_end_of_previous_month(run_date, grace_days))
 
 
+NON_ORG_SECTIONS = ("Банк", "Касса", "СкладскиеОперации", "Бюджетирование", "Планирование")
+
+
+def settings_combination_allowed(
+    has_organization: bool,
+    section: str | None,
+    has_section_object: bool,
+) -> bool:
+    """Каскад формы настройки: нельзя смешать организацию с Банком и нельзя Банк без счёта."""
+    if section is None:
+        return not has_section_object
+    if section in ORG_SECTIONS:
+        return has_organization and not has_section_object
+    if section in NON_ORG_SECTIONS:
+        return (not has_organization) and has_section_object
+    return False
+
+
+def typical_write_kind(
+    has_organization: bool,
+    section: str | None,
+    has_section_object: bool,
+) -> str:
+    if not settings_combination_allowed(has_organization, section, has_section_object):
+        return "rejected"
+    if section is None and not has_organization:
+        return "addressee_general"
+    if section is None and has_organization:
+        return "eighteen_org_sections"
+    if section in ORG_SECTIONS:
+        return "one_org_section"
+    return "one_typed_object"
+
+
 def restore_due(session_date: dt.date, end_date: dt.date) -> bool:
     return session_date > end_date
 
@@ -148,6 +182,16 @@ class DateRulesTests(unittest.TestCase):
             dt.date(2026, 8, 31),
         )
         self.assertEqual(combined_absolute(dt.date(2026, 9, 6), 10, 5), dt.date(2026, 8, 31))
+
+    def test_settings_form_rejects_org_plus_bank_and_bank_without_account(self) -> None:
+        self.assertEqual(typical_write_kind(False, None, False), "addressee_general")
+        self.assertEqual(typical_write_kind(True, None, False), "eighteen_org_sections")
+        self.assertEqual(typical_write_kind(True, "Продажи", False), "one_org_section")
+        self.assertEqual(typical_write_kind(False, "Банк", True), "one_typed_object")
+        self.assertEqual(typical_write_kind(True, "Банк", True), "rejected")
+        self.assertEqual(typical_write_kind(False, "Банк", False), "rejected")
+        self.assertEqual(typical_write_kind(True, "Касса", False), "rejected")
+        self.assertFalse(settings_combination_allowed(True, None, True))
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
         self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
