@@ -367,11 +367,14 @@ class JobAndRightsTests(unittest.TestCase):
             CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
         ).read_text(encoding="utf-8")
         self.assertIn("ИзменениеЗаявкиЗапрещено", MODULE)
-        self.assertIn("НаСогласовании", MODULE)
-        self.assertIn("Заявку на согласовании изменять нельзя", MODULE)
+        self.assertIn("ЕстьСвязьСДО", MODULE)
+        self.assertIn("НеСогласован", MODULE)
+        self.assertIn("Заявку, отправленную в Документооборот, изменять нельзя", MODULE)
         self.assertIn("ИзменениеЗаявкиЗапрещено", object_module)
         self.assertIn("ИзменениеЗаявкиЗапрещено", form_module)
+        self.assertIn("Документооборот_ДобавлениеСвязи", form_module)
         self.assertNotIn("ТолькоПросмотрДокумента = Согласован Или ЕстьСостояние", form_module)
+        self.assertNotIn("Заявку на согласовании изменять нельзя", MODULE)
 
     def test_document_posting_denied(self) -> None:
         self.assertIn("<Posting>Deny</Posting>", DOC_XML)
