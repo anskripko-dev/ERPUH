@@ -4,6 +4,7 @@
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
 	</Events>
 	<ChildItems>
 		<Table name="Список" id="1">
@@ -13,7 +14,6 @@
 			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<EnableStartDrag>true</EnableStartDrag>
 			<DataPath>Список</DataPath>
-			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
 			<AutoAdd>false</AutoAdd>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="2">
 				<Autofill>false</Autofill>
@@ -30,6 +30,7 @@
 			</SearchStringAddition>
 			<Events>
 				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
 			</Events>
 			<ChildItems>
 				<LabelField name="Дата" id="10">
@@ -41,6 +42,17 @@
 					<DataPath>Список.Номер</DataPath>
 					<ContextMenu name="НомерКонтекстноеМеню" id="14"/>
 					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+				<LabelField name="СостояниеСогласованияДО" id="28">
+					<DataPath>Список.СостояниеСогласованияДО</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус согласования ДО</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СостояниеСогласованияДОКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="СостояниеСогласованияДОРасширеннаяПодсказка" id="30"/>
 				</LabelField>
 				<LabelField name="Пользователь" id="16">
 					<DataPath>Список.Пользователь</DataPath>
@@ -72,9 +84,45 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
+				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументЗаявка.Ссылка КАК Ссылка,
+	ДокументЗаявка.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗаявка.Номер КАК Номер,
+	ДокументЗаявка.Дата КАК Дата,
+	ДокументЗаявка.Проведен КАК Проведен,
+	ДокументЗаявка.ПериодС КАК ПериодС,
+	ДокументЗаявка.СрокДействия КАК СрокДействия,
+	ДокументЗаявка.РазделДатыЗапрета КАК РазделДатыЗапрета,
+	ДокументЗаявка.Пользователь КАК Пользователь,
+	ДокументЗаявка.ПричинаОткрытия КАК ПричинаОткрытия,
+	ДокументЗаявка.СпособУказания КАК СпособУказания,
+	ДокументЗаявка.Ответственный КАК Ответственный,
+	ВЫРАЗИТЬ("" КАК СТРОКА(150)) КАК СостояниеСогласованияДО
+ИЗ
+	Документ.нп_ЗаявкаНаОткрытиеПериода КАК ДокументЗаявка</QueryText>
 				<MainTable>Document.нп_ЗаявкаНаОткрытиеПериода</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f001</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f002</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f003</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>a14d2026-0014-7e28-8a00-00000000f004</dcsset:itemsUserSettingID>
+				</ListSettings>
 			</Settings>
 		</Attribute>
 	</Attributes>

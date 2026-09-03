@@ -522,6 +522,9 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Документооборот_ДобавлениеСвязи", form_module)
         self.assertIn("Документооборот_ДействиеСОбработкой", form_module)
         self.assertIn("нп_ДатыЗапрета_НачатаОбработкаЗаявки", form_module)
+        self.assertIn("СостояниеСогласованияДО = СостояниеДО.Представление", form_module)
+        self.assertIn("Функция ПредставленияСостоянийСогласованияДО", MODULE)
+        self.assertIn("УстановитьПривилегированныйРежим(Истина)", MODULE)
         self.assertIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
         self.assertIn("Элементы.Номер.ТолькоПросмотр", form_module)
         self.assertIn("Процедура ПередЗаписью", form_module)
@@ -812,6 +815,11 @@ class PrintFormTests(unittest.TestCase):
             list_module,
         )
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", list_form)
+        self.assertIn("Список.СостояниеСогласованияДО", list_form)
+        self.assertIn("Статус согласования ДО", list_form)
+        self.assertIn("ВЫРАЗИТЬ(\"\" КАК СТРОКА(150)) КАК СостояниеСогласованияДО", list_form)
+        self.assertIn("СписокПриПолученииДанныхНаСервере", list_module)
+        self.assertIn("ПредставленияСостоянийСогласованияДО", list_module)
         self.assertIn("<Form>ФормаСписка</Form>", DOC_XML)
         self.assertNotIn("Form.Command.Печать", list_form)
         self.assertNotIn("Form.Command.Файлы", list_form)
@@ -1014,7 +1022,10 @@ class LayoutTests(unittest.TestCase):
 
     def test_form_uses_decorations_and_russian_standard_attrs(self) -> None:
         self.assertIn('<LabelDecoration name="ПояснениеОтсечки"', FORM_XML)
-        self.assertIn('<LabelDecoration name="СостояниеСогласования"', FORM_XML)
+        self.assertIn('<InputField name="СостояниеСогласованияДО"', FORM_XML)
+        self.assertIn("Статус согласования ДО", FORM_XML)
+        self.assertIn("<DataPath>СостояниеСогласованияДО</DataPath>", FORM_XML)
+        self.assertNotIn('<LabelDecoration name="СостояниеСогласования"', FORM_XML)
         self.assertNotIn("LabelField", FORM_XML)
         self.assertIn("<DataPath>Объект.Номер</DataPath>", FORM_XML)
         self.assertIn("<DataPath>Объект.Дата</DataPath>", FORM_XML)

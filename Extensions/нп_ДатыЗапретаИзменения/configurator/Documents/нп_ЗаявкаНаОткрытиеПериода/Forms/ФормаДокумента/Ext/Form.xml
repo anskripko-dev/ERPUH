@@ -47,16 +47,6 @@
 							<ContextMenu name="ПояснениеОтсечкиКонтекстноеМеню" id="101"/>
 							<ExtendedTooltip name="ПояснениеОтсечкиРасширеннаяПодсказка" id="102"/>
 						</LabelDecoration>
-						<LabelDecoration name="СостояниеСогласования" id="2">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Состояние согласования</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="СостояниеСогласованияКонтекстноеМеню" id="202"/>
-							<ExtendedTooltip name="СостояниеСогласованияРасширеннаяПодсказка" id="203"/>
-						</LabelDecoration>
 						<InputField name="Номер" id="3">
 							<DataPath>Объект.Номер</DataPath>
 							<ContextMenu name="НомерКонтекстноеМеню" id="301"/>
@@ -66,6 +56,18 @@
 							<DataPath>Объект.Дата</DataPath>
 							<ContextMenu name="ДатаКонтекстноеМеню" id="401"/>
 							<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="402"/>
+						</InputField>
+						<InputField name="СостояниеСогласованияДО" id="2">
+							<DataPath>СостояниеСогласованияДО</DataPath>
+							<ReadOnly>true</ReadOnly>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Статус согласования ДО</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="СостояниеСогласованияДОКонтекстноеМеню" id="202"/>
+							<ExtendedTooltip name="СостояниеСогласованияДОРасширеннаяПодсказка" id="203"/>
 						</InputField>
 						<InputField name="ПериодС" id="5">
 							<DataPath>Объект.ПериодС</DataPath>
@@ -168,6 +170,21 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="СостояниеСогласованияДО" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Статус согласования ДО</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>150</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 	<Commands>
