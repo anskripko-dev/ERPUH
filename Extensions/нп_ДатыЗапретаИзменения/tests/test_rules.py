@@ -76,6 +76,27 @@ def organization_field_visible(section: str | None) -> bool:
     return section not in NON_ORG_SECTIONS
 
 
+def settings_form_cascade(has_organization: bool, section: str | None) -> dict[str, object]:
+    """Первое заполненное поле запирает второй путь."""
+    if has_organization:
+        return {
+            "sections": "org_only",
+            "organization": "filled",
+            "section_object": "hidden",
+        }
+    if section in NON_ORG_SECTIONS:
+        return {
+            "sections": "this_non_org",
+            "organization": "hidden",
+            "section_object": "shown",
+        }
+    return {
+        "sections": "all",
+        "organization": "available",
+        "section_object": "hidden",
+    }
+
+
 def typical_write_kind(
     has_organization: bool,
     section: str | None,
@@ -205,6 +226,29 @@ class DateRulesTests(unittest.TestCase):
         self.assertFalse(organization_field_visible("Банк"))
         self.assertFalse(organization_field_visible("Касса"))
         self.assertFalse(organization_field_visible("СкладскиеОперации"))
+        self.assertEqual(
+            settings_form_cascade(True, None),
+            {"sections": "org_only", "organization": "filled", "section_object": "hidden"},
+        )
+        self.assertEqual(
+            settings_form_cascade(False, "Банк"),
+            {"sections": "this_non_org", "organization": "hidden", "section_object": "shown"},
+        )
+        self.assertEqual(
+            settings_form_cascade(False, None),
+            {"sections": "all", "organization": "available", "section_object": "hidden"},
+        )
+
+    def test_design_has_typical_search_tables(self) -> None:
+        design = (
+            ROOT.parents[1]
+            / "openspec/changes/np-dates-of-prohibition-setup/design.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("| Порядок | Кого берёт | Когда |", design)
+        self.assertIn("| Порядок | Раздел | Объект | Что закрывает | Пример |", design)
+        self.assertIn("| Раздел | Объект в документе | Пример документа |", design)
+        self.assertIn("| Сначала выбрали | Разделы в списке | Организация | Объект раздела |", design)
+        self.assertIn("Банк + организация Альфа", design)
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
         self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
