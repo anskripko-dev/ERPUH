@@ -7,6 +7,16 @@
 	<dataSet xsi:type="DataSetQuery">
 		<name>ДатыЗапрета</name>
 		<field xsi:type="DataSetFieldField">
+			<dataPath>Пользователь</dataPath>
+			<field>Пользователь</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Пользователь</v8:content>
+				</v8:item>
+			</title>
+		</field>
+		<field xsi:type="DataSetFieldField">
 			<dataPath>Раздел</dataPath>
 			<field>Раздел</field>
 			<title xsi:type="v8:LocalStringType">
@@ -23,16 +33,6 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Объект</v8:content>
-				</v8:item>
-			</title>
-		</field>
-		<field xsi:type="DataSetFieldField">
-			<dataPath>Пользователь</dataPath>
-			<field>Пользователь</field>
-			<title xsi:type="v8:LocalStringType">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Пользователь</v8:content>
 				</v8:item>
 			</title>
 		</field>
@@ -108,9 +108,9 @@
 		</field>
 		<dataSource>ИсточникДанных1</dataSource>
 		<query>ВЫБРАТЬ
+	ДатыЗапрета.Пользователь КАК Пользователь,
 	ДатыЗапрета.Раздел КАК Раздел,
 	ДатыЗапрета.Объект КАК Объект,
-	ДатыЗапрета.Пользователь КАК Пользователь,
 	ДатыЗапрета.ДатаЗапрета КАК ДатаЗапрета,
 	ДатыЗапрета.Комментарий КАК Комментарий,
 	ВЫБОР
@@ -131,9 +131,9 @@
 			И ДатыЗапрета.Объект = Состояние.ОбъектДатыЗапрета
 			И ДатыЗапрета.Пользователь = Состояние.Пользователь
 		ЛЕВОЕ СОЕДИНЕНИЕ (ВЫБРАТЬ
+			ДатыЗапретаВнутр.Пользователь КАК Пользователь,
 			ДатыЗапретаВнутр.Раздел КАК Раздел,
 			ДатыЗапретаВнутр.Объект КАК Объект,
-			ДатыЗапретаВнутр.Пользователь КАК Пользователь,
 			МАКСИМУМ(Настройки.ЧислоДней) КАК ЧислоДней
 		ИЗ
 			РегистрСведений.ДатыЗапретаИзменения КАК ДатыЗапретаВнутр
@@ -165,19 +165,19 @@
 							И ДатыЗапретаВнутр.Раздел = Настройки.РазделДатыЗапрета
 					КОНЕЦ)
 		СГРУППИРОВАТЬ ПО
+			ДатыЗапретаВнутр.Пользователь,
 			ДатыЗапретаВнутр.Раздел,
-			ДатыЗапретаВнутр.Объект,
-			ДатыЗапретаВнутр.Пользователь) КАК ПодобраннаяНастройка
+			ДатыЗапретаВнутр.Объект) КАК ПодобраннаяНастройка
 		ПО ДатыЗапрета.Раздел = ПодобраннаяНастройка.Раздел
 			И ДатыЗапрета.Объект = ПодобраннаяНастройка.Объект
 			И ДатыЗапрета.Пользователь = ПодобраннаяНастройка.Пользователь</query>
 	</dataSet>
 	<parameter>
-		<name>Объект</name>
+		<name>Пользователь</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Объект</v8:content>
+				<v8:content>Пользователь</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -201,11 +201,11 @@
 		<availableAsField>false</availableAsField>
 	</parameter>
 	<parameter>
-		<name>Пользователь</name>
+		<name>Объект</name>
 		<title xsi:type="v8:LocalStringType">
 			<v8:item>
 				<v8:lang>ru</v8:lang>
-				<v8:content>Пользователь</v8:content>
+				<v8:content>Объект</v8:content>
 			</v8:item>
 		</title>
 		<valueType>
@@ -225,13 +225,13 @@
 		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
 			<dcsset:selection>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Пользователь</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Раздел</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>Объект</dcsset:field>
-				</dcsset:item>
-				<dcsset:item xsi:type="dcsset:SelectedItemField">
-					<dcsset:field>Пользователь</dcsset:field>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:SelectedItemField">
 					<dcsset:field>ДатаЗапрета</dcsset:field>
@@ -258,9 +258,9 @@
 			<dcsset:filter>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">Объект</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Пользователь</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:userSettingID>filter-object</dcsset:userSettingID>
+					<dcsset:userSettingID>filter-user</dcsset:userSettingID>
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:use>false</dcsset:use>
@@ -270,12 +270,16 @@
 				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:FilterItemComparison">
 					<dcsset:use>false</dcsset:use>
-					<dcsset:left xsi:type="dcscor:Field">Пользователь</dcsset:left>
+					<dcsset:left xsi:type="dcscor:Field">Объект</dcsset:left>
 					<dcsset:comparisonType>Equal</dcsset:comparisonType>
-					<dcsset:userSettingID>filter-user</dcsset:userSettingID>
+					<dcsset:userSettingID>filter-object</dcsset:userSettingID>
 				</dcsset:item>
 			</dcsset:filter>
 			<dcsset:order>
+				<dcsset:item xsi:type="dcsset:OrderItemField">
+					<dcsset:field>Пользователь</dcsset:field>
+					<dcsset:orderType>Asc</dcsset:orderType>
+				</dcsset:item>
 				<dcsset:item xsi:type="dcsset:OrderItemField">
 					<dcsset:field>Раздел</dcsset:field>
 					<dcsset:orderType>Asc</dcsset:orderType>

@@ -312,8 +312,17 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", list_form)
         self.assertLess(
             list_form.find("Список.Пользователь"),
+            list_form.find("Список.РазделДатыЗапрета"),
+        )
+        self.assertLess(
+            list_form.find("Список.РазделДатыЗапрета"),
             list_form.find("Список.ОбъектДатыЗапрета"),
         )
+        user_pos = STATE_XML.find("<Name>Пользователь</Name>")
+        section_pos = STATE_XML.find("<Name>РазделДатыЗапрета</Name>")
+        object_pos = STATE_XML.find("<Name>ОбъектДатыЗапрета</Name>")
+        self.assertLess(user_pos, section_pos)
+        self.assertLess(section_pos, object_pos)
 
     def test_settings_allow_empty_pair(self) -> None:
         self.assertNotIn(
@@ -760,6 +769,17 @@ class LayoutTests(unittest.TestCase):
             self.assertTrue((ROOT / rel).is_file(), rel)
         self.assertFalse((ROOT / "src").exists(), "EDT src/ must not be shipped")
 
+    def test_report_dcs_column_order(self) -> None:
+        selection = DCS.split("<dcsset:selection>", 1)[1].split("</dcsset:selection>", 1)[0]
+        self.assertLess(selection.find(">Пользователь<"), selection.find(">Раздел<"))
+        self.assertLess(selection.find(">Раздел<"), selection.find(">Объект<"))
+        order = DCS.split("<dcsset:order>", 1)[1].split("</dcsset:order>", 1)[0]
+        self.assertLess(order.find(">Пользователь<"), order.find(">Раздел<"))
+        self.assertLess(order.find(">Раздел<"), order.find(">Объект<"))
+        dataset = DCS.split("<dataSet", 1)[1].split("<dataSource>", 1)[0]
+        self.assertLess(dataset.find("<dataPath>Пользователь</dataPath>"), dataset.find("<dataPath>Раздел</dataPath>"))
+        self.assertLess(dataset.find("<dataPath>Раздел</dataPath>"), dataset.find("<dataPath>Объект</dataPath>"))
+
     def test_report_classifies_three_sources(self) -> None:
         self.assertIn("Временно открытый период", DCS)
         self.assertIn("Автоматическая установка", DCS)
@@ -865,23 +885,23 @@ class LayoutTests(unittest.TestCase):
         user_pos = SETTINGS_XML.find("<Name>Пользователь</Name>")
         object_pos = SETTINGS_XML.find("<Name>ОбъектДатыЗапрета</Name>")
         section_pos = SETTINGS_XML.find("<Name>РазделДатыЗапрета</Name>")
-        self.assertLess(user_pos, object_pos)
-        self.assertLess(object_pos, section_pos)
+        self.assertLess(user_pos, section_pos)
+        self.assertLess(section_pos, object_pos)
         self.assertLess(
             list_form.find("Список.Пользователь"),
-            list_form.find("Список.ОбъектДатыЗапрета"),
-        )
-        self.assertLess(
-            list_form.find("Список.ОбъектДатыЗапрета"),
             list_form.find("Список.РазделДатыЗапрета"),
         )
         self.assertLess(
-            record_form.find("Запись.Пользователь"),
-            record_form.find("Запись.ОбъектДатыЗапрета"),
+            list_form.find("Список.РазделДатыЗапрета"),
+            list_form.find("Список.ОбъектДатыЗапрета"),
         )
         self.assertLess(
-            record_form.find("Запись.ОбъектДатыЗапрета"),
+            record_form.find("Запись.Пользователь"),
             record_form.find("Запись.РазделДатыЗапрета"),
+        )
+        self.assertLess(
+            record_form.find("Запись.РазделДатыЗапрета"),
+            record_form.find("Запись.ОбъектДатыЗапрета"),
         )
 
     def test_tz_settings_dimensions_order(self) -> None:
@@ -890,8 +910,10 @@ class LayoutTests(unittest.TestCase):
             / "openspec/changes/np-dates-of-prohibition-setup/tz-extract.txt"
         ).read_text(encoding="utf-8")
         table = tz.split("--- ТАБЛИЦА 2 ---", 1)[1].split("--- ТАБЛИЦА 3 ---", 1)[0]
-        self.assertLess(table.find("Пользователь | Измерение"), table.find("ОбъектДатыЗапрета | Измерение"))
-        self.assertLess(table.find("ОбъектДатыЗапрета | Измерение"), table.find("РазделДатыЗапрета | Измерение"))
+        self.assertLess(table.find("Пользователь | Измерение"), table.find("РазделДатыЗапрета | Измерение"))
+        self.assertLess(table.find("РазделДатыЗапрета | Измерение"), table.find("ОбъектДатыЗапрета | Измерение"))
+        table7 = tz.split("--- ТАБЛИЦА 7 ---", 1)[1].split("--- ТАБЛИЦА 8 ---", 1)[0]
+        self.assertIn("Пользователь, РазделДатыЗапрета, ОбъектДатыЗапрета", table7)
 
     def test_tz_request_has_no_italic_notes(self) -> None:
         import zipfile
