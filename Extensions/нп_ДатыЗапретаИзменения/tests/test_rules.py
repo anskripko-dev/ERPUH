@@ -33,6 +33,26 @@ def date_by_n(n: int, run_date: dt.date) -> dt.date:
     return run_date - dt.timedelta(days=n)
 
 
+def end_of_previous_month(run_date: dt.date) -> dt.date:
+    first = run_date.replace(day=1)
+    return first - dt.timedelta(days=1)
+
+
+def relative_end_of_previous_month(run_date: dt.date, grace_days: int) -> dt.date:
+    """Как ДатаЗапретаПоОписанию для КонецПрошлогоМесяца + дни разрешения."""
+    current = end_of_previous_month(run_date)
+    previous = end_of_previous_month(current)
+    permission_until = current + dt.timedelta(days=grace_days)
+    if run_date <= permission_until:
+        return previous
+    return current
+
+
+def combined_absolute(run_date: dt.date, n: int, grace_days: int) -> dt.date:
+    """Кладовщики: одна дата = максимум скользящей и относительной."""
+    return max(date_by_n(n, run_date), relative_end_of_previous_month(run_date, grace_days))
+
+
 def restore_due(session_date: dt.date, end_date: dt.date) -> bool:
     return session_date > end_date
 
@@ -102,6 +122,32 @@ class DateRulesTests(unittest.TestCase):
         ]
         for n, run, expected in cases:
             self.assertEqual(date_by_n(n, run), expected, f"N={n} on {run}")
+
+    def test_relative_end_of_previous_month_with_grace(self) -> None:
+        self.assertEqual(
+            relative_end_of_previous_month(dt.date(2026, 9, 3), 5),
+            dt.date(2026, 7, 31),
+        )
+        self.assertEqual(
+            relative_end_of_previous_month(dt.date(2026, 9, 6), 5),
+            dt.date(2026, 8, 31),
+        )
+
+    def test_combined_rule_picks_later_stricter_date(self) -> None:
+        # 03.09: окно 24.08 строже, чем относительные 31.07
+        self.assertEqual(date_by_n(10, dt.date(2026, 9, 3)), dt.date(2026, 8, 24))
+        self.assertEqual(
+            relative_end_of_previous_month(dt.date(2026, 9, 3), 5),
+            dt.date(2026, 7, 31),
+        )
+        self.assertEqual(combined_absolute(dt.date(2026, 9, 3), 10, 5), dt.date(2026, 8, 24))
+        # 06.09: относительные 31.08 строже, чем окно 27.08
+        self.assertEqual(date_by_n(10, dt.date(2026, 9, 6)), dt.date(2026, 8, 27))
+        self.assertEqual(
+            relative_end_of_previous_month(dt.date(2026, 9, 6), 5),
+            dt.date(2026, 8, 31),
+        )
+        self.assertEqual(combined_absolute(dt.date(2026, 9, 6), 10, 5), dt.date(2026, 8, 31))
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
         self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
