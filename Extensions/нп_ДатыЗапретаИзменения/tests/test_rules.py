@@ -71,6 +71,11 @@ def settings_combination_allowed(
     return False
 
 
+def organization_field_visible(section: str | None) -> bool:
+    """На пути Банк / касса / склад организация рядом не светится."""
+    return section not in NON_ORG_SECTIONS
+
+
 def typical_write_kind(
     has_organization: bool,
     section: str | None,
@@ -185,7 +190,7 @@ class DateRulesTests(unittest.TestCase):
         )
         self.assertEqual(combined_absolute(dt.date(2026, 9, 6), 10, 5), dt.date(2026, 8, 31))
 
-    def test_settings_form_rejects_org_plus_bank_and_bank_without_account(self) -> None:
+    def test_settings_form_allows_bank_without_account_rejects_org_plus_bank(self) -> None:
         self.assertEqual(typical_write_kind(False, None, False), "addressee_general")
         self.assertEqual(typical_write_kind(True, None, False), "eighteen_org_sections")
         self.assertEqual(typical_write_kind(True, "Продажи", False), "one_org_section")
@@ -195,6 +200,11 @@ class DateRulesTests(unittest.TestCase):
         self.assertEqual(typical_write_kind(True, "Банк", False), "rejected")
         self.assertEqual(typical_write_kind(True, "Касса", False), "rejected")
         self.assertFalse(settings_combination_allowed(True, None, True))
+        self.assertTrue(organization_field_visible(None))
+        self.assertTrue(organization_field_visible("Продажи"))
+        self.assertFalse(organization_field_visible("Банк"))
+        self.assertFalse(organization_field_visible("Касса"))
+        self.assertFalse(organization_field_visible("СкладскиеОперации"))
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
         self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
