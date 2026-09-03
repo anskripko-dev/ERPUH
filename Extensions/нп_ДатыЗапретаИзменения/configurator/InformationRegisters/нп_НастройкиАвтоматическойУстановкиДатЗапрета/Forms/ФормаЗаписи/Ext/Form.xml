@@ -4,31 +4,83 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="BeforeWriteAtServer">ПередЗаписьюНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<InputField name="Пользователь" id="2">
 			<DataPath>Запись.Пользователь</DataPath>
-			
 			<ContextMenu name="ПользовательКонтекстноеМеню" id="21"/>
 			<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="22"/>
 		</InputField>
-		<InputField name="РазделДатыЗапрета" id="3">
-			<DataPath>Запись.РазделДатыЗапрета</DataPath>
-			
-			<ContextMenu name="РазделДатыЗапретаКонтекстноеМеню" id="31"/>
-			<ExtendedTooltip name="РазделДатыЗапретаРасширеннаяПодсказка" id="32"/>
+		<InputField name="Организация" id="6">
+			<DataPath>Организация</DataPath>
+			<ContextMenu name="ОрганизацияКонтекстноеМеню" id="61"/>
+			<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="62"/>
+			<Events>
+				<Event name="OnChange">ОрганизацияПриИзменении</Event>
+			</Events>
 		</InputField>
+		<UsualGroup name="ГруппаРаздела" id="20">
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаРазделаРасширеннаяПодсказка" id="201"/>
+			<ChildItems>
+				<InputField name="РазделДатыЗапрета" id="3">
+					<DataPath>Запись.РазделДатыЗапрета</DataPath>
+					<ListChoiceMode>true</ListChoiceMode>
+					<ContextMenu name="РазделДатыЗапретаКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="РазделДатыЗапретаРасширеннаяПодсказка" id="32"/>
+					<Events>
+						<Event name="OnChange">РазделДатыЗапретаПриИзменении</Event>
+					</Events>
+				</InputField>
+				<InputField name="ОписаниеРаздела" id="7">
+					<DataPath>ОписаниеРаздела</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<TitleLocation>None</TitleLocation>
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<MaxWidth>60</MaxWidth>
+					<Height>3</Height>
+					<HorizontalStretch>true</HorizontalStretch>
+					<VerticalStretch>false</VerticalStretch>
+					<MultiLine>true</MultiLine>
+					<ContextMenu name="ОписаниеРазделаКонтекстноеМеню" id="71"/>
+					<ExtendedTooltip name="ОписаниеРазделаРасширеннаяПодсказка" id="72"/>
+				</InputField>
+			</ChildItems>
+		</UsualGroup>
 		<InputField name="ОбъектДатыЗапрета" id="1">
 			<DataPath>Запись.ОбъектДатыЗапрета</DataPath>
-			
 			<ContextMenu name="ОбъектДатыЗапретаКонтекстноеМеню" id="11"/>
 			<ExtendedTooltip name="ОбъектДатыЗапретаРасширеннаяПодсказка" id="12"/>
+			<Events>
+				<Event name="OnChange">ОбъектДатыЗапретаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="СпособРасчета" id="8">
+			<DataPath>Запись.СпособРасчета</DataPath>
+			<ContextMenu name="СпособРасчетаКонтекстноеМеню" id="81"/>
+			<ExtendedTooltip name="СпособРасчетаРасширеннаяПодсказка" id="82"/>
+			<Events>
+				<Event name="OnChange">СпособРасчетаПриИзменении</Event>
+			</Events>
 		</InputField>
 		<InputField name="ЧислоДней" id="4">
 			<DataPath>Запись.ЧислоДней</DataPath>
-			
 			<ContextMenu name="ЧислоДнейКонтекстноеМеню" id="41"/>
 			<ExtendedTooltip name="ЧислоДнейРасширеннаяПодсказка" id="42"/>
+		</InputField>
+		<InputField name="ОписаниеДатыЗапрета" id="9">
+			<DataPath>Запись.ОписаниеДатыЗапрета</DataPath>
+			<ListChoiceMode>true</ListChoiceMode>
+			<ContextMenu name="ОписаниеДатыЗапретаКонтекстноеМеню" id="91"/>
+			<ExtendedTooltip name="ОписаниеДатыЗапретаРасширеннаяПодсказка" id="92"/>
+		</InputField>
+		<InputField name="КоличествоДнейРазрешения" id="10">
+			<DataPath>Запись.КоличествоДнейРазрешения</DataPath>
+			<ContextMenu name="КоличествоДнейРазрешенияКонтекстноеМеню" id="101"/>
+			<ExtendedTooltip name="КоличествоДнейРазрешенияРасширеннаяПодсказка" id="102"/>
 		</InputField>
 		<CheckBoxField name="Включено" id="5">
 			<DataPath>Запись.Включено</DataPath>
@@ -44,6 +96,32 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="Организация" id="101">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Организация</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Организации</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОписаниеРаздела" id="102">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Документы раздела</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
 		</Attribute>
 	</Attributes>
 </Form>

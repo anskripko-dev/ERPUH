@@ -288,6 +288,10 @@ class CanonicalWriteTests(unittest.TestCase):
 
     def test_empty_description_on_auto_write(self) -> None:
         self.assertIn("Запись.ОписаниеДатыЗапрета = \"\";", MODULE)
+        self.assertIn("Возврат '39990202';", MODULE)
+        self.assertIn("ТиповоеВнутреннееОписаниеДатыЗапрета", MODULE)
+        self.assertIn("КомбинированнаяАбсолютнаяДатаЗапрета", MODULE)
+        self.assertIn("Возврат Макс(", MODULE)
 
     def test_overlap_keeps_min_cutoff_max_end(self) -> None:
         first, second = dt.date(2026, 6, 30), dt.date(2026, 5, 31)
@@ -482,7 +486,7 @@ class JobAndRightsTests(unittest.TestCase):
     def test_request_allows_empty_pair(self) -> None:
         self.assertNotIn("Укажите хотя бы один раздел", MODULE)
         self.assertNotIn("Укажите разделы и объекты в таблице", MODULE)
-        self.assertIn("РазвернутыеКомбинацииНастройки(Неопределено, РазделШапки)", MODULE)
+        self.assertIn("РазвернутыеКомбинацииНастройки(Неопределено, Неопределено)", MODULE)
 
     def test_native_np_object_synonyms_have_np_marker(self) -> None:
         missing = []
@@ -525,8 +529,11 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("СостояниеСогласованияДО = СостояниеДО.Представление", form_module)
         self.assertIn("Функция ПредставленияСостоянийСогласованияДО", MODULE)
         self.assertIn("УстановитьПривилегированныйРежим(Истина)", MODULE)
-        self.assertIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
+        self.assertNotIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
+        self.assertNotIn("ТолькоПросмотр = ИзменениеЗаявкиЗапрещено", form_module)
+        self.assertIn("ИзменениеЗаявкиЗапрещено = нп_ДатыЗапретаИзменения.ИзменениеЗаявкиЗапрещено", form_module)
         self.assertIn("Элементы.Номер.ТолькоПросмотр", form_module)
+        self.assertIn("Если ИзменениеЗаявкиЗапрещено Или ОсталосьПопытокБлокировки <= 0 Тогда", form_module)
         self.assertIn("Процедура ПередЗаписью", form_module)
         self.assertNotIn("ТолькоПросмотрДокумента = Согласован Или ЕстьСостояние", form_module)
         self.assertNotIn("Заявку на согласовании изменять нельзя", MODULE)
@@ -768,6 +775,7 @@ class PrintFormTests(unittest.TestCase):
             "ПериодС",
             "СрокДействия",
             "СпособУказания",
+            "Организация",
             "ПричинаОткрытия",
             "Ответственный",
             "Раздел",
@@ -784,8 +792,9 @@ class PrintFormTests(unittest.TestCase):
         self.assertIn("ПредставлениеЧтоОткрываетсяДляПечати", manager)
         self.assertIn("ЕстьУказаниеРазделовИлиОбъектов", manager)
         self.assertIn("по всем разделам и объектам для указанного пользователя или группы", manager)
-        self.assertIn("по разделам учёта и выбранным объектам", manager)
-        self.assertIn("по разделам учёта", manager)
+        self.assertIn("по указанным разделам и объектам", manager)
+        self.assertNotIn("по разделам учёта и выбранным объектам", manager)
+        self.assertNotIn('НСтр("ru = \'по разделам учёта\'")', manager)
         self.assertNotIn("ПредставлениеСпособаУказанияДляПечати", manager)
         self.assertNotIn('НСтр("ru = \'Указывать\'")', manager)
         self.assertNotIn("общая дата адресата. Пользователь", template)
@@ -909,8 +918,78 @@ class PrintFormTests(unittest.TestCase):
 
     def test_role_name_does_not_clash_with_np(self) -> None:
         self.assertIn("<Role>нп_БазовыеПраваДатЗапрета</Role>", CFG_XML)
+        self.assertIn("<Role>нп_УказаниеРазделовИОбъектовЗаявки</Role>", CFG_XML)
         self.assertNotIn("<Role>нп_БазовыеПрава</Role>", CFG_XML)
         self.assertIn("<Name>нп_БазовыеПраваДатЗапрета</Name>", (CFG / "Roles/нп_БазовыеПраваДатЗапрета.xml").read_text(encoding="utf-8"))
+        self.assertIn(
+            "<Name>нп_УказаниеРазделовИОбъектовЗаявки</Name>",
+            (CFG / "Roles/нп_УказаниеРазделовИОбъектовЗаявки.xml").read_text(encoding="utf-8"),
+        )
+
+
+class RedesignModelTests(unittest.TestCase):
+    def test_calculation_enum_and_settings_resources(self) -> None:
+        enum_xml = (CFG / "Enums/нп_СпособыРасчетаДатыЗапрета.xml").read_text(encoding="utf-8")
+        self.assertIn("<Name>СкользящееОкно</Name>", enum_xml)
+        self.assertIn("<Name>ОтносительнаяДата</Name>", enum_xml)
+        self.assertIn("<Name>Комбинированная</Name>", enum_xml)
+        self.assertIn("<Enum>нп_СпособыРасчетаДатыЗапрета</Enum>", CFG_XML)
+        self.assertIn("<Name>СпособРасчета</Name>", SETTINGS_XML)
+        self.assertIn("<Name>ОписаниеДатыЗапрета</Name>", SETTINGS_XML)
+        self.assertIn("<Name>КоличествоДнейРазрешения</Name>", SETTINGS_XML)
+        self.assertIn("ПроверитьСпособРасчетаНастройки", MODULE)
+        recordset = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Ext/RecordSetModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("ПроверитьСпособРасчетаНастройки", recordset)
+
+    def test_request_organization_and_detail_role(self) -> None:
+        self.assertIn("<Name>Организация</Name>", DOC_XML)
+        self.assertIn("Не заполнена организация", MODULE)
+        self.assertIn("ДоступнаДетализацияЗаявки", MODULE)
+        self.assertIn('РольДоступна("нп_УказаниеРазделовИОбъектовЗаявки")', MODULE)
+        form_module = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("Элементы.ГруппаДетализация.Видимость", form_module)
+        self.assertIn("ЭтоРазделБезОрганизации", form_module)
+        self.assertIn("ТекстПредупрежденияПустогоОбъектаРаздела", form_module)
+        self.assertNotIn("ТолькоПросмотр =", form_module)
+        object_module = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertNotIn("СпособУказания", object_module)
+
+    def test_settings_form_cascade_and_calculation_fields(self) -> None:
+        record_form = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаЗаписи/Ext/Form.xml"
+        ).read_text(encoding="utf-8")
+        record_module = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаЗаписи/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("НастроитьКаскадПолей", record_module)
+        self.assertIn("ЭтоРазделБезОрганизации", record_module)
+        self.assertIn("Элементы.Организация.Видимость", record_module)
+        self.assertIn("Элементы.ОбъектДатыЗапрета.Видимость", record_module)
+        self.assertIn("НастроитьПоляСпособаРасчета", record_module)
+        self.assertIn("СписокОписанийДатыЗапретаБСП", record_module)
+        self.assertIn("ТекстОписанияРаздела", record_module)
+        self.assertIn("КонецПрошлогоМесяца", MODULE)
+        self.assertIn("DataPath>Организация</DataPath>", record_form)
+        self.assertIn("Запись.СпособРасчета", record_form)
+        self.assertIn("Запись.ОписаниеДатыЗапрета", record_form)
+
+    def test_relative_and_combined_write_rules(self) -> None:
+        self.assertIn("ДатаЗаглушкиОтносительнойДаты", MODULE)
+        self.assertIn("ПараметрыЗаписиПоСпособуРасчета", MODULE)
+        self.assertIn("Перечисления.нп_СпособыРасчетаДатыЗапрета.ОтносительнаяДата", MODULE)
+        self.assertIn("Перечисления.нп_СпособыРасчетаДатыЗапрета.Комбинированная", MODULE)
+        self.assertIn("РазвернутыеКомбинацииЗаявки", MODULE)
+        self.assertIn("ИменаРазделовБезОрганизации", MODULE)
+        self.assertIn("Нельзя сочетать организацию с разделом Банк", MODULE)
 
 
 class LayoutTests(unittest.TestCase):
@@ -918,6 +997,10 @@ class LayoutTests(unittest.TestCase):
         "configurator/Configuration.xml",
         "configurator/ConfigDumpInfo.xml",
         "configurator/CommonModules/нп_ДатыЗапретаИзменения/Ext/Module.bsl",
+        "configurator/Enums/нп_СпособыРасчетаДатыЗапрета.xml",
+        "configurator/Roles/нп_УказаниеРазделовИОбъектовЗаявки.xml",
+        "configurator/Roles/нп_УказаниеРазделовИОбъектовЗаявки/Ext/Rights.xml",
+        "configurator/InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаЗаписи/Ext/Form/Module.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ManagerModule.bsl",
         "configurator/Documents/нп_ЗаявкаНаОткрытиеПериода/Templates/ПФ_MXL_ЗаявкаНаОткрытиеПериода/Ext/Template.xml",
@@ -1040,7 +1123,8 @@ class LayoutTests(unittest.TestCase):
         self.assertNotIn("Объект даты запрета", FORM_XML)
         self.assertIn("<Height>2</Height>", FORM_XML)
         self.assertIn("<HorizontalStretch>true</HorizontalStretch>", FORM_XML)
-        self.assertIn('name="СпособУказания"', FORM_XML)
+        self.assertNotIn('name="СпособУказания"', FORM_XML)
+        self.assertIn("Объект.Организация", FORM_XML)
         self.assertIn("Объект.Объекты.РазделДатыЗапрета", FORM_XML)
         self.assertIn("Согласованная заявка разрешает менять документы", MODULE)
         self.assertNotIn("задание каждый день в 23:00", MODULE)
@@ -1051,8 +1135,12 @@ class LayoutTests(unittest.TestCase):
         enum_xml = (CFG / "Enums/нп_СпособыУказанияОткрытияПериода.xml").read_text(encoding="utf-8")
         self.assertIn("<Name>ПоРазделам</Name>", enum_xml)
         self.assertIn("<Name>ПоРазделамИОбъектам</Name>", enum_xml)
-        self.assertIn("УказаниеЗаявкиПоРазделам", MODULE)
+        self.assertNotIn("УказаниеЗаявкиПоРазделам", MODULE)
+        self.assertNotIn("РазделСтрокиЗаявки", MODULE)
+        self.assertNotIn("УказаниеСсылкиПоРазделам", MODULE)
         self.assertIn("<Enum>нп_СпособыУказанияОткрытияПериода</Enum>", CFG_XML)
+        self.assertIn("ДоступнаДетализацияЗаявки", MODULE)
+        self.assertIn("нп_УказаниеРазделовИОбъектовЗаявки", MODULE)
 
     def test_settings_list_has_columns(self) -> None:
         list_form = (
@@ -1065,7 +1153,10 @@ class LayoutTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn("Список.ОбъектДатыЗапрета", list_form)
         self.assertIn("Список.ЧислоДней", list_form)
+        self.assertIn("Список.СпособРасчета", list_form)
         self.assertIn("Список.Включено", list_form)
+        self.assertIn("Запись.СпособРасчета", record_form)
+        self.assertIn("DataPath>Организация</DataPath>", record_form)
         user_pos = SETTINGS_XML.find("<Name>Пользователь</Name>")
         object_pos = SETTINGS_XML.find("<Name>ОбъектДатыЗапрета</Name>")
         section_pos = SETTINGS_XML.find("<Name>РазделДатыЗапрета</Name>")
