@@ -61,13 +61,13 @@ def settings_combination_allowed(
     section: str | None,
     has_section_object: bool,
 ) -> bool:
-    """Каскад формы настройки: нельзя смешать организацию с Банком и нельзя Банк без счёта."""
+    """Каскад формы настройки: нельзя смешать организацию с Банком."""
     if section is None:
         return not has_section_object
     if section in ORG_SECTIONS:
         return has_organization and not has_section_object
     if section in NON_ORG_SECTIONS:
-        return (not has_organization) and has_section_object
+        return not has_organization
     return False
 
 
@@ -84,7 +84,9 @@ def typical_write_kind(
         return "eighteen_org_sections"
     if section in ORG_SECTIONS:
         return "one_org_section"
-    return "one_typed_object"
+    if has_section_object:
+        return "one_typed_object"
+    return "section_level"
 
 
 def restore_due(session_date: dt.date, end_date: dt.date) -> bool:
@@ -188,8 +190,9 @@ class DateRulesTests(unittest.TestCase):
         self.assertEqual(typical_write_kind(True, None, False), "eighteen_org_sections")
         self.assertEqual(typical_write_kind(True, "Продажи", False), "one_org_section")
         self.assertEqual(typical_write_kind(False, "Банк", True), "one_typed_object")
+        self.assertEqual(typical_write_kind(False, "Банк", False), "section_level")
         self.assertEqual(typical_write_kind(True, "Банк", True), "rejected")
-        self.assertEqual(typical_write_kind(False, "Банк", False), "rejected")
+        self.assertEqual(typical_write_kind(True, "Банк", False), "rejected")
         self.assertEqual(typical_write_kind(True, "Касса", False), "rejected")
         self.assertFalse(settings_combination_allowed(True, None, True))
 
