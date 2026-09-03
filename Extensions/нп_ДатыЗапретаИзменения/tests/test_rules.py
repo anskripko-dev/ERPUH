@@ -373,8 +373,19 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("ИзменениеЗаявкиЗапрещено", object_module)
         self.assertIn("ИзменениеЗаявкиЗапрещено", form_module)
         self.assertIn("Документооборот_ДобавлениеСвязи", form_module)
+        self.assertIn("Документооборот_ДействиеСОбработкой", form_module)
+        self.assertIn("нп_ДатыЗапрета_НачатаОбработкаЗаявки", form_module)
+        self.assertIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
+        self.assertIn("Элементы.Номер.ТолькоПросмотр", form_module)
+        self.assertIn("Процедура ПередЗаписью", form_module)
         self.assertNotIn("ТолькоПросмотрДокумента = Согласован Или ЕстьСостояние", form_module)
         self.assertNotIn("Заявку на согласовании изменять нельзя", MODULE)
+        start_cmd = (
+            CFG
+            / "CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку/Ext/CommandModule.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn('&После("ОбработкаКоманды")', start_cmd)
+        self.assertIn("нп_ДатыЗапрета_НачатаОбработкаЗаявки", start_cmd)
 
     def test_document_posting_denied(self) -> None:
         self.assertIn("<Posting>Deny</Posting>", DOC_XML)
@@ -752,6 +763,7 @@ class LayoutTests(unittest.TestCase):
         "configurator/CommonModules/СозданиеНаОснованииПереопределяемый/Ext/Module.bsl",
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборот.xml",
         "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку.xml",
+        "configurator/CommonCommands/ИнтеграцияС1СДокументооборотНачатьОбработку/Ext/CommandModule.bsl",
         "configurator/CommonCommands/ПрисоединенныеФайлы.xml",
         "configurator/CommonCommands/нп_Документооборот.xml",
         "configurator/CommonCommands/нп_Документооборот/Ext/CommandModule.bsl",
