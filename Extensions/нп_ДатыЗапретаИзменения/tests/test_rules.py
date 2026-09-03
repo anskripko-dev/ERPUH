@@ -311,7 +311,7 @@ class SectionMapTests(unittest.TestCase):
     def test_eighteen_org_sections_including_ifrs(self) -> None:
         self.assertEqual(len(ORG_SECTIONS), 18)
         self.assertIn("УчетПоМСФО", ORG_SECTIONS)
-        block = MODULE.split("Тип(\"СправочникСсылка.Организации\")")[1].split("ИначеЕсли")[0]
+        block = MODULE.split("Функция ИменаРазделовДляТипаОбъекта")[1].split("ИначеЕсли ТипОбъекта = Тип(\"СправочникСсылка.Кассы\")")[0]
         for name in ORG_SECTIONS:
             self.assertIn(f'Имена.Добавить("{name}");', block)
 
@@ -530,7 +530,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("Функция ПредставленияСостоянийСогласованияДО", MODULE)
         self.assertIn("УстановитьПривилегированныйРежим(Истина)", MODULE)
         self.assertNotIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
-        self.assertNotIn("ТолькоПросмотр = ИзменениеЗаявкиЗапрещено", form_module)
+        self.assertNotIn("\tТолькоПросмотр =", form_module)
         self.assertIn("ИзменениеЗаявкиЗапрещено = нп_ДатыЗапретаИзменения.ИзменениеЗаявкиЗапрещено", form_module)
         self.assertIn("Элементы.Номер.ТолькоПросмотр", form_module)
         self.assertIn("Если ИзменениеЗаявкиЗапрещено Или ОсталосьПопытокБлокировки <= 0 Тогда", form_module)
@@ -955,7 +955,7 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("Элементы.ГруппаДетализация.Видимость", form_module)
         self.assertIn("ЭтоРазделБезОрганизации", form_module)
         self.assertIn("ТекстПредупрежденияПустогоОбъектаРаздела", form_module)
-        self.assertNotIn("ТолькоПросмотр =", form_module)
+        self.assertNotIn("\tТолькоПросмотр =", form_module)
         object_module = (
             CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl"
         ).read_text(encoding="utf-8")
@@ -1323,6 +1323,9 @@ class DumpXmlStructureTests(unittest.TestCase):
         self.assertIn("0000000020a0", enum_xml)
         self.assertNotIn("000000002094", enum_xml)
         self.assertIn("000000002094", report_xml)
+        calc_enum = (CFG / "Enums/нп_СпособыРасчетаДатыЗапрета.xml").read_text(encoding="utf-8")
+        self.assertIn("0000000020e0", calc_enum)
+        self.assertNotIn("0000000020c0", calc_enum)
 
     def test_common_picture_binary_is_in_ext_picture_folder(self) -> None:
         from validate_dump_xml import common_picture_file_errors
