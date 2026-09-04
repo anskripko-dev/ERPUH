@@ -1071,6 +1071,8 @@ class PrintFormTests(unittest.TestCase):
         self.assertNotIn("Обработка.РаботаСФайлами.Форма.ПрисоединенныеФайлы", list_module)
         self.assertNotIn("Элементы.Список.ТекущаяСтрока", list_module)
         self.assertNotIn("ТекущиеДанные.Ссылка", list_module)
+        self.assertNotIn("Данные.Ссылка", list_module)
+        self.assertIn("СтрокаСписка.Ключ", list_module)
 
     def test_attached_files_catalog_registered_for_bsp_and_do(self) -> None:
         files_xml = (
