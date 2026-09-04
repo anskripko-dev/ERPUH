@@ -1127,7 +1127,7 @@ class RedesignModelTests(unittest.TestCase):
             "Также любой документ, который при проведении отражается в регл. учёте",
             MODULE,
         )
-        self.assertIn("<TextColor>style:НедоступныеДанныеЦвет</TextColor>", record_form)
+        self.assertIn("<TextColor>web:DimGray</TextColor>", record_form)
         self.assertIn("DataPath>Организация</DataPath>", record_form)
         self.assertIn("Запись.СпособРасчета", record_form)
         self.assertIn("Запись.ОписаниеДатыЗапрета", record_form)
@@ -1148,7 +1148,7 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("<VerticalStretch>true</VerticalStretch>", hint)
         self.assertIn("<HorizontalStretch>true</HorizontalStretch>", hint)
         self.assertIn("<AutoMaxHeight>false</AutoMaxHeight>", hint)
-        self.assertIn("<TextColor>style:НедоступныеДанныеЦвет</TextColor>", hint)
+        self.assertIn("<TextColor>web:DimGray</TextColor>", hint)
         self.assertNotIn("<MaxWidth>", hint)
 
     def test_switching_calculation_method_clears_unused_fields(self) -> None:
@@ -1363,9 +1363,9 @@ class LayoutTests(unittest.TestCase):
 
     def test_form_uses_decorations_and_russian_standard_attrs(self) -> None:
         self.assertIn('<LabelDecoration name="ПояснениеОтсечки"', FORM_XML)
-        self.assertIn("<TextColor>style:НедоступныеДанныеЦвет</TextColor>", FORM_XML)
+        self.assertIn("<TextColor>web:DimGray</TextColor>", FORM_XML)
         request_hint = FORM_XML.split('name="ОписаниеРаздела"', 1)[1].split("</InputField>", 1)[0]
-        self.assertIn("<TextColor>style:НедоступныеДанныеЦвет</TextColor>", request_hint)
+        self.assertIn("<TextColor>web:DimGray</TextColor>", request_hint)
         self.assertIn('<InputField name="СостояниеСогласованияДО"', FORM_XML)
         self.assertIn("Статус согласования ДО", FORM_XML)
         self.assertIn("<DataPath>СостояниеСогласованияДО</DataPath>", FORM_XML)
