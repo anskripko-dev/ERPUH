@@ -5,6 +5,8 @@
 		<Table name="Список" id="1">
 			<Representation>List</Representation>
 			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
 			<DataPath>Список</DataPath>
 			<AutoAdd>false</AutoAdd>
 			<AutoCommandBar name="СписокКоманднаяПанель" id="2">
@@ -36,6 +38,17 @@
 					<ContextMenu name="ОбъектДатыЗапретаКонтекстноеМеню" id="11"/>
 					<ExtendedTooltip name="ОбъектДатыЗапретаРасширеннаяПодсказка" id="12"/>
 				</InputField>
+				<LabelField name="Охват" id="31">
+					<DataPath>Список.Охват</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Что закрывает</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="ОхватКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ОхватРасширеннаяПодсказка" id="33"/>
+				</LabelField>
 				<InputField name="СпособРасчета" id="25">
 					<DataPath>Список.СпособРасчета</DataPath>
 					<ContextMenu name="СпособРасчетаКонтекстноеМеню" id="26"/>
@@ -50,6 +63,11 @@
 					<DataPath>Список.ЧислоДней</DataPath>
 					<ContextMenu name="ЧислоДнейКонтекстноеМеню" id="20"/>
 					<ExtendedTooltip name="ЧислоДнейРасширеннаяПодсказка" id="21"/>
+				</InputField>
+				<InputField name="КоличествоДнейРазрешения" id="34">
+					<DataPath>Список.КоличествоДнейРазрешения</DataPath>
+					<ContextMenu name="КоличествоДнейРазрешенияКонтекстноеМеню" id="35"/>
+					<ExtendedTooltip name="КоличествоДнейРазрешенияРасширеннаяПодсказка" id="36"/>
 				</InputField>
 				<CheckBoxField name="Включено" id="22">
 					<DataPath>Список.Включено</DataPath>
@@ -67,9 +85,47 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Settings xsi:type="DynamicList">
-				<ManualQuery>false</ManualQuery>
+				<ManualQuery>true</ManualQuery>
 				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	Настройки.Пользователь КАК Пользователь,
+	Настройки.РазделДатыЗапрета КАК РазделДатыЗапрета,
+	Настройки.ОбъектДатыЗапрета КАК ОбъектДатыЗапрета,
+	Настройки.СпособРасчета КАК СпособРасчета,
+	Настройки.ОписаниеДатыЗапрета КАК ОписаниеДатыЗапрета,
+	Настройки.ЧислоДней КАК ЧислоДней,
+	Настройки.КоличествоДнейРазрешения КАК КоличествоДнейРазрешения,
+	Настройки.Включено КАК Включено,
+	ВЫРАЗИТЬ(ВЫБОР
+			КОГДА Настройки.РазделДатыЗапрета = ЗНАЧЕНИЕ(ПланВидовХарактеристик.РазделыДатЗапретаИзменения.ПустаяСсылка)
+				И Настройки.ОбъектДатыЗапрета ССЫЛКА Справочник.Организации
+				И Настройки.ОбъектДатыЗапрета &lt;&gt; ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)
+				ТОГДА "организационные разделы этой организации"
+			КОГДА Настройки.РазделДатыЗапрета = ЗНАЧЕНИЕ(ПланВидовХарактеристик.РазделыДатЗапретаИзменения.ПустаяСсылка)
+				ТОГДА "все разделы и объекты"
+			КОГДА Настройки.ОбъектДатыЗапрета = НЕОПРЕДЕЛЕНО
+				ТОГДА "общая дата раздела"
+			ИНАЧЕ ""
+		КОНЕЦ КАК СТРОКА(80)) КАК Охват
+ИЗ
+	РегистрСведений.нп_НастройкиАвтоматическойУстановкиДатЗапрета КАК Настройки</QueryText>
 				<MainTable>InformationRegister.нп_НастройкиАвтоматическойУстановкиДатЗапрета</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f011</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f012</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f013</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>a14d2026-0014-7e28-8a00-00000000f014</dcsset:itemsUserSettingID>
+				</ListSettings>
 			</Settings>
 		</Attribute>
 	</Attributes>
