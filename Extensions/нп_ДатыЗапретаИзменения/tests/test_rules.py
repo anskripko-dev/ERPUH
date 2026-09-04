@@ -998,7 +998,6 @@ class PrintFormTests(unittest.TestCase):
             "Пользователь",
             "ПериодС",
             "СрокДействия",
-            "СпособУказания",
             "Организация",
             "ПричинаОткрытия",
             "Ответственный",
@@ -1006,17 +1005,17 @@ class PrintFormTests(unittest.TestCase):
             "Объект",
         ):
             self.assertIn(f"<parameter>{parameter}</parameter>", template)
+        self.assertNotIn("<parameter>СпособУказания</parameter>", template)
         self.assertIn("все разделы и объекты", manager)
         self.assertIn("все разделы и объекты", template)
         self.assertNotIn("Все разделы/объекты", manager)
         self.assertNotIn("Все разделы/объекты", template)
         self.assertNotIn("все разделы / общая дата адресата", manager)
-        self.assertIn(">Открывается</v8:content>", template)
+        self.assertNotIn(">Открывается</v8:content>", template)
         self.assertNotIn(">Указывать</v8:content>", template)
-        self.assertIn("ПредставлениеЧтоОткрываетсяДляПечати", manager)
-        self.assertIn("ЕстьУказаниеРазделовИлиОбъектов", manager)
-        self.assertIn("по всем разделам и объектам для указанного пользователя или группы", manager)
-        self.assertIn("по указанным разделам и объектам", manager)
+        self.assertNotIn("ПредставлениеЧтоОткрываетсяДляПечати", manager)
+        self.assertNotIn("ЕстьУказаниеРазделовИлиОбъектов", manager)
+        self.assertNotIn("по указанным разделам и объектам", manager)
         self.assertNotIn("по разделам учёта и выбранным объектам", manager)
         self.assertNotIn('НСтр("ru = \'по разделам учёта\'")', manager)
         self.assertNotIn("ПредставлениеСпособаУказанияДляПечати", manager)
@@ -1570,6 +1569,12 @@ class LayoutTests(unittest.TestCase):
         self.assertIn("<TextColor>web:DimGray</TextColor>", FORM_XML)
         request_hint = FORM_XML.split('name="ОписаниеРаздела"', 1)[1].split("</InputField>", 1)[0]
         self.assertIn("<TextColor>web:DimGray</TextColor>", request_hint)
+        self.assertIn("<AutoMaxHeight>false</AutoMaxHeight>", request_hint)
+        self.assertIn("<VerticalStretch>true</VerticalStretch>", request_hint)
+        user_hint = FORM_XML.split('name="ОписаниеПользователя"', 1)[1].split("</InputField>", 1)[0]
+        self.assertIn("<TextColor>web:DimGray</TextColor>", user_hint)
+        cutoff = FORM_XML.split('name="ПояснениеОтсечки"', 1)[1].split("</LabelDecoration>", 1)[0]
+        self.assertIn("<TextColor>web:DimGray</TextColor>", cutoff)
         self.assertIn('name="ОписаниеПользователя"', FORM_XML)
         request_module = (
             CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
@@ -1580,11 +1585,22 @@ class LayoutTests(unittest.TestCase):
             FORM_XML.find('name="Пользователь"'),
             FORM_XML.find('name="ОписаниеПользователя"'),
         )
-        self.assertIn('<InputField name="СостояниеСогласованияДО"', FORM_XML)
+        self.assertIn('<LabelField name="СостояниеСогласованияДО"', FORM_XML)
         self.assertIn("Статус согласования ДО", FORM_XML)
         self.assertIn("<DataPath>СостояниеСогласованияДО</DataPath>", FORM_XML)
+        self.assertNotIn('<InputField name="СостояниеСогласованияДО"', FORM_XML)
         self.assertNotIn('<LabelDecoration name="СостояниеСогласования"', FORM_XML)
-        self.assertNotIn("LabelField", FORM_XML)
+        self.assertLess(
+            FORM_XML.find('name="Дата"'),
+            FORM_XML.find('name="Организация"'),
+        )
+        self.assertLess(
+            FORM_XML.find('name="Организация"'),
+            FORM_XML.find('name="СостояниеСогласованияДО"'),
+        )
+        self.assertIn("Элементы.ОбъектыОбъектДатыЗапрета.Видимость = Истина", request_module)
+        self.assertNotIn("Элементы.ОбъектыОбъектДатыЗапрета.Видимость = ПоказыватьОбъект", request_module)
+        self.assertIn("Элементы.ОбъектыОбъектДатыЗапрета.ТолькоПросмотр", request_module)
         self.assertIn("<DataPath>Объект.Номер</DataPath>", FORM_XML)
         self.assertIn("<DataPath>Объект.Дата</DataPath>", FORM_XML)
         self.assertNotIn("Объект.Number", FORM_XML)
