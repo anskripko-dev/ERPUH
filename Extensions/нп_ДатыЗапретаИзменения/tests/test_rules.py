@@ -978,6 +978,11 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("СписокОписанийДатыЗапретаБСП", record_module)
         self.assertIn("ТекстОписанияРаздела", record_module)
         self.assertIn("КонецПрошлогоМесяца", MODULE)
+        self.assertIn(
+            "Банк, касса, склад и сценарии не закроются — для них выберите свой раздел",
+            MODULE,
+        )
+        self.assertNotIn("выберите раздел Банк", MODULE)
         self.assertIn("DataPath>Организация</DataPath>", record_form)
         self.assertIn("Запись.СпособРасчета", record_form)
         self.assertIn("Запись.ОписаниеДатыЗапрета", record_form)
