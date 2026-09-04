@@ -1138,12 +1138,19 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("ОбновитьОписаниеПользователя", record_module)
         self.assertIn("ЭтоГруппаВсеПользователи", record_module)
         self.assertIn("ТекстОписанияГруппыВсеПользователи", MODULE)
+        self.assertIn("ТекстОписанияДляВсехПользователейНастройки", MODULE)
+        self.assertIn("ЭтоДляВсехПользователей", MODULE)
         self.assertIn("Справочники.ГруппыПользователей.ВсеПользователи", MODULE)
         self.assertIn(
             "Это группа, а не правило «для всех пользователей»",
             MODULE,
         )
-        self.assertIn("Запасной набор для всех — пустой пользователь в настройке", MODULE)
+        self.assertIn(
+            "Чтобы задать правило для всех, очистите поле «Пользователь» и оставьте его пустым",
+            MODULE,
+        )
+        self.assertIn("Пустое поле — правильный вариант «для всех пользователей»", MODULE)
+        self.assertIn("ЭтоДляВсехПользователей(Запись.Пользователь)", record_module)
         self.assertIn('name="ОписаниеПользователя"', record_form)
         user_hint = record_form.split('name="ОписаниеПользователя"', 1)[1].split(
             "</InputField>", 1
