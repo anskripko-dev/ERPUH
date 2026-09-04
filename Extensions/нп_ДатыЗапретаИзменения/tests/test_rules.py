@@ -1513,9 +1513,13 @@ class LayoutTests(unittest.TestCase):
             )
         )
         self.assertIn("ВсеРазделыБезОрганизации", REPORT_MODULE)
-        self.assertIn("ИмяПредопределенныхДанных", REPORT_MODULE)
+        self.assertIn("&РазделыБезОрганизации", REPORT_MODULE)
+        self.assertIn("СсылкиРазделовБезОрганизации", REPORT_MODULE)
+        self.assertIn("СсылкиРазделовБезОрганизации", MODULE)
+        self.assertNotIn("ИмяПредопределенныхДанных", REPORT_MODULE)
+        self.assertNotIn('ЗНАЧЕНИЕ(ПланВидовХарактеристик.РазделыДатЗапретаИзменения.Банк)', REPORT_MODULE)
         for name in NON_ORG_SECTIONS:
-            self.assertIn(f'""{name}""', REPORT_MODULE)
+            self.assertIn(f'Имена.Добавить("{name}");', MODULE)
 
     def test_subsystem_has_16px_picture(self) -> None:
         subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
