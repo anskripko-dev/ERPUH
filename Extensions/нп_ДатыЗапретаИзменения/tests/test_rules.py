@@ -53,6 +53,32 @@ def combined_absolute(run_date: dt.date, n: int, grace_days: int) -> dt.date:
     return max(date_by_n(n, run_date), relative_end_of_previous_month(run_date, grace_days))
 
 
+def fields_after_method_change(
+    method: str | None,
+    days: int,
+    description: str = "",
+    extra_days: int = 0,
+) -> dict[str, int | str]:
+    """Как ОчищенныеПоляСпособаРасчета: скрытые поля другого способа обнуляются."""
+    if method == "ОтносительнаяДата":
+        return {
+            "ЧислоДней": 0,
+            "ОписаниеДатыЗапрета": description,
+            "КоличествоДнейРазрешения": extra_days,
+        }
+    if method == "Комбинированная":
+        return {
+            "ЧислоДней": days,
+            "ОписаниеДатыЗапрета": description,
+            "КоличествоДнейРазрешения": extra_days,
+        }
+    return {
+        "ЧислоДней": days,
+        "ОписаниеДатыЗапрета": "",
+        "КоличествоДнейРазрешения": 0,
+    }
+
+
 NON_ORG_SECTIONS = ("Банк", "Касса", "СкладскиеОперации", "Бюджетирование", "Планирование")
 
 
@@ -1034,6 +1060,72 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("<HorizontalStretch>true</HorizontalStretch>", hint)
         self.assertIn("<AutoMaxHeight>false</AutoMaxHeight>", hint)
         self.assertNotIn("<MaxWidth>", hint)
+
+    def test_switching_calculation_method_clears_unused_fields(self) -> None:
+        self.assertEqual(
+            fields_after_method_change("ОтносительнаяДата", 10, "КонецПрошлогоМесяца", 5),
+            {
+                "ЧислоДней": 0,
+                "ОписаниеДатыЗапрета": "КонецПрошлогоМесяца",
+                "КоличествоДнейРазрешения": 5,
+            },
+        )
+        self.assertEqual(
+            fields_after_method_change("СкользящееОкно", 10, "КонецПрошлогоМесяца", 5),
+            {
+                "ЧислоДней": 10,
+                "ОписаниеДатыЗапрета": "",
+                "КоличествоДнейРазрешения": 0,
+            },
+        )
+        self.assertEqual(
+            fields_after_method_change(None, 7, "КонецПрошлогоГода", 3),
+            {
+                "ЧислоДней": 7,
+                "ОписаниеДатыЗапрета": "",
+                "КоличествоДнейРазрешения": 0,
+            },
+        )
+        self.assertEqual(
+            fields_after_method_change("Комбинированная", 10, "КонецПрошлогоМесяца", 5),
+            {
+                "ЧислоДней": 10,
+                "ОписаниеДатыЗапрета": "КонецПрошлогоМесяца",
+                "КоличествоДнейРазрешения": 5,
+            },
+        )
+        self.assertIn("Функция ОчищенныеПоляСпособаРасчета(", MODULE)
+        self.assertIn("Процедура ОчиститьНеиспользуемыеПоляСпособаРасчета(", MODULE)
+        self.assertIn("Результат.ЧислоДней = 0;", MODULE)
+        record_module = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Forms/ФормаЗаписи/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        record_set = (
+            CFG
+            / "InformationRegisters/нп_НастройкиАвтоматическойУстановкиДатЗапрета/Ext/RecordSetModule.bsl"
+        ).read_text(encoding="utf-8")
+        change_handler = record_module.split("Процедура СпособРасчетаПриИзменении(Элемент)", 1)[1].split(
+            "КонецПроцедуры", 1
+        )[0]
+        self.assertIn("СпособРасчетаПриИзмененииНаСервере()", change_handler)
+        server_change = record_module.split("Процедура СпособРасчетаПриИзмененииНаСервере()", 1)[1].split(
+            "КонецПроцедуры", 1
+        )[0]
+        self.assertIn("ОчиститьНеиспользуемыеПоляСпособаРасчета(Запись)", server_change)
+        self.assertIn("НастроитьПоляСпособаРасчета()", server_change)
+        visibility_fn = record_module.split("Процедура НастроитьПоляСпособаРасчета()", 1)[1].split(
+            "КонецПроцедуры", 1
+        )[0]
+        self.assertNotIn("ОчиститьНеиспользуемыеПоляСпособаРасчета", visibility_fn)
+        prepare_fn = record_module.split("Процедура ПодготовитьОбъектЗаписи(ТекущийОбъект)", 1)[1].split(
+            "КонецПроцедуры", 1
+        )[0]
+        self.assertIn("ОчиститьНеиспользуемыеПоляСпособаРасчета(ТекущийОбъект)", prepare_fn)
+        self.assertLess(
+            record_set.find("ОчиститьНеиспользуемыеПоляСпособаРасчета(Запись)"),
+            record_set.find("ПроверитьСпособРасчетаНастройки"),
+        )
 
     def test_relative_and_combined_write_rules(self) -> None:
         self.assertIn("ДатаЗаглушкиОтносительнойДаты", MODULE)
