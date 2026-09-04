@@ -79,6 +79,43 @@ def fields_after_method_change(
     }
 
 
+RANK_SECTION_AND_OBJECT = 40
+RANK_SECTION_ONLY = 30
+RANK_ORG_WITHOUT_SECTION = 20
+RANK_NON_ORG_FLAG = 10
+RANK_EMPTY_PAIR = 0
+
+
+def setting_expansion_rank(
+    *,
+    has_organization: bool,
+    section: str | None,
+    has_section_object: bool,
+    non_org_flag: bool = False,
+) -> int:
+    """Как ранг в ДобавитьКомбинацию: конкретнее перекрывает развёрнутое."""
+    if non_org_flag:
+        return RANK_NON_ORG_FLAG
+    if section and (has_organization or has_section_object):
+        return RANK_SECTION_AND_OBJECT
+    if section:
+        return RANK_SECTION_ONLY
+    if has_organization:
+        return RANK_ORG_WITHOUT_SECTION
+    return RANK_EMPTY_PAIR
+
+
+def typical_key_winner(candidates: list[tuple[int, str]]) -> str:
+    """Выше ранг побеждает; при равенстве остаётся первый."""
+    winner_rank = -1
+    winner = candidates[0][1]
+    for rank, label in candidates:
+        if rank > winner_rank:
+            winner_rank = rank
+            winner = label
+    return winner
+
+
 NON_ORG_SECTIONS = ("Банк", "Касса", "СкладскиеОперации", "Бюджетирование", "Планирование")
 
 
@@ -331,7 +368,7 @@ class CanonicalWriteTests(unittest.TestCase):
         self.assertIn("Перечисления.ВидыНазначенияДатЗапрета.ДляВсехПользователей", MODULE)
 
     def test_section_level_object_equals_section(self) -> None:
-        self.assertIn("ДобавитьКомбинацию(Результат, РазделДатыЗапрета, РазделДатыЗапрета);", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, РазделДатыЗапрета, РазделДатыЗапрета, 30);", MODULE)
 
     def test_group_comment_has_padded_n(self) -> None:
         self.assertEqual(auto_comment(True, 30), "нп_авто|00030")
@@ -396,7 +433,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("ЭтоРучнаяТиповаяЗапись", MODULE)
         self.assertIn("ЭтоАвтоматическаяТиповаяЗапись", MODULE)
         self.assertLess(
-            MODULE.index("ПрименитьОднуНастройку"),
+            MODULE.index("СобратьКандидатовНастройки"),
             MODULE.index("ДополнитьОбщиеДатыДетальнымАдресатам"),
         )
         self.assertLess(
@@ -407,6 +444,45 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("ТекущаяТиповая.ЕстьЗапись И ЭтоРучнаяТиповаяЗапись", MODULE)
         self.assertIn("Если ОшибокНастроек = 0 Тогда", MODULE)
         self.assertIn("Удалены устаревшие автоматические записи типового регистра", MODULE)
+
+    def test_more_specific_setting_wins_shared_typical_key(self) -> None:
+        org_wide = setting_expansion_rank(
+            has_organization=True, section=None, has_section_object=False
+        )
+        sales = setting_expansion_rank(
+            has_organization=True, section="Продажи", has_section_object=False
+        )
+        self.assertEqual(org_wide, RANK_ORG_WITHOUT_SECTION)
+        self.assertEqual(sales, RANK_SECTION_AND_OBJECT)
+        self.assertEqual(
+            typical_key_winner([(org_wide, "N=10"), (sales, "N=30")]),
+            "N=30",
+        )
+        self.assertEqual(
+            typical_key_winner([(sales, "N=30"), (org_wide, "N=10")]),
+            "N=30",
+        )
+        flag = setting_expansion_rank(
+            has_organization=False,
+            section=None,
+            has_section_object=False,
+            non_org_flag=True,
+        )
+        bank = setting_expansion_rank(
+            has_organization=False, section="Банк", has_section_object=False
+        )
+        self.assertEqual(flag, RANK_NON_ORG_FLAG)
+        self.assertEqual(bank, RANK_SECTION_ONLY)
+        self.assertEqual(
+            typical_key_winner([(flag, "flag"), (bank, "bank")]),
+            "bank",
+        )
+        self.assertIn("УчестьКандидатаТиповойЗаписи", MODULE)
+        self.assertIn("Текущий.Ранг >= Комбинация.Ранг", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, РазделДатыЗапрета, ОбъектДатыЗапрета, 40);", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, СсылкаРаздела, ОбъектДатыЗапрета, 20);", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, СсылкаРаздела, СсылкаРаздела, 10);", MODULE)
+        self.assertIn("Отдельная настройка по одному разделу этой организации перекроет этот раздел", MODULE)
 
     def test_personal_detail_inherits_full_parent_set(self) -> None:
         self.assertIn("ДополнитьОбщиеДатыДетальнымАдресатам", MODULE)
@@ -465,7 +541,7 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("АктуализироватьНаследованиеПослеЗакрытия", close_proc)
         apply_proc = MODULE[
             MODULE.index("Процедура ПрименитьВключенныеНастройки") : MODULE.index(
-                "Процедура ПрименитьОднуНастройку"
+                "Процедура СобратьКандидатовНастройки"
             )
         ]
         self.assertLess(
@@ -534,7 +610,7 @@ class JobAndRightsTests(unittest.TestCase):
             MODULE,
         )
         self.assertIn("Пустые объект и раздел одновременно допустимы", MODULE)
-        self.assertIn("ДобавитьКомбинацию(Результат, ПустойРаздел, ПустойРаздел)", MODULE)
+        self.assertIn("ДобавитьКомбинацию(Результат, ПустойРаздел, ПустойРаздел, 0);", MODULE)
 
     def test_request_allows_empty_pair(self) -> None:
         self.assertNotIn("Укажите хотя бы один раздел", MODULE)
