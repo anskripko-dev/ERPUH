@@ -988,9 +988,10 @@ class RedesignModelTests(unittest.TestCase):
         self.assertLess(hint_pos, method_pos)
         self.assertNotIn("<Group>AlwaysHorizontal</Group>", record_form)
         hint = record_form.split('name="ОписаниеРаздела"', 1)[1].split("</InputField>", 1)[0]
-        self.assertIn("<VerticalStretch>true</VerticalStretch>", hint)
+        self.assertIn("<VerticalStretch>false</VerticalStretch>", hint)
         self.assertIn("<HorizontalStretch>true</HorizontalStretch>", hint)
-        self.assertIn("<AutoMaxHeight>false</AutoMaxHeight>", hint)
+        self.assertIn("<Height>3</Height>", hint)
+        self.assertIn("<MaxHeight>3</MaxHeight>", hint)
         self.assertNotIn("<MaxWidth>", hint)
 
     def test_relative_and_combined_write_rules(self) -> None:
