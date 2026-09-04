@@ -76,8 +76,18 @@ def organization_field_visible(section: str | None) -> bool:
     return section not in NON_ORG_SECTIONS
 
 
-def settings_form_cascade(has_organization: bool, section: str | None) -> dict[str, object]:
+def settings_form_cascade(
+    has_organization: bool,
+    section: str | None,
+    all_non_org: bool = False,
+) -> dict[str, object]:
     """Первое заполненное поле запирает второй путь."""
+    if all_non_org:
+        return {
+            "sections": "hidden",
+            "organization": "hidden",
+            "section_object": "hidden",
+        }
     if has_organization:
         return {
             "sections": "org_only",
@@ -101,7 +111,12 @@ def typical_write_kind(
     has_organization: bool,
     section: str | None,
     has_section_object: bool,
+    all_non_org: bool = False,
 ) -> str:
+    if all_non_org:
+        if has_organization or section is not None or has_section_object:
+            return "rejected"
+        return "all_non_org_sections"
     if not settings_combination_allowed(has_organization, section, has_section_object):
         return "rejected"
     if section is None and not has_organization:
@@ -214,6 +229,9 @@ class DateRulesTests(unittest.TestCase):
     def test_settings_form_allows_bank_without_account_rejects_org_plus_bank(self) -> None:
         self.assertEqual(typical_write_kind(False, None, False), "addressee_general")
         self.assertEqual(typical_write_kind(True, None, False), "eighteen_org_sections")
+        self.assertEqual(typical_write_kind(False, None, False, True), "all_non_org_sections")
+        self.assertEqual(typical_write_kind(True, None, False, True), "rejected")
+        self.assertEqual(typical_write_kind(False, "Банк", False, True), "rejected")
         self.assertEqual(typical_write_kind(True, "Продажи", False), "one_org_section")
         self.assertEqual(typical_write_kind(False, "Банк", True), "one_typed_object")
         self.assertEqual(typical_write_kind(False, "Банк", False), "section_level")
@@ -238,6 +256,12 @@ class DateRulesTests(unittest.TestCase):
             settings_form_cascade(False, None),
             {"sections": "all", "organization": "available", "section_object": "hidden"},
         )
+        self.assertEqual(
+            settings_form_cascade(False, None, True),
+            {"sections": "hidden", "organization": "hidden", "section_object": "hidden"},
+        )
+        self.assertEqual(len(NON_ORG_SECTIONS), 5)
+        self.assertTrue(all(section == obj for section, obj in ((n, n) for n in NON_ORG_SECTIONS)))
 
     def test_design_has_typical_search_tables(self) -> None:
         design = (
@@ -249,6 +273,8 @@ class DateRulesTests(unittest.TestCase):
         self.assertIn("| Раздел | Объект в документе | Пример документа |", design)
         self.assertIn("| Сначала выбрали | Разделы в списке | Организация | Объект раздела |", design)
         self.assertIn("Банк + организация Альфа", design)
+        self.assertIn("Все разделы без организации", design)
+        self.assertIn("**5** записей", design)
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
         self.assertIn("Возврат НачалоДня(ДатаРасчета) - ЧислоДней * 86400;", MODULE)
@@ -937,6 +963,7 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("<Name>СпособРасчета</Name>", SETTINGS_XML)
         self.assertIn("<Name>ОписаниеДатыЗапрета</Name>", SETTINGS_XML)
         self.assertIn("<Name>КоличествоДнейРазрешения</Name>", SETTINGS_XML)
+        self.assertIn("<Name>ВсеРазделыБезОрганизации</Name>", SETTINGS_XML)
         self.assertIn("ПроверитьСпособРасчетаНастройки", MODULE)
         recordset = (
             CFG
@@ -979,14 +1006,21 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("ТекстОписанияРаздела", record_module)
         self.assertIn("КонецПрошлогоМесяца", MODULE)
         self.assertIn(
-            "Банк, касса, склад и сценарии не закроются — для них выберите свой раздел",
+            "Банк, касса, склад и сценарии не закроются — для них выберите свой раздел или отдельную настройку «Все разделы без организации»",
             MODULE,
         )
         self.assertNotIn("выберите раздел Банк", MODULE)
         self.assertIn("DataPath>Организация</DataPath>", record_form)
         self.assertIn("Запись.СпособРасчета", record_form)
         self.assertIn("Запись.ОписаниеДатыЗапрета", record_form)
+        self.assertIn("Запись.ВсеРазделыБезОрганизации", record_form)
+        self.assertIn("ВсеРазделыБезОрганизацииПриИзменении", record_module)
+        self.assertIn("ТекстОписанияВсехРазделовБезОрганизации", record_module)
+        org_pos = record_form.find('name="Организация"')
+        flag_pos = record_form.find('name="ВсеРазделыБезОрганизации"')
         section_pos = record_form.find('name="РазделДатыЗапрета"')
+        self.assertLess(org_pos, flag_pos)
+        self.assertLess(flag_pos, section_pos)
         hint_pos = record_form.find('name="ОписаниеРаздела"')
         method_pos = record_form.find('name="СпособРасчета"')
         self.assertLess(section_pos, hint_pos)
@@ -1006,6 +1040,23 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("РазвернутыеКомбинацииЗаявки", MODULE)
         self.assertIn("ИменаРазделовБезОрганизации", MODULE)
         self.assertIn("Нельзя сочетать организацию с разделом Банк", MODULE)
+        self.assertIn("ВсеРазделыБезОрганизации", MODULE)
+        self.assertIn("ТекстОписанияВсехРазделовБезОрганизации", MODULE)
+        self.assertIn("Для всех разделов без организации очистите организацию, раздел и объект", MODULE)
+        self.assertIn(
+            "Чтобы закрыть только банк, кассу, склад и сценарии, включите «Все разделы без организации»",
+            MODULE,
+        )
+        self.assertIn(
+            "Закроет банк, кассу, склад и сценарии всех организаций",
+            MODULE,
+        )
+        names_fn = MODULE.split("Функция ИменаРазделовБезОрганизации()", 1)[1].split(
+            "КонецФункции", 1
+        )[0]
+        positions = [names_fn.find(f'"{name}"') for name in NON_ORG_SECTIONS]
+        self.assertTrue(all(pos >= 0 for pos in positions), names_fn)
+        self.assertEqual(positions, sorted(positions))
 
 
 class LayoutTests(unittest.TestCase):
@@ -1175,6 +1226,7 @@ class LayoutTests(unittest.TestCase):
         self.assertIn("Список.Охват", list_form)
         self.assertIn("Что закрывает", list_form)
         self.assertIn("организационные разделы этой организации", list_form)
+        self.assertIn("банк, касса, склад и сценарии", list_form)
         self.assertIn("все разделы и объекты", list_form)
         self.assertIn("общая дата раздела", list_form)
         self.assertIn("<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>", list_form)
