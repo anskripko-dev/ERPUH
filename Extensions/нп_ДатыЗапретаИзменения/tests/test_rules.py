@@ -481,7 +481,8 @@ class CanonicalWriteTests(unittest.TestCase):
     def test_overlap_keeps_min_cutoff_max_end(self) -> None:
         first, second = dt.date(2026, 6, 30), dt.date(2026, 5, 31)
         self.assertEqual(min(first, second), dt.date(2026, 5, 31))
-        self.assertIn("НоваяОтсечка = Мин(ТекущаяТиповая.ДатаЗапрета, Отсечка);", MODULE)
+        self.assertIn("НоваяОтсечка = Мин(ЭффективнаяДата, Отсечка);", MODULE)
+        self.assertIn("ЭффективнаяДатаТиповойЗаписи", MODULE)
         self.assertIn("НовоеОкончание = Макс(ТекущееСостояние.ДатаОкончанияДействия, ДатаОкончания);", MODULE)
         self.assertIn("ТекущееСостояние.ЗаявкаНаОткрытиеПериода", MODULE)
         self.assertIn("ТекущееСостояние.ДатаЗапретаДоОткрытия", MODULE)
@@ -615,6 +616,21 @@ class JobAndRightsTests(unittest.TestCase):
             MODULE.index("Процедура ДополнитьОбщиеДатыДетальнымАдресатам"),
         )
         self.assertIn("НаследоватьНаборРодителяПослеОткрытия", MODULE)
+        self.assertIn("Даты.ОписаниеДатыЗапрета КАК ОписаниеДатыЗапрета", MODULE)
+        self.assertIn("СтрокаРодителя.ОписаниеДатыЗапрета", MODULE)
+        self.assertIn(
+            "ЗаписатьТиповуюДатуЗапрета(Раздел, Объект, Адресат, ДатаЗапрета, Комментарий, ОписаниеДатыЗапрета);",
+            MODULE,
+        )
+        inherit_proc = MODULE[
+            MODULE.index("Функция ЗаписатьНаследуемуюЗапись") : MODULE.index(
+                "Процедура ПрименитьОткрытиеПоКомбинации"
+            )
+        ]
+        self.assertNotIn(
+            "ЗаписатьТиповуюДатуЗапрета(Раздел, Объект, Адресат, ДатаЗапрета, Комментарий, \"\");",
+            inherit_proc,
+        )
         self.assertIn("АктуализироватьНаследованиеПослеЗакрытия", MODULE)
         self.assertIn("ДополнитьДетальнымиАдресатамиОткрытыхПериодов", MODULE)
         self.assertIn("ЕстьДетальнаяКомбинацияВСписке", MODULE)
@@ -659,6 +675,8 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertNotIn("нп_НастройкиАвтоматическойУстановкиДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", RIGHTS)
+        self.assertNotIn("Subsystem.Администрирование", CFG_XML)
+        self.assertNotIn("Subsystem.НСИ", CFG_XML)
 
     def test_state_register_in_command_interface(self) -> None:
         self.assertIn("<UseStandardCommands>true</UseStandardCommands>", STATE_XML)
