@@ -118,6 +118,101 @@ def typical_key_winner(candidates: list[tuple[int, str]]) -> str:
 
 NON_ORG_SECTIONS = ("Банк", "Касса", "СкладскиеОперации", "Бюджетирование", "Планирование")
 
+BSP_DATE_DESCRIPTIONS = {
+    "КонецПрошлогоГода": "Конец прошлого года",
+    "КонецПрошлогоКвартала": "Конец прошлого квартала",
+    "КонецПрошлогоМесяца": "Конец прошлого месяца",
+    "КонецПрошлойНедели": "Конец прошлой недели",
+    "ПредыдущийДень": "Предыдущий день",
+    "ТекущийДень": "Текущий день",
+    "КонецТекущейНедели": "Конец текущей недели",
+    "КонецТекущегоМесяца": "Конец текущего месяца",
+    "КонецТекущегоКвартала": "Конец текущего квартала",
+    "КонецТекущегоГода": "Конец текущего года",
+}
+
+
+def _filled(value: object) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, str):
+        return bool(value.strip())
+    if isinstance(value, (int, float)):
+        return value != 0
+    return bool(value)
+
+
+def format_internal_prohibition_description(internal: str) -> str:
+    """Как ПредставлениеВнутреннегоОписанияДатыЗапрета: «Конец прошлого месяца (5)»."""
+    if not _filled(internal):
+        return ""
+    lines = internal.replace("\r\n", "\n").split("\n")
+    variant = lines[0].strip()
+    if not variant or variant == "ПроизвольнаяДата":
+        return ""
+    title = BSP_DATE_DESCRIPTIONS.get(variant, variant)
+    days = lines[1].strip() if len(lines) > 1 else ""
+    if _filled(days) and days != "0":
+        return f"{title} ({days})"
+    return title
+
+
+def report_prohibition_description(
+    typical: str,
+    setting_variant: str = "",
+    grace_days: int = 0,
+    method: str = "",
+    window_days: int = 0,
+) -> str:
+    """Как ПредставлениеОписанияДатыЗапретаОтчета."""
+    if _filled(typical):
+        return format_internal_prohibition_description(typical)
+    parts: list[str] = []
+    sliding_or_combined = method in ("СкользящееОкно", "Комбинированная") or (
+        not _filled(method) and _filled(window_days)
+    )
+    if sliding_or_combined and _filled(window_days):
+        parts.append("Скользящее окно")
+    if _filled(setting_variant):
+        relative = format_internal_prohibition_description(f"{setting_variant}\n{grace_days}")
+        if relative:
+            parts.append(relative)
+    return "; ".join(parts)
+
+
+def setting_matches_typical_row(
+    *,
+    setting_user: str,
+    setting_section: str,
+    setting_object: str,
+    flag_non_org: bool,
+    row_user: str,
+    row_section: str,
+    row_object: str,
+    recognize_flag: bool = True,
+) -> bool:
+    """Подбор настройки в отчёте. recognize_flag=False — старый запрос без флажка."""
+    if setting_user in ("", "ДляВсехПользователей"):
+        if row_user != "ДляВсехПользователей":
+            return False
+    elif setting_user != row_user:
+        return False
+    if recognize_flag and flag_non_org:
+        return row_object == row_section and row_section in NON_ORG_SECTIONS
+    if not setting_object:
+        return row_section == setting_section and row_object == row_section
+    if not setting_section:
+        return row_object == setting_object
+    return row_object == setting_object and row_section == setting_section
+
+
+def report_source(*, open_period: bool, setting_matched: bool, comment: str) -> str:
+    if open_period:
+        return "Временно открытый период"
+    if setting_matched or comment.startswith("нп_авто"):
+        return "Автоматическая установка"
+    return "Установлено вручную"
+
 
 def settings_combination_allowed(
     has_organization: bool,
@@ -1329,25 +1424,98 @@ class LayoutTests(unittest.TestCase):
         self.assertLess(dataset.find("<dataPath>Пользователь</dataPath>"), dataset.find("<dataPath>Раздел</dataPath>"))
         self.assertLess(dataset.find("<dataPath>Раздел</dataPath>"), dataset.find("<dataPath>Объект</dataPath>"))
         self.assertLess(dataset.find("<dataPath>ДатаЗапрета</dataPath>"), dataset.find("<dataPath>ОписаниеДатыЗапрета</dataPath>"))
-        self.assertIn("ДатыЗапрета.ОписаниеДатыЗапрета КАК ОписаниеДатыЗапрета", DCS)
+        self.assertIn('xsi:type="DataSetObject"', DCS)
+        self.assertIn("<objectName>ДатыЗапрета</objectName>", DCS)
         self.assertIn("Описание даты запрета", DCS)
+        self.assertNotIn("<query>", DCS)
 
     def test_report_classifies_three_sources(self) -> None:
-        self.assertIn("Временно открытый период", DCS)
-        self.assertIn("Автоматическая установка", DCS)
-        self.assertIn("Установлено вручную", DCS)
+        self.assertIn("Временно открытый период", REPORT_MODULE)
+        self.assertIn("Автоматическая установка", REPORT_MODULE)
+        self.assertIn("Установлено вручную", REPORT_MODULE)
         self.assertIn("Ответственный", DCS)
+        self.assertIn('ДатыЗапрета.Комментарий ПОДОБНО ""нп_авто%""', REPORT_MODULE)
+        self.assertNotIn("ПодобраннаяНастройка.ЧислоДней ЕСТЬ NULL", REPORT_MODULE)
 
     def test_report_empty_composite_join(self) -> None:
-        self.assertIn("ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)", DCS)
-        self.assertIn("ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)", DCS)
+        self.assertIn("ЗНАЧЕНИЕ(Справочник.Организации.ПустаяСсылка)", REPORT_MODULE)
+        self.assertIn("ЗНАЧЕНИЕ(Справочник.Пользователи.ПустаяСсылка)", REPORT_MODULE)
         self.assertIn("ПриКомпоновкеРезультата", REPORT_MODULE)
         self.assertIn("УстановитьПривилегированныйРежим(Истина)", REPORT_MODULE)
+        self.assertIn("ВнешниеНаборы", REPORT_MODULE)
+        self.assertIn("ТаблицаДействующихДатЗапрета", REPORT_MODULE)
 
     def test_report_dcs_binds_query_to_defined_data_source(self) -> None:
         self.assertIn("<name>ИсточникДанных1</name>", DCS)
         self.assertIn("<dataSource>ИсточникДанных1</dataSource>", DCS)
         self.assertNotIn("ИсточникДанных2", DCS)
+        self.assertEqual(DCS.count("<dataSource>ИсточникДанных1</dataSource>"), 1)
+
+    def test_report_description_is_readable(self) -> None:
+        self.assertEqual(
+            report_prohibition_description("КонецПрошлогоМесяца\n6"),
+            "Конец прошлого месяца (6)",
+        )
+        self.assertEqual(
+            report_prohibition_description("", "КонецПрошлогоМесяца", 6, "ОтносительнаяДата", 0),
+            "Конец прошлого месяца (6)",
+        )
+        self.assertEqual(
+            report_prohibition_description("", "", 0, "СкользящееОкно", 10),
+            "Скользящее окно",
+        )
+        self.assertEqual(
+            report_prohibition_description("", "КонецПрошлогоМесяца", 5, "Комбинированная", 10),
+            "Скользящее окно; Конец прошлого месяца (5)",
+        )
+        self.assertEqual(report_prohibition_description("ПроизвольнаяДата\n0"), "")
+        self.assertIn("ПредставлениеОписанияДатыЗапретаОтчета", MODULE)
+        self.assertIn("ПредставлениеВнутреннегоОписанияДатыЗапрета", MODULE)
+        self.assertIn("СтрПолучитьСтроку", MODULE)
+        self.assertIn('НСтр("ru = \'Скользящее окно\'")', MODULE)
+        self.assertIn("ПредставлениеОписанияДатыЗапретаОтчета", REPORT_MODULE)
+
+    def test_flag_non_org_auto_rows_are_not_manual(self) -> None:
+        flag = {
+            "setting_user": "Бухгалтерия",
+            "setting_section": "",
+            "setting_object": "",
+            "flag_non_org": True,
+            "row_user": "Бухгалтерия",
+        }
+        for section in NON_ORG_SECTIONS:
+            old = setting_matches_typical_row(
+                **flag, row_section=section, row_object=section, recognize_flag=False
+            )
+            new = setting_matches_typical_row(
+                **flag, row_section=section, row_object=section, recognize_flag=True
+            )
+            self.assertFalse(old, section)
+            self.assertTrue(new, section)
+            self.assertEqual(
+                report_source(open_period=False, setting_matched=False, comment="нп_авто|00006"),
+                "Автоматическая установка",
+            )
+        self.assertFalse(
+            setting_matches_typical_row(
+                **flag, row_section="", row_object="", recognize_flag=True
+            )
+        )
+        self.assertTrue(
+            setting_matches_typical_row(
+                setting_user="Бухгалтерия",
+                setting_section="",
+                setting_object="Завод Николь-Пак",
+                flag_non_org=False,
+                row_user="Бухгалтерия",
+                row_section="АвансовыеОтчеты",
+                row_object="Завод Николь-Пак",
+            )
+        )
+        self.assertIn("ВсеРазделыБезОрганизации", REPORT_MODULE)
+        self.assertIn("ИмяПредопределенныхДанных", REPORT_MODULE)
+        for name in NON_ORG_SECTIONS:
+            self.assertIn(f'""{name}""', REPORT_MODULE)
 
     def test_subsystem_has_16px_picture(self) -> None:
         subsystem = (CFG / "Subsystems/нп_ДатыЗапретаИзменения.xml").read_text(encoding="utf-8")
