@@ -1134,6 +1134,29 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("Запись.ВсеРазделыБезОрганизации", record_form)
         self.assertIn("ВсеРазделыБезОрганизацииПриИзменении", record_module)
         self.assertIn("ТекстОписанияВсехРазделовБезОрганизации", record_module)
+        self.assertIn("ПользовательПриИзменении", record_module)
+        self.assertIn("ОбновитьОписаниеПользователя", record_module)
+        self.assertIn("ЭтоГруппаВсеПользователи", record_module)
+        self.assertIn("ТекстОписанияГруппыВсеПользователи", MODULE)
+        self.assertIn("Справочники.ГруппыПользователей.ВсеПользователи", MODULE)
+        self.assertIn(
+            "Это группа, а не правило «для всех пользователей»",
+            MODULE,
+        )
+        self.assertIn("Запасной набор для всех — пустой пользователь в настройке", MODULE)
+        self.assertIn('name="ОписаниеПользователя"', record_form)
+        user_hint = record_form.split('name="ОписаниеПользователя"', 1)[1].split(
+            "</InputField>", 1
+        )[0]
+        self.assertIn("<TextColor>web:DimGray</TextColor>", user_hint)
+        self.assertLess(
+            record_form.find('name="Пользователь"'),
+            record_form.find('name="ОписаниеПользователя"'),
+        )
+        self.assertLess(
+            record_form.find('name="ОписаниеПользователя"'),
+            record_form.find('name="Организация"'),
+        )
         org_pos = record_form.find('name="Организация"')
         flag_pos = record_form.find('name="ВсеРазделыБезОрганизации"')
         section_pos = record_form.find('name="РазделДатыЗапрета"')
@@ -1366,6 +1389,16 @@ class LayoutTests(unittest.TestCase):
         self.assertIn("<TextColor>web:DimGray</TextColor>", FORM_XML)
         request_hint = FORM_XML.split('name="ОписаниеРаздела"', 1)[1].split("</InputField>", 1)[0]
         self.assertIn("<TextColor>web:DimGray</TextColor>", request_hint)
+        self.assertIn('name="ОписаниеПользователя"', FORM_XML)
+        request_module = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
+        ).read_text(encoding="utf-8")
+        self.assertIn("ПользовательПриИзменении", request_module)
+        self.assertIn("ЭтоГруппаВсеПользователи", request_module)
+        self.assertLess(
+            FORM_XML.find('name="Пользователь"'),
+            FORM_XML.find('name="ОписаниеПользователя"'),
+        )
         self.assertIn('<InputField name="СостояниеСогласованияДО"', FORM_XML)
         self.assertIn("Статус согласования ДО", FORM_XML)
         self.assertIn("<DataPath>СостояниеСогласованияДО</DataPath>", FORM_XML)
