@@ -273,7 +273,8 @@ class DateRulesTests(unittest.TestCase):
         self.assertIn("| Раздел | Объект в документе | Пример документа |", design)
         self.assertIn("| Сначала выбрали | Разделы в списке | Организация | Объект раздела |", design)
         self.assertIn("Банк + организация Альфа", design)
-        self.assertIn("Все разделы без организации", design)
+        self.assertIn("Разделы без организации", design)
+        self.assertNotIn("Все разделы без организации", design)
         self.assertIn("**5** записей", design)
 
     def test_bsl_subtracts_n_days_in_seconds(self) -> None:
@@ -964,6 +965,8 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("<Name>ОписаниеДатыЗапрета</Name>", SETTINGS_XML)
         self.assertIn("<Name>КоличествоДнейРазрешения</Name>", SETTINGS_XML)
         self.assertIn("<Name>ВсеРазделыБезОрганизации</Name>", SETTINGS_XML)
+        self.assertIn("Разделы без организации", SETTINGS_XML)
+        self.assertNotIn("Все разделы без организации", SETTINGS_XML)
         self.assertIn("ПроверитьСпособРасчетаНастройки", MODULE)
         recordset = (
             CFG
@@ -1006,7 +1009,7 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("ТекстОписанияРаздела", record_module)
         self.assertIn("КонецПрошлогоМесяца", MODULE)
         self.assertIn(
-            "Банк, касса, склад и сценарии не закроются — для них выберите свой раздел или отдельную настройку «Все разделы без организации»",
+            "Банк, касса, склад и сценарии не закроются — для них выберите свой раздел или отдельную настройку «Разделы без организации»",
             MODULE,
         )
         self.assertNotIn("выберите раздел Банк", MODULE)
@@ -1042,9 +1045,10 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("Нельзя сочетать организацию с разделом Банк", MODULE)
         self.assertIn("ВсеРазделыБезОрганизации", MODULE)
         self.assertIn("ТекстОписанияВсехРазделовБезОрганизации", MODULE)
-        self.assertIn("Для всех разделов без организации очистите организацию, раздел и объект", MODULE)
+        self.assertIn("Для разделов без организации очистите организацию, раздел и объект", MODULE)
+        self.assertNotIn("Все разделы без организации", MODULE)
         self.assertIn(
-            "Чтобы закрыть только банк, кассу, склад и сценарии, включите «Все разделы без организации»",
+            "Чтобы закрыть только банк, кассу, склад и сценарии, включите «Разделы без организации»",
             MODULE,
         )
         self.assertIn(
