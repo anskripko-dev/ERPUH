@@ -981,6 +981,17 @@ class RedesignModelTests(unittest.TestCase):
         self.assertIn("DataPath>Организация</DataPath>", record_form)
         self.assertIn("Запись.СпособРасчета", record_form)
         self.assertIn("Запись.ОписаниеДатыЗапрета", record_form)
+        section_pos = record_form.find('name="РазделДатыЗапрета"')
+        hint_pos = record_form.find('name="ОписаниеРаздела"')
+        method_pos = record_form.find('name="СпособРасчета"')
+        self.assertLess(section_pos, hint_pos)
+        self.assertLess(hint_pos, method_pos)
+        self.assertNotIn("<Group>AlwaysHorizontal</Group>", record_form)
+        hint = record_form.split('name="ОписаниеРаздела"', 1)[1].split("</InputField>", 1)[0]
+        self.assertIn("<VerticalStretch>true</VerticalStretch>", hint)
+        self.assertIn("<HorizontalStretch>true</HorizontalStretch>", hint)
+        self.assertIn("<AutoMaxHeight>false</AutoMaxHeight>", hint)
+        self.assertNotIn("<MaxWidth>", hint)
 
     def test_relative_and_combined_write_rules(self) -> None:
         self.assertIn("ДатаЗаглушкиОтносительнойДаты", MODULE)
