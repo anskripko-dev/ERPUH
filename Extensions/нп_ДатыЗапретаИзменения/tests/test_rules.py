@@ -1108,12 +1108,17 @@ class LayoutTests(unittest.TestCase):
         selection = DCS.split("<dcsset:selection>", 1)[1].split("</dcsset:selection>", 1)[0]
         self.assertLess(selection.find(">Пользователь<"), selection.find(">Раздел<"))
         self.assertLess(selection.find(">Раздел<"), selection.find(">Объект<"))
+        self.assertLess(selection.find(">ДатаЗапрета<"), selection.find(">ОписаниеДатыЗапрета<"))
+        self.assertLess(selection.find(">ОписаниеДатыЗапрета<"), selection.find(">Комментарий<"))
         order = DCS.split("<dcsset:order>", 1)[1].split("</dcsset:order>", 1)[0]
         self.assertLess(order.find(">Пользователь<"), order.find(">Раздел<"))
         self.assertLess(order.find(">Раздел<"), order.find(">Объект<"))
         dataset = DCS.split("<dataSet", 1)[1].split("<dataSource>", 1)[0]
         self.assertLess(dataset.find("<dataPath>Пользователь</dataPath>"), dataset.find("<dataPath>Раздел</dataPath>"))
         self.assertLess(dataset.find("<dataPath>Раздел</dataPath>"), dataset.find("<dataPath>Объект</dataPath>"))
+        self.assertLess(dataset.find("<dataPath>ДатаЗапрета</dataPath>"), dataset.find("<dataPath>ОписаниеДатыЗапрета</dataPath>"))
+        self.assertIn("ДатыЗапрета.ОписаниеДатыЗапрета КАК ОписаниеДатыЗапрета", DCS)
+        self.assertIn("Описание даты запрета", DCS)
 
     def test_report_classifies_three_sources(self) -> None:
         self.assertIn("Временно открытый период", DCS)
