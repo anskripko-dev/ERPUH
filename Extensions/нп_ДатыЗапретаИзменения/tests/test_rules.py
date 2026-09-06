@@ -670,7 +670,7 @@ class JobAndRightsTests(unittest.TestCase):
 
     def test_basic_rights_exclude_settings_and_constant(self) -> None:
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", RIGHTS)
-        self.assertIn("Report.нп_ДействующиеДатыЗапрета", RIGHTS)
+        self.assertNotIn("нп_ДействующиеДатыЗапрета", RIGHTS)
         self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", RIGHTS)
         state_rights = RIGHTS.split(
             "InformationRegister.нп_СостояниеОткрытыхПериодов", 1
