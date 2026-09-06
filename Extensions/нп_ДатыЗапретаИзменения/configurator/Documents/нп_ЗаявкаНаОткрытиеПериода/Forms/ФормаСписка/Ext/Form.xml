@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="NotificationProcessing">ОбработкаОповещения</Event>
+	</Events>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<CommandBarLocation>None</CommandBarLocation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<EnableStartDrag>true</EnableStartDrag>
+			<DataPath>Список</DataPath>
+			<AutoAdd>false</AutoAdd>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="2">
+				<Autofill>false</Autofill>
+			</AutoCommandBar>
+			<ContextMenu name="СписокКонтекстноеМеню" id="3"/>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="4"/>
+			<SearchStringAddition name="СписокСтрокаПоиска" id="5">
+				<AdditionSource>
+					<Item>Список</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СписокСтрокаПоискаКонтекстноеМеню" id="6"/>
+				<ExtendedTooltip name="СписокСтрокаПоискаРасширеннаяПодсказка" id="7"/>
+			</SearchStringAddition>
+			<Events>
+				<Event name="OnActivateRow">СписокПриАктивизацииСтроки</Event>
+				<Event name="OnGetDataAtServer">СписокПриПолученииДанныхНаСервере</Event>
+			</Events>
+			<ChildItems>
+				<LabelField name="Дата" id="10">
+					<DataPath>Список.Дата</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="12"/>
+				</LabelField>
+				<LabelField name="Номер" id="13">
+					<DataPath>Список.Номер</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="14"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="15"/>
+				</LabelField>
+				<LabelField name="СостояниеСогласованияДО" id="28">
+					<DataPath>Список.СостояниеСогласованияДО</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Статус согласования ДО</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="СостояниеСогласованияДОКонтекстноеМеню" id="29"/>
+					<ExtendedTooltip name="СостояниеСогласованияДОРасширеннаяПодсказка" id="30"/>
+				</LabelField>
+				<LabelField name="Пользователь" id="16">
+					<DataPath>Список.Пользователь</DataPath>
+					<ContextMenu name="ПользовательКонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="ПользовательРасширеннаяПодсказка" id="18"/>
+				</LabelField>
+				<LabelField name="Организация" id="31">
+					<DataPath>Список.Организация</DataPath>
+					<ContextMenu name="ОрганизацияКонтекстноеМеню" id="32"/>
+					<ExtendedTooltip name="ОрганизацияРасширеннаяПодсказка" id="33"/>
+				</LabelField>
+				<LabelField name="ПериодС" id="19">
+					<DataPath>Список.ПериодС</DataPath>
+					<ContextMenu name="ПериодСКонтекстноеМеню" id="20"/>
+					<ExtendedTooltip name="ПериодСРасширеннаяПодсказка" id="21"/>
+				</LabelField>
+				<LabelField name="СрокДействия" id="22">
+					<DataPath>Список.СрокДействия</DataPath>
+					<ContextMenu name="СрокДействияКонтекстноеМеню" id="23"/>
+					<ExtendedTooltip name="СрокДействияРасширеннаяПодсказка" id="24"/>
+				</LabelField>
+				<LabelField name="Ответственный" id="25">
+					<DataPath>Список.Ответственный</DataPath>
+					<ContextMenu name="ОтветственныйКонтекстноеМеню" id="26"/>
+					<ExtendedTooltip name="ОтветственныйРасширеннаяПодсказка" id="27"/>
+				</LabelField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="3">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>true</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<QueryText>ВЫБРАТЬ
+	ДокументЗаявка.Ссылка КАК Ссылка,
+	ДокументЗаявка.ПометкаУдаления КАК ПометкаУдаления,
+	ДокументЗаявка.Номер КАК Номер,
+	ДокументЗаявка.Дата КАК Дата,
+	ДокументЗаявка.Проведен КАК Проведен,
+	ДокументЗаявка.ПериодС КАК ПериодС,
+	ДокументЗаявка.СрокДействия КАК СрокДействия,
+	ДокументЗаявка.РазделДатыЗапрета КАК РазделДатыЗапрета,
+	ДокументЗаявка.Пользователь КАК Пользователь,
+	ДокументЗаявка.Организация КАК Организация,
+	ДокументЗаявка.ПричинаОткрытия КАК ПричинаОткрытия,
+	ДокументЗаявка.СпособУказания КАК СпособУказания,
+	ДокументЗаявка.Ответственный КАК Ответственный,
+	ВЫРАЗИТЬ("" КАК СТРОКА(150)) КАК СостояниеСогласованияДО
+ИЗ
+	Документ.нп_ЗаявкаНаОткрытиеПериода КАК ДокументЗаявка</QueryText>
+				<MainTable>Document.нп_ЗаявкаНаОткрытиеПериода</MainTable>
+				<ListSettings>
+					<dcsset:filter>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f001</dcsset:userSettingID>
+					</dcsset:filter>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemField">
+							<dcsset:field>Дата</dcsset:field>
+							<dcsset:orderType>Desc</dcsset:orderType>
+						</dcsset:item>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f002</dcsset:userSettingID>
+					</dcsset:order>
+					<dcsset:conditionalAppearance>
+						<dcsset:viewMode>Normal</dcsset:viewMode>
+						<dcsset:userSettingID>a14d2026-0014-7e28-8a00-00000000f003</dcsset:userSettingID>
+					</dcsset:conditionalAppearance>
+					<dcsset:itemsViewMode>Normal</dcsset:itemsViewMode>
+					<dcsset:itemsUserSettingID>a14d2026-0014-7e28-8a00-00000000f004</dcsset:itemsUserSettingID>
+				</ListSettings>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

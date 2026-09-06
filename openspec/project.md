@@ -40,6 +40,7 @@ Code paths (EDT):
 - Prefer targeted searches in `uh_np` over full-tree scans (configuration is large).
 - Follow 1C standards from `Instructions\стандарты-разработки-1с.md`.
 - Prefer BSP patterns from SSL when choosing structure, naming, regions, and API style.
+- Synonyms of native НП metadata objects end with `(НП)` (as in `нп_КонтрольПроведенияПоДО`). Forms, attributes, enum values and DCS field captions do not.
 - Every task starts with an OpenSpec change (`/opsx-propose` → `/opsx-apply` → `/opsx-archive`).
 - Customization: prefer extensions (`uhnp.НП`, `uhnp.ТН`) over editing the main config when the change belongs to an extension; respect name prefixes `РасшНП_` / `тн_`.
 - New agent chats do not see prior conversation history — rely on this file and `.cursor/rules/`.
