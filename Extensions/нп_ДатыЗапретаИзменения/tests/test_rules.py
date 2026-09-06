@@ -671,7 +671,12 @@ class JobAndRightsTests(unittest.TestCase):
     def test_basic_rights_exclude_settings_and_constant(self) -> None:
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", RIGHTS)
         self.assertIn("Report.нп_ДействующиеДатыЗапрета", RIGHTS)
-        self.assertNotIn("нп_СостояниеОткрытыхПериодов", RIGHTS)
+        self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", RIGHTS)
+        state_rights = RIGHTS.split(
+            "InformationRegister.нп_СостояниеОткрытыхПериодов", 1
+        )[1].split("</object>", 1)[0]
+        self.assertIn("<name>Read</name>", state_rights)
+        self.assertNotIn("<name>View</name>", state_rights)
         self.assertNotIn("нп_НастройкиАвтоматическойУстановкиДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", RIGHTS)
@@ -746,6 +751,14 @@ class JobAndRightsTests(unittest.TestCase):
             2,
         )
         self.assertIn("не «для всех»", MODULE)
+        object_module = (
+            CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Ext/ObjectModule.bsl"
+        ).read_text(encoding="utf-8")
+        fill = object_module.split("Процедура ОбработкаЗаполнения")[1].split(
+            "Процедура ПередЗаписью", 1
+        )[0]
+        self.assertIn("Ответственный = Пользователи.АвторизованныйПользователь()", fill)
+        self.assertIn("Пользователь = Ответственный", fill)
 
     def test_request_locked_while_pending_approval(self) -> None:
         object_module = (
