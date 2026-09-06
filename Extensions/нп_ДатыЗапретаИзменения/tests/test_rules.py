@@ -1784,6 +1784,34 @@ class LayoutTests(unittest.TestCase):
             self.assertNotIn("новые роли не создаются", text)
             self.assertNotIn("Запись отклонена с пояснением", text)
             self.assertNotIn("Открытие для всех пользователей", text)
+            self.assertIn("ERP.2026.14 Приложение 1", text)
+
+    def test_appendix_matches_current_decisions(self) -> None:
+        import zipfile
+
+        appendix = (
+            ROOT.parents[1]
+            / "openspec/changes/np-dates-of-prohibition-setup/appendix-1.txt"
+        ).read_text(encoding="utf-8")
+        docx = ROOT.parents[1] / "ERP.2026.14 Приложение 1 — порядок поиска даты запрета.docx"
+        with zipfile.ZipFile(docx) as archive:
+            body = archive.read("word/document.xml").decode("utf-8")
+        for text in (appendix, body):
+            self.assertIn("3.3. Пустые раздел и объект — общая дата адресата", text)
+            self.assertIn("4.1. Поиск по разделу проверяемых данных", text)
+            self.assertIn("4.2. Приоритет групп по полю «Комментарий»", text)
+            self.assertIn("7. Наложение общей даты адресата", text)
+            self.assertIn("ПРИЛОЖЕНИЕ Б", text)
+            self.assertIn("Учёт по МСФО", text)
+            self.assertIn("18 записей", text)
+            self.assertIn("Пустой пары нет", text)
+            self.assertIn("ДляВсехПользователей", text)
+            self.assertIn("Объект = Раздел", text)
+            self.assertIn("Комментарий УБЫВ", text)
+            self.assertIn("Пользователь, Раздел, Объект", text)
+            self.assertIn("два независимых этапа", text)
+            self.assertIn("а не в одну запись «организация в любом разделе»", text)
+            self.assertNotIn("обратиться в ИТ", text)
 
     def test_form_use_purposes_is_fixed_array(self) -> None:
         found = 0
