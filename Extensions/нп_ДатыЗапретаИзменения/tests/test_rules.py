@@ -1763,6 +1763,28 @@ class LayoutTests(unittest.TestCase):
             self.assertNotIn(note, tz)
             self.assertNotIn(note, body)
 
+    def test_tz_request_matches_current_decisions(self) -> None:
+        import zipfile
+
+        tz = (
+            ROOT.parents[1]
+            / "openspec/changes/np-dates-of-prohibition-setup/tz-extract.txt"
+        ).read_text(encoding="utf-8")
+        docx = ROOT.parents[1] / "ERP.2026.14 Заявка на доработку 1С ERP УХ (ред. 2)_1.docx"
+        with zipfile.ZipFile(docx) as archive:
+            body = archive.read("word/document.xml").decode("utf-8")
+        for text in (tz, body):
+            self.assertIn("нп_БазовыеПраваДатЗапрета", text)
+            self.assertIn("нп_УказаниеРазделовИОбъектовЗаявки", text)
+            self.assertIn("Любой пользователь с правами на документ", text)
+            self.assertIn("только полные права", text)
+            self.assertIn("Учёт по МСФО", text)
+            self.assertIn("ВсеРазделыБезОрганизации", text)
+            self.assertNotIn("обратиться в ИТ", text)
+            self.assertNotIn("новые роли не создаются", text)
+            self.assertNotIn("Запись отклонена с пояснением", text)
+            self.assertNotIn("Открытие для всех пользователей", text)
+
     def test_form_use_purposes_is_fixed_array(self) -> None:
         found = 0
         for path in CFG.rglob("*.xml"):
