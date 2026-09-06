@@ -671,7 +671,7 @@ class JobAndRightsTests(unittest.TestCase):
     def test_basic_rights_exclude_settings_and_constant(self) -> None:
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", RIGHTS)
         self.assertIn("Report.нп_ДействующиеДатыЗапрета", RIGHTS)
-        self.assertIn("InformationRegister.нп_СостояниеОткрытыхПериодов", RIGHTS)
+        self.assertNotIn("нп_СостояниеОткрытыхПериодов", RIGHTS)
         self.assertNotIn("нп_НастройкиАвтоматическойУстановкиДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ПолучателиУведомленийСдвигаДатЗапрета", RIGHTS)
         self.assertNotIn("нп_ФормаПолучателейУведомленийСдвигаДатЗапрета", RIGHTS)
@@ -693,11 +693,6 @@ class JobAndRightsTests(unittest.TestCase):
             "InformationRegister.нп_СостояниеОткрытыхПериодов",
             subsystem,
         )
-        state_rights = RIGHTS.split(
-            "InformationRegister.нп_СостояниеОткрытыхПериодов", 1
-        )[1].split("</object>", 1)[0]
-        self.assertIn("<name>View</name>", state_rights)
-        self.assertNotIn("<name>Update</name>", state_rights)
         list_form = (
             CFG
             / "InformationRegisters/нп_СостояниеОткрытыхПериодов/Forms/ФормаСписка/Ext/Form.xml"
@@ -771,6 +766,12 @@ class JobAndRightsTests(unittest.TestCase):
         self.assertIn("СостояниеСогласованияДО = СостояниеДО.Представление", form_module)
         self.assertIn("Функция ПредставленияСостоянийСогласованияДО", MODULE)
         self.assertIn("УстановитьПривилегированныйРежим(Истина)", MODULE)
+        state_fn = MODULE[
+            MODULE.index("Функция ЕстьДействующееСостояниеПоЗаявке") : MODULE.index(
+                "Функция ТекстПоясненияЗаявки"
+            )
+        ]
+        self.assertIn("УстановитьПривилегированныйРежим(Истина)", state_fn)
         self.assertNotIn("ТолькоПросмотр = ТолькоПросмотрДокумента", form_module)
         self.assertNotIn("\tТолькоПросмотр =", form_module)
         self.assertIn("ИзменениеЗаявкиЗапрещено = нп_ДатыЗапретаИзменения.ИзменениеЗаявкиЗапрещено", form_module)
