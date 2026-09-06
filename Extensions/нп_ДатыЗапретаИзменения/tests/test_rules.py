@@ -23,6 +23,9 @@ SETTINGS_XML = (CFG / "InformationRegisters/нп_НастройкиАвтома�
 FORM_XML = (
     CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form.xml"
 ).read_text(encoding="utf-8")
+FORM_MODULE = (
+    CFG / "Documents/нп_ЗаявкаНаОткрытиеПериода/Forms/ФормаДокумента/Ext/Form/Module.bsl"
+).read_text(encoding="utf-8")
 DCS = (
     CFG / "Reports/нп_ДействующиеДатыЗапрета/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml"
 ).read_text(encoding="utf-8")
@@ -650,6 +653,9 @@ class JobAndRightsTests(unittest.TestCase):
             )
         ]
         self.assertIn("АктуализироватьНаследованиеПослеЗакрытия", close_proc)
+        self.assertNotIn("ЭтоПолноправныйПользовательСеанса", close_proc)
+        self.assertNotIn("только полноправному", close_proc)
+        self.assertIn("УстановитьПривилегированныйРежим(Истина)", close_proc)
         apply_proc = MODULE[
             MODULE.index("Процедура ПрименитьВключенныеНастройки") : MODULE.index(
                 "Процедура СобратьКандидатовНастройки"
@@ -667,6 +673,17 @@ class JobAndRightsTests(unittest.TestCase):
     def test_disable_check_and_version_update(self) -> None:
         self.assertIn("ДатыЗапретаИзменения.ОтключитьПроверкуДатЗапрета", MODULE)
         self.assertIn("ДатыЗапретаИзмененияСлужебный.ОбновитьВерсиюДатЗапретаИзменения", MODULE)
+
+    def test_early_close_available_to_all_users(self) -> None:
+        self.assertIn("Элементы.ЗакрытьПериодДосрочно.Видимость = Истина", FORM_MODULE)
+        self.assertIn("Элементы.ЗакрытьПериодДосрочно.Доступность = ЕстьСостояние", FORM_MODULE)
+        self.assertNotIn("Видимость = Полноправный", FORM_MODULE)
+        self.assertNotIn("Доступность = Полноправный", FORM_MODULE)
+        self.assertNotIn("Доступно полноправному пользователю", FORM_XML)
+        self.assertNotIn(
+            "Досрочное закрытие периода доступно только полноправному пользователю.",
+            MODULE,
+        )
 
     def test_basic_rights_exclude_settings_and_constant(self) -> None:
         self.assertIn("Document.нп_ЗаявкаНаОткрытиеПериода", RIGHTS)
